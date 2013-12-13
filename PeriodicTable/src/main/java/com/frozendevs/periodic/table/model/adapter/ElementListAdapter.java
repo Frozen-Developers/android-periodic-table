@@ -1,7 +1,6 @@
 package com.frozendevs.periodic.table.model.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;

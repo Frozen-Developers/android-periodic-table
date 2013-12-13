@@ -122,14 +122,17 @@ public class TableAdapter extends BaseAdapter {
 
                 }
             });
-        } else if (position == 92) {
-            view = LayoutInflater.from(activity).inflate(R.layout.table_item_text, parent, false);
-            ((TextView) view).setText("57 - 71");
-        } else if (position == 110) {
-            view = LayoutInflater.from(activity).inflate(R.layout.table_item_text, parent, false);
-            ((TextView) view).setText("89 - 103");
         } else {
-            view = LayoutInflater.from(activity).inflate(R.layout.table_item_empty, parent, false);
+            view = LayoutInflater.from(activity).inflate(R.layout.table_item_text, parent, false);
+
+            if (position == 92) {
+                ((TextView) view).setText("57 - 71");
+                view.setBackgroundColor(activity.getResources().getColor(R.color.lanthanide_bg));
+            } else if (position == 110) {
+                ((TextView) view).setText("89 - 103");
+                view.setBackgroundColor(activity.getResources().getColor(R.color.actinide_bg));
+            } else
+                view.setVisibility(View.INVISIBLE);
         }
 
         return view;
