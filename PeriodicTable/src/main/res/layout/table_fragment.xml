@@ -15,7 +15,8 @@
         android:columnWidth="@dimen/table_tile_size"
         android:horizontalSpacing="@dimen/table_spacing"
         android:verticalSpacing="@dimen/table_spacing"
-        android:stretchMode="none"/>
+        android:stretchMode="none"
+        android:scrollbars="none"/>
 
     <LinearLayout
         android:id="@+id/generatingProgressBar"

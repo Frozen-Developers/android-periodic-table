@@ -12,7 +12,6 @@ import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.helper.Database;
 import com.frozendevs.periodic.table.model.TableItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TableAdapter extends BaseAdapter {

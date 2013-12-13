@@ -9,18 +9,21 @@ import com.frozendevs.periodic.table.R;
 
 public class GridView extends android.widget.GridView {
 
-    private static final int SENSITIVITY = 3;
+    private static final float SENSITIVITY = 3f;
 
     public GridView(Context context) {
         super(context);
+        setWillNotDraw(false);
     }
 
     public GridView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setWillNotDraw(false);
     }
 
     public GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        setWillNotDraw(false);
     }
 
     @Override
@@ -29,7 +32,7 @@ public class GridView extends android.widget.GridView {
             int size = event.getHistorySize();
 
             if(size > 1) {
-                int deltaX = SENSITIVITY * (int)(event.getHistoricalX(size - 2) - event.getHistoricalX(size - 1));
+                int deltaX = (int)(SENSITIVITY * (event.getHistoricalX(size - 2) - event.getHistoricalX(size - 1)));
 
                 if((getScrollX() > 0 && deltaX < 0) ||
                         (deltaX > 0 && getScrollX() + ((View)getParent()).getWidth() < getContentWidth())) {
