@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity$TableFragment">
 
-    <GridView
+    <com.frozendevs.periodic.table.view.GridView
         android:id="@+id/table"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numColumns="18"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="@integer/table_columns_count"
         android:columnWidth="@dimen/table_tile_size"
-        android:horizontalSpacing="1px"
-        android:verticalSpacing="1px"
+        android:horizontalSpacing="@dimen/table_spacing"
+        android:verticalSpacing="@dimen/table_spacing"
         android:stretchMode="none"/>
 
     <LinearLayout
