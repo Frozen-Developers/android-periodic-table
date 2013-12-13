@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="actinide_bg">#ff99cc</color>
+    <color name="alkali_metal_bg">#ff6666</color>
+    <color name="alkaline_earth_metal_bg">#ffdead</color>
+    <color name="diatomic_nonmetal_bg">#e7ff8f</color>
+    <color name="lanthanide_bg">#ffbfff</color>
+    <color name="metalloid_bg">#cccc99</color>
+    <color name="noble_gas_bg">#c0ffff</color>
+    <color name="polyatomic_nonmetal_bg">#a1ffc3</color>
+    <color name="poor_metal_bg">#cccccc</color>
+    <color name="transition_metal_bg">#ffc0c0</color>
+</resources>

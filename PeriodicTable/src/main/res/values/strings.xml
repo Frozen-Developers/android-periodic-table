@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Periodic Table</string>
+
+    <!-- Fragments -->
+    <string name="elements_title">Elements</string>
+    <string name="table_title">Table</string>
+
+    <!-- Progress bar -->
+    <string name="loading">Loading…</string>
+    <string name="generating">Generating…</string>
+
+    <!-- Menu items -->
+    <string name="action_search">Search</string>
+    <string name="action_about">About</string>
+
+    <string name="query_hint">Element, symbol or Z</string>
+
+    <string name="no_such_element">No such element.</string>
+
+</resources>
