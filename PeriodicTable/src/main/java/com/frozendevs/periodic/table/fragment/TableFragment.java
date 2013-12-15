@@ -5,10 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridView;
 
 import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.model.adapter.TableAdapter;
+import com.frozendevs.periodic.table.view.GridView;
 
 public class TableFragment extends Fragment {
 

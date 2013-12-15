@@ -1,58 +1,158 @@
 package com.frozendevs.periodic.table.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
+import android.database.DataSetObserver;
 import android.util.AttributeSet;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.LinearLayout;
 
 import com.frozendevs.periodic.table.R;
 
-public class GridView extends android.widget.GridView {
+public class GridView extends LinearLayout {
 
-    private static final float SENSITIVITY = 3f;
+    private int numColumns, numRows;
+    private int columnWidth, rowHeight;
+    private int horizontalSpacing, verticalSpacing;
 
-    public GridView(Context context) {
-        super(context);
-        setWillNotDraw(false);
-    }
+    private Adapter adapter = null;
+
+    private View emptyView;
 
     public GridView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setWillNotDraw(false);
+        init(attrs);
     }
 
     public GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setWillNotDraw(false);
+        init(attrs);
     }
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if(event.getActionMasked() == MotionEvent.ACTION_MOVE) {
-            int size = event.getHistorySize();
+    private void init(AttributeSet attrs) {
+        TypedArray style = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.GridView, 0, 0);
 
-            if(size > 1) {
-                int deltaX = (int)(SENSITIVITY * (event.getHistoricalX(size - 2) - event.getHistoricalX(size - 1)));
-
-                if((getScrollX() > 0 && deltaX < 0) ||
-                        (deltaX > 0 && getScrollX() + ((View)getParent()).getWidth() < getContentWidth())) {
-                    if(getScrollX() + deltaX < 0)
-                        scrollBy(-1 * getScrollX(), 0);
-                    else if(getScrollX() + ((View)getParent()).getWidth() + deltaX > getContentWidth())
-                        scrollBy(getContentWidth() - getScrollX() - ((View)getParent()).getWidth(), 0);
-                    else
-                        scrollBy(deltaX, 0);
-                }
-            }
+        try {
+            numColumns = style.getInteger(R.styleable.GridView_numColumns, 0);
+            numRows = style.getInteger(R.styleable.GridView_numRows, 0);
+            columnWidth = style.getDimensionPixelSize(R.styleable.GridView_columnWidth, 0);
+            rowHeight = style.getDimensionPixelSize(R.styleable.GridView_rowHeight, 0);
+            horizontalSpacing = style.getDimensionPixelSize(R.styleable.GridView_horizontalSpacing, 0);
+            verticalSpacing = style.getDimensionPixelSize(R.styleable.GridView_verticalSpacing, 0);
+        } finally {
+            style.recycle();
         }
 
-        return super.onTouchEvent(event);
+        setOrientation(VERTICAL);
+
+        create();
     }
 
-    public int getContentWidth() {
-        int numColumns = getResources().getInteger(R.integer.table_columns_count);
+    private void create() {
+        for(int i = 0; i < numRows; i++) {
+            if(i > 0)
+                addView(getSpacer(true));
 
-        return (numColumns * (int)getResources().getDimension(R.dimen.table_tile_size)) +
-                ((numColumns - 1) * (int)getResources().getDimension(R.dimen.table_spacing));
+            LinearLayout row = new LinearLayout(getContext());
+            row.setLayoutParams(new LayoutParams((numColumns * columnWidth) + ((numColumns - 2) * horizontalSpacing), rowHeight));
+            row.setOrientation(HORIZONTAL);
+
+            addView(row);
+        }
+    }
+
+    private void deleteAllData() {
+        for(int i = 0; i < getChildCount(); i++) {
+            ((ViewGroup)getChildAt(i)).removeAllViews();
+        }
+    }
+
+    private void fillWithData() {
+        if(adapter.getCount() > 0) {
+            for(int i = 0; i < numRows * 2; i += 2) {
+                ViewGroup row = (ViewGroup)getChildAt(i);
+
+                for(int n = 0; n < numColumns; n++) {
+                    if(n > 0)
+                        row.addView(getSpacer(false));
+
+                    LinearLayout cell = new LinearLayout(getContext());
+                    cell.setLayoutParams(new LayoutParams(columnWidth, rowHeight));
+                    cell.addView(adapter.getView(((i / 2) * numColumns) + n, null, cell));
+
+                    row.addView(cell);
+                }
+            }
+
+            if(emptyView != null)
+                emptyView.setVisibility(GONE);
+        }
+    }
+
+    private LinearLayout getSpacer(boolean vertical) {
+        LinearLayout view = new LinearLayout(getContext());
+
+        if(!vertical)
+            view.setLayoutParams(new LayoutParams(horizontalSpacing, rowHeight));
+        else
+            view.setLayoutParams(new LayoutParams(columnWidth, verticalSpacing));
+
+        return view;
+    }
+
+    public int getNumColumns() {
+        return numColumns;
+    }
+
+    public int getNumRows() {
+        return numRows;
+    }
+
+    public int getColumnWidth() {
+        return columnWidth;
+    }
+
+    public int getRowHeight() {
+        return rowHeight;
+    }
+
+    public int getHorizontalSpacing() {
+        return horizontalSpacing;
+    }
+
+    public int getVerticalSpacing() {
+        return verticalSpacing;
+    }
+
+    public Adapter getAdapter() {
+        return adapter;
+    }
+
+    public void setAdapter(Adapter adapter) {
+        this.adapter = adapter;
+
+        fillWithData();
+
+        adapter.registerDataSetObserver(new DataSetObserver() {
+            @Override
+            public void onChanged() {
+                if(emptyView != null)
+                    emptyView.setVisibility(VISIBLE);
+
+                deleteAllData();
+                fillWithData();
+            }
+        });
+    }
+
+    public void setEmptyView(View view) {
+        emptyView = view;
+
+        if(adapter == null || adapter.getCount() == 0)
+            emptyView.setVisibility(VISIBLE);
+        else
+            emptyView.setVisibility(GONE);
     }
 }

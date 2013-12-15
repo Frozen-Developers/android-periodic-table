@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="table_columns_count">18</integer>
+    <integer name="table_rows_count">9</integer>
 </resources>

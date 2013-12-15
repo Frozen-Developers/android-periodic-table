@@ -7,16 +7,29 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity$TableFragment">
 
-    <com.frozendevs.periodic.table.view.GridView
-        android:id="@+id/table"
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:numColumns="@integer/table_columns_count"
-        android:columnWidth="@dimen/table_tile_size"
-        android:horizontalSpacing="@dimen/table_spacing"
-        android:verticalSpacing="@dimen/table_spacing"
-        android:stretchMode="none"
-        android:scrollbars="none"/>
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <com.frozendevs.periodic.table.view.GridView
+                xmlns:custom="http://schemas.android.com/apk/res/com.frozendevs.periodic.table"
+                android:id="@+id/table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                custom:numColumns="@integer/table_columns_count"
+                custom:numRows="@integer/table_rows_count"
+                custom:columnWidth="@dimen/table_tile_size"
+                custom:rowHeight="@dimen/table_tile_size"
+                custom:horizontalSpacing="@dimen/table_spacing"
+                custom:verticalSpacing="@dimen/table_spacing"/>
+
+        </ScrollView>
+
+    </HorizontalScrollView>
 
     <LinearLayout
         android:id="@+id/generatingProgressBar"
