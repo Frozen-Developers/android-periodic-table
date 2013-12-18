@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.DetailsActivity" >
+
+    <item
+        android:id="@+id/wiki"
+        android:title="@string/wiki_page"
+        android:icon="@drawable/ic_action_wiki"
+        app:showAsAction="always" />
+
+</menu>

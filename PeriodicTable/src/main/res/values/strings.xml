@@ -14,6 +14,7 @@
     <!-- Menu items -->
     <string name="action_search">Search</string>
     <string name="action_about">About</string>
+    <string name="wiki_page">Wiki page</string>
 
     <string name="query_hint">Element, symbol or Z</string>
 

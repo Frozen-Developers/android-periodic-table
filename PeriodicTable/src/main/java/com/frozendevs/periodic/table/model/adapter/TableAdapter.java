@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.helper.Database;
+import com.frozendevs.periodic.table.helper.OnClickOnElement;
 import com.frozendevs.periodic.table.model.TableItem;
 
 import java.util.List;
@@ -115,12 +116,7 @@ public class TableAdapter extends BaseAdapter {
             TextView weight = (TextView) view.findViewById(R.id.weight);
             weight.setText(item.getStandardAtomicWeight());
 
-            view.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
+            view.setOnClickListener(new OnClickOnElement(activity, item.getAtomicNumber()));
         } else {
             view = LayoutInflater.from(activity).inflate(R.layout.table_item_text, parent, false);
 

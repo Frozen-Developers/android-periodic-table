@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.helper.Database;
+import com.frozendevs.periodic.table.helper.OnClickOnElement;
 import com.frozendevs.periodic.table.model.ElementListItem;
 
 import java.util.ArrayList;
@@ -79,12 +80,7 @@ public class ElementListAdapter extends BaseAdapter {
         TextView name = (TextView)view.findViewById(R.id.name);
         name.setText(element.getName());
 
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        view.setOnClickListener(new OnClickOnElement(activity, element.getAtomicNumber()));
 
         return view;
     }

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Xml;
 
 import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodic.table.model.ElementDetails;
 import com.frozendevs.periodic.table.model.ElementListItem;
 import com.frozendevs.periodic.table.model.TableItem;
 
@@ -175,5 +176,71 @@ public class Database {
         }
 
         return items;
+    }
+
+    public static ElementDetails getElementDetails(Context context, int atomicNumber) {
+        ElementDetails details = null;
+
+        XmlPullParser parser = Xml.newPullParser();
+        InputStream inputStream = getDatabaseFile(context);
+        try {
+            parser.setInput(inputStream, null);
+            parser.nextTag();
+
+            parser.require(XmlPullParser.START_TAG, null, "elements");
+            while (parser.next() != XmlPullParser.END_TAG) {
+                if (parser.getEventType() == XmlPullParser.START_TAG) {
+                    String tag = parser.getName();
+
+                    if (tag.equals("element")) {
+                        parser.require(XmlPullParser.START_TAG, null, "element");
+
+                        if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
+                            String symbol = null, name = null, weight = null, category = null, wiki = null;
+                            int group = 0, period = 0;
+
+                            while (parser.next() != XmlPullParser.END_TAG) {
+                                if (parser.getEventType() == XmlPullParser.START_TAG) {
+
+                                    tag = parser.getName();
+
+                                    if(tag.equals("symbol"))
+                                        symbol = readTag(parser, tag);
+                                    else if(tag.equals("name"))
+                                        name = readTag(parser, tag);
+                                    else if(tag.equals("weight"))
+                                        weight = readTag(parser, tag);
+                                    else if(tag.equals("group"))
+                                        group = Integer.valueOf(readTag(parser, tag));
+                                    else if(tag.equals("period"))
+                                        period = Integer.valueOf(readTag(parser, tag));
+                                    else if(tag.equals("category"))
+                                        category = readTag(parser, tag);
+                                    else if(tag.equals("wiki"))
+                                        wiki = readTag(parser, tag);
+                                    else
+                                        skip(parser);
+                                }
+                            }
+
+                            details = new ElementDetails(name, symbol, atomicNumber, weight, group,
+                                    period, category, wiki);
+                        }
+                        else
+                            skip(parser);
+                    }
+                    else
+                        skip(parser);
+                }
+            }
+
+            inputStream.close();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return details;
     }
 }
