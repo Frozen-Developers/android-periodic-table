@@ -15,9 +15,6 @@ public class ElementListFragment extends Fragment {
 
     private static ElementListAdapter adapter;
 
-    public ElementListFragment() {
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.element_list_fragment, container, false);

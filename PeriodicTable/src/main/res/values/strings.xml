@@ -6,6 +6,8 @@
     <!-- Fragments -->
     <string name="elements_title">Elements</string>
     <string name="table_title">Table</string>
+    <string name="details_title">Details</string>
+    <string name="isotopes_title">Isotopes</string>
 
     <!-- Progress bar -->
     <string name="loading">Loading…</string>

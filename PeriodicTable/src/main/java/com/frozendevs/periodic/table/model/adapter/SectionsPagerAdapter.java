@@ -6,7 +6,11 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodic.table.activity.DetailsActivity;
+import com.frozendevs.periodic.table.activity.MainActivity;
+import com.frozendevs.periodic.table.fragment.DetailsFragment;
 import com.frozendevs.periodic.table.fragment.ElementListFragment;
+import com.frozendevs.periodic.table.fragment.IsotopesFragment;
 import com.frozendevs.periodic.table.fragment.TableFragment;
 
 public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -21,12 +25,23 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        switch (i) {
-            case 0:
-                return new ElementListFragment();
+        if(activity instanceof MainActivity) {
+            switch (i) {
+                case 0:
+                    return new ElementListFragment();
 
-            case 1:
-                return new TableFragment();
+                case 1:
+                    return new TableFragment();
+            }
+        }
+        else if(activity instanceof DetailsActivity) {
+            switch (i) {
+                case 0:
+                    return new DetailsFragment();
+
+                case 1:
+                    return new IsotopesFragment();
+            }
         }
 
         return null;
@@ -39,12 +54,23 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public CharSequence getPageTitle(int position) {
-        switch (position) {
-            case 0:
-                return activity.getString(R.string.elements_title);
+        if(activity instanceof MainActivity) {
+            switch (position) {
+                case 0:
+                    return activity.getString(R.string.elements_title);
 
-            case 1:
-                return activity.getString(R.string.table_title);
+                case 1:
+                    return activity.getString(R.string.table_title);
+            }
+        }
+        else if(activity instanceof DetailsActivity) {
+            switch (position) {
+                case 0:
+                    return activity.getString(R.string.details_title).toUpperCase();
+
+                case 1:
+                    return activity.getString(R.string.isotopes_title).toUpperCase();
+            }
         }
 
         return null;

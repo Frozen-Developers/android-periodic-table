@@ -14,9 +14,6 @@ public class TableFragment extends Fragment {
 
     private static TableAdapter adapter;
 
-    public TableFragment() {
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
