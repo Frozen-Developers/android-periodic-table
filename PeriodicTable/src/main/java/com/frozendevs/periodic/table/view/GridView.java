@@ -1,8 +1,10 @@
 package com.frozendevs.periodic.table.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ public class GridView extends LinearLayout {
         init(attrs);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs);
@@ -46,33 +49,18 @@ public class GridView extends LinearLayout {
         }
 
         setOrientation(VERTICAL);
-
-        create();
-    }
-
-    private void create() {
-        for(int i = 0; i < numRows; i++) {
-            if(i > 0)
-                addView(getSpacer(true));
-
-            LinearLayout row = new LinearLayout(getContext());
-            row.setLayoutParams(new LayoutParams((numColumns * columnWidth) + ((numColumns - 2) * horizontalSpacing), rowHeight));
-            row.setOrientation(HORIZONTAL);
-
-            addView(row);
-        }
-    }
-
-    private void deleteAllData() {
-        for(int i = 0; i < getChildCount(); i++) {
-            ((ViewGroup)getChildAt(i)).removeAllViews();
-        }
     }
 
     private void fillWithData() {
         if(adapter.getCount() > 0) {
-            for(int i = 0; i < numRows * 2; i += 2) {
-                ViewGroup row = (ViewGroup)getChildAt(i);
+            for(int i = 0; i < numRows; i ++) {
+                if(i > 0)
+                    addView(getSpacer(true));
+
+                LinearLayout row = new LinearLayout(getContext());
+                row.setLayoutParams(new LayoutParams((numColumns * columnWidth) +
+                        ((numColumns - 2) * horizontalSpacing), rowHeight));
+                row.setOrientation(HORIZONTAL);
 
                 for(int n = 0; n < numColumns; n++) {
                     if(n > 0)
@@ -80,10 +68,12 @@ public class GridView extends LinearLayout {
 
                     LinearLayout cell = new LinearLayout(getContext());
                     cell.setLayoutParams(new LayoutParams(columnWidth, rowHeight));
-                    cell.addView(adapter.getView(((i / 2) * numColumns) + n, null, cell));
+                    cell.addView(adapter.getView((i * numColumns) + n, null, cell));
 
                     row.addView(cell);
                 }
+
+                addView(row);
             }
 
             if(emptyView != null)
@@ -141,7 +131,7 @@ public class GridView extends LinearLayout {
                 if(emptyView != null)
                     emptyView.setVisibility(VISIBLE);
 
-                deleteAllData();
+                removeAllViews();
                 fillWithData();
             }
         });
