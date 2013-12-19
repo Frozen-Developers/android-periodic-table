@@ -51,6 +51,10 @@ public class DetailsActivity extends ActionBarActivity {
             case R.id.wiki:
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(elementDetails.getWikiLink())));
                 return true;
+
+            case android.R.id.home:
+                finish();
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
