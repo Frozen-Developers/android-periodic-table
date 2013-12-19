@@ -13,9 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top"
-        android:background="#33999999"
-        android:textSize="12sp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp" />
+        android:background="@color/holo_gray_light"
+        android:textAppearance="@style/TextAppearance.PagerTabs" />
 
 </android.support.v4.view.ViewPager>

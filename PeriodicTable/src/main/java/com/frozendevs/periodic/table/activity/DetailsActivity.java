@@ -34,8 +34,8 @@ public class DetailsActivity extends ActionBarActivity {
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        PagerTabStrip titleStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
-        titleStrip.setTabIndicatorColor(0xff33b5e5);
+        PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
+        pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);
     }
 
     @Override
