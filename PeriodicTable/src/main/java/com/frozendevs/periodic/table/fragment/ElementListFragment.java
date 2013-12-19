@@ -19,10 +19,13 @@ public class ElementListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.element_list_fragment, container, false);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.elementList);
-        listView.setEmptyView(rootView.findViewById(R.id.loadingProgressBar));
-        if(adapter == null)
+        if(adapter == null) {
+            rootView.findViewById(R.id.loadingProgressBar).setVisibility(View.VISIBLE);
             adapter = new ElementListAdapter(getActivity());
+        }
+
+        ListView listView = (ListView)rootView.findViewById(R.id.elementList);
+        listView.setEmptyView(rootView.findViewById(R.id.emptyElementList));
         listView.setAdapter(adapter);
 
         return rootView;
