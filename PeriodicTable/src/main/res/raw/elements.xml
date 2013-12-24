@@ -1,1183 +1,1183 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <elements>
-	<element number="1">
-		<symbol>H</symbol>
-		<name>Hydrogen</name>
-		<weight>1.008</weight>
-		<category>diatomic nonmetal</category>
-		<group>1</group>
-		<period>1</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Hydrogen</wiki>
-	</element>
-	<element number="2">
-		<symbol>He</symbol>
-		<name>Helium</name>
-		<weight>4.003</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>1</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Helium</wiki>
-	</element>
-	<element number="3">
-		<symbol>Li</symbol>
-		<name>Lithium</name>
-		<weight>6.940</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>2</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Lithium</wiki>
-	</element>
-	<element number="4">
-		<symbol>Be</symbol>
-		<name>Beryllium</name>
-		<weight>9.012</weight>
-		<category>alkaline earth metal</category>
-		<group>2</group>
-		<period>2</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Beryllium</wiki>
-	</element>
-	<element number="5">
-		<symbol>B</symbol>
-		<name>Boron</name>
-		<weight>10.810</weight>
-		<category>metalloid</category>
-		<group>13</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Boron</wiki>
-	</element>
-	<element number="6">
-		<symbol>C</symbol>
-		<name>Carbon</name>
-		<weight>12.011</weight>
-		<category>polyatomic nonmetal</category>
-		<group>14</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Carbon</wiki>
-	</element>
-	<element number="7">
-		<symbol>N</symbol>
-		<name>Nitrogen</name>
-		<weight>14.007</weight>
-		<category>diatomic nonmetal</category>
-		<group>15</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Nitrogen</wiki>
-	</element>
-	<element number="8">
-		<symbol>O</symbol>
-		<name>Oxygen</name>
-		<weight>15.999</weight>
-		<category>diatomic nonmetal</category>
-		<group>16</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Oxygen</wiki>
-	</element>
-	<element number="9">
-		<symbol>F</symbol>
-		<name>Fluorine</name>
-		<weight>18.998</weight>
-		<category>diatomic nonmetal</category>
-		<group>17</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Fluorine</wiki>
-	</element>
-	<element number="10">
-		<symbol>Ne</symbol>
-		<name>Neon</name>
-		<weight>20.180</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>2</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Neon</wiki>
-	</element>
-	<element number="11">
-		<symbol>Na</symbol>
-		<name>Sodium</name>
-		<weight>22.990</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>3</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Sodium</wiki>
-	</element>
-	<element number="12">
-		<symbol>Mg</symbol>
-		<name>Magnesium</name>
-		<weight>24.305</weight>
-		<category>alkaline earth metal</category>
-		<group>2</group>
-		<period>3</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Magnesium</wiki>
-	</element>
-	<element number="13">
-		<symbol>Al</symbol>
-		<name>Aluminium</name>
-		<weight>26.982</weight>
-		<category>poor metal</category>
-		<group>13</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Aluminium</wiki>
-	</element>
-	<element number="14">
-		<symbol>Si</symbol>
-		<name>Silicon</name>
-		<weight>28.085</weight>
-		<category>metalloid</category>
-		<group>14</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Silicon</wiki>
-	</element>
-	<element number="15">
-		<symbol>P</symbol>
-		<name>Phosphorus</name>
-		<weight>30.974</weight>
-		<category>polyatomic nonmetal</category>
-		<group>15</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Phosphorus</wiki>
-	</element>
-	<element number="16">
-		<symbol>S</symbol>
-		<name>Sulfur</name>
-		<weight>32.066</weight>
-		<category>polyatomic nonmetal</category>
-		<group>16</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Sulfur</wiki>
-	</element>
-	<element number="17">
-		<symbol>Cl</symbol>
-		<name>Chlorine</name>
-		<weight>35.450</weight>
-		<category>diatomic nonmetal</category>
-		<group>17</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Chlorine</wiki>
-	</element>
-	<element number="18">
-		<symbol>Ar</symbol>
-		<name>Argon</name>
-		<weight>39.948</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>3</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Argon</wiki>
-	</element>
-	<element number="19">
-		<symbol>K</symbol>
-		<name>Potassium</name>
-		<weight>39.098</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>4</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Potassium</wiki>
-	</element>
-	<element number="20">
-		<symbol>Ca</symbol>
-		<name>Calcium</name>
-		<weight>40.078</weight>
-		<category>alkaline earth metal</category>
-		<group>2</group>
-		<period>4</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Calcium</wiki>
-	</element>
-	<element number="21">
-		<symbol>Sc</symbol>
-		<name>Scandium</name>
-		<weight>44.956</weight>
-		<category>transition metal</category>
-		<group>3</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Scandium</wiki>
-	</element>
-	<element number="22">
-		<symbol>Ti</symbol>
-		<name>Titanium</name>
-		<weight>47.867</weight>
-		<category>transition metal</category>
-		<group>4</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Titanium</wiki>
-	</element>
-	<element number="23">
-		<symbol>V</symbol>
-		<name>Vanadium</name>
-		<weight>50.942</weight>
-		<category>transition metal</category>
-		<group>5</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Vanadium</wiki>
-	</element>
-	<element number="24">
-		<symbol>Cr</symbol>
-		<name>Chromium</name>
-		<weight>51.996</weight>
-		<category>transition metal</category>
-		<group>6</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Chromium</wiki>
-	</element>
-	<element number="25">
-		<symbol>Mn</symbol>
-		<name>Manganese</name>
-		<weight>54.938</weight>
-		<category>transition metal</category>
-		<group>7</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Manganese</wiki>
-	</element>
-	<element number="26">
-		<symbol>Fe</symbol>
-		<name>Iron</name>
-		<weight>55.845</weight>
-		<category>transition metal</category>
-		<group>8</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Iron</wiki>
-	</element>
-	<element number="27">
-		<symbol>Co</symbol>
-		<name>Cobalt</name>
-		<weight>58.933</weight>
-		<category>transition metal</category>
-		<group>9</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Cobalt</wiki>
-	</element>
-	<element number="28">
-		<symbol>Ni</symbol>
-		<name>Nickel</name>
-		<weight>58.693</weight>
-		<category>transition metal</category>
-		<group>10</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Nickel</wiki>
-	</element>
-	<element number="29">
-		<symbol>Cu</symbol>
-		<name>Copper</name>
-		<weight>63.546</weight>
-		<category>transition metal</category>
-		<group>11</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Copper</wiki>
-	</element>
-	<element number="30">
-		<symbol>Zn</symbol>
-		<name>Zinc</name>
-		<weight>65.380</weight>
-		<category>transition metal</category>
-		<group>12</group>
-		<period>4</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Zinc</wiki>
-	</element>
-	<element number="31">
-		<symbol>Ga</symbol>
-		<name>Gallium</name>
-		<weight>69.723</weight>
-		<category>poor metal</category>
-		<group>13</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Gallium</wiki>
-	</element>
-	<element number="32">
-		<symbol>Ge</symbol>
-		<name>Germanium</name>
-		<weight>72.630</weight>
-		<category>metalloid</category>
-		<group>14</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Germanium</wiki>
-	</element>
-	<element number="33">
-		<symbol>As</symbol>
-		<name>Arsenic</name>
-		<weight>74.922</weight>
-		<category>metalloid</category>
-		<group>15</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Arsenic</wiki>
-	</element>
-	<element number="34">
-		<symbol>Se</symbol>
-		<name>Selenium</name>
-		<weight>78.971</weight>
-		<category>polyatomic nonmetal</category>
-		<group>16</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Selenium</wiki>
-	</element>
-	<element number="35">
-		<symbol>Br</symbol>
-		<name>Bromine</name>
-		<weight>79.904</weight>
-		<category>diatomic nonmetal</category>
-		<group>17</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Bromine</wiki>
-	</element>
-	<element number="36">
-		<symbol>Kr</symbol>
-		<name>Krypton</name>
-		<weight>83.798</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>4</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Krypton</wiki>
-	</element>
-	<element number="37">
-		<symbol>Rb</symbol>
-		<name>Rubidium</name>
-		<weight>85.468</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>5</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Rubidium</wiki>
-	</element>
-	<element number="38">
-		<symbol>Sr</symbol>
-		<name>Strontium</name>
-		<weight>87.620</weight>
-		<category>alkaline earth metal</category>
-		<group>2</group>
-		<period>5</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Strontium</wiki>
-	</element>
-	<element number="39">
-		<symbol>Y</symbol>
-		<name>Yttrium</name>
-		<weight>88.906</weight>
-		<category>transition metal</category>
-		<group>3</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Yttrium</wiki>
-	</element>
-	<element number="40">
-		<symbol>Zr</symbol>
-		<name>Zirconium</name>
-		<weight>91.224</weight>
-		<category>transition metal</category>
-		<group>4</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Zirconium</wiki>
-	</element>
-	<element number="41">
-		<symbol>Nb</symbol>
-		<name>Niobium</name>
-		<weight>92.906</weight>
-		<category>transition metal</category>
-		<group>5</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Niobium</wiki>
-	</element>
-	<element number="42">
-		<symbol>Mo</symbol>
-		<name>Molybdenum</name>
-		<weight>95.950</weight>
-		<category>transition metal</category>
-		<group>6</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Molybdenum</wiki>
-	</element>
-	<element number="43">
-		<symbol>Tc</symbol>
-		<name>Technetium</name>
-		<weight>[98]</weight>
-		<category>transition metal</category>
-		<group>7</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Technetium</wiki>
-	</element>
-	<element number="44">
-		<symbol>Ru</symbol>
-		<name>Ruthenium</name>
-		<weight>101.070</weight>
-		<category>transition metal</category>
-		<group>8</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Ruthenium</wiki>
-	</element>
-	<element number="45">
-		<symbol>Rh</symbol>
-		<name>Rhodium</name>
-		<weight>102.905</weight>
-		<category>transition metal</category>
-		<group>9</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Rhodium</wiki>
-	</element>
-	<element number="46">
-		<symbol>Pd</symbol>
-		<name>Palladium</name>
-		<weight>106.420</weight>
-		<category>transition metal</category>
-		<group>10</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Palladium</wiki>
-	</element>
-	<element number="47">
-		<symbol>Ag</symbol>
-		<name>Silver</name>
-		<weight>107.868</weight>
-		<category>transition metal</category>
-		<group>11</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Silver</wiki>
-	</element>
-	<element number="48">
-		<symbol>Cd</symbol>
-		<name>Cadmium</name>
-		<weight>112.414</weight>
-		<category>transition metal</category>
-		<group>12</group>
-		<period>5</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Cadmium</wiki>
-	</element>
-	<element number="49">
-		<symbol>In</symbol>
-		<name>Indium</name>
-		<weight>114.818</weight>
-		<category>poor metal</category>
-		<group>13</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Indium</wiki>
-	</element>
-	<element number="50">
-		<symbol>Sn</symbol>
-		<name>Tin</name>
-		<weight>118.710</weight>
-		<category>poor metal</category>
-		<group>14</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Tin</wiki>
-	</element>
-	<element number="51">
-		<symbol>Sb</symbol>
-		<name>Antimony</name>
-		<weight>121.760</weight>
-		<category>metalloid</category>
-		<group>15</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Antimony</wiki>
-	</element>
-	<element number="52">
-		<symbol>Te</symbol>
-		<name>Tellurium</name>
-		<weight>127.600</weight>
-		<category>metalloid</category>
-		<group>16</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Tellurium</wiki>
-	</element>
-	<element number="53">
-		<symbol>I</symbol>
-		<name>Iodine</name>
-		<weight>126.904</weight>
-		<category>diatomic nonmetal</category>
-		<group>17</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Iodine</wiki>
-	</element>
-	<element number="54">
-		<symbol>Xe</symbol>
-		<name>Xenon</name>
-		<weight>131.293</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>5</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Xenon</wiki>
-	</element>
-	<element number="55">
-		<symbol>Cs</symbol>
-		<name>Caesium</name>
-		<weight>132.905</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>6</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Caesium</wiki>
-	</element>
-	<element number="56">
-		<symbol>Ba</symbol>
-		<name>Barium</name>
-		<weight>137.327</weight>
-		<category>alkaline earth metals</category>
-		<group>2</group>
-		<period>6</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Barium</wiki>
-	</element>
-	<element number="72">
-		<symbol>Hf</symbol>
-		<name>Hafnium</name>
-		<weight>178.490</weight>
-		<category>transition metal</category>
-		<group>4</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Hafnium</wiki>
-	</element>
-	<element number="73">
-		<symbol>Ta</symbol>
-		<name>Tantalum</name>
-		<weight>180.948</weight>
-		<category>transition metal</category>
-		<group>5</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Tantalum</wiki>
-	</element>
-	<element number="74">
-		<symbol>W</symbol>
-		<name>Tungsten</name>
-		<weight>183.840</weight>
-		<category>transition metal</category>
-		<group>6</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Tungsten</wiki>
-	</element>
-	<element number="75">
-		<symbol>Re</symbol>
-		<name>Rhenium</name>
-		<weight>186.207</weight>
-		<category>transition metal</category>
-		<group>7</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Rhenium</wiki>
-	</element>
-	<element number="76">
-		<symbol>Os</symbol>
-		<name>Osmium</name>
-		<weight>190.230</weight>
-		<category>transition metal</category>
-		<group>8</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Osmium</wiki>
-	</element>
-	<element number="77">
-		<symbol>Ir</symbol>
-		<name>Iridium</name>
-		<weight>192.217</weight>
-		<category>transition metal</category>
-		<group>9</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Iridium</wiki>
-	</element>
-	<element number="78">
-		<symbol>Pt</symbol>
-		<name>Platinum</name>
-		<weight>195.084</weight>
-		<category>transition metal</category>
-		<group>10</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Platinum</wiki>
-	</element>
-	<element number="79">
-		<symbol>Au</symbol>
-		<name>Gold</name>
-		<weight>196.967</weight>
-		<category>transition metal</category>
-		<group>11</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Gold</wiki>
-	</element>
-	<element number="80">
-		<symbol>Hg</symbol>
-		<name>Mercury</name>
-		<weight>200.592</weight>
-		<category>transition metal</category>
-		<group>12</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Mercury_(element)</wiki>
-	</element>
-	<element number="81">
-		<symbol>Tl</symbol>
-		<name>Thallium</name>
-		<weight>204.380</weight>
-		<category>poor metal</category>
-		<group>13</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Thallium</wiki>
-	</element>
-	<element number="82">
-		<symbol>Pb</symbol>
-		<name>Lead</name>
-		<weight>207.200</weight>
-		<category>poor metal</category>
-		<group>14</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Lead</wiki>
-	</element>
-	<element number="83">
-		<symbol>Bi</symbol>
-		<name>Bismuth</name>
-		<weight>208.980</weight>
-		<category>poor metal</category>
-		<group>15</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Bismuth</wiki>
-	</element>
-	<element number="84">
-		<symbol>Po</symbol>
-		<name>Polonium</name>
-		<weight>(209)</weight>
-		<category>poor metal</category>
-		<group>16</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Polonium</wiki>
-	</element>
-	<element number="85">
-		<symbol>At</symbol>
-		<name>Astatine</name>
-		<weight>(210)</weight>
-		<category>metalloid</category>
-		<group>17</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Astatine</wiki>
-	</element>
-	<element number="86">
-		<symbol>Rn</symbol>
-		<name>Radon</name>
-		<weight>(222)</weight>
-		<category>noble gases</category>
-		<group>18</group>
-		<period>6</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Radon</wiki>
-	</element>
-	<element number="87">
-		<symbol>Fr</symbol>
-		<name>Francium</name>
-		<weight>(223)</weight>
-		<category>alkali metal</category>
-		<group>1</group>
-		<period>7</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Francium</wiki>
-	</element>
-	<element number="88">
-		<symbol>Ra</symbol>
-		<name>Radium</name>
-		<weight>(226)</weight>
-		<category>alkaline earth metal</category>
-		<group>2</group>
-		<period>7</period>
-		<block>s</block>
-		<wiki>http://en.wikipedia.org/wiki/Radium</wiki>
-	</element>
-	<element number="104">
-		<symbol>Rf</symbol>
-		<name>Rutherfordium</name>
-		<weight>[267]</weight>
-		<category>transition metal</category>
-		<group>4</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Rutherfordium</wiki>
-	</element>
-	<element number="105">
-		<symbol>Db</symbol>
-		<name>Dubnium</name>
-		<weight>[268]</weight>
-		<category>transition metal</category>
-		<group>5</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Dubnium</wiki>
-	</element>
-	<element number="106">
-		<symbol>Sg</symbol>
-		<name>Seaborgium</name>
-		<weight>[269]</weight>
-		<category>transition metal</category>
-		<group>6</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Seaborgium</wiki>
-	</element>
-	<element number="107">
-		<symbol>Bh</symbol>
-		<name>Bohrium</name>
-		<weight>[270]</weight>
-		<category>transition metal</category>
-		<group>7</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Bohrium</wiki>
-	</element>
-	<element number="108">
-		<symbol>Hs</symbol>
-		<name>Hassium</name>
-		<weight>[269]</weight>
-		<category>transition metal</category>
-		<group>8</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Hassium</wiki>
-	</element>
-	<element number="109">
-		<symbol>Mt</symbol>
-		<name>Meitnerium</name>
-		<weight>[278]</weight>
-		<category>transition metal</category>
-		<group>9</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Meitnerium</wiki>
-	</element>
-	<element number="110">
-		<symbol>Ds</symbol>
-		<name>Darmstadtium</name>
-		<weight>[281]</weight>
-		<category>transition metal</category>
-		<group>10</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Darmstadtium</wiki>
-	</element>
-	<element number="111">
-		<symbol>Rg</symbol>
-		<name>Roentgenium</name>
-		<weight>[281]</weight>
-		<category>transition metal</category>
-		<group>11</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Roentgenium</wiki>
-	</element>
-	<element number="112">
-		<symbol>Cn</symbol>
-		<name>Copernicium</name>
-		<weight>[285]</weight>
-		<category>transition metal</category>
-		<group>12</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Copernicium</wiki>
-	</element>
-	<element number="113">
-		<symbol>Uut</symbol>
-		<name>Ununtrium</name>
-		<weight>[286]</weight>
-		<category>poor metal</category>
-		<group>13</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Ununtrium</wiki>
-	</element>
-	<element number="114">
-		<symbol>Fl</symbol>
-		<name>Flerovium</name>
-		<weight>[289]</weight>
-		<category>poor metal</category>
-		<group>14</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Flerovium</wiki>
-	</element>
-	<element number="115">
-		<symbol>Uup</symbol>
-		<name>Ununpentium</name>
-		<weight>[288]</weight>
-		<category>poor metal</category>
-		<group>15</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Ununpentium</wiki>
-	</element>
-	<element number="116">
-		<symbol>Lv</symbol>
-		<name>Livermorium</name>
-		<weight>[293]</weight>
-		<category>poor metal</category>
-		<group>16</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Livermorium</wiki>
-	</element>
-	<element number="117">
-		<symbol>Uus</symbol>
-		<name>Ununseptium</name>
-		<weight>[294]</weight>
-		<category>metalloid</category>
-		<group>17</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Ununseptium</wiki>
-	</element>
-	<element number="118">
-		<symbol>Uuo</symbol>
-		<name>Ununoctium</name>
-		<weight>[294]</weight>
-		<category>noble gas</category>
-		<group>18</group>
-		<period>7</period>
-		<block>p</block>
-		<wiki>http://en.wikipedia.org/wiki/Ununoctium</wiki>
-	</element>
-	<element number="57">
-		<symbol>La</symbol>
-		<name>Lanthanum</name>
-		<weight>138.905</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Lanthanum</wiki>
-	</element>
-	<element number="58">
-		<symbol>Ce</symbol>
-		<name>Cerium</name>
-		<weight>140.116</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Cerium</wiki>
-	</element>
-	<element number="59">
-		<symbol>Pr</symbol>
-		<name>Praseodymium</name>
-		<weight>140.908</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Praseodymium</wiki>
-	</element>
-	<element number="60">
-		<symbol>Nd</symbol>
-		<name>Neodymium</name>
-		<weight>144.242</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Neodymium</wiki>
-	</element>
-	<element number="61">
-		<symbol>Pm</symbol>
-		<name>Promethium</name>
-		<weight>[145]</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Promethium</wiki>
-	</element>
-	<element number="62">
-		<symbol>Sm</symbol>
-		<name>Samarium</name>
-		<weight>150.360</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Samarium</wiki>
-	</element>
-	<element number="63">
-		<symbol>Eu</symbol>
-		<name>Europium</name>
-		<weight>151.964</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Europium</wiki>
-	</element>
-	<element number="64">
-		<symbol>Gd</symbol>
-		<name>Gadolinium</name>
-		<weight>157.250</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Gadolinium</wiki>
-	</element>
-	<element number="65">
-		<symbol>Tb</symbol>
-		<name>Terbium</name>
-		<weight>158.925</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Terbium</wiki>
-	</element>
-	<element number="66">
-		<symbol>Dy</symbol>
-		<name>Dysprosium</name>
-		<weight>162.500</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Dysprosium</wiki>
-	</element>
-	<element number="67">
-		<symbol>Ho</symbol>
-		<name>Holmium</name>
-		<weight>164.930</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Holmium</wiki>
-	</element>
-	<element number="68">
-		<symbol>Er</symbol>
-		<name>Erbium</name>
-		<weight>167.259</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Erbium</wiki>
-	</element>
-	<element number="69">
-		<symbol>Tm</symbol>
-		<name>Thulium</name>
-		<weight>168.934</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Thulium</wiki>
-	</element>
-	<element number="70">
-		<symbol>Yb</symbol>
-		<name>Ytterbium</name>
-		<weight>173.054</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Ytterbium</wiki>
-	</element>
-	<element number="71">
-		<symbol>Lu</symbol>
-		<name>Lutetium</name>
-		<weight>174.967</weight>
-		<category>lanthanide</category>
-		<group>0</group>
-		<period>6</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Lutetium</wiki>
-	</element>
-	<element number="89">
-		<symbol>Ac</symbol>
-		<name>Actinium</name>
-		<weight>(227)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Actinium</wiki>
-	</element>
-	<element number="90">
-		<symbol>Th</symbol>
-		<name>Thorium</name>
-		<weight>232.038</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Thorium</wiki>
-	</element>
-	<element number="91">
-		<symbol>Pa</symbol>
-		<name>Protactinium</name>
-		<weight>231.036</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Protactinium</wiki>
-	</element>
-	<element number="92">
-		<symbol>U</symbol>
-		<name>Uranium</name>
-		<weight>238.029</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Uranium</wiki>
-	</element>
-	<element number="93">
-		<symbol>Np</symbol>
-		<name>Neptunium</name>
-		<weight>(237)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Neptunium</wiki>
-	</element>
-	<element number="94">
-		<symbol>Pu</symbol>
-		<name>Plutonium</name>
-		<weight>(244)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Plutonium</wiki>
-	</element>
-	<element number="95">
-		<symbol>Am</symbol>
-		<name>Americium</name>
-		<weight>(243)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Americium</wiki>
-	</element>
-	<element number="96">
-		<symbol>Cm</symbol>
-		<name>Curium</name>
-		<weight>(247)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Curium</wiki>
-	</element>
-	<element number="97">
-		<symbol>Bk</symbol>
-		<name>Berkelium</name>
-		<weight>(247)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Berkelium</wiki>
-	</element>
-	<element number="98">
-		<symbol>Cf</symbol>
-		<name>Californium</name>
-		<weight>(251)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Californium</wiki>
-	</element>
-	<element number="99">
-		<symbol>Es</symbol>
-		<name>Einsteinium</name>
-		<weight>(252)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Einsteinium</wiki>
-	</element>
-	<element number="100">
-		<symbol>Fm</symbol>
-		<name>Fermium</name>
-		<weight>(257)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Fermium</wiki>
-	</element>
-	<element number="101">
-		<symbol>Md</symbol>
-		<name>Mendelevium</name>
-		<weight>(258)</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Mendelevium</wiki>
-	</element>
-	<element number="102">
-		<symbol>No</symbol>
-		<name>Nobelium</name>
-		<weight>[259]</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>f</block>
-		<wiki>http://en.wikipedia.org/wiki/Nobelium</wiki>
-	</element>
-	<element number="103">
-		<symbol>Lr</symbol>
-		<name>Lawrencium</name>
-		<weight>[262]</weight>
-		<category>actinide</category>
-		<group>0</group>
-		<period>7</period>
-		<block>d</block>
-		<wiki>http://en.wikipedia.org/wiki/Lawrencium</wiki>
-	</element>
+  <element number="1">
+    <symbol>H</symbol>
+    <name>Hydrogen</name>
+    <weight>1.008</weight>
+    <category>diatomic nonmetal</category>
+    <group>1</group>
+    <period>1</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Hydrogen</wiki>
+  </element>
+  <element number="2">
+    <symbol>He</symbol>
+    <name>Helium</name>
+    <weight>4.003</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>1</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Helium</wiki>
+  </element>
+  <element number="3">
+    <symbol>Li</symbol>
+    <name>Lithium</name>
+    <weight>6.94</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>2</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Lithium</wiki>
+  </element>
+  <element number="4">
+    <symbol>Be</symbol>
+    <name>Beryllium</name>
+    <weight>9.012</weight>
+    <category>alkaline earth metal</category>
+    <group>2</group>
+    <period>2</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Beryllium</wiki>
+  </element>
+  <element number="5">
+    <symbol>B</symbol>
+    <name>Boron</name>
+    <weight>10.81</weight>
+    <category>metalloid</category>
+    <group>13</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Boron</wiki>
+  </element>
+  <element number="6">
+    <symbol>C</symbol>
+    <name>Carbon</name>
+    <weight>12.011</weight>
+    <category>polyatomic nonmetal</category>
+    <group>14</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Carbon</wiki>
+  </element>
+  <element number="7">
+    <symbol>N</symbol>
+    <name>Nitrogen</name>
+    <weight>14.007</weight>
+    <category>diatomic nonmetal</category>
+    <group>15</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Nitrogen</wiki>
+  </element>
+  <element number="8">
+    <symbol>O</symbol>
+    <name>Oxygen</name>
+    <weight>15.999</weight>
+    <category>diatomic nonmetal</category>
+    <group>16</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Oxygen</wiki>
+  </element>
+  <element number="9">
+    <symbol>F</symbol>
+    <name>Fluorine</name>
+    <weight>18.998</weight>
+    <category>diatomic nonmetal</category>
+    <group>17</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Fluorine</wiki>
+  </element>
+  <element number="10">
+    <symbol>Ne</symbol>
+    <name>Neon</name>
+    <weight>20.18</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>2</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Neon</wiki>
+  </element>
+  <element number="11">
+    <symbol>Na</symbol>
+    <name>Sodium</name>
+    <weight>22.99</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>3</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Sodium</wiki>
+  </element>
+  <element number="12">
+    <symbol>Mg</symbol>
+    <name>Magnesium</name>
+    <weight>24.305</weight>
+    <category>alkaline earth metal</category>
+    <group>2</group>
+    <period>3</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Magnesium</wiki>
+  </element>
+  <element number="13">
+    <symbol>Al</symbol>
+    <name>Aluminium</name>
+    <weight>26.982</weight>
+    <category>poor metal</category>
+    <group>13</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Aluminium</wiki>
+  </element>
+  <element number="14">
+    <symbol>Si</symbol>
+    <name>Silicon</name>
+    <weight>28.085</weight>
+    <category>metalloid</category>
+    <group>14</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Silicon</wiki>
+  </element>
+  <element number="15">
+    <symbol>P</symbol>
+    <name>Phosphorus</name>
+    <weight>30.974</weight>
+    <category>polyatomic nonmetal</category>
+    <group>15</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Phosphorus</wiki>
+  </element>
+  <element number="16">
+    <symbol>S</symbol>
+    <name>Sulfur</name>
+    <weight>32.066</weight>
+    <category>polyatomic nonmetal</category>
+    <group>16</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Sulfur</wiki>
+  </element>
+  <element number="17">
+    <symbol>Cl</symbol>
+    <name>Chlorine</name>
+    <weight>35.45</weight>
+    <category>diatomic nonmetal</category>
+    <group>17</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Chlorine</wiki>
+  </element>
+  <element number="18">
+    <symbol>Ar</symbol>
+    <name>Argon</name>
+    <weight>39.948</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>3</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Argon</wiki>
+  </element>
+  <element number="19">
+    <symbol>K</symbol>
+    <name>Potassium</name>
+    <weight>39.098</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>4</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Potassium</wiki>
+  </element>
+  <element number="20">
+    <symbol>Ca</symbol>
+    <name>Calcium</name>
+    <weight>40.078</weight>
+    <category>alkaline earth metal</category>
+    <group>2</group>
+    <period>4</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Calcium</wiki>
+  </element>
+  <element number="21">
+    <symbol>Sc</symbol>
+    <name>Scandium</name>
+    <weight>44.956</weight>
+    <category>transition metal</category>
+    <group>3</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Scandium</wiki>
+  </element>
+  <element number="22">
+    <symbol>Ti</symbol>
+    <name>Titanium</name>
+    <weight>47.867</weight>
+    <category>transition metal</category>
+    <group>4</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Titanium</wiki>
+  </element>
+  <element number="23">
+    <symbol>V</symbol>
+    <name>Vanadium</name>
+    <weight>50.941</weight>
+    <category>transition metal</category>
+    <group>5</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Vanadium</wiki>
+  </element>
+  <element number="24">
+    <symbol>Cr</symbol>
+    <name>Chromium</name>
+    <weight>51.996</weight>
+    <category>transition metal</category>
+    <group>6</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Chromium</wiki>
+  </element>
+  <element number="25">
+    <symbol>Mn</symbol>
+    <name>Manganese</name>
+    <weight>54.938</weight>
+    <category>transition metal</category>
+    <group>7</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Manganese</wiki>
+  </element>
+  <element number="26">
+    <symbol>Fe</symbol>
+    <name>Iron</name>
+    <weight>55.845</weight>
+    <category>transition metal</category>
+    <group>8</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Iron</wiki>
+  </element>
+  <element number="27">
+    <symbol>Co</symbol>
+    <name>Cobalt</name>
+    <weight>58.933</weight>
+    <category>transition metal</category>
+    <group>9</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Cobalt</wiki>
+  </element>
+  <element number="28">
+    <symbol>Ni</symbol>
+    <name>Nickel</name>
+    <weight>58.693</weight>
+    <category>transition metal</category>
+    <group>10</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Nickel</wiki>
+  </element>
+  <element number="29">
+    <symbol>Cu</symbol>
+    <name>Copper</name>
+    <weight>63.546</weight>
+    <category>transition metal</category>
+    <group>11</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Copper</wiki>
+  </element>
+  <element number="30">
+    <symbol>Zn</symbol>
+    <name>Zinc</name>
+    <weight>65.38</weight>
+    <category>transition metal</category>
+    <group>12</group>
+    <period>4</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Zinc</wiki>
+  </element>
+  <element number="31">
+    <symbol>Ga</symbol>
+    <name>Gallium</name>
+    <weight>69.723</weight>
+    <category>poor metal</category>
+    <group>13</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Gallium</wiki>
+  </element>
+  <element number="32">
+    <symbol>Ge</symbol>
+    <name>Germanium</name>
+    <weight>72.63</weight>
+    <category>metalloid</category>
+    <group>14</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Germanium</wiki>
+  </element>
+  <element number="33">
+    <symbol>As</symbol>
+    <name>Arsenic</name>
+    <weight>74.922</weight>
+    <category>metalloid</category>
+    <group>15</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Arsenic</wiki>
+  </element>
+  <element number="34">
+    <symbol>Se</symbol>
+    <name>Selenium</name>
+    <weight>78.971</weight>
+    <category>polyatomic nonmetal</category>
+    <group>16</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Selenium</wiki>
+  </element>
+  <element number="35">
+    <symbol>Br</symbol>
+    <name>Bromine</name>
+    <weight>79.904</weight>
+    <category>diatomic nonmetal</category>
+    <group>17</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Bromine</wiki>
+  </element>
+  <element number="36">
+    <symbol>Kr</symbol>
+    <name>Krypton</name>
+    <weight>83.798</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>4</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Krypton</wiki>
+  </element>
+  <element number="37">
+    <symbol>Rb</symbol>
+    <name>Rubidium</name>
+    <weight>85.468</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>5</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Rubidium</wiki>
+  </element>
+  <element number="38">
+    <symbol>Sr</symbol>
+    <name>Strontium</name>
+    <weight>87.62</weight>
+    <category>alkaline earth metal</category>
+    <group>2</group>
+    <period>5</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Strontium</wiki>
+  </element>
+  <element number="39">
+    <symbol>Y</symbol>
+    <name>Yttrium</name>
+    <weight>88.906</weight>
+    <category>transition metal</category>
+    <group>3</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Yttrium</wiki>
+  </element>
+  <element number="40">
+    <symbol>Zr</symbol>
+    <name>Zirconium</name>
+    <weight>91.224</weight>
+    <category>transition metal</category>
+    <group>4</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Zirconium</wiki>
+  </element>
+  <element number="41">
+    <symbol>Nb</symbol>
+    <name>Niobium</name>
+    <weight>92.906</weight>
+    <category>transition metal</category>
+    <group>5</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Niobium</wiki>
+  </element>
+  <element number="42">
+    <symbol>Mo</symbol>
+    <name>Molybdenum</name>
+    <weight>95.95</weight>
+    <category>transition metal</category>
+    <group>6</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Molybdenum</wiki>
+  </element>
+  <element number="43">
+    <symbol>Tc</symbol>
+    <name>Technetium</name>
+    <weight>[98]</weight>
+    <category>transition metal</category>
+    <group>7</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Technetium</wiki>
+  </element>
+  <element number="44">
+    <symbol>Ru</symbol>
+    <name>Ruthenium</name>
+    <weight>101.07</weight>
+    <category>transition metal</category>
+    <group>8</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Ruthenium</wiki>
+  </element>
+  <element number="45">
+    <symbol>Rh</symbol>
+    <name>Rhodium</name>
+    <weight>102.906</weight>
+    <category>transition metal</category>
+    <group>9</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Rhodium</wiki>
+  </element>
+  <element number="46">
+    <symbol>Pd</symbol>
+    <name>Palladium</name>
+    <weight>106.42</weight>
+    <category>transition metal</category>
+    <group>10</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Palladium</wiki>
+  </element>
+  <element number="47">
+    <symbol>Ag</symbol>
+    <name>Silver</name>
+    <weight>107.868</weight>
+    <category>transition metal</category>
+    <group>11</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Silver</wiki>
+  </element>
+  <element number="48">
+    <symbol>Cd</symbol>
+    <name>Cadmium</name>
+    <weight>112.414</weight>
+    <category>transition metal</category>
+    <group>12</group>
+    <period>5</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Cadmium</wiki>
+  </element>
+  <element number="49">
+    <symbol>In</symbol>
+    <name>Indium</name>
+    <weight>114.818</weight>
+    <category>poor metal</category>
+    <group>13</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Indium</wiki>
+  </element>
+  <element number="50">
+    <symbol>Sn</symbol>
+    <name>Tin</name>
+    <weight>118.71</weight>
+    <category>poor metal</category>
+    <group>14</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Tin</wiki>
+  </element>
+  <element number="51">
+    <symbol>Sb</symbol>
+    <name>Antimony</name>
+    <weight>121.76</weight>
+    <category>metalloid</category>
+    <group>15</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Antimony</wiki>
+  </element>
+  <element number="52">
+    <symbol>Te</symbol>
+    <name>Tellurium</name>
+    <weight>127.6</weight>
+    <category>metalloid</category>
+    <group>16</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Tellurium</wiki>
+  </element>
+  <element number="53">
+    <symbol>I</symbol>
+    <name>Iodine</name>
+    <weight>126.904</weight>
+    <category>diatomic nonmetal</category>
+    <group>17</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Iodine</wiki>
+  </element>
+  <element number="54">
+    <symbol>Xe</symbol>
+    <name>Xenon</name>
+    <weight>131.293</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>5</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Xenon</wiki>
+  </element>
+  <element number="55">
+    <symbol>Cs</symbol>
+    <name>Caesium</name>
+    <weight>132.905</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>6</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Caesium</wiki>
+  </element>
+  <element number="56">
+    <symbol>Ba</symbol>
+    <name>Barium</name>
+    <weight>137.327</weight>
+    <category>alkaline earth metals</category>
+    <group>2</group>
+    <period>6</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Barium</wiki>
+  </element>
+  <element number="72">
+    <symbol>Hf</symbol>
+    <name>Hafnium</name>
+    <weight>178.49</weight>
+    <category>transition metal</category>
+    <group>4</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Hafnium</wiki>
+  </element>
+  <element number="73">
+    <symbol>Ta</symbol>
+    <name>Tantalum</name>
+    <weight>180.948</weight>
+    <category>transition metal</category>
+    <group>5</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Tantalum</wiki>
+  </element>
+  <element number="74">
+    <symbol>W</symbol>
+    <name>Tungsten</name>
+    <weight>183.84</weight>
+    <category>transition metal</category>
+    <group>6</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Tungsten</wiki>
+  </element>
+  <element number="75">
+    <symbol>Re</symbol>
+    <name>Rhenium</name>
+    <weight>186.207</weight>
+    <category>transition metal</category>
+    <group>7</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Rhenium</wiki>
+  </element>
+  <element number="76">
+    <symbol>Os</symbol>
+    <name>Osmium</name>
+    <weight>190.23</weight>
+    <category>transition metal</category>
+    <group>8</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Osmium</wiki>
+  </element>
+  <element number="77">
+    <symbol>Ir</symbol>
+    <name>Iridium</name>
+    <weight>192.217</weight>
+    <category>transition metal</category>
+    <group>9</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Iridium</wiki>
+  </element>
+  <element number="78">
+    <symbol>Pt</symbol>
+    <name>Platinum</name>
+    <weight>195.084</weight>
+    <category>transition metal</category>
+    <group>10</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Platinum</wiki>
+  </element>
+  <element number="79">
+    <symbol>Au</symbol>
+    <name>Gold</name>
+    <weight>196.967</weight>
+    <category>transition metal</category>
+    <group>11</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Gold</wiki>
+  </element>
+  <element number="80">
+    <symbol>Hg</symbol>
+    <name>Mercury</name>
+    <weight>200.592</weight>
+    <category>transition metal</category>
+    <group>12</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Mercury_(element)</wiki>
+  </element>
+  <element number="81">
+    <symbol>Tl</symbol>
+    <name>Thallium</name>
+    <weight>204.38</weight>
+    <category>poor metal</category>
+    <group>13</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Thallium</wiki>
+  </element>
+  <element number="82">
+    <symbol>Pb</symbol>
+    <name>Lead</name>
+    <weight>207.2</weight>
+    <category>poor metal</category>
+    <group>14</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Lead</wiki>
+  </element>
+  <element number="83">
+    <symbol>Bi</symbol>
+    <name>Bismuth</name>
+    <weight>208.98</weight>
+    <category>poor metal</category>
+    <group>15</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Bismuth</wiki>
+  </element>
+  <element number="84">
+    <symbol>Po</symbol>
+    <name>Polonium</name>
+    <weight>[209]</weight>
+    <category>poor metal</category>
+    <group>16</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Polonium</wiki>
+  </element>
+  <element number="85">
+    <symbol>At</symbol>
+    <name>Astatine</name>
+    <weight>[210]</weight>
+    <category>metalloid</category>
+    <group>17</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Astatine</wiki>
+  </element>
+  <element number="86">
+    <symbol>Rn</symbol>
+    <name>Radon</name>
+    <weight>[222]</weight>
+    <category>noble gases</category>
+    <group>18</group>
+    <period>6</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Radon</wiki>
+  </element>
+  <element number="87">
+    <symbol>Fr</symbol>
+    <name>Francium</name>
+    <weight>[223]</weight>
+    <category>alkali metal</category>
+    <group>1</group>
+    <period>7</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Francium</wiki>
+  </element>
+  <element number="88">
+    <symbol>Ra</symbol>
+    <name>Radium</name>
+    <weight>[226]</weight>
+    <category>alkaline earth metal</category>
+    <group>2</group>
+    <period>7</period>
+    <block>s</block>
+    <wiki>http://en.wikipedia.org/wiki/Radium</wiki>
+  </element>
+  <element number="104">
+    <symbol>Rf</symbol>
+    <name>Rutherfordium</name>
+    <weight>[267]</weight>
+    <category>transition metal</category>
+    <group>4</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Rutherfordium</wiki>
+  </element>
+  <element number="105">
+    <symbol>Db</symbol>
+    <name>Dubnium</name>
+    <weight>[268]</weight>
+    <category>transition metal</category>
+    <group>5</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Dubnium</wiki>
+  </element>
+  <element number="106">
+    <symbol>Sg</symbol>
+    <name>Seaborgium</name>
+    <weight>[269]</weight>
+    <category>transition metal</category>
+    <group>6</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Seaborgium</wiki>
+  </element>
+  <element number="107">
+    <symbol>Bh</symbol>
+    <name>Bohrium</name>
+    <weight>[270]</weight>
+    <category>transition metal</category>
+    <group>7</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Bohrium</wiki>
+  </element>
+  <element number="108">
+    <symbol>Hs</symbol>
+    <name>Hassium</name>
+    <weight>[269]</weight>
+    <category>transition metal</category>
+    <group>8</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Hassium</wiki>
+  </element>
+  <element number="109">
+    <symbol>Mt</symbol>
+    <name>Meitnerium</name>
+    <weight>[278]</weight>
+    <category>transition metal</category>
+    <group>9</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Meitnerium</wiki>
+  </element>
+  <element number="110">
+    <symbol>Ds</symbol>
+    <name>Darmstadtium</name>
+    <weight>[281]</weight>
+    <category>transition metal</category>
+    <group>10</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Darmstadtium</wiki>
+  </element>
+  <element number="111">
+    <symbol>Rg</symbol>
+    <name>Roentgenium</name>
+    <weight>[281]</weight>
+    <category>transition metal</category>
+    <group>11</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Roentgenium</wiki>
+  </element>
+  <element number="112">
+    <symbol>Cn</symbol>
+    <name>Copernicium</name>
+    <weight>[285]</weight>
+    <category>transition metal</category>
+    <group>12</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Copernicium</wiki>
+  </element>
+  <element number="113">
+    <symbol>Uut</symbol>
+    <name>Ununtrium</name>
+    <weight>[286]</weight>
+    <category>poor metal</category>
+    <group>13</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Ununtrium</wiki>
+  </element>
+  <element number="114">
+    <symbol>Fl</symbol>
+    <name>Flerovium</name>
+    <weight>[289]</weight>
+    <category>poor metal</category>
+    <group>14</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Flerovium</wiki>
+  </element>
+  <element number="115">
+    <symbol>Uup</symbol>
+    <name>Ununpentium</name>
+    <weight>[288]</weight>
+    <category>poor metal</category>
+    <group>15</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Ununpentium</wiki>
+  </element>
+  <element number="116">
+    <symbol>Lv</symbol>
+    <name>Livermorium</name>
+    <weight>[293]</weight>
+    <category>poor metal</category>
+    <group>16</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Livermorium</wiki>
+  </element>
+  <element number="117">
+    <symbol>Uus</symbol>
+    <name>Ununseptium</name>
+    <weight>[294]</weight>
+    <category>metalloid</category>
+    <group>17</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Ununseptium</wiki>
+  </element>
+  <element number="118">
+    <symbol>Uuo</symbol>
+    <name>Ununoctium</name>
+    <weight>[294]</weight>
+    <category>noble gas</category>
+    <group>18</group>
+    <period>7</period>
+    <block>p</block>
+    <wiki>http://en.wikipedia.org/wiki/Ununoctium</wiki>
+  </element>
+  <element number="57">
+    <symbol>La</symbol>
+    <name>Lanthanum</name>
+    <weight>138.905</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Lanthanum</wiki>
+  </element>
+  <element number="58">
+    <symbol>Ce</symbol>
+    <name>Cerium</name>
+    <weight>140.116</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Cerium</wiki>
+  </element>
+  <element number="59">
+    <symbol>Pr</symbol>
+    <name>Praseodymium</name>
+    <weight>140.908</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Praseodymium</wiki>
+  </element>
+  <element number="60">
+    <symbol>Nd</symbol>
+    <name>Neodymium</name>
+    <weight>144.242</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Neodymium</wiki>
+  </element>
+  <element number="61">
+    <symbol>Pm</symbol>
+    <name>Promethium</name>
+    <weight>[145]</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Promethium</wiki>
+  </element>
+  <element number="62">
+    <symbol>Sm</symbol>
+    <name>Samarium</name>
+    <weight>150.36</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Samarium</wiki>
+  </element>
+  <element number="63">
+    <symbol>Eu</symbol>
+    <name>Europium</name>
+    <weight>151.964</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Europium</wiki>
+  </element>
+  <element number="64">
+    <symbol>Gd</symbol>
+    <name>Gadolinium</name>
+    <weight>157.25</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Gadolinium</wiki>
+  </element>
+  <element number="65">
+    <symbol>Tb</symbol>
+    <name>Terbium</name>
+    <weight>158.925</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Terbium</wiki>
+  </element>
+  <element number="66">
+    <symbol>Dy</symbol>
+    <name>Dysprosium</name>
+    <weight>162.5</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Dysprosium</wiki>
+  </element>
+  <element number="67">
+    <symbol>Ho</symbol>
+    <name>Holmium</name>
+    <weight>164.93</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Holmium</wiki>
+  </element>
+  <element number="68">
+    <symbol>Er</symbol>
+    <name>Erbium</name>
+    <weight>167.259</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Erbium</wiki>
+  </element>
+  <element number="69">
+    <symbol>Tm</symbol>
+    <name>Thulium</name>
+    <weight>168.934</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Thulium</wiki>
+  </element>
+  <element number="70">
+    <symbol>Yb</symbol>
+    <name>Ytterbium</name>
+    <weight>173.054</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Ytterbium</wiki>
+  </element>
+  <element number="71">
+    <symbol>Lu</symbol>
+    <name>Lutetium</name>
+    <weight>174.967</weight>
+    <category>lanthanide</category>
+    <group>0</group>
+    <period>6</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Lutetium</wiki>
+  </element>
+  <element number="89">
+    <symbol>Ac</symbol>
+    <name>Actinium</name>
+    <weight>[227]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Actinium</wiki>
+  </element>
+  <element number="90">
+    <symbol>Th</symbol>
+    <name>Thorium</name>
+    <weight>232.038</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Thorium</wiki>
+  </element>
+  <element number="91">
+    <symbol>Pa</symbol>
+    <name>Protactinium</name>
+    <weight>231.036</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Protactinium</wiki>
+  </element>
+  <element number="92">
+    <symbol>U</symbol>
+    <name>Uranium</name>
+    <weight>238.029</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Uranium</wiki>
+  </element>
+  <element number="93">
+    <symbol>Np</symbol>
+    <name>Neptunium</name>
+    <weight>[237]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Neptunium</wiki>
+  </element>
+  <element number="94">
+    <symbol>Pu</symbol>
+    <name>Plutonium</name>
+    <weight>[244]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Plutonium</wiki>
+  </element>
+  <element number="95">
+    <symbol>Am</symbol>
+    <name>Americium</name>
+    <weight>[243]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Americium</wiki>
+  </element>
+  <element number="96">
+    <symbol>Cm</symbol>
+    <name>Curium</name>
+    <weight>[247]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Curium</wiki>
+  </element>
+  <element number="97">
+    <symbol>Bk</symbol>
+    <name>Berkelium</name>
+    <weight>[247]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Berkelium</wiki>
+  </element>
+  <element number="98">
+    <symbol>Cf</symbol>
+    <name>Californium</name>
+    <weight>[251]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Californium</wiki>
+  </element>
+  <element number="99">
+    <symbol>Es</symbol>
+    <name>Einsteinium</name>
+    <weight>[252]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Einsteinium</wiki>
+  </element>
+  <element number="100">
+    <symbol>Fm</symbol>
+    <name>Fermium</name>
+    <weight>[257]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Fermium</wiki>
+  </element>
+  <element number="101">
+    <symbol>Md</symbol>
+    <name>Mendelevium</name>
+    <weight>[258]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Mendelevium</wiki>
+  </element>
+  <element number="102">
+    <symbol>No</symbol>
+    <name>Nobelium</name>
+    <weight>[259]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>f</block>
+    <wiki>http://en.wikipedia.org/wiki/Nobelium</wiki>
+  </element>
+  <element number="103">
+    <symbol>Lr</symbol>
+    <name>Lawrencium</name>
+    <weight>[262]</weight>
+    <category>actinide</category>
+    <group>0</group>
+    <period>7</period>
+    <block>d</block>
+    <wiki>http://en.wikipedia.org/wiki/Lawrencium</wiki>
+  </element>
 </elements>
