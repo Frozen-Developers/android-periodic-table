@@ -104,13 +104,13 @@ def fetch(url, root):
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
         isotope_tag.attrib['symbol'] = re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), ''))
-        add_to_element(isotope_tag, 'half-life', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()))
-        add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')))
+        add_to_element(isotope_tag, 'half-life', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'))
+        add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')).replace('×10', '×10^'))
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8])) if len(isotope) > 8 else '')
+        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
-    print(nsm[0].capitalize() + ', ' + nsm[1] + ', ' + nsm[2] + ', ' + saw + ', ' + cat + ', ' + grp + ', ' + pb[0] + ', ' + pb[1])
+    print(list([nsm[0].capitalize(), nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1]]))
 
 if __name__ == '__main__':
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
@@ -120,5 +120,5 @@ if __name__ == '__main__':
     for page in pages:
         fetch(URL_PREFIX + page, root)
 
-    with open(OUTPUT_XML, "w+") as out_file:
+    with open(OUTPUT_XML, 'w+') as out_file:
         out_file.write(etree.tostring(root, encoding='utf-8', pretty_print=True, xml_declaration=True).decode('utf-8'));
