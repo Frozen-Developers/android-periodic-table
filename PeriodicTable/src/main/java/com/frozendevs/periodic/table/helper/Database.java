@@ -6,6 +6,7 @@ import android.util.Xml;
 import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.model.ElementDetails;
 import com.frozendevs.periodic.table.model.ElementListItem;
+import com.frozendevs.periodic.table.model.Isotope;
 import com.frozendevs.periodic.table.model.TableItem;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -199,6 +200,8 @@ public class Database {
                             String symbol = null, name = null, weight = null, category = null, wiki = null;
                             int group = 0, period = 0;
 
+                            List<Isotope> isotopes = new ArrayList<Isotope>();
+
                             while (parser.next() != XmlPullParser.END_TAG) {
                                 if (parser.getEventType() == XmlPullParser.START_TAG) {
 
@@ -218,13 +221,52 @@ public class Database {
                                         category = readTag(parser, tag);
                                     else if(tag.equals("wiki"))
                                         wiki = readTag(parser, tag);
+                                    else if(tag.equals("isotopes")) {
+                                        parser.require(XmlPullParser.START_TAG, null, "isotopes");
+                                        while (parser.next() != XmlPullParser.END_TAG) {
+                                            if (parser.getEventType() == XmlPullParser.START_TAG) {
+                                                tag = parser.getName();
+
+                                                if (tag.equals("isotope")) {
+                                                    parser.require(XmlPullParser.START_TAG, null, "isotope");
+
+                                                    String isoSymbol = parser.getAttributeValue(null, "symbol");
+                                                    String halfLife = null, decayModes = null, daughterIsotopes = null,
+                                                            spin = null, abundance = null;
+
+                                                    while (parser.next() != XmlPullParser.END_TAG) {
+                                                        if (parser.getEventType() == XmlPullParser.START_TAG) {
+
+                                                            tag = parser.getName();
+
+                                                            if(tag.equals("half-life"))
+                                                                halfLife = readTag(parser, tag);
+                                                            else if(tag.equals("decay-modes"))
+                                                                decayModes = readTag(parser, tag);
+                                                            else if(tag.equals("daughter-isotopes"))
+                                                                daughterIsotopes = readTag(parser, tag);
+                                                            else if(tag.equals("spin"))
+                                                                spin = readTag(parser, tag);
+                                                            else if(tag.equals("abundance"))
+                                                                abundance = readTag(parser, tag);
+                                                            else
+                                                                skip(parser);
+                                                        }
+                                                    }
+
+                                                    isotopes.add(new Isotope(isoSymbol, halfLife, decayModes.split("\n"),
+                                                            daughterIsotopes.split("\n"), spin, abundance));
+                                                }
+                                            }
+                                        }
+                                    }
                                     else
                                         skip(parser);
                                 }
                             }
 
                             details = new ElementDetails(name, symbol, atomicNumber, weight, group,
-                                    period, category, wiki);
+                                    period, category, wiki, isotopes.toArray(new Isotope[isotopes.size()]));
                         }
                         else
                             skip(parser);

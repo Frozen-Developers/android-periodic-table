@@ -3,21 +3,62 @@ package com.frozendevs.periodic.table.activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
-import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodic.table.fragment.DetailsFragment;
+import com.frozendevs.periodic.table.fragment.IsotopesFragment;
 import com.frozendevs.periodic.table.helper.Database;
 import com.frozendevs.periodic.table.model.ElementDetails;
-import com.frozendevs.periodic.table.model.adapter.SectionsPagerAdapter;
 
 public class DetailsActivity extends ActionBarActivity {
 
     private ElementDetails elementDetails;
+
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            switch (i) {
+                case 0:
+                    return new DetailsFragment();
+
+                case 1:
+                    return new IsotopesFragment();
+            }
+
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return getString(R.string.details_title).toUpperCase();
+
+                case 1:
+                    return getString(R.string.isotopes_title).toUpperCase();
+            }
+
+            return null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +70,8 @@ public class DetailsActivity extends ActionBarActivity {
 
         getSupportActionBar().setTitle(elementDetails.getName());
 
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), this);
-
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
 
         PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
         pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);

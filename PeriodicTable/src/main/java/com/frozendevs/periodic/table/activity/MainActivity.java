@@ -1,5 +1,8 @@
 package com.frozendevs.periodic.table.activity;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
@@ -11,13 +14,52 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodic.table.fragment.ElementListFragment;
+import com.frozendevs.periodic.table.fragment.TableFragment;
 import com.frozendevs.periodic.table.model.adapter.ElementListAdapter;
-import com.frozendevs.periodic.table.model.adapter.SectionsPagerAdapter;
 import com.frozendevs.periodic.table.view.NonSwipeableViewPager;
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
 
     private NonSwipeableViewPager mViewPager;
+
+    private class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int i) {
+            switch (i) {
+                case 0:
+                    return new ElementListFragment();
+
+                case 1:
+                    return new TableFragment();
+            }
+
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return getString(R.string.elements_title);
+
+                case 1:
+                    return getString(R.string.table_title);
+            }
+
+            return null;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +69,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), this);
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mViewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
