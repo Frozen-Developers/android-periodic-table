@@ -16,11 +16,11 @@ import com.frozendevs.periodic.table.R;
 import com.frozendevs.periodic.table.fragment.DetailsFragment;
 import com.frozendevs.periodic.table.fragment.IsotopesFragment;
 import com.frozendevs.periodic.table.helper.Database;
-import com.frozendevs.periodic.table.model.ElementDetails;
+import com.frozendevs.periodic.table.model.BasicElementProperties;
 
 public class DetailsActivity extends ActionBarActivity {
 
-    private ElementDetails elementDetails;
+    private BasicElementProperties elementProperties;
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -66,9 +66,9 @@ public class DetailsActivity extends ActionBarActivity {
 
         setContentView(R.layout.details_activity);
 
-        elementDetails = Database.getElementDetails(this, getIntent().getIntExtra("atomicNumber", 1));
+        elementProperties = Database.getBasicElementProperties(this, getIntent().getIntExtra("atomicNumber", 1));
 
-        getSupportActionBar().setTitle(elementDetails.getName());
+        getSupportActionBar().setTitle(elementProperties.getName());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
@@ -88,7 +88,7 @@ public class DetailsActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.wiki:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(elementDetails.getWikiLink())));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(elementProperties.getWikiLink())));
                 return true;
 
             case android.R.id.home:

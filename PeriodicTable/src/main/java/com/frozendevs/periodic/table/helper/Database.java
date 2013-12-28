@@ -4,7 +4,8 @@ import android.content.Context;
 import android.util.Xml;
 
 import com.frozendevs.periodic.table.R;
-import com.frozendevs.periodic.table.model.ElementDetails;
+import com.frozendevs.periodic.table.model.BasicElementProperties;
+import com.frozendevs.periodic.table.model.ElementProperties;
 import com.frozendevs.periodic.table.model.ElementListItem;
 import com.frozendevs.periodic.table.model.Isotope;
 import com.frozendevs.periodic.table.model.TableItem;
@@ -119,6 +120,58 @@ public class Database {
         return items;
     }
 
+    public static BasicElementProperties getBasicElementProperties(Context context, int element) {
+        XmlPullParser parser = Xml.newPullParser();
+        InputStream inputStream = getDatabaseFile(context);
+        try {
+            parser.setInput(inputStream, null);
+            parser.nextTag();
+
+            parser.require(XmlPullParser.START_TAG, null, "elements");
+            while (parser.next() != XmlPullParser.END_TAG) {
+                if (parser.getEventType() == XmlPullParser.START_TAG) {
+                    String tag = parser.getName();
+
+                    if (tag.equals("element")) {
+                        parser.require(XmlPullParser.START_TAG, null, "element");
+
+                        if(Integer.valueOf(parser.getAttributeValue(null, "number")) == element) {
+                            String wikiLink = null, name = null;
+
+                            while (parser.next() != XmlPullParser.END_TAG) {
+                                if (parser.getEventType() == XmlPullParser.START_TAG) {
+
+                                    tag = parser.getName();
+
+                                    if(tag.equals("name"))
+                                        name = readTag(parser, tag);
+                                    else if(tag.equals("wiki"))
+                                        wikiLink = readTag(parser, tag);
+                                    else
+                                        skip(parser);
+                                }
+                            }
+
+                            return new BasicElementProperties(name, wikiLink);
+                        }
+                        else
+                            skip(parser);
+                    }
+                    else
+                        skip(parser);
+                }
+            }
+
+            inputStream.close();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     public static List<TableItem> getTableItems(Context context) {
         List<TableItem> items = new ArrayList<TableItem>();
 
@@ -179,9 +232,7 @@ public class Database {
         return items;
     }
 
-    public static ElementDetails getElementDetails(Context context, int atomicNumber) {
-        ElementDetails details = null;
-
+    public static ElementProperties getElementDetails(Context context, int atomicNumber) {
         XmlPullParser parser = Xml.newPullParser();
         InputStream inputStream = getDatabaseFile(context);
         try {
@@ -199,8 +250,6 @@ public class Database {
                         if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
                             String symbol = null, name = null, weight = null, category = null, wiki = null;
                             int group = 0, period = 0;
-
-                            List<Isotope> isotopes = new ArrayList<Isotope>();
 
                             while (parser.next() != XmlPullParser.END_TAG) {
                                 if (parser.getEventType() == XmlPullParser.START_TAG) {
@@ -221,16 +270,60 @@ public class Database {
                                         category = readTag(parser, tag);
                                     else if(tag.equals("wiki"))
                                         wiki = readTag(parser, tag);
-                                    else if(tag.equals("isotopes")) {
+                                    else
+                                        skip(parser);
+                                }
+                            }
+
+                            return new ElementProperties(name, symbol, atomicNumber, weight, group,
+                                    period, category, wiki);
+                        }
+                        else
+                            skip(parser);
+                    }
+                    else
+                        skip(parser);
+                }
+            }
+
+            inputStream.close();
+        } catch (XmlPullParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    public static Isotope[] getIsotopes(Context context, int element) {
+        XmlPullParser parser = Xml.newPullParser();
+        InputStream inputStream = getDatabaseFile(context);
+        try {
+            parser.setInput(inputStream, null);
+            parser.nextTag();
+
+            parser.require(XmlPullParser.START_TAG, null, "elements");
+            while (parser.next() != XmlPullParser.END_TAG) {
+                if (parser.getEventType() == XmlPullParser.START_TAG) {
+                    String tag = parser.getName();
+
+                    if (tag.equals("element")) {
+                        parser.require(XmlPullParser.START_TAG, null, "element");
+
+                        if(Integer.valueOf(parser.getAttributeValue(null, "number")) == element) {
+                            List<Isotope> isotopes = new ArrayList<Isotope>();
+
+                            while (parser.next() != XmlPullParser.END_TAG) {
+                                if (parser.getEventType() == XmlPullParser.START_TAG) {
+                                    if(parser.getName().equals("isotopes")) {
                                         parser.require(XmlPullParser.START_TAG, null, "isotopes");
                                         while (parser.next() != XmlPullParser.END_TAG) {
                                             if (parser.getEventType() == XmlPullParser.START_TAG) {
-                                                tag = parser.getName();
-
-                                                if (tag.equals("isotope")) {
+                                                if (parser.getName().equals("isotope")) {
                                                     parser.require(XmlPullParser.START_TAG, null, "isotope");
 
-                                                    String isoSymbol = parser.getAttributeValue(null, "symbol");
+                                                    String symbol = parser.getAttributeValue(null, "symbol");
                                                     String halfLife = null, decayModes = null, daughterIsotopes = null,
                                                             spin = null, abundance = null;
 
@@ -254,9 +347,11 @@ public class Database {
                                                         }
                                                     }
 
-                                                    isotopes.add(new Isotope(isoSymbol, halfLife, decayModes.split("\n"),
+                                                    isotopes.add(new Isotope(symbol, halfLife, decayModes.split("\n"),
                                                             daughterIsotopes.split("\n"), spin, abundance));
                                                 }
+                                                else
+                                                    skip(parser);
                                             }
                                         }
                                     }
@@ -265,8 +360,7 @@ public class Database {
                                 }
                             }
 
-                            details = new ElementDetails(name, symbol, atomicNumber, weight, group,
-                                    period, category, wiki, isotopes.toArray(new Isotope[isotopes.size()]));
+                            return isotopes.toArray(new Isotope[isotopes.size()]);
                         }
                         else
                             skip(parser);
@@ -283,6 +377,6 @@ public class Database {
             e.printStackTrace();
         }
 
-        return details;
+        return null;
     }
 }
