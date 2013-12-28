@@ -54,20 +54,18 @@ public class GridView extends LinearLayout {
     private void fillWithData() {
         if(adapter.getCount() > 0) {
             for(int i = 0; i < numRows; i ++) {
-                if(i > 0)
-                    addView(getSpacer(true));
-
                 LinearLayout row = new LinearLayout(getContext());
-                row.setLayoutParams(new LayoutParams((numColumns * columnWidth) +
-                        ((numColumns - 2) * horizontalSpacing), rowHeight));
+                LayoutParams rowParams = new LayoutParams((numColumns * columnWidth) +
+                        ((numColumns - 2) * horizontalSpacing), rowHeight);
+                rowParams.setMargins(0, i > 0 ? verticalSpacing : 0, 0, 0);
+                row.setLayoutParams(rowParams);
                 row.setOrientation(HORIZONTAL);
 
                 for(int n = 0; n < numColumns; n++) {
-                    if(n > 0)
-                        row.addView(getSpacer(false));
-
                     LinearLayout cell = new LinearLayout(getContext());
-                    cell.setLayoutParams(new LayoutParams(columnWidth, rowHeight));
+                    LayoutParams cellParams = new LayoutParams(columnWidth, rowHeight);
+                    cellParams.setMargins(n > 0 ? horizontalSpacing : 0, 0, 0, 0);
+                    cell.setLayoutParams(cellParams);
                     cell.addView(adapter.getView((i * numColumns) + n, null, cell));
 
                     row.addView(cell);
@@ -79,17 +77,6 @@ public class GridView extends LinearLayout {
             if(emptyView != null)
                 emptyView.setVisibility(GONE);
         }
-    }
-
-    private LinearLayout getSpacer(boolean vertical) {
-        LinearLayout view = new LinearLayout(getContext());
-
-        if(!vertical)
-            view.setLayoutParams(new LayoutParams(horizontalSpacing, rowHeight));
-        else
-            view.setLayoutParams(new LayoutParams(columnWidth, verticalSpacing));
-
-        return view;
     }
 
     public int getNumColumns() {
