@@ -26,4 +26,11 @@ public class TableFragment extends Fragment {
 
         return rootView;
     }
+
+    @Override
+    public void onDestroy() {
+        adapter = null;
+
+        super.onDestroy();
+    }
 }
