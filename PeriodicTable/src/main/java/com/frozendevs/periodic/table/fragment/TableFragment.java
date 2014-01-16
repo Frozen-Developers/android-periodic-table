@@ -12,25 +12,14 @@ import com.frozendevs.periodic.table.view.GridView;
 
 public class TableFragment extends Fragment {
 
-    private static TableAdapter adapter;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
 
         GridView table = (GridView)rootView.findViewById(R.id.table);
         table.setEmptyView(rootView.findViewById(R.id.generatingProgressBar));
-        if(adapter == null)
-            adapter = new TableAdapter(getActivity());
-        table.setAdapter(adapter);
+        table.setAdapter(new TableAdapter(getActivity()));
 
         return rootView;
-    }
-
-    @Override
-    public void onDestroy() {
-        adapter = null;
-
-        super.onDestroy();
     }
 }
