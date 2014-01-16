@@ -1,6 +1,7 @@
 package com.frozendevs.periodic.table.activity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -97,5 +98,10 @@ public class DetailsActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConf) {
+        super.onConfigurationChanged(newConf);
     }
 }

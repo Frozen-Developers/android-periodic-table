@@ -16,7 +16,8 @@
 
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:configChanges="orientation|screenSize" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +27,8 @@
 
         <activity android:name=".activity.DetailsActivity"
             android:parentActivityName=".activity.MainActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:configChanges="orientation|screenSize" >
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
