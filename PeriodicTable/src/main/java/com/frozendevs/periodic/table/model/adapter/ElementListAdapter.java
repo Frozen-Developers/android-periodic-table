@@ -36,7 +36,8 @@ public class ElementListAdapter extends BaseAdapter {
         protected void onPostExecute(Void result) {
             notifyDataSetChanged();
 
-            activity.findViewById(R.id.loadingProgressBar).setVisibility(View.GONE);
+            ListView listView = (ListView)activity.findViewById(R.id.elementList);
+            listView.setEmptyView(activity.findViewById(R.id.emptyElementList));
         }
     }
 

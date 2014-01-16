@@ -18,7 +18,7 @@ public class ElementListFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.element_list_fragment, container, false);
 
         ListView listView = (ListView)rootView.findViewById(R.id.elementList);
-        listView.setEmptyView(rootView.findViewById(R.id.emptyElementList));
+        listView.setEmptyView(rootView.findViewById(R.id.loadingProgressBar));
         listView.setAdapter(new ElementListAdapter(getActivity()));
 
         return rootView;
