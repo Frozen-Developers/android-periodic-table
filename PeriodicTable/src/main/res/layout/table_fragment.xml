@@ -7,29 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".activity.MainActivity$TableFragment">
 
-    <HorizontalScrollView
+    <com.frozendevs.periodic.table.view.ZoomView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
-        <ScrollView
+        <com.frozendevs.periodic.table.view.GridView
+            xmlns:custom="http://schemas.android.com/apk/res/com.frozendevs.periodic.table"
+            android:id="@+id/table"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            custom:numColumns="@integer/table_columns_count"
+            custom:numRows="@integer/table_rows_count"
+            custom:columnWidth="@dimen/table_tile_size"
+            custom:rowHeight="@dimen/table_tile_size"
+            custom:horizontalSpacing="@dimen/table_spacing"
+            custom:verticalSpacing="@dimen/table_spacing"/>
 
-            <com.frozendevs.periodic.table.view.GridView
-                xmlns:custom="http://schemas.android.com/apk/res/com.frozendevs.periodic.table"
-                android:id="@+id/table"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                custom:numColumns="@integer/table_columns_count"
-                custom:numRows="@integer/table_rows_count"
-                custom:columnWidth="@dimen/table_tile_size"
-                custom:rowHeight="@dimen/table_tile_size"
-                custom:horizontalSpacing="@dimen/table_spacing"
-                custom:verticalSpacing="@dimen/table_spacing"/>
-
-        </ScrollView>
-
-    </HorizontalScrollView>
+    </com.frozendevs.periodic.table.view.ZoomView>
 
     <LinearLayout
         android:id="@+id/generatingProgressBar"
