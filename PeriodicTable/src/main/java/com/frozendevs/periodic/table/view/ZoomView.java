@@ -15,8 +15,10 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     private float MAX_ZOOM = 1.0f;
     private float MIN_ZOOM = 0;
     private float zoom, zoomX, zoomY;
+    private float contentWidth = 0f, contentHeight = 0f;
     private ScaleGestureDetector scaleDetector;
     private GestureDetector gestureDetector;
+    private boolean isScrolling = false;
 
     public ZoomView(Context context) {
         super(context);
@@ -41,8 +43,6 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public void onGlobalLayout() {
-        float contentWidth = 0f, contentHeight = 0f;
-
         for(int i = 0; i < getChildCount(); i++) {
             View child = getChildAt(i);
             child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
@@ -81,10 +81,17 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        scaleDetector.onTouchEvent(event);
-        gestureDetector.onTouchEvent(event);
+        if(scaleDetector.onTouchEvent(event) && !scaleDetector.isInProgress())
+            if(!gestureDetector.onTouchEvent(event) && !isScrolling)
+                super.dispatchTouchEvent(event);
 
-        return scaleDetector.isInProgress() || super.dispatchTouchEvent(event);
+        switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_UP:
+                isScrolling = false;
+                break;
+        }
+
+        return true;
     }
 
     private void scaleView(View view) {
@@ -112,7 +119,14 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        return false;
+        isScrolling = true;
+
+        int x = (int)Math.max(0f, Math.min(getScrollX() + distanceX, (contentWidth * zoom) - getWidth()));
+        int y = (int)Math.max(0f, Math.min(getScrollY() + distanceY, (contentHeight * zoom) - getHeight()));
+
+        scrollTo(x, y);
+
+        return true;
     }
 
     @Override
