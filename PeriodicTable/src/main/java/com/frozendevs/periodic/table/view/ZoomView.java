@@ -14,8 +14,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     private float MAX_ZOOM = 1.0f;
     private float MIN_ZOOM = 0;
-    private float zoom, zoomX, zoomY;
-    private float contentWidth = 0f, contentHeight = 0f;
+    private float zoom;
     private ScaleGestureDetector scaleDetector;
     private GestureDetector gestureDetector;
     private boolean isScrolling = false;
@@ -43,26 +42,25 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public void onGlobalLayout() {
-        for(int i = 0; i < getChildCount(); i++) {
-            View child = getChildAt(i);
-            child.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
-            contentWidth = Math.max(contentWidth, child.getMeasuredWidth());
-            contentHeight = Math.max(contentHeight, child.getMeasuredHeight());
-        }
+        for(int i = 0; i < getChildCount(); i++)
+            getChildAt(i).measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
-        MIN_ZOOM = Math.min((float)getWidth() / contentWidth, (float)getHeight() / contentHeight);
+        measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
+
+        MIN_ZOOM = Math.min((float)getWidth() / getMeasuredWidth(),
+                (float)getHeight() / getMeasuredHeight());
 
         zoom = MIN_ZOOM = Math.min(MIN_ZOOM, MAX_ZOOM);
 
         for(int i = 0; i < getChildCount(); i++)
             scaleView(getChildAt(i));
+
+        scrollTo(getLeftOffset(), getTopOffset());
     }
 
     @Override
     public boolean onScale(ScaleGestureDetector detector) {
         zoom = Math.min(MAX_ZOOM, Math.max(zoom * detector.getScaleFactor(), MIN_ZOOM));
-        zoomX = detector.getFocusX();
-        zoomY = detector.getFocusY();
 
         for(int i = 0; i < getChildCount(); i++)
             scaleView(getChildAt(i));
@@ -97,8 +95,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     private void scaleView(View view) {
         view.setScaleX(zoom);
         view.setScaleY(zoom);
-        int left = (getWidth() - view.getMeasuredWidth()) / 2;
-        int top = (getHeight() - view.getMeasuredHeight()) / 2;
+        int left = view.getLeft();
+        int top = view.getTop();
         view.layout(left, top, left + view.getMeasuredWidth(), top + view.getMeasuredHeight());
     }
 
@@ -121,8 +119,10 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         isScrolling = true;
 
-        int x = (int)Math.max(0f, Math.min(getScrollX() + distanceX, (contentWidth * zoom) - getWidth()));
-        int y = (int)Math.max(0f, Math.min(getScrollY() + distanceY, (contentHeight * zoom) - getHeight()));
+        int x = (int)Math.max(getLeftOffset(), Math.min(getScrollX() + distanceX,
+                Math.round((float)getMeasuredWidth() * zoom) - getWidth() - getLeftOffset()));
+        int y = (int)Math.max(getTopOffset(), Math.min(getScrollY() + distanceY,
+                Math.round((float)getMeasuredHeight() * zoom) - getHeight() - getTopOffset()));
 
         scrollTo(x, y);
 
@@ -137,5 +137,13 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;
+    }
+
+    private int getLeftOffset() {
+        return Math.round(((float)getMeasuredWidth() * (1f - zoom)) / 2);
+    }
+
+    private int getTopOffset() {
+        return Math.round(((float)getMeasuredHeight() * (1f - zoom)) / 2);
     }
 }
