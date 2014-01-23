@@ -46,9 +46,9 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         setWillNotDraw(false);
         setHorizontalScrollBarEnabled(true);
         setVerticalScrollBarEnabled(true);
-        TypedArray a = context.obtainStyledAttributes(R.styleable.ZoomView);
-        initializeScrollbars(a);
-        a.recycle();
+        TypedArray styledAttributes = context.obtainStyledAttributes(R.styleable.ZoomView);
+        initializeScrollbars(styledAttributes);
+        styledAttributes.recycle();
 
         getViewTreeObserver().addOnGlobalLayoutListener(this);
         scaleDetector = new ScaleGestureDetector(context, this);
@@ -156,10 +156,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         isScrolling = true;
 
-        int x = (int)clamp(getLeftOffset(), getScrollX() + distanceX, getMaximalScrollX());
-        int y = (int)clamp(getTopOffset(), getScrollY() + distanceY, getMaximalScrollY());
-
-        scrollTo(x, y);
+        scrollTo((int)clamp(getLeftOffset(), getScrollX() + distanceX, getMaximalScrollX()),
+                (int)clamp(getTopOffset(), getScrollY() + distanceY, getMaximalScrollY()));
 
         return true;
     }
