@@ -1,6 +1,7 @@
 package com.frozendevs.periodic.table.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -9,6 +10,8 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+
+import com.frozendevs.periodic.table.R;
 
 public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener,
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener {
@@ -37,6 +40,13 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private void init(Context context) {
+        setWillNotDraw(false);
+        setHorizontalScrollBarEnabled(true);
+        setVerticalScrollBarEnabled(true);
+        TypedArray a = context.obtainStyledAttributes(R.styleable.ZoomView);
+        initializeScrollbars(a);
+        a.recycle();
+
         getViewTreeObserver().addOnGlobalLayoutListener(this);
         scaleDetector = new ScaleGestureDetector(context, this);
         gestureDetector = new GestureDetector(context, this);
@@ -83,8 +93,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
             else if(getScrollY() > getMaximalScrollY())
                 top = getMaximalScrollY();
 
-            if(left != getScrollX() || top != getScrollY())
-                scrollTo(left, top);
+            scrollTo(left, top);
         }
 
         for(int i = 0; i < getChildCount(); i++)
@@ -194,5 +203,35 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     private float clamp(float min, float val, float max) {
         return Math.max(min, Math.min(val, max));
+    }
+
+    @Override
+    protected int computeHorizontalScrollExtent() {
+        return getWidth();
+    }
+
+    @Override
+    protected int computeHorizontalScrollOffset() {
+        return getScrollX() - getLeftOffset();
+    }
+
+    @Override
+    protected int computeHorizontalScrollRange() {
+        return Math.round((float)getMeasuredWidth() * zoom);
+    }
+
+    @Override
+    protected int computeVerticalScrollExtent() {
+        return getHeight();
+    }
+
+    @Override
+    protected int computeVerticalScrollOffset() {
+        return getScrollY() - getTopOffset();
+    }
+
+    @Override
+    protected int computeVerticalScrollRange() {
+        return Math.round((float)getMeasuredHeight() * zoom);
     }
 }
