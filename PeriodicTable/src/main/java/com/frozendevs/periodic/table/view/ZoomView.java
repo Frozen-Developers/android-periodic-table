@@ -3,6 +3,7 @@ package com.frozendevs.periodic.table.view;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -18,6 +19,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     private ScaleGestureDetector scaleDetector;
     private GestureDetector gestureDetector;
     private boolean isScrolling = false;
+    private int gravity = Gravity.NO_GRAVITY;
 
     public ZoomView(Context context) {
         super(context);
@@ -42,6 +44,10 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public void onGlobalLayout() {
+        LayoutParams layoutParams = (LayoutParams)getLayoutParams();
+        if(layoutParams != null)
+            gravity = layoutParams.gravity;
+
         for(int i = 0; i < getChildCount(); i++)
             getChildAt(i).measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
@@ -157,11 +163,25 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private int getLeftOffset() {
-        return Math.round(((float)getMeasuredWidth() * (1f - zoom)) / 2f);
+        if(gravity == Gravity.CENTER_HORIZONTAL || gravity == Gravity.CENTER) {
+            int scaledWidth = Math.round((float)getMeasuredWidth() * zoom);
+
+            return ((getMeasuredWidth() - scaledWidth) / 2) -
+                    (scaledWidth < getWidth() ? (getWidth() - scaledWidth) / 2 : 0);
+        }
+
+        return 0;
     }
 
     private int getTopOffset() {
-        return Math.round(((float)getMeasuredHeight() * (1f - zoom)) / 2f);
+        if(gravity == Gravity.CENTER_VERTICAL || gravity == Gravity.CENTER) {
+            int scaledHeight = Math.round((float)getMeasuredHeight() * zoom);
+
+            return ((getMeasuredHeight() - scaledHeight) / 2) -
+                    (scaledHeight < getHeight() ? (getHeight() - scaledHeight) / 2 : 0);
+        }
+
+        return 0;
     }
 
     private int getMaximalScrollX() {
