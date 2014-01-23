@@ -2,6 +2,9 @@ package com.frozendevs.periodic.table.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -233,5 +236,12 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     @Override
     protected int computeVerticalScrollRange() {
         return Math.round((float)getMeasuredHeight() * zoom);
+    }
+
+    @Override
+    protected void dispatchDraw(Canvas canvas) {
+        canvas.setDrawFilter(new PaintFlagsDrawFilter(1, Paint.ANTI_ALIAS_FLAG));
+
+        super.dispatchDraw(canvas);
     }
 }
