@@ -60,7 +60,26 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onScale(ScaleGestureDetector detector) {
+        float oldZoom = zoom;
+
         zoom = Math.min(MAX_ZOOM, Math.max(zoom * detector.getScaleFactor(), MIN_ZOOM));
+
+        if(oldZoom > zoom) {
+            int left = getScrollX(), top = getScrollY();
+
+            if(getScrollX() < getLeftOffset())
+                left = getLeftOffset();
+            else if(getScrollX() > getMaximalScrollX())
+                left = getMaximalScrollX();
+
+            if(getScrollY() < getTopOffset())
+                top = getTopOffset();
+            else if(getScrollY() > getMaximalScrollY())
+                top = getMaximalScrollY();
+
+            if(left != getScrollX() || top != getScrollY())
+                scrollTo(left, top);
+        }
 
         for(int i = 0; i < getChildCount(); i++)
             scaleView(getChildAt(i));
@@ -119,10 +138,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         isScrolling = true;
 
-        int x = (int)Math.max(getLeftOffset(), Math.min(getScrollX() + distanceX,
-                getMaximalScrollX() + getLeftOffset()));
-        int y = (int)Math.max(getTopOffset(), Math.min(getScrollY() + distanceY,
-                getMaximalScrollY() + getTopOffset()));
+        int x = (int)Math.max(getLeftOffset(), Math.min(getScrollX() + distanceX, getMaximalScrollX()));
+        int y = (int)Math.max(getTopOffset(), Math.min(getScrollY() + distanceY, getMaximalScrollY()));
 
         scrollTo(x, y);
 
@@ -140,18 +157,26 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private int getLeftOffset() {
+        return getLeftOffset(zoom);
+    }
+
+    private int getLeftOffset(float zoom) {
         return Math.round(((float)getMeasuredWidth() * (1f - zoom)) / 2);
     }
 
     private int getTopOffset() {
+        return getTopOffset(zoom);
+    }
+
+    private int getTopOffset(float zoom) {
         return Math.round(((float)getMeasuredHeight() * (1f - zoom)) / 2);
     }
 
     private int getMaximalScrollX() {
-        return Math.round((float)getMeasuredWidth() * zoom) - getWidth();
+        return Math.round((float)getMeasuredWidth() * zoom) - getWidth() + getLeftOffset();
     }
 
     private int getMaximalScrollY() {
-        return Math.round((float)getMeasuredHeight() * zoom) - getHeight();
+        return Math.round((float)getMeasuredHeight() * zoom) - getHeight() + getTopOffset();
     }
 }
