@@ -157,19 +157,11 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private int getLeftOffset() {
-        return getLeftOffset(zoom);
-    }
-
-    private int getLeftOffset(float zoom) {
-        return Math.round(((float)getMeasuredWidth() * (1f - zoom)) / 2);
+        return Math.round(((float)getMeasuredWidth() * (1f - zoom)) / 2f);
     }
 
     private int getTopOffset() {
-        return getTopOffset(zoom);
-    }
-
-    private int getTopOffset(float zoom) {
-        return Math.round(((float)getMeasuredHeight() * (1f - zoom)) / 2);
+        return Math.round(((float)getMeasuredHeight() * (1f - zoom)) / 2f);
     }
 
     private int getMaximalScrollX() {
