@@ -86,15 +86,15 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         if(oldZoom > zoom) {
             int left = getScrollX(), top = getScrollY();
 
-            if(getScrollX() < getLeftOffset())
-                left = getLeftOffset();
-            else if(getScrollX() > getMaximalScrollX())
+            if(left > getMaximalScrollX())
                 left = getMaximalScrollX();
+            if(left < getLeftOffset())
+                left = getLeftOffset();
 
-            if(getScrollY() < getTopOffset())
-                top = getTopOffset();
-            else if(getScrollY() > getMaximalScrollY())
+            if(top > getMaximalScrollY())
                 top = getMaximalScrollY();
+            if(top < getTopOffset())
+                top = getTopOffset();
 
             scrollTo(left, top);
         }
