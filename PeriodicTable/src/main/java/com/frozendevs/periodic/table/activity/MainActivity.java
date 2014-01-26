@@ -70,10 +70,10 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         final ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter pagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         mViewPager = (NonSwipeableViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
+        mViewPager.setAdapter(pagerAdapter);
 
         mViewPager.setOnPageChangeListener(new NonSwipeableViewPager.SimpleOnPageChangeListener() {
             @Override
@@ -82,8 +82,9 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             }
         });
 
-        for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            actionBar.addTab(actionBar.newTab().setText(mSectionsPagerAdapter.getPageTitle(i)).setTabListener(this));
+        for (int i = 0; i < pagerAdapter.getCount(); i++) {
+            actionBar.addTab(actionBar.newTab().setText(pagerAdapter.getPageTitle(i)).
+                    setTabListener(this));
         }
     }
 
@@ -91,7 +92,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
 
-        final ElementListAdapter adapter = (ElementListAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
+        final ElementListAdapter adapter =
+                (ElementListAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView)MenuItemCompat.getActionView(searchItem);
@@ -112,7 +114,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 return true;
             }
         });
-        MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
+        MenuItemCompat.setOnActionExpandListener(searchItem,
+                new MenuItemCompat.OnActionExpandListener() {
             @Override
             public boolean onMenuItemActionExpand(MenuItem item) {
                 return true;

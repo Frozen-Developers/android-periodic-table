@@ -26,7 +26,8 @@ public class Database {
         return context.getResources().openRawResource(R.raw.elements);
     }
 
-    private static String readTag(XmlPullParser parser, String tag) throws IOException, XmlPullParserException {
+    private static String readTag(XmlPullParser parser, String tag) throws IOException,
+            XmlPullParserException {
         parser.require(XmlPullParser.START_TAG, null, tag);
         String text = readText(parser);
         parser.require(XmlPullParser.END_TAG, null, tag);
@@ -215,7 +216,8 @@ public class Database {
                             }
                         }
 
-                        items.add(new TableItem(name, symbol, atomicNumber, weight, group, period, category));
+                        items.add(new TableItem(name, symbol, atomicNumber, weight, group, period,
+                                category));
                     }
                     else
                         skip(parser);
@@ -248,7 +250,8 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
-                            String symbol = null, name = null, weight = null, category = null, wiki = null;
+                            String symbol = null, name = null, weight = null, category = null,
+                                    wiki = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -321,14 +324,18 @@ public class Database {
                                         while (parser.next() != XmlPullParser.END_TAG) {
                                             if (parser.getEventType() == XmlPullParser.START_TAG) {
                                                 if (parser.getName().equals("isotope")) {
-                                                    parser.require(XmlPullParser.START_TAG, null, "isotope");
+                                                    parser.require(XmlPullParser.START_TAG, null,
+                                                            "isotope");
 
-                                                    String symbol = parser.getAttributeValue(null, "symbol");
-                                                    String halfLife = null, decayModes = null, daughterIsotopes = null,
-                                                            spin = null, abundance = null;
+                                                    String symbol = parser.getAttributeValue(null,
+                                                            "symbol");
+                                                    String halfLife = null, decayModes = null,
+                                                            daughterIsotopes = null, spin = null,
+                                                            abundance = null;
 
                                                     while (parser.next() != XmlPullParser.END_TAG) {
-                                                        if (parser.getEventType() == XmlPullParser.START_TAG) {
+                                                        if (parser.getEventType() ==
+                                                                XmlPullParser.START_TAG) {
 
                                                             tag = parser.getName();
 
@@ -347,8 +354,10 @@ public class Database {
                                                         }
                                                     }
 
-                                                    isotopes.add(new Isotope(symbol, halfLife, decayModes.split("\n"),
-                                                            daughterIsotopes.split("\n"), spin, abundance));
+                                                    isotopes.add(new Isotope(symbol, halfLife,
+                                                            decayModes.split("\n"),
+                                                            daughterIsotopes.split("\n"), spin,
+                                                            abundance));
                                                 }
                                                 else
                                                     skip(parser);

@@ -67,7 +67,8 @@ public class DetailsActivity extends ActionBarActivity {
 
         setContentView(R.layout.details_activity);
 
-        elementProperties = Database.getBasicElementProperties(this, getIntent().getIntExtra("atomicNumber", 1));
+        elementProperties = Database.getBasicElementProperties(this,
+                getIntent().getIntExtra("atomicNumber", 1));
 
         getSupportActionBar().setTitle(elementProperties.getName());
 
@@ -89,7 +90,8 @@ public class DetailsActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.wiki:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(elementProperties.getWikiLink())));
+                startActivity(new Intent(Intent.ACTION_VIEW,
+                        Uri.parse(elementProperties.getWikiLink())));
                 return true;
 
             case android.R.id.home:

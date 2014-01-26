@@ -34,7 +34,8 @@ public class GridView extends LinearLayout {
     }
 
     private void init(AttributeSet attrs) {
-        TypedArray style = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.GridView, 0, 0);
+        TypedArray style = getContext().getTheme().obtainStyledAttributes(attrs,
+                R.styleable.GridView, 0, 0);
 
         try {
             numColumns = style.getInteger(R.styleable.GridView_numColumns, 0);
