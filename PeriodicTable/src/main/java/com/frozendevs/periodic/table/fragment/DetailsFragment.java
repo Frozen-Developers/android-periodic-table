@@ -5,8 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodic.table.model.adapter.DetailsListAdapter;
 
 public class DetailsFragment extends Fragment {
 
@@ -20,8 +22,11 @@ public class DetailsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.details_fragment, container, false);
+        View layout = inflater.inflate(R.layout.details_fragment, container, false);
 
-        return view;
+        ListView listView = (ListView)layout.findViewById(R.id.details_list);
+        listView.setAdapter(new DetailsListAdapter(getActivity(), atomicNumber));
+
+        return layout;
     }
 }
