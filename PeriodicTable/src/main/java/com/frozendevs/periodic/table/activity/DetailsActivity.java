@@ -25,18 +25,22 @@ public class DetailsActivity extends ActionBarActivity {
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        SectionsPagerAdapter(FragmentManager fm) {
+        private int atomicNumber;
+
+        SectionsPagerAdapter(FragmentManager fm, int atomicNumber) {
             super(fm);
+
+            this.atomicNumber = atomicNumber;
         }
 
         @Override
         public Fragment getItem(int i) {
             switch (i) {
                 case 0:
-                    return new DetailsFragment();
+                    return new DetailsFragment(atomicNumber);
 
                 case 1:
-                    return new IsotopesFragment();
+                    return new IsotopesFragment(atomicNumber);
             }
 
             return null;
@@ -67,13 +71,14 @@ public class DetailsActivity extends ActionBarActivity {
 
         setContentView(R.layout.details_activity);
 
-        elementProperties = Database.getBasicElementProperties(this,
-                getIntent().getIntExtra("atomicNumber", 1));
+        int atomicNumber = getIntent().getIntExtra("atomicNumber", 1);
+
+        elementProperties = Database.getBasicElementProperties(this, atomicNumber);
 
         getSupportActionBar().setTitle(elementProperties.getName());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), atomicNumber));
 
         PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
         pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);
