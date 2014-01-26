@@ -41,8 +41,10 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     private void init(Context context) {
         setWillNotDraw(false);
+
         setHorizontalScrollBarEnabled(true);
         setVerticalScrollBarEnabled(true);
+        
         TypedArray styledAttributes = context.obtainStyledAttributes(R.styleable.ZoomView);
         initializeScrollbars(styledAttributes);
         styledAttributes.recycle();
@@ -57,9 +59,6 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         LayoutParams layoutParams = (LayoutParams)getLayoutParams();
         if(layoutParams != null)
             gravity = layoutParams.gravity;
-
-        for(int i = 0; i < getChildCount(); i++)
-            getChildAt(i).measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
         measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
@@ -215,7 +214,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     protected int computeHorizontalScrollRange() {
-        return Math.round((float)getMeasuredWidth() * zoom);
+        return Math.round((float) getMeasuredWidth() * zoom);
     }
 
     @Override
