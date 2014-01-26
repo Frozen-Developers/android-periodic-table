@@ -17,7 +17,7 @@ public class TableFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
 
         GridView table = (GridView)rootView.findViewById(R.id.table);
-        table.setEmptyView(rootView.findViewById(R.id.generatingProgressBar));
+        table.setEmptyView(rootView.findViewById(R.id.progress_bar));
         table.setAdapter(new TableAdapter(getActivity()));
 
         return rootView;
