@@ -25,6 +25,7 @@ public class DetailsFragment extends Fragment {
         View layout = inflater.inflate(R.layout.details_fragment, container, false);
 
         ListView listView = (ListView)layout.findViewById(R.id.details_list);
+        listView.setEmptyView(layout.findViewById(R.id.progress_bar));
         listView.setAdapter(new DetailsListAdapter(getActivity(), atomicNumber));
 
         return layout;

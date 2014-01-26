@@ -1,6 +1,7 @@
 package com.frozendevs.periodic.table.model.adapter;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,23 +15,37 @@ import com.frozendevs.periodic.table.model.ElementProperties;
 public class DetailsListAdapter extends BaseAdapter {
 
     private Context context;
+    private String[][] propertiesPairs = new String[][] {};
 
-    private String[][] propertiesPairs;
+    private class LoadProperties extends AsyncTask<Integer, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Integer... params) {
+            ElementProperties properties = Database.getElementDetails(context, params[0]);
+
+            propertiesPairs = new String[][] {
+                    { context.getString(R.string.property_symbol), properties.getSymbol() },
+                    { context.getString(R.string.property_atomic_number),
+                            String.valueOf(properties.getAtomicNumber()) },
+                    { context.getString(R.string.property_weight), properties.getStandardAtomicWeight() },
+                    { context.getString(R.string.property_group), String.valueOf(properties.getGroup()) },
+                    { context.getString(R.string.property_period), String.valueOf(properties.getPeriod()) },
+                    { context.getString(R.string.property_category), capitalize(properties.getCategory()) }
+            };
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            notifyDataSetChanged();
+        }
+    }
 
     public DetailsListAdapter(Context context, int atomicNumber) {
         this.context = context;
 
-        ElementProperties properties = Database.getElementDetails(context, atomicNumber);
-
-        propertiesPairs = new String[][] {
-                { context.getString(R.string.property_symbol), properties.getSymbol() },
-                { context.getString(R.string.property_atomic_number),
-                        String.valueOf(properties.getAtomicNumber()) },
-                { context.getString(R.string.property_weight), properties.getStandardAtomicWeight() },
-                { context.getString(R.string.property_group), String.valueOf(properties.getGroup()) },
-                { context.getString(R.string.property_period), String.valueOf(properties.getPeriod()) },
-                { context.getString(R.string.property_category), capitalize(properties.getCategory()) }
-        };
+        new LoadProperties().execute(atomicNumber);
     }
 
     @Override
