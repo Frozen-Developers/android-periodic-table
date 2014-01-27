@@ -24,13 +24,12 @@ public class DetailsListAdapter extends BaseAdapter {
             ElementProperties properties = Database.getElementDetails(context, params[0]);
 
             propertiesPairs = new String[][] {
-                    { context.getString(R.string.property_symbol), properties.getSymbol() },
-                    { context.getString(R.string.property_atomic_number),
-                            String.valueOf(properties.getAtomicNumber()) },
-                    { context.getString(R.string.property_weight), properties.getStandardAtomicWeight() },
-                    { context.getString(R.string.property_group), String.valueOf(properties.getGroup()) },
-                    { context.getString(R.string.property_period), String.valueOf(properties.getPeriod()) },
-                    { context.getString(R.string.property_category), capitalize(properties.getCategory()) }
+                    { getString(R.string.property_symbol), properties.getSymbol() },
+                    { getString(R.string.property_atomic_number), intToStr(properties.getAtomicNumber()) },
+                    { getString(R.string.property_weight), properties.getStandardAtomicWeight() },
+                    { getString(R.string.property_group), intToStr(properties.getGroup()) },
+                    { getString(R.string.property_period), intToStr(properties.getPeriod()) },
+                    { getString(R.string.property_category), capitalize(properties.getCategory()) }
             };
 
             return null;
@@ -80,5 +79,13 @@ public class DetailsListAdapter extends BaseAdapter {
             return string;
 
         return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
+    }
+
+    private String getString(int resId) {
+        return context.getString(resId);
+    }
+
+    private String intToStr(int integer) {
+        return String.valueOf(integer);
     }
 }
