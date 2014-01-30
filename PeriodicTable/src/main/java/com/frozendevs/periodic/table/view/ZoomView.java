@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
-import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -16,29 +15,29 @@ import com.frozendevs.periodic.table.R;
 public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener,
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener {
 
-    private float MAX_ZOOM = 1.0f;
-    private float MIN_ZOOM = 0;
-    private float zoom;
-    private ScaleGestureDetector scaleDetector;
-    private GestureDetector gestureDetector;
-    private boolean isScrolling = false;
+    private float mMaxZoom = 1.0f;
+    private float mMinZoom = 0;
+    private float mZoom;
+    private ScaleGestureDetector mScaleDetector;
+    private GestureDetector mGestureDetector;
+    private boolean mIsScrolling = false;
 
     public ZoomView(Context context) {
         super(context);
-        init(context);
+        initZoomView(context);
     }
 
     public ZoomView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        initZoomView(context);
     }
 
     public ZoomView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(context);
+        initZoomView(context);
     }
 
-    private void init(Context context) {
+    private void initZoomView(Context context) {
         setWillNotDraw(false);
 
         setHorizontalScrollBarEnabled(true);
@@ -49,51 +48,29 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         styledAttributes.recycle();
 
         getViewTreeObserver().addOnGlobalLayoutListener(this);
-        scaleDetector = new ScaleGestureDetector(context, this);
-        gestureDetector = new GestureDetector(context, this);
+        mScaleDetector = new ScaleGestureDetector(context, this);
+        mGestureDetector = new GestureDetector(context, this);
     }
 
     @Override
     public void onGlobalLayout() {
         measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
-        MIN_ZOOM = Math.min((float)getWidth() / getMeasuredWidth(),
-                (float)getHeight() / getMeasuredHeight());
-
-        zoom = MIN_ZOOM = Math.min(MIN_ZOOM, MAX_ZOOM);
+        mZoom = mMinZoom = Math.min(Math.min((float)getWidth() / getMeasuredWidth(),
+                (float)getHeight() / getMeasuredHeight()), mMaxZoom);
 
         for(int i = 0; i < getChildCount(); i++)
             scaleView(getChildAt(i));
 
-        scrollTo(getLeftOffset(), getTopOffset());
+        scrollTo(getMinimalScrollX(), getMinimalScrollY());
     }
 
     @Override
     public boolean onScale(ScaleGestureDetector detector) {
-        float oldZoom = zoom;
+        zoomTo((int) detector.getFocusX(), (int) detector.getFocusY(),
+                clamp(mMinZoom, mZoom * detector.getScaleFactor(), mMaxZoom));
 
-        zoom = clamp(MIN_ZOOM, zoom * detector.getScaleFactor(), MAX_ZOOM);
-
-        if(oldZoom > zoom) {
-            int left = getScrollX(), top = getScrollY();
-
-            if(left > getMaximalScrollX())
-                left = getMaximalScrollX();
-            if(left < getLeftOffset())
-                left = getLeftOffset();
-
-            if(top > getMaximalScrollY())
-                top = getMaximalScrollY();
-            if(top < getTopOffset())
-                top = getTopOffset();
-
-            scrollTo(left, top);
-        }
-
-        for(int i = 0; i < getChildCount(); i++)
-            scaleView(getChildAt(i));
-
-        return zoom == MIN_ZOOM || zoom == MAX_ZOOM;
+        return mZoom == mMinZoom || mZoom == mMaxZoom;
     }
 
     @Override
@@ -107,13 +84,13 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-        if(scaleDetector.onTouchEvent(event) && !scaleDetector.isInProgress())
-            if(!gestureDetector.onTouchEvent(event) && !isScrolling)
+        if(mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress())
+            if(!mGestureDetector.onTouchEvent(event) && !mIsScrolling)
                 super.dispatchTouchEvent(event);
 
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_UP:
-                isScrolling = false;
+                mIsScrolling = false;
                 break;
         }
 
@@ -121,8 +98,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private void scaleView(View view) {
-        view.setScaleX(zoom);
-        view.setScaleY(zoom);
+        view.setScaleX(mZoom);
+        view.setScaleY(mZoom);
         int left = view.getLeft();
         int top = view.getTop();
         view.layout(left, top, left + view.getMeasuredWidth(), top + view.getMeasuredHeight());
@@ -145,10 +122,9 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-        isScrolling = true;
+        mIsScrolling = true;
 
-        scrollTo((int)clamp(getLeftOffset(), getScrollX() + distanceX, getMaximalScrollX()),
-                (int)clamp(getTopOffset(), getScrollY() + distanceY, getMaximalScrollY()));
+        scrollTo(getScrollX() + (int) distanceX, getScrollY() + (int) distanceY);
 
         return true;
     }
@@ -163,29 +139,29 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         return false;
     }
 
-    private int getLeftOffset() {
-        int scaledWidth = Math.round((float)getMeasuredWidth() * zoom);
-
-        return ((getMeasuredWidth() - scaledWidth) / 2) -
-                (scaledWidth < getWidth() ? (getWidth() - scaledWidth) / 2 : 0);
+    private int getMinimalScrollX() {
+        return ((getMeasuredWidth() - getScaledWidth()) / 2) -
+                (getScaledWidth() < getWidth() ? (getWidth() - getScaledWidth()) / 2 : 0);
     }
 
-    private int getTopOffset() {
-        int scaledHeight = Math.round((float)getMeasuredHeight() * zoom);
-
-        return ((getMeasuredHeight() - scaledHeight) / 2) -
-                (scaledHeight < getHeight() ? (getHeight() - scaledHeight) / 2 : 0);
+    private int getMinimalScrollY() {
+        return ((getMeasuredHeight() - getScaledHeight()) / 2) -
+                (getScaledHeight() < getHeight() ? (getHeight() - getScaledHeight()) / 2 : 0);
     }
 
     private int getMaximalScrollX() {
-        return Math.round((float)getMeasuredWidth() * zoom) - getWidth() + getLeftOffset();
+        return getScaledWidth() - getWidth() + getMinimalScrollX();
     }
 
     private int getMaximalScrollY() {
-        return Math.round((float)getMeasuredHeight() * zoom) - getHeight() + getTopOffset();
+        return getScaledHeight() - getHeight() + getMinimalScrollY();
     }
 
     private float clamp(float min, float val, float max) {
+        return Math.max(min, Math.min(val, max));
+    }
+
+    private int clamp(int min, int val, int max) {
         return Math.max(min, Math.min(val, max));
     }
 
@@ -196,12 +172,12 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     protected int computeHorizontalScrollOffset() {
-        return getScrollX() - getLeftOffset();
+        return getScrollX() - getMinimalScrollX();
     }
 
     @Override
     protected int computeHorizontalScrollRange() {
-        return Math.round((float) getMeasuredWidth() * zoom);
+        return getScaledWidth();
     }
 
     @Override
@@ -211,11 +187,58 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     protected int computeVerticalScrollOffset() {
-        return getScrollY() - getTopOffset();
+        return getScrollY() - getMinimalScrollY();
     }
 
     @Override
     protected int computeVerticalScrollRange() {
-        return Math.round((float)getMeasuredHeight() * zoom);
+        return getScaledHeight();
+    }
+
+    public float getMinimalZoom() {
+        return mMinZoom;
+    }
+
+    public float getMaximalZoom() {
+        return mMaxZoom;
+    }
+
+    public float getZoom() {
+        return mZoom;
+    }
+
+    private int getScaledWidth(float zoom) {
+        return Math.round((float) getMeasuredWidth() * zoom);
+    }
+
+    private int getScaledWidth() {
+        return getScaledWidth(mZoom);
+    }
+
+    private int getScaledHeight(float zoom) {
+        return Math.round((float) getMeasuredHeight() * zoom);
+    }
+
+    private int getScaledHeight() {
+        return getScaledHeight(mZoom);
+    }
+
+    public void zoomTo(int x, int y, float zoom) {
+        if(mZoom != zoom) {
+            // TODO add scroll to [x, y]
+
+            mZoom = zoom;
+
+            scrollTo(getScrollX(), getScrollY());
+
+            for(int i = 0; i < getChildCount(); i++)
+                scaleView(getChildAt(i));
+        }
+    }
+
+    @Override
+    public void scrollTo (int x, int y) {
+        super.scrollTo(clamp(getMinimalScrollX(), x, getMaximalScrollX()),
+                clamp(getMinimalScrollY(), y, getMaximalScrollY()));
     }
 }
