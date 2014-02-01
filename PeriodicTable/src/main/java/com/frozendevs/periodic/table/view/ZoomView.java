@@ -242,4 +242,13 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         super.scrollTo(clamp(getMinimalScrollX(), x, getMaximalScrollX()),
                 clamp(getMinimalScrollY(), y, getMaximalScrollY()));
     }
+
+    /**
+     * Set maximal zoom.
+     * @param zoom the new maximal scale factor
+     */
+    public void setMaximalZoom(float zoom) {
+        if(zoom > mMinZoom)
+            mMaxZoom = zoom;
+    }
 }
