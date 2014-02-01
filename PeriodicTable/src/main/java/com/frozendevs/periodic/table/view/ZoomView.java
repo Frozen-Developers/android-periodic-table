@@ -207,29 +207,30 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         return mZoom;
     }
 
-    private int getScaledWidth(float zoom) {
-        return Math.round((float) getMeasuredWidth() * zoom);
-    }
-
     private int getScaledWidth() {
-        return getScaledWidth(mZoom);
-    }
-
-    private int getScaledHeight(float zoom) {
-        return Math.round((float) getMeasuredHeight() * zoom);
+        return Math.round((float) getMeasuredWidth() * mZoom);
     }
 
     private int getScaledHeight() {
-        return getScaledHeight(mZoom);
+        return Math.round((float) getMeasuredHeight() * mZoom);
     }
 
+    /**
+     * Zoom to specified point on the screen.
+     * @param x the x coordinate of the zoom point
+     * @param y the y coordinate of the zoom point
+     * @param zoom the new scale factor
+     */
     public void zoomTo(int x, int y, float zoom) {
-        if(mZoom != zoom) {
-            // TODO add scroll to [x, y]
+        if(mZoom != zoom && zoom > 0 && zoom <= mMaxZoom) {
+            float zoomRatio = zoom / mZoom;
+            int oldX = getScrollX() - getMinimalScrollX() + x;
+            int oldY = getScrollY() - getMinimalScrollY() + y;
 
             mZoom = zoom;
 
-            scrollTo(getScrollX(), getScrollY());
+            scrollTo(getMinimalScrollX() + Math.round(oldX * zoomRatio) - x,
+                    getMinimalScrollY() + Math.round(oldY * zoomRatio) - y);
 
             for(int i = 0; i < getChildCount(); i++)
                 scaleView(getChildAt(i));
