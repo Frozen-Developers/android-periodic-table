@@ -13,7 +13,8 @@ import android.widget.FrameLayout;
 import com.frozendevs.periodic.table.R;
 
 public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener,
-        ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener {
+        ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener,
+        GestureDetector.OnDoubleTapListener {
 
     private float mMaxZoom = 1.0f;
     private float mMinZoom = 0;
@@ -250,5 +251,22 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public void setMaximalZoom(float zoom) {
         if(zoom > mMinZoom)
             mMaxZoom = zoom;
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        zoomTo(getWidth() / 2, getHeight() / 2, mZoom < mMaxZoom ? mMaxZoom : mMinZoom);
+
+        return true;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent e) {
+        return false;
     }
 }
