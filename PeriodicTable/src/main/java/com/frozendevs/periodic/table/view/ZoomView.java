@@ -12,6 +12,9 @@ import android.widget.FrameLayout;
 
 import com.frozendevs.periodic.table.R;
 
+/**
+ * ZoomView is designed for dynamic zooming of all kinds of views.
+ */
 public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener,
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener {
@@ -200,6 +203,9 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
      * Returns the minimal scale factor that will be used.
      *
      * @return the minimal scale factor
+     *
+     * @see #getZoom()
+     * @see #getMaximalZoom()
      */
     public float getMinimalZoom() {
         return mMinZoom;
@@ -211,6 +217,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
      * @return the maximal scale factor
      *
      * @see #setMaximalZoom(float)
+     * @see #getMinimalZoom()
+     * @see #getZoom()
      */
     public float getMaximalZoom() {
         return mMaxZoom;
@@ -218,6 +226,9 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     /**
      * @return the current scale factor
+     *
+     * @see #getMinimalZoom()
+     * @see #getMaximalZoom()
      */
     public float getZoom() {
         return mZoom;
