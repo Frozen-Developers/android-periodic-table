@@ -302,7 +302,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        zoomTo(getWidth() / 2, getHeight() / 2, mZoom < mMaxZoom ? mMaxZoom : mMinZoom);
+        zoomTo((int) e.getX(), (int) e.getY(), mZoom < mMaxZoom ? mMaxZoom : mMinZoom);
 
         return true;
     }
