@@ -95,6 +95,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
                 super.dispatchTouchEvent(event);
 
         switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 mIsScrolling = false;
                 break;
