@@ -262,7 +262,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
      * @param zoom the new scale factor
      */
     public void zoomTo(int x, int y, float zoom) {
-        if(mZoom != zoom && zoom > 0 && zoom <= mMaxZoom) {
+        if(mZoom != zoom && zoom >= mMinZoom && zoom <= mMaxZoom) {
             float zoomRatio = zoom / mZoom;
             int oldX = getScrollX() - getMinimalScrollX() + x;
             int oldY = getScrollY() - getMinimalScrollY() + y;
