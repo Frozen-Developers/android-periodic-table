@@ -196,14 +196,29 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         return getScaledHeight();
     }
 
+    /**
+     * Returns the minimal scale factor that will be used.
+     *
+     * @return the minimal scale factor
+     */
     public float getMinimalZoom() {
         return mMinZoom;
     }
 
+    /**
+     * Returns the maximal scale factor that will be used.
+     *
+     * @return the maximal scale factor
+     *
+     * @see #setMaximalZoom(float)
+     */
     public float getMaximalZoom() {
         return mMaxZoom;
     }
 
+    /**
+     * @return the current scale factor
+     */
     public float getZoom() {
         return mZoom;
     }
@@ -218,6 +233,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     /**
      * Zoom to specified point on the screen.
+     *
      * @param x the x coordinate of the zoom point
      * @param y the y coordinate of the zoom point
      * @param zoom the new scale factor
@@ -245,8 +261,11 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     /**
-     * Set maximal zoom.
+     * Sets the maximal scale factor that will be used.
+     *
      * @param zoom the new maximal scale factor
+     *
+     * @see #getMaximalZoom()
      */
     public void setMaximalZoom(float zoom) {
         if(zoom > mMinZoom)
