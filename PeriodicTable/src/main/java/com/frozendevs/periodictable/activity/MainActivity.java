@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.activity;
+package com.frozendevs.periodictable.activity;
 
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
@@ -14,11 +14,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.frozendevs.periodic.table.R;
-import com.frozendevs.periodic.table.fragment.ElementListFragment;
-import com.frozendevs.periodic.table.fragment.TableFragment;
-import com.frozendevs.periodic.table.model.adapter.ElementListAdapter;
-import com.frozendevs.periodic.table.view.NonSwipeableViewPager;
+import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.fragment.ElementListFragment;
+import com.frozendevs.periodictable.fragment.TableFragment;
+import com.frozendevs.periodictable.model.adapter.ElementListAdapter;
+import com.frozendevs.periodictable.view.NonSwipeableViewPager;
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
 

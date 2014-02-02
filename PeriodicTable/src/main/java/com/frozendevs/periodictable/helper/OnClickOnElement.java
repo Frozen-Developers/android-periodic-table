@@ -1,10 +1,10 @@
-package com.frozendevs.periodic.table.helper;
+package com.frozendevs.periodictable.helper;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-import com.frozendevs.periodic.table.activity.DetailsActivity;
+import com.frozendevs.periodictable.activity.DetailsActivity;
 
 public class OnClickOnElement implements View.OnClickListener {
 

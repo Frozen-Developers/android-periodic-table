@@ -1,14 +1,14 @@
-package com.frozendevs.periodic.table.helper;
+package com.frozendevs.periodictable.helper;
 
 import android.content.Context;
 import android.util.Xml;
 
-import com.frozendevs.periodic.table.R;
-import com.frozendevs.periodic.table.model.BasicElementProperties;
-import com.frozendevs.periodic.table.model.ElementProperties;
-import com.frozendevs.periodic.table.model.ElementListItem;
-import com.frozendevs.periodic.table.model.Isotope;
-import com.frozendevs.periodic.table.model.TableItem;
+import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.model.BasicElementProperties;
+import com.frozendevs.periodictable.model.ElementProperties;
+import com.frozendevs.periodictable.model.ElementListItem;
+import com.frozendevs.periodictable.model.Isotope;
+import com.frozendevs.periodictable.model.TableItem;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

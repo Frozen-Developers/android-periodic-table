@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.view;
+package com.frozendevs.periodictable.view;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.LinearLayout;
 
-import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodictable.R;
 
 public class GridView extends LinearLayout {
 

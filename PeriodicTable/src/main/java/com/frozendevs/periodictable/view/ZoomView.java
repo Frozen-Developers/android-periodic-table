@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.view;
+package com.frozendevs.periodictable.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
-import com.frozendevs.periodic.table.R;
+import com.frozendevs.periodictable.R;
 
 /**
  * ZoomView is designed for dynamic zooming of all kinds of views.

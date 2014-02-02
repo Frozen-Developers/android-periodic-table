@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.model;
+package com.frozendevs.periodictable.model;
 
 public class TableItem extends ElementListItem {
 

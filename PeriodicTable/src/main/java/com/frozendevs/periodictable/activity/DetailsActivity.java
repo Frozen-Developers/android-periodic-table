@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.activity;
+package com.frozendevs.periodictable.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -13,11 +13,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.frozendevs.periodic.table.R;
-import com.frozendevs.periodic.table.fragment.DetailsFragment;
-import com.frozendevs.periodic.table.fragment.IsotopesFragment;
-import com.frozendevs.periodic.table.helper.Database;
-import com.frozendevs.periodic.table.model.BasicElementProperties;
+import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.fragment.DetailsFragment;
+import com.frozendevs.periodictable.fragment.IsotopesFragment;
+import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.model.BasicElementProperties;
 
 public class DetailsActivity extends ActionBarActivity {
 

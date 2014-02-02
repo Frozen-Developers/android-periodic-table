@@ -1,4 +1,4 @@
-package com.frozendevs.periodic.table.model.adapter;
+package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.frozendevs.periodic.table.R;
-import com.frozendevs.periodic.table.helper.Database;
-import com.frozendevs.periodic.table.model.ElementProperties;
+import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.model.ElementProperties;
 
 public class DetailsListAdapter extends BaseAdapter {
 
