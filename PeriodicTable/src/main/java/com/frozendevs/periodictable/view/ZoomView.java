@@ -18,8 +18,7 @@ import com.frozendevs.periodictable.R;
  * ZoomView is designed for dynamic zooming of all kinds of views.
  */
 public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLayoutListener,
-        ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener,
-        GestureDetector.OnDoubleTapListener {
+        ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener {
 
     private float mMaxZoom = 1.0f;
     private float mMinZoom = 0;
@@ -295,23 +294,6 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public void setMaximalZoom(float zoom) {
         if(zoom > mMinZoom)
             mMaxZoom = zoom;
-    }
-
-    @Override
-    public boolean onSingleTapConfirmed(MotionEvent e) {
-        return false;
-    }
-
-    @Override
-    public boolean onDoubleTap(MotionEvent e) {
-        zoomTo((int) e.getX(), (int) e.getY(), mZoom < mMaxZoom ? mMaxZoom : mMinZoom);
-
-        return true;
-    }
-
-    @Override
-    public boolean onDoubleTapEvent(MotionEvent e) {
-        return false;
     }
 
     @Override
