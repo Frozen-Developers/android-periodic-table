@@ -12,6 +12,10 @@ import android.widget.LinearLayout;
 
 import com.frozendevs.periodictable.R;
 
+/**
+ * Replacement for Android's GridView. We use our own implementation because Android's GridView is
+ * not suitable for usage with ZoomView.
+ */
 public class GridView extends LinearLayout {
 
     /**
@@ -101,26 +105,52 @@ public class GridView extends LinearLayout {
         }
     }
 
+    /**
+     * Get the number of columns in the grid.
+     */
     public int getNumColumns() {
         return mNumColumns;
     }
 
+    /**
+     * Get the number of rows in the grid.
+     */
     public int getNumRows() {
         return mNumRows;
     }
 
+    /**
+     * Return the width of a column in the grid.
+     *
+     * @return The column width in pixels
+     */
     public int getColumnWidth() {
         return mColumnWidth;
     }
 
+    /**
+     * Return the height of a row in the grid.
+     *
+     * @return The row height in pixels
+     */
     public int getRowHeight() {
         return mRowHeight;
     }
 
+    /**
+     * Returns the amount of horizontal spacing currently used between each item in the grid.
+     *
+     * @return Current horizontal spacing between each item in pixels
+     */
     public int getHorizontalSpacing() {
         return mHorizontalSpacing;
     }
 
+    /**
+     * Returns the amount of vertical spacing between each item in the grid.
+     *
+     * @return The vertical spacing between items in pixels
+     */
     public int getVerticalSpacing() {
         return mVerticalSpacing;
     }
