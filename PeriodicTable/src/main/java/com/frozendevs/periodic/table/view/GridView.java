@@ -14,36 +14,58 @@ import com.frozendevs.periodic.table.R;
 
 public class GridView extends LinearLayout {
 
-    private int numColumns, numRows;
-    private int columnWidth, rowHeight;
-    private int horizontalSpacing, verticalSpacing;
+    /**
+     * Default columns count.
+     */
+    public static final int DEFAULT_COLUMNS_COUNT = 2;
 
-    private Adapter adapter = null;
+    /**
+     * Default rows count.
+     */
+    public static final int DEFAULT_ROWS_COUNT = 2;
 
-    private View emptyView;
+    /**
+     * Default number of pixels for horizontal spacing.
+     */
+    public static final int DEFAULT_HORIZONTAL_SPACING = 0;
+
+    /**
+     * Default number of pixels for vertical spacing.
+     */
+    public static final int DEFAULT_VERTICAL_SPACING = 0;
+
+    private int mNumColumns, mNumRows;
+    private int mColumnWidth, mRowHeight;
+    private int mHorizontalSpacing, mVerticalSpacing;
+    private Adapter mAdapter = null;
+    private View mEmptyView = null;
 
     public GridView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(attrs);
+        initGridView(attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public GridView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init(attrs);
+        initGridView(attrs);
     }
 
-    private void init(AttributeSet attrs) {
+    private void initGridView(AttributeSet attrs) {
         TypedArray style = getContext().getTheme().obtainStyledAttributes(attrs,
                 R.styleable.GridView, 0, 0);
 
         try {
-            numColumns = style.getInteger(R.styleable.GridView_numColumns, 0);
-            numRows = style.getInteger(R.styleable.GridView_numRows, 0);
-            columnWidth = style.getDimensionPixelSize(R.styleable.GridView_columnWidth, 0);
-            rowHeight = style.getDimensionPixelSize(R.styleable.GridView_rowHeight, 0);
-            horizontalSpacing = style.getDimensionPixelSize(R.styleable.GridView_horizontalSpacing, 0);
-            verticalSpacing = style.getDimensionPixelSize(R.styleable.GridView_verticalSpacing, 0);
+            mNumColumns = style.getInteger(R.styleable.GridView_numColumns, DEFAULT_COLUMNS_COUNT);
+            mNumRows = style.getInteger(R.styleable.GridView_numRows, DEFAULT_ROWS_COUNT);
+            mColumnWidth = style.getDimensionPixelSize(R.styleable.GridView_columnWidth,
+                    getWidth() / DEFAULT_COLUMNS_COUNT);
+            mRowHeight = style.getDimensionPixelSize(R.styleable.GridView_rowHeight,
+                    getHeight() / DEFAULT_ROWS_COUNT);
+            mHorizontalSpacing = style.getDimensionPixelSize(R.styleable.GridView_horizontalSpacing,
+                    DEFAULT_HORIZONTAL_SPACING);
+            mVerticalSpacing = style.getDimensionPixelSize(R.styleable.GridView_verticalSpacing,
+                    DEFAULT_VERTICAL_SPACING);
         } finally {
             style.recycle();
         }
@@ -52,21 +74,21 @@ public class GridView extends LinearLayout {
     }
 
     private void fillWithData() {
-        if(adapter.getCount() > 0) {
-            for(int i = 0; i < numRows; i ++) {
+        if(mAdapter.getCount() > 0) {
+            for(int i = 0; i < mNumRows; i ++) {
                 LinearLayout row = new LinearLayout(getContext());
-                LayoutParams rowParams = new LayoutParams((numColumns * columnWidth) +
-                        ((numColumns - 2) * horizontalSpacing), rowHeight);
-                rowParams.setMargins(0, i > 0 ? verticalSpacing : 0, 0, 0);
+                LayoutParams rowParams = new LayoutParams((mNumColumns * mColumnWidth) +
+                        ((mNumColumns - 2) * mHorizontalSpacing), mRowHeight);
+                rowParams.setMargins(0, i > 0 ? mVerticalSpacing : 0, 0, 0);
                 row.setLayoutParams(rowParams);
                 row.setOrientation(HORIZONTAL);
 
-                for(int n = 0; n < numColumns; n++) {
+                for(int n = 0; n < mNumColumns; n++) {
                     LinearLayout cell = new LinearLayout(getContext());
-                    LayoutParams cellParams = new LayoutParams(columnWidth, rowHeight);
-                    cellParams.setMargins(n > 0 ? horizontalSpacing : 0, 0, 0, 0);
+                    LayoutParams cellParams = new LayoutParams(mColumnWidth, mRowHeight);
+                    cellParams.setMargins(n > 0 ? mHorizontalSpacing : 0, 0, 0, 0);
                     cell.setLayoutParams(cellParams);
-                    cell.addView(adapter.getView((i * numColumns) + n, null, cell));
+                    cell.addView(mAdapter.getView((i * mNumColumns) + n, null, cell));
 
                     row.addView(cell);
                 }
@@ -74,49 +96,63 @@ public class GridView extends LinearLayout {
                 addView(row);
             }
 
-            if(emptyView != null)
-                emptyView.setVisibility(GONE);
+            if(mEmptyView != null)
+                mEmptyView.setVisibility(GONE);
         }
     }
 
     public int getNumColumns() {
-        return numColumns;
+        return mNumColumns;
     }
 
     public int getNumRows() {
-        return numRows;
+        return mNumRows;
     }
 
     public int getColumnWidth() {
-        return columnWidth;
+        return mColumnWidth;
     }
 
     public int getRowHeight() {
-        return rowHeight;
+        return mRowHeight;
     }
 
     public int getHorizontalSpacing() {
-        return horizontalSpacing;
+        return mHorizontalSpacing;
     }
 
     public int getVerticalSpacing() {
-        return verticalSpacing;
+        return mVerticalSpacing;
     }
 
+    /**
+     * Returns the adapter currently associated with this widget.
+     *
+     * @return The adapter used to provide this view's content.
+     *
+     * @see #setAdapter(android.widget.Adapter)
+     */
     public Adapter getAdapter() {
-        return adapter;
+        return mAdapter;
     }
 
+    /**
+     * Sets the data behind this GridView.
+     *
+     * @param adapter the adapter providing the grid's data
+     *
+     * @see #getAdapter()
+     */
     public void setAdapter(Adapter adapter) {
-        this.adapter = adapter;
+        this.mAdapter = adapter;
 
         fillWithData();
 
         adapter.registerDataSetObserver(new DataSetObserver() {
             @Override
             public void onChanged() {
-                if(emptyView != null)
-                    emptyView.setVisibility(VISIBLE);
+                if(mEmptyView != null)
+                    mEmptyView.setVisibility(VISIBLE);
 
                 removeAllViews();
                 fillWithData();
@@ -124,12 +160,15 @@ public class GridView extends LinearLayout {
         });
     }
 
+    /**
+     * Sets the view to show if the adapter is empty
+     */
     public void setEmptyView(View view) {
-        emptyView = view;
+        mEmptyView = view;
 
-        if(adapter == null || adapter.getCount() == 0)
-            emptyView.setVisibility(VISIBLE);
+        if(mAdapter == null || mAdapter.getCount() == 0)
+            mEmptyView.setVisibility(VISIBLE);
         else
-            emptyView.setVisibility(GONE);
+            mEmptyView.setVisibility(GONE);
     }
 }
