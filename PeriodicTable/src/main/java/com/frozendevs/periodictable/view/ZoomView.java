@@ -67,8 +67,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         mZoom = mMinZoom = Math.min(Math.min((float)getWidth() / getMeasuredWidth(),
                 (float)getHeight() / getMeasuredHeight()), mMaxZoom);
 
-        for(int i = 0; i < getChildCount(); i++)
-            scaleView(getChildAt(i));
+        scaleChildren();
 
         scrollTo(getMinimalScrollX(), getMinimalScrollY());
     }
@@ -105,12 +104,16 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         return true;
     }
 
-    private void scaleView(View view) {
-        view.setScaleX(mZoom);
-        view.setScaleY(mZoom);
-        int left = view.getLeft();
-        int top = view.getTop();
-        view.layout(left, top, left + view.getMeasuredWidth(), top + view.getMeasuredHeight());
+    private void scaleChildren() {
+        for(int i = 0; i < getChildCount(); i++) {
+            View view = getChildAt(i);
+
+            view.setScaleX(mZoom);
+            view.setScaleY(mZoom);
+            int left = view.getLeft();
+            int top = view.getTop();
+            view.layout(left, top, left + view.getMeasuredWidth(), top + view.getMeasuredHeight());
+        }
     }
 
     @Override
@@ -272,8 +275,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
             scrollTo(getMinimalScrollX() + Math.round(oldX * zoomRatio) - x,
                     getMinimalScrollY() + Math.round(oldY * zoomRatio) - y);
 
-            for(int i = 0; i < getChildCount(); i++)
-                scaleView(getChildAt(i));
+            scaleChildren();
         }
     }
 
