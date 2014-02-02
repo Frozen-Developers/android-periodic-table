@@ -2,6 +2,7 @@ package com.frozendevs.periodictable.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -9,6 +10,7 @@ import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
+import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
 
@@ -25,6 +27,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     private ScaleGestureDetector mScaleDetector;
     private GestureDetector mGestureDetector;
     private boolean mIsScrolling = false;
+    private OverScroller mOverScroller;
 
     public ZoomView(Context context) {
         super(context);
@@ -52,6 +55,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         styledAttributes.recycle();
 
         getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mOverScroller = new OverScroller(context);
         mScaleDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, this);
     }
@@ -111,6 +115,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onDown(MotionEvent e) {
+        mOverScroller.forceFinished(true);
+
         return false;
     }
 
@@ -140,7 +146,13 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        return false;
+        mOverScroller.forceFinished(true);
+        mOverScroller.fling(getScrollX(), getScrollY(), (int) -velocityX, (int) -velocityY,
+                getMinimalScrollX(), getMaximalScrollX(), getMinimalScrollY(), getMaximalScrollY(),
+                getWidth() / 2, getHeight() / 2);
+        ViewCompat.postInvalidateOnAnimation(this);
+
+        return true;
     }
 
     private int getMinimalScrollX() {
@@ -298,5 +310,11 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     @Override
     public boolean onDoubleTapEvent(MotionEvent e) {
         return false;
+    }
+
+    @Override
+    public void computeScroll() {
+        if(mOverScroller.computeScrollOffset())
+            scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
     }
 }
