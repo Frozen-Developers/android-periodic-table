@@ -21,8 +21,8 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnGestureListener {
 
     private float mMaxZoom = 1.0f;
-    private float mMinZoom = 0;
-    private float mZoom;
+    private float mMinZoom = 0f;
+    private float mZoom = 0f;
     private ScaleGestureDetector mScaleDetector;
     private GestureDetector mGestureDetector;
     private boolean mIsScrolling = false;
@@ -63,12 +63,16 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     public void onGlobalLayout() {
         measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
-        mZoom = mMinZoom = Math.min(Math.min((float)getWidth() / getMeasuredWidth(),
-                (float)getHeight() / getMeasuredHeight()), mMaxZoom);
+        mMinZoom = Math.min(Math.min((float)getWidth() / (float)getMeasuredWidth(),
+                (float)getHeight() / (float)getMeasuredHeight()), mMaxZoom);
 
-        scaleChildren();
+        mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
 
-        scrollTo(getMinimalScrollX(), getMinimalScrollY());
+        if(mZoom > 0f) {
+            scrollTo(getMinimalScrollX(), getMinimalScrollY());
+
+            scaleChildren();
+        }
     }
 
     @Override
@@ -177,6 +181,10 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
     }
 
     private float clamp(float min, float val, float max) {
+        if(Float.isNaN(min)) min = 0f;
+        if(Float.isNaN(val)) val = 0f;
+        if(Float.isNaN(max)) max = 0f;
+
         return Math.max(min, Math.min(val, max));
     }
 
