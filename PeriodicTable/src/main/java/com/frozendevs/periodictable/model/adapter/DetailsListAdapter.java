@@ -15,7 +15,7 @@ import com.frozendevs.periodictable.model.ElementProperties;
 public class DetailsListAdapter extends BaseAdapter {
 
     private Context context;
-    private String[][] propertiesPairs = new String[][] {};
+    private String[][] propertiesPairs = new String[][] {  };
 
     private class LoadProperties extends AsyncTask<Integer, Void, Void> {
 
@@ -27,7 +27,8 @@ public class DetailsListAdapter extends BaseAdapter {
                     { getString(R.string.property_symbol), properties.getSymbol() },
                     { getString(R.string.property_atomic_number), intToStr(properties.getAtomicNumber()) },
                     { getString(R.string.property_weight), properties.getStandardAtomicWeight() },
-                    { getString(R.string.property_group), intToStr(properties.getGroup()) },
+                    { getString(R.string.property_group),
+                            intToStr(properties.getGroup() > 0 ? properties.getGroup() : 3) },
                     { getString(R.string.property_period), intToStr(properties.getPeriod()) },
                     { getString(R.string.property_category), capitalize(properties.getCategory()) }
             };
