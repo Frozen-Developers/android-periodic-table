@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.frozendevs.periodictable.activity.DetailsActivity"
+        <activity android:name="com.frozendevs.periodictable.activity.PropertiesActivity"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
             android:launchMode="singleTop"
             android:configChanges="orientation|screenSize" >

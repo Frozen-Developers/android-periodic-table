@@ -15,9 +15,9 @@ import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.fragment.ElementListFragment;
+import com.frozendevs.periodictable.fragment.ElementsFragment;
 import com.frozendevs.periodictable.fragment.TableFragment;
-import com.frozendevs.periodictable.model.adapter.ElementListAdapter;
+import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 import com.frozendevs.periodictable.view.NonSwipeableViewPager;
 
 public class MainActivity extends ActionBarActivity implements ActionBar.TabListener {
@@ -34,7 +34,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         public Fragment getItem(int i) {
             switch (i) {
                 case 0:
-                    return new ElementListFragment();
+                    return new ElementsFragment();
 
                 case 1:
                     return new TableFragment();
@@ -92,8 +92,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
 
-        final ElementListAdapter adapter =
-                (ElementListAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
+        final ElementsAdapter adapter =
+                (ElementsAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView)MenuItemCompat.getActionView(searchItem);

@@ -234,7 +234,7 @@ public class Database {
         return items;
     }
 
-    public static ElementProperties getElementDetails(Context context, int atomicNumber) {
+    public static ElementProperties getElementProperties(Context context, int atomicNumber) {
         XmlPullParser parser = Xml.newPullParser();
         InputStream inputStream = getDatabaseFile(context);
         try {

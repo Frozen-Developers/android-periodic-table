@@ -17,7 +17,7 @@ import com.frozendevs.periodictable.model.ElementListItem;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ElementListAdapter extends BaseAdapter {
+public class ElementsAdapter extends BaseAdapter {
 
     private List<ElementListItem> elements, filteredElements;
     private Activity activity;
@@ -41,7 +41,7 @@ public class ElementListAdapter extends BaseAdapter {
         }
     }
 
-    public ElementListAdapter(Activity activity) {
+    public ElementsAdapter(Activity activity) {
         this.activity = activity;
 
         elements = new ArrayList<ElementListItem>();

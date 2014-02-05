@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.adapter.DetailsListAdapter;
+import com.frozendevs.periodictable.model.adapter.PropropertiesAdapter;
 
-public class DetailsFragment extends Fragment {
+public class PropertiesFragment extends Fragment {
 
     private int atomicNumber;
 
-    public DetailsFragment(int atomicNumber) {
+    public PropertiesFragment(int atomicNumber) {
         super();
 
         this.atomicNumber = atomicNumber;
@@ -26,7 +26,7 @@ public class DetailsFragment extends Fragment {
 
         ListView listView = (ListView)layout.findViewById(R.id.details_list);
         listView.setEmptyView(layout.findViewById(R.id.progress_bar));
-        listView.setAdapter(new DetailsListAdapter(getActivity(), atomicNumber));
+        listView.setAdapter(new PropropertiesAdapter(getActivity(), atomicNumber));
 
         return layout;
     }

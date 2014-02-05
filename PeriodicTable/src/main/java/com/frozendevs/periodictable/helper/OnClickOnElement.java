@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 
-import com.frozendevs.periodictable.activity.DetailsActivity;
+import com.frozendevs.periodictable.activity.PropertiesActivity;
 
 public class OnClickOnElement implements View.OnClickListener {
 
@@ -18,7 +18,7 @@ public class OnClickOnElement implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        Intent intent = new Intent(context, DetailsActivity.class);
+        Intent intent = new Intent(context, PropertiesActivity.class);
         intent.putExtra("atomicNumber", atomicNumber);
         context.startActivity(intent);
     }

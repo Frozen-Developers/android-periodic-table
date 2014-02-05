@@ -8,9 +8,9 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.adapter.ElementListAdapter;
+import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 
-public class ElementListFragment extends Fragment {
+public class ElementsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -18,7 +18,7 @@ public class ElementListFragment extends Fragment {
 
         ListView listView = (ListView)rootView.findViewById(R.id.elementList);
         listView.setEmptyView(rootView.findViewById(R.id.progress_bar));
-        listView.setAdapter(new ElementListAdapter(getActivity()));
+        listView.setAdapter(new ElementsAdapter(getActivity()));
 
         return rootView;
     }

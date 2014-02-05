@@ -14,12 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.fragment.DetailsFragment;
+import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.BasicElementProperties;
 
-public class DetailsActivity extends ActionBarActivity {
+public class PropertiesActivity extends ActionBarActivity {
 
     private BasicElementProperties elementProperties;
 
@@ -37,7 +37,7 @@ public class DetailsActivity extends ActionBarActivity {
         public Fragment getItem(int i) {
             switch (i) {
                 case 0:
-                    return new DetailsFragment(atomicNumber);
+                    return new PropertiesFragment(atomicNumber);
 
                 case 1:
                     return new IsotopesFragment(atomicNumber);

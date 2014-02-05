@@ -12,7 +12,7 @@ import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 
-public class DetailsListAdapter extends BaseAdapter {
+public class PropropertiesAdapter extends BaseAdapter {
 
     private Context context;
     private String[][] propertiesPairs = new String[][] {  };
@@ -21,7 +21,7 @@ public class DetailsListAdapter extends BaseAdapter {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            ElementProperties properties = Database.getElementDetails(context, params[0]);
+            ElementProperties properties = Database.getElementProperties(context, params[0]);
 
             propertiesPairs = new String[][] {
                     { getString(R.string.property_symbol), properties.getSymbol() },
@@ -43,7 +43,7 @@ public class DetailsListAdapter extends BaseAdapter {
         }
     }
 
-    public DetailsListAdapter(Context context, int atomicNumber) {
+    public PropropertiesAdapter(Context context, int atomicNumber) {
         this.context = context;
 
         new LoadProperties().execute(atomicNumber);
