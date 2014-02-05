@@ -250,8 +250,8 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
-                            String symbol = null, name = null, weight = null, category = null,
-                                    wiki = null;
+                            String symbol = null, name = null, weight = null, block = null,
+                                    category = null, wiki = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -269,6 +269,8 @@ public class Database {
                                         group = Integer.valueOf(readTag(parser, tag));
                                     else if(tag.equals("period"))
                                         period = Integer.valueOf(readTag(parser, tag));
+                                    else if(tag.equals("block"))
+                                        block = readTag(parser, tag);
                                     else if(tag.equals("category"))
                                         category = readTag(parser, tag);
                                     else if(tag.equals("wiki"))
@@ -279,7 +281,7 @@ public class Database {
                             }
 
                             return new ElementProperties(name, symbol, atomicNumber, weight, group,
-                                    period, category, wiki);
+                                    period, block, category, wiki);
                         }
                         else
                             skip(parser);

@@ -30,6 +30,7 @@ public class DetailsListAdapter extends BaseAdapter {
                     { getString(R.string.property_group),
                             intToStr(properties.getGroup() > 0 ? properties.getGroup() : 3) },
                     { getString(R.string.property_period), intToStr(properties.getPeriod()) },
+                    { getString(R.string.property_block), properties.getBlock() },
                     { getString(R.string.property_category), capitalize(properties.getCategory()) }
             };
 

@@ -27,6 +27,7 @@
     <string name="property_weight">Standard atomic weight</string>
     <string name="property_group">Group</string>
     <string name="property_period">Period</string>
+    <string name="property_block">Block</string>
     <string name="property_category">Category</string>
 
 </resources>
