@@ -111,7 +111,7 @@ def fetch(url, root):
         isotope_tag.attrib['symbol'] = re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), ''))
         add_to_element(isotope_tag, 'half-life', remove_trailing_newline(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '').replace('×10', '×10^')))
         add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')).replace('×10', '×10^'))
-        add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]))
+        add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]).replace('(', '').replace(')', ''))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
         add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 

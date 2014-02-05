@@ -24864,7 +24864,7 @@ CD (2.6×10^−9%)</decay-modes>
         <half-life>13 ms</half-life>
         <decay-modes>SF (51%)
 α (49%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 249No</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
@@ -24880,7 +24880,7 @@ CD (2.6×10^−9%)</decay-modes>
         <half-life>23 µs</half-life>
         <decay-modes>SF (99.7%)
 α (.3%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 250No</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -24889,7 +24889,7 @@ CD (2.6×10^−9%)</decay-modes>
         <half-life>1.64 s</half-life>
         <decay-modes>SF (52%)
 α (48%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 251No</daughter-isotopes>
         <spin>9/2-</spin>
         <abundance></abundance>
@@ -24898,7 +24898,7 @@ CD (2.6×10^−9%)</decay-modes>
         <half-life>6.45 ms</half-life>
         <decay-modes>SF (96%)
 α (6%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 252No</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -24910,7 +24910,7 @@ CD (2.6×10^−9%)</decay-modes>
 SF (2.4%)</decay-modes>
         <daughter-isotopes>253No
 257Lr
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>1/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -24925,7 +24925,7 @@ SF (2.4%)</decay-modes>
         <half-life>12 ms</half-life>
         <decay-modes>SF (87%)
 α (13%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 254No</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -24936,7 +24936,7 @@ SF (2.4%)</decay-modes>
 SF (7%)
 β+ (.3%)</decay-modes>
         <daughter-isotopes>255No
-(various)
+various
 259Lr</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
@@ -24945,7 +24945,7 @@ SF (7%)
         <half-life>21 ms</half-life>
         <decay-modes>SF (98%)
 α (2%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 256No</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -24957,7 +24957,7 @@ SF (7%)
 SF (10%)</decay-modes>
         <daughter-isotopes>257No
 261Lr
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>3/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -24974,7 +24974,7 @@ SF (10%)</decay-modes>
         <half-life>2.3 s</half-life>
         <decay-modes>SF (99.2%)
 α (.8%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 258No</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -24982,7 +24982,7 @@ SF (10%)</decay-modes>
       <isotope symbol="262m">
         <half-life>47 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>high</spin>
         <abundance></abundance>
       </isotope>
@@ -24990,7 +24990,7 @@ SF (10%)</decay-modes>
         <half-life>11 min</half-life>
         <decay-modes>SF (70%)
 α (30%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 259No</daughter-isotopes>
         <spin>3/2+</spin>
         <abundance></abundance>
@@ -24998,7 +24998,7 @@ SF (10%)</decay-modes>
       <isotope symbol="265">
         <half-life>2.5 min</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25012,7 +25012,7 @@ SF (10%)</decay-modes>
       <isotope symbol="267">
         <half-life>5 h</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25040,7 +25040,7 @@ SF (10%)</decay-modes>
         <decay-modes>α (~80%)
 SF (~20%)</decay-modes>
         <daughter-isotopes>251Lr
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25050,7 +25050,7 @@ SF (~20%)</decay-modes>
 SF (~0.02%)
 β+ (~36%)</decay-modes>
         <daughter-isotopes>252Lr
-(various)
+various
 256Rf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25061,7 +25061,7 @@ SF (~0.02%)
 SF (&lt;6%)
 β+ (1%)</decay-modes>
         <daughter-isotopes>253Lr
-(various)
+various
 257Rf</daughter-isotopes>
         <spin>9/2+</spin>
         <abundance></abundance>
@@ -25072,7 +25072,7 @@ SF (&lt;6%)
 SF (&lt;13%)
 β+ (1%)</decay-modes>
         <daughter-isotopes>253Lr
-(various)
+various
 257Rf</daughter-isotopes>
         <spin>1/2-</spin>
         <abundance></abundance>
@@ -25084,7 +25084,7 @@ SF (&lt;13%)
 SF (&lt;1%)</decay-modes>
         <daughter-isotopes>254Lr
 258Rf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25110,7 +25110,7 @@ IT (rare)</decay-modes>
 SF (&lt;9.6%)
 β+ (&lt;2.5%)</decay-modes>
         <daughter-isotopes>256Lr
-(various)
+various
 260Rf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25126,7 +25126,7 @@ SF (&lt;9.6%)
         <half-life>4.51.1 s</half-life>
         <decay-modes>SF (73%)
 α (27%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 257Lr</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25136,7 +25136,7 @@ SF (&lt;9.6%)
         <decay-modes>SF (~67%)
 α (~30%)
 β+ (3%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 258Lr
 262Rf</daughter-isotopes>
         <spin></spin>
@@ -25147,7 +25147,7 @@ SF (&lt;9.6%)
         <decay-modes>SF (~56%)
 α (~37%)
 β+ (~6.9%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 259Lr
 263Rf</daughter-isotopes>
         <spin></spin>
@@ -25157,7 +25157,7 @@ SF (&lt;9.6%)
         <half-life>80 min</half-life>
         <decay-modes>SF
 EC</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 266Rf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25165,7 +25165,7 @@ EC</decay-modes>
       <isotope symbol="267">
         <half-life>4.63.7 h</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25173,7 +25173,7 @@ EC</decay-modes>
         <half-life>30.85.0 h</half-life>
         <decay-modes>SF (~100%)
 EC </decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 268Rf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25181,7 +25181,7 @@ EC </decay-modes>
       <isotope symbol="270">
         <half-life>23.15 h</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25200,7 +25200,7 @@ EC </decay-modes>
       <isotope symbol="258">
         <half-life>3.3 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25215,7 +25215,7 @@ EC </decay-modes>
         <half-life>3.8 ms</half-life>
         <decay-modes>SF (74%)
 α (26%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 256Rf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -25227,7 +25227,7 @@ EC (1.3%)
 SF (.6%)</decay-modes>
         <daughter-isotopes>257Rf
 261Db
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -25241,7 +25241,7 @@ SF (.6%)</decay-modes>
       <isotope symbol="262">
         <half-life>8 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25257,14 +25257,14 @@ SF (.6%)</decay-modes>
         <decay-modes>α (87%)
 SF (13%)</decay-modes>
         <daughter-isotopes>259Rf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>3/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="264">
         <half-life>37 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25282,7 +25282,7 @@ SF (13%)</decay-modes>
       <isotope symbol="266">
         <half-life>360 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25290,7 +25290,7 @@ SF (13%)</decay-modes>
         <half-life>19 ms</half-life>
         <decay-modes>SF (83%)
 α (17%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 263Rf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25307,7 +25307,7 @@ SF (13%)</decay-modes>
         <decay-modes>α (67%)
 SF (33%)</decay-modes>
         <daughter-isotopes>267Rf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25335,7 +25335,7 @@ SF (33%)</decay-modes>
         <decay-modes>α (95%?)
 SF (5%?)</decay-modes>
         <daughter-isotopes>257Db
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -25344,7 +25344,7 @@ SF (5%?)</decay-modes>
         <decay-modes>α (80%)
 SF (20%)</decay-modes>
         <daughter-isotopes>258Db
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25353,7 +25353,7 @@ SF (20%)</decay-modes>
         <decay-modes>α (70%)
 SF (30%)</decay-modes>
         <daughter-isotopes>258Db
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25362,7 +25362,7 @@ SF (30%)</decay-modes>
         <decay-modes>α (86%)
 SF (14%)</decay-modes>
         <daughter-isotopes>260Db
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25439,7 +25439,7 @@ SF (14%)</decay-modes>
         <decay-modes>α (50%)
 SF(50%)</decay-modes>
         <daughter-isotopes>260Sg
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25530,14 +25530,14 @@ SF(50%)</decay-modes>
       <isotope symbol="277">
         <half-life>11 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>3/2+[a]</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="277m">
         <half-life>130 s</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25612,7 +25612,7 @@ SF(50%)</decay-modes>
       <isotope symbol="277">
         <half-life>~5 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -25695,7 +25695,7 @@ SF(50%)</decay-modes>
         <half-life>0.18+5-3 s</half-life>
         <decay-modes>SF (90%)
 α (10%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 275Hs</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25704,7 +25704,7 @@ SF(50%)</decay-modes>
         <half-life>9.6 s</half-life>
         <decay-modes>SF (94%)
 α (6%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 277Hs</daughter-isotopes>
         <spin>3/2+</spin>
         <abundance></abundance>
@@ -25767,7 +25767,7 @@ SF(50%)</decay-modes>
         <half-life>26 s</half-life>
         <decay-modes>SF (90%)
 α (10%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 277Mt</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -25808,7 +25808,7 @@ SF(50%)</decay-modes>
       <isotope symbol="282">
         <half-life>0.8 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25817,21 +25817,21 @@ SF(50%)</decay-modes>
         <decay-modes>α (90%)
 SF (10%)</decay-modes>
         <daughter-isotopes>279Ds
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="283m">
         <half-life>5 min</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="284">
         <half-life>97 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -25925,7 +25925,7 @@ SF (10%)</decay-modes>
       <isotope symbol="286">
         <half-life>130 ms</half-life>
         <decay-modes>SF (60%)α (40%)</decay-modes>
-        <daughter-isotopes>(variable)
+        <daughter-isotopes>variable
 282Cn</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -32969,7 +32969,7 @@ SF (5×10^−11%)</decay-modes>
         <daughter-isotopes>226Ra
 206Hg
 24Ne
-(Various)</daughter-isotopes>
+Various</daughter-isotopes>
         <spin>0+</spin>
         <abundance>trace</abundance>
       </isotope>
@@ -32990,7 +32990,7 @@ SF (1.1×10^−9%)
 CD (2.78×10^−10%)</decay-modes>
         <daughter-isotopes>228Ra
 232U
-(various)
+various
 182Yb
 26Ne
 24Ne</daughter-isotopes>
@@ -33229,7 +33229,7 @@ CD (10−12%)</decay-modes>
         <daughter-isotopes>227Ac
 207Tl
 24Ne
-(various)
+various
 208Pb
 23F</daughter-isotopes>
         <spin>3/2-</spin>
@@ -33256,7 +33256,7 @@ EC (.003%)</decay-modes>
         <decay-modes>β-
 SF (3×10^−10%)</decay-modes>
         <daughter-isotopes>234U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>4+</spin>
         <abundance>trace</abundance>
       </isotope>
@@ -33267,7 +33267,7 @@ IT (.16%)
 SF (10−10%)</decay-modes>
         <daughter-isotopes>234U
 234Pa
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0-</spin>
         <abundance>trace</abundance>
       </isotope>
@@ -33283,7 +33283,7 @@ SF (10−10%)</decay-modes>
         <decay-modes>β-
 β-, SF (6×10^−8%)</decay-modes>
         <daughter-isotopes>236U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>1-</spin>
         <abundance></abundance>
       </isotope>
@@ -33299,7 +33299,7 @@ SF (10−10%)</decay-modes>
         <decay-modes>β-
 β-, SF (2.6×10^−6%)</decay-modes>
         <daughter-isotopes>238U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>3-</spin>
         <abundance></abundance>
       </isotope>
@@ -33438,7 +33438,7 @@ EC (5%)</decay-modes>
 SF (1.4×10^−10%)
 β+β+ (rare)</decay-modes>
         <daughter-isotopes>226Th
-(various)
+various
 230Th</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -33463,7 +33463,7 @@ SF (10−12%)</decay-modes>
 24Ne
 204Hg
 28Mg
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -33474,7 +33474,7 @@ SF (6×10^−9%)
 CD (7.2×10^−11%)
 CD (1.3×10^−13%)</decay-modes>
         <daughter-isotopes>229Th
-(various)
+various
 209Pb
 24Ne
 205Hg
@@ -33489,7 +33489,7 @@ SF (1.73×10^−9%)
 CD (1.4×10^−11%)
 CD (9×10^−12%)</decay-modes>
         <daughter-isotopes>230Th
-(various)
+various
 206Hg
 28Mg
 184Hf
@@ -33511,7 +33511,7 @@ CD (9×10^−12%)</decay-modes>
 SF (7×10^−9%)
 CD (8×10^−10%)</decay-modes>
         <daughter-isotopes>231Th
-(various)
+various
 186Hf
 25Ne
 24Ne</daughter-isotopes>
@@ -33530,7 +33530,7 @@ CD (8×10^−10%)</decay-modes>
         <decay-modes>α
 SF (9.6×10^−8%)</decay-modes>
         <daughter-isotopes>232Th
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -33561,7 +33561,7 @@ SF (9.6×10^−8%)</decay-modes>
 SF (5.45×10^−5%)
 β-β- (2.19×10^−10%)</decay-modes>
         <daughter-isotopes>234Th
-(various)
+various
 238Pu</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -33659,7 +33659,7 @@ SF (5.45×10^−5%)
 β+, SF (.012%)</decay-modes>
         <daughter-isotopes>228U
 224Pa
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -33750,7 +33750,7 @@ SF (5.45×10^−5%)
 SF (2×10^−10%)
 CD (4×10^−12%)</decay-modes>
         <daughter-isotopes>233Pa
-(various)
+various
 207Tl
 30Mg</daughter-isotopes>
         <spin>5/2+</spin>
@@ -33917,7 +33917,7 @@ SF (1.37×10^−7%)
 CD (2×10^−12%)
 β+β+ (rare)</decay-modes>
         <daughter-isotopes>232U
-(various)
+various
 208Pb
 28Mg
 236U</daughter-isotopes>
@@ -33954,7 +33954,7 @@ SF (1.9×10^−7%)
 CD (1.4×10^−14%)
 CD (6×10^−15%)</decay-modes>
         <daughter-isotopes>234U
-(various)
+various
 206Hg
 32Si
 180Yb
@@ -33968,7 +33968,7 @@ CD (6×10^−15%)</decay-modes>
         <decay-modes>α
 SF (3.1×10^−10%)</decay-modes>
         <daughter-isotopes>235U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>1/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -33992,7 +33992,7 @@ SF (3.1×10^−10%)</decay-modes>
 SF (5.7×10^−6%)
 CD (1.3×10^−13%)</decay-modes>
         <daughter-isotopes>236U
-(various)
+various
 206Hg
 34Si</daughter-isotopes>
         <spin>0+</spin>
@@ -34005,7 +34005,7 @@ CD (1.3×10^−13%)</decay-modes>
 SF (2.4×10^−14%)</decay-modes>
         <daughter-isotopes>241Am
 237U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -34028,7 +34028,7 @@ SF (2.4×10^−14%)</decay-modes>
         <decay-modes>α
 SF (5.5×10^−4%)</decay-modes>
         <daughter-isotopes>238U
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34052,7 +34052,7 @@ SF (5.5×10^−4%)</decay-modes>
 SF (.123%)
 β-β- (7.3×10^−9%)</decay-modes>
         <daughter-isotopes>240U
-(various)
+various
 244Cm</daughter-isotopes>
         <spin>0+</spin>
         <abundance>trace</abundance>
@@ -34106,7 +34106,7 @@ SF (.123%)
 β+, SF (.069%)</decay-modes>
         <daughter-isotopes>232Pu
 228Np
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -34126,7 +34126,7 @@ SF (.123%)
 β+, SF (.0066%)</decay-modes>
         <daughter-isotopes>234Pu
 230Np
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -34205,7 +34205,7 @@ CD (7.4×10^−10%)
 SF (4.3×10^−10%)</decay-modes>
         <daughter-isotopes>237Np
 207Tl, 34Si
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -34232,7 +34232,7 @@ EC (17.3%)</decay-modes>
 SF (1.5×10^−8%)</decay-modes>
         <daughter-isotopes>242Am
 238Np
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5-</spin>
         <abundance></abundance>
       </isotope>
@@ -34248,7 +34248,7 @@ SF (1.5×10^−8%)</decay-modes>
         <decay-modes>α
 SF (3.7×10^−9%)</decay-modes>
         <daughter-isotopes>239Np
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -34408,7 +34408,7 @@ EC (.5%)
 SF (3.9×10^−6%)</decay-modes>
         <daughter-isotopes>236Pu
 240Am
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34427,7 +34427,7 @@ SF (3.9×10^−6%)</decay-modes>
 SF (6.33×10^−6%)
 CD (10−14%)β+β+ (rare)</decay-modes>
         <daughter-isotopes>238Pu
-(various)
+various
 208Pb
 34Si
 242Pu</daughter-isotopes>
@@ -34441,7 +34441,7 @@ EC (.29%)
 SF (5.3×10^−9%)</decay-modes>
         <daughter-isotopes>239Pu
 243Am
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -34457,7 +34457,7 @@ SF (5.3×10^−9%)</decay-modes>
         <decay-modes>α
 SF (1.34×10^−4%)</decay-modes>
         <daughter-isotopes>240Pu
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34473,7 +34473,7 @@ SF (1.34×10^−4%)</decay-modes>
         <decay-modes>α
 SF (6.1×10^−7%)</decay-modes>
         <daughter-isotopes>241Pu
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -34489,7 +34489,7 @@ SF (6.1×10^−7%)</decay-modes>
         <decay-modes>α (99.97%)
 SF (.0261%)</decay-modes>
         <daughter-isotopes>242Pu
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34506,7 +34506,7 @@ SF (.0261%)</decay-modes>
 SF (8.26%)
 β-β- (rare)</decay-modes>
         <daughter-isotopes>244Pu
-(various)
+various
 248Cf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -34529,7 +34529,7 @@ SF (8.26%)
         <half-life>8,300 a</half-life>
         <decay-modes>SF (80%)α (11%)
 β- (9%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 246Pu
 250Bk</daughter-isotopes>
         <spin>0+</spin>
@@ -34594,7 +34594,7 @@ SF (8.26%)
 β+, SF (.048%)
 β+ (rare)</decay-modes>
         <daughter-isotopes>234Am
-(various)
+various
 238Cm</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -34615,7 +34615,7 @@ SF (8.26%)
 β+, SF (.002%)</decay-modes>
         <daughter-isotopes>240Cm
 236Am
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -34633,7 +34633,7 @@ SF (8.26%)
         <decay-modes>β+ (99.99%)
 β+, SF (3×10^−4%)</decay-modes>
         <daughter-isotopes>242Cm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>2-</spin>
         <abundance></abundance>
       </isotope>
@@ -34685,7 +34685,7 @@ SF (8.26%)
         <decay-modes>α
 SF (rare)</decay-modes>
         <daughter-isotopes>243Am
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -34710,7 +34710,7 @@ SF (rare)</decay-modes>
 SF (4.7×10^−8%)</decay-modes>
         <daughter-isotopes>249Cf
 245Am
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -34798,7 +34798,7 @@ SF (4.7×10^−8%)</decay-modes>
         <decay-modes>SF
 β+
 α</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 237Bk
 233Cm</daughter-isotopes>
         <spin>5/2+</spin>
@@ -34809,7 +34809,7 @@ SF (4.7×10^−8%)</decay-modes>
         <decay-modes>SF
 β+ (rare)
 α (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 238Bk
 234Cm</daughter-isotopes>
         <spin>0+</spin>
@@ -34830,7 +34830,7 @@ SF (4.7×10^−8%)</decay-modes>
 SF (2%)
 β+ (rare)</decay-modes>
         <daughter-isotopes>236Cm
-(various)
+various
 240Bk</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -34851,7 +34851,7 @@ SF (2%)
 SF (.014%)</decay-modes>
         <daughter-isotopes>238Cm
 242Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34889,7 +34889,7 @@ EC (5×10^−4%)
 SF (2×10^−4%)</decay-modes>
         <daughter-isotopes>242Cm
 246Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34907,7 +34907,7 @@ SF (2×10^−4%)</decay-modes>
         <decay-modes>α (99.99%)
 SF (.0029%)</decay-modes>
         <daughter-isotopes>244Cm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34916,7 +34916,7 @@ SF (.0029%)</decay-modes>
         <decay-modes>α
 SF (5×10^−7%)</decay-modes>
         <daughter-isotopes>245Cm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>9/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -34932,7 +34932,7 @@ SF (5×10^−7%)</decay-modes>
         <decay-modes>α (99.92%)
 SF (.077%)</decay-modes>
         <daughter-isotopes>246Cm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34948,7 +34948,7 @@ SF (.077%)</decay-modes>
         <decay-modes>α (96.9%)
 SF (3.09%)</decay-modes>
         <daughter-isotopes>248Cm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -34966,7 +34966,7 @@ SF (3.09%)</decay-modes>
         <decay-modes>SF (99.69%)
 α (.31%)
 β-β- (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 250Cm
 254Fm</daughter-isotopes>
         <spin>0+</spin>
@@ -34978,7 +34978,7 @@ SF (3.09%)</decay-modes>
 SF (.001%)
 α (10−5%)</decay-modes>
         <daughter-isotopes>255Es
-(various)
+various
 251Cm</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
@@ -34989,7 +34989,7 @@ SF (.001%)
 β- (1%)
 α (10−6%)
 β-β- (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 256Es
 252Cm
 256Fm</daughter-isotopes>
@@ -35032,7 +35032,7 @@ SF (.001%)
 β+, SF (.6%)
 β+ (rare)</decay-modes>
         <daughter-isotopes>238Bk
-(various)
+various
 242Cf</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
@@ -35053,7 +35053,7 @@ SF (.001%)
 β+, SF (.01%)</decay-modes>
         <daughter-isotopes>244Cf
 240Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35073,7 +35073,7 @@ SF (.001%)
 β+, SF (.003%)</decay-modes>
         <daughter-isotopes>246Cf
 242Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>4-</spin>
         <abundance></abundance>
       </isotope>
@@ -35084,7 +35084,7 @@ SF (.001%)
 SF (9×10^−5%)</decay-modes>
         <daughter-isotopes>247Cf
 243Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35095,7 +35095,7 @@ SF (9×10^−5%)</decay-modes>
 β+, SF (3×10^−5%)</decay-modes>
         <daughter-isotopes>248Cf
 244Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>2-,0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35151,7 +35151,7 @@ EC (24%)
         <decay-modes>α
 SF (8.7×10^−6%)</decay-modes>
         <daughter-isotopes>249Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35163,7 +35163,7 @@ SF (3×10^−6%)
 β- (1.74×10^−6%)</decay-modes>
         <daughter-isotopes>250Bk
 254Cf
-(various)
+various
 254Fm</daughter-isotopes>
         <spin>7+</spin>
         <abundance></abundance>
@@ -35179,7 +35179,7 @@ SF (.0045%)</decay-modes>
 254Es
 250Bk
 254Cf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35190,7 +35190,7 @@ SF (.0045%)</decay-modes>
 SF (.0041%)</decay-modes>
         <daughter-isotopes>255Fm
 251Bk
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35206,7 +35206,7 @@ SF (.0041%)</decay-modes>
         <decay-modes>β- (99.99%)
 β-, SF (.002%)</decay-modes>
         <daughter-isotopes>256Fm
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>8+</spin>
         <abundance></abundance>
       </isotope>
@@ -35242,7 +35242,7 @@ SF (.0041%)</decay-modes>
         <half-life>730 µs</half-life>
         <decay-modes>SF(&gt;78%)
 α (&lt;14%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 237Cf</daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
@@ -35251,7 +35251,7 @@ SF (.0041%)</decay-modes>
         <half-life>0.8 ms</half-life>
         <decay-modes>SF
 α (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 238Cf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35262,7 +35262,7 @@ SF (.0041%)</decay-modes>
 SF (9%)
 β+ (rare)</decay-modes>
         <daughter-isotopes>239Cf
-(various)
+various
 243Es</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
@@ -35271,7 +35271,7 @@ SF (9%)
         <half-life>3.12 ms</half-life>
         <decay-modes>SF (99%)
 α (1%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 240Cf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35283,7 +35283,7 @@ SF (9%)
 SF (.13%)</decay-modes>
         <daughter-isotopes>241Cf
 245Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>1/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35295,8 +35295,8 @@ SF (.13%)</decay-modes>
 SF (4.5%)</decay-modes>
         <daughter-isotopes>242Cf
 246Es
-(various)
-(various)</daughter-isotopes>
+various
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35316,7 +35316,7 @@ SF (4.5%)</decay-modes>
 SF (.10%)</decay-modes>
         <daughter-isotopes>244Cf
 248Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35336,7 +35336,7 @@ EC (10%)
 SF (6.9×10^−3%)</decay-modes>
         <daughter-isotopes>246Cf
 250Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35369,7 +35369,7 @@ SF (6.9×10^−3%)</decay-modes>
 SF (.0023%)
 β+β+ (rare)</decay-modes>
         <daughter-isotopes>248Cf
-(various)
+various
 252Cf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35388,7 +35388,7 @@ SF (.0023%)
         <decay-modes>α (99.94%)
 SF (.0592%)</decay-modes>
         <daughter-isotopes>250Cf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35397,7 +35397,7 @@ SF (.0592%)</decay-modes>
         <decay-modes>α
 SF (2.4×10^−5%)</decay-modes>
         <daughter-isotopes>251Cf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35405,7 +35405,7 @@ SF (2.4×10^−5%)</decay-modes>
         <half-life>157.6 min</half-life>
         <decay-modes>SF (91.9%)
 α (8.1%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 252Cf</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35415,21 +35415,21 @@ SF (2.4×10^−5%)</decay-modes>
         <decay-modes>α (99.79%)
 SF (.21%)</decay-modes>
         <daughter-isotopes>253Cf
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>9/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="258">
         <half-life>370 µs</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="259">
         <half-life>1.5 s</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>3/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35456,7 +35456,7 @@ SF (.21%)</decay-modes>
         <half-life>0.90 ms</half-life>
         <decay-modes>SF
 α (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 241Es</daughter-isotopes>
         <spin>1/2-</spin>
         <abundance></abundance>
@@ -35483,7 +35483,7 @@ SF (.21%)</decay-modes>
         <half-life>1.12 s</half-life>
         <decay-modes>SF
 α (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 243Es</daughter-isotopes>
         <spin>1/2-</spin>
         <abundance></abundance>
@@ -35493,7 +35493,7 @@ SF (.21%)</decay-modes>
         <decay-modes>α (99.99%)
 SF (10−4%)</decay-modes>
         <daughter-isotopes>243Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35504,7 +35504,7 @@ SF (10−4%)</decay-modes>
 β+, SF (.05%)</decay-modes>
         <daughter-isotopes>248Fm
 244Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35531,7 +35531,7 @@ SF (10−4%)</decay-modes>
 β+, SF (.02%)</decay-modes>
         <daughter-isotopes>250Fm
 246Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35587,7 +35587,7 @@ SF (10−4%)</decay-modes>
 SF (.15%)</decay-modes>
         <daughter-isotopes>255Fm
 251Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -35607,7 +35607,7 @@ SF (.15%)</decay-modes>
 SF (1%)</decay-modes>
         <daughter-isotopes>257Fm
 253Es
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -35629,7 +35629,7 @@ SF (20%)
 β- (10%)
 α (1.2%)</decay-modes>
         <daughter-isotopes>258Fm
-(various)
+various
 258No
 254Es</daughter-isotopes>
         <spin>1-</spin>
@@ -35639,7 +35639,7 @@ SF (20%)
         <half-life>1.60 h</half-life>
         <decay-modes>SF (98.7%)
 α (1.3%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 255Es</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
@@ -35650,7 +35650,7 @@ SF (20%)
 α (5%)
 EC (5%)
 β- (3.5%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 256Es
 260Fm
 260No</daughter-isotopes>
@@ -35674,7 +35674,7 @@ EC (5%)
         <decay-modes>SF (99.95%)
 α (.05%)
 β+ (2.5×10^−4%)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 246Fm
 250Md</daughter-isotopes>
         <spin>0+</spin>
@@ -35686,7 +35686,7 @@ EC (5%)
 SF (10%)
 β+ (1%)</decay-modes>
         <daughter-isotopes>247Fm
-(various)
+various
 251Md</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
@@ -35704,7 +35704,7 @@ SF (10%)
 SF (26.9%)
 β+ (1%)</decay-modes>
         <daughter-isotopes>248Fm
-(various)
+various
 252Md</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35716,7 +35716,7 @@ SF (26.9%)
 SF (10−3%)</decay-modes>
         <daughter-isotopes>249Fm
 253Md
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>9/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -35734,7 +35734,7 @@ SF (10−3%)</decay-modes>
 SF (.31%)</decay-modes>
         <daughter-isotopes>250Fm
 254Md
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35762,7 +35762,7 @@ SF (.31%)</decay-modes>
 SF (.55%)
 EC (.01%)</decay-modes>
         <daughter-isotopes>252Fm
-(various)
+various
 256Md</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
@@ -35781,7 +35781,7 @@ EC (.01%)</decay-modes>
         <decay-modes>SF (99.99%)
 α (.01%)
 β+β+ (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 254Fm
 258Fm</daughter-isotopes>
         <spin>0+</spin>
@@ -35794,21 +35794,21 @@ EC (25%)
 SF (10%)</decay-modes>
         <daughter-isotopes>255Fm
 259Md
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>9/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="260">
         <half-life>106 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="262">
         <half-life>~5 ms</half-life>
         <decay-modes>SF</decay-modes>
-        <daughter-isotopes>(various)</daughter-isotopes>
+        <daughter-isotopes>various</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
@@ -35831,7 +35831,7 @@ SF (10%)</decay-modes>
 SF (1%)</decay-modes>
         <daughter-isotopes>248Md
 252No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35841,7 +35841,7 @@ SF (1%)</decay-modes>
 SF (9%)
 β+ (1%)</decay-modes>
         <daughter-isotopes>249Md
-(various)
+various
 253No</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
@@ -35860,7 +35860,7 @@ SF (9%)
 SF (.1%)</decay-modes>
         <daughter-isotopes>250Md
 254No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35871,7 +35871,7 @@ SF (.1%)</decay-modes>
 SF (1%)</decay-modes>
         <daughter-isotopes>251Md
 255No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>7/2-</spin>
         <abundance></abundance>
       </isotope>
@@ -35882,7 +35882,7 @@ SF (1%)</decay-modes>
 SF (.01%)</decay-modes>
         <daughter-isotopes>252Md
 256No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35893,7 +35893,7 @@ SF (.01%)</decay-modes>
 SF (.001%)</decay-modes>
         <daughter-isotopes>253Md
 257No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin>9/2+</spin>
         <abundance></abundance>
       </isotope>
@@ -35912,7 +35912,7 @@ SF (.001%)</decay-modes>
 SF (23%)
 β+ (.5%)</decay-modes>
         <daughter-isotopes>255Md
-(various)
+various
 259No</daughter-isotopes>
         <spin>9/2+</spin>
         <abundance></abundance>
@@ -35924,7 +35924,7 @@ SF (23%)
 SF (10%)</decay-modes>
         <daughter-isotopes>256Md
 260No
-(various)</daughter-isotopes>
+various</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
@@ -35932,7 +35932,7 @@ SF (10%)</decay-modes>
         <half-life>44 min</half-life>
         <decay-modes>SF
 α (rare)</decay-modes>
-        <daughter-isotopes>(various)
+        <daughter-isotopes>various
 257Md</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
