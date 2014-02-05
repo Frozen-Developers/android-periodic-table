@@ -61,6 +61,11 @@ def add_to_element(root, name, value):
     subelement = etree.SubElement(root, name)
     subelement.text = value
 
+def remove_trailing_newline(string):
+    if string[-1:] == '\n':
+        return string[:-1]
+    return string
+
 def fetch(url, root):
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
 
@@ -104,11 +109,11 @@ def fetch(url, root):
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
         isotope_tag.attrib['symbol'] = re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), ''))
-        add_to_element(isotope_tag, 'half-life', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'))
+        add_to_element(isotope_tag, 'half-life', remove_trailing_newline(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '').replace('×10', '×10^')))
         add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')).replace('×10', '×10^'))
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
+        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
     print(list([nsm[0].capitalize(), nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1]]))
 
