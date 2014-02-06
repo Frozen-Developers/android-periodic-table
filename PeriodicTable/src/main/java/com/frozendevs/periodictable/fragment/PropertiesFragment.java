@@ -28,6 +28,8 @@ public class PropertiesFragment extends Fragment {
         listView.setEmptyView(layout.findViewById(R.id.progress_bar));
         listView.setAdapter(new PropropertiesAdapter(getActivity(), atomicNumber));
 
+        getActivity().registerForContextMenu(listView);
+
         return layout;
     }
 }

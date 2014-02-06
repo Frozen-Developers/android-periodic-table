@@ -1,5 +1,8 @@
 package com.frozendevs.periodictable.activity;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
@@ -10,8 +13,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
@@ -110,5 +117,28 @@ public class PropertiesActivity extends ActionBarActivity {
     @Override
     public void onConfigurationChanged(Configuration newConf) {
         super.onConfigurationChanged(newConf);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        getMenuInflater().inflate(R.menu.properties_context_menu, menu);
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        switch (item.getItemId()) {
+            case R.id.context_copy:
+                TextView value = (TextView)info.targetView.findViewById(R.id.property_value);
+                ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
+                        ClipData.newPlainText(value.getText(), value.getText())
+                );
+                return true;
+        }
+
+        return super.onContextItemSelected(item);
     }
 }
