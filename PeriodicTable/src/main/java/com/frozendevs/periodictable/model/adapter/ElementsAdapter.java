@@ -69,7 +69,7 @@ public class ElementsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ElementListItem element = filteredElements.get(position);
 
-        View view = LayoutInflater.from(activity).inflate(R.layout.element_list_item, parent, false);
+        View view = LayoutInflater.from(activity).inflate(R.layout.elements_list_item, parent, false);
 
         TextView symbol = (TextView)view.findViewById(R.id.symbol);
         symbol.setText(element.getSymbol());

@@ -66,7 +66,7 @@ public class PropropertiesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.details_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.properties_list_item, parent, false);
 
         String[] property = getItem(position);
 

@@ -76,7 +76,7 @@ public class PropertiesActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.details_activity);
+        setContentView(R.layout.properties_activity);
 
         int atomicNumber = getIntent().getIntExtra("atomicNumber", 1);
 

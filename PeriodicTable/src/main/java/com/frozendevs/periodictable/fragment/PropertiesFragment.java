@@ -22,7 +22,7 @@ public class PropertiesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View layout = inflater.inflate(R.layout.details_fragment, container, false);
+        View layout = inflater.inflate(R.layout.properties_fragment, container, false);
 
         ListView listView = (ListView)layout.findViewById(R.id.details_list);
         listView.setEmptyView(layout.findViewById(R.id.progress_bar));
