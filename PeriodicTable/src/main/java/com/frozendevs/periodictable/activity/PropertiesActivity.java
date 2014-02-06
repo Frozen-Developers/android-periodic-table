@@ -17,7 +17,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -129,13 +129,15 @@ public class PropertiesActivity extends ActionBarActivity {
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+
+        TextView propertyName = (TextView)info.targetView.findViewById(R.id.property_name);
+        TextView propertyValue = (TextView)info.targetView.findViewById(R.id.property_value);
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                TextView value = (TextView)info.targetView.findViewById(R.id.property_value);
                 ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
-                        ClipData.newPlainText(value.getText(), value.getText())
+                        ClipData.newPlainText(propertyName.getText(), propertyValue.getText())
                 );
                 return true;
         }
