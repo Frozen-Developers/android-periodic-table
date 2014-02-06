@@ -3,11 +3,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activity.DetailsActivity" >
+    tools:context=".activity.PropertiesActivity" >
 
     <item
-        android:id="@+id/wiki"
-        android:title="@string/wiki_page"
+        android:id="@+id/action_wiki"
+        android:title="@string/action_wiki_page"
         android:icon="@drawable/ic_action_wiki"
         app:showAsAction="always" />
 

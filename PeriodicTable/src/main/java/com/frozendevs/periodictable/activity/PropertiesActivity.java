@@ -93,7 +93,7 @@ public class PropertiesActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.details, menu);
+        getMenuInflater().inflate(R.menu.properties_action_menu, menu);
 
         return true;
     }
@@ -101,7 +101,7 @@ public class PropertiesActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.wiki:
+            case R.id.action_wiki:
                 startActivity(new Intent(Intent.ACTION_VIEW,
                         Uri.parse(elementProperties.getWikiLink())));
                 return true;

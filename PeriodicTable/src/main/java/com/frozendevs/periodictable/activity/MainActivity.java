@@ -90,7 +90,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_action_menu, menu);
 
         final ElementsAdapter adapter =
                 (ElementsAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
