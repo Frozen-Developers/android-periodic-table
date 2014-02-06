@@ -93,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         getMenuInflater().inflate(R.menu.main_action_menu, menu);
 
         final ElementsAdapter adapter =
-                (ElementsAdapter)((ListView) findViewById(R.id.elementList)).getAdapter();
+                (ElementsAdapter)((ListView) findViewById(R.id.elements_list)).getAdapter();
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView)MenuItemCompat.getActionView(searchItem);

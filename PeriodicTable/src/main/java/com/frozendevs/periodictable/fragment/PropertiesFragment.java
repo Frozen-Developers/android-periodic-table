@@ -24,7 +24,7 @@ public class PropertiesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.properties_fragment, container, false);
 
-        ListView listView = (ListView)layout.findViewById(R.id.details_list);
+        ListView listView = (ListView)layout.findViewById(R.id.properties_list);
         listView.setEmptyView(layout.findViewById(R.id.progress_bar));
         listView.setAdapter(new PropropertiesAdapter(getActivity(), atomicNumber));
 

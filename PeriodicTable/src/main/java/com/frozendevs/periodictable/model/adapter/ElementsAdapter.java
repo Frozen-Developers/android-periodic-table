@@ -36,8 +36,8 @@ public class ElementsAdapter extends BaseAdapter {
         protected void onPostExecute(Void result) {
             notifyDataSetChanged();
 
-            ListView listView = (ListView)activity.findViewById(R.id.elementList);
-            listView.setEmptyView(activity.findViewById(R.id.emptyElementList));
+            ListView listView = (ListView)activity.findViewById(R.id.elements_list);
+            listView.setEmptyView(activity.findViewById(R.id.empty_elements_list));
         }
     }
 
@@ -71,13 +71,13 @@ public class ElementsAdapter extends BaseAdapter {
 
         View view = LayoutInflater.from(activity).inflate(R.layout.elements_list_item, parent, false);
 
-        TextView symbol = (TextView)view.findViewById(R.id.symbol);
+        TextView symbol = (TextView)view.findViewById(R.id.element_symbol);
         symbol.setText(element.getSymbol());
 
-        TextView atomicNumber = (TextView)view.findViewById(R.id.atomicNumber);
+        TextView atomicNumber = (TextView)view.findViewById(R.id.element_number);
         atomicNumber.setText(String.valueOf(element.getAtomicNumber()));
 
-        TextView name = (TextView)view.findViewById(R.id.name);
+        TextView name = (TextView)view.findViewById(R.id.element_name);
         name.setText(element.getName());
 
         view.setOnClickListener(new OnClickOnElement(activity, element.getAtomicNumber()));

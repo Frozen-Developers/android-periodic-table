@@ -16,7 +16,7 @@ public class ElementsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.elements_list_fragment, container, false);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.elementList);
+        ListView listView = (ListView)rootView.findViewById(R.id.elements_list);
         listView.setEmptyView(rootView.findViewById(R.id.progress_bar));
         listView.setAdapter(new ElementsAdapter(getActivity()));
 

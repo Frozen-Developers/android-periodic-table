@@ -104,16 +104,16 @@ public class TableAdapter extends BaseAdapter {
 
             view.setBackgroundColor(activity.getResources().getColor(color));
 
-            TextView symbol = (TextView) view.findViewById(R.id.symbol);
+            TextView symbol = (TextView) view.findViewById(R.id.element_symbol);
             symbol.setText(item.getSymbol());
 
-            TextView number = (TextView) view.findViewById(R.id.number);
+            TextView number = (TextView) view.findViewById(R.id.element_number);
             number.setText(String.valueOf(item.getAtomicNumber()));
 
-            TextView name = (TextView) view.findViewById(R.id.name);
+            TextView name = (TextView) view.findViewById(R.id.element_name);
             name.setText(item.getName());
 
-            TextView weight = (TextView) view.findViewById(R.id.weight);
+            TextView weight = (TextView) view.findViewById(R.id.element_weight);
             weight.setText(item.getStandardAtomicWeight());
 
             view.setOnClickListener(new OnClickOnElement(activity, item.getAtomicNumber()));

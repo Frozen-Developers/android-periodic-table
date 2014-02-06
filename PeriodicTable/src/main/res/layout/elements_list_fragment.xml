@@ -13,12 +13,12 @@
         layout="@layout/progress_bar"/>
 
     <ListView
-        android:id="@+id/elementList"
+        android:id="@+id/elements_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <TextView
-        android:id="@+id/emptyElementList"
+        android:id="@+id/empty_elements_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
