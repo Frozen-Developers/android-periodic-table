@@ -124,6 +124,7 @@ public class PropertiesActivity extends ActionBarActivity {
         super.onCreateContextMenu(menu, v, menuInfo);
 
         getMenuInflater().inflate(R.menu.properties_context_menu, menu);
+        menu.setHeaderTitle(R.string.context_title_options);
     }
 
     @Override
