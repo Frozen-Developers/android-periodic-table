@@ -8,6 +8,8 @@
     <group>1</group>
     <period>1</period>
     <block>s</block>
+    <configuration>1s¹
+1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Hydrogen</wiki>
     <isotopes>
       <isotope symbol="1">
@@ -71,6 +73,8 @@
     <group>18</group>
     <period>1</period>
     <block>s</block>
+    <configuration>1s²
+2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Helium</wiki>
     <isotopes>
       <isotope symbol="2">
@@ -154,6 +158,8 @@
     <group>1</group>
     <period>2</period>
     <block>s</block>
+    <configuration>[He] 2s¹
+2, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Lithium</wiki>
     <isotopes>
       <isotope symbol="3">
@@ -262,6 +268,8 @@
     <group>2</group>
     <period>2</period>
     <block>s</block>
+    <configuration>[He] 2s²
+2, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Beryllium</wiki>
     <isotopes>
       <isotope symbol="5">
@@ -373,6 +381,8 @@
     <group>13</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p¹
+2, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Boron</wiki>
     <isotopes>
       <isotope symbol="6">
@@ -501,6 +511,8 @@
     <group>14</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p²
+2, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Carbon</wiki>
     <isotopes>
       <isotope symbol="8">
@@ -634,6 +646,8 @@ K-capture (.21%)</decay-modes>
     <group>15</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p³
+2, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Nitrogen</wiki>
     <isotopes>
       <isotope symbol="10">
@@ -785,6 +799,8 @@ K-capture (.21%)</decay-modes>
     <group>16</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p⁴
+2, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Oxygen</wiki>
     <isotopes>
       <isotope symbol="12">
@@ -889,7 +905,7 @@ p (40.0%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="26">
-        <half-life> ns</half-life>
+        <half-life>ns</half-life>
         <decay-modes>β−
 n</decay-modes>
         <daughter-isotopes>26F
@@ -907,6 +923,8 @@ n</decay-modes>
     <group>17</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p⁵
+2, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Fluorine</wiki>
     <isotopes>
       <isotope symbol="14">
@@ -1046,7 +1064,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="31">
-        <half-life>1 ms </half-life>
+        <half-life>1 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
@@ -1062,6 +1080,8 @@ n</decay-modes>
     <group>18</group>
     <period>2</period>
     <block>p</block>
+    <configuration>[He] 2s² 2p⁶
+2, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Neon</wiki>
     <isotopes>
       <isotope symbol="16">
@@ -1207,7 +1227,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="34">
-        <half-life>1 ms </half-life>
+        <half-life>1 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -1223,6 +1243,8 @@ n</decay-modes>
     <group>1</group>
     <period>3</period>
     <block>s</block>
+    <configuration>[Ne] 3s¹
+2,8,1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Sodium</wiki>
     <isotopes>
       <isotope symbol="18">
@@ -1411,7 +1433,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="37">
-        <half-life>1 ms </half-life>
+        <half-life>1 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
@@ -1427,6 +1449,8 @@ n</decay-modes>
     <group>2</group>
     <period>3</period>
     <block>s</block>
+    <configuration>[Ne] 3s²
+2, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Magnesium</wiki>
     <isotopes>
       <isotope symbol="19">
@@ -1574,7 +1598,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="37">
-        <half-life>40 ms </half-life>
+        <half-life>40 ms</half-life>
         <decay-modes>β−
 β−, n</decay-modes>
         <daughter-isotopes>37Al
@@ -1583,7 +1607,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="38">
-        <half-life>1 ms </half-life>
+        <half-life>1 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -1613,6 +1637,8 @@ n</decay-modes>
     <group>13</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p¹
+2, 8, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Aluminium</wiki>
     <isotopes>
       <isotope symbol="19">
@@ -1817,14 +1843,14 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="40">
-        <half-life>10 ms </half-life>
+        <half-life>10 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="41">
-        <half-life>2 ms </half-life>
+        <half-life>2 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
@@ -1847,6 +1873,8 @@ n</decay-modes>
     <group>14</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p²
+2, 8, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Silicon</wiki>
     <isotopes>
       <isotope symbol="22">
@@ -1974,7 +2002,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="38">
-        <half-life>90 ms </half-life>
+        <half-life>90 ms</half-life>
         <decay-modes>β−, n
 β−</decay-modes>
         <daughter-isotopes>37P
@@ -2011,7 +2039,7 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="43">
-        <half-life>15 ms </half-life>
+        <half-life>15 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
@@ -2034,6 +2062,8 @@ n</decay-modes>
     <group>15</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p³
+2, 8, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Phosphorus</wiki>
     <isotopes>
       <isotope symbol="24">
@@ -2206,14 +2236,14 @@ n</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="45">
-        <half-life>8 ms </half-life>
+        <half-life>8 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>45S</daughter-isotopes>
         <spin>1/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="46">
-        <half-life>4 ms </half-life>
+        <half-life>4 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>46S</daughter-isotopes>
         <spin></spin>
@@ -2229,6 +2259,8 @@ n</decay-modes>
     <group>16</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p⁴
+2, 8, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Sulfur</wiki>
     <isotopes>
       <isotope symbol="26">
@@ -2434,6 +2466,8 @@ n</decay-modes>
     <group>17</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p⁵
+2, 8, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Chlorine</wiki>
     <isotopes>
       <isotope symbol="28">
@@ -2611,14 +2645,14 @@ IT (44.6%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="48">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>48Ar</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="49">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>49Ar</daughter-isotopes>
         <spin>3/2+</spin>
@@ -2632,7 +2666,7 @@ IT (44.6%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="51">
-        <half-life>2 ms </half-life>
+        <half-life>2 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>51Ar</daughter-isotopes>
         <spin>3/2+</spin>
@@ -2648,6 +2682,8 @@ IT (44.6%)</decay-modes>
     <group>18</group>
     <period>3</period>
     <block>p</block>
+    <configuration>[Ne] 3s² 3p⁶
+2, 8, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Argon</wiki>
     <isotopes>
       <isotope symbol="30">
@@ -2817,7 +2853,7 @@ IT (44.6%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="51">
-        <half-life>60 ms </half-life>
+        <half-life>60 ms</half-life>
         <decay-modes>β−</decay-modes>
         <daughter-isotopes>51K</daughter-isotopes>
         <spin>3/2-</spin>
@@ -2849,6 +2885,8 @@ IT (44.6%)</decay-modes>
     <group>1</group>
     <period>4</period>
     <block>s</block>
+    <configuration>[Ar] 4s¹
+2, 8, 8, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Potassium</wiki>
     <isotopes>
       <isotope symbol="32">
@@ -3086,6 +3124,8 @@ EC (10.72%)
     <group>2</group>
     <period>4</period>
     <block>s</block>
+    <configuration>[Ar] 4s²
+2, 8, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Calcium</wiki>
     <isotopes>
       <isotope symbol="34">
@@ -3241,7 +3281,7 @@ EC (10.72%)
         <abundance></abundance>
       </isotope>
       <isotope symbol="54">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β-, n
 β-</decay-modes>
         <daughter-isotopes>53Sc
@@ -3250,14 +3290,14 @@ EC (10.72%)
         <abundance></abundance>
       </isotope>
       <isotope symbol="55">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>55Sc</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="56">
-        <half-life>10 ms </half-life>
+        <half-life>10 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>56Sc</daughter-isotopes>
         <spin>0+</spin>
@@ -3282,6 +3322,8 @@ EC (10.72%)
     <group>3</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d¹ 4s²
+2, 8, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Scandium</wiki>
     <isotopes>
       <isotope symbol="36">
@@ -3576,6 +3618,8 @@ EC (10.72%)
     <group>4</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d² 4s²
+2, 8, 10, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Titanium</wiki>
     <isotopes>
       <isotope symbol="38">
@@ -3798,6 +3842,8 @@ EC (10.72%)
     <group>5</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d³ 4s²
+2, 8, 11, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Vanadium</wiki>
     <isotopes>
       <isotope symbol="40">
@@ -4018,7 +4064,7 @@ EC (10.72%)
         <abundance></abundance>
       </isotope>
       <isotope symbol="64">
-        <half-life>10 ms </half-life>
+        <half-life>10 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -4041,6 +4087,8 @@ EC (10.72%)
     <group>6</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d⁵ 4s¹
+2, 8, 13, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Chromium</wiki>
     <isotopes>
       <isotope symbol="42">
@@ -4269,6 +4317,8 @@ EC (10.72%)
     <group>7</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d⁵ 4s²
+2, 8, 13, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Manganese</wiki>
     <isotopes>
       <isotope symbol="44">
@@ -4542,6 +4592,8 @@ IT (11.5%)</decay-modes>
     <group>8</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d⁶ 4s²
+2, 8, 14, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Iron</wiki>
     <isotopes>
       <isotope symbol="45">
@@ -4812,6 +4864,8 @@ IT (11.5%)</decay-modes>
     <group>9</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 4s² 3d⁷
+2, 8, 15, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Cobalt</wiki>
     <isotopes>
       <isotope symbol="47">
@@ -4847,7 +4901,7 @@ IT (11.5%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="51">
-        <half-life>60 ms </half-life>
+        <half-life>60 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>51Fe</daughter-isotopes>
         <spin>7/2-</spin>
@@ -5101,14 +5155,14 @@ IT (1%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="74">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="75">
-        <half-life>40 ms </half-life>
+        <half-life>40 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
@@ -5124,6 +5178,8 @@ IT (1%)</decay-modes>
     <group>10</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d⁸ 4s² or [Ar] 3d⁹ 4s¹
+2, 8, 16, 2 or 2, 8, 17, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Nickel</wiki>
     <isotopes>
       <isotope symbol="48">
@@ -5428,6 +5484,8 @@ IT</decay-modes>
     <group>11</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d¹⁰ 4s¹
+2, 8, 18, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Copper</wiki>
     <isotopes>
       <isotope symbol="52">
@@ -5452,7 +5510,7 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="55">
-        <half-life>40 ms </half-life>
+        <half-life>40 ms</half-life>
         <decay-modes>β+
 p</decay-modes>
         <daughter-isotopes>55Ni
@@ -5690,7 +5748,7 @@ p</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="80">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>80Zn</daughter-isotopes>
         <spin></spin>
@@ -5706,6 +5764,8 @@ p</decay-modes>
     <group>12</group>
     <period>4</period>
     <block>d</block>
+    <configuration>[Ar] 3d¹⁰ 4s²
+2, 8, 18, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Zinc</wiki>
     <isotopes>
       <isotope symbol="54">
@@ -5716,7 +5776,7 @@ p</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="55">
-        <half-life>20 ms </half-life>
+        <half-life>20 ms</half-life>
         <decay-modes>2p
 β+</decay-modes>
         <daughter-isotopes>53Ni
@@ -5997,14 +6057,14 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="82">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>82Ga</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="83">
-        <half-life>80 ms </half-life>
+        <half-life>80 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
@@ -6020,6 +6080,8 @@ IT</decay-modes>
     <group>13</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 4s² 3d¹⁰ 4p¹
+2, 8, 18, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Gallium</wiki>
     <isotopes>
       <isotope symbol="56">
@@ -6261,14 +6323,14 @@ EC (0.41%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="85">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="86">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -6284,6 +6346,8 @@ EC (0.41%)</decay-modes>
     <group>14</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 3d¹⁰ 4s² 4p²
+2, 8, 18, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Germanium</wiki>
     <isotopes>
       <isotope symbol="58">
@@ -6631,6 +6695,8 @@ IT (1%)</decay-modes>
     <group>15</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 4s² 3d¹⁰ 4p³
+2, 8, 18, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Arsenic</wiki>
     <isotopes>
       <isotope symbol="60">
@@ -6958,6 +7024,8 @@ EC (.02%)</decay-modes>
     <group>16</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 3d¹⁰ 4s² 4p⁴
+2, 8, 18, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Selenium</wiki>
     <isotopes>
       <isotope symbol="65">
@@ -7067,7 +7135,7 @@ EC (.02%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="74">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -7217,7 +7285,7 @@ EC (.02%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="90">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-, n
 β-</decay-modes>
         <daughter-isotopes>89Br
@@ -7235,21 +7303,21 @@ EC (.02%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="92">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>92Br</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="93">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="94">
-        <half-life>20 ms </half-life>
+        <half-life>20 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -7265,6 +7333,8 @@ EC (.02%)</decay-modes>
     <group>17</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 4s² 3d¹⁰ 4p⁵
+2, 8, 18, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Bromine</wiki>
     <isotopes>
       <isotope symbol="66">
@@ -7597,21 +7667,21 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="95">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2−</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="96">
-        <half-life>20 ms </half-life>
+        <half-life>20 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="97">
-        <half-life>10 ms </half-life>
+        <half-life>10 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2−</spin>
@@ -7627,6 +7697,8 @@ IT</decay-modes>
     <group>18</group>
     <period>4</period>
     <block>p</block>
+    <configuration>[Ar] 3d¹⁰ 4s² 4p⁶
+2, 8, 18, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Krypton</wiki>
     <isotopes>
       <isotope symbol="69">
@@ -7946,6 +8018,8 @@ IT (21.4%)</decay-modes>
     <group>1</group>
     <period>5</period>
     <block>s</block>
+    <configuration>[Kr] 5s¹
+2, 8, 18, 8, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Rubidium</wiki>
     <isotopes>
       <isotope symbol="71">
@@ -8234,7 +8308,7 @@ IT (2.6%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="96m">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β−
 IT
 β−, n</decay-modes>
@@ -8319,6 +8393,8 @@ IT
     <group>2</group>
     <period>5</period>
     <block>s</block>
+    <configuration>[Kr] 5s²
+2, 8, 18, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Strontium</wiki>
     <isotopes>
       <isotope symbol="73">
@@ -8331,7 +8407,7 @@ IT
         <abundance></abundance>
       </isotope>
       <isotope symbol="74">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>74Rb</daughter-isotopes>
         <spin>0+</spin>
@@ -8596,21 +8672,21 @@ EC (.3%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="103">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>103Y</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="104">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>104Y</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="105">
-        <half-life>20 ms </half-life>
+        <half-life>20 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -8626,10 +8702,12 @@ EC (.3%)</decay-modes>
     <group>3</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d¹ 5s²
+2, 8, 18, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Yttrium</wiki>
     <isotopes>
       <isotope symbol="76">
-        <half-life>500 ns </half-life>
+        <half-life>500 ns</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -9068,28 +9146,28 @@ IT (10%)
         <abundance></abundance>
       </isotope>
       <isotope symbol="105">
-        <half-life>60 ms </half-life>
+        <half-life>60 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>105Zr</daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="106">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>106Zr</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="107">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="108">
-        <half-life>20 </half-life>
+        <half-life>20</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -9105,6 +9183,8 @@ IT (10%)
     <group>4</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 5s² 4d²
+2, 8, 18, 10, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Zirconium</wiki>
     <isotopes>
       <isotope symbol="78">
@@ -9402,6 +9482,8 @@ IT (10%)
     <group>5</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d⁴ 5s¹
+2, 8, 18, 12, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Niobium</wiki>
     <isotopes>
       <isotope symbol="81">
@@ -9828,21 +9910,21 @@ IT (3.8%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="111">
-        <half-life>80 ms </half-life>
+        <half-life>80 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="112">
-        <half-life>60 ms </half-life>
+        <half-life>60 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="113">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
@@ -9858,6 +9940,8 @@ IT (3.8%)</decay-modes>
     <group>6</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 5s¹ 4d⁵
+2, 8, 18, 13, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Molybdenum</wiki>
     <isotopes>
       <isotope symbol="83">
@@ -10167,6 +10251,8 @@ IT (3.8%)</decay-modes>
     <group>7</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d⁵ 5s²
+2, 8, 18, 13, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Technetium</wiki>
     <isotopes>
       <isotope symbol="85">
@@ -10564,28 +10650,28 @@ IT (2%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="115">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>115Ru</daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="116">
-        <half-life>90 ms </half-life>
+        <half-life>90 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="117">
-        <half-life>40 ms </half-life>
+        <half-life>40 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="118">
-        <half-life>30 ms </half-life>
+        <half-life>30 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>2+</spin>
@@ -10601,17 +10687,19 @@ IT (2%)</decay-modes>
     <group>8</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d⁷ 5s¹
+2, 8, 18, 15, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ruthenium</wiki>
     <isotopes>
       <isotope symbol="87">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>87Tc</daughter-isotopes>
         <spin>1/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="88">
-        <half-life>1.3 s </half-life>
+        <half-life>1.3 s</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>88Tc</daughter-isotopes>
         <spin>0+</spin>
@@ -10868,35 +10956,35 @@ IT (22%)
         <abundance></abundance>
       </isotope>
       <isotope symbol="116">
-        <half-life>400 ms </half-life>
+        <half-life>400 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>116Rh</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="117">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>117Rh</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="118">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>118Rh</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="119">
-        <half-life>170 ms </half-life>
+        <half-life>170 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="120">
-        <half-life>80 ms </half-life>
+        <half-life>80 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -10912,6 +11000,8 @@ IT (22%)
     <group>9</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 5s¹ 4d⁸
+2, 8, 18, 16, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Rhodium</wiki>
     <isotopes>
       <isotope symbol="89">
@@ -11359,17 +11449,19 @@ IT (.23%)</decay-modes>
     <group>10</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d¹⁰
+2, 8, 18, 18</configuration>
     <wiki>http://en.wikipedia.org/wiki/Palladium</wiki>
     <isotopes>
       <isotope symbol="91">
-        <half-life>10 ms </half-life>
+        <half-life>10 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>91Rh</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="92">
-        <half-life>1.1 s </half-life>
+        <half-life>1.1 s</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>92Rh</daughter-isotopes>
         <spin>0+</spin>
@@ -11671,28 +11763,28 @@ IT (8%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="121">
-        <half-life>400 ms </half-life>
+        <half-life>400 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>121Ag</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="122">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>122Ag</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="123">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>123Ag</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="124">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -11722,6 +11814,8 @@ IT (8%)</decay-modes>
     <group>11</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d¹⁰ 5s¹
+2, 8, 18, 18, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Silver</wiki>
     <isotopes>
       <isotope symbol="93">
@@ -12314,6 +12408,8 @@ IT</decay-modes>
     <group>12</group>
     <period>5</period>
     <block>d</block>
+    <configuration>[Kr] 4d¹⁰ 5s²
+2, 8, 18, 18, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Cadmium</wiki>
     <isotopes>
       <isotope symbol="95">
@@ -12692,6 +12788,8 @@ IT (&lt;.1%)</decay-modes>
     <group>13</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 4d¹⁰ 5s² 5p¹
+2, 8, 18, 18, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Indium</wiki>
     <isotopes>
       <isotope symbol="97">
@@ -13358,6 +13456,8 @@ IT (.3%)</decay-modes>
     <group>14</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 4d¹⁰ 5s² 5p²
+2, 8, 18, 18, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Tin</wiki>
     <isotopes>
       <isotope symbol="99">
@@ -13895,10 +13995,12 @@ IT (.0004%)</decay-modes>
     <group>15</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 4d¹⁰ 5s² 5p³
+2, 8, 18, 18, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Antimony</wiki>
     <isotopes>
       <isotope symbol="103">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>103Sn</daughter-isotopes>
         <spin>5/2+</spin>
@@ -14376,7 +14478,7 @@ IT (15%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="138">
-        <half-life>500 ms </half-life>
+        <half-life>500 ms</half-life>
         <decay-modes>β-
 β-, n</decay-modes>
         <daughter-isotopes>138Te
@@ -14385,7 +14487,7 @@ IT (15%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="139">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>139Te</daughter-isotopes>
         <spin>7/2+</spin>
@@ -14401,6 +14503,8 @@ IT (15%)</decay-modes>
     <group>16</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 4d¹⁰ 5s² 5p⁴
+2, 8, 18, 18, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Tellurium</wiki>
     <isotopes>
       <isotope symbol="105">
@@ -14840,6 +14944,8 @@ IT (17.5%)</decay-modes>
     <group>17</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 4d¹⁰ 5s² 5p⁵
+2, 8, 18, 18, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Iodine</wiki>
     <isotopes>
       <isotope symbol="108">
@@ -15259,14 +15365,14 @@ IT (rare)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="143">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>143Xe</daughter-isotopes>
         <spin>7/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="144">
-        <half-life>50 ms </half-life>
+        <half-life>50 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>144Xe</daughter-isotopes>
         <spin>1-</spin>
@@ -15282,6 +15388,8 @@ IT (rare)</decay-modes>
     <group>18</group>
     <period>5</period>
     <block>p</block>
+    <configuration>[Kr] 5s² 4d¹⁰ 5p⁶
+2, 8, 18, 18, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Xenon</wiki>
     <isotopes>
       <isotope symbol="110">
@@ -15527,7 +15635,7 @@ IT (rare)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="134">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -15672,6 +15780,8 @@ IT (rare)</decay-modes>
     <group>1</group>
     <period>6</period>
     <block>s</block>
+    <configuration>[Xe] 6s¹
+2, 8, 18, 18, 8, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Caesium</wiki>
     <isotopes>
       <isotope symbol="112">
@@ -16162,7 +16272,7 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="149">
-        <half-life>150 ms </half-life>
+        <half-life>150 ms</half-life>
         <decay-modes>β-
 β-, n</decay-modes>
         <daughter-isotopes>149Ba
@@ -16171,7 +16281,7 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="150">
-        <half-life>100 ms </half-life>
+        <half-life>100 ms</half-life>
         <decay-modes>β-
 β-, n</decay-modes>
         <daughter-isotopes>150Ba
@@ -16180,7 +16290,7 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="151">
-        <half-life>60 ms </half-life>
+        <half-life>60 ms</half-life>
         <decay-modes>β-
 β-, n</decay-modes>
         <daughter-isotopes>151Ba
@@ -16198,6 +16308,8 @@ IT</decay-modes>
     <group>2</group>
     <period>6</period>
     <block>s</block>
+    <configuration>[Xe] 6s²
+2, 8, 18, 18, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Barium</wiki>
     <isotopes>
       <isotope symbol="114">
@@ -16564,7 +16676,7 @@ EC (.0096%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="151">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>151La</daughter-isotopes>
         <spin>3/2−</spin>
@@ -16594,10 +16706,12 @@ EC (.0096%)</decay-modes>
     <group>4</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d² 6s²
+2, 8, 18, 32, 10, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Hafnium</wiki>
     <isotopes>
       <isotope symbol="153">
-        <half-life>400 ms </half-life>
+        <half-life>400 ms</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
@@ -17046,14 +17160,14 @@ IT (42%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="187">
-        <half-life>30 s </half-life>
+        <half-life>30 s</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="188">
-        <half-life>20 s </half-life>
+        <half-life>20 s</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -17069,6 +17183,8 @@ IT (42%)</decay-modes>
     <group>5</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d³ 6s²
+2, 8, 18, 32, 11, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Tantalum</wiki>
     <isotopes>
       <isotope symbol="155">
@@ -17618,6 +17734,8 @@ IT
     <group>6</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d⁴ 6s²
+2, 8, 18, 32, 12, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Tungsten</wiki>
     <isotopes>
       <isotope symbol="158">
@@ -17855,14 +17973,14 @@ IT
         <abundance></abundance>
       </isotope>
       <isotope symbol="182">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
         <abundance>0.2650</abundance>
       </isotope>
       <isotope symbol="183">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
@@ -17876,7 +17994,7 @@ IT
         <abundance></abundance>
       </isotope>
       <isotope symbol="184">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -17897,7 +18015,7 @@ IT
         <abundance></abundance>
       </isotope>
       <isotope symbol="186">
-        <half-life>stable </half-life>
+        <half-life>stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
@@ -17976,6 +18094,8 @@ IT
     <group>7</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d⁵ 6s²
+2, 8, 18, 32, 13, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Rhenium</wiki>
     <isotopes>
       <isotope symbol="160">
@@ -18397,14 +18517,14 @@ IT (45.6%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="193">
-        <half-life>30 s </half-life>
+        <half-life>30 s</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="194">
-        <half-life>2 s </half-life>
+        <half-life>2 s</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin></spin>
@@ -18420,6 +18540,8 @@ IT (45.6%)</decay-modes>
     <group>8</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d⁶ 6s²
+2, 8, 18, 32, 14, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Osmium</wiki>
     <isotopes>
       <isotope symbol="162">
@@ -18777,6 +18899,8 @@ IT (15%)</decay-modes>
     <group>9</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d⁷ 6s²
+2, 8, 18, 32, 15, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Iridium</wiki>
     <isotopes>
       <isotope symbol="164">
@@ -19323,6 +19447,8 @@ IT (.25%)</decay-modes>
     <group>10</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d⁹ 6s¹
+2, 8, 18, 32, 17, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Platinum</wiki>
     <isotopes>
       <isotope symbol="166">
@@ -19733,6 +19859,8 @@ IT</decay-modes>
     <group>11</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s¹
+2, 8, 18, 32, 18, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Gold</wiki>
     <isotopes>
       <isotope symbol="169">
@@ -20300,6 +20428,8 @@ IT (18%)</decay-modes>
     <group>12</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s²
+2, 8, 18, 32, 18, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Mercury_(element)</wiki>
     <isotopes>
       <isotope symbol="171">
@@ -20762,6 +20892,8 @@ EC (8.6%)</decay-modes>
     <group>13</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹
+2, 8, 18, 32, 18, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Thallium</wiki>
     <isotopes>
       <isotope symbol="176">
@@ -21392,6 +21524,8 @@ EC (2.9%)</decay-modes>
     <group>14</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²
+2, 8, 18, 32, 18, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Lead</wiki>
     <isotopes>
       <isotope symbol="178">
@@ -22056,6 +22190,8 @@ EC (9.5%)</decay-modes>
     <group>15</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³
+2, 8, 18, 32, 18, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Bismuth</wiki>
     <isotopes>
       <isotope symbol="184">
@@ -22747,6 +22883,8 @@ IT (6.8%)
     <group>16</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p⁴
+2, 8, 18, 32, 18, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Polonium</wiki>
     <isotopes>
       <isotope symbol="188">
@@ -23258,6 +23396,8 @@ IT (.07%)</decay-modes>
     <group>17</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵
+2, 8, 18, 32, 18, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Astatine</wiki>
     <isotopes>
       <isotope symbol="191">
@@ -23715,6 +23855,8 @@ EC (3×10^−7%)</decay-modes>
     <group>18</group>
     <period>6</period>
     <block>p</block>
+    <configuration>[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶
+2, 8, 18, 32, 18, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Radon</wiki>
     <isotopes>
       <isotope symbol="195">
@@ -24106,6 +24248,8 @@ IT (&lt;1%)</decay-modes>
     <group>1</group>
     <period>7</period>
     <block>s</block>
+    <configuration>[Rn] 7s¹
+2, 8, 18, 32, 18, 8, 1</configuration>
     <wiki>http://en.wikipedia.org/wiki/Francium</wiki>
     <isotopes>
       <isotope symbol="199">
@@ -24478,6 +24622,8 @@ CD (8.79×−11%)</decay-modes>
     <group>2</group>
     <period>7</period>
     <block>s</block>
+    <configuration>[Rn] 7s²
+2, 8, 18, 32, 18, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Radium</wiki>
     <isotopes>
       <isotope symbol="202">
@@ -24858,6 +25004,8 @@ CD (2.6×10^−9%)</decay-modes>
     <group>4</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d² 7s²
+2, 8, 18, 32, 32, 10, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Rutherfordium</wiki>
     <isotopes>
       <isotope symbol="253">
@@ -25033,6 +25181,8 @@ various</daughter-isotopes>
     <group>5</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d³ 7s²
+2, 8, 18, 32, 32, 11, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Dubnium</wiki>
     <isotopes>
       <isotope symbol="255">
@@ -25195,6 +25345,8 @@ EC </decay-modes>
     <group>6</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁴ 7s²
+2, 8, 18, 32, 32, 12, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Seaborgium</wiki>
     <isotopes>
       <isotope symbol="258">
@@ -25321,6 +25473,8 @@ various</daughter-isotopes>
     <group>7</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁵ 7s²
+2, 8, 18, 32, 32, 13, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Bohrium</wiki>
     <isotopes>
       <isotope symbol="260">
@@ -25425,6 +25579,8 @@ various</daughter-isotopes>
     <group>8</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁶ 7s²
+2, 8, 18, 32, 32, 14, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Hassium</wiki>
     <isotopes>
       <isotope symbol="263">
@@ -25551,6 +25707,8 @@ various</daughter-isotopes>
     <group>9</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁷ 7s²
+2, 8, 18, 32, 32, 15, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Meitnerium</wiki>
     <isotopes>
       <isotope symbol="266">
@@ -25633,6 +25791,8 @@ various</daughter-isotopes>
     <group>10</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁸ 7s²
+2, 8, 18, 32, 32, 16, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Darmstadtium</wiki>
     <isotopes>
       <isotope symbol="267">
@@ -25726,6 +25886,8 @@ various</daughter-isotopes>
     <group>11</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d⁹ 7s²
+2, 8, 18, 32, 32, 17, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Roentgenium</wiki>
     <isotopes>
       <isotope symbol="272">
@@ -25789,6 +25951,8 @@ various</daughter-isotopes>
     <group>12</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s²
+2, 8, 18, 32, 32, 18, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Copernicium</wiki>
     <isotopes>
       <isotope symbol="277">
@@ -25859,6 +26023,8 @@ various</daughter-isotopes>
     <group>13</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹
+2, 8, 18, 32, 32, 18, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ununtrium</wiki>
     <isotopes>
       <isotope symbol="278">
@@ -25913,6 +26079,8 @@ various</daughter-isotopes>
     <group>14</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²
+2, 8, 18, 32, 32, 18, 4</configuration>
     <wiki>http://en.wikipedia.org/wiki/Flerovium</wiki>
     <isotopes>
       <isotope symbol="285">
@@ -25975,6 +26143,8 @@ various</daughter-isotopes>
     <group>15</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³
+2, 8, 18, 32, 32, 18, 5</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ununpentium</wiki>
     <isotopes>
       <isotope symbol="287">
@@ -26015,6 +26185,8 @@ various</daughter-isotopes>
     <group>16</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴
+2, 8, 18, 32, 32, 18, 6</configuration>
     <wiki>http://en.wikipedia.org/wiki/Livermorium</wiki>
     <isotopes>
       <isotope symbol="290">
@@ -26055,6 +26227,8 @@ various</daughter-isotopes>
     <group>17</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵
+2, 8, 18, 32, 32, 18, 7</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ununseptium</wiki>
     <isotopes>
       <isotope symbol="293">
@@ -26081,6 +26255,8 @@ various</daughter-isotopes>
     <group>18</group>
     <period>7</period>
     <block>p</block>
+    <configuration>[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶
+2, 8, 18, 32, 32, 18, 8</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ununoctium</wiki>
     <isotopes>
       <isotope symbol="294">
@@ -26100,6 +26276,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 5d¹ 6s²
+2, 8, 18, 18, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Lanthanum</wiki>
     <isotopes>
       <isotope symbol="117">
@@ -26449,21 +26627,21 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="151">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>151Ce</daughter-isotopes>
         <spin>5/2+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="152">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>152Ce</daughter-isotopes>
         <spin></spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="153">
-        <half-life>150 ms </half-life>
+        <half-life>150 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>153Ce</daughter-isotopes>
         <spin>5/2+</spin>
@@ -26493,6 +26671,8 @@ IT</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹ 5d¹ 6s²
+2, 8, 18, 19, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Cerium</wiki>
     <isotopes>
       <isotope symbol="119">
@@ -26812,21 +26992,21 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="153">
-        <half-life>500 ms </half-life>
+        <half-life>500 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>153Pr</daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="154">
-        <half-life>300 ms </half-life>
+        <half-life>300 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>154Pr</daughter-isotopes>
         <spin>0+</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="155">
-        <half-life>200 ms </half-life>
+        <half-life>200 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>155Pr</daughter-isotopes>
         <spin>5/2-</spin>
@@ -26856,6 +27036,8 @@ IT</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f³ 6s²
+2, 8, 18, 21, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Praseodymium</wiki>
     <isotopes>
       <isotope symbol="121">
@@ -27220,14 +27402,14 @@ EC (.0164%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="155">
-        <half-life>1 s </half-life>
+        <half-life>1 s</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>155Nd</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="156">
-        <half-life>500 ms </half-life>
+        <half-life>500 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>156Nd</daughter-isotopes>
         <spin></spin>
@@ -27264,6 +27446,8 @@ EC (.0164%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f⁴ 6s²
+2, 8, 18, 22, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Neodymium</wiki>
     <isotopes>
       <isotope symbol="124">
@@ -27281,7 +27465,7 @@ EC (.0164%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="126">
-        <half-life>1 s </half-life>
+        <half-life>1 s</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>126Pr</daughter-isotopes>
         <spin>0+</spin>
@@ -27601,14 +27785,14 @@ IT (11.8%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="157">
-        <half-life>2 s </half-life>
+        <half-life>2 s</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>157Pm</daughter-isotopes>
         <spin>5/2-</spin>
         <abundance></abundance>
       </isotope>
       <isotope symbol="158">
-        <half-life>700 ms </half-life>
+        <half-life>700 ms</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>158Pm</daughter-isotopes>
         <spin>0+</spin>
@@ -27645,6 +27829,8 @@ IT (11.8%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 6s² 4f⁵
+2, 8, 18, 23, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Promethium</wiki>
     <isotopes>
       <isotope symbol="126">
@@ -27671,7 +27857,7 @@ p</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="129">
-        <half-life>3 s </half-life>
+        <half-life>3 s</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>129Nd</daughter-isotopes>
         <spin>5/2+</spin>
@@ -28067,6 +28253,8 @@ IT (5%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 6s² 4f⁶
+2, 8, 18, 24, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Samarium</wiki>
     <isotopes>
       <isotope symbol="128">
@@ -28443,6 +28631,8 @@ IT (.31%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f⁷ 6s²
+2, 8, 18, 25, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Europium</wiki>
     <isotopes>
       <isotope symbol="130">
@@ -28868,6 +29058,8 @@ EC (.02%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f⁷ 5d¹ 6s²
+2, 8, 18, 25, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Gadolinium</wiki>
     <isotopes>
       <isotope symbol="134">
@@ -28885,7 +29077,7 @@ EC (.02%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="136">
-        <half-life>1 s </half-life>
+        <half-life>1 s</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>136Eu</daughter-isotopes>
         <spin></spin>
@@ -29228,6 +29420,8 @@ IT (11%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f⁹ 6s²
+2, 8, 18, 27, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Terbium</wiki>
     <isotopes>
       <isotope symbol="135">
@@ -29252,7 +29446,7 @@ IT (11%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="138">
-        <half-life>800 ms </half-life>
+        <half-life>800 ms</half-life>
         <decay-modes>β+
 p</decay-modes>
         <daughter-isotopes>138Gd
@@ -29732,6 +29926,8 @@ IT (21.8%)
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹⁰ 6s²
+2, 8, 18, 28, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Dysprosium</wiki>
     <isotopes>
       <isotope symbol="138">
@@ -30108,6 +30304,8 @@ IT (35%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹¹ 6s²
+2, 8, 18, 29, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Holmium</wiki>
     <isotopes>
       <isotope symbol="140">
@@ -30643,6 +30841,8 @@ IT</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹² 6s²
+2, 8, 18, 30, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Erbium</wiki>
     <isotopes>
       <isotope symbol="142">
@@ -30660,7 +30860,7 @@ IT</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="144">
-        <half-life>400 ms </half-life>
+        <half-life>400 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>144Ho</daughter-isotopes>
         <spin>0+</spin>
@@ -31022,6 +31222,8 @@ IT (3.5%)
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹³ 6s²
+2, 8, 18, 31, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Thulium</wiki>
     <isotopes>
       <isotope symbol="145">
@@ -31495,6 +31697,8 @@ EC (.14%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>f</block>
+    <configuration>[Xe] 4f¹⁴ 6s²
+2, 8, 18, 32, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Ytterbium</wiki>
     <isotopes>
       <isotope symbol="148">
@@ -31512,7 +31716,7 @@ EC (.14%)</decay-modes>
         <abundance></abundance>
       </isotope>
       <isotope symbol="150">
-        <half-life>700 ms </half-life>
+        <half-life>700 ms</half-life>
         <decay-modes>β+</decay-modes>
         <daughter-isotopes>150Tm</daughter-isotopes>
         <spin>0+</spin>
@@ -31849,6 +32053,8 @@ EC (.14%)</decay-modes>
     <group>0</group>
     <period>6</period>
     <block>d</block>
+    <configuration>[Xe] 6s² 4f¹⁴ 5d¹
+2, 8, 18, 32, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Lutetium</wiki>
     <isotopes>
       <isotope symbol="150">
@@ -32436,6 +32642,8 @@ IT (21.7%)</decay-modes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 6d¹ 7s²
+2, 8, 18, 32, 18, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Actinium</wiki>
     <isotopes>
       <isotope symbol="206">
@@ -32768,6 +32976,8 @@ EC (17%)
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 6d² 7s²
+2, 8, 18, 32, 18, 10, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Thorium</wiki>
     <isotopes>
       <isotope symbol="209">
@@ -33049,6 +33259,8 @@ various
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f² 6d¹ 7s²
+2, 8, 18, 32, 20, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Protactinium</wiki>
     <isotopes>
       <isotope symbol="212">
@@ -33327,6 +33539,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f³ 6d¹ 7s²
+2, 8, 18, 32, 21, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Uranium</wiki>
     <isotopes>
       <isotope symbol="217">
@@ -33627,10 +33841,12 @@ various
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f⁴ 6d¹ 7s²
+2, 8, 18, 32, 22, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Neptunium</wiki>
     <isotopes>
       <isotope symbol="225">
-        <half-life>3 ms </half-life>
+        <half-life>3 ms</half-life>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>221Pa</daughter-isotopes>
         <spin>9/2-</spin>
@@ -33838,6 +34054,8 @@ IT (.11%)</decay-modes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f⁶ 7s²
+2, 8, 18, 32, 24, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Plutonium</wiki>
     <isotopes>
       <isotope symbol="228">
@@ -34088,6 +34306,8 @@ various
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f⁷ 7s²
+2, 8, 18, 32, 25, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Americium</wiki>
     <isotopes>
       <isotope symbol="231">
@@ -34329,6 +34549,8 @@ IT (.01%)</decay-modes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f⁷ 6d¹ 7s²
+2, 8, 18, 32, 25, 9, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Curium</wiki>
     <isotopes>
       <isotope symbol="232">
@@ -34559,6 +34781,8 @@ various
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f⁹ 7s²
+2, 8, 18, 32, 27, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Berkelium</wiki>
     <isotopes>
       <isotope symbol="235">
@@ -34791,6 +35015,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f¹⁰ 7s²
+2, 8, 18, 32, 28, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Californium</wiki>
     <isotopes>
       <isotope symbol="237">
@@ -35006,6 +35232,8 @@ various
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f¹¹ 7s²
+2, 8, 18, 32, 29, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Einsteinium</wiki>
     <isotopes>
       <isotope symbol="240">
@@ -35236,6 +35464,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f¹² 7s²
+2, 8, 18, 32, 30, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Fermium</wiki>
     <isotopes>
       <isotope symbol="241">
@@ -35450,6 +35680,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f¹³ 7s²
+2, 8, 18, 32, 31, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Mendelevium</wiki>
     <isotopes>
       <isotope symbol="245">
@@ -35667,6 +35899,8 @@ EC (5%)
     <group>0</group>
     <period>7</period>
     <block>f</block>
+    <configuration>[Rn] 5f¹⁴ 7s²
+2, 8, 18, 32, 32, 8, 2</configuration>
     <wiki>http://en.wikipedia.org/wiki/Nobelium</wiki>
     <isotopes>
       <isotope symbol="250">
@@ -35822,6 +36056,8 @@ various</daughter-isotopes>
     <group>0</group>
     <period>7</period>
     <block>d</block>
+    <configuration>[Rn] 7s² 5f¹⁴ 7p¹
+2, 8, 18, 32, 32, 8, 3</configuration>
     <wiki>http://en.wikipedia.org/wiki/Lawrencium</wiki>
     <isotopes>
       <isotope symbol="252">

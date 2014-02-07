@@ -61,9 +61,10 @@ def add_to_element(root, name, value):
     subelement = etree.SubElement(root, name)
     subelement.text = value
 
-def remove_trailing_newline(string):
-    if string[-1:] == '\n':
-        return string[:-1]
+def translate_sup(string):
+    matches = re.findall(r'<sup>[0-9]*</sup>', string)
+    for match in matches:
+        string = string.replace(match, ''.join(dict(zip("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
     return string
 
 def fetch(url, root):
@@ -73,7 +74,8 @@ def fetch(url, root):
 
     nsm = content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Name, ")]]/td/text()')[0].replace(",", "").split()
 
-    saw = re.sub(r'\([0-9]?\)', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')[0]).replace('(', '[').replace(')', ']')
+    saw = re.sub(r'\([0-9]?\)', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')
+    	[0]).replace('(', '[').replace(')', ']')
     try:
         saw = format(float(saw), '.3f').rstrip('0').rstrip('.')
     except ValueError:
@@ -83,10 +85,14 @@ def fetch(url, root):
 
     pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
     grp = re.sub(r'[^0-9]', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0].replace('n/a', '0'))
+    ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_sup(etree.tostring(
+        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')
+        [0]).decode("utf-8"))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
 
     # Isotopes
 
-    content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/a[contains(., "Isotopes of ")]/@href')[0]).read())
+    content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
+        '//table[@class="infobox bordered"]/tr/td/a[contains(., "Isotopes of ")]/@href')[0]).read())
 
     isotopes = table_to_list(content.xpath('//table[@class="wikitable"][@style="font-size:95%; white-space:nowrap"]')[0])
 
@@ -102,6 +108,7 @@ def fetch(url, root):
     add_to_element(element, 'group', grp)
     add_to_element(element, 'period', pb[0])
     add_to_element(element, 'block', pb[1])
+    add_to_element(element, 'configuration', ec)
     add_to_element(element, 'wiki', url)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
@@ -109,13 +116,15 @@ def fetch(url, root):
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
         isotope_tag.attrib['symbol'] = re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), ''))
-        add_to_element(isotope_tag, 'half-life', remove_trailing_newline(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '').replace('×10', '×10^')))
+        add_to_element(isotope_tag, 'half-life', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
+        	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '').replace('×10', '×10^').strip())
         add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')).replace('×10', '×10^'))
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]).replace('(', '').replace(')', ''))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
+        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
+        	isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
-    print(list([nsm[0].capitalize(), nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1]]))
+    print(list([nsm[0].capitalize(), nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines()]))
 
 if __name__ == '__main__':
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
