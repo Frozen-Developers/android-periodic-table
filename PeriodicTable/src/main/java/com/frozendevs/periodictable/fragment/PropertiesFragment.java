@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.adapter.PropropertiesAdapter;
+import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
 
 public class PropertiesFragment extends Fragment {
 
@@ -26,7 +26,7 @@ public class PropertiesFragment extends Fragment {
 
         ListView listView = (ListView)layout.findViewById(R.id.properties_list);
         listView.setEmptyView(layout.findViewById(R.id.progress_bar));
-        listView.setAdapter(new PropropertiesAdapter(getActivity(), atomicNumber));
+        listView.setAdapter(new PropertiesAdapter(getActivity(), atomicNumber));
 
         getActivity().registerForContextMenu(listView);
 

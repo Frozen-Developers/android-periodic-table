@@ -12,7 +12,10 @@ import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 
-public class PropropertiesAdapter extends BaseAdapter {
+public class PropertiesAdapter extends BaseAdapter {
+
+    private static final int VIEW_TYPE_HEADER = 0;
+    private static final int VIEW_TYPE_ITEM = 1;
 
     private Context context;
     private String[][] propertiesPairs = new String[][] {  };
@@ -24,6 +27,7 @@ public class PropropertiesAdapter extends BaseAdapter {
             ElementProperties properties = Database.getElementProperties(context, params[0]);
 
             propertiesPairs = new String[][] {
+                    { getString(R.string.properties_header_general), null },
                     { getString(R.string.property_symbol), properties.getSymbol() },
                     { getString(R.string.property_atomic_number), intToStr(properties.getAtomicNumber()) },
                     { getString(R.string.property_weight), properties.getStandardAtomicWeight() },
@@ -43,7 +47,7 @@ public class PropropertiesAdapter extends BaseAdapter {
         }
     }
 
-    public PropropertiesAdapter(Context context, int atomicNumber) {
+    public PropertiesAdapter(Context context, int atomicNumber) {
         this.context = context;
 
         new LoadProperties().execute(atomicNumber);
@@ -66,12 +70,18 @@ public class PropropertiesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.properties_list_item, parent, false);
+        View view = LayoutInflater.from(context).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
+                ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
 
         String[] property = getItem(position);
 
-        ((TextView)view.findViewById(R.id.property_name)).setText(property[0]);
-        ((TextView)view.findViewById(R.id.property_value)).setText(property[1]);
+        if(getItemViewType(position) == VIEW_TYPE_ITEM) {
+            ((TextView)view.findViewById(R.id.property_name)).setText(property[0]);
+            ((TextView)view.findViewById(R.id.property_value)).setText(property[1]);
+        }
+        else {
+            ((TextView)view).setText(property[0]);
+        }
 
         return view;
     }
@@ -89,5 +99,25 @@ public class PropropertiesAdapter extends BaseAdapter {
 
     private String intToStr(int integer) {
         return String.valueOf(integer);
+    }
+
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return getItemViewType(position) != VIEW_TYPE_HEADER;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return getItem(position)[1] != null ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
     }
 }
