@@ -79,27 +79,27 @@ public class TableAdapter extends BaseAdapter {
 
             int color = 0;
 
-            if (item.getCategory().equals("actinide"))
+            if (item.getCategory().equals("Actinide"))
                 color = R.color.actinide_bg;
-            else if (item.getCategory().equals("alkali metal"))
+            else if (item.getCategory().equals("Alkali metal"))
                 color = R.color.alkali_metal_bg;
-            else if (item.getCategory().equals("alkaline earth metal") ||
-                    item.getCategory().equals("alkaline earth metals"))
+            else if (item.getCategory().equals("Alkaline earth metal") ||
+                    item.getCategory().equals("Alkaline earth metals"))
                 color = R.color.alkaline_earth_metal_bg;
-            else if (item.getCategory().equals("diatomic nonmetal"))
+            else if (item.getCategory().equals("Diatomic nonmetal"))
                 color = R.color.diatomic_nonmetal_bg;
-            else if (item.getCategory().equals("lanthanide"))
+            else if (item.getCategory().equals("Lanthanide"))
                 color = R.color.lanthanide_bg;
-            else if (item.getCategory().equals("metalloid"))
+            else if (item.getCategory().equals("Metalloid"))
                 color = R.color.metalloid_bg;
-            else if (item.getCategory().equals("noble gas") ||
-                    item.getCategory().equals("noble gases"))
+            else if (item.getCategory().equals("Noble gas") ||
+                    item.getCategory().equals("Noble gases"))
                 color = R.color.noble_gas_bg;
-            else if (item.getCategory().equals("polyatomic nonmetal"))
+            else if (item.getCategory().equals("Polyatomic nonmetal"))
                 color = R.color.polyatomic_nonmetal_bg;
-            else if (item.getCategory().equals("poor metal"))
+            else if (item.getCategory().equals("Poor metal"))
                 color = R.color.poor_metal_bg;
-            else if (item.getCategory().equals("transition metal"))
+            else if (item.getCategory().equals("Transition metal"))
                 color = R.color.transition_metal_bg;
 
             view.setBackgroundColor(activity.getResources().getColor(color));

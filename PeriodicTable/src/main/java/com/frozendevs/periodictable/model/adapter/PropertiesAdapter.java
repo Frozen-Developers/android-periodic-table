@@ -35,9 +35,10 @@ public class PropertiesAdapter extends BaseAdapter {
                             intToStr(properties.getGroup() > 0 ? properties.getGroup() : 3) },
                     { getString(R.string.property_period), intToStr(properties.getPeriod()) },
                     { getString(R.string.property_block), properties.getBlock() },
-                    { getString(R.string.property_category), capitalize(properties.getCategory()) },
+                    { getString(R.string.property_category), properties.getCategory() },
                     { getString(R.string.property_electron_configuration),
-                            properties.getElectronConfiguration() }
+                            properties.getElectronConfiguration() },
+                    { getString(R.string.properties_header_physical), null }
             };
 
             return null;
@@ -88,21 +89,6 @@ public class PropertiesAdapter extends BaseAdapter {
         return view;
     }
 
-    private String capitalize(String string) {
-        if (string.length() == 0)
-            return string;
-
-        return string.substring(0, 1).toUpperCase() + string.substring(1).toLowerCase();
-    }
-
-    private String getString(int resId) {
-        return context.getString(resId);
-    }
-
-    private String intToStr(int integer) {
-        return String.valueOf(integer);
-    }
-
     @Override
     public boolean areAllItemsEnabled() {
         return false;
@@ -121,5 +107,13 @@ public class PropertiesAdapter extends BaseAdapter {
     @Override
     public int getViewTypeCount() {
         return 2;
+    }
+
+    private String getString(int resId) {
+        return context.getString(resId);
+    }
+
+    private String intToStr(int integer) {
+        return String.valueOf(integer);
     }
 }

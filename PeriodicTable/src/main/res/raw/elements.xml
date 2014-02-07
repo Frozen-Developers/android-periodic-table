@@ -4,7 +4,7 @@
     <symbol>H</symbol>
     <name>Hydrogen</name>
     <weight>1.008</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>1</group>
     <period>1</period>
     <block>s</block>
@@ -69,7 +69,7 @@
     <symbol>He</symbol>
     <name>Helium</name>
     <weight>4.003</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>1</period>
     <block>s</block>
@@ -154,7 +154,7 @@
     <symbol>Li</symbol>
     <name>Lithium</name>
     <weight>6.94</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>2</period>
     <block>s</block>
@@ -264,7 +264,7 @@
     <symbol>Be</symbol>
     <name>Beryllium</name>
     <weight>9.012</weight>
-    <category>alkaline earth metal</category>
+    <category>Alkaline earth metal</category>
     <group>2</group>
     <period>2</period>
     <block>s</block>
@@ -377,7 +377,7 @@
     <symbol>B</symbol>
     <name>Boron</name>
     <weight>10.81</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>13</group>
     <period>2</period>
     <block>p</block>
@@ -507,7 +507,7 @@
     <symbol>C</symbol>
     <name>Carbon</name>
     <weight>12.011</weight>
-    <category>polyatomic nonmetal</category>
+    <category>Polyatomic nonmetal</category>
     <group>14</group>
     <period>2</period>
     <block>p</block>
@@ -642,7 +642,7 @@ K-capture (.21%)</decay-modes>
     <symbol>N</symbol>
     <name>Nitrogen</name>
     <weight>14.007</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>15</group>
     <period>2</period>
     <block>p</block>
@@ -795,7 +795,7 @@ K-capture (.21%)</decay-modes>
     <symbol>O</symbol>
     <name>Oxygen</name>
     <weight>15.999</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>16</group>
     <period>2</period>
     <block>p</block>
@@ -919,7 +919,7 @@ n</decay-modes>
     <symbol>F</symbol>
     <name>Fluorine</name>
     <weight>18.998</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>17</group>
     <period>2</period>
     <block>p</block>
@@ -1076,7 +1076,7 @@ n</decay-modes>
     <symbol>Ne</symbol>
     <name>Neon</name>
     <weight>20.18</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>2</period>
     <block>p</block>
@@ -1239,7 +1239,7 @@ n</decay-modes>
     <symbol>Na</symbol>
     <name>Sodium</name>
     <weight>22.99</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>3</period>
     <block>s</block>
@@ -1445,7 +1445,7 @@ n</decay-modes>
     <symbol>Mg</symbol>
     <name>Magnesium</name>
     <weight>24.305</weight>
-    <category>alkaline earth metal</category>
+    <category>Alkaline earth metal</category>
     <group>2</group>
     <period>3</period>
     <block>s</block>
@@ -1633,7 +1633,7 @@ n</decay-modes>
     <symbol>Al</symbol>
     <name>Aluminium</name>
     <weight>26.982</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>13</group>
     <period>3</period>
     <block>p</block>
@@ -1869,7 +1869,7 @@ n</decay-modes>
     <symbol>Si</symbol>
     <name>Silicon</name>
     <weight>28.085</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>14</group>
     <period>3</period>
     <block>p</block>
@@ -2058,7 +2058,7 @@ n</decay-modes>
     <symbol>P</symbol>
     <name>Phosphorus</name>
     <weight>30.974</weight>
-    <category>polyatomic nonmetal</category>
+    <category>Polyatomic nonmetal</category>
     <group>15</group>
     <period>3</period>
     <block>p</block>
@@ -2255,7 +2255,7 @@ n</decay-modes>
     <symbol>S</symbol>
     <name>Sulfur</name>
     <weight>32.066</weight>
-    <category>polyatomic nonmetal</category>
+    <category>Polyatomic nonmetal</category>
     <group>16</group>
     <period>3</period>
     <block>p</block>
@@ -2462,7 +2462,7 @@ n</decay-modes>
     <symbol>Cl</symbol>
     <name>Chlorine</name>
     <weight>35.45</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>17</group>
     <period>3</period>
     <block>p</block>
@@ -2678,7 +2678,7 @@ IT (44.6%)</decay-modes>
     <symbol>Ar</symbol>
     <name>Argon</name>
     <weight>39.948</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>3</period>
     <block>p</block>
@@ -2881,7 +2881,7 @@ IT (44.6%)</decay-modes>
     <symbol>K</symbol>
     <name>Potassium</name>
     <weight>39.098</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>4</period>
     <block>s</block>
@@ -3120,7 +3120,7 @@ EC (10.72%)
     <symbol>Ca</symbol>
     <name>Calcium</name>
     <weight>40.078</weight>
-    <category>alkaline earth metal</category>
+    <category>Alkaline earth metal</category>
     <group>2</group>
     <period>4</period>
     <block>s</block>
@@ -3318,7 +3318,7 @@ EC (10.72%)
     <symbol>Sc</symbol>
     <name>Scandium</name>
     <weight>44.956</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>3</group>
     <period>4</period>
     <block>d</block>
@@ -3614,7 +3614,7 @@ EC (10.72%)
     <symbol>Ti</symbol>
     <name>Titanium</name>
     <weight>47.867</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>4</group>
     <period>4</period>
     <block>d</block>
@@ -3838,7 +3838,7 @@ EC (10.72%)
     <symbol>V</symbol>
     <name>Vanadium</name>
     <weight>50.941</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>5</group>
     <period>4</period>
     <block>d</block>
@@ -4083,7 +4083,7 @@ EC (10.72%)
     <symbol>Cr</symbol>
     <name>Chromium</name>
     <weight>51.996</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>6</group>
     <period>4</period>
     <block>d</block>
@@ -4313,7 +4313,7 @@ EC (10.72%)
     <symbol>Mn</symbol>
     <name>Manganese</name>
     <weight>54.938</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>7</group>
     <period>4</period>
     <block>d</block>
@@ -4588,7 +4588,7 @@ IT (11.5%)</decay-modes>
     <symbol>Fe</symbol>
     <name>Iron</name>
     <weight>55.845</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>8</group>
     <period>4</period>
     <block>d</block>
@@ -4860,7 +4860,7 @@ IT (11.5%)</decay-modes>
     <symbol>Co</symbol>
     <name>Cobalt</name>
     <weight>58.933</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>9</group>
     <period>4</period>
     <block>d</block>
@@ -5174,7 +5174,7 @@ IT (1%)</decay-modes>
     <symbol>Ni</symbol>
     <name>Nickel</name>
     <weight>58.693</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>10</group>
     <period>4</period>
     <block>d</block>
@@ -5480,7 +5480,7 @@ IT</decay-modes>
     <symbol>Cu</symbol>
     <name>Copper</name>
     <weight>63.546</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>11</group>
     <period>4</period>
     <block>d</block>
@@ -5760,7 +5760,7 @@ p</decay-modes>
     <symbol>Zn</symbol>
     <name>Zinc</name>
     <weight>65.38</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>12</group>
     <period>4</period>
     <block>d</block>
@@ -6076,7 +6076,7 @@ IT</decay-modes>
     <symbol>Ga</symbol>
     <name>Gallium</name>
     <weight>69.723</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>13</group>
     <period>4</period>
     <block>p</block>
@@ -6342,7 +6342,7 @@ EC (0.41%)</decay-modes>
     <symbol>Ge</symbol>
     <name>Germanium</name>
     <weight>72.63</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>14</group>
     <period>4</period>
     <block>p</block>
@@ -6691,7 +6691,7 @@ IT (1%)</decay-modes>
     <symbol>As</symbol>
     <name>Arsenic</name>
     <weight>74.922</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>15</group>
     <period>4</period>
     <block>p</block>
@@ -7020,7 +7020,7 @@ EC (.02%)</decay-modes>
     <symbol>Se</symbol>
     <name>Selenium</name>
     <weight>78.971</weight>
-    <category>polyatomic nonmetal</category>
+    <category>Polyatomic nonmetal</category>
     <group>16</group>
     <period>4</period>
     <block>p</block>
@@ -7329,7 +7329,7 @@ EC (.02%)</decay-modes>
     <symbol>Br</symbol>
     <name>Bromine</name>
     <weight>79.904</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>17</group>
     <period>4</period>
     <block>p</block>
@@ -7693,7 +7693,7 @@ IT</decay-modes>
     <symbol>Kr</symbol>
     <name>Krypton</name>
     <weight>83.798</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>4</period>
     <block>p</block>
@@ -8014,7 +8014,7 @@ IT (21.4%)</decay-modes>
     <symbol>Rb</symbol>
     <name>Rubidium</name>
     <weight>85.468</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>5</period>
     <block>s</block>
@@ -8389,7 +8389,7 @@ IT
     <symbol>Sr</symbol>
     <name>Strontium</name>
     <weight>87.62</weight>
-    <category>alkaline earth metal</category>
+    <category>Alkaline earth metal</category>
     <group>2</group>
     <period>5</period>
     <block>s</block>
@@ -8698,7 +8698,7 @@ EC (.3%)</decay-modes>
     <symbol>Y</symbol>
     <name>Yttrium</name>
     <weight>88.906</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>3</group>
     <period>5</period>
     <block>d</block>
@@ -9179,7 +9179,7 @@ IT (10%)
     <symbol>Zr</symbol>
     <name>Zirconium</name>
     <weight>91.224</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>4</group>
     <period>5</period>
     <block>d</block>
@@ -9478,7 +9478,7 @@ IT (10%)
     <symbol>Nb</symbol>
     <name>Niobium</name>
     <weight>92.906</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>5</group>
     <period>5</period>
     <block>d</block>
@@ -9936,7 +9936,7 @@ IT (3.8%)</decay-modes>
     <symbol>Mo</symbol>
     <name>Molybdenum</name>
     <weight>95.95</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>6</group>
     <period>5</period>
     <block>d</block>
@@ -10247,7 +10247,7 @@ IT (3.8%)</decay-modes>
     <symbol>Tc</symbol>
     <name>Technetium</name>
     <weight>[98]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>7</group>
     <period>5</period>
     <block>d</block>
@@ -10683,7 +10683,7 @@ IT (2%)</decay-modes>
     <symbol>Ru</symbol>
     <name>Ruthenium</name>
     <weight>101.07</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>8</group>
     <period>5</period>
     <block>d</block>
@@ -10996,7 +10996,7 @@ IT (22%)
     <symbol>Rh</symbol>
     <name>Rhodium</name>
     <weight>102.906</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>9</group>
     <period>5</period>
     <block>d</block>
@@ -11445,7 +11445,7 @@ IT (.23%)</decay-modes>
     <symbol>Pd</symbol>
     <name>Palladium</name>
     <weight>106.42</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>10</group>
     <period>5</period>
     <block>d</block>
@@ -11810,7 +11810,7 @@ IT (8%)</decay-modes>
     <symbol>Ag</symbol>
     <name>Silver</name>
     <weight>107.868</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>11</group>
     <period>5</period>
     <block>d</block>
@@ -12404,7 +12404,7 @@ IT</decay-modes>
     <symbol>Cd</symbol>
     <name>Cadmium</name>
     <weight>112.414</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>12</group>
     <period>5</period>
     <block>d</block>
@@ -12784,7 +12784,7 @@ IT (&lt;.1%)</decay-modes>
     <symbol>In</symbol>
     <name>Indium</name>
     <weight>114.818</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>13</group>
     <period>5</period>
     <block>p</block>
@@ -13452,7 +13452,7 @@ IT (.3%)</decay-modes>
     <symbol>Sn</symbol>
     <name>Tin</name>
     <weight>118.71</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>14</group>
     <period>5</period>
     <block>p</block>
@@ -13991,7 +13991,7 @@ IT (.0004%)</decay-modes>
     <symbol>Sb</symbol>
     <name>Antimony</name>
     <weight>121.76</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>15</group>
     <period>5</period>
     <block>p</block>
@@ -14499,7 +14499,7 @@ IT (15%)</decay-modes>
     <symbol>Te</symbol>
     <name>Tellurium</name>
     <weight>127.6</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>16</group>
     <period>5</period>
     <block>p</block>
@@ -14940,7 +14940,7 @@ IT (17.5%)</decay-modes>
     <symbol>I</symbol>
     <name>Iodine</name>
     <weight>126.904</weight>
-    <category>diatomic nonmetal</category>
+    <category>Diatomic nonmetal</category>
     <group>17</group>
     <period>5</period>
     <block>p</block>
@@ -15384,7 +15384,7 @@ IT (rare)</decay-modes>
     <symbol>Xe</symbol>
     <name>Xenon</name>
     <weight>131.293</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>5</period>
     <block>p</block>
@@ -15776,7 +15776,7 @@ IT (rare)</decay-modes>
     <symbol>Cs</symbol>
     <name>Caesium</name>
     <weight>132.905</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>6</period>
     <block>s</block>
@@ -16304,7 +16304,7 @@ IT</decay-modes>
     <symbol>Ba</symbol>
     <name>Barium</name>
     <weight>137.327</weight>
-    <category>alkaline earth metals</category>
+    <category>Alkaline earth metals</category>
     <group>2</group>
     <period>6</period>
     <block>s</block>
@@ -16702,7 +16702,7 @@ EC (.0096%)</decay-modes>
     <symbol>Hf</symbol>
     <name>Hafnium</name>
     <weight>178.49</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>4</group>
     <period>6</period>
     <block>d</block>
@@ -17179,7 +17179,7 @@ IT (42%)</decay-modes>
     <symbol>Ta</symbol>
     <name>Tantalum</name>
     <weight>180.948</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>5</group>
     <period>6</period>
     <block>d</block>
@@ -17730,7 +17730,7 @@ IT
     <symbol>W</symbol>
     <name>Tungsten</name>
     <weight>183.84</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>6</group>
     <period>6</period>
     <block>d</block>
@@ -18090,7 +18090,7 @@ IT
     <symbol>Re</symbol>
     <name>Rhenium</name>
     <weight>186.207</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>7</group>
     <period>6</period>
     <block>d</block>
@@ -18536,7 +18536,7 @@ IT (45.6%)</decay-modes>
     <symbol>Os</symbol>
     <name>Osmium</name>
     <weight>190.23</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>8</group>
     <period>6</period>
     <block>d</block>
@@ -18895,7 +18895,7 @@ IT (15%)</decay-modes>
     <symbol>Ir</symbol>
     <name>Iridium</name>
     <weight>192.217</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>9</group>
     <period>6</period>
     <block>d</block>
@@ -19443,7 +19443,7 @@ IT (.25%)</decay-modes>
     <symbol>Pt</symbol>
     <name>Platinum</name>
     <weight>195.084</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>10</group>
     <period>6</period>
     <block>d</block>
@@ -19855,7 +19855,7 @@ IT</decay-modes>
     <symbol>Au</symbol>
     <name>Gold</name>
     <weight>196.967</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>11</group>
     <period>6</period>
     <block>d</block>
@@ -20424,7 +20424,7 @@ IT (18%)</decay-modes>
     <symbol>Hg</symbol>
     <name>Mercury</name>
     <weight>200.592</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>12</group>
     <period>6</period>
     <block>d</block>
@@ -20888,7 +20888,7 @@ EC (8.6%)</decay-modes>
     <symbol>Tl</symbol>
     <name>Thallium</name>
     <weight>204.38</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>13</group>
     <period>6</period>
     <block>p</block>
@@ -21520,7 +21520,7 @@ EC (2.9%)</decay-modes>
     <symbol>Pb</symbol>
     <name>Lead</name>
     <weight>207.2</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>14</group>
     <period>6</period>
     <block>p</block>
@@ -22186,7 +22186,7 @@ EC (9.5%)</decay-modes>
     <symbol>Bi</symbol>
     <name>Bismuth</name>
     <weight>208.98</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>15</group>
     <period>6</period>
     <block>p</block>
@@ -22879,7 +22879,7 @@ IT (6.8%)
     <symbol>Po</symbol>
     <name>Polonium</name>
     <weight>[209]</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>16</group>
     <period>6</period>
     <block>p</block>
@@ -23392,7 +23392,7 @@ IT (.07%)</decay-modes>
     <symbol>At</symbol>
     <name>Astatine</name>
     <weight>[210]</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>17</group>
     <period>6</period>
     <block>p</block>
@@ -23851,7 +23851,7 @@ EC (3×10^−7%)</decay-modes>
     <symbol>Rn</symbol>
     <name>Radon</name>
     <weight>[222]</weight>
-    <category>noble gases</category>
+    <category>Noble gases</category>
     <group>18</group>
     <period>6</period>
     <block>p</block>
@@ -24244,7 +24244,7 @@ IT (&lt;1%)</decay-modes>
     <symbol>Fr</symbol>
     <name>Francium</name>
     <weight>[223]</weight>
-    <category>alkali metal</category>
+    <category>Alkali metal</category>
     <group>1</group>
     <period>7</period>
     <block>s</block>
@@ -24618,7 +24618,7 @@ CD (8.79×−11%)</decay-modes>
     <symbol>Ra</symbol>
     <name>Radium</name>
     <weight>[226]</weight>
-    <category>alkaline earth metal</category>
+    <category>Alkaline earth metal</category>
     <group>2</group>
     <period>7</period>
     <block>s</block>
@@ -25000,7 +25000,7 @@ CD (2.6×10^−9%)</decay-modes>
     <symbol>Rf</symbol>
     <name>Rutherfordium</name>
     <weight>[267]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>4</group>
     <period>7</period>
     <block>d</block>
@@ -25177,7 +25177,7 @@ various</daughter-isotopes>
     <symbol>Db</symbol>
     <name>Dubnium</name>
     <weight>[268]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>5</group>
     <period>7</period>
     <block>d</block>
@@ -25341,7 +25341,7 @@ EC </decay-modes>
     <symbol>Sg</symbol>
     <name>Seaborgium</name>
     <weight>[269]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>6</group>
     <period>7</period>
     <block>d</block>
@@ -25469,7 +25469,7 @@ various</daughter-isotopes>
     <symbol>Bh</symbol>
     <name>Bohrium</name>
     <weight>[270]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>7</group>
     <period>7</period>
     <block>d</block>
@@ -25575,7 +25575,7 @@ various</daughter-isotopes>
     <symbol>Hs</symbol>
     <name>Hassium</name>
     <weight>[269]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>8</group>
     <period>7</period>
     <block>d</block>
@@ -25703,7 +25703,7 @@ various</daughter-isotopes>
     <symbol>Mt</symbol>
     <name>Meitnerium</name>
     <weight>[278]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>9</group>
     <period>7</period>
     <block>d</block>
@@ -25787,7 +25787,7 @@ various</daughter-isotopes>
     <symbol>Ds</symbol>
     <name>Darmstadtium</name>
     <weight>[281]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>10</group>
     <period>7</period>
     <block>d</block>
@@ -25882,7 +25882,7 @@ various</daughter-isotopes>
     <symbol>Rg</symbol>
     <name>Roentgenium</name>
     <weight>[281]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>11</group>
     <period>7</period>
     <block>d</block>
@@ -25947,7 +25947,7 @@ various</daughter-isotopes>
     <symbol>Cn</symbol>
     <name>Copernicium</name>
     <weight>[285]</weight>
-    <category>transition metal</category>
+    <category>Transition metal</category>
     <group>12</group>
     <period>7</period>
     <block>d</block>
@@ -26019,7 +26019,7 @@ various</daughter-isotopes>
     <symbol>Uut</symbol>
     <name>Ununtrium</name>
     <weight>[286]</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>13</group>
     <period>7</period>
     <block>p</block>
@@ -26075,7 +26075,7 @@ various</daughter-isotopes>
     <symbol>Fl</symbol>
     <name>Flerovium</name>
     <weight>[289]</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>14</group>
     <period>7</period>
     <block>p</block>
@@ -26139,7 +26139,7 @@ various</daughter-isotopes>
     <symbol>Uup</symbol>
     <name>Ununpentium</name>
     <weight>[289]</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>15</group>
     <period>7</period>
     <block>p</block>
@@ -26181,7 +26181,7 @@ various</daughter-isotopes>
     <symbol>Lv</symbol>
     <name>Livermorium</name>
     <weight>[293]</weight>
-    <category>poor metal</category>
+    <category>Poor metal</category>
     <group>16</group>
     <period>7</period>
     <block>p</block>
@@ -26223,7 +26223,7 @@ various</daughter-isotopes>
     <symbol>Uus</symbol>
     <name>Ununseptium</name>
     <weight>[294]</weight>
-    <category>metalloid</category>
+    <category>Metalloid</category>
     <group>17</group>
     <period>7</period>
     <block>p</block>
@@ -26251,7 +26251,7 @@ various</daughter-isotopes>
     <symbol>Uuo</symbol>
     <name>Ununoctium</name>
     <weight>[294]</weight>
-    <category>noble gas</category>
+    <category>Noble gas</category>
     <group>18</group>
     <period>7</period>
     <block>p</block>
@@ -26272,7 +26272,7 @@ various</daughter-isotopes>
     <symbol>La</symbol>
     <name>Lanthanum</name>
     <weight>138.905</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -26667,7 +26667,7 @@ IT</decay-modes>
     <symbol>Ce</symbol>
     <name>Cerium</name>
     <weight>140.116</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -27032,7 +27032,7 @@ IT</decay-modes>
     <symbol>Pr</symbol>
     <name>Praseodymium</name>
     <weight>140.908</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -27442,7 +27442,7 @@ EC (.0164%)</decay-modes>
     <symbol>Nd</symbol>
     <name>Neodymium</name>
     <weight>144.242</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -27825,7 +27825,7 @@ IT (11.8%)</decay-modes>
     <symbol>Pm</symbol>
     <name>Promethium</name>
     <weight>[145]</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -28249,7 +28249,7 @@ IT (5%)</decay-modes>
     <symbol>Sm</symbol>
     <name>Samarium</name>
     <weight>150.36</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -28627,7 +28627,7 @@ IT (.31%)</decay-modes>
     <symbol>Eu</symbol>
     <name>Europium</name>
     <weight>151.964</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -29054,7 +29054,7 @@ EC (.02%)</decay-modes>
     <symbol>Gd</symbol>
     <name>Gadolinium</name>
     <weight>157.25</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -29416,7 +29416,7 @@ IT (11%)</decay-modes>
     <symbol>Tb</symbol>
     <name>Terbium</name>
     <weight>158.925</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -29922,7 +29922,7 @@ IT (21.8%)
     <symbol>Dy</symbol>
     <name>Dysprosium</name>
     <weight>162.5</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -30300,7 +30300,7 @@ IT (35%)</decay-modes>
     <symbol>Ho</symbol>
     <name>Holmium</name>
     <weight>164.93</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -30837,7 +30837,7 @@ IT</decay-modes>
     <symbol>Er</symbol>
     <name>Erbium</name>
     <weight>167.259</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -31218,7 +31218,7 @@ IT (3.5%)
     <symbol>Tm</symbol>
     <name>Thulium</name>
     <weight>168.934</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -31693,7 +31693,7 @@ EC (.14%)</decay-modes>
     <symbol>Yb</symbol>
     <name>Ytterbium</name>
     <weight>173.054</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>f</block>
@@ -32049,7 +32049,7 @@ EC (.14%)</decay-modes>
     <symbol>Lu</symbol>
     <name>Lutetium</name>
     <weight>174.967</weight>
-    <category>lanthanide</category>
+    <category>Lanthanide</category>
     <group>0</group>
     <period>6</period>
     <block>d</block>
@@ -32638,7 +32638,7 @@ IT (21.7%)</decay-modes>
     <symbol>Ac</symbol>
     <name>Actinium</name>
     <weight>[227]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -32972,7 +32972,7 @@ EC (17%)
     <symbol>Th</symbol>
     <name>Thorium</name>
     <weight>232.038</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -33255,7 +33255,7 @@ various
     <symbol>Pa</symbol>
     <name>Protactinium</name>
     <weight>231.036</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -33535,7 +33535,7 @@ various</daughter-isotopes>
     <symbol>U</symbol>
     <name>Uranium</name>
     <weight>238.029</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -33837,7 +33837,7 @@ various
     <symbol>Np</symbol>
     <name>Neptunium</name>
     <weight>[237]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -34050,7 +34050,7 @@ IT (.11%)</decay-modes>
     <symbol>Pu</symbol>
     <name>Plutonium</name>
     <weight>[244]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -34302,7 +34302,7 @@ various
     <symbol>Am</symbol>
     <name>Americium</name>
     <weight>[243]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -34545,7 +34545,7 @@ IT (.01%)</decay-modes>
     <symbol>Cm</symbol>
     <name>Curium</name>
     <weight>[247]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -34777,7 +34777,7 @@ various
     <symbol>Bk</symbol>
     <name>Berkelium</name>
     <weight>[247]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -35011,7 +35011,7 @@ various</daughter-isotopes>
     <symbol>Cf</symbol>
     <name>Californium</name>
     <weight>[251]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -35228,7 +35228,7 @@ various
     <symbol>Es</symbol>
     <name>Einsteinium</name>
     <weight>[252]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -35460,7 +35460,7 @@ various</daughter-isotopes>
     <symbol>Fm</symbol>
     <name>Fermium</name>
     <weight>[257]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -35676,7 +35676,7 @@ various</daughter-isotopes>
     <symbol>Md</symbol>
     <name>Mendelevium</name>
     <weight>[258]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -35895,7 +35895,7 @@ EC (5%)
     <symbol>No</symbol>
     <name>Nobelium</name>
     <weight>[259]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>f</block>
@@ -36052,7 +36052,7 @@ various</daughter-isotopes>
     <symbol>Lr</symbol>
     <name>Lawrencium</name>
     <weight>[262]</weight>
-    <category>actinide</category>
+    <category>Actinide</category>
     <group>0</group>
     <period>7</period>
     <block>d</block>
