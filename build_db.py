@@ -64,7 +64,7 @@ def add_to_element(root, name, value):
 def translate_sup(string):
     matches = re.findall(r'<sup>[0-9]*</sup>', string)
     for match in matches:
-        string = string.replace(match, ''.join(dict(zip("0123456789", "⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
+        string = string.replace(match, ''.join(dict(zip("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
     return string
 
 def fetch(url, root):
@@ -73,6 +73,7 @@ def fetch(url, root):
     # Properties
 
     nsm = content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Name, ")]]/td/text()')[0].replace(",", "").split()
+    nsm[0] = nsm[0].capitalize()
 
     saw = re.sub(r'\([0-9]?\)', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')
     	[0]).replace('(', '[').replace(')', ']')
@@ -81,13 +82,18 @@ def fetch(url, root):
     except ValueError:
         pass
 
-    cat = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Element category")]]]/td/a/text()')[0].capitalize();
+    cat = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Element category")]]]/td/a/text()')[0].capitalize()
 
     pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
     grp = re.sub(r'[^0-9]', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0].replace('n/a', '0'))
     ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_sup(etree.tostring(
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')
         [0]).decode("utf-8"))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
+
+    apr = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '', ''.join(content.xpath(
+    	'//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'
+    	))).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting'
+    	)[0].replace(nsm[0].lower(), '').split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
 
     # Isotopes
 
@@ -102,7 +108,7 @@ def fetch(url, root):
     element.attrib['number'] = nsm[2]
 
     add_to_element(element, 'symbol', nsm[1])
-    add_to_element(element, 'name', nsm[0].capitalize())
+    add_to_element(element, 'name', nsm[0])
     add_to_element(element, 'weight', saw)
     add_to_element(element, 'category', cat)
     add_to_element(element, 'group', grp)
@@ -110,6 +116,7 @@ def fetch(url, root):
     add_to_element(element, 'block', pb[1])
     add_to_element(element, 'configuration', ec)
     add_to_element(element, 'wiki', url)
+    add_to_element(element, 'appearance', apr)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -124,7 +131,7 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
-    print(list([nsm[0].capitalize(), nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines()]))
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr]))
 
 if __name__ == '__main__':
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
