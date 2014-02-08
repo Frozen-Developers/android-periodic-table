@@ -38,7 +38,8 @@ public class PropertiesAdapter extends BaseAdapter {
                     { getString(R.string.property_category), properties.getCategory() },
                     { getString(R.string.property_electron_configuration),
                             properties.getElectronConfiguration() },
-                    { getString(R.string.properties_header_physical), null }
+                    { getString(R.string.properties_header_physical), null },
+                    { getString(R.string.property_appearance), properties.getAppearance() }
             };
 
             return null;
@@ -80,7 +81,8 @@ public class PropertiesAdapter extends BaseAdapter {
 
         if(getItemViewType(position) == VIEW_TYPE_ITEM) {
             ((TextView)view.findViewById(R.id.property_name)).setText(property[0]);
-            ((TextView)view.findViewById(R.id.property_value)).setText(property[1]);
+            ((TextView)view.findViewById(R.id.property_value)).setText(!property[1].equals("") ?
+                    property[1] : getString(R.string.property_value_unknown));
         }
         else {
             ((TextView)view).setText(property[0]);
