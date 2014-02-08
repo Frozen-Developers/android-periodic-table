@@ -38,6 +38,7 @@
     <string name="property_category">Category</string>
     <string name="property_electron_configuration">Electron configuration</string>
     <string name="property_appearance">Appearance</string>
+    <string name="property_phase">Phase</string>
 
     <string name="property_value_unknown">Unknown</string>
 
