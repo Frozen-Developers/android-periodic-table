@@ -95,6 +95,9 @@ def fetch(url, root):
     	))).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting'
     	)[0].replace(nsm[0].lower(), '').split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
 
+    phase = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Phase")]]]/td/a/text()')
+    phase = phase[0].capitalize() if len(phase) > 0 else '';
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -117,6 +120,7 @@ def fetch(url, root):
     add_to_element(element, 'configuration', ec)
     add_to_element(element, 'wiki', url)
     add_to_element(element, 'appearance', apr)
+    add_to_element(element, 'phase', phase)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -131,7 +135,7 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr]))
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase]))
 
 if __name__ == '__main__':
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
