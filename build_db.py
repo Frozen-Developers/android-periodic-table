@@ -6,6 +6,8 @@ import lxml.html
 from lxml import etree
 import re
 from collections import defaultdict
+import signal
+import sys
 
 OUTPUT_XML = 'PeriodicTable/src/main/res/raw/elements.xml'
 
@@ -62,10 +64,21 @@ def add_to_element(root, name, value):
     subelement.text = value
 
 def translate_sup(string):
-    matches = re.findall(r'<sup>[0-9]*</sup>', string)
+    matches = re.findall(r'<sup>[-0-9]*</sup>', string)
     for match in matches:
         string = string.replace(match, ''.join(dict(zip("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
     return string
+
+def signal_handler(signal, frame):
+    print('\nFetching cancelled by user.')
+    sys.exit(0)
+
+def html_elements_list_to_string(elements):
+    string = list()
+    for element in elements:
+        string.append(etree.tostring(element).decode('utf-8'))
+    return ''.join(string)
+
 
 def fetch(url, root):
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
@@ -96,7 +109,11 @@ def fetch(url, root):
     	)[0].replace(nsm[0].lower(), '').split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
 
     phase = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Phase")]]]/td/a/text()')
-    phase = phase[0].capitalize() if len(phase) > 0 else '';
+    phase = phase[0].capitalize() if len(phase) > 0 else ''
+
+    dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
+    dens = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '',
+    	translate_sup(html_elements_list_to_string(dens).replace('&#8722;', '-').replace('(predicted) ', ''))))).strip() if len(dens) > 0 else ''
 
     # Isotopes
 
@@ -121,6 +138,7 @@ def fetch(url, root):
     add_to_element(element, 'wiki', url)
     add_to_element(element, 'appearance', apr)
     add_to_element(element, 'phase', phase)
+    add_to_element(element, 'density', dens)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -135,9 +153,11 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase]))
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens]))
 
 if __name__ == '__main__':
+    signal.signal(signal.SIGINT, signal_handler)
+
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
 
     root = etree.Element('elements')

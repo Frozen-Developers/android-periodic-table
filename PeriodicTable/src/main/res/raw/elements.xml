@@ -13,6 +13,8 @@
     <wiki>http://en.wikipedia.org/wiki/Hydrogen</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+0.08988 g/L</density>
     <isotopes>
       <isotope symbol="1">
         <half-life>stable</half-life>
@@ -80,6 +82,8 @@
     <wiki>http://en.wikipedia.org/wiki/Helium</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+0.1786 g/L</density>
     <isotopes>
       <isotope symbol="2">
         <half-life>0 s</half-life>
@@ -167,6 +171,7 @@
     <wiki>http://en.wikipedia.org/wiki/Lithium</wiki>
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
+    <density>0.534 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="3">
         <half-life></half-life>
@@ -279,6 +284,7 @@
     <wiki>http://en.wikipedia.org/wiki/Beryllium</wiki>
     <appearance>White-gray metallic</appearance>
     <phase>Solid</phase>
+    <density>1.85 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="5">
         <half-life></half-life>
@@ -394,6 +400,7 @@
     <wiki>http://en.wikipedia.org/wiki/Boron</wiki>
     <appearance>Black-brown</appearance>
     <phase>Solid</phase>
+    <density></density>
     <isotopes>
       <isotope symbol="6">
         <half-life></half-life>
@@ -526,6 +533,9 @@
     <wiki>http://en.wikipedia.org/wiki/Carbon</wiki>
     <appearance>Clear (diamond) &amp; black (graphite)</appearance>
     <phase>Solid</phase>
+    <density>Amorphous: 1.8&amp;#8211;2.1 g&amp;#183;cm⁻³
+diamond: 3.515 g&amp;#183;cm⁻³
+graphite: 2.267 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="8">
         <half-life>2.0 × 10−21 s</half-life>
@@ -663,6 +673,8 @@ K-capture (.21%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Nitrogen</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+1.251 g/L</density>
     <isotopes>
       <isotope symbol="10">
         <half-life>200×10^−24 s</half-life>
@@ -818,6 +830,8 @@ K-capture (.21%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Oxygen</wiki>
     <appearance>Colorless gas, pale blue liquid</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+1.429 g/L</density>
     <isotopes>
       <isotope symbol="12">
         <half-life>580×10^−24 s</half-life>
@@ -946,6 +960,8 @@ n</decay-modes>
 Liquid: bright yellow
 Solid: transparent (beta)</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+1.696 g/L</density>
     <isotopes>
       <isotope symbol="14">
         <half-life></half-life>
@@ -1105,6 +1121,8 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Neon</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+0.9002 g/L</density>
     <isotopes>
       <isotope symbol="16">
         <half-life>9×10^−21 s</half-life>
@@ -1270,6 +1288,7 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Sodium</wiki>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
+    <density>0.968 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="18">
         <half-life>1.3×10^−21 s</half-life>
@@ -1478,6 +1497,7 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Magnesium</wiki>
     <appearance>Shiny grey solid</appearance>
     <phase>Solid</phase>
+    <density>1.738 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="19">
         <half-life></half-life>
@@ -1668,6 +1688,7 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Aluminium</wiki>
     <appearance>Silvery gray metallic</appearance>
     <phase>Solid</phase>
+    <density>2.70 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="19">
         <half-life>&lt;35 ns</half-life>
@@ -1906,6 +1927,7 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Silicon</wiki>
     <appearance>Crystalline</appearance>
     <phase>Solid</phase>
+    <density>2.3290 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="22">
         <half-life>29 ms</half-life>
@@ -2097,6 +2119,7 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Phosphorus</wiki>
     <appearance>Colourless</appearance>
     <phase>Solid</phase>
+    <density>(white) 1.823, (red) &amp;#8776; 2.2 &amp;#8211; 2.34, (violet) 2.36, (black) 2.69 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="24">
         <half-life>?</half-life>
@@ -2296,6 +2319,9 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Sulfur</wiki>
     <appearance>Lemon yellow sintered microcrystals</appearance>
     <phase>Solid</phase>
+    <density>(alpha) 2.07 g&amp;#183;cm⁻³
+(beta) 1.96 g&amp;#183;cm⁻³
+(gamma) 1.92 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="26">
         <half-life>10 ms</half-life>
@@ -2505,6 +2531,8 @@ Solid: transparent (beta)</appearance>
     <wiki>http://en.wikipedia.org/wiki/Chlorine</wiki>
     <appearance>Pale yellow-green gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+3.2 g/L</density>
     <isotopes>
       <isotope symbol="28">
         <half-life></half-life>
@@ -2723,6 +2751,8 @@ IT (44.6%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Argon</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+1.784 g/L</density>
     <isotopes>
       <isotope symbol="30">
         <half-life>&lt;20 ns</half-life>
@@ -2928,6 +2958,7 @@ IT (44.6%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Potassium</wiki>
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
+    <density>0.862 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="32">
         <half-life>unknown</half-life>
@@ -3169,6 +3200,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Calcium</wiki>
     <appearance>Dull gray</appearance>
     <phase>Solid</phase>
+    <density>1.55 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="34">
         <half-life>&lt;35 ns</half-life>
@@ -3369,6 +3401,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Scandium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>2.985 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="36">
         <half-life></half-life>
@@ -3667,6 +3700,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Titanium</wiki>
     <appearance>Silvery grey-white metallic</appearance>
     <phase>Solid</phase>
+    <density>4.506 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="38">
         <half-life>&lt;120 ns</half-life>
@@ -3893,6 +3927,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Vanadium</wiki>
     <appearance>Blue-silver-grey metal</appearance>
     <phase>Solid</phase>
+    <density>6.0 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="40">
         <half-life></half-life>
@@ -4140,6 +4175,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Chromium</wiki>
     <appearance>Silvery metallic</appearance>
     <phase>Solid</phase>
+    <density>7.19 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="42">
         <half-life>14 ms</half-life>
@@ -4372,6 +4408,7 @@ EC (10.72%)
     <wiki>http://en.wikipedia.org/wiki/Manganese</wiki>
     <appearance>Silvery metallic</appearance>
     <phase>Solid</phase>
+    <density>7.21 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="44">
         <half-life>&lt;105 ns</half-life>
@@ -4649,6 +4686,7 @@ IT (11.5%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Iron</wiki>
     <appearance>Lustrous metallic with a grayish tinge</appearance>
     <phase>Solid</phase>
+    <density>7.874 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="45">
         <half-life>1.89 ms</half-life>
@@ -4923,6 +4961,7 @@ IT (11.5%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Cobalt</wiki>
     <appearance>Hard lustrous gray metal</appearance>
     <phase>Solid</phase>
+    <density>8.90 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="47">
         <half-life></half-life>
@@ -5239,6 +5278,7 @@ IT (1%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Nickel</wiki>
     <appearance>Lustrous</appearance>
     <phase>Solid</phase>
+    <density>8.908 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="48">
         <half-life>10 ms</half-life>
@@ -5547,6 +5587,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Copper</wiki>
     <appearance>Red-orange metallic luster</appearance>
     <phase>Solid</phase>
+    <density>8.96 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="52">
         <half-life></half-life>
@@ -5829,6 +5870,7 @@ p</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Zinc</wiki>
     <appearance>Silver-gray</appearance>
     <phase>Solid</phase>
+    <density>7.14 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="54">
         <half-life></half-life>
@@ -6147,6 +6189,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Gallium</wiki>
     <appearance>Silver-white</appearance>
     <phase>Solid</phase>
+    <density>5.91 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="56">
         <half-life></half-life>
@@ -6415,6 +6458,7 @@ EC (0.41%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Germanium</wiki>
     <appearance>Grayish-white</appearance>
     <phase>Solid</phase>
+    <density>5.323 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="58">
         <half-life></half-life>
@@ -6766,6 +6810,7 @@ IT (1%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Arsenic</wiki>
     <appearance>Metallic grey</appearance>
     <phase>Solid</phase>
+    <density>5.727 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="60">
         <half-life></half-life>
@@ -7097,6 +7142,9 @@ EC (.02%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Selenium</wiki>
     <appearance>Black and red allotropes</appearance>
     <phase>Solid</phase>
+    <density>(gray) 4.81 g&amp;#183;cm⁻³
+(alpha) 4.39 g&amp;#183;cm⁻³
+(vitreous) 4.28 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="65">
         <half-life>&lt;50 ms</half-life>
@@ -7409,6 +7457,7 @@ EC (.02%)</decay-modes>
     <appearance>Gas/liquid: red-brown
 Solid: metallic luster</appearance>
     <phase>Liquid</phase>
+    <density>(Br2, liquid) 3.1028 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="66">
         <half-life></half-life>
@@ -7775,6 +7824,8 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Krypton</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+3.749 g/L</density>
     <isotopes>
       <isotope symbol="69">
         <half-life>32 ms</half-life>
@@ -8098,6 +8149,7 @@ IT (21.4%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Rubidium</wiki>
     <appearance>Grey white</appearance>
     <phase>Solid</phase>
+    <density>1.532 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="71">
         <half-life></half-life>
@@ -8475,6 +8527,7 @@ IT
     <wiki>http://en.wikipedia.org/wiki/Strontium</wiki>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
+    <density>2.64 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="73">
         <half-life>&gt;25 ms</half-life>
@@ -8786,6 +8839,7 @@ EC (.3%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Yttrium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>4.472 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="76">
         <half-life>500 ns</half-life>
@@ -9269,6 +9323,7 @@ IT (10%)
     <wiki>http://en.wikipedia.org/wiki/Zirconium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>6.52 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="78">
         <half-life>50 ms</half-life>
@@ -9570,6 +9625,7 @@ IT (10%)
     <wiki>http://en.wikipedia.org/wiki/Niobium</wiki>
     <appearance>Gray metallic</appearance>
     <phase>Solid</phase>
+    <density>8.57 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="81">
         <half-life>&lt;44 ns</half-life>
@@ -10030,6 +10086,7 @@ IT (3.8%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Molybdenum</wiki>
     <appearance>Gray metallic</appearance>
     <phase>Solid</phase>
+    <density>10.28 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="83">
         <half-life>23 ms</half-life>
@@ -10343,6 +10400,7 @@ IT (3.8%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Technetium</wiki>
     <appearance>Shiny gray metal</appearance>
     <phase>Solid</phase>
+    <density>11 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="85">
         <half-life>&lt;110 ns</half-life>
@@ -10781,6 +10839,7 @@ IT (2%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Ruthenium</wiki>
     <appearance>Silvery white metallic</appearance>
     <phase></phase>
+    <density>12.45 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="87">
         <half-life>50 ms</half-life>
@@ -11096,6 +11155,7 @@ IT (22%)
     <wiki>http://en.wikipedia.org/wiki/Rhodium</wiki>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
+    <density>12.41 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="89">
         <half-life>10 ms</half-life>
@@ -11547,6 +11607,7 @@ IT (.23%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Palladium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>12.023 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="91">
         <half-life>10 ms</half-life>
@@ -11914,6 +11975,7 @@ IT (8%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Silver</wiki>
     <appearance>Lustrous white metal</appearance>
     <phase>Solid</phase>
+    <density>10.49 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="93">
         <half-life>5 ms</half-life>
@@ -12510,6 +12572,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Cadmium</wiki>
     <appearance>Silvery bluish-gray metallic</appearance>
     <phase>Solid</phase>
+    <density>8.65 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="95">
         <half-life>5 ms</half-life>
@@ -12892,6 +12955,7 @@ IT (&lt;.1%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Indium</wiki>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
+    <density>7.31 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="97">
         <half-life>5 ms</half-life>
@@ -13562,6 +13626,8 @@ IT (.3%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Tin</wiki>
     <appearance>Silvery or gray</appearance>
     <phase>Solid</phase>
+    <density>(white) 7.365 g&amp;#183;cm⁻³
+(gray) 5.769 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="99">
         <half-life>5 ms</half-life>
@@ -14103,6 +14169,7 @@ IT (.0004%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Antimony</wiki>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
+    <density>6.697 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="103">
         <half-life>100 ms</half-life>
@@ -14613,6 +14680,7 @@ IT (15%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Tellurium</wiki>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
+    <density>6.24 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="105">
         <half-life>1 µs</half-life>
@@ -15056,6 +15124,7 @@ IT (17.5%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Iodine</wiki>
     <appearance>Lustrous metallic gray</appearance>
     <phase>Solid</phase>
+    <density>4.933 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="108">
         <half-life>36 ms</half-life>
@@ -15502,6 +15571,8 @@ IT (rare)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Xenon</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+5.894 g/L</density>
     <isotopes>
       <isotope symbol="110">
         <half-life>310 ms</half-life>
@@ -15896,6 +15967,7 @@ IT (rare)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Caesium</wiki>
     <appearance>Silvery gold</appearance>
     <phase>Solid</phase>
+    <density>1.93 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="112">
         <half-life>500 µs</half-life>
@@ -16426,6 +16498,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Barium</wiki>
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
+    <density>3.51 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="114">
         <half-life>530 ms</half-life>
@@ -16826,6 +16899,7 @@ EC (.0096%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Hafnium</wiki>
     <appearance>Steel gray</appearance>
     <phase>Solid</phase>
+    <density>13.31 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="153">
         <half-life>400 ms</half-life>
@@ -17305,6 +17379,7 @@ IT (42%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Tantalum</wiki>
     <appearance>Gray blue</appearance>
     <phase>Solid</phase>
+    <density>16.69 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="155">
         <half-life>13 µs</half-life>
@@ -17858,6 +17933,7 @@ IT
     <wiki>http://en.wikipedia.org/wiki/Tungsten</wiki>
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
+    <density>19.25 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="158">
         <half-life>1.37 ms</half-life>
@@ -18220,6 +18296,7 @@ IT
     <wiki>http://en.wikipedia.org/wiki/Rhenium</wiki>
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
+    <density>21.02 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="160">
         <half-life>860 µs</half-life>
@@ -18668,6 +18745,7 @@ IT (45.6%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Osmium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>22.59 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="162">
         <half-life>1.87 ms</half-life>
@@ -19029,6 +19107,7 @@ IT (15%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Iridium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>22.56 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="164">
         <half-life>1 ms</half-life>
@@ -19579,6 +19658,7 @@ IT (.25%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Platinum</wiki>
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
+    <density>21.45 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="166">
         <half-life>300 µs</half-life>
@@ -19993,6 +20073,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Gold</wiki>
     <appearance>Metallic yellow</appearance>
     <phase>Solid</phase>
+    <density>19.30 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="169">
         <half-life>150 µs</half-life>
@@ -20564,6 +20645,7 @@ IT (18%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Mercury_(element)</wiki>
     <appearance>Silvery</appearance>
     <phase>Liquid</phase>
+    <density>13.534 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="171">
         <half-life>80 µs</half-life>
@@ -21030,6 +21112,7 @@ EC (8.6%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Thallium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>11.85 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="176">
         <half-life>5.2+30-14 ms</half-life>
@@ -21664,6 +21747,7 @@ EC (2.9%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Lead</wiki>
     <appearance>Metallic gray</appearance>
     <phase>Solid</phase>
+    <density>11.34 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="178">
         <half-life>178.003830</half-life>
@@ -22332,6 +22416,7 @@ EC (9.5%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Bismuth</wiki>
     <appearance>Lustrous silver</appearance>
     <phase>Solid</phase>
+    <density>9.78 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="184">
         <half-life>6.6 ms</half-life>
@@ -23027,6 +23112,8 @@ IT (6.8%)
     <wiki>http://en.wikipedia.org/wiki/Polonium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>(alpha) 9.196 g&amp;#183;cm⁻³
+(beta) 9.398 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="188">
         <half-life>430 µs</half-life>
@@ -23542,6 +23629,7 @@ IT (.07%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Astatine</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>(At2) 6.2&amp;#8211;6.5  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="191">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24003,6 +24091,8 @@ EC (3×10^−7%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Radon</wiki>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
+    <density>(0 &amp;#176;C, 101.325 kPa)
+9.73 g/L</density>
     <isotopes>
       <isotope symbol="195">
         <half-life>6 ms</half-life>
@@ -24398,6 +24488,7 @@ IT (&lt;1%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Francium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>&amp;#160;? 1.87 (extrapolated) g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="199">
         <half-life>16 ms</half-life>
@@ -24774,6 +24865,7 @@ CD (8.79×−11%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Radium</wiki>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
+    <density>5.5 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="202">
         <half-life>2.6 ms</half-life>
@@ -25158,6 +25250,7 @@ CD (2.6×10^−9%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Rutherfordium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>23.2  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="253">
         <half-life>13 ms</half-life>
@@ -25337,6 +25430,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Dubnium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>29.3  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="255">
         <half-life>1.7 s</half-life>
@@ -25503,6 +25597,7 @@ EC </decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Seaborgium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>35.0  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="258">
         <half-life>3.3 ms</half-life>
@@ -25633,6 +25728,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Bohrium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>37.1  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="260">
         <half-life>41 ms</half-life>
@@ -25741,6 +25837,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Hassium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>40.7  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="263">
         <half-life>760 µs</half-life>
@@ -25871,6 +25968,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Meitnerium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>37.4  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="266">
         <half-life>1.2 ms</half-life>
@@ -25957,6 +26055,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Darmstadtium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>34.8  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="267">
         <half-life>3+6-2 µs</half-life>
@@ -26054,6 +26153,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Roentgenium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>28.7  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="272">
         <half-life>2.0 ms</half-life>
@@ -26121,6 +26221,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Copernicium</wiki>
     <appearance></appearance>
     <phase></phase>
+    <density>23.7  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="277">
         <half-life>1.1 ms</half-life>
@@ -26195,6 +26296,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Ununtrium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>16  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="278">
         <half-life>340 µs</half-life>
@@ -26253,6 +26355,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Flerovium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>14  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="285">
         <half-life>125 ms</half-life>
@@ -26319,6 +26422,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Ununpentium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>13.5  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="287">
         <half-life>32+155-14 ms</half-life>
@@ -26363,6 +26467,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Livermorium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>12.9  g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="290">
         <half-life>15+26-6 ms</half-life>
@@ -26407,6 +26512,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Ununseptium</wiki>
     <appearance>Semimetallic</appearance>
     <phase>Solid</phase>
+    <density>7.1&amp;#8211;7.3 (extrapolated) g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="293">
         <half-life>14 +11, -4 ms</half-life>
@@ -26437,6 +26543,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Ununoctium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density>13.65[better&amp;#160;source&amp;#160;needed] g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="294">
         <half-life>890 µs</half-life>
@@ -26460,6 +26567,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Lanthanum</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>6.162 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="117">
         <half-life>23.5 ms</half-life>
@@ -26857,6 +26965,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Cerium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>6.770 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="119">
         <half-life>200 ms</half-life>
@@ -27224,6 +27333,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Praseodymium</wiki>
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
+    <density>6.77 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="121">
         <half-life>600 ms</half-life>
@@ -27636,6 +27746,7 @@ EC (.0164%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Neodymium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>7.01 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="124">
         <half-life>500 ms</half-life>
@@ -28021,6 +28132,7 @@ IT (11.8%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Promethium</wiki>
     <appearance>Metallic</appearance>
     <phase>Solid</phase>
+    <density>7.26 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="126">
         <half-life>0.5 s</half-life>
@@ -28447,6 +28559,7 @@ IT (5%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Samarium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>7.52 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="128">
         <half-life>0.5 s</half-life>
@@ -28827,6 +28940,7 @@ IT (.31%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Europium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>5.264 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="130">
         <half-life>1.1 ms</half-life>
@@ -29256,6 +29370,7 @@ EC (.02%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Gadolinium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>7.90 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="134">
         <half-life>0.4 s</half-life>
@@ -29620,6 +29735,7 @@ IT (11%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Terbium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>8.23 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="135">
         <half-life>0.94+33-22 ms</half-life>
@@ -30128,6 +30244,7 @@ IT (21.8%)
     <wiki>http://en.wikipedia.org/wiki/Dysprosium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>8.540 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="138">
         <half-life>200 ms</half-life>
@@ -30508,6 +30625,7 @@ IT (35%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Holmium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>8.79 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="140">
         <half-life>6 ms</half-life>
@@ -31047,6 +31165,7 @@ IT</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Erbium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>9.066 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="142">
         <half-life></half-life>
@@ -31430,6 +31549,7 @@ IT (3.5%)
     <wiki>http://en.wikipedia.org/wiki/Thulium</wiki>
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
+    <density>9.32 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="145">
         <half-life>3.1 µs</half-life>
@@ -31907,6 +32027,7 @@ EC (.14%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Ytterbium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>6.90 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="148">
         <half-life>250 ms</half-life>
@@ -32265,6 +32386,7 @@ EC (.14%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Lutetium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>9.841 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="150">
         <half-life>43 ms</half-life>
@@ -32856,6 +32978,7 @@ IT (21.7%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Actinium</wiki>
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
+    <density>10 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="206">
         <half-life>25 ms</half-life>
@@ -33192,6 +33315,7 @@ EC (17%)
     <wiki>http://en.wikipedia.org/wiki/Thorium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>11.7 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="209">
         <half-life>7 ms</half-life>
@@ -33477,6 +33601,7 @@ various
     <wiki>http://en.wikipedia.org/wiki/Protactinium</wiki>
     <appearance>Bright</appearance>
     <phase>Solid</phase>
+    <density>15.37 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="212">
         <half-life>8 ms</half-life>
@@ -33759,6 +33884,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Uranium</wiki>
     <appearance>Silvery gray metallic</appearance>
     <phase>Solid</phase>
+    <density>19.1 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="217">
         <half-life>26 ms</half-life>
@@ -34063,6 +34189,8 @@ various
     <wiki>http://en.wikipedia.org/wiki/Neptunium</wiki>
     <appearance>Silvery metallic</appearance>
     <phase>Solid</phase>
+    <density>(alpha) 20.45 g&amp;#183;cm⁻³
+(accepted standard value) 19.38 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="225">
         <half-life>3 ms</half-life>
@@ -34278,6 +34406,7 @@ IT (.11%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Plutonium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>19.816 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="228">
         <half-life>1.1+20-5 s</half-life>
@@ -34532,6 +34661,7 @@ various
     <wiki>http://en.wikipedia.org/wiki/Americium</wiki>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
+    <density>12 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="231">
         <half-life>30 s</half-life>
@@ -34777,6 +34907,7 @@ IT (.01%)</decay-modes>
     <wiki>http://en.wikipedia.org/wiki/Curium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>13.51 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="232">
         <half-life>1? min</half-life>
@@ -35011,6 +35142,8 @@ various
     <wiki>http://en.wikipedia.org/wiki/Berkelium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>(alpha) 14.78 g&amp;#183;cm⁻³
+(beta) 13.25 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="235">
         <half-life>20 s</half-life>
@@ -35247,6 +35380,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Californium</wiki>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
+    <density>15.1 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="237">
         <half-life>2.1 s</half-life>
@@ -35466,6 +35600,7 @@ various
     <wiki>http://en.wikipedia.org/wiki/Einsteinium</wiki>
     <appearance>Silver-colored</appearance>
     <phase>Solid</phase>
+    <density>8.84 g&amp;#183;cm⁻³</density>
     <isotopes>
       <isotope symbol="240">
         <half-life>1 s</half-life>
@@ -35700,6 +35835,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Fermium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density></density>
     <isotopes>
       <isotope symbol="241">
         <half-life>730 µs</half-life>
@@ -35918,6 +36054,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Mendelevium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density></density>
     <isotopes>
       <isotope symbol="245">
         <half-life>0.90 ms</half-life>
@@ -36139,6 +36276,7 @@ EC (5%)
     <wiki>http://en.wikipedia.org/wiki/Nobelium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density></density>
     <isotopes>
       <isotope symbol="250">
         <half-life>5.7 µs</half-life>
@@ -36298,6 +36436,7 @@ various</daughter-isotopes>
     <wiki>http://en.wikipedia.org/wiki/Lawrencium</wiki>
     <appearance></appearance>
     <phase>Solid</phase>
+    <density></density>
     <isotopes>
       <isotope symbol="252">
         <half-life>390 ms</half-life>
