@@ -63,10 +63,13 @@ def add_to_element(root, name, value):
     subelement = etree.SubElement(root, name)
     subelement.text = value
 
-def translate_sup(string):
+def translate_script(string):
     matches = re.findall(r'<sup>[-0-9]*</sup>', string)
     for match in matches:
         string = string.replace(match, ''.join(dict(zip("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
+    matches = re.findall(r'<sub>[-0-9]*</sub>', string)
+    for match in matches:
+        string = string.replace(match, ''.join(dict(zip("-0123456789", "₋₀₁₂₃₄₅₆₇₈₉")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
     return string
 
 def signal_handler(signal, frame):
@@ -99,7 +102,7 @@ def fetch(url, root):
 
     pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
     grp = re.sub(r'[^0-9]', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0].replace('n/a', '0'))
-    ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_sup(etree.tostring(
+    ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_script(etree.tostring(
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')
         [0]).decode("utf-8"))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
 
@@ -112,8 +115,11 @@ def fetch(url, root):
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
     dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
-    dens = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '',
-    	translate_sup(html_elements_list_to_string(dens).replace('&#8722;', '-').replace('(predicted) ', ''))))).strip() if len(dens) > 0 else ''
+    dens = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    	translate_script(html_elements_list_to_string(dens).replace('&#8722;', '-')))).replace('(predicted) ',
+    	'').replace('(extrapolated) ', '').replace('&#183;', '·').replace('&#176;', '°').replace('&#8211;',
+    	'–').replace('&#160;? ', '').replace('&#8776;', '≈').replace(', (', ' g·cm⁻³\n').replace('(', '').replace(')', ':').replace(
+    	':\n', ': ').strip(), flags=re.M) if len(dens) > 0 else ''
 
     # Isotopes
 
