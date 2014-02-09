@@ -40,7 +40,8 @@ public class PropertiesAdapter extends BaseAdapter {
                             properties.getElectronConfiguration() },
                     { getString(R.string.properties_header_physical), null },
                     { getString(R.string.property_appearance), properties.getAppearance() },
-                    { getString(R.string.property_phase), properties.getPhase() }
+                    { getString(R.string.property_phase), properties.getPhase() },
+                    { getString(R.string.property_density), properties.getDensity() }
             };
 
             return null;
