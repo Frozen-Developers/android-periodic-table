@@ -65,8 +65,9 @@ def add_to_element(root, name, value):
 
 def translate_script(string):
     matches = re.findall(r'<sup>[-0-9]*</sup>', string)
+    matches += re.findall(r'\^+\-?\d+', string)
     for match in matches:
-        string = string.replace(match, ''.join(dict(zip("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
+        string = string.replace(match, ''.join(dict(zip("-0123456789", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match.replace('^', ''))))
     matches = re.findall(r'<sub>[-0-9]*</sub>', string)
     for match in matches:
         string = string.replace(match, ''.join(dict(zip("-0123456789", "₋₀₁₂₃₄₅₆₇₈₉")).get(c, c) for c in re.sub(r'<[^<]+?>', '', match)))
@@ -151,13 +152,15 @@ def fetch(url, root):
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
         isotope_tag.attrib['symbol'] = re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), ''))
-        add_to_element(isotope_tag, 'half-life', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
-        	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '').replace('×10', '×10^').strip())
-        add_to_element(isotope_tag, 'decay-modes', re.sub(r'\[.+?\]\s*', '', isotope[5].replace('#', '')).replace('×10', '×10^'))
+        add_to_element(isotope_tag, 'half-life', translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
+        	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
+        	')', '').replace('×10', '×10^').replace('−', '-').strip()))
+        add_to_element(isotope_tag, 'decay-modes', translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
+        	'#', '')).replace('×10', '×10^').replace('−', '-')))
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'\[.+?\]\s*', '', isotope[6]).replace('(', '').replace(')', ''))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
-        	isotope[8].lower())).replace('×10', '×10^') if len(isotope) > 8 else '')
+        add_to_element(isotope_tag, 'abundance', translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
+        	isotope[8].lower())).replace('×10', '×10^').replace('−', '-')) if len(isotope) > 8 else '')
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens]))
 
