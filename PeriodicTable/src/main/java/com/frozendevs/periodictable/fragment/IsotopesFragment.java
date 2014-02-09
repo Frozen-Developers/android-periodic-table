@@ -5,8 +5,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ExpandableListView;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.model.adapter.IsotopesAdapter;
 
 public class IsotopesFragment extends Fragment {
 
@@ -20,8 +22,14 @@ public class IsotopesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.isotopes_fragment, container, false);
+        View layout = inflater.inflate(R.layout.isotopes_fragment, container, false);
 
-        return view;
+        ExpandableListView listView = (ExpandableListView)layout.findViewById(R.id.isotopes_list);
+        listView.setEmptyView(layout.findViewById(R.id.progress_bar));
+        listView.setAdapter(new IsotopesAdapter(getActivity(), atomicNumber));
+
+        getActivity().registerForContextMenu(listView);
+
+        return layout;
     }
 }

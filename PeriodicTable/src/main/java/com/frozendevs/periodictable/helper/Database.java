@@ -367,8 +367,7 @@ public class Database {
                                                     }
 
                                                     isotopes.add(new Isotope(symbol, halfLife,
-                                                            decayModes.split("\n"),
-                                                            daughterIsotopes.split("\n"), spin,
+                                                            decayModes, daughterIsotopes, spin,
                                                             abundance));
                                                 }
                                                 else
