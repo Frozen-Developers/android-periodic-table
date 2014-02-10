@@ -217,7 +217,8 @@
         <half-life>178.3 ms</half-life>
         <decay-modes>β-, n (50.8%)
 β- (49.2%)</decay-modes>
-        <daughter-isotopes>⁸Be⁹Be</daughter-isotopes>
+        <daughter-isotopes>⁸Be
+⁹Be</daughter-isotopes>
         <spin>3/2−</spin>
         <abundance></abundance>
       </isotope>
@@ -254,7 +255,8 @@
         <daughter-isotopes>¹⁰Be
 ¹¹Be
 ⁹Be
-⁸Be⁷He, ⁴He
+⁸Be
+⁷He, ⁴He
 ⁸Li, ³H
 ⁹Li, ²H</daughter-isotopes>
         <spin>3/2−</spin>
@@ -547,7 +549,9 @@ Graphite: 2.267 g·cm⁻³</density>
         <decay-modes>β+ (60%)
 β+, p (23%)
 β+, α (17%)</decay-modes>
-        <daughter-isotopes>⁹B⁸Be⁵Li</daughter-isotopes>
+        <daughter-isotopes>⁹B
+⁸Be
+⁵Li</daughter-isotopes>
         <spin>3/2-</spin>
         <abundance></abundance>
       </isotope>

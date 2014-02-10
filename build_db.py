@@ -168,7 +168,7 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'decay-modes', translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
         	'#', '')).replace('×10', '×10^').replace('−', '-')))
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub('^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
-        	re.sub(r'\[.+?\]\s*', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M))
+        	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
         add_to_element(isotope_tag, 'abundance', re.sub('^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10',
