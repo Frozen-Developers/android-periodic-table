@@ -40,6 +40,7 @@
     <string name="property_appearance">Appearance</string>
     <string name="property_phase">Phase</string>
     <string name="property_density">Density</string>
+    <string name="property_liquid_density_at_mp">Liquid density at melting point</string>
 
     <string name="property_half_life">Half-life</string>
     <string name="property_decay_modes">Decay modes</string>

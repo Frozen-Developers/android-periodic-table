@@ -252,7 +252,8 @@ public class Database {
                         if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
                             String symbol = null, name = null, weight = null, block = null,
                                     category = null, configuration = null, wiki = null,
-                                    appearance = null, phase = null, density = null;
+                                    appearance = null, phase = null, density = null,
+                                    liquidDensityAtMeltingPoint = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -284,6 +285,8 @@ public class Database {
                                         phase = readTag(parser, tag);
                                     else if(tag.equals("density"))
                                         density = readTag(parser, tag);
+                                    else if(tag.equals("density-at-mp"))
+                                        liquidDensityAtMeltingPoint = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -291,7 +294,7 @@ public class Database {
 
                             return new ElementProperties(name, symbol, atomicNumber, weight, group,
                                     period, block, category, configuration, wiki, appearance, phase,
-                                    density);
+                                    density, liquidDensityAtMeltingPoint);
                         }
                         else
                             skip(parser);
