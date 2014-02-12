@@ -89,7 +89,7 @@ public class ElementsAdapter extends BaseAdapter {
         List<ElementListItem> items = new ArrayList<ElementListItem>();
 
         for(ElementListItem element : elements) {
-            if(element.getSymbol().toLowerCase().equals(filter.toLowerCase()) ||
+            if(element.getSymbol().equalsIgnoreCase(filter) ||
                     String.valueOf(element.getAtomicNumber()).equals(filter)) {
                 items.add(element);
                 break;
