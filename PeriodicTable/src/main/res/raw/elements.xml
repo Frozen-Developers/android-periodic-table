@@ -14,6 +14,7 @@
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 0.08988 g/L</density>
+    <density-at-mp>0.07 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹">
         <half-life>Stable</half-life>
@@ -82,9 +83,10 @@
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 0.1786 g/L</density>
+    <density-at-mp>0.145 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="²">
-        <half-life>0 s</half-life>
+        <half-life></half-life>
         <decay-modes>p (&gt;99.99%)
 β+ (&lt;0.01%)</decay-modes>
         <daughter-isotopes>2 ¹H
@@ -170,6 +172,7 @@
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
     <density>0.534 g·cm⁻³</density>
+    <density-at-mp>0.512 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="³">
         <half-life></half-life>
@@ -285,6 +288,7 @@
     <appearance>White-gray metallic</appearance>
     <phase>Solid</phase>
     <density>1.85 g·cm⁻³</density>
+    <density-at-mp>1.690 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁵">
         <half-life></half-life>
@@ -401,6 +405,7 @@
     <appearance>Black-brown</appearance>
     <phase>Solid</phase>
     <density></density>
+    <density-at-mp>2.08 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁶">
         <half-life></half-life>
@@ -536,6 +541,7 @@
     <density>Amorphous: 1.8–2.1 g·cm⁻³
 Diamond: 3.515 g·cm⁻³
 Graphite: 2.267 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="⁸">
         <half-life>2.0 × 10-21 s</half-life>
@@ -676,6 +682,7 @@ K-capture (.21%)</decay-modes>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 1.251 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁰">
         <half-life>200×10⁻²⁴ s</half-life>
@@ -832,6 +839,7 @@ K-capture (.21%)</decay-modes>
     <appearance>Colorless gas, pale blue liquid</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 1.429 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹²">
         <half-life>580×10⁻²⁴ s</half-life>
@@ -961,6 +969,7 @@ Liquid: bright yellow
 Solid: transparent (beta)</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 1.696 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁴">
         <half-life></half-life>
@@ -1121,6 +1130,7 @@ Solid: transparent (beta)</appearance>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 0.9002 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶">
         <half-life>9×10⁻²¹ s</half-life>
@@ -1287,6 +1297,7 @@ Solid: transparent (beta)</appearance>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
     <density>0.968 g·cm⁻³</density>
+    <density-at-mp>0.927 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁸">
         <half-life>1.3×10⁻²¹ s</half-life>
@@ -1496,6 +1507,7 @@ Solid: transparent (beta)</appearance>
     <appearance>Shiny grey solid</appearance>
     <phase>Solid</phase>
     <density>1.738 g·cm⁻³</density>
+    <density-at-mp>1.584 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life></half-life>
@@ -1687,6 +1699,7 @@ Solid: transparent (beta)</appearance>
     <appearance>Silvery gray metallic</appearance>
     <phase>Solid</phase>
     <density>2.70 g·cm⁻³</density>
+    <density-at-mp>2.375 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life>&lt;35 ns</half-life>
@@ -1926,6 +1939,7 @@ Solid: transparent (beta)</appearance>
     <appearance>Crystalline</appearance>
     <phase>Solid</phase>
     <density>2.3290 g·cm⁻³</density>
+    <density-at-mp>2.57 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="²²">
         <half-life>29 ms</half-life>
@@ -2121,6 +2135,7 @@ Solid: transparent (beta)</appearance>
 Red: ≈ 2.2 – 2.34 g·cm⁻³
 Violet: 2.36 g·cm⁻³
 Black: 2.69 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁴">
         <half-life>?</half-life>
@@ -2323,6 +2338,7 @@ Black: 2.69 g·cm⁻³</density>
     <density>Alpha: 2.07 g·cm⁻³
 Beta: 1.96 g·cm⁻³
 Gamma: 1.92 g·cm⁻³</density>
+    <density-at-mp>1.819 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="²⁶">
         <half-life>10 ms</half-life>
@@ -2533,6 +2549,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <appearance>Pale yellow-green gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 3.2 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁸">
         <half-life></half-life>
@@ -2752,6 +2769,7 @@ IT (44.6%)</decay-modes>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 1.784 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="³⁰">
         <half-life>&lt;20 ns</half-life>
@@ -2958,6 +2976,7 @@ IT (44.6%)</decay-modes>
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
     <density>0.862 g·cm⁻³</density>
+    <density-at-mp>0.828 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="³²">
         <half-life>Unknown</half-life>
@@ -3200,6 +3219,7 @@ EC (10.72%)
     <appearance>Dull gray</appearance>
     <phase>Solid</phase>
     <density>1.55 g·cm⁻³</density>
+    <density-at-mp>1.378 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="³⁴">
         <half-life>&lt;35 ns</half-life>
@@ -3401,6 +3421,7 @@ EC (10.72%)
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>2.985 g·cm⁻³</density>
+    <density-at-mp>2.80 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="³⁶">
         <half-life></half-life>
@@ -3700,6 +3721,7 @@ EC (10.72%)
     <appearance>Silvery grey-white metallic</appearance>
     <phase>Solid</phase>
     <density>4.506 g·cm⁻³</density>
+    <density-at-mp>4.11 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="³⁸">
         <half-life>&lt;120 ns</half-life>
@@ -3927,6 +3949,7 @@ EC (10.72%)
     <appearance>Blue-silver-grey metal</appearance>
     <phase>Solid</phase>
     <density>6.0 g·cm⁻³</density>
+    <density-at-mp>5.5 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴⁰">
         <half-life></half-life>
@@ -4175,6 +4198,7 @@ EC (10.72%)
     <appearance>Silvery metallic</appearance>
     <phase>Solid</phase>
     <density>7.19 g·cm⁻³</density>
+    <density-at-mp>6.3 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴²">
         <half-life>14 ms</half-life>
@@ -4408,6 +4432,7 @@ EC (10.72%)
     <appearance>Silvery metallic</appearance>
     <phase>Solid</phase>
     <density>7.21 g·cm⁻³</density>
+    <density-at-mp>5.95 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴⁴">
         <half-life>&lt;105 ns</half-life>
@@ -4686,6 +4711,7 @@ IT (11.5%)</decay-modes>
     <appearance>Lustrous metallic with a grayish tinge</appearance>
     <phase>Solid</phase>
     <density>7.874 g·cm⁻³</density>
+    <density-at-mp>6.98 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴⁵">
         <half-life>1.89 ms</half-life>
@@ -4961,6 +4987,7 @@ IT (11.5%)</decay-modes>
     <appearance>Hard lustrous gray metal</appearance>
     <phase>Solid</phase>
     <density>8.90 g·cm⁻³</density>
+    <density-at-mp>8.86 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴⁷">
         <half-life></half-life>
@@ -5278,6 +5305,7 @@ IT (1%)</decay-modes>
     <appearance>Lustrous</appearance>
     <phase>Solid</phase>
     <density>8.908 g·cm⁻³</density>
+    <density-at-mp>7.81 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁴⁸">
         <half-life>10 ms</half-life>
@@ -5587,6 +5615,7 @@ IT</decay-modes>
     <appearance>Red-orange metallic luster</appearance>
     <phase>Solid</phase>
     <density>8.96 g·cm⁻³</density>
+    <density-at-mp>8.02 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁵²">
         <half-life></half-life>
@@ -5870,6 +5899,7 @@ p</decay-modes>
     <appearance>Silver-gray</appearance>
     <phase>Solid</phase>
     <density>7.14 g·cm⁻³</density>
+    <density-at-mp>6.57 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁵⁴">
         <half-life></half-life>
@@ -6189,6 +6219,7 @@ IT</decay-modes>
     <appearance>Silver-white</appearance>
     <phase>Solid</phase>
     <density>5.91 g·cm⁻³</density>
+    <density-at-mp>6.095 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁵⁶">
         <half-life></half-life>
@@ -6458,6 +6489,7 @@ EC (0.41%)</decay-modes>
     <appearance>Grayish-white</appearance>
     <phase>Solid</phase>
     <density>5.323 g·cm⁻³</density>
+    <density-at-mp>5.60 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁵⁸">
         <half-life></half-life>
@@ -6810,6 +6842,7 @@ IT (1%)</decay-modes>
     <appearance>Metallic grey</appearance>
     <phase>Solid</phase>
     <density>5.727 g·cm⁻³</density>
+    <density-at-mp>5.22 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁶⁰">
         <half-life></half-life>
@@ -7144,6 +7177,7 @@ EC (.02%)</decay-modes>
     <density>Gray: 4.81 g·cm⁻³
 Alpha: 4.39 g·cm⁻³
 Vitreous: 4.28 g·cm⁻³</density>
+    <density-at-mp>3.99 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁶⁵">
         <half-life>&lt;50 ms</half-life>
@@ -7457,6 +7491,7 @@ Vitreous: 4.28 g·cm⁻³</density>
 Solid: metallic luster</appearance>
     <phase>Liquid</phase>
     <density>Br₂, liquid: 3.1028 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="⁶⁶">
         <half-life></half-life>
@@ -7824,6 +7859,7 @@ IT</decay-modes>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 3.749 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="⁶⁹">
         <half-life>32 ms</half-life>
@@ -8148,6 +8184,7 @@ IT (21.4%)</decay-modes>
     <appearance>Grey white</appearance>
     <phase>Solid</phase>
     <density>1.532 g·cm⁻³</density>
+    <density-at-mp>1.46 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁷¹">
         <half-life></half-life>
@@ -8526,6 +8563,7 @@ IT
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
     <density>2.64 g·cm⁻³</density>
+    <density-at-mp>2.375 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁷³">
         <half-life>&gt;25 ms</half-life>
@@ -8838,6 +8876,7 @@ EC (.3%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>4.472 g·cm⁻³</density>
+    <density-at-mp>4.24 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁷⁶">
         <half-life>500 ns</half-life>
@@ -9322,6 +9361,7 @@ IT (10%)
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>6.52 g·cm⁻³</density>
+    <density-at-mp>5.8 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁷⁸">
         <half-life>50 ms</half-life>
@@ -9624,6 +9664,7 @@ IT (10%)
     <appearance>Gray metallic</appearance>
     <phase>Solid</phase>
     <density>8.57 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="⁸¹">
         <half-life>&lt;44 ns</half-life>
@@ -10085,6 +10126,7 @@ IT (3.8%)</decay-modes>
     <appearance>Gray metallic</appearance>
     <phase>Solid</phase>
     <density>10.28 g·cm⁻³</density>
+    <density-at-mp>9.33 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁸³">
         <half-life>23 ms</half-life>
@@ -10399,6 +10441,7 @@ IT (3.8%)</decay-modes>
     <appearance>Shiny gray metal</appearance>
     <phase>Solid</phase>
     <density>11 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="⁸⁵">
         <half-life>&lt;110 ns</half-life>
@@ -10838,6 +10881,7 @@ IT (2%)</decay-modes>
     <appearance>Silvery white metallic</appearance>
     <phase></phase>
     <density>12.45 g·cm⁻³</density>
+    <density-at-mp>10.65 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁸⁷">
         <half-life>50 ms</half-life>
@@ -11154,6 +11198,7 @@ IT (22%)
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
     <density>12.41 g·cm⁻³</density>
+    <density-at-mp>10.7 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁸⁹">
         <half-life>10 ms</half-life>
@@ -11606,6 +11651,7 @@ IT (.23%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>12.023 g·cm⁻³</density>
+    <density-at-mp>10.38 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁹¹">
         <half-life>10 ms</half-life>
@@ -11974,6 +12020,7 @@ IT (8%)</decay-modes>
     <appearance>Lustrous white metal</appearance>
     <phase>Solid</phase>
     <density>10.49 g·cm⁻³</density>
+    <density-at-mp>9.320 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁹³">
         <half-life>5 ms</half-life>
@@ -12571,6 +12618,7 @@ IT</decay-modes>
     <appearance>Silvery bluish-gray metallic</appearance>
     <phase>Solid</phase>
     <density>8.65 g·cm⁻³</density>
+    <density-at-mp>7.996 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁹⁵">
         <half-life>5 ms</half-life>
@@ -12954,6 +13002,7 @@ IT (&lt;.1%)</decay-modes>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
     <density>7.31 g·cm⁻³</density>
+    <density-at-mp>7.02 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁹⁷">
         <half-life>5 ms</half-life>
@@ -13626,6 +13675,7 @@ IT (.3%)</decay-modes>
     <phase>Solid</phase>
     <density>White: 7.365 g·cm⁻³
 Gray: 5.769 g·cm⁻³</density>
+    <density-at-mp>6.99 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="⁹⁹">
         <half-life>5 ms</half-life>
@@ -14168,6 +14218,7 @@ IT (.0004%)</decay-modes>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
     <density>6.697 g·cm⁻³</density>
+    <density-at-mp>6.53 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁰³">
         <half-life>100 ms</half-life>
@@ -14679,6 +14730,7 @@ IT (15%)</decay-modes>
     <appearance>Silvery lustrous gray</appearance>
     <phase>Solid</phase>
     <density>6.24 g·cm⁻³</density>
+    <density-at-mp>5.70 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁰⁵">
         <half-life>1 µs</half-life>
@@ -15123,6 +15175,7 @@ IT (17.5%)</decay-modes>
     <appearance>Lustrous metallic gray</appearance>
     <phase>Solid</phase>
     <density>4.933 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁰⁸">
         <half-life>36 ms</half-life>
@@ -15570,6 +15623,7 @@ IT (rare)</decay-modes>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 5.894 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹¹⁰">
         <half-life>310 ms</half-life>
@@ -15965,6 +16019,7 @@ IT (rare)</decay-modes>
     <appearance>Silvery gold</appearance>
     <phase>Solid</phase>
     <density>1.93 g·cm⁻³</density>
+    <density-at-mp>1.843 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹¹²">
         <half-life>500 µs</half-life>
@@ -16496,6 +16551,7 @@ IT</decay-modes>
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
     <density>3.51 g·cm⁻³</density>
+    <density-at-mp>3.338 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹¹⁴">
         <half-life>530 ms</half-life>
@@ -16897,6 +16953,7 @@ EC (.0096%)</decay-modes>
     <appearance>Steel gray</appearance>
     <phase>Solid</phase>
     <density>13.31 g·cm⁻³</density>
+    <density-at-mp>12 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁵³">
         <half-life>400 ms</half-life>
@@ -17377,6 +17434,7 @@ IT (42%)</decay-modes>
     <appearance>Gray blue</appearance>
     <phase>Solid</phase>
     <density>16.69 g·cm⁻³</density>
+    <density-at-mp>15 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁵⁵">
         <half-life>13 µs</half-life>
@@ -17931,6 +17989,7 @@ IT
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
     <density>19.25 g·cm⁻³</density>
+    <density-at-mp>17.6 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁵⁸">
         <half-life>1.37 ms</half-life>
@@ -18294,6 +18353,7 @@ IT
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
     <density>21.02 g·cm⁻³</density>
+    <density-at-mp>18.9 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶⁰">
         <half-life>860 µs</half-life>
@@ -18743,6 +18803,7 @@ IT (45.6%)</decay-modes>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>22.59 g·cm⁻³</density>
+    <density-at-mp>20 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶²">
         <half-life>1.87 ms</half-life>
@@ -19105,6 +19166,7 @@ IT (15%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>22.56 g·cm⁻³</density>
+    <density-at-mp>19 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶⁴">
         <half-life>1 ms</half-life>
@@ -19656,6 +19718,7 @@ IT (.25%)</decay-modes>
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
     <density>21.45 g·cm⁻³</density>
+    <density-at-mp>19.77 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶⁶">
         <half-life>300 µs</half-life>
@@ -20071,6 +20134,7 @@ IT</decay-modes>
     <appearance>Metallic yellow</appearance>
     <phase>Solid</phase>
     <density>19.30 g·cm⁻³</density>
+    <density-at-mp>17.31 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁶⁹">
         <half-life>150 µs</half-life>
@@ -20643,6 +20707,7 @@ IT (18%)</decay-modes>
     <appearance>Silvery</appearance>
     <phase>Liquid</phase>
     <density>13.534 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁷¹">
         <half-life>80 µs</half-life>
@@ -21110,6 +21175,7 @@ EC (8.6%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>11.85 g·cm⁻³</density>
+    <density-at-mp>11.22 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁷⁶">
         <half-life>5.2+30-14 ms</half-life>
@@ -21745,6 +21811,7 @@ EC (2.9%)</decay-modes>
     <appearance>Metallic gray</appearance>
     <phase>Solid</phase>
     <density>11.34 g·cm⁻³</density>
+    <density-at-mp>10.66 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁷⁸">
         <half-life>178.003830</half-life>
@@ -22414,6 +22481,7 @@ EC (9.5%)</decay-modes>
     <appearance>Lustrous silver</appearance>
     <phase>Solid</phase>
     <density>9.78 g·cm⁻³</density>
+    <density-at-mp>10.05 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁸⁴">
         <half-life>6.6 ms</half-life>
@@ -23111,6 +23179,7 @@ IT (6.8%)
     <phase>Solid</phase>
     <density>Alpha: 9.196 g·cm⁻³
 Beta: 9.398 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁸⁸">
         <half-life>430 µs</half-life>
@@ -23627,6 +23696,7 @@ IT (.07%)</decay-modes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>At₂: 6.2–6.5 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁹¹">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24089,6 +24159,7 @@ EC (3×10⁻⁷%)</decay-modes>
     <appearance>Colorless gas</appearance>
     <phase>Gas</phase>
     <density>0 °C, 101.325 kPa: 9.73 g/L</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁹⁵">
         <half-life>6 ms</half-life>
@@ -24485,6 +24556,7 @@ IT (&lt;1%)</decay-modes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>1.87 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹⁹⁹">
         <half-life>16 ms</half-life>
@@ -24862,6 +24934,7 @@ CD (8.79×-11%)</decay-modes>
     <appearance>Silvery white metallic</appearance>
     <phase>Solid</phase>
     <density>5.5 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁰²">
         <half-life>2.6 ms</half-life>
@@ -25247,6 +25320,7 @@ CD (2.6×10⁻⁹%)</decay-modes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>23.2 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁵³">
         <half-life>13 ms</half-life>
@@ -25427,6 +25501,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>29.3 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁵⁵">
         <half-life>1.7 s</half-life>
@@ -25594,6 +25669,7 @@ EC </decay-modes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>35.0 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁵⁸">
         <half-life>3.3 ms</half-life>
@@ -25725,6 +25801,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>37.1 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁶⁰">
         <half-life>41 ms</half-life>
@@ -25834,6 +25911,7 @@ Various</daughter-isotopes>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>40.7 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁶³">
         <half-life>760 µs</half-life>
@@ -25965,6 +26043,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>37.4 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁶⁶">
         <half-life>1.2 ms</half-life>
@@ -26052,6 +26131,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>34.8 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁶⁷">
         <half-life>3+6-2 µs</half-life>
@@ -26150,6 +26230,7 @@ Various</daughter-isotopes>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>28.7 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁷²">
         <half-life>2.0 ms</half-life>
@@ -26218,6 +26299,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase></phase>
     <density>23.7 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁷⁷">
         <half-life>1.1 ms</half-life>
@@ -26293,6 +26375,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>16 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁷⁸">
         <half-life>340 µs</half-life>
@@ -26352,6 +26435,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>14 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁸⁵">
         <half-life>125 ms</half-life>
@@ -26419,6 +26503,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>13.5 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁸⁷">
         <half-life>32+155-14 ms</half-life>
@@ -26464,6 +26549,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>12.9 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁹⁰">
         <half-life>15+26-6 ms</half-life>
@@ -26509,6 +26595,7 @@ Various</daughter-isotopes>
     <appearance>Semimetallic</appearance>
     <phase>Solid</phase>
     <density>7.1–7.3 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁹³">
         <half-life>14 +11, -4 ms</half-life>
@@ -26540,6 +26627,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density>13.65 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁹⁴">
         <half-life>890 µs</half-life>
@@ -26564,6 +26652,7 @@ Various</daughter-isotopes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>6.162 g·cm⁻³</density>
+    <density-at-mp>5.94 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹¹⁷">
         <half-life>23.5 ms</half-life>
@@ -26962,6 +27051,7 @@ IT</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>6.770 g·cm⁻³</density>
+    <density-at-mp>6.55 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹¹⁹">
         <half-life>200 ms</half-life>
@@ -27330,6 +27420,7 @@ IT</decay-modes>
     <appearance>Grayish white</appearance>
     <phase>Solid</phase>
     <density>6.77 g·cm⁻³</density>
+    <density-at-mp>6.50 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹²¹">
         <half-life>600 ms</half-life>
@@ -27743,6 +27834,7 @@ EC (.0164%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>7.01 g·cm⁻³</density>
+    <density-at-mp>6.89 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹²⁴">
         <half-life>500 ms</half-life>
@@ -28129,6 +28221,7 @@ IT (11.8%)</decay-modes>
     <appearance>Metallic</appearance>
     <phase>Solid</phase>
     <density>7.26 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="¹²⁶">
         <half-life>0.5 s</half-life>
@@ -28556,6 +28649,7 @@ IT (5%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>7.52 g·cm⁻³</density>
+    <density-at-mp>7.16 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹²⁸">
         <half-life>0.5 s</half-life>
@@ -28937,6 +29031,7 @@ IT (.31%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>5.264 g·cm⁻³</density>
+    <density-at-mp>5.13 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹³⁰">
         <half-life>1.1 ms</half-life>
@@ -29367,6 +29462,7 @@ EC (.02%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>7.90 g·cm⁻³</density>
+    <density-at-mp>7.4 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹³⁴">
         <half-life>0.4 s</half-life>
@@ -29732,6 +29828,7 @@ IT (11%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>8.23 g·cm⁻³</density>
+    <density-at-mp>7.65 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹³⁵">
         <half-life>0.94+33-22 ms</half-life>
@@ -30241,6 +30338,7 @@ IT (21.8%)
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>8.540 g·cm⁻³</density>
+    <density-at-mp>8.37 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹³⁸">
         <half-life>200 ms</half-life>
@@ -30622,6 +30720,7 @@ IT (35%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>8.79 g·cm⁻³</density>
+    <density-at-mp>8.34 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁴⁰">
         <half-life>6 ms</half-life>
@@ -31162,6 +31261,7 @@ IT</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>9.066 g·cm⁻³</density>
+    <density-at-mp>8.86 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁴²">
         <half-life></half-life>
@@ -31546,6 +31646,7 @@ IT (3.5%)
     <appearance>Silvery gray</appearance>
     <phase>Solid</phase>
     <density>9.32 g·cm⁻³</density>
+    <density-at-mp>8.56 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁴⁵">
         <half-life>3.1 µs</half-life>
@@ -32024,6 +32125,7 @@ EC (.14%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>6.90 g·cm⁻³</density>
+    <density-at-mp>6.21 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁴⁸">
         <half-life>250 ms</half-life>
@@ -32383,6 +32485,7 @@ EC (.14%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>9.841 g·cm⁻³</density>
+    <density-at-mp>9.3 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="¹⁵⁰">
         <half-life>43 ms</half-life>
@@ -32975,6 +33078,7 @@ IT (21.7%)</decay-modes>
     <appearance>Silvery-white</appearance>
     <phase>Solid</phase>
     <density>10 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁰⁶">
         <half-life>25 ms</half-life>
@@ -33312,6 +33416,7 @@ EC (17%)
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>11.7 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁰⁹">
         <half-life>7 ms</half-life>
@@ -33598,6 +33703,7 @@ Various
     <appearance>Bright</appearance>
     <phase>Solid</phase>
     <density>15.37 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²¹²">
         <half-life>8 ms</half-life>
@@ -33881,6 +33987,7 @@ Various</daughter-isotopes>
     <appearance>Silvery gray metallic</appearance>
     <phase>Solid</phase>
     <density>19.1 g·cm⁻³</density>
+    <density-at-mp>17.3 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="²¹⁷">
         <half-life>26 ms</half-life>
@@ -34187,6 +34294,7 @@ Various
     <phase>Solid</phase>
     <density>Alpha: 20.45 g·cm⁻³
 Accepted standard value: 19.38 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²²⁵">
         <half-life>3 ms</half-life>
@@ -34403,6 +34511,7 @@ IT (.11%)</decay-modes>
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>19.816 g·cm⁻³</density>
+    <density-at-mp>16.63 g·cm⁻³</density-at-mp>
     <isotopes>
       <isotope symbol="²²⁸">
         <half-life>1.1+20-5 s</half-life>
@@ -34658,6 +34767,7 @@ Various
     <appearance>Silvery white</appearance>
     <phase>Solid</phase>
     <density>12 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²³¹">
         <half-life>30 s</half-life>
@@ -34904,6 +35014,7 @@ IT (.01%)</decay-modes>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>13.51 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²³²">
         <half-life>1? min</half-life>
@@ -35140,6 +35251,7 @@ Various
     <phase>Solid</phase>
     <density>Alpha: 14.78 g·cm⁻³
 Beta: 13.25 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²³⁵">
         <half-life>20 s</half-life>
@@ -35377,6 +35489,7 @@ Various</daughter-isotopes>
     <appearance>Silvery</appearance>
     <phase>Solid</phase>
     <density>15.1 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²³⁷">
         <half-life>2.1 s</half-life>
@@ -35597,6 +35710,7 @@ Various
     <appearance>Silver-colored</appearance>
     <phase>Solid</phase>
     <density>8.84 g·cm⁻³</density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁴⁰">
         <half-life>1 s</half-life>
@@ -35832,6 +35946,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density></density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁴¹">
         <half-life>730 µs</half-life>
@@ -36051,6 +36166,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density></density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁴⁵">
         <half-life>0.90 ms</half-life>
@@ -36273,6 +36389,7 @@ EC (5%)
     <appearance></appearance>
     <phase>Solid</phase>
     <density></density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁵⁰">
         <half-life>5.7 µs</half-life>
@@ -36433,6 +36550,7 @@ Various</daughter-isotopes>
     <appearance></appearance>
     <phase>Solid</phase>
     <density></density>
+    <density-at-mp></density-at-mp>
     <isotopes>
       <isotope symbol="²⁵²">
         <half-life>390 ms</half-life>
