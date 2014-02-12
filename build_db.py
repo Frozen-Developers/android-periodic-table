@@ -94,6 +94,18 @@ def fix_particle_symbol(string):
         string = string.replace(match, replace_with_superscript(match))
     return string
 
+def fix_abundance(string):
+    complex_input = string.split('×')
+    try:
+        value = float(complex_input[0])
+        if value <= 1.0 or len(complex_input) > 1:
+            value *= 100
+            complex_input[0] = format(value, '.6f').rstrip('0').rstrip('.')
+        return '×'.join(complex_input) + '%'
+    except ValueError:
+        pass
+    return string
+
 def fetch(url, root):
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
 
@@ -175,9 +187,9 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
         	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
-        	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10',
-        	'×10^').replace('−', '-')), flags=re.M) if len(isotope) > 8 else '')
+        add_to_element(isotope_tag, 'abundance', fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
+        	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
+        	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp]))
 

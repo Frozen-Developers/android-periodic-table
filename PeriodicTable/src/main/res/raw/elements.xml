@@ -21,14 +21,14 @@
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1⁄2+</spin>
-        <abundance>0.999885</abundance>
+        <abundance>99.9885%</abundance>
       </isotope>
       <isotope symbol="²">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1+</spin>
-        <abundance>0.000115</abundance>
+        <abundance>0.0115%</abundance>
       </isotope>
       <isotope symbol="³">
         <half-life>12.32 y</half-life>
@@ -99,14 +99,14 @@
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>1.34×10⁻⁶</abundance>
+        <abundance>134×10⁻⁶%</abundance>
       </isotope>
       <isotope symbol="⁴">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.99999866</abundance>
+        <abundance>99.999866%</abundance>
       </isotope>
       <isotope symbol="⁵">
         <half-life>700×10⁻²⁴ s</half-life>
@@ -200,14 +200,14 @@
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1+</spin>
-        <abundance></abundance>
+        <abundance>7.59%</abundance>
       </isotope>
       <isotope symbol="⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2−</spin>
-        <abundance></abundance>
+        <abundance>92.41%</abundance>
       </isotope>
       <isotope symbol="⁸">
         <half-life>840.3 ms</half-life>
@@ -323,7 +323,7 @@
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁰">
         <half-life>1.39×10⁶ years</half-life>
@@ -440,14 +440,14 @@
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3+</spin>
-        <abundance>19.9</abundance>
+        <abundance>19.9%</abundance>
       </isotope>
       <isotope symbol="¹¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3⁄2−</spin>
-        <abundance>80.1</abundance>
+        <abundance>80.1%</abundance>
       </isotope>
       <isotope symbol="¹²">
         <half-life>20.20 ms</half-life>
@@ -582,14 +582,14 @@ K-capture (.21%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.9893</abundance>
+        <abundance>98.93%</abundance>
       </isotope>
       <isotope symbol="¹³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.0107</abundance>
+        <abundance>1.07%</abundance>
       </isotope>
       <isotope symbol="¹⁴">
         <half-life>5,730 years</half-life>
@@ -726,14 +726,14 @@ K-capture (.21%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1+</spin>
-        <abundance>0.99636</abundance>
+        <abundance>99.636%</abundance>
       </isotope>
       <isotope symbol="¹⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2−</spin>
-        <abundance>0.00364</abundance>
+        <abundance>0.364%</abundance>
       </isotope>
       <isotope symbol="¹⁶">
         <half-life>7.13 s</half-life>
@@ -878,21 +878,21 @@ p (40.0%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.99757</abundance>
+        <abundance>99.757%</abundance>
       </isotope>
       <isotope symbol="¹⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>3.8×10⁻⁴</abundance>
+        <abundance>380×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>2.05×10⁻³</abundance>
+        <abundance>205×10⁻³%</abundance>
       </isotope>
       <isotope symbol="¹⁹">
         <half-life>26.464 s</half-life>
@@ -1018,7 +1018,7 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²⁰">
         <half-life>11.163 s</half-life>
@@ -1171,21 +1171,21 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.9048</abundance>
+        <abundance>90.48%</abundance>
       </isotope>
       <isotope symbol="²¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.0027</abundance>
+        <abundance>0.27%</abundance>
       </isotope>
       <isotope symbol="²²">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0925</abundance>
+        <abundance>9.25%</abundance>
       </isotope>
       <isotope symbol="²³">
         <half-life>37.24 s</half-life>
@@ -1350,7 +1350,7 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²⁴">
         <half-life>14.9590 h</half-life>
@@ -1555,21 +1555,21 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.7899</abundance>
+        <abundance>78.99%</abundance>
       </isotope>
       <isotope symbol="²⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.1000</abundance>
+        <abundance>10%</abundance>
       </isotope>
       <isotope symbol="²⁶">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1101</abundance>
+        <abundance>11.01%</abundance>
       </isotope>
       <isotope symbol="²⁷">
         <half-life>9.458 min</half-life>
@@ -1797,7 +1797,7 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²⁸">
         <half-life>2.2414 min</half-life>
@@ -1994,21 +1994,21 @@ Solid: transparent (beta)</appearance>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.92223</abundance>
+        <abundance>92.223%</abundance>
       </isotope>
       <isotope symbol="²⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.04685</abundance>
+        <abundance>4.685%</abundance>
       </isotope>
       <isotope symbol="³⁰">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.03092</abundance>
+        <abundance>3.092%</abundance>
       </isotope>
       <isotope symbol="³¹">
         <half-life>157.3 min</half-life>
@@ -2203,7 +2203,7 @@ Black: 2.69 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="³²">
         <half-life>14.263 d</half-life>
@@ -2395,21 +2395,21 @@ Gamma: 1.92 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.9493</abundance>
+        <abundance>94.93%</abundance>
       </isotope>
       <isotope symbol="³³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.0076</abundance>
+        <abundance>0.76%</abundance>
       </isotope>
       <isotope symbol="³⁴">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0429</abundance>
+        <abundance>4.29%</abundance>
       </isotope>
       <isotope symbol="³⁵">
         <half-life>87.51 d</half-life>
@@ -2423,7 +2423,7 @@ Gamma: 1.92 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>2×10⁻⁴</abundance>
+        <abundance>200×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="³⁷">
         <half-life>5.05 min</half-life>
@@ -2620,7 +2620,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.7576</abundance>
+        <abundance>75.76%</abundance>
       </isotope>
       <isotope symbol="³⁶">
         <half-life>3.01×10⁵ y</half-life>
@@ -2636,7 +2636,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.2424</abundance>
+        <abundance>24.24%</abundance>
       </isotope>
       <isotope symbol="³⁸">
         <half-life>37.24 min</half-life>
@@ -2835,7 +2835,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.003336</abundance>
+        <abundance>0.3336%</abundance>
       </isotope>
       <isotope symbol="³⁷">
         <half-life>35.04 d</half-life>
@@ -2849,7 +2849,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>6.29×10⁻⁴</abundance>
+        <abundance>629×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="³⁹">
         <half-life>269 a</half-life>
@@ -2863,7 +2863,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.996035</abundance>
+        <abundance>99.6035%</abundance>
       </isotope>
       <isotope symbol="⁴¹">
         <half-life>109.61 min</half-life>
@@ -3059,7 +3059,7 @@ IT (44.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.932581</abundance>
+        <abundance>93.2581%</abundance>
       </isotope>
       <isotope symbol="⁴⁰">
         <half-life>1.248×10⁹ a</half-life>
@@ -3069,7 +3069,7 @@ EC (10.72%)
         <daughter-isotopes>⁴⁰Ca
 ⁴⁰Ar</daughter-isotopes>
         <spin>4-</spin>
-        <abundance>1.17×10⁻⁴</abundance>
+        <abundance>117×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="⁴⁰ᵐ">
         <half-life>336 ns</half-life>
@@ -3083,7 +3083,7 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.067302</abundance>
+        <abundance>6.7302%</abundance>
       </isotope>
       <isotope symbol="⁴²">
         <half-life>12.360 h</half-life>
@@ -3274,7 +3274,7 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.96941</abundance>
+        <abundance>96.941%</abundance>
       </isotope>
       <isotope symbol="⁴¹">
         <half-life>1.02×10⁵ a</half-life>
@@ -3288,21 +3288,21 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00647</abundance>
+        <abundance>0.647%</abundance>
       </isotope>
       <isotope symbol="⁴³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.00135</abundance>
+        <abundance>0.135%</abundance>
       </isotope>
       <isotope symbol="⁴⁴">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.02086</abundance>
+        <abundance>2.086%</abundance>
       </isotope>
       <isotope symbol="⁴⁵">
         <half-life>162.67 d</half-life>
@@ -3316,7 +3316,7 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>4×10⁻⁵</abundance>
+        <abundance>400×10⁻⁵%</abundance>
       </isotope>
       <isotope symbol="⁴⁷">
         <half-life>4.536 d</half-life>
@@ -3330,7 +3330,7 @@ EC (10.72%)
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>⁴⁸Ti</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00187</abundance>
+        <abundance>0.187%</abundance>
       </isotope>
       <isotope symbol="⁴⁹">
         <half-life>8.718 min</half-life>
@@ -3546,7 +3546,7 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁴⁵ᵐ">
         <half-life>318 ms</half-life>
@@ -3806,35 +3806,35 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0825</abundance>
+        <abundance>8.25%</abundance>
       </isotope>
       <isotope symbol="⁴⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2-</spin>
-        <abundance>0.0744</abundance>
+        <abundance>7.44%</abundance>
       </isotope>
       <isotope symbol="⁴⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.7372</abundance>
+        <abundance>73.72%</abundance>
       </isotope>
       <isotope symbol="⁴⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.0541</abundance>
+        <abundance>5.41%</abundance>
       </isotope>
       <isotope symbol="⁵⁰">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0518</abundance>
+        <abundance>5.18%</abundance>
       </isotope>
       <isotope symbol="⁵¹">
         <half-life>5.76 min</half-life>
@@ -4044,14 +4044,14 @@ EC (10.72%)
         <daughter-isotopes>⁵⁰Ti
 ⁵⁰Cr</daughter-isotopes>
         <spin>6+</spin>
-        <abundance>0.00250</abundance>
+        <abundance>0.25%</abundance>
       </isotope>
       <isotope symbol="⁵¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.99750</abundance>
+        <abundance>99.75%</abundance>
       </isotope>
       <isotope symbol="⁵²">
         <half-life>3.743 min</half-life>
@@ -4282,7 +4282,7 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.04345</abundance>
+        <abundance>4.345%</abundance>
       </isotope>
       <isotope symbol="⁵¹">
         <half-life>27.7025 d</half-life>
@@ -4296,21 +4296,21 @@ EC (10.72%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.83789</abundance>
+        <abundance>83.789%</abundance>
       </isotope>
       <isotope symbol="⁵³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.09501</abundance>
+        <abundance>9.501%</abundance>
       </isotope>
       <isotope symbol="⁵⁴">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.02365</abundance>
+        <abundance>2.365%</abundance>
       </isotope>
       <isotope symbol="⁵⁵">
         <half-life>3.497 min</half-life>
@@ -4555,7 +4555,7 @@ IT (1.75%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁵⁶">
         <half-life>2.5789 h</half-life>
@@ -4807,7 +4807,7 @@ IT (11.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.05845</abundance>
+        <abundance>5.845%</abundance>
       </isotope>
       <isotope symbol="⁵⁴ᵐ">
         <half-life>364 ns</half-life>
@@ -4828,21 +4828,21 @@ IT (11.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.91754</abundance>
+        <abundance>91.754%</abundance>
       </isotope>
       <isotope symbol="⁵⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.02119</abundance>
+        <abundance>2.119%</abundance>
       </isotope>
       <isotope symbol="⁵⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00282</abundance>
+        <abundance>0.282%</abundance>
       </isotope>
       <isotope symbol="⁵⁹">
         <half-life>44.495 d</half-life>
@@ -5121,7 +5121,7 @@ p (1.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁶⁰">
         <half-life>5.2713 a</half-life>
@@ -5386,7 +5386,7 @@ IT (1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.680769</abundance>
+        <abundance>68.0769%</abundance>
       </isotope>
       <isotope symbol="⁵⁹">
         <half-life>7.6×10⁴ a</half-life>
@@ -5401,21 +5401,21 @@ IT (1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.262231</abundance>
+        <abundance>26.2231%</abundance>
       </isotope>
       <isotope symbol="⁶¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.011399</abundance>
+        <abundance>1.1399%</abundance>
       </isotope>
       <isotope symbol="⁶²">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.036345</abundance>
+        <abundance>3.6345%</abundance>
       </isotope>
       <isotope symbol="⁶³">
         <half-life>100.1 a</half-life>
@@ -5436,7 +5436,7 @@ IT (1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.009256</abundance>
+        <abundance>0.9256%</abundance>
       </isotope>
       <isotope symbol="⁶⁵">
         <half-life>2.5172 h</half-life>
@@ -5701,7 +5701,7 @@ p</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.6915</abundance>
+        <abundance>69.15%</abundance>
       </isotope>
       <isotope symbol="⁶⁴">
         <half-life>12.700 h</half-life>
@@ -5717,7 +5717,7 @@ p</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.3085</abundance>
+        <abundance>30.85%</abundance>
       </isotope>
       <isotope symbol="⁶⁶">
         <half-life>5.120 min</half-life>
@@ -6005,7 +6005,7 @@ p</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.48268</abundance>
+        <abundance>48.268%</abundance>
       </isotope>
       <isotope symbol="⁶⁵">
         <half-life>243.66 d</half-life>
@@ -6026,21 +6026,21 @@ p</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.27975</abundance>
+        <abundance>27.975%</abundance>
       </isotope>
       <isotope symbol="⁶⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2-</spin>
-        <abundance>0.04102</abundance>
+        <abundance>4.102%</abundance>
       </isotope>
       <isotope symbol="⁶⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.19024</abundance>
+        <abundance>19.024%</abundance>
       </isotope>
       <isotope symbol="⁶⁹">
         <half-life>56.4 min</half-life>
@@ -6063,7 +6063,7 @@ p</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00631</abundance>
+        <abundance>0.631%</abundance>
       </isotope>
       <isotope symbol="⁷¹">
         <half-life>2.45 min</half-life>
@@ -6324,7 +6324,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.60108</abundance>
+        <abundance>60.108%</abundance>
       </isotope>
       <isotope symbol="⁷⁰">
         <half-life>21.14 min</half-life>
@@ -6340,7 +6340,7 @@ EC (0.41%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.39892</abundance>
+        <abundance>39.892%</abundance>
       </isotope>
       <isotope symbol="⁷²">
         <half-life>14.095 h</half-life>
@@ -6614,7 +6614,7 @@ EC (0.41%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2038</abundance>
+        <abundance>20.38%</abundance>
       </isotope>
       <isotope symbol="⁷¹">
         <half-life>11.43 d</half-life>
@@ -6635,7 +6635,7 @@ EC (0.41%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2731</abundance>
+        <abundance>27.31%</abundance>
       </isotope>
       <isotope symbol="⁷²ᵐ">
         <half-life>444.2 ns</half-life>
@@ -6649,7 +6649,7 @@ EC (0.41%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.0776</abundance>
+        <abundance>7.76%</abundance>
       </isotope>
       <isotope symbol="⁷³ᵐ¹">
         <half-life>2.92 µs</half-life>
@@ -6670,7 +6670,7 @@ EC (0.41%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3672</abundance>
+        <abundance>36.72%</abundance>
       </isotope>
       <isotope symbol="⁷⁵">
         <half-life>82.78 min</half-life>
@@ -6700,7 +6700,7 @@ EC (0.41%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>⁷⁶Se</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0783</abundance>
+        <abundance>7.83%</abundance>
       </isotope>
       <isotope symbol="⁷⁷">
         <half-life>11.30 h</half-life>
@@ -6984,7 +6984,7 @@ IT (1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁷⁵ᵐ">
         <half-life>17.62 ms</half-life>
@@ -7290,7 +7290,7 @@ Vitreous: 4.28 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0089</abundance>
+        <abundance>0.89%</abundance>
       </isotope>
       <isotope symbol="⁷⁵">
         <half-life>119.779 d</half-life>
@@ -7304,14 +7304,14 @@ Vitreous: 4.28 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0937</abundance>
+        <abundance>9.37%</abundance>
       </isotope>
       <isotope symbol="⁷⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.0763</abundance>
+        <abundance>7.63%</abundance>
       </isotope>
       <isotope symbol="⁷⁷ᵐ">
         <half-life>17.36 s</half-life>
@@ -7325,7 +7325,7 @@ Vitreous: 4.28 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2377</abundance>
+        <abundance>23.77%</abundance>
       </isotope>
       <isotope symbol="⁷⁹">
         <half-life>3.27×10⁵ a</half-life>
@@ -7348,7 +7348,7 @@ Vitreous: 4.28 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.4961</abundance>
+        <abundance>49.61%</abundance>
       </isotope>
       <isotope symbol="⁸¹">
         <half-life>18.45 min</half-life>
@@ -7371,7 +7371,7 @@ Vitreous: 4.28 g·cm⁻³</density>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>⁸²Kr</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0873</abundance>
+        <abundance>8.73%</abundance>
       </isotope>
       <isotope symbol="⁸³">
         <half-life>22.3 min</half-life>
@@ -7639,7 +7639,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2−</spin>
-        <abundance>0.5069</abundance>
+        <abundance>50.69%</abundance>
       </isotope>
       <isotope symbol="⁷⁹ᵐ">
         <half-life>4.86 s</half-life>
@@ -7669,7 +7669,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2−</spin>
-        <abundance>0.4931</abundance>
+        <abundance>49.31%</abundance>
       </isotope>
       <isotope symbol="⁸¹ᵐ">
         <half-life>34.6 µs</half-life>
@@ -7940,7 +7940,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00355</abundance>
+        <abundance>0.355%</abundance>
       </isotope>
       <isotope symbol="⁷⁹">
         <half-life>35.04 h</half-life>
@@ -7961,7 +7961,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.02286</abundance>
+        <abundance>2.286%</abundance>
       </isotope>
       <isotope symbol="⁸¹">
         <half-life>2.29×10⁵ a</half-life>
@@ -7984,14 +7984,14 @@ EC (.025%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.11593</abundance>
+        <abundance>11.593%</abundance>
       </isotope>
       <isotope symbol="⁸³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.11500</abundance>
+        <abundance>11.5%</abundance>
       </isotope>
       <isotope symbol="⁸³ᵐ¹">
         <half-life>154.4 ns</half-life>
@@ -8012,7 +8012,7 @@ EC (.025%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.56987</abundance>
+        <abundance>56.987%</abundance>
       </isotope>
       <isotope symbol="⁸⁴ᵐ">
         <half-life>1.89 µs</half-life>
@@ -8049,7 +8049,7 @@ IT (21.4%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.17279</abundance>
+        <abundance>17.279%</abundance>
       </isotope>
       <isotope symbol="⁸⁷">
         <half-life>76.3 min</half-life>
@@ -8357,7 +8357,7 @@ IT (.33%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2−</spin>
-        <abundance>0.7217</abundance>
+        <abundance>72.17%</abundance>
       </isotope>
       <isotope symbol="⁸⁶">
         <half-life>18.642 d</half-life>
@@ -8380,7 +8380,7 @@ EC (.0052%)</decay-modes>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>⁸⁷Sr</daughter-isotopes>
         <spin>3/2−</spin>
-        <abundance>0.2783</abundance>
+        <abundance>27.83%</abundance>
       </isotope>
       <isotope symbol="⁸⁸">
         <half-life>17.773 min</half-life>
@@ -8660,7 +8660,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0056</abundance>
+        <abundance>0.56%</abundance>
       </isotope>
       <isotope symbol="⁸⁵">
         <half-life>64.853 d</half-life>
@@ -8683,7 +8683,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0986</abundance>
+        <abundance>9.86%</abundance>
       </isotope>
       <isotope symbol="⁸⁶ᵐ">
         <half-life>455 ns</half-life>
@@ -8697,7 +8697,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.0700</abundance>
+        <abundance>7%</abundance>
       </isotope>
       <isotope symbol="⁸⁷ᵐ">
         <half-life>2.815 h</half-life>
@@ -8713,7 +8713,7 @@ EC (.3%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.8258</abundance>
+        <abundance>82.58%</abundance>
       </isotope>
       <isotope symbol="⁸⁹">
         <half-life>50.57 d</half-life>
@@ -9084,7 +9084,7 @@ IT (.002%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁸⁹ᵐ">
         <half-life>15.663 s</half-life>
@@ -9483,7 +9483,7 @@ IT (10%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.5145</abundance>
+        <abundance>51.45%</abundance>
       </isotope>
       <isotope symbol="⁹⁰ᵐ¹">
         <half-life>809.2 ms</half-life>
@@ -9504,7 +9504,7 @@ IT (10%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.1122</abundance>
+        <abundance>11.22%</abundance>
       </isotope>
       <isotope symbol="⁹¹ᵐ">
         <half-life>4.35 µs</half-life>
@@ -9518,7 +9518,7 @@ IT (10%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1715</abundance>
+        <abundance>17.15%</abundance>
       </isotope>
       <isotope symbol="⁹³">
         <half-life>1.53×10⁶ a</half-life>
@@ -9532,7 +9532,7 @@ IT (10%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1738</abundance>
+        <abundance>17.38%</abundance>
       </isotope>
       <isotope symbol="⁹⁵">
         <half-life>64.032 d</half-life>
@@ -9546,7 +9546,7 @@ IT (10%)
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>⁹⁶Mo</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0280</abundance>
+        <abundance>2.8%</abundance>
       </isotope>
       <isotope symbol="⁹⁷">
         <half-life>16.744 h</half-life>
@@ -9881,7 +9881,7 @@ EC (7%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="⁹³ᵐ">
         <half-life>16.13 a</half-life>
@@ -10223,7 +10223,7 @@ IT (3.8%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1477</abundance>
+        <abundance>14.77%</abundance>
       </isotope>
       <isotope symbol="⁹²ᵐ">
         <half-life>190 ns</half-life>
@@ -10253,35 +10253,35 @@ IT (3.8%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0923</abundance>
+        <abundance>9.23%</abundance>
       </isotope>
       <isotope symbol="⁹⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.1590</abundance>
+        <abundance>15.9%</abundance>
       </isotope>
       <isotope symbol="⁹⁶">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1668</abundance>
+        <abundance>16.68%</abundance>
       </isotope>
       <isotope symbol="⁹⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.0956</abundance>
+        <abundance>9.56%</abundance>
       </isotope>
       <isotope symbol="⁹⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2419</abundance>
+        <abundance>24.19%</abundance>
       </isotope>
       <isotope symbol="⁹⁹">
         <half-life>2.7489 d</half-life>
@@ -10309,7 +10309,7 @@ IT (3.8%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹⁰⁰Ru</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0967</abundance>
+        <abundance>9.67%</abundance>
       </isotope>
       <isotope symbol="¹⁰¹">
         <half-life>14.61 min</half-life>
@@ -10987,7 +10987,7 @@ IT (22%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0554</abundance>
+        <abundance>5.54%</abundance>
       </isotope>
       <isotope symbol="⁹⁷">
         <half-life>2.791 d</half-life>
@@ -11001,28 +11001,28 @@ IT (22%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0187</abundance>
+        <abundance>1.87%</abundance>
       </isotope>
       <isotope symbol="⁹⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.1276</abundance>
+        <abundance>12.76%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁰">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1260</abundance>
+        <abundance>12.6%</abundance>
       </isotope>
       <isotope symbol="¹⁰¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.1706</abundance>
+        <abundance>17.06%</abundance>
       </isotope>
       <isotope symbol="¹⁰¹ᵐ">
         <half-life>17.5 µs</half-life>
@@ -11036,7 +11036,7 @@ IT (22%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3155</abundance>
+        <abundance>31.55%</abundance>
       </isotope>
       <isotope symbol="¹⁰³">
         <half-life>39.26 d</half-life>
@@ -11057,7 +11057,7 @@ IT (22%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1862</abundance>
+        <abundance>18.62%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁵">
         <half-life>4.44 h</half-life>
@@ -11422,7 +11422,7 @@ IT (.23%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁰³ᵐ">
         <half-life>56.114 min</half-life>
@@ -11767,7 +11767,7 @@ IT (5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0102</abundance>
+        <abundance>1.02%</abundance>
       </isotope>
       <isotope symbol="¹⁰³">
         <half-life>16.991 d</half-life>
@@ -11788,21 +11788,21 @@ IT (5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1114</abundance>
+        <abundance>11.14%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.2233</abundance>
+        <abundance>22.33%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁶">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2733</abundance>
+        <abundance>27.33%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁷">
         <half-life>6.5×10⁶ a</half-life>
@@ -11830,7 +11830,7 @@ IT (5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2646</abundance>
+        <abundance>26.46%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁹">
         <half-life>13.7012 h</half-life>
@@ -11858,7 +11858,7 @@ IT (5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1172</abundance>
+        <abundance>11.72%</abundance>
       </isotope>
       <isotope symbol="¹¹¹">
         <half-life>23.4 min</half-life>
@@ -12264,7 +12264,7 @@ IT (4.16×10⁻⁶%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.51839</abundance>
+        <abundance>51.839%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁷ᵐ">
         <half-life>44.3 s</half-life>
@@ -12296,7 +12296,7 @@ IT (8.96%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.48161</abundance>
+        <abundance>48.161%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁹ᵐ">
         <half-life>39.6 s</half-life>
@@ -12717,7 +12717,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0125</abundance>
+        <abundance>1.25%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁷">
         <half-life>6.50 h</half-life>
@@ -12731,7 +12731,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0089</abundance>
+        <abundance>0.89%</abundance>
       </isotope>
       <isotope symbol="¹⁰⁹">
         <half-life>461.4 d</half-life>
@@ -12759,14 +12759,14 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1249</abundance>
+        <abundance>12.49%</abundance>
       </isotope>
       <isotope symbol="¹¹¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.1280</abundance>
+        <abundance>12.8%</abundance>
       </isotope>
       <isotope symbol="¹¹¹ᵐ">
         <half-life>48.50 min</half-life>
@@ -12780,14 +12780,14 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2413</abundance>
+        <abundance>24.13%</abundance>
       </isotope>
       <isotope symbol="¹¹³">
         <half-life>7.7×10¹⁵ a</half-life>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>¹¹³In</daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.1222</abundance>
+        <abundance>12.22%</abundance>
       </isotope>
       <isotope symbol="¹¹³ᵐ">
         <half-life>14.1 a</half-life>
@@ -12803,7 +12803,7 @@ IT (.139%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2873</abundance>
+        <abundance>28.73%</abundance>
       </isotope>
       <isotope symbol="¹¹⁵">
         <half-life>53.46 h</half-life>
@@ -12824,7 +12824,7 @@ IT (.139%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹¹⁶Sn</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0749</abundance>
+        <abundance>7.49%</abundance>
       </isotope>
       <isotope symbol="¹¹⁷">
         <half-life>2.49 h</half-life>
@@ -13243,7 +13243,7 @@ IT (&lt;.1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.0429</abundance>
+        <abundance>4.29%</abundance>
       </isotope>
       <isotope symbol="¹¹³ᵐ">
         <half-life>1.6579 h</half-life>
@@ -13291,7 +13291,7 @@ IT (&lt;.1%)</decay-modes>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>¹¹⁵Sn</daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.9571</abundance>
+        <abundance>95.71%</abundance>
       </isotope>
       <isotope symbol="¹¹⁵ᵐ">
         <half-life>4.486 h</half-life>
@@ -13797,7 +13797,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0097</abundance>
+        <abundance>0.97%</abundance>
       </isotope>
       <isotope symbol="¹¹³">
         <half-life>115.09 d</half-life>
@@ -13820,7 +13820,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0066</abundance>
+        <abundance>0.66%</abundance>
       </isotope>
       <isotope symbol="¹¹⁴ᵐ">
         <half-life>733 ns</half-life>
@@ -13834,7 +13834,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.0034</abundance>
+        <abundance>0.34%</abundance>
       </isotope>
       <isotope symbol="¹¹⁵ᵐ¹">
         <half-life>3.26 µs</half-life>
@@ -13855,14 +13855,14 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1454</abundance>
+        <abundance>14.54%</abundance>
       </isotope>
       <isotope symbol="¹¹⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.0768</abundance>
+        <abundance>7.68%</abundance>
       </isotope>
       <isotope symbol="¹¹⁷ᵐ¹">
         <half-life>13.76 d</half-life>
@@ -13883,14 +13883,14 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2422</abundance>
+        <abundance>24.22%</abundance>
       </isotope>
       <isotope symbol="¹¹⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.0859</abundance>
+        <abundance>8.59%</abundance>
       </isotope>
       <isotope symbol="¹¹⁹ᵐ¹">
         <half-life>293.1 d</half-life>
@@ -13911,7 +13911,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3258</abundance>
+        <abundance>32.58%</abundance>
       </isotope>
       <isotope symbol="¹²⁰ᵐ¹">
         <half-life>11.8 µs</half-life>
@@ -13962,7 +13962,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0463</abundance>
+        <abundance>4.63%</abundance>
       </isotope>
       <isotope symbol="¹²³">
         <half-life>129.2 d</half-life>
@@ -14004,7 +14004,7 @@ Gray: 5.769 g·cm⁻³</density>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0579</abundance>
+        <abundance>5.79%</abundance>
       </isotope>
       <isotope symbol="¹²⁴ᵐ¹">
         <half-life>0.27 µs</half-life>
@@ -14440,7 +14440,7 @@ p (1%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.5721</abundance>
+        <abundance>57.21%</abundance>
       </isotope>
       <isotope symbol="¹²²">
         <half-life>2.7238 d</half-life>
@@ -14477,7 +14477,7 @@ p (1%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>0.4279</abundance>
+        <abundance>42.79%</abundance>
       </isotope>
       <isotope symbol="¹²⁴">
         <half-life>60.20 d</half-life>
@@ -14892,7 +14892,7 @@ IT (.008%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>9×10⁻⁴</abundance>
+        <abundance>900×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹²¹">
         <half-life>19.16 d</half-life>
@@ -14915,14 +14915,14 @@ IT (.008%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0255</abundance>
+        <abundance>2.55%</abundance>
       </isotope>
       <isotope symbol="¹²³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.0089</abundance>
+        <abundance>0.89%</abundance>
       </isotope>
       <isotope symbol="¹²³ᵐ">
         <half-life>119.2 d</half-life>
@@ -14936,14 +14936,14 @@ IT (.008%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0474</abundance>
+        <abundance>4.74%</abundance>
       </isotope>
       <isotope symbol="¹²⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.0707</abundance>
+        <abundance>7.07%</abundance>
       </isotope>
       <isotope symbol="¹²⁵ᵐ">
         <half-life>57.40 d</half-life>
@@ -14957,7 +14957,7 @@ IT (.008%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1884</abundance>
+        <abundance>18.84%</abundance>
       </isotope>
       <isotope symbol="¹²⁷">
         <half-life>9.35 h</half-life>
@@ -14980,7 +14980,7 @@ IT (.008%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹²⁸Xe</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3174</abundance>
+        <abundance>31.74%</abundance>
       </isotope>
       <isotope symbol="¹²⁸ᵐ">
         <half-life>370 ns</half-life>
@@ -15008,7 +15008,7 @@ IT (.008%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹³⁰Xe</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3408</abundance>
+        <abundance>34.08%</abundance>
       </isotope>
       <isotope symbol="¹³⁰ᵐ¹">
         <half-life>115 ns</half-life>
@@ -15389,7 +15389,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹²⁸">
         <half-life>24.99 min</half-life>
@@ -15753,7 +15753,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>9.52×10⁻⁴</abundance>
+        <abundance>952×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹²⁵">
         <half-life>16.9 h</half-life>
@@ -15781,7 +15781,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>8.90×10⁻⁴</abundance>
+        <abundance>890×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹²⁷">
         <half-life>36.345 d</half-life>
@@ -15802,14 +15802,14 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.019102</abundance>
+        <abundance>1.9102%</abundance>
       </isotope>
       <isotope symbol="¹²⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.264006</abundance>
+        <abundance>26.4006%</abundance>
       </isotope>
       <isotope symbol="¹²⁹ᵐ">
         <half-life>8.88 d</half-life>
@@ -15823,14 +15823,14 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.040710</abundance>
+        <abundance>4.071%</abundance>
       </isotope>
       <isotope symbol="¹³¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.212324</abundance>
+        <abundance>21.2324%</abundance>
       </isotope>
       <isotope symbol="¹³¹ᵐ">
         <half-life>11.934 d</half-life>
@@ -15844,7 +15844,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.269086</abundance>
+        <abundance>26.9086%</abundance>
       </isotope>
       <isotope symbol="¹³²ᵐ">
         <half-life>8.39 ms</half-life>
@@ -15872,7 +15872,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.104357</abundance>
+        <abundance>10.4357%</abundance>
       </isotope>
       <isotope symbol="¹³⁴ᵐ¹">
         <half-life>290 ms</half-life>
@@ -15909,7 +15909,7 @@ IT (rare)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹³⁶Ba</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.088573</abundance>
+        <abundance>8.8573%</abundance>
       </isotope>
       <isotope symbol="¹³⁶ᵐ">
         <half-life>2.95 µs</half-life>
@@ -16340,7 +16340,7 @@ IT (17%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹³⁴">
         <half-life>2.0652 a</half-life>
@@ -16706,7 +16706,7 @@ IT</decay-modes>
         <decay-modes>Double EC</decay-modes>
         <daughter-isotopes>¹³⁰Xe</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00106</abundance>
+        <abundance>0.106%</abundance>
       </isotope>
       <isotope symbol="¹³⁰ᵐ">
         <half-life>9.54 ms</half-life>
@@ -16734,7 +16734,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00101</abundance>
+        <abundance>0.101%</abundance>
       </isotope>
       <isotope symbol="¹³³">
         <half-life>10.51 yrs</half-life>
@@ -16757,14 +16757,14 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.02417</abundance>
+        <abundance>2.417%</abundance>
       </isotope>
       <isotope symbol="¹³⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.06592</abundance>
+        <abundance>6.592%</abundance>
       </isotope>
       <isotope symbol="¹³⁵ᵐ">
         <half-life>28.7 h</half-life>
@@ -16778,7 +16778,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.07854</abundance>
+        <abundance>7.854%</abundance>
       </isotope>
       <isotope symbol="¹³⁶ᵐ">
         <half-life>308.4 ms</half-life>
@@ -16792,7 +16792,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.11232</abundance>
+        <abundance>11.232%</abundance>
       </isotope>
       <isotope symbol="¹³⁷ᵐ¹">
         <half-life>2.552 min</half-life>
@@ -16813,7 +16813,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.71698</abundance>
+        <abundance>71.698%</abundance>
       </isotope>
       <isotope symbol="¹³⁸ᵐ">
         <half-life>800 ns</half-life>
@@ -17155,7 +17155,7 @@ EC (.0096%)</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁷⁰Yb</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0016</abundance>
+        <abundance>0.16%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁴ᵐ¹">
         <half-life>138 ns</half-life>
@@ -17197,14 +17197,14 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0526</abundance>
+        <abundance>5.26%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.1860</abundance>
+        <abundance>18.6%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁷ᵐ¹">
         <half-life>1.09 sec</half-life>
@@ -17232,7 +17232,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2728</abundance>
+        <abundance>27.28%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁸ᵐ¹">
         <half-life>4.0 sec</half-life>
@@ -17260,7 +17260,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9/2+</spin>
-        <abundance>0.1362</abundance>
+        <abundance>13.62%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁹ᵐ¹">
         <half-life>18.67 sec</half-life>
@@ -17281,7 +17281,7 @@ EC (.0096%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3508</abundance>
+        <abundance>35.08%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁰ᵐ¹">
         <half-life>5.47 hr</half-life>
@@ -17817,7 +17817,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>9−</spin>
-        <abundance>1.2×10⁻⁴</abundance>
+        <abundance>120×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁰ᵐ²">
         <half-life>31.2 µs</half-life>
@@ -17845,7 +17845,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>0.99988</abundance>
+        <abundance>99.988%</abundance>
       </isotope>
       <isotope symbol="¹⁸¹ᵐ¹">
         <half-life>6.05 µs</half-life>
@@ -18202,7 +18202,7 @@ IT
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁷⁶Hf</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0012</abundance>
+        <abundance>0.12%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁰ᵐ¹">
         <half-life>5.47 ms</half-life>
@@ -18230,14 +18230,14 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2650</abundance>
+        <abundance>26.5%</abundance>
       </isotope>
       <isotope symbol="¹⁸³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.1431</abundance>
+        <abundance>14.31%</abundance>
       </isotope>
       <isotope symbol="¹⁸³ᵐ">
         <half-life>5.2 s</half-life>
@@ -18251,7 +18251,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3064</abundance>
+        <abundance>30.64%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁵">
         <half-life>75.1 d</half-life>
@@ -18272,7 +18272,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2843</abundance>
+        <abundance>28.43%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁶ᵐ¹">
         <half-life>18 µs</half-life>
@@ -18686,7 +18686,7 @@ IT
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.3740</abundance>
+        <abundance>37.4%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁵ᵐ">
         <half-life>123 ns</half-life>
@@ -18720,7 +18720,7 @@ EC (6.9%)</decay-modes>
         <daughter-isotopes>¹⁸⁷Os
 ¹⁸³Ta</daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.6260</abundance>
+        <abundance>62.6%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁸">
         <half-life>17.0040 h</half-life>
@@ -19013,7 +19013,7 @@ IT (15%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>2×10⁻⁴</abundance>
+        <abundance>200×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁵">
         <half-life>93.6 d</half-life>
@@ -19041,28 +19041,28 @@ IT (15%)</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁸²W</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0159</abundance>
+        <abundance>1.59%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.0196</abundance>
+        <abundance>1.96%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1324</abundance>
+        <abundance>13.24%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.1615</abundance>
+        <abundance>16.15%</abundance>
       </isotope>
       <isotope symbol="¹⁸⁹ᵐ">
         <half-life>5.81 h</half-life>
@@ -19076,7 +19076,7 @@ IT (15%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2626</abundance>
+        <abundance>26.26%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁰ᵐ">
         <half-life>9.9 min</half-life>
@@ -19104,7 +19104,7 @@ IT (15%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.4078</abundance>
+        <abundance>40.78%</abundance>
       </isotope>
       <isotope symbol="¹⁹²ᵐ">
         <half-life>5.9 s</half-life>
@@ -19566,7 +19566,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.373</abundance>
+        <abundance>37.3%</abundance>
       </isotope>
       <isotope symbol="¹⁹¹ᵐ¹">
         <half-life>4.94 s</half-life>
@@ -19610,7 +19610,7 @@ EC (4.76%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>0.627</abundance>
+        <abundance>62.7%</abundance>
       </isotope>
       <isotope symbol="¹⁹³ᵐ">
         <half-life>10.53 d</half-life>
@@ -19988,7 +19988,7 @@ IT</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁸⁶Os</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>1.4×10⁻⁴</abundance>
+        <abundance>140×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁹¹">
         <half-life>2.862 d</half-life>
@@ -20016,7 +20016,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00782</abundance>
+        <abundance>0.782%</abundance>
       </isotope>
       <isotope symbol="¹⁹³">
         <half-life>50 a</half-life>
@@ -20037,14 +20037,14 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.32967</abundance>
+        <abundance>32.967%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.33832</abundance>
+        <abundance>33.832%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁵ᵐ">
         <half-life>4.010 d</half-life>
@@ -20058,7 +20058,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.25242</abundance>
+        <abundance>25.242%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁷">
         <half-life>19.8915 h</half-life>
@@ -20081,7 +20081,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.07163</abundance>
+        <abundance>7.163%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁹">
         <half-life>30.80 min</half-life>
@@ -20596,7 +20596,7 @@ IT (rare)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁷ᵐ">
         <half-life>7.73 s</half-life>
@@ -21022,7 +21022,7 @@ IT (7.1%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0015</abundance>
+        <abundance>0.15%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁷">
         <half-life>64.14 h</half-life>
@@ -21045,14 +21045,14 @@ EC (8.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0997</abundance>
+        <abundance>9.97%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.1687</abundance>
+        <abundance>16.87%</abundance>
       </isotope>
       <isotope symbol="¹⁹⁹ᵐ">
         <half-life>42.66 min</half-life>
@@ -21066,14 +21066,14 @@ EC (8.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2310</abundance>
+        <abundance>23.1%</abundance>
       </isotope>
       <isotope symbol="²⁰¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.1318</abundance>
+        <abundance>13.18%</abundance>
       </isotope>
       <isotope symbol="²⁰¹ᵐ">
         <half-life>94 µs</half-life>
@@ -21087,7 +21087,7 @@ EC (8.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2986</abundance>
+        <abundance>29.86%</abundance>
       </isotope>
       <isotope symbol="²⁰³">
         <half-life>46.595 d</half-life>
@@ -21108,7 +21108,7 @@ EC (8.6%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0687</abundance>
+        <abundance>6.87%</abundance>
       </isotope>
       <isotope symbol="²⁰⁵">
         <half-life>5.14 min</half-life>
@@ -21668,7 +21668,7 @@ IT (46%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.2952</abundance>
+        <abundance>29.52%</abundance>
       </isotope>
       <isotope symbol="²⁰³ᵐ">
         <half-life>7.7 µs</half-life>
@@ -21712,7 +21712,7 @@ EC (2.9%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>0.7048</abundance>
+        <abundance>70.48%</abundance>
       </isotope>
       <isotope symbol="²⁰⁵ᵐ¹">
         <half-life>2.6 µs</half-life>
@@ -22300,7 +22300,7 @@ EC (9.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.014</abundance>
+        <abundance>1.4%</abundance>
       </isotope>
       <isotope symbol="²⁰⁴ᵐ¹">
         <half-life>265 ns</half-life>
@@ -22356,7 +22356,7 @@ EC (9.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.241</abundance>
+        <abundance>24.1%</abundance>
       </isotope>
       <isotope symbol="²⁰⁶ᵐ¹">
         <half-life>125 µs</half-life>
@@ -22377,7 +22377,7 @@ EC (9.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.221</abundance>
+        <abundance>22.1%</abundance>
       </isotope>
       <isotope symbol="²⁰⁷ᵐ">
         <half-life>806 ms</half-life>
@@ -22391,7 +22391,7 @@ EC (9.5%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.524</abundance>
+        <abundance>52.4%</abundance>
       </isotope>
       <isotope symbol="²⁰⁸ᵐ">
         <half-life>500 ns</half-life>
@@ -23044,7 +23044,7 @@ IT (6.8%)
         <decay-modes>α</decay-modes>
         <daughter-isotopes>²⁰⁵Tl</daughter-isotopes>
         <spin>9/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²¹⁰">
         <half-life>5.012 d</half-life>
@@ -26890,7 +26890,7 @@ IT</decay-modes>
         <daughter-isotopes>¹³⁸Ba
 ¹³⁸Ce</daughter-isotopes>
         <spin>5+</spin>
-        <abundance>9.0×10⁻⁴</abundance>
+        <abundance>900×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹³⁸ᵐ">
         <half-life>116 ns</half-life>
@@ -26904,7 +26904,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>0.99910</abundance>
+        <abundance>99.91%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁰">
         <half-life>1.6781 d</half-life>
@@ -27218,7 +27218,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00185</abundance>
+        <abundance>0.185%</abundance>
       </isotope>
       <isotope symbol="¹³⁶ᵐ">
         <half-life>2.2 µs</half-life>
@@ -27248,7 +27248,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00251</abundance>
+        <abundance>0.251%</abundance>
       </isotope>
       <isotope symbol="¹³⁸ᵐ">
         <half-life>8.65 ms</half-life>
@@ -27276,7 +27276,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.88450</abundance>
+        <abundance>88.45%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁰ᵐ">
         <half-life>7.3 µs</half-life>
@@ -27297,7 +27297,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.11114</abundance>
+        <abundance>11.114%</abundance>
       </isotope>
       <isotope symbol="¹⁴³">
         <half-life>33.039 h</half-life>
@@ -27665,7 +27665,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁴²">
         <half-life>19.12 h</half-life>
@@ -28049,35 +28049,35 @@ IT (11.8%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.272</abundance>
+        <abundance>27.2%</abundance>
       </isotope>
       <isotope symbol="¹⁴³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.122</abundance>
+        <abundance>12.2%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁴">
         <half-life>2.29×10¹⁵ a</half-life>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁴⁰Ce</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.238</abundance>
+        <abundance>23.8%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.083</abundance>
+        <abundance>8.3%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁶">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.172</abundance>
+        <abundance>17.2%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁷">
         <half-life>10.98 d</half-life>
@@ -28091,7 +28091,7 @@ IT (11.8%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.057</abundance>
+        <abundance>5.7%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁹">
         <half-life>1.728 h</half-life>
@@ -28105,7 +28105,7 @@ IT (11.8%)</decay-modes>
         <decay-modes>β-β-</decay-modes>
         <daughter-isotopes>¹⁵⁰Sᵐ</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.056</abundance>
+        <abundance>5.6%</abundance>
       </isotope>
       <isotope symbol="¹⁵¹">
         <half-life>12.44 min</half-life>
@@ -28831,7 +28831,7 @@ IT (.31%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0307</abundance>
+        <abundance>3.07%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁴ᵐ">
         <half-life>880 ns</half-life>
@@ -28866,28 +28866,28 @@ IT (.31%)</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁴³Nd</daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.1499</abundance>
+        <abundance>14.99%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁸">
         <half-life>7×10¹⁵ a</half-life>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁴⁴Nd</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1124</abundance>
+        <abundance>11.24%</abundance>
       </isotope>
       <isotope symbol="¹⁴⁹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>0.1382</abundance>
+        <abundance>13.82%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁰">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0738</abundance>
+        <abundance>7.38%</abundance>
       </isotope>
       <isotope symbol="¹⁵¹">
         <half-life>96.6 a</half-life>
@@ -28908,7 +28908,7 @@ IT (.31%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2675</abundance>
+        <abundance>26.75%</abundance>
       </isotope>
       <isotope symbol="¹⁵³">
         <half-life>46.284 h</half-life>
@@ -28929,7 +28929,7 @@ IT (.31%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2275</abundance>
+        <abundance>22.75%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁵">
         <half-life>22.3 min</half-life>
@@ -29270,7 +29270,7 @@ IT (5×10⁻⁸%)</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁴⁷Pᵐ</daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.4781</abundance>
+        <abundance>47.81%</abundance>
       </isotope>
       <isotope symbol="¹⁵¹ᵐ">
         <half-life>58.9 µs</half-life>
@@ -29330,7 +29330,7 @@ IT (5×10⁻⁸%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.5219</abundance>
+        <abundance>52.19%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁴">
         <half-life>8.593 a</half-life>
@@ -29663,7 +29663,7 @@ IT (11%)</decay-modes>
         <decay-modes>α</decay-modes>
         <daughter-isotopes>¹⁴⁸Sᵐ</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0020</abundance>
+        <abundance>0.2%</abundance>
       </isotope>
       <isotope symbol="¹⁵³">
         <half-life>240.4 d</half-life>
@@ -29691,14 +29691,14 @@ IT (11%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0218</abundance>
+        <abundance>2.18%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁵">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.1480</abundance>
+        <abundance>14.8%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁵ᵐ">
         <half-life>31.97 ms</half-life>
@@ -29712,7 +29712,7 @@ IT (11%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2047</abundance>
+        <abundance>20.47%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁶ᵐ">
         <half-life>1.3 µs</half-life>
@@ -29726,14 +29726,14 @@ IT (11%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>0.1565</abundance>
+        <abundance>15.65%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁸">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2484</abundance>
+        <abundance>24.84%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁹">
         <half-life>18.479 h</half-life>
@@ -29747,7 +29747,7 @@ IT (11%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2186</abundance>
+        <abundance>21.86%</abundance>
       </isotope>
       <isotope symbol="¹⁶¹">
         <half-life>3.646 min</half-life>
@@ -30236,7 +30236,7 @@ IT (21.8%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>3/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁰">
         <half-life>72.3 d</half-life>
@@ -30553,7 +30553,7 @@ IT (35%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>5.6×10⁻⁴</abundance>
+        <abundance>560×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁷">
         <half-life>8.14 h</half-life>
@@ -30581,7 +30581,7 @@ IT (35%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>9.5×10⁻⁴</abundance>
+        <abundance>950×10⁻⁴%</abundance>
       </isotope>
       <isotope symbol="¹⁵⁹">
         <half-life>144.4 d</half-life>
@@ -30602,35 +30602,35 @@ IT (35%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.02329</abundance>
+        <abundance>2.329%</abundance>
       </isotope>
       <isotope symbol="¹⁶¹">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2+</spin>
-        <abundance>0.18889</abundance>
+        <abundance>18.889%</abundance>
       </isotope>
       <isotope symbol="¹⁶²">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.25475</abundance>
+        <abundance>25.475%</abundance>
       </isotope>
       <isotope symbol="¹⁶³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2-</spin>
-        <abundance>0.24896</abundance>
+        <abundance>24.896%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁴">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.28260</abundance>
+        <abundance>28.26%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁵">
         <half-life>2.334 h</half-life>
@@ -31122,7 +31122,7 @@ IT</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁶">
         <half-life>26.83 h</half-life>
@@ -31502,7 +31502,7 @@ IT (3.5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.00139</abundance>
+        <abundance>0.139%</abundance>
       </isotope>
       <isotope symbol="¹⁶³">
         <half-life>75.0 min</half-life>
@@ -31523,7 +31523,7 @@ IT (3.5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.01601</abundance>
+        <abundance>1.601%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁵">
         <half-life>10.36 h</half-life>
@@ -31537,14 +31537,14 @@ IT (3.5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.33503</abundance>
+        <abundance>33.503%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁷">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>0.22869</abundance>
+        <abundance>22.869%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁷ᵐ">
         <half-life>2.269 s</half-life>
@@ -31558,7 +31558,7 @@ IT (3.5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.26978</abundance>
+        <abundance>26.978%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁹">
         <half-life>9.392 d</half-life>
@@ -31572,7 +31572,7 @@ IT (3.5%)
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.14910</abundance>
+        <abundance>14.91%</abundance>
       </isotope>
       <isotope symbol="¹⁷¹">
         <half-life>7.516 h</half-life>
@@ -32014,7 +32014,7 @@ p (15%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁰">
         <half-life>128.6 d</half-life>
@@ -32320,7 +32320,7 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0013</abundance>
+        <abundance>0.13%</abundance>
       </isotope>
       <isotope symbol="¹⁶⁹">
         <half-life>32.026 d</half-life>
@@ -32341,7 +32341,7 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.0304</abundance>
+        <abundance>3.04%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁰ᵐ">
         <half-life>370 ns</half-life>
@@ -32355,7 +32355,7 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>1/2-</spin>
-        <abundance>0.1428</abundance>
+        <abundance>14.28%</abundance>
       </isotope>
       <isotope symbol="¹⁷¹ᵐ¹">
         <half-life>5.25 ms</half-life>
@@ -32376,14 +32376,14 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.2183</abundance>
+        <abundance>21.83%</abundance>
       </isotope>
       <isotope symbol="¹⁷³">
         <half-life>Stable</half-life>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>5/2-</spin>
-        <abundance>0.1613</abundance>
+        <abundance>16.13%</abundance>
       </isotope>
       <isotope symbol="¹⁷³ᵐ">
         <half-life>2.9 µs</half-life>
@@ -32397,7 +32397,7 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.3183</abundance>
+        <abundance>31.83%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁵">
         <half-life>4.185 d</half-life>
@@ -32418,7 +32418,7 @@ EC (.14%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>0+</spin>
-        <abundance>0.1276</abundance>
+        <abundance>12.76%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁶ᵐ">
         <half-life>11.4 s</half-life>
@@ -32916,7 +32916,7 @@ EC (.62%)</decay-modes>
         <decay-modes></decay-modes>
         <daughter-isotopes></daughter-isotopes>
         <spin>7/2+</spin>
-        <abundance>0.9741</abundance>
+        <abundance>97.41%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁵ᵐ¹">
         <half-life>984 µs</half-life>
@@ -32937,7 +32937,7 @@ EC (.62%)</decay-modes>
         <decay-modes>β-</decay-modes>
         <daughter-isotopes>¹⁷⁶Hf</daughter-isotopes>
         <spin>7-</spin>
-        <abundance>0.0259</abundance>
+        <abundance>2.59%</abundance>
       </isotope>
       <isotope symbol="¹⁷⁶ᵐ">
         <half-life>3.664 h</half-life>
@@ -33643,7 +33643,7 @@ Various
 ²⁶Ne
 ²⁴Ne</daughter-isotopes>
         <spin>0+</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²³³">
         <half-life>21.83 min</half-life>
@@ -33887,7 +33887,7 @@ Various
 ²⁰⁸Pb
 ²³F</daughter-isotopes>
         <spin>3/2-</spin>
-        <abundance>1.0000</abundance>
+        <abundance>100%</abundance>
       </isotope>
       <isotope symbol="²³²">
         <half-life>1.31 d</half-life>
@@ -34156,7 +34156,7 @@ Various
 ²⁶Ne
 ²⁴Ne</daughter-isotopes>
         <spin>0+</spin>
-        <abundance></abundance>
+        <abundance>0.0054%</abundance>
       </isotope>
       <isotope symbol="²³⁴ᵐ">
         <half-life>33.5 ms</half-life>
@@ -34176,7 +34176,7 @@ Various
 ²⁵Ne
 ²⁴Ne</daughter-isotopes>
         <spin>7/2-</spin>
-        <abundance></abundance>
+        <abundance>0.7204%</abundance>
       </isotope>
       <isotope symbol="²³⁵ᵐ">
         <half-life>~26 min</half-life>
@@ -34224,7 +34224,7 @@ SF (5.45×10⁻⁵%)
 Various
 ²³⁸Pu</daughter-isotopes>
         <spin>0+</spin>
-        <abundance></abundance>
+        <abundance>99.2742%</abundance>
       </isotope>
       <isotope symbol="²³⁸ᵐ">
         <half-life>280 ns</half-life>
