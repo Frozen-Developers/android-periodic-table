@@ -117,7 +117,7 @@ def fetch(url, root):
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')
         [0]).decode("utf-8"))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
 
-    apr = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '', ''.join(content.xpath(
+    apr = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '', ''.join(content.xpath(
     	'//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'
     	))).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting'
     	)[0].replace(nsm[0].lower(), '').split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
@@ -126,7 +126,7 @@ def fetch(url, root):
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
     dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
-    dens = re.sub('^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    dens = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
     	translate_script(html_elements_list_to_string(dens).replace('&#8722;', '-')))).replace('(predicted) ',
     	'').replace('(extrapolated) ', '').replace('&#183;', '·').replace('&#176;', '°').replace('&#8211;',
     	'–').replace('&#160;? ', '').replace('&#8776;', '≈').replace(', (', ' g·cm⁻³\n').replace('(', '').replace(')', ':').replace(
@@ -161,16 +161,16 @@ def fetch(url, root):
 
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
-        isotope_tag.attrib['symbol'] = replace_with_superscript(re.sub('\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), '')))
+        isotope_tag.attrib['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), '')))
         add_to_element(isotope_tag, 'half-life', translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
         	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize())
         add_to_element(isotope_tag, 'decay-modes', translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
         	'#', '')).replace('×10', '×10^').replace('−', '-')))
-        add_to_element(isotope_tag, 'daughter-isotopes', re.sub('^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
+        add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
         	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M))
         add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', re.sub('^[a-z]', lambda x: x.group().upper(), translate_script(
+        add_to_element(isotope_tag, 'abundance', re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-')), flags=re.M) if len(isotope) > 8 else '')
 
