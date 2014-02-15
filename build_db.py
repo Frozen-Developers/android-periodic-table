@@ -159,7 +159,7 @@ def fetch(url, root):
     	re.sub(r'<[^<]+?>', '', html_elements_list_to_string(mp))).replace('&#8722;','-').replace('&#176;',
     	'°').replace('&#160;', ' ').replace('&#8194;', ' ').replace('&#8211;','–').replace('(predicted)',
     	'').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
-    	replace('(', '').replace(')', ':').replace(', ', '/').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
+    	replace('(', '').replace(')', ':').replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
 
     # Isotopes
 
