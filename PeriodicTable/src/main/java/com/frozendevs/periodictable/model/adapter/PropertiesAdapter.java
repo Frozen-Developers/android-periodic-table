@@ -43,7 +43,9 @@ public class PropertiesAdapter extends BaseAdapter {
                     { getString(R.string.property_phase), properties.getPhase() },
                     { getString(R.string.property_density), properties.getDensity() },
                     { getString(R.string.property_liquid_density_at_mp),
-                            properties.getLiquidDensityAtMeltingPoint() }
+                            properties.getLiquidDensityAtMeltingPoint() },
+                    { getString(R.string.property_liquid_density_at_bp),
+                            properties.getLiquidDensityAtBoilingPoint()}
             };
 
             return null;
