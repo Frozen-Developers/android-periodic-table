@@ -107,6 +107,8 @@ def fix_abundance(string):
     return string
 
 def fetch(url, root):
+    print('Fetching ' + url)
+
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
 
     # Properties
@@ -152,6 +154,13 @@ def fetch(url, root):
     ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
     	ldbp).replace('&#8722;', '-'))))).replace('&#183;', '·').replace('  ', ' ').strip() if len(ldbp) > 0 else ''
 
+    mp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Melting\u00a0point")]]]/td')
+    mp = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '',
+    	re.sub(r'<[^<]+?>', '', html_elements_list_to_string(mp))).replace('&#8722;','-').replace('&#176;',
+    	'°').replace('&#160;', ' ').replace('&#8194;', ' ').replace('&#8211;','–').replace('(predicted)',
+    	'').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
+    	replace('(', '').replace(')', ':').replace(', ', '/').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -178,6 +187,7 @@ def fetch(url, root):
     add_to_element(element, 'density', dens)
     add_to_element(element, 'density-at-mp', ldmp)
     add_to_element(element, 'density-at-bp', ldbp)
+    add_to_element(element, 'melting-point', mp)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -195,8 +205,6 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'abundance', fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
-
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
