@@ -148,6 +148,10 @@ def fetch(url, root):
     ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
     	ldmp).replace('&#8722;', '-'))))).replace('&#183;', '·').replace('  ', ' ').strip() if len(ldmp) > 0 else ''
 
+    ldbp = content.xpath('//table[@class="infobox bordered"]/tr[th[span[a[contains(., "b.p.")]]]]/td')
+    ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
+    	ldbp).replace('&#8722;', '-'))))).replace('&#183;', '·').replace('  ', ' ').strip() if len(ldbp) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -173,6 +177,7 @@ def fetch(url, root):
     add_to_element(element, 'phase', phase)
     add_to_element(element, 'density', dens)
     add_to_element(element, 'density-at-mp', ldmp)
+    add_to_element(element, 'density-at-bp', ldbp)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -191,7 +196,7 @@ def fetch(url, root):
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp]))
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
