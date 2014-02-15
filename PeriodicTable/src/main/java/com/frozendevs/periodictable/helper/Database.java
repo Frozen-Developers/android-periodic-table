@@ -254,7 +254,7 @@ public class Database {
                                     category = null, configuration = null, wiki = null,
                                     appearance = null, phase = null, density = null,
                                     liquidDensityAtMeltingPoint = null,
-                                    liquidDensityAtBoilingPoint = null;
+                                    liquidDensityAtBoilingPoint = null, meltingPoint = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -290,6 +290,8 @@ public class Database {
                                         liquidDensityAtMeltingPoint = readTag(parser, tag);
                                     else if(tag.equals("density-at-bp"))
                                         liquidDensityAtBoilingPoint = readTag(parser, tag);
+                                    else if(tag.equals("melting-point"))
+                                        meltingPoint = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -297,7 +299,8 @@ public class Database {
 
                             return new ElementProperties(name, symbol, atomicNumber, weight, group,
                                     period, block, category, configuration, wiki, appearance, phase,
-                                    density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint);
+                                    density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint,
+                                    meltingPoint);
                         }
                         else
                             skip(parser);
