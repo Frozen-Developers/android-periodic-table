@@ -17,6 +17,7 @@
     <density-at-mp>0.07 g·cm⁻³</density-at-mp>
     <density-at-bp>0.07099 g·cm⁻³</density-at-bp>
     <melting-point>13.99 K / -259.16 °C / -434.49 °F</melting-point>
+    <boiling-point>20.271 K / -252.879 °C / -423.182 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹">
         <half-life>Stable</half-life>
@@ -88,6 +89,7 @@
     <density-at-mp>0.145 g·cm⁻³</density-at-mp>
     <density-at-bp>0.125 g·cm⁻³</density-at-bp>
     <melting-point>At 2.5 MPa: 0.95 K / -272.20 °C / -457.96 °F</melting-point>
+    <boiling-point>4.222 K / −268.928 °C / −452.070 °F</boiling-point>
     <isotopes>
       <isotope symbol="²">
         <half-life></half-life>
@@ -179,6 +181,7 @@
     <density-at-mp>0.512 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>453.65 K / 180.50 °C / 356.90 °F</melting-point>
+    <boiling-point>1615 K / 1342 °C / 2448 °F</boiling-point>
     <isotopes>
       <isotope symbol="³">
         <half-life></half-life>
@@ -297,6 +300,7 @@
     <density-at-mp>1.690 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1560 K / 1287 °C / 2349 °F</melting-point>
+    <boiling-point>2741 K / 2468 °C / 4474 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁵">
         <half-life></half-life>
@@ -416,6 +420,7 @@
     <density-at-mp>2.08 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2349 K / 2076 °C / 3769 °F</melting-point>
+    <boiling-point>4200 K / 3927 °C / 7101 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁶">
         <half-life></half-life>
@@ -554,6 +559,7 @@ Graphite: 2.267 g·cm⁻³</density>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="⁸">
         <half-life>2.0 × 10-21 s</half-life>
@@ -697,6 +703,7 @@ K-capture (.21%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>0.808 g·cm⁻³</density-at-bp>
     <melting-point>63.15 K / -210.00 °C / -346.00 °F</melting-point>
+    <boiling-point>77.355 K / −195.795 °C / −320.431 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁰">
         <half-life>200×10⁻²⁴ s</half-life>
@@ -856,6 +863,7 @@ K-capture (.21%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>1.141 g·cm⁻³</density-at-bp>
     <melting-point>54.36 K / -218.79 °C / -361.82 °F</melting-point>
+    <boiling-point>90.188 K / -182.962 °C / -297.332 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹²">
         <half-life>580×10⁻²⁴ s</half-life>
@@ -988,6 +996,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp></density-at-mp>
     <density-at-bp>1.505 g·cm⁻³</density-at-bp>
     <melting-point>53.48 K / -219.67 °C / -363.41 °F</melting-point>
+    <boiling-point>85.03 K / −188.11 °C / −306.60 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁴">
         <half-life></half-life>
@@ -1151,6 +1160,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp></density-at-mp>
     <density-at-bp>1.207 g·cm⁻³</density-at-bp>
     <melting-point>24.56 K / -248.59 °C / -415.46 °F</melting-point>
+    <boiling-point>27.104 K / -246.046 °C / -410.883 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶">
         <half-life>9×10⁻²¹ s</half-life>
@@ -1320,6 +1330,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp>0.927 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>370.944 K / 97.794 °C / 208.029 °F</melting-point>
+    <boiling-point>1156.090 K / 882.940 °C / 1621.292 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁸">
         <half-life>1.3×10⁻²¹ s</half-life>
@@ -1532,6 +1543,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp>1.584 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>923 K / 650 °C / 1202 °F</melting-point>
+    <boiling-point>1363 K / 1091 °C / 1994 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life></half-life>
@@ -1726,6 +1738,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp>2.375 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>933.47 K / 660.32 °C / 1220.58 °F</melting-point>
+    <boiling-point>2792 K / 2519 °C / 4566 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life>&lt;35 ns</half-life>
@@ -1968,6 +1981,7 @@ Solid: transparent (beta)</appearance>
     <density-at-mp>2.57 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1687 K / 1414 °C / 2577 °F</melting-point>
+    <boiling-point>3538 K / 3265 °C / 5909 °F</boiling-point>
     <isotopes>
       <isotope symbol="²²">
         <half-life>29 ms</half-life>
@@ -2167,6 +2181,7 @@ Black: 2.69 g·cm⁻³</density>
     <density-at-bp></density-at-bp>
     <melting-point>White: 44.2 °C
 Black: 610 °C</melting-point>
+    <boiling-point>White: 280.5 °C</boiling-point>
     <isotopes>
       <isotope symbol="²⁴">
         <half-life>?</half-life>
@@ -2372,6 +2387,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <density-at-mp>1.819 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>388.36 K / 115.21 °C / 239.38 °F</melting-point>
+    <boiling-point>717.8 K / 444.6 °C / 832.3 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁶">
         <half-life>10 ms</half-life>
@@ -2585,6 +2601,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <density-at-mp></density-at-mp>
     <density-at-bp>1.5625 g·cm⁻³</density-at-bp>
     <melting-point>171.6 K / -101.5 °C / -150.7 °F</melting-point>
+    <boiling-point>239.11 K / -34.04 °C / -29.27 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁸">
         <half-life></half-life>
@@ -2807,6 +2824,7 @@ IT (44.6%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>1.40 g·cm⁻³</density-at-bp>
     <melting-point>83.81 K / -189.34 °C / -308.81 °F</melting-point>
+    <boiling-point>87.302 K / −185.848 °C / −302.526 °F</boiling-point>
     <isotopes>
       <isotope symbol="³⁰">
         <half-life>&lt;20 ns</half-life>
@@ -3016,6 +3034,7 @@ IT (44.6%)</decay-modes>
     <density-at-mp>0.828 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>336.7 K / 63.5 °C / 146.3 °F</melting-point>
+    <boiling-point>1032 K / 759 °C / 1398 °F</boiling-point>
     <isotopes>
       <isotope symbol="³²">
         <half-life>Unknown</half-life>
@@ -3261,6 +3280,7 @@ EC (10.72%)
     <density-at-mp>1.378 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1115 K / 842 °C / 1548 °F</melting-point>
+    <boiling-point>1757 K / 1484 °C / 2703 °F</boiling-point>
     <isotopes>
       <isotope symbol="³⁴">
         <half-life>&lt;35 ns</half-life>
@@ -3465,6 +3485,7 @@ EC (10.72%)
     <density-at-mp>2.80 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1814 K / 1541 °C / 2806 °F</melting-point>
+    <boiling-point>3109 K / 2836 °C / 5136 °F</boiling-point>
     <isotopes>
       <isotope symbol="³⁶">
         <half-life></half-life>
@@ -3767,6 +3788,7 @@ EC (10.72%)
     <density-at-mp>4.11 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1941 K / 1668 °C / 3034 °F</melting-point>
+    <boiling-point>3560 K / 3287 °C / 5949 °F</boiling-point>
     <isotopes>
       <isotope symbol="³⁸">
         <half-life>&lt;120 ns</half-life>
@@ -3997,6 +4019,7 @@ EC (10.72%)
     <density-at-mp>5.5 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2183 K / 1910 °C / 3470 °F</melting-point>
+    <boiling-point>3680 K / 3407 °C / 6165 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴⁰">
         <half-life></half-life>
@@ -4248,6 +4271,7 @@ EC (10.72%)
     <density-at-mp>6.3 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2180 K / 1907 °C / 3465 °F</melting-point>
+    <boiling-point>2944 K / 2671 °C / 4840 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴²">
         <half-life>14 ms</half-life>
@@ -4484,6 +4508,7 @@ EC (10.72%)
     <density-at-mp>5.95 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1519 K / 1246 °C / 2275 °F</melting-point>
+    <boiling-point>2334 K / 2061 °C / 3742 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴⁴">
         <half-life>&lt;105 ns</half-life>
@@ -4765,6 +4790,7 @@ IT (11.5%)</decay-modes>
     <density-at-mp>6.98 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1811 K / 1538 °C / 2800 °F</melting-point>
+    <boiling-point>3134 K / 2862 °C / 5182 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴⁵">
         <half-life>1.89 ms</half-life>
@@ -5043,6 +5069,7 @@ IT (11.5%)</decay-modes>
     <density-at-mp>8.86 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1768 K / 1495 °C / 2723 °F</melting-point>
+    <boiling-point>3200 K / 2927 °C / 5301 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴⁷">
         <half-life></half-life>
@@ -5363,6 +5390,7 @@ IT (1%)</decay-modes>
     <density-at-mp>7.81 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1728 K / 1455 °C / 2651 °F</melting-point>
+    <boiling-point>3186 K / 2913 °C / 5275 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁴⁸">
         <half-life>10 ms</half-life>
@@ -5675,6 +5703,7 @@ IT</decay-modes>
     <density-at-mp>8.02 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1357.77 K / 1084.62 °C / 1984.32 °F</melting-point>
+    <boiling-point>2835 K / 2562 °C / 4643 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁵²">
         <half-life></half-life>
@@ -5961,6 +5990,7 @@ p</decay-modes>
     <density-at-mp>6.57 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>692.68 K / 419.53 °C / 787.15 °F</melting-point>
+    <boiling-point>1180 K / 907 °C / 1665 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁵⁴">
         <half-life></half-life>
@@ -6283,6 +6313,7 @@ IT</decay-modes>
     <density-at-mp>6.095 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>302.9146 K / 29.7646 °C / 85.5763 °F</melting-point>
+    <boiling-point>2477 K / 2204 °C / 3999 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁵⁶">
         <half-life></half-life>
@@ -6555,6 +6586,7 @@ EC (0.41%)</decay-modes>
     <density-at-mp>5.60 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1211.40 K / 938.25 °C / 1720.85 °F</melting-point>
+    <boiling-point>3106 K / 2833 °C / 5131 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁵⁸">
         <half-life></half-life>
@@ -6910,6 +6942,7 @@ IT (1%)</decay-modes>
     <density-at-mp>5.22 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="⁶⁰">
         <half-life></half-life>
@@ -7247,6 +7280,7 @@ Vitreous: 4.28 g·cm⁻³</density>
     <density-at-mp>3.99 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>494 K / 221 °C / 430 °F</melting-point>
+    <boiling-point>958 K / 685 °C / 1265 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁶⁵">
         <half-life>&lt;50 ms</half-life>
@@ -7563,6 +7597,7 @@ Solid: metallic luster</appearance>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>265.8 K / -7.2 °C / 19 °F</melting-point>
+    <boiling-point>332.0 K / 58.8 °C / 137.8 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁶⁶">
         <half-life></half-life>
@@ -7933,6 +7968,7 @@ IT</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>2.413 g·cm⁻³</density-at-bp>
     <melting-point>115.78 K / -157.37 °C / -251.27 °F</melting-point>
+    <boiling-point>119.93 K / -153.415 °C / -244.147 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁶⁹">
         <half-life>32 ms</half-life>
@@ -8260,6 +8296,7 @@ IT (21.4%)</decay-modes>
     <density-at-mp>1.46 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>312.45 K / 39.30 °C / 102.74 °F</melting-point>
+    <boiling-point>961 K / 688 °C / 1270 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁷¹">
         <half-life></half-life>
@@ -8641,6 +8678,7 @@ IT
     <density-at-mp>2.375 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1050 K / 777 °C / 1431 °F</melting-point>
+    <boiling-point>1650 K / 1377 °C / 2511 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁷³">
         <half-life>&gt;25 ms</half-life>
@@ -8956,6 +8994,7 @@ EC (.3%)</decay-modes>
     <density-at-mp>4.24 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1799 K / 1526 °C / 2779 °F</melting-point>
+    <boiling-point>3609 K / 3336 °C / 6037 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁷⁶">
         <half-life>500 ns</half-life>
@@ -9443,6 +9482,7 @@ IT (10%)
     <density-at-mp>5.8 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2128 K / 1855 °C / 3371 °F</melting-point>
+    <boiling-point>4682 K / 4409 °C / 7968 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁷⁸">
         <half-life>50 ms</half-life>
@@ -9748,6 +9788,7 @@ IT (10%)
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2750 K / 2477 °C / 4491 °F</melting-point>
+    <boiling-point>5017 K / 4744 °C / 8571 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁸¹">
         <half-life>&lt;44 ns</half-life>
@@ -10212,6 +10253,7 @@ IT (3.8%)</decay-modes>
     <density-at-mp>9.33 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2896 K / 2623 °C / 4753 °F</melting-point>
+    <boiling-point>4912 K / 4639 °C / 8382 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁸³">
         <half-life>23 ms</half-life>
@@ -10529,6 +10571,7 @@ IT (3.8%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2430 K / 2157 °C / 3915 °F</melting-point>
+    <boiling-point>4538 K / 4265 °C / 7709 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁸⁵">
         <half-life>&lt;110 ns</half-life>
@@ -10971,6 +11014,7 @@ IT (2%)</decay-modes>
     <density-at-mp>10.65 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2607 K / 2334 °C / 4233 °F</melting-point>
+    <boiling-point>4423 K / 4150 °C / 7502 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁸⁷">
         <half-life>50 ms</half-life>
@@ -11290,6 +11334,7 @@ IT (22%)
     <density-at-mp>10.7 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2237 K / 1964 °C / 3567 °F</melting-point>
+    <boiling-point>3968 K / 3695 °C / 6683 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁸⁹">
         <half-life>10 ms</half-life>
@@ -11745,6 +11790,7 @@ IT (.23%)</decay-modes>
     <density-at-mp>10.38 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1828.05 K / 1554.9 °C / 2830.82 °F</melting-point>
+    <boiling-point>3236 K / 2963 °C / 5365 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁹¹">
         <half-life>10 ms</half-life>
@@ -12116,6 +12162,7 @@ IT (8%)</decay-modes>
     <density-at-mp>9.320 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1234.93 K / 961.78 °C / 1763.2 °F</melting-point>
+    <boiling-point>2435 K / 2162 °C / 3924 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁹³">
         <half-life>5 ms</half-life>
@@ -12716,6 +12763,7 @@ IT</decay-modes>
     <density-at-mp>7.996 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>594.22 K / 321.07 °C / 609.93 °F</melting-point>
+    <boiling-point>1040 K / 767 °C / 1413 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁹⁵">
         <half-life>5 ms</half-life>
@@ -13102,6 +13150,7 @@ IT (&lt;.1%)</decay-modes>
     <density-at-mp>7.02 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>429.7485 K / 156.5985 °C / 313.8773 °F</melting-point>
+    <boiling-point>2345 K / 2072 °C / 3762 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁹⁷">
         <half-life>5 ms</half-life>
@@ -13777,6 +13826,7 @@ Gray: 5.769 g·cm⁻³</density>
     <density-at-mp>6.99 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>505.08 K / 231.93 °C / 449.47 °F</melting-point>
+    <boiling-point>2875 K / 2602 °C / 4716 °F</boiling-point>
     <isotopes>
       <isotope symbol="⁹⁹">
         <half-life>5 ms</half-life>
@@ -14322,6 +14372,7 @@ IT (.0004%)</decay-modes>
     <density-at-mp>6.53 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>903.78 K / 630.63 °C / 1167.13 °F</melting-point>
+    <boiling-point>1860 K / 1587 °C / 2889 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁰³">
         <half-life>100 ms</half-life>
@@ -14836,6 +14887,7 @@ IT (15%)</decay-modes>
     <density-at-mp>5.70 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>722.66 K / 449.51 °C / 841.12 °F</melting-point>
+    <boiling-point>1261 K / 988 °C / 1810 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁰⁵">
         <half-life>1 µs</half-life>
@@ -15283,6 +15335,7 @@ IT (17.5%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>386.85 K / 113.7 °C / 236.66 °F</melting-point>
+    <boiling-point>457.4 K / 184.3 °C / 363.7 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁰⁸">
         <half-life>36 ms</half-life>
@@ -15733,6 +15786,7 @@ IT (rare)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>2.942 g·cm⁻³</density-at-bp>
     <melting-point>101.325 kPa: 161.40 K / -111.75 °C / -169.15 °F</melting-point>
+    <boiling-point>101.325 kPa: 165.051 K / -108.099 °C / -162.578 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹¹⁰">
         <half-life>310 ms</half-life>
@@ -16131,6 +16185,7 @@ IT (rare)</decay-modes>
     <density-at-mp>1.843 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>301.7 K / 28.5 °C / 83.3 °F</melting-point>
+    <boiling-point>944 K / 671 °C / 1240 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹¹²">
         <half-life>500 µs</half-life>
@@ -16665,6 +16720,7 @@ IT</decay-modes>
     <density-at-mp>3.338 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1000 K / 727 °C / 1341 °F</melting-point>
+    <boiling-point>2118 K / 1845 °C / 3353 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹¹⁴">
         <half-life>530 ms</half-life>
@@ -17069,6 +17125,7 @@ EC (.0096%)</decay-modes>
     <density-at-mp>12 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2506 K / 2233 °C / 4051 °F</melting-point>
+    <boiling-point>4876 K / 4603 °C / 8317 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁵³">
         <half-life>400 ms</half-life>
@@ -17552,6 +17609,7 @@ IT (42%)</decay-modes>
     <density-at-mp>15 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>3290 K / 3017 °C / 5463 °F</melting-point>
+    <boiling-point>5731 K / 5458 °C / 9856 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁵⁵">
         <half-life>13 µs</half-life>
@@ -18109,6 +18167,7 @@ IT
     <density-at-mp>17.6 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>3695 K / 3422 °C / 6192 °F</melting-point>
+    <boiling-point>5828 K / 5555 °C / 10031 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁵⁸">
         <half-life>1.37 ms</half-life>
@@ -18475,6 +18534,7 @@ IT
     <density-at-mp>18.9 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>3459 K / 3186 °C / 5767 °F</melting-point>
+    <boiling-point>5869 K / 5596 °C / 10105 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶⁰">
         <half-life>860 µs</half-life>
@@ -18927,6 +18987,7 @@ IT (45.6%)</decay-modes>
     <density-at-mp>20 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>3306 K / 3033 °C / 5491 °F</melting-point>
+    <boiling-point>5285 K / 5012 °C / 9054 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶²">
         <half-life>1.87 ms</half-life>
@@ -19292,6 +19353,7 @@ IT (15%)</decay-modes>
     <density-at-mp>19 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2739 K / 2466 °C / 4471 °F</melting-point>
+    <boiling-point>4701 K / 4428 °C / 8002 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶⁴">
         <half-life>1 ms</half-life>
@@ -19846,6 +19908,7 @@ IT (.25%)</decay-modes>
     <density-at-mp>19.77 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2041.4 K / 1768.3 °C / 3214.9 °F</melting-point>
+    <boiling-point>4098 K / 3825 °C / 6917 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶⁶">
         <half-life>300 µs</half-life>
@@ -20264,6 +20327,7 @@ IT</decay-modes>
     <density-at-mp>17.31 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1337.33 K / 1064.18 °C / 1947.52 °F</melting-point>
+    <boiling-point>3129 K / 2856 °C / 5173 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁶⁹">
         <half-life>150 µs</half-life>
@@ -20840,6 +20904,7 @@ IT (18%)</decay-modes>
     <density-at-bp></density-at-bp>
     <melting-point>234.3210 K / -38.8290 °C / 
 -37.8922 °F</melting-point>
+    <boiling-point>629.88 K / 356.73 °C / 674.11 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁷¹">
         <half-life>80 µs</half-life>
@@ -21310,6 +21375,7 @@ EC (8.6%)</decay-modes>
     <density-at-mp>11.22 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>577 K / 304 °C / 579 °F</melting-point>
+    <boiling-point>1746 K / 1473 °C / 2683 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁷⁶">
         <half-life>5.2+30-14 ms</half-life>
@@ -21948,6 +22014,7 @@ EC (2.9%)</decay-modes>
     <density-at-mp>10.66 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>600.61 K / 327.46 °C / 621.43 °F</melting-point>
+    <boiling-point>2022 K / 1749 °C / 3180 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁷⁸">
         <half-life>178.003830</half-life>
@@ -22620,6 +22687,7 @@ EC (9.5%)</decay-modes>
     <density-at-mp>10.05 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>544.7 K / 271.5 °C / 520.7 °F</melting-point>
+    <boiling-point>1837 K / 1564 °C / 2847 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁸⁴">
         <half-life>6.6 ms</half-life>
@@ -23320,6 +23388,7 @@ Beta: 9.398 g·cm⁻³</density>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>527 K / 254 °C / 489 °F</melting-point>
+    <boiling-point>1235 K / 962 °C / 1764 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁸⁸">
         <half-life>430 µs</half-life>
@@ -23839,6 +23908,7 @@ IT (.07%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>575 K / 302 °C / 576 °F</melting-point>
+    <boiling-point>610 K / 337 °C / 639 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁹¹">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24304,6 +24374,7 @@ EC (3×10⁻⁷%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp>4.4 g·cm⁻³</density-at-bp>
     <melting-point>202 K / -71 °C / -96 °F</melting-point>
+    <boiling-point>211.5 K / −61.7 °C / −79.1 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁹⁵">
         <half-life>6 ms</half-life>
@@ -24703,6 +24774,7 @@ IT (&lt;1%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>300 K / 27 °C / 80 °F</melting-point>
+    <boiling-point>950 K / 677 °C / 1250 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁹⁹">
         <half-life>16 ms</half-life>
@@ -25083,6 +25155,7 @@ CD (8.79×-11%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>973 K / 700 °C / 1292 °F</melting-point>
+    <boiling-point>2010 K / 1737 °C / 3158.6 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁰²">
         <half-life>2.6 ms</half-life>
@@ -25471,6 +25544,7 @@ CD (2.6×10⁻⁹%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2400 K / 2100 °C / 3800 °F</melting-point>
+    <boiling-point>5800 K / 5500 °C / 9900 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁵³">
         <half-life>13 ms</half-life>
@@ -25654,6 +25728,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁵⁵">
         <half-life>1.7 s</half-life>
@@ -25824,6 +25899,7 @@ EC </decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁵⁸">
         <half-life>3.3 ms</half-life>
@@ -25958,6 +26034,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁶⁰">
         <half-life>41 ms</half-life>
@@ -26070,6 +26147,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁶³">
         <half-life>760 µs</half-life>
@@ -26204,6 +26282,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁶⁶">
         <half-life>1.2 ms</half-life>
@@ -26294,6 +26373,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁶⁷">
         <half-life>3+6-2 µs</half-life>
@@ -26395,6 +26475,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁷²">
         <half-life>2.0 ms</half-life>
@@ -26466,6 +26547,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point>357 K / 84 °C / 183 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁷⁷">
         <half-life>1.1 ms</half-life>
@@ -26544,6 +26626,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>700 K / 430 °C / 810 °F</melting-point>
+    <boiling-point>1430 K / 1130 °C / 2070 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁷⁸">
         <half-life>340 µs</half-life>
@@ -26606,6 +26689,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>340 K / 67 °C / 160 °F</melting-point>
+    <boiling-point>420 K / 147 °C / 297 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁸⁵">
         <half-life>125 ms</half-life>
@@ -26676,6 +26760,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>670 K / 400 °C / 750 °F</melting-point>
+    <boiling-point>~1400 K / ~1100 °C / ~2000 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁸⁷">
         <half-life>32+155-14 ms</half-life>
@@ -26724,6 +26809,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>637–780 K / 364–507 °C / 687–944 °F</melting-point>
+    <boiling-point>1035–1135 K / 762–862 °C / 1403–1583 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁹⁰">
         <half-life>15+26-6 ms</half-life>
@@ -26772,6 +26858,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>573–773 K / 300–500 °C / 572–932 °F</melting-point>
+    <boiling-point>823 K / 550 °C / 1022 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁹³">
         <half-life>14 +11, -4 ms</half-life>
@@ -26806,6 +26893,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point></melting-point>
+    <boiling-point>350±30 K / 80±30 °C / 170±50 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁹⁴">
         <half-life>890 µs</half-life>
@@ -26833,6 +26921,7 @@ Various</daughter-isotopes>
     <density-at-mp>5.94 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1193 K / 920 °C / 1688 °F</melting-point>
+    <boiling-point>3737 K / 3464 °C / 6267 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹¹⁷">
         <half-life>23.5 ms</half-life>
@@ -27234,6 +27323,7 @@ IT</decay-modes>
     <density-at-mp>6.55 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1068 K / 795 °C / 1463 °F</melting-point>
+    <boiling-point>3716 K / 3443 °C / 6229 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹¹⁹">
         <half-life>200 ms</half-life>
@@ -27605,6 +27695,7 @@ IT</decay-modes>
     <density-at-mp>6.50 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1208 K / 935 °C / 1715 °F</melting-point>
+    <boiling-point>3793 K / 3520 °C / 6368 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹²¹">
         <half-life>600 ms</half-life>
@@ -28021,6 +28112,7 @@ EC (.0164%)</decay-modes>
     <density-at-mp>6.89 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1297 K / 1024 °C / 1875 °F</melting-point>
+    <boiling-point>3347 K / 3074 °C / 5565 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹²⁴">
         <half-life>500 ms</half-life>
@@ -28410,6 +28502,7 @@ IT (11.8%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1315 K / 1042 °C / 1908 °F</melting-point>
+    <boiling-point>3273 K / 3000 °C / 5432 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹²⁶">
         <half-life>0.5 s</half-life>
@@ -28840,6 +28933,7 @@ IT (5%)</decay-modes>
     <density-at-mp>7.16 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1345 K / 1072 °C / 1962 °F</melting-point>
+    <boiling-point>2067 K / 1794 °C / 3261 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹²⁸">
         <half-life>0.5 s</half-life>
@@ -29224,6 +29318,7 @@ IT (.31%)</decay-modes>
     <density-at-mp>5.13 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1099 K / 826 °C / 1519 °F</melting-point>
+    <boiling-point>1802 K / 1529 °C / 2784 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹³⁰">
         <half-life>1.1 ms</half-life>
@@ -29657,6 +29752,7 @@ EC (.02%)</decay-modes>
     <density-at-mp>7.4 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1585 K / 1312 °C / 2394 °F</melting-point>
+    <boiling-point>3546 K / 3273 °C / 5923 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹³⁴">
         <half-life>0.4 s</half-life>
@@ -30025,6 +30121,7 @@ IT (11%)</decay-modes>
     <density-at-mp>7.65 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1629 K / 1356 °C / 2473 °F</melting-point>
+    <boiling-point>3503 K / 3230 °C / 5846 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹³⁵">
         <half-life>0.94+33-22 ms</half-life>
@@ -30537,6 +30634,7 @@ IT (21.8%)
     <density-at-mp>8.37 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1680 K / 1407 °C / 2565 °F</melting-point>
+    <boiling-point>2840 K / 2562 °C / 4653 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹³⁸">
         <half-life>200 ms</half-life>
@@ -30921,6 +31019,7 @@ IT (35%)</decay-modes>
     <density-at-mp>8.34 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1734 K / 1461 °C / 2662 °F</melting-point>
+    <boiling-point>2993 K / 2720 °C / 4928 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁴⁰">
         <half-life>6 ms</half-life>
@@ -31464,6 +31563,7 @@ IT</decay-modes>
     <density-at-mp>8.86 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1802 K / 1529 °C / 2784 °F</melting-point>
+    <boiling-point>3141 K / 2868 °C / 5194 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁴²">
         <half-life></half-life>
@@ -31851,6 +31951,7 @@ IT (3.5%)
     <density-at-mp>8.56 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1818 K / 1545 °C / 2813 °F</melting-point>
+    <boiling-point>2223 K / 1950 °C / 3542 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁴⁵">
         <half-life>3.1 µs</half-life>
@@ -32332,6 +32433,7 @@ EC (.14%)</decay-modes>
     <density-at-mp>6.21 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1097 K / 824 °C / 1515 °F</melting-point>
+    <boiling-point>1469 K / 1196 °C / 2185 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁴⁸">
         <half-life>250 ms</half-life>
@@ -32694,6 +32796,7 @@ EC (.14%)</decay-modes>
     <density-at-mp>9.3 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1925 K / 1652 °C / 3006 °F</melting-point>
+    <boiling-point>3675 K / 3402 °C / 6156 °F</boiling-point>
     <isotopes>
       <isotope symbol="¹⁵⁰">
         <half-life>43 ms</half-life>
@@ -33289,6 +33392,7 @@ IT (21.7%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1323 K / 1050 °C / 1922 °F</melting-point>
+    <boiling-point>3471 K / 3198 °C / 5788 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁰⁶">
         <half-life>25 ms</half-life>
@@ -33629,6 +33733,7 @@ EC (17%)
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>2115 K / 1842 °C / 3348 °F</melting-point>
+    <boiling-point>5061 K / 4788 °C / 8650 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁰⁹">
         <half-life>7 ms</half-life>
@@ -33918,6 +34023,7 @@ Various
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1841 K / 1568 °C / 2854 °F</melting-point>
+    <boiling-point>4300 K / 4027 °C / 7280 °F</boiling-point>
     <isotopes>
       <isotope symbol="²¹²">
         <half-life>8 ms</half-life>
@@ -34204,6 +34310,7 @@ Various</daughter-isotopes>
     <density-at-mp>17.3 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1405.3 K / 1132.2 °C / 2070 °F</melting-point>
+    <boiling-point>4404 K / 4131 °C / 7468 °F</boiling-point>
     <isotopes>
       <isotope symbol="²¹⁷">
         <half-life>26 ms</half-life>
@@ -34513,6 +34620,7 @@ Accepted standard value: 19.38 g·cm⁻³</density>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>912 K / 639 °C / 1182 °F</melting-point>
+    <boiling-point>4447 K / 4174 °C / 7545 °F</boiling-point>
     <isotopes>
       <isotope symbol="²²⁵">
         <half-life>3 ms</half-life>
@@ -34732,6 +34840,7 @@ IT (.11%)</decay-modes>
     <density-at-mp>16.63 g·cm⁻³</density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>912.5 K / 639.4 °C / 1182.9 °F</melting-point>
+    <boiling-point>3505 K / 3228 °C / 5842 °F</boiling-point>
     <isotopes>
       <isotope symbol="²²⁸">
         <half-life>1.1+20-5 s</half-life>
@@ -34990,6 +35099,7 @@ Various
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1449 K / 1176 °C / 2149 °F</melting-point>
+    <boiling-point>2880 K / 2607 °C / 4725 °F</boiling-point>
     <isotopes>
       <isotope symbol="²³¹">
         <half-life>30 s</half-life>
@@ -35239,6 +35349,7 @@ IT (.01%)</decay-modes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1613 K / 1340 °C / 2444 °F</melting-point>
+    <boiling-point>3383 K / 3110 °C / 5630 °F</boiling-point>
     <isotopes>
       <isotope symbol="²³²">
         <half-life>1? min</half-life>
@@ -35478,6 +35589,7 @@ Beta: 13.25 g·cm⁻³</density>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>Beta: 1259 K / 986 °C / 1807 °F</melting-point>
+    <boiling-point>Beta: 2900 K / 2627 °C / 4760 °F</boiling-point>
     <isotopes>
       <isotope symbol="²³⁵">
         <half-life>20 s</half-life>
@@ -35718,6 +35830,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1173 K / 900 °C / 1652 °F</melting-point>
+    <boiling-point>1743 K / 1470 °C / 2678 °F</boiling-point>
     <isotopes>
       <isotope symbol="²³⁷">
         <half-life>2.1 s</half-life>
@@ -35941,6 +36054,7 @@ Various
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1133 K / 860 °C / 1580 °F</melting-point>
+    <boiling-point>1269 K / 996 °C / 1825 °F</boiling-point>
     <isotopes>
       <isotope symbol="²⁴⁰">
         <half-life>1 s</half-life>
@@ -36179,6 +36293,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1125 K / 852 °C / 1565 °F</melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁴¹">
         <half-life>730 µs</half-life>
@@ -36401,6 +36516,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1100 K / 827 °C / 1521 °F</melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁴⁵">
         <half-life>0.90 ms</half-life>
@@ -36626,6 +36742,7 @@ EC (5%)
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1100 K / 827 °C / 1521 °F</melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁵⁰">
         <half-life>5.7 µs</half-life>
@@ -36789,6 +36906,7 @@ Various</daughter-isotopes>
     <density-at-mp></density-at-mp>
     <density-at-bp></density-at-bp>
     <melting-point>1900 K / 1627 °C / 2961 °F</melting-point>
+    <boiling-point></boiling-point>
     <isotopes>
       <isotope symbol="²⁵²">
         <half-life>390 ms</half-life>

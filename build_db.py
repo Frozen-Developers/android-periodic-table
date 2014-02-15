@@ -8,6 +8,7 @@ import re
 from collections import defaultdict
 import signal
 import sys
+from bs4 import BeautifulSoup, Tag
 
 OUTPUT_XML = 'PeriodicTable/src/main/res/raw/elements.xml'
 
@@ -106,6 +107,12 @@ def fix_abundance(string):
         pass
     return string
 
+def remove_html_span_and_sup(string):
+    soup = BeautifulSoup(string)
+    for tag in soup.find_all('span') + soup.find_all('sup'):
+        tag.replaceWith('')
+    return soup.get_text()
+
 def fetch(url, root):
     print('Fetching ' + url)
 
@@ -161,6 +168,14 @@ def fetch(url, root):
     	'').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
     	replace('(', '').replace(')', ':').replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
 
+    bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
+    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_html_span_and_sup(
+    	html_elements_list_to_string(bp).replace('&#160;', ' ').replace('&#8194;', ' ').replace(', ',
+    	' / ')).replace('&#8722;','-').replace('&#176;', '°').replace('&#8211;','–').replace('(predicted)',
+    	'').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
+    	replace('(', '').replace(')', ':').replace('circa: ', '').replace('&#177;',
+    	'±').replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) if len(bp) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -188,6 +203,7 @@ def fetch(url, root):
     add_to_element(element, 'density-at-mp', ldmp)
     add_to_element(element, 'density-at-bp', ldbp)
     add_to_element(element, 'melting-point', mp)
+    add_to_element(element, 'boiling-point', bp)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
