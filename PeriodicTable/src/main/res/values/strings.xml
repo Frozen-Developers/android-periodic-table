@@ -43,6 +43,7 @@
     <string name="property_liquid_density_at_mp">Liquid density at melting point</string>
     <string name="property_liquid_density_at_bp">Liquid density at boiling point</string>
     <string name="property_melting_point">Melting point</string>
+    <string name="property_boiling_point">Boiling point</string>
 
     <string name="property_half_life">Half-life</string>
     <string name="property_decay_modes">Decay modes</string>
