@@ -66,7 +66,9 @@ public class PropertiesAdapter extends BaseAdapter {
                     new Property(R.string.property_critical_point, properties.getCriticalPoint()),
                     new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion()),
                     new Property(R.string.property_heat_of_vaporization,
-                            properties.getHeatOfVaporization())
+                            properties.getHeatOfVaporization()),
+                    new Property(R.string.property_molar_heat_capacity,
+                            properties.getMolarHeatCapacacity())
             };
 
             return null;

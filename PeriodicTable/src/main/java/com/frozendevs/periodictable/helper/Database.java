@@ -256,7 +256,8 @@ public class Database {
                                     liquidDensityAtMeltingPoint = null,
                                     liquidDensityAtBoilingPoint = null, meltingPoint = null,
                                     boilingPoint = null, triplePoint = null, criticalPoint = null,
-                                    heatOfFusion = null, heatOfVaporization = null;
+                                    heatOfFusion = null, heatOfVaporization = null,
+                                    molarHeatCapacacity = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -304,6 +305,8 @@ public class Database {
                                         heatOfFusion = readTag(parser, tag);
                                     else if(tag.equals("heat-of-vaporization"))
                                         heatOfVaporization = readTag(parser, tag);
+                                    else if(tag.equals("molar-heat-capacity"))
+                                        molarHeatCapacacity = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -313,7 +316,7 @@ public class Database {
                                     period, block, category, configuration, wiki, appearance, phase,
                                     density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint,
                                     meltingPoint, boilingPoint, triplePoint, criticalPoint,
-                                    heatOfFusion, heatOfVaporization);
+                                    heatOfFusion, heatOfVaporization, molarHeatCapacacity);
                         }
                         else
                             skip(parser);
