@@ -21,6 +21,7 @@
     <triple-point>13.8033 K, 7.041 kPa</triple-point>
     <critical-point>32.938 K, 1.2858 MPa</critical-point>
     <heat-of-fusion>H₂: 0.117 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>H₂: 0.904 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹">
         <half-life>Stable</half-life>
@@ -96,6 +97,7 @@
     <triple-point>2.177 K, 5.043 kPa</triple-point>
     <critical-point>5.1953 K, 0.22746 MPa</critical-point>
     <heat-of-fusion>0.0138 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>0.0829 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²">
         <half-life></half-life>
@@ -191,6 +193,7 @@
     <triple-point></triple-point>
     <critical-point>3220 K, 67 MPa</critical-point>
     <heat-of-fusion>3.00 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>147.1 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³">
         <half-life></half-life>
@@ -313,6 +316,7 @@
     <triple-point></triple-point>
     <critical-point>5205 K, MPa</critical-point>
     <heat-of-fusion>12.2 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>297 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁵">
         <half-life></half-life>
@@ -436,6 +440,7 @@
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>50.2 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>480 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁶">
         <half-life></half-life>
@@ -578,6 +583,7 @@ Graphite: 2.267 g·cm⁻³</density>
     <triple-point>4600 K, 10800 kPa</triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>117 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸">
         <half-life>2.0 × 10-21 s</half-life>
@@ -725,6 +731,7 @@ K-capture (.21%)</decay-modes>
     <triple-point>63.151 K, 12.52 kPa</triple-point>
     <critical-point>126.192 K, 3.3958 MPa</critical-point>
     <heat-of-fusion>N₂: 0.72 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>N₂: 5.56 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁰">
         <half-life>200×10⁻²⁴ s</half-life>
@@ -888,6 +895,7 @@ K-capture (.21%)</decay-modes>
     <triple-point>54.361 K, 0.1463 kPa</triple-point>
     <critical-point>154.581 K, 5.043 MPa</critical-point>
     <heat-of-fusion>O₂: 0.444 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>O₂: 6.82 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹²">
         <half-life>580×10⁻²⁴ s</half-life>
@@ -1024,6 +1032,7 @@ Solid: transparent (beta)</appearance>
     <triple-point>53.48 K, 90 kPa</triple-point>
     <critical-point>144.41 K, 5.1724 MPa</critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization>6.51 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁴">
         <half-life></half-life>
@@ -1191,6 +1200,7 @@ Solid: transparent (beta)</appearance>
     <triple-point>24.556 K, 43.37 kPa</triple-point>
     <critical-point>44.4918 K, 2.7686 MPa</critical-point>
     <heat-of-fusion>0.335 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>1.71 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶">
         <half-life>9×10⁻²¹ s</half-life>
@@ -1364,6 +1374,7 @@ Solid: transparent (beta)</appearance>
     <triple-point></triple-point>
     <critical-point>2573 K, 35 MPa</critical-point>
     <heat-of-fusion>2.60 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>97.42 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁸">
         <half-life>1.3×10⁻²¹ s</half-life>
@@ -1580,6 +1591,7 @@ Solid: transparent (beta)</appearance>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>8.48 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>128 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life></half-life>
@@ -1778,6 +1790,7 @@ Solid: transparent (beta)</appearance>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>10.71 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>294.0 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life>&lt;35 ns</half-life>
@@ -2024,6 +2037,7 @@ Solid: transparent (beta)</appearance>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>50.21 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>359 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²²">
         <half-life>29 ms</half-life>
@@ -2227,6 +2241,7 @@ Black: 610 °C</melting-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>White: 0.66 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁴">
         <half-life>?</half-life>
@@ -2436,6 +2451,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point>1314 K, 20.7 MPa</critical-point>
     <heat-of-fusion>Mono: 1.727 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>Mono: 45 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁶">
         <half-life>10 ms</half-life>
@@ -2653,6 +2669,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point>416.9 K, 7.991 MPa</critical-point>
     <heat-of-fusion>Cl₂: 6.406 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>Cl₂: 20.41 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁸">
         <half-life></half-life>
@@ -2879,6 +2896,7 @@ IT (44.6%)</decay-modes>
     <triple-point>83.8058 K, 68.89 kPa</triple-point>
     <critical-point>150.687 K, 4.863 MPa</critical-point>
     <heat-of-fusion>1.18 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>6.43 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³⁰">
         <half-life>&lt;20 ns</half-life>
@@ -3092,6 +3110,7 @@ IT (44.6%)</decay-modes>
     <triple-point></triple-point>
     <critical-point>2223 K, 16 MPa</critical-point>
     <heat-of-fusion>2.33 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>76.9 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³²">
         <half-life>Unknown</half-life>
@@ -3341,6 +3360,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>8.54 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>154.7 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³⁴">
         <half-life>&lt;35 ns</half-life>
@@ -3549,6 +3569,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>14.1 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>332.7 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³⁶">
         <half-life></half-life>
@@ -3855,6 +3876,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>14.15 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>425 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="³⁸">
         <half-life>&lt;120 ns</half-life>
@@ -4089,6 +4111,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>21.5 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>459 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴⁰">
         <half-life></half-life>
@@ -4344,6 +4367,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>21.0 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>339.5 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴²">
         <half-life>14 ms</half-life>
@@ -4584,6 +4608,7 @@ EC (10.72%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>12.91 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>221 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴⁴">
         <half-life>&lt;105 ns</half-life>
@@ -4869,6 +4894,7 @@ IT (11.5%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>340 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴⁵">
         <half-life>1.89 ms</half-life>
@@ -5151,6 +5177,7 @@ IT (11.5%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>16.06 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>377 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴⁷">
         <half-life></half-life>
@@ -5475,6 +5502,7 @@ IT (1%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>17.48 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>377.5 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁴⁸">
         <half-life>10 ms</half-life>
@@ -5791,6 +5819,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>13.26 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>300.4 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁵²">
         <half-life></half-life>
@@ -6081,6 +6110,7 @@ p</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.32 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>123.6 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁵⁴">
         <half-life></half-life>
@@ -6407,6 +6437,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>5.59 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>254 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁵⁶">
         <half-life></half-life>
@@ -6683,6 +6714,7 @@ EC (0.41%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>36.94 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>334 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁵⁸">
         <half-life></half-life>
@@ -7042,6 +7074,7 @@ IT (1%)</decay-modes>
     <triple-point>1090 K, 3628 kPa</triple-point>
     <critical-point>1673 K, ? MPa</critical-point>
     <heat-of-fusion>Grey: 24.44 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>34.76 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁶⁰">
         <half-life></half-life>
@@ -7383,6 +7416,7 @@ Vitreous: 4.28 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point>1766 K, 27.2 MPa</critical-point>
     <heat-of-fusion>Gray: 6.69 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>95.48 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁶⁵">
         <half-life>&lt;50 ms</half-life>
@@ -7703,6 +7737,7 @@ Solid: metallic luster</appearance>
     <triple-point>265.90 K, 5.8 kPa</triple-point>
     <critical-point>588 K, 10.34 MPa</critical-point>
     <heat-of-fusion>Br₂: 10.571 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>Br₂: 29.96 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁶⁶">
         <half-life></half-life>
@@ -8077,6 +8112,7 @@ IT</decay-modes>
     <triple-point>115.775 K, 73.53 kPa</triple-point>
     <critical-point>209.48 K, 5.525 MPa</critical-point>
     <heat-of-fusion>1.64 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>9.08 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁶⁹">
         <half-life>32 ms</half-life>
@@ -8408,6 +8444,7 @@ IT (21.4%)</decay-modes>
     <triple-point>312.41 K,  kPa</triple-point>
     <critical-point>2093 K, 16 MPa</critical-point>
     <heat-of-fusion>2.19 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>75.77 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁷¹">
         <half-life></half-life>
@@ -8793,6 +8830,7 @@ IT
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.43 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>136.9 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁷³">
         <half-life>&gt;25 ms</half-life>
@@ -9112,6 +9150,7 @@ EC (.3%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>11.42 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>365 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁷⁶">
         <half-life>500 ns</half-life>
@@ -9603,6 +9642,7 @@ IT (10%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>573 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁷⁸">
         <half-life>50 ms</half-life>
@@ -9912,6 +9952,7 @@ IT (10%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>30 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>689.9 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸¹">
         <half-life>&lt;44 ns</half-life>
@@ -10380,6 +10421,7 @@ IT (3.8%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>37.48 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>598 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸³">
         <half-life>23 ms</half-life>
@@ -10701,6 +10743,7 @@ IT (3.8%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>33.29 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>585.2 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸⁵">
         <half-life>&lt;110 ns</half-life>
@@ -11147,6 +11190,7 @@ IT (2%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>38.59 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>591.6 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸⁷">
         <half-life>50 ms</half-life>
@@ -11470,6 +11514,7 @@ IT (22%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>26.59 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>494 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁸⁹">
         <half-life>10 ms</half-life>
@@ -11929,6 +11974,7 @@ IT (.23%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>16.74 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>362 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁹¹">
         <half-life>10 ms</half-life>
@@ -12304,6 +12350,7 @@ IT (8%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>11.28 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>250.58 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁹³">
         <half-life>5 ms</half-life>
@@ -12908,6 +12955,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>6.21 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>99.87 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁹⁵">
         <half-life>5 ms</half-life>
@@ -13298,6 +13346,7 @@ IT (&lt;.1%)</decay-modes>
     <triple-point>429.7445 K, ~1 kPa</triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>3.281 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>231.8 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁹⁷">
         <half-life>5 ms</half-life>
@@ -13977,6 +14026,7 @@ Gray: 5.769 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>White: 7.03 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>White: 296.1 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="⁹⁹">
         <half-life>5 ms</half-life>
@@ -14526,6 +14576,7 @@ IT (.0004%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>19.79 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>193.43 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁰³">
         <half-life>100 ms</half-life>
@@ -15044,6 +15095,7 @@ IT (15%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>17.49 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>114.1 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁰⁵">
         <half-life>1 µs</half-life>
@@ -15495,6 +15547,7 @@ IT (17.5%)</decay-modes>
     <triple-point>386.65 K, 12.1 kPa</triple-point>
     <critical-point>819 K, 11.7 MPa</critical-point>
     <heat-of-fusion>I₂: 15.52 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>I₂: 41.57 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁰⁸">
         <half-life>36 ms</half-life>
@@ -15949,6 +16002,7 @@ IT (rare)</decay-modes>
     <triple-point>161.405 K, 81.77 kPa</triple-point>
     <critical-point>289.733 K, 5.842 MPa</critical-point>
     <heat-of-fusion>101.325 kPa: 2.27 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>101.325 kPa: 12.64 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹¹⁰">
         <half-life>310 ms</half-life>
@@ -16351,6 +16405,7 @@ IT (rare)</decay-modes>
     <triple-point></triple-point>
     <critical-point>1938 K, 9.4 MPa</critical-point>
     <heat-of-fusion>2.09 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>63.9 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹¹²">
         <half-life>500 µs</half-life>
@@ -16889,6 +16944,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.12 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>140.3 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹¹⁴">
         <half-life>530 ms</half-life>
@@ -17297,6 +17353,7 @@ EC (.0096%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>27.2 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>571 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁵³">
         <half-life>400 ms</half-life>
@@ -17784,6 +17841,7 @@ IT (42%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>36.57 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>732.8 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁵⁵">
         <half-life>13 µs</half-life>
@@ -18345,6 +18403,7 @@ IT
     <triple-point></triple-point>
     <critical-point>13892 K, MPa</critical-point>
     <heat-of-fusion>35.3 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>806.7 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁵⁸">
         <half-life>1.37 ms</half-life>
@@ -18715,6 +18774,7 @@ IT
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>60.43 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>704 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶⁰">
         <half-life>860 µs</half-life>
@@ -19171,6 +19231,7 @@ IT (45.6%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>57.85 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>738 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶²">
         <half-life>1.87 ms</half-life>
@@ -19540,6 +19601,7 @@ IT (15%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>41.12 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>563 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶⁴">
         <half-life>1 ms</half-life>
@@ -20098,6 +20160,7 @@ IT (.25%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>22.17 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>469 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶⁶">
         <half-life>300 µs</half-life>
@@ -20520,6 +20583,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>12.55 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>324 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁶⁹">
         <half-life>150 µs</half-life>
@@ -21100,6 +21164,7 @@ IT (18%)</decay-modes>
     <triple-point>234.3156 K, 1.65×10⁻⁷ kPa</triple-point>
     <critical-point>1750 K, 172.00 MPa</critical-point>
     <heat-of-fusion>2.29 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>59.11 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁷¹">
         <half-life>80 µs</half-life>
@@ -21574,6 +21639,7 @@ EC (8.6%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>4.14 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>165 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁷⁶">
         <half-life>5.2+30-14 ms</half-life>
@@ -22216,6 +22282,7 @@ EC (2.9%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>4.77 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>179.5 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁷⁸">
         <half-life>178.003830</half-life>
@@ -22892,6 +22959,7 @@ EC (9.5%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>11.30 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>151 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁸⁴">
         <half-life>6.6 ms</half-life>
@@ -23596,6 +23664,7 @@ Beta: 9.398 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>13 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>102.91 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁸⁸">
         <half-life>430 µs</half-life>
@@ -24119,6 +24188,7 @@ IT (.07%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization>At₂: 54.39 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁹¹">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24588,6 +24658,7 @@ EC (3×10⁻⁷%)</decay-modes>
     <triple-point></triple-point>
     <critical-point>377 K, 6.28 MPa</critical-point>
     <heat-of-fusion>3.247 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>18.10 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁹⁵">
         <half-life>6 ms</half-life>
@@ -24991,6 +25062,7 @@ IT (&lt;1%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>2 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>65 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁹⁹">
         <half-life>16 ms</half-life>
@@ -25375,6 +25447,7 @@ CD (8.79×-11%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>8.5 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>113 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁰²">
         <half-life>2.6 ms</half-life>
@@ -25767,6 +25840,7 @@ CD (2.6×10⁻⁹%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁵³">
         <half-life>13 ms</half-life>
@@ -25954,6 +26028,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁵⁵">
         <half-life>1.7 s</half-life>
@@ -26128,6 +26203,7 @@ EC </decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁵⁸">
         <half-life>3.3 ms</half-life>
@@ -26266,6 +26342,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁶⁰">
         <half-life>41 ms</half-life>
@@ -26382,6 +26459,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁶³">
         <half-life>760 µs</half-life>
@@ -26520,6 +26598,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁶⁶">
         <half-life>1.2 ms</half-life>
@@ -26614,6 +26693,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁶⁷">
         <half-life>3+6-2 µs</half-life>
@@ -26719,6 +26799,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁷²">
         <half-life>2.0 ms</half-life>
@@ -26794,6 +26875,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁷⁷">
         <half-life>1.1 ms</half-life>
@@ -26876,6 +26958,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>130 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁷⁸">
         <half-life>340 µs</half-life>
@@ -26942,6 +27025,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization>38 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁸⁵">
         <half-life>125 ms</half-life>
@@ -27016,6 +27100,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>5.90–5.98 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>138 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁸⁷">
         <half-life>32+155-14 ms</half-life>
@@ -27068,6 +27153,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>42 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁹⁰">
         <half-life>15+26-6 ms</half-life>
@@ -27120,6 +27206,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁹³">
         <half-life>14 +11, -4 ms</half-life>
@@ -27158,6 +27245,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point>439 K, 6.8 MPa</critical-point>
     <heat-of-fusion>23.5 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>19.4 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁹⁴">
         <half-life>890 µs</half-life>
@@ -27189,6 +27277,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>6.20 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>402.1 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹¹⁷">
         <half-life>23.5 ms</half-life>
@@ -27594,6 +27683,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>5.46 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>398 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹¹⁹">
         <half-life>200 ms</half-life>
@@ -27969,6 +28059,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>6.89 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>331 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹²¹">
         <half-life>600 ms</half-life>
@@ -28389,6 +28480,7 @@ EC (.0164%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.14 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>289 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹²⁴">
         <half-life>500 ms</half-life>
@@ -28782,6 +28874,7 @@ IT (11.8%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.13 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>289 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹²⁶">
         <half-life>0.5 s</half-life>
@@ -29216,6 +29309,7 @@ IT (5%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>8.62 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>165 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹²⁸">
         <half-life>0.5 s</half-life>
@@ -29604,6 +29698,7 @@ IT (.31%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>9.21 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>176 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹³⁰">
         <half-life>1.1 ms</half-life>
@@ -30041,6 +30136,7 @@ EC (.02%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>10.05 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>301.3 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹³⁴">
         <half-life>0.4 s</half-life>
@@ -30413,6 +30509,7 @@ IT (11%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>10.15 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>293 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹³⁵">
         <half-life>0.94+33-22 ms</half-life>
@@ -30929,6 +31026,7 @@ IT (21.8%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>11.06 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>280 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹³⁸">
         <half-life>200 ms</half-life>
@@ -31317,6 +31415,7 @@ IT (35%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>17.0 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>265 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁴⁰">
         <half-life>6 ms</half-life>
@@ -31864,6 +31963,7 @@ IT</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>19.90 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>280 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁴²">
         <half-life></half-life>
@@ -32255,6 +32355,7 @@ IT (3.5%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>16.84 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>247 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁴⁵">
         <half-life>3.1 µs</half-life>
@@ -32740,6 +32841,7 @@ EC (.14%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>7.66 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>159 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁴⁸">
         <half-life>250 ms</half-life>
@@ -33106,6 +33208,7 @@ EC (.14%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>22 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>414 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="¹⁵⁰">
         <half-life>43 ms</half-life>
@@ -33705,6 +33808,7 @@ IT (21.7%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>400 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁰⁶">
         <half-life>25 ms</half-life>
@@ -34049,6 +34153,7 @@ EC (17%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>514 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁰⁹">
         <half-life>7 ms</half-life>
@@ -34342,6 +34447,7 @@ Various
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>12.34 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>481 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²¹²">
         <half-life>8 ms</half-life>
@@ -34632,6 +34738,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>9.14 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>417.1 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²¹⁷">
         <half-life>26 ms</half-life>
@@ -34945,6 +35052,7 @@ Accepted standard value: 19.38 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>5.19 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>336 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²²⁵">
         <half-life>3 ms</half-life>
@@ -35168,6 +35276,7 @@ IT (.11%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>2.82 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization>333.5 kJ·mol⁻¹</heat-of-vaporization>
     <isotopes>
       <isotope symbol="²²⁸">
         <half-life>1.1+20-5 s</half-life>
@@ -35430,6 +35539,7 @@ Various
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>14.39 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²³¹">
         <half-life>30 s</half-life>
@@ -35683,6 +35793,7 @@ IT (.01%)</decay-modes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion>15 kJ·mol⁻¹</heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²³²">
         <half-life>1? min</half-life>
@@ -35926,6 +36037,7 @@ Beta: 13.25 g·cm⁻³</density>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²³⁵">
         <half-life>20 s</half-life>
@@ -36170,6 +36282,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²³⁷">
         <half-life>2.1 s</half-life>
@@ -36397,6 +36510,7 @@ Various
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁴⁰">
         <half-life>1 s</half-life>
@@ -36639,6 +36753,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁴¹">
         <half-life>730 µs</half-life>
@@ -36865,6 +36980,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁴⁵">
         <half-life>0.90 ms</half-life>
@@ -37094,6 +37210,7 @@ EC (5%)
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁵⁰">
         <half-life>5.7 µs</half-life>
@@ -37261,6 +37378,7 @@ Various</daughter-isotopes>
     <triple-point></triple-point>
     <critical-point></critical-point>
     <heat-of-fusion></heat-of-fusion>
+    <heat-of-vaporization></heat-of-vaporization>
     <isotopes>
       <isotope symbol="²⁵²">
         <half-life>390 ms</half-life>

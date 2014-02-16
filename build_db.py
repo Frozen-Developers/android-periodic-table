@@ -191,6 +191,13 @@ def fetch(url, root):
     	)))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace(
     	'ca. ', '').strip(), flags=re.M) if len(hf) > 0 else ''
 
+    hv = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat of vaporization")]]]/td')
+    hv = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    	re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hv).replace('&#160;',
+    	' ').replace('&#8194;', ' ').replace('&#8722;','-').replace('&#183;', '·').replace('&#8211;','–')
+    	)))).replace('(extrapolated) ', '').replace('(predicted) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace(
+    	'ca. ', '').strip(), flags=re.M) if len(hv) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -222,6 +229,7 @@ def fetch(url, root):
     add_to_element(element, 'triple-point', tp)
     add_to_element(element, 'critical-point', cp)
     add_to_element(element, 'heat-of-fusion', hf)
+    add_to_element(element, 'heat-of-vaporization', hv)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -240,8 +248,9 @@ def fetch(url, root):
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-    	dens, ldmp, ldbp, mp, bp, tp, cp, hf]))
+    #print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+    #	dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv]))
+    print(list([nsm[0], hv]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
