@@ -20,6 +20,7 @@
     <boiling-point>20.271 K / -252.879 °C / -423.182 °F</boiling-point>
     <triple-point>13.8033 K, 7.041 kPa</triple-point>
     <critical-point>32.938 K, 1.2858 MPa</critical-point>
+    <heat-of-fusion>H₂: 0.117 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹">
         <half-life>Stable</half-life>
@@ -94,6 +95,7 @@
     <boiling-point>4.222 K / −268.928 °C / −452.070 °F</boiling-point>
     <triple-point>2.177 K, 5.043 kPa</triple-point>
     <critical-point>5.1953 K, 0.22746 MPa</critical-point>
+    <heat-of-fusion>0.0138 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²">
         <half-life></half-life>
@@ -188,6 +190,7 @@
     <boiling-point>1615 K / 1342 °C / 2448 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>3220 K, 67 MPa</critical-point>
+    <heat-of-fusion>3.00 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³">
         <half-life></half-life>
@@ -309,6 +312,7 @@
     <boiling-point>2741 K / 2468 °C / 4474 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>5205 K, MPa</critical-point>
+    <heat-of-fusion>12.2 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁵">
         <half-life></half-life>
@@ -431,6 +435,7 @@
     <boiling-point>4200 K / 3927 °C / 7101 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>50.2 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁶">
         <half-life></half-life>
@@ -572,6 +577,7 @@ Graphite: 2.267 g·cm⁻³</density>
     <boiling-point></boiling-point>
     <triple-point>4600 K, 10800 kPa</triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>117 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸">
         <half-life>2.0 × 10-21 s</half-life>
@@ -718,6 +724,7 @@ K-capture (.21%)</decay-modes>
     <boiling-point>77.355 K / −195.795 °C / −320.431 °F</boiling-point>
     <triple-point>63.151 K, 12.52 kPa</triple-point>
     <critical-point>126.192 K, 3.3958 MPa</critical-point>
+    <heat-of-fusion>N₂: 0.72 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁰">
         <half-life>200×10⁻²⁴ s</half-life>
@@ -880,6 +887,7 @@ K-capture (.21%)</decay-modes>
     <boiling-point>90.188 K / -182.962 °C / -297.332 °F</boiling-point>
     <triple-point>54.361 K, 0.1463 kPa</triple-point>
     <critical-point>154.581 K, 5.043 MPa</critical-point>
+    <heat-of-fusion>O₂: 0.444 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹²">
         <half-life>580×10⁻²⁴ s</half-life>
@@ -1015,6 +1023,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>85.03 K / −188.11 °C / −306.60 °F</boiling-point>
     <triple-point>53.48 K, 90 kPa</triple-point>
     <critical-point>144.41 K, 5.1724 MPa</critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁴">
         <half-life></half-life>
@@ -1181,6 +1190,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>27.104 K / -246.046 °C / -410.883 °F</boiling-point>
     <triple-point>24.556 K, 43.37 kPa</triple-point>
     <critical-point>44.4918 K, 2.7686 MPa</critical-point>
+    <heat-of-fusion>0.335 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶">
         <half-life>9×10⁻²¹ s</half-life>
@@ -1353,6 +1363,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>1156.090 K / 882.940 °C / 1621.292 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>2573 K, 35 MPa</critical-point>
+    <heat-of-fusion>2.60 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁸">
         <half-life>1.3×10⁻²¹ s</half-life>
@@ -1568,6 +1579,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>1363 K / 1091 °C / 1994 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>8.48 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life></half-life>
@@ -1765,6 +1777,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>2792 K / 2519 °C / 4566 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>10.71 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁹">
         <half-life>&lt;35 ns</half-life>
@@ -2010,6 +2023,7 @@ Solid: transparent (beta)</appearance>
     <boiling-point>3538 K / 3265 °C / 5909 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>50.21 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²²">
         <half-life>29 ms</half-life>
@@ -2212,6 +2226,7 @@ Black: 610 °C</melting-point>
     <boiling-point>White: 280.5 °C</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>White: 0.66 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁴">
         <half-life>?</half-life>
@@ -2420,6 +2435,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <boiling-point>717.8 K / 444.6 °C / 832.3 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>1314 K, 20.7 MPa</critical-point>
+    <heat-of-fusion>Mono: 1.727 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁶">
         <half-life>10 ms</half-life>
@@ -2636,6 +2652,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <boiling-point>239.11 K / -34.04 °C / -29.27 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>416.9 K, 7.991 MPa</critical-point>
+    <heat-of-fusion>Cl₂: 6.406 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁸">
         <half-life></half-life>
@@ -2861,6 +2878,7 @@ IT (44.6%)</decay-modes>
     <boiling-point>87.302 K / −185.848 °C / −302.526 °F</boiling-point>
     <triple-point>83.8058 K, 68.89 kPa</triple-point>
     <critical-point>150.687 K, 4.863 MPa</critical-point>
+    <heat-of-fusion>1.18 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³⁰">
         <half-life>&lt;20 ns</half-life>
@@ -3073,6 +3091,7 @@ IT (44.6%)</decay-modes>
     <boiling-point>1032 K / 759 °C / 1398 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>2223 K, 16 MPa</critical-point>
+    <heat-of-fusion>2.33 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³²">
         <half-life>Unknown</half-life>
@@ -3321,6 +3340,7 @@ EC (10.72%)
     <boiling-point>1757 K / 1484 °C / 2703 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>8.54 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³⁴">
         <half-life>&lt;35 ns</half-life>
@@ -3528,6 +3548,7 @@ EC (10.72%)
     <boiling-point>3109 K / 2836 °C / 5136 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>14.1 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³⁶">
         <half-life></half-life>
@@ -3833,6 +3854,7 @@ EC (10.72%)
     <boiling-point>3560 K / 3287 °C / 5949 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>14.15 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="³⁸">
         <half-life>&lt;120 ns</half-life>
@@ -4066,6 +4088,7 @@ EC (10.72%)
     <boiling-point>3680 K / 3407 °C / 6165 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>21.5 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴⁰">
         <half-life></half-life>
@@ -4320,6 +4343,7 @@ EC (10.72%)
     <boiling-point>2944 K / 2671 °C / 4840 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>21.0 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴²">
         <half-life>14 ms</half-life>
@@ -4559,6 +4583,7 @@ EC (10.72%)
     <boiling-point>2334 K / 2061 °C / 3742 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>12.91 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴⁴">
         <half-life>&lt;105 ns</half-life>
@@ -4843,6 +4868,7 @@ IT (11.5%)</decay-modes>
     <boiling-point>3134 K / 2862 °C / 5182 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴⁵">
         <half-life>1.89 ms</half-life>
@@ -5124,6 +5150,7 @@ IT (11.5%)</decay-modes>
     <boiling-point>3200 K / 2927 °C / 5301 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>16.06 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴⁷">
         <half-life></half-life>
@@ -5447,6 +5474,7 @@ IT (1%)</decay-modes>
     <boiling-point>3186 K / 2913 °C / 5275 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>17.48 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁴⁸">
         <half-life>10 ms</half-life>
@@ -5762,6 +5790,7 @@ IT</decay-modes>
     <boiling-point>2835 K / 2562 °C / 4643 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>13.26 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁵²">
         <half-life></half-life>
@@ -6051,6 +6080,7 @@ p</decay-modes>
     <boiling-point>1180 K / 907 °C / 1665 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.32 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁵⁴">
         <half-life></half-life>
@@ -6376,6 +6406,7 @@ IT</decay-modes>
     <boiling-point>2477 K / 2204 °C / 3999 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>5.59 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁵⁶">
         <half-life></half-life>
@@ -6651,6 +6682,7 @@ EC (0.41%)</decay-modes>
     <boiling-point>3106 K / 2833 °C / 5131 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>36.94 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁵⁸">
         <half-life></half-life>
@@ -7009,6 +7041,7 @@ IT (1%)</decay-modes>
     <boiling-point></boiling-point>
     <triple-point>1090 K, 3628 kPa</triple-point>
     <critical-point>1673 K, ? MPa</critical-point>
+    <heat-of-fusion>Grey: 24.44 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁶⁰">
         <half-life></half-life>
@@ -7349,6 +7382,7 @@ Vitreous: 4.28 g·cm⁻³</density>
     <boiling-point>958 K / 685 °C / 1265 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>1766 K, 27.2 MPa</critical-point>
+    <heat-of-fusion>Gray: 6.69 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁶⁵">
         <half-life>&lt;50 ms</half-life>
@@ -7668,6 +7702,7 @@ Solid: metallic luster</appearance>
     <boiling-point>332.0 K / 58.8 °C / 137.8 °F</boiling-point>
     <triple-point>265.90 K, 5.8 kPa</triple-point>
     <critical-point>588 K, 10.34 MPa</critical-point>
+    <heat-of-fusion>Br₂: 10.571 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁶⁶">
         <half-life></half-life>
@@ -8041,6 +8076,7 @@ IT</decay-modes>
     <boiling-point>119.93 K / -153.415 °C / -244.147 °F</boiling-point>
     <triple-point>115.775 K, 73.53 kPa</triple-point>
     <critical-point>209.48 K, 5.525 MPa</critical-point>
+    <heat-of-fusion>1.64 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁶⁹">
         <half-life>32 ms</half-life>
@@ -8371,6 +8407,7 @@ IT (21.4%)</decay-modes>
     <boiling-point>961 K / 688 °C / 1270 °F</boiling-point>
     <triple-point>312.41 K,  kPa</triple-point>
     <critical-point>2093 K, 16 MPa</critical-point>
+    <heat-of-fusion>2.19 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁷¹">
         <half-life></half-life>
@@ -8755,6 +8792,7 @@ IT
     <boiling-point>1650 K / 1377 °C / 2511 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.43 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁷³">
         <half-life>&gt;25 ms</half-life>
@@ -9073,6 +9111,7 @@ EC (.3%)</decay-modes>
     <boiling-point>3609 K / 3336 °C / 6037 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>11.42 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁷⁶">
         <half-life>500 ns</half-life>
@@ -9563,6 +9602,7 @@ IT (10%)
     <boiling-point>4682 K / 4409 °C / 7968 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁷⁸">
         <half-life>50 ms</half-life>
@@ -9871,6 +9911,7 @@ IT (10%)
     <boiling-point>5017 K / 4744 °C / 8571 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>30 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸¹">
         <half-life>&lt;44 ns</half-life>
@@ -10338,6 +10379,7 @@ IT (3.8%)</decay-modes>
     <boiling-point>4912 K / 4639 °C / 8382 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>37.48 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸³">
         <half-life>23 ms</half-life>
@@ -10658,6 +10700,7 @@ IT (3.8%)</decay-modes>
     <boiling-point>4538 K / 4265 °C / 7709 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>33.29 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸⁵">
         <half-life>&lt;110 ns</half-life>
@@ -11103,6 +11146,7 @@ IT (2%)</decay-modes>
     <boiling-point>4423 K / 4150 °C / 7502 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>38.59 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸⁷">
         <half-life>50 ms</half-life>
@@ -11425,6 +11469,7 @@ IT (22%)
     <boiling-point>3968 K / 3695 °C / 6683 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>26.59 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁸⁹">
         <half-life>10 ms</half-life>
@@ -11883,6 +11928,7 @@ IT (.23%)</decay-modes>
     <boiling-point>3236 K / 2963 °C / 5365 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>16.74 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁹¹">
         <half-life>10 ms</half-life>
@@ -12257,6 +12303,7 @@ IT (8%)</decay-modes>
     <boiling-point>2435 K / 2162 °C / 3924 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>11.28 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁹³">
         <half-life>5 ms</half-life>
@@ -12860,6 +12907,7 @@ IT</decay-modes>
     <boiling-point>1040 K / 767 °C / 1413 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>6.21 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁹⁵">
         <half-life>5 ms</half-life>
@@ -13249,6 +13297,7 @@ IT (&lt;.1%)</decay-modes>
     <boiling-point>2345 K / 2072 °C / 3762 °F</boiling-point>
     <triple-point>429.7445 K, ~1 kPa</triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>3.281 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁹⁷">
         <half-life>5 ms</half-life>
@@ -13927,6 +13976,7 @@ Gray: 5.769 g·cm⁻³</density>
     <boiling-point>2875 K / 2602 °C / 4716 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>White: 7.03 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="⁹⁹">
         <half-life>5 ms</half-life>
@@ -14475,6 +14525,7 @@ IT (.0004%)</decay-modes>
     <boiling-point>1860 K / 1587 °C / 2889 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>19.79 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁰³">
         <half-life>100 ms</half-life>
@@ -14992,6 +15043,7 @@ IT (15%)</decay-modes>
     <boiling-point>1261 K / 988 °C / 1810 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>17.49 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁰⁵">
         <half-life>1 µs</half-life>
@@ -15442,6 +15494,7 @@ IT (17.5%)</decay-modes>
     <boiling-point>457.4 K / 184.3 °C / 363.7 °F</boiling-point>
     <triple-point>386.65 K, 12.1 kPa</triple-point>
     <critical-point>819 K, 11.7 MPa</critical-point>
+    <heat-of-fusion>I₂: 15.52 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁰⁸">
         <half-life>36 ms</half-life>
@@ -15895,6 +15948,7 @@ IT (rare)</decay-modes>
     <boiling-point>101.325 kPa: 165.051 K / -108.099 °C / -162.578 °F</boiling-point>
     <triple-point>161.405 K, 81.77 kPa</triple-point>
     <critical-point>289.733 K, 5.842 MPa</critical-point>
+    <heat-of-fusion>101.325 kPa: 2.27 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹¹⁰">
         <half-life>310 ms</half-life>
@@ -16296,6 +16350,7 @@ IT (rare)</decay-modes>
     <boiling-point>944 K / 671 °C / 1240 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>1938 K, 9.4 MPa</critical-point>
+    <heat-of-fusion>2.09 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹¹²">
         <half-life>500 µs</half-life>
@@ -16833,6 +16888,7 @@ IT</decay-modes>
     <boiling-point>2118 K / 1845 °C / 3353 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.12 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹¹⁴">
         <half-life>530 ms</half-life>
@@ -17240,6 +17296,7 @@ EC (.0096%)</decay-modes>
     <boiling-point>4876 K / 4603 °C / 8317 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>27.2 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁵³">
         <half-life>400 ms</half-life>
@@ -17726,6 +17783,7 @@ IT (42%)</decay-modes>
     <boiling-point>5731 K / 5458 °C / 9856 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>36.57 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁵⁵">
         <half-life>13 µs</half-life>
@@ -18286,6 +18344,7 @@ IT
     <boiling-point>5828 K / 5555 °C / 10031 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>13892 K, MPa</critical-point>
+    <heat-of-fusion>35.3 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁵⁸">
         <half-life>1.37 ms</half-life>
@@ -18655,6 +18714,7 @@ IT
     <boiling-point>5869 K / 5596 °C / 10105 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>60.43 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶⁰">
         <half-life>860 µs</half-life>
@@ -19110,6 +19170,7 @@ IT (45.6%)</decay-modes>
     <boiling-point>5285 K / 5012 °C / 9054 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>57.85 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶²">
         <half-life>1.87 ms</half-life>
@@ -19478,6 +19539,7 @@ IT (15%)</decay-modes>
     <boiling-point>4701 K / 4428 °C / 8002 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>41.12 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶⁴">
         <half-life>1 ms</half-life>
@@ -20035,6 +20097,7 @@ IT (.25%)</decay-modes>
     <boiling-point>4098 K / 3825 °C / 6917 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>22.17 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶⁶">
         <half-life>300 µs</half-life>
@@ -20456,6 +20519,7 @@ IT</decay-modes>
     <boiling-point>3129 K / 2856 °C / 5173 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>12.55 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁶⁹">
         <half-life>150 µs</half-life>
@@ -21035,6 +21099,7 @@ IT (18%)</decay-modes>
     <boiling-point>629.88 K / 356.73 °C / 674.11 °F</boiling-point>
     <triple-point>234.3156 K, 1.65×10⁻⁷ kPa</triple-point>
     <critical-point>1750 K, 172.00 MPa</critical-point>
+    <heat-of-fusion>2.29 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁷¹">
         <half-life>80 µs</half-life>
@@ -21508,6 +21573,7 @@ EC (8.6%)</decay-modes>
     <boiling-point>1746 K / 1473 °C / 2683 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>4.14 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁷⁶">
         <half-life>5.2+30-14 ms</half-life>
@@ -22149,6 +22215,7 @@ EC (2.9%)</decay-modes>
     <boiling-point>2022 K / 1749 °C / 3180 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>4.77 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁷⁸">
         <half-life>178.003830</half-life>
@@ -22824,6 +22891,7 @@ EC (9.5%)</decay-modes>
     <boiling-point>1837 K / 1564 °C / 2847 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>11.30 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁸⁴">
         <half-life>6.6 ms</half-life>
@@ -23527,6 +23595,7 @@ Beta: 9.398 g·cm⁻³</density>
     <boiling-point>1235 K / 962 °C / 1764 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>13 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁸⁸">
         <half-life>430 µs</half-life>
@@ -24049,6 +24118,7 @@ IT (.07%)</decay-modes>
     <boiling-point>610 K / 337 °C / 639 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁹¹">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24517,6 +24587,7 @@ EC (3×10⁻⁷%)</decay-modes>
     <boiling-point>211.5 K / −61.7 °C / −79.1 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>377 K, 6.28 MPa</critical-point>
+    <heat-of-fusion>3.247 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁹⁵">
         <half-life>6 ms</half-life>
@@ -24919,6 +24990,7 @@ IT (&lt;1%)</decay-modes>
     <boiling-point>950 K / 677 °C / 1250 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>2 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁹⁹">
         <half-life>16 ms</half-life>
@@ -25302,6 +25374,7 @@ CD (8.79×-11%)</decay-modes>
     <boiling-point>2010 K / 1737 °C / 3158.6 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>8.5 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁰²">
         <half-life>2.6 ms</half-life>
@@ -25693,6 +25766,7 @@ CD (2.6×10⁻⁹%)</decay-modes>
     <boiling-point>5800 K / 5500 °C / 9900 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁵³">
         <half-life>13 ms</half-life>
@@ -25879,6 +25953,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁵⁵">
         <half-life>1.7 s</half-life>
@@ -26052,6 +26127,7 @@ EC </decay-modes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁵⁸">
         <half-life>3.3 ms</half-life>
@@ -26189,6 +26265,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁶⁰">
         <half-life>41 ms</half-life>
@@ -26304,6 +26381,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁶³">
         <half-life>760 µs</half-life>
@@ -26441,6 +26519,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁶⁶">
         <half-life>1.2 ms</half-life>
@@ -26534,6 +26613,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁶⁷">
         <half-life>3+6-2 µs</half-life>
@@ -26638,6 +26718,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁷²">
         <half-life>2.0 ms</half-life>
@@ -26712,6 +26793,7 @@ Various</daughter-isotopes>
     <boiling-point>357 K / 84 °C / 183 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁷⁷">
         <half-life>1.1 ms</half-life>
@@ -26793,6 +26875,7 @@ Various</daughter-isotopes>
     <boiling-point>1430 K / 1130 °C / 2070 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁷⁸">
         <half-life>340 µs</half-life>
@@ -26858,6 +26941,7 @@ Various</daughter-isotopes>
     <boiling-point>420 K / 147 °C / 297 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁸⁵">
         <half-life>125 ms</half-life>
@@ -26931,6 +27015,7 @@ Various</daughter-isotopes>
     <boiling-point>~1400 K / ~1100 °C / ~2000 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>5.90–5.98 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁸⁷">
         <half-life>32+155-14 ms</half-life>
@@ -26982,6 +27067,7 @@ Various</daughter-isotopes>
     <boiling-point>1035–1135 K / 762–862 °C / 1403–1583 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁹⁰">
         <half-life>15+26-6 ms</half-life>
@@ -27033,6 +27119,7 @@ Various</daughter-isotopes>
     <boiling-point>823 K / 550 °C / 1022 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁹³">
         <half-life>14 +11, -4 ms</half-life>
@@ -27070,6 +27157,7 @@ Various</daughter-isotopes>
     <boiling-point>350±30 K / 80±30 °C / 170±50 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point>439 K, 6.8 MPa</critical-point>
+    <heat-of-fusion>23.5 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁹⁴">
         <half-life>890 µs</half-life>
@@ -27100,6 +27188,7 @@ Various</daughter-isotopes>
     <boiling-point>3737 K / 3464 °C / 6267 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>6.20 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹¹⁷">
         <half-life>23.5 ms</half-life>
@@ -27504,6 +27593,7 @@ IT</decay-modes>
     <boiling-point>3716 K / 3443 °C / 6229 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>5.46 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹¹⁹">
         <half-life>200 ms</half-life>
@@ -27878,6 +27968,7 @@ IT</decay-modes>
     <boiling-point>3793 K / 3520 °C / 6368 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>6.89 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹²¹">
         <half-life>600 ms</half-life>
@@ -28297,6 +28388,7 @@ EC (.0164%)</decay-modes>
     <boiling-point>3347 K / 3074 °C / 5565 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.14 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹²⁴">
         <half-life>500 ms</half-life>
@@ -28689,6 +28781,7 @@ IT (11.8%)</decay-modes>
     <boiling-point>3273 K / 3000 °C / 5432 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.13 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹²⁶">
         <half-life>0.5 s</half-life>
@@ -29122,6 +29215,7 @@ IT (5%)</decay-modes>
     <boiling-point>2067 K / 1794 °C / 3261 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>8.62 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹²⁸">
         <half-life>0.5 s</half-life>
@@ -29509,6 +29603,7 @@ IT (.31%)</decay-modes>
     <boiling-point>1802 K / 1529 °C / 2784 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>9.21 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹³⁰">
         <half-life>1.1 ms</half-life>
@@ -29945,6 +30040,7 @@ EC (.02%)</decay-modes>
     <boiling-point>3546 K / 3273 °C / 5923 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>10.05 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹³⁴">
         <half-life>0.4 s</half-life>
@@ -30316,6 +30412,7 @@ IT (11%)</decay-modes>
     <boiling-point>3503 K / 3230 °C / 5846 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>10.15 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹³⁵">
         <half-life>0.94+33-22 ms</half-life>
@@ -30831,6 +30928,7 @@ IT (21.8%)
     <boiling-point>2840 K / 2562 °C / 4653 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>11.06 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹³⁸">
         <half-life>200 ms</half-life>
@@ -31218,6 +31316,7 @@ IT (35%)</decay-modes>
     <boiling-point>2993 K / 2720 °C / 4928 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>17.0 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁴⁰">
         <half-life>6 ms</half-life>
@@ -31764,6 +31863,7 @@ IT</decay-modes>
     <boiling-point>3141 K / 2868 °C / 5194 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>19.90 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁴²">
         <half-life></half-life>
@@ -32154,6 +32254,7 @@ IT (3.5%)
     <boiling-point>2223 K / 1950 °C / 3542 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>16.84 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁴⁵">
         <half-life>3.1 µs</half-life>
@@ -32638,6 +32739,7 @@ EC (.14%)</decay-modes>
     <boiling-point>1469 K / 1196 °C / 2185 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>7.66 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁴⁸">
         <half-life>250 ms</half-life>
@@ -33003,6 +33105,7 @@ EC (.14%)</decay-modes>
     <boiling-point>3675 K / 3402 °C / 6156 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>22 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="¹⁵⁰">
         <half-life>43 ms</half-life>
@@ -33601,6 +33704,7 @@ IT (21.7%)</decay-modes>
     <boiling-point>3471 K / 3198 °C / 5788 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁰⁶">
         <half-life>25 ms</half-life>
@@ -33944,6 +34048,7 @@ EC (17%)
     <boiling-point>5061 K / 4788 °C / 8650 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁰⁹">
         <half-life>7 ms</half-life>
@@ -34236,6 +34341,7 @@ Various
     <boiling-point>4300 K / 4027 °C / 7280 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>12.34 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²¹²">
         <half-life>8 ms</half-life>
@@ -34525,6 +34631,7 @@ Various</daughter-isotopes>
     <boiling-point>4404 K / 4131 °C / 7468 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>9.14 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²¹⁷">
         <half-life>26 ms</half-life>
@@ -34837,6 +34944,7 @@ Accepted standard value: 19.38 g·cm⁻³</density>
     <boiling-point>4447 K / 4174 °C / 7545 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>5.19 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²²⁵">
         <half-life>3 ms</half-life>
@@ -35059,6 +35167,7 @@ IT (.11%)</decay-modes>
     <boiling-point>3505 K / 3228 °C / 5842 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>2.82 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²²⁸">
         <half-life>1.1+20-5 s</half-life>
@@ -35320,6 +35429,7 @@ Various
     <boiling-point>2880 K / 2607 °C / 4725 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>14.39 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²³¹">
         <half-life>30 s</half-life>
@@ -35572,6 +35682,7 @@ IT (.01%)</decay-modes>
     <boiling-point>3383 K / 3110 °C / 5630 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion>15 kJ·mol⁻¹</heat-of-fusion>
     <isotopes>
       <isotope symbol="²³²">
         <half-life>1? min</half-life>
@@ -35814,6 +35925,7 @@ Beta: 13.25 g·cm⁻³</density>
     <boiling-point>Beta: 2900 K / 2627 °C / 4760 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²³⁵">
         <half-life>20 s</half-life>
@@ -36057,6 +36169,7 @@ Various</daughter-isotopes>
     <boiling-point>1743 K / 1470 °C / 2678 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²³⁷">
         <half-life>2.1 s</half-life>
@@ -36283,6 +36396,7 @@ Various
     <boiling-point>1269 K / 996 °C / 1825 °F</boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁴⁰">
         <half-life>1 s</half-life>
@@ -36524,6 +36638,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁴¹">
         <half-life>730 µs</half-life>
@@ -36749,6 +36864,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁴⁵">
         <half-life>0.90 ms</half-life>
@@ -36977,6 +37093,7 @@ EC (5%)
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁵⁰">
         <half-life>5.7 µs</half-life>
@@ -37143,6 +37260,7 @@ Various</daughter-isotopes>
     <boiling-point></boiling-point>
     <triple-point></triple-point>
     <critical-point></critical-point>
+    <heat-of-fusion></heat-of-fusion>
     <isotopes>
       <isotope symbol="²⁵²">
         <half-life>390 ms</half-life>

@@ -186,6 +186,13 @@ def fetch(url, root):
     	cp))).replace('&#160;', ' ').replace('&#8194;', ' ').replace('&#8722;','-').replace('&#176;', '°')
     	.replace('&#8211;','–').replace('&#215;', '×').replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
 
+    hf = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat\u00a0of\u00a0fusion")]]]/td')
+    hf = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    	re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hf).replace('&#160;',
+    	' ').replace('&#8194;', ' ').replace('&#8722;','-').replace('&#183;', '·').replace('&#8211;','–')
+    	)))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace(
+    	'ca. ', '').strip(), flags=re.M) if len(hf) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -216,6 +223,7 @@ def fetch(url, root):
     add_to_element(element, 'boiling-point', bp)
     add_to_element(element, 'triple-point', tp)
     add_to_element(element, 'critical-point', cp)
+    add_to_element(element, 'heat-of-fusion', hf)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
