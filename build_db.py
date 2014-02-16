@@ -114,8 +114,6 @@ def remove_html_span_and_sup(string):
     return soup.get_text()
 
 def fetch(url, root):
-    print('Fetching ' + url)
-
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
 
     # Properties
@@ -241,6 +239,9 @@ def fetch(url, root):
         add_to_element(isotope_tag, 'abundance', fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
+
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+    	dens, ldmp, ldbp, mp, bp, tp, cp, hf]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
