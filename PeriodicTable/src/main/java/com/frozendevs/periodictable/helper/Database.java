@@ -255,7 +255,7 @@ public class Database {
                                     appearance = null, phase = null, density = null,
                                     liquidDensityAtMeltingPoint = null,
                                     liquidDensityAtBoilingPoint = null, meltingPoint = null,
-                                    boilingPoint = null, triplePoint = null;
+                                    boilingPoint = null, triplePoint = null, criticalPoint = null;
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -297,6 +297,8 @@ public class Database {
                                         boilingPoint = readTag(parser, tag);
                                     else if(tag.equals("triple-point"))
                                         triplePoint = readTag(parser, tag);
+                                    else if(tag.equals("critical-point"))
+                                        criticalPoint = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -305,7 +307,7 @@ public class Database {
                             return new ElementProperties(name, symbol, atomicNumber, weight, group,
                                     period, block, category, configuration, wiki, appearance, phase,
                                     density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint,
-                                    meltingPoint, boilingPoint, triplePoint);
+                                    meltingPoint, boilingPoint, triplePoint, criticalPoint);
                         }
                         else
                             skip(parser);
