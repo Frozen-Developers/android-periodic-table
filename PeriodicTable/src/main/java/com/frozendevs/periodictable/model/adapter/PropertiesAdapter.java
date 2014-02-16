@@ -63,7 +63,8 @@ public class PropertiesAdapter extends BaseAdapter {
                     new Property(R.string.property_melting_point, properties.getMeltingPoint()),
                     new Property(R.string.property_boiling_point, properties.getBoilingPoint()),
                     new Property(R.string.property_triple_point, properties.getTriplePoint()),
-                    new Property(R.string.property_critical_point, properties.getCriticalPoint())
+                    new Property(R.string.property_critical_point, properties.getCriticalPoint()),
+                    new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion())
             };
 
             return null;
