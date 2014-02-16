@@ -176,6 +176,11 @@ def fetch(url, root):
     	replace('(', '').replace(')', ':').replace('circa: ', '').replace('&#177;',
     	'±').replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) if len(bp) > 0 else ''
 
+    tp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Triple\u00a0point")]]]/td')
+    tp = translate_script(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
+    	tp))).replace('&#160;', ' ').replace('&#8194;', ' ').replace('&#8722;','-').replace('&#176;', '°')
+    	.replace('&#8211;','–').replace('&#215;', '×').replace('×10', '×10^')).strip() if len(tp) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -204,6 +209,7 @@ def fetch(url, root):
     add_to_element(element, 'density-at-bp', ldbp)
     add_to_element(element, 'melting-point', mp)
     add_to_element(element, 'boiling-point', bp)
+    add_to_element(element, 'triple-point', tp)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
