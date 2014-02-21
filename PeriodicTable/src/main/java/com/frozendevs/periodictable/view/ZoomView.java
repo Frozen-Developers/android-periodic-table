@@ -80,7 +80,7 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         zoomTo((int) detector.getFocusX(), (int) detector.getFocusY(),
                 clamp(mMinZoom, mZoom * detector.getScaleFactor(), mMaxZoom));
 
-        return mZoom == mMinZoom || mZoom == mMaxZoom;
+        return true;
     }
 
     @Override
