@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -12,11 +13,13 @@ import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.TableItem;
 
@@ -289,7 +292,34 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        return false;
+        float rawX = e.getX() + getScrollX();
+        float rawY = e.getY() + getScrollY();
+        float tileSize = getScaledTileSize();
+        float y = (getHeight() - getScaledHeight()) / 2f;
+
+        for(int row = 0; row < ROWS_COUNT; row++) {
+            float x = (getWidth() - getScaledWidth()) / 2f;
+
+            for(int column = 0; column < COLUMNS_COUNT; column++) {
+                if(x <= rawX && x + tileSize >= rawX && y <= rawY && y + tileSize >= rawY) {
+                    TableItem item = getItem((row * COLUMNS_COUNT) + column);
+
+                    if(item != null) {
+                        playSoundEffect(SoundEffectConstants.CLICK);
+
+                        Intent intent = new Intent(getContext(), PropertiesActivity.class);
+                        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getAtomicNumber());
+                        getContext().startActivity(intent);
+                    }
+                }
+
+                x += getScaledTileSize() + DEFAULT_SPACING;
+            }
+
+            y += getScaledTileSize() + DEFAULT_SPACING;
+        }
+
+        return true;
     }
 
     @Override
