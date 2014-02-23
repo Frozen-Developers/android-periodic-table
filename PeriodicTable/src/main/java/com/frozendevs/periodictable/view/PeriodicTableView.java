@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.AsyncTask;
@@ -71,6 +72,15 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     }
 
     private void initPeriodicTableView(Context context) {
+        setWillNotDraw(false);
+
+        setHorizontalScrollBarEnabled(true);
+        setVerticalScrollBarEnabled(true);
+
+        TypedArray styledAttributes = context.obtainStyledAttributes(R.styleable.PeriodicTableView);
+        initializeScrollbars(styledAttributes);
+        styledAttributes.recycle();
+
         getViewTreeObserver().addOnGlobalLayoutListener(this);
         mScaleDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, this);
@@ -297,5 +307,35 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public void scrollTo(int x, int y) {
         super.scrollTo(clamp(getMinimalScrollX(), x, getMaximalScrollX()),
                 clamp(getMinimalScrollY(), y, getMaximalScrollY()));
+    }
+
+    @Override
+    protected int computeHorizontalScrollExtent() {
+        return getWidth();
+    }
+
+    @Override
+    protected int computeHorizontalScrollOffset() {
+        return getScrollX() - getMinimalScrollX();
+    }
+
+    @Override
+    protected int computeHorizontalScrollRange() {
+        return getScaledWidth();
+    }
+
+    @Override
+    protected int computeVerticalScrollExtent() {
+        return getHeight();
+    }
+
+    @Override
+    protected int computeVerticalScrollOffset() {
+        return getScrollY() - getMinimalScrollY();
+    }
+
+    @Override
+    protected int computeVerticalScrollRange() {
+        return getScaledHeight();
     }
 }
