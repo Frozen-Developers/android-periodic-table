@@ -3,10 +3,12 @@ package com.frozendevs.periodictable.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
@@ -155,15 +157,16 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
                 if(item != null) {
                     drawTile(canvas, x, y, item.getName(), String.valueOf(item.getAtomicNumber()),
-                            item.getStandardAtomicWeight(), item.getColor(getContext()));
+                            item.getStandardAtomicWeight(), item.getSymbol(),
+                            item.getColor(getContext()));
                 }
                 else if(position == 92) {
-                    drawTile(canvas, x, y, "57 - 71", "", "", getContext().getResources().getColor(
-                            R.color.lanthanide_bg));
+                    drawTile(canvas, x, y, "57 - 71", "", "", "",
+                            getContext().getResources().getColor(R.color.lanthanide_bg));
                 }
                 else if(position == 110) {
-                    drawTile(canvas, x, y, "89 - 103", "", "", getContext().getResources().getColor(
-                            R.color.actinide_bg));
+                    drawTile(canvas, x, y, "89 - 103", "", "", "",
+                            getContext().getResources().getColor(R.color.actinide_bg));
                 }
 
                 x += getScaledTileSize() + DEFAULT_SPACING;
@@ -174,13 +177,38 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     }
 
     private void drawTile(Canvas canvas, float x, float y, String name, String number, String weight,
-                          int color) {
+                          String symbol, int color) {
+        float padding = dpToPx(5) * mZoom;
+        float tileSize = getScaledTileSize();
+        float textSize = mPaint.getTextSize();
+
         mPaint.setColor(color);
-        canvas.drawRect(x, y, x + getScaledTileSize(), y + getScaledTileSize(), mPaint);
+        canvas.drawRect(x, y, x + tileSize, y + tileSize, mPaint);
+
+        mPaint.setColor(Color.BLACK);
+        mPaint.setTextAlign(Paint.Align.LEFT);
+        mPaint.setTextSize(spToPx(16) * mZoom);
+
+        canvas.drawText(symbol, x + padding, y + padding + textSize, mPaint);
+
+        mPaint.setTextAlign(Paint.Align.RIGHT);
+
+        canvas.drawText(number, x + tileSize - padding, y + padding + textSize, mPaint);
+
+        canvas.drawText(weight, x + tileSize - padding, y + tileSize - (padding * 1.75f), mPaint);
+
+        mPaint.setTextAlign(Paint.Align.CENTER);
+        mPaint.setTextSize(spToPx(12) * mZoom);
+
+        canvas.drawText(name, x + (tileSize / 2), y + (tileSize / 2) + (textSize / 2), mPaint);
     }
 
     private float dpToPx(float dp) {
-        return dp * (getContext().getResources().getDisplayMetrics().densityDpi / 160f);
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
+    }
+
+    private float spToPx(float sp) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, getResources().getDisplayMetrics());
     }
 
     private float getScaledTileSize() {
