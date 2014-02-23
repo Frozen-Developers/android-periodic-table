@@ -93,6 +93,10 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
         mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
 
+        if(mZoom > 0f) {
+            scrollTo(getMinimalScrollX(), getMinimalScrollY());
+        }
+
         invalidate();
     }
 
@@ -125,12 +129,10 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     protected void onDraw(Canvas canvas) {
-        float y = (getHeight() - (getScaledTileSize() * ROWS_COUNT) -
-                (VERTICAL_SPACERS_COUNT * DEFAULT_SPACING)) / 2f;
+        float y = (getHeight() - getScaledHeight()) / 2f;
 
         for(int row = 0; row < ROWS_COUNT; row++) {
-            float x = (getWidth() - (getScaledTileSize() * COLUMNS_COUNT) -
-                    (HORIZONTAL_SPACERS_COUNT * DEFAULT_SPACING)) / 2f;
+            float x = (getWidth() - getScaledWidth()) / 2f;
 
             for(int column = 0; column < COLUMNS_COUNT; column++) {
                 int position = (row * COLUMNS_COUNT) + column;
@@ -179,6 +181,9 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
         return Math.max(min, Math.min(val, max));
     }
 
+    private int clamp(int min, int val, int max) {
+        return Math.max(min, Math.min(val, max));
+    }
 
     @Override
     public boolean onScale(ScaleGestureDetector detector) {
@@ -199,14 +204,14 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     private void zoomTo(int x, int y, float zoom) {
         if(mZoom != zoom) {
-            /*float zoomRatio = zoom / mZoom;
+            float zoomRatio = zoom / mZoom;
             int oldX = getScrollX() - getMinimalScrollX() + x;
-            int oldY = getScrollY() - getMinimalScrollY() + y;*/
+            int oldY = getScrollY() - getMinimalScrollY() + y;
 
             mZoom = zoom;
 
-            /*scrollTo(getMinimalScrollX() + Math.round(oldX * zoomRatio) - x,
-                    getMinimalScrollY() + Math.round(oldY * zoomRatio) - y);*/
+            scrollTo(getMinimalScrollX() + Math.round(oldX * zoomRatio) - x,
+                    getMinimalScrollY() + Math.round(oldY * zoomRatio) - y);
 
             invalidate();
         }
@@ -247,6 +252,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
         mIsScrolling = true;
 
+        scrollTo(getScrollX() + (int) distanceX, getScrollY() + (int) distanceY);
+
         return true;
     }
 
@@ -258,5 +265,37 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         return false;
+    }
+
+    private int getScaledWidth() {
+        return Math.round((getScaledTileSize() * COLUMNS_COUNT) +
+                (HORIZONTAL_SPACERS_COUNT * DEFAULT_SPACING));
+    }
+
+    private int getScaledHeight() {
+        return Math.round((getScaledTileSize() * ROWS_COUNT) +
+                (VERTICAL_SPACERS_COUNT * DEFAULT_SPACING));
+    }
+
+    private int getMinimalScrollX() {
+        return Math.min((getWidth() - getScaledWidth()) / 2, 0);
+    }
+
+    private int getMinimalScrollY() {
+        return Math.min((getHeight() - getScaledHeight()) / 2, 0);
+    }
+
+    private int getMaximalScrollX() {
+        return getMinimalScrollX() + getScaledWidth() - getWidth();
+    }
+
+    private int getMaximalScrollY() {
+        return getMinimalScrollY() + getScaledHeight() - getHeight();
+    }
+
+    @Override
+    public void scrollTo(int x, int y) {
+        super.scrollTo(clamp(getMinimalScrollX(), x, getMaximalScrollX()),
+                clamp(getMinimalScrollY(), y, getMaximalScrollY()));
     }
 }
