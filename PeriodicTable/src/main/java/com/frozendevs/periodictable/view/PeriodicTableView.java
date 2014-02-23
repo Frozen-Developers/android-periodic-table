@@ -5,12 +5,14 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.os.AsyncTask;
+import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.helper.Database;
@@ -38,6 +40,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private ScaleGestureDetector mScaleDetector;
     private GestureDetector mGestureDetector;
     private boolean mIsScrolling = false;
+    private OverScroller mOverScroller;
 
     private class LoadItems extends AsyncTask<Void, Void, Void> {
 
@@ -82,6 +85,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
         styledAttributes.recycle();
 
         getViewTreeObserver().addOnGlobalLayoutListener(this);
+        mOverScroller = new OverScroller(context);
         mScaleDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, this);
 
@@ -245,6 +249,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     public boolean onDown(MotionEvent e) {
+        mOverScroller.forceFinished(true);
+
         return false;
     }
 
@@ -274,7 +280,13 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-        return false;
+        mOverScroller.forceFinished(true);
+        mOverScroller.fling(getScrollX(), getScrollY(), (int) -velocityX, (int) -velocityY,
+                getMinimalScrollX(), getMaximalScrollX(), getMinimalScrollY(), getMaximalScrollY(),
+                getWidth() / 2, getHeight() / 2);
+        ViewCompat.postInvalidateOnAnimation(this);
+
+        return true;
     }
 
     private int getScaledWidth() {
@@ -337,5 +349,11 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     @Override
     protected int computeVerticalScrollRange() {
         return getScaledHeight();
+    }
+
+    @Override
+    public void computeScroll() {
+        if(mOverScroller.computeScrollOffset())
+            scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
     }
 }
