@@ -85,7 +85,7 @@ public class ElementsAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(activity, PropertiesActivity.class);
-                intent.putExtra("number", element.getAtomicNumber());
+                intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, element.getAtomicNumber());
                 activity.startActivity(intent);
             }
         });

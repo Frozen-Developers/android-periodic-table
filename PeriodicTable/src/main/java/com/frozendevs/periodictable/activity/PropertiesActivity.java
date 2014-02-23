@@ -28,6 +28,8 @@ import com.frozendevs.periodictable.model.BasicElementProperties;
 
 public class PropertiesActivity extends ActionBarActivity {
 
+    public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
+
     private BasicElementProperties elementProperties;
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -78,7 +80,7 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        int atomicNumber = getIntent().getIntExtra("number", 1);
+        int atomicNumber = getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1);
 
         elementProperties = Database.getBasicElementProperties(this, atomicNumber);
 
