@@ -24,6 +24,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private static final int VERTICAL_SPACERS_COUNT = ROWS_COUNT - 1;
 
     private final float DEFAULT_TILE_SIZE = dpToPx(80);
+    private final float DEFAULT_SPACING = 1;
 
     private static final float DEFAULT_MAX_ZOOM = 1f;
 
@@ -82,8 +83,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public void onGlobalLayout() {
         measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
-        mMinZoom = Math.min((getWidth() - (HORIZONTAL_SPACERS_COUNT * getSpacing())) / COLUMNS_COUNT,
-                (getHeight() - (VERTICAL_SPACERS_COUNT * getSpacing())) / ROWS_COUNT) / DEFAULT_TILE_SIZE;
+        mMinZoom = Math.min((getWidth() - (HORIZONTAL_SPACERS_COUNT * DEFAULT_SPACING)) / COLUMNS_COUNT,
+                (getHeight() - (VERTICAL_SPACERS_COUNT * DEFAULT_SPACING)) / ROWS_COUNT) / DEFAULT_TILE_SIZE;
 
         if(mMinZoom > DEFAULT_MAX_ZOOM)
             mMaxZoom = mMinZoom;
@@ -125,11 +126,11 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     @Override
     protected void onDraw(Canvas canvas) {
         float y = (getHeight() - (getScaledTileSize() * ROWS_COUNT) -
-                (VERTICAL_SPACERS_COUNT * getSpacing())) / 2f;
+                (VERTICAL_SPACERS_COUNT * DEFAULT_SPACING)) / 2f;
 
         for(int row = 0; row < ROWS_COUNT; row++) {
             float x = (getWidth() - (getScaledTileSize() * COLUMNS_COUNT) -
-                    (HORIZONTAL_SPACERS_COUNT * getSpacing())) / 2f;
+                    (HORIZONTAL_SPACERS_COUNT * DEFAULT_SPACING)) / 2f;
 
             for(int column = 0; column < COLUMNS_COUNT; column++) {
                 int position = (row * COLUMNS_COUNT) + column;
@@ -149,10 +150,10 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
                             R.color.actinide_bg));
                 }
 
-                x += getScaledTileSize() + getSpacing();
+                x += getScaledTileSize() + DEFAULT_SPACING;
             }
 
-            y += getScaledTileSize() + getSpacing();
+            y += getScaledTileSize() + DEFAULT_SPACING;
         }
     }
 
@@ -164,10 +165,6 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     private float dpToPx(float dp) {
         return dp * (getContext().getResources().getDisplayMetrics().densityDpi / 160f);
-    }
-
-    private float getSpacing() {
-        return 1f;
     }
 
     private float getScaledTileSize() {
