@@ -49,9 +49,9 @@ public class ZoomView extends FrameLayout implements ViewTreeObserver.OnGlobalLa
         setHorizontalScrollBarEnabled(true);
         setVerticalScrollBarEnabled(true);
         
-        TypedArray styledAttributes = context.obtainStyledAttributes(R.styleable.ZoomView);
+        /*TypedArray styledAttributes = context.obtainStyledAttributes(R.styleable.ZoomView);
         initializeScrollbars(styledAttributes);
-        styledAttributes.recycle();
+        styledAttributes.recycle();*/
 
         getViewTreeObserver().addOnGlobalLayoutListener(this);
         mOverScroller = new OverScroller(context);

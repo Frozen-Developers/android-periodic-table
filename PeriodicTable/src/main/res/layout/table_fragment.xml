@@ -10,23 +10,9 @@
     <include
         layout="@layout/progress_bar"/>
 
-    <com.frozendevs.periodictable.view.ZoomView
+    <com.frozendevs.periodictable.view.PeriodicTableView
+        android:id="@+id/elements_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center">
-
-        <com.frozendevs.periodictable.view.GridView
-            xmlns:custom="http://schemas.android.com/apk/res/com.frozendevs.periodictable"
-            android:id="@+id/elements_table"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            custom:numColumns="@integer/table_columns_count"
-            custom:numRows="@integer/table_rows_count"
-            custom:columnWidth="@dimen/table_tile_size"
-            custom:rowHeight="@dimen/table_tile_size"
-            custom:horizontalSpacing="@dimen/table_spacing"
-            custom:verticalSpacing="@dimen/table_spacing"/>
-
-    </com.frozendevs.periodictable.view.ZoomView>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

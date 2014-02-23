@@ -173,7 +173,7 @@ public class Database {
         return null;
     }
 
-    public static List<TableItem> getTableItems(Context context) {
+    public static TableItem[] getTableItems(Context context) {
         List<TableItem> items = new ArrayList<TableItem>();
 
         XmlPullParser parser = Xml.newPullParser();
@@ -231,7 +231,7 @@ public class Database {
             e.printStackTrace();
         }
 
-        return items;
+        return items.toArray(new TableItem[items.size()]);
     }
 
     public static ElementProperties getElementProperties(Context context, int atomicNumber) {

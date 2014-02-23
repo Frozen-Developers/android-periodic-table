@@ -78,7 +78,7 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        int atomicNumber = getIntent().getIntExtra("atomicNumber", 1);
+        int atomicNumber = getIntent().getIntExtra("number", 1);
 
         elementProperties = Database.getBasicElementProperties(this, atomicNumber);
 

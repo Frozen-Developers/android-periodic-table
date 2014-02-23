@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.model.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.helper.Database;
-import com.frozendevs.periodictable.helper.OnClickOnElement;
 import com.frozendevs.periodictable.model.ElementListItem;
 
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ public class ElementsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ElementListItem element = filteredElements.get(position);
+        final ElementListItem element = filteredElements.get(position);
 
         View view = LayoutInflater.from(activity).inflate(R.layout.elements_list_item, parent, false);
 
@@ -80,7 +81,14 @@ public class ElementsAdapter extends BaseAdapter {
         TextView name = (TextView)view.findViewById(R.id.element_name);
         name.setText(element.getName());
 
-        view.setOnClickListener(new OnClickOnElement(activity, element.getAtomicNumber()));
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, PropertiesActivity.class);
+                intent.putExtra("number", element.getAtomicNumber());
+                activity.startActivity(intent);
+            }
+        });
 
         return view;
     }
