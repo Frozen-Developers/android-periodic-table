@@ -138,9 +138,15 @@ public class PropertiesActivity extends ActionBarActivity {
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
-                        ClipData.newPlainText(propertyName.getText(), propertyValue.getText())
-                );
+                if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+                    ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
+                            setText(propertyValue.getText());
+                }
+                else {
+                    ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
+                            ClipData.newPlainText(propertyName.getText(), propertyValue.getText())
+                    );
+                }
                 return true;
         }
 
