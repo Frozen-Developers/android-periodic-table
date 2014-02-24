@@ -32,7 +32,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private static final int VERTICAL_SPACERS_COUNT = ROWS_COUNT - 1;
 
     private final float DEFAULT_TILE_SIZE = dpToPx(80);
-    private final float DEFAULT_SPACING = 1;
+    private final float DEFAULT_SPACING = 1f;
 
     private static final float DEFAULT_MAX_ZOOM = 1f;
 
@@ -190,7 +190,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
         mPaint.setColor(Color.BLACK);
         mPaint.setTextAlign(Paint.Align.LEFT);
-        mPaint.setTextSize(spToPx(16) * mZoom);
+        mPaint.setTextSize(spToPx(14) * mZoom);
 
         canvas.drawText(symbol, x + padding, y + padding + textSize, mPaint);
 
@@ -198,7 +198,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
         canvas.drawText(number, x + tileSize - padding, y + padding + textSize, mPaint);
 
-        canvas.drawText(weight, x + tileSize - padding, y + tileSize - (padding * 1.75f), mPaint);
+        canvas.drawText(weight, x + tileSize - padding, y + tileSize - padding, mPaint);
 
         mPaint.setTextAlign(Paint.Align.CENTER);
         mPaint.setTextSize(spToPx(12) * mZoom);
