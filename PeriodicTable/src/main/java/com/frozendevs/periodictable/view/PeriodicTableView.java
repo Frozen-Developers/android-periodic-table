@@ -3,6 +3,7 @@ package com.frozendevs.periodictable.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
+import android.database.DataSetObserver;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -16,6 +17,7 @@ import android.view.ScaleGestureDetector;
 import android.view.SoundEffectConstants;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Adapter;
 import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
@@ -38,7 +40,6 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     private View mEmptyView = null;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-    private TableItem[] mItems = new TableItem[0];
     private float mMinZoom = 0f;
     private float mZoom = 0f;
     private float mMaxZoom = 1f;
@@ -46,23 +47,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private GestureDetector mGestureDetector;
     private boolean mIsScrolling = false;
     private OverScroller mOverScroller;
-
-    private class LoadItems extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            mItems = Database.getTableItems(getContext());
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            invalidate();
-
-            updateEmptyStatus(false);
-        }
-    }
+    private Adapter mAdapter;
 
     public PeriodicTableView(Context context) {
         super(context);
@@ -93,8 +78,6 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
         mOverScroller = new OverScroller(context);
         mScaleDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, this);
-
-        new LoadItems().execute();
     }
 
 
@@ -122,7 +105,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public void setEmptyView(View view) {
         mEmptyView = view;
 
-        updateEmptyStatus(mItems.length == 0);
+        updateEmptyStatus(mAdapter == null || mAdapter.isEmpty());
     }
 
     private void updateEmptyStatus(boolean empty) {
@@ -130,52 +113,38 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
             mEmptyView.setVisibility(empty ? VISIBLE : GONE);
     }
 
-    private TableItem getItem(int position) {
-        for (TableItem item : mItems) {
-            if (((item.getPeriod() - 1) * 18) + item.getGroup() - 1 == position)
-                return item;
-            else if (position >= 128 && position <= 142) {
-                if (item.getAtomicNumber() + 71 == position)
-                    return item;
-            } else if (position >= 146 && position <= 160) {
-                if (item.getAtomicNumber() + 57 == position)
-                    return item;
-            }
-        }
-
-        return null;
-    }
-
     @Override
     protected void onDraw(Canvas canvas) {
-        float y = (getHeight() - getScaledHeight()) / 2f;
+        if(mAdapter != null && !mAdapter.isEmpty()) {
+            float y = (getHeight() - getScaledHeight()) / 2f;
 
-        for(int row = 0; row < ROWS_COUNT; row++) {
-            float x = (getWidth() - getScaledWidth()) / 2f;
+            for(int row = 0; row < ROWS_COUNT; row++) {
+                float x = (getWidth() - getScaledWidth()) / 2f;
 
-            for(int column = 0; column < COLUMNS_COUNT; column++) {
-                int position = (row * COLUMNS_COUNT) + column;
+                for(int column = 0; column < COLUMNS_COUNT; column++) {
+                    int position = (row * COLUMNS_COUNT) + column;
 
-                TableItem item = getItem(position);
+                    TableItem item = (TableItem)mAdapter.getItem(position);
 
-                if(item != null) {
-                    drawTile(canvas, x, y, item.getName(), String.valueOf(item.getAtomicNumber()),
-                            item.getStandardAtomicWeight(), item.getSymbol(),
-                            item.getColor(getContext()));
+                    if(item != null) {
+                        drawTile(canvas, x, y, item.getName(), String.valueOf(item.getAtomicNumber()),
+                                item.getStandardAtomicWeight(), item.getSymbol(),
+                                item.getColor(getContext()));
+                    }
+                    else if(position == 92) {
+                        drawTile(canvas, x, y, "57 - 71", "", "", "",
+                                getContext().getResources().getColor(R.color.lanthanide_bg));
+                    }
+                    else if(position == 110) {
+                        drawTile(canvas, x, y, "89 - 103", "", "", "",
+                                getContext().getResources().getColor(R.color.actinide_bg));
+                    }
+
+                    x += getScaledTileSize() + DEFAULT_SPACING;
                 }
-                else if(position == 92) {
-                    drawTile(canvas, x, y, "57 - 71", "", "", "",
-                            getContext().getResources().getColor(R.color.lanthanide_bg));
-                }
-                else if(position == 110) {
-                    drawTile(canvas, x, y, "89 - 103", "", "", "",
-                            getContext().getResources().getColor(R.color.actinide_bg));
-                }
 
-                x += getScaledTileSize() + DEFAULT_SPACING;
+                y += getScaledTileSize() + DEFAULT_SPACING;
             }
-
-            y += getScaledTileSize() + DEFAULT_SPACING;
         }
     }
 
@@ -287,36 +256,37 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     public void onShowPress(MotionEvent e) {
-
     }
 
     @Override
     public boolean onSingleTapUp(MotionEvent e) {
-        float rawX = e.getX() + getScrollX();
-        float rawY = e.getY() + getScrollY();
-        float tileSize = getScaledTileSize();
-        float y = (getHeight() - getScaledHeight()) / 2f;
+        if(mAdapter != null && !mAdapter.isEmpty()) {
+            float rawX = e.getX() + getScrollX();
+            float rawY = e.getY() + getScrollY();
+            float tileSize = getScaledTileSize();
+            float y = (getHeight() - getScaledHeight()) / 2f;
 
-        for(int row = 0; row < ROWS_COUNT; row++) {
-            float x = (getWidth() - getScaledWidth()) / 2f;
+            for(int row = 0; row < ROWS_COUNT; row++) {
+                float x = (getWidth() - getScaledWidth()) / 2f;
 
-            for(int column = 0; column < COLUMNS_COUNT; column++) {
-                if(x <= rawX && x + tileSize >= rawX && y <= rawY && y + tileSize >= rawY) {
-                    TableItem item = getItem((row * COLUMNS_COUNT) + column);
+                for(int column = 0; column < COLUMNS_COUNT; column++) {
+                    if(x <= rawX && x + tileSize >= rawX && y <= rawY && y + tileSize >= rawY) {
+                        TableItem item = (TableItem)mAdapter.getItem((row * COLUMNS_COUNT) + column);
 
-                    if(item != null) {
-                        playSoundEffect(SoundEffectConstants.CLICK);
+                        if(item != null) {
+                            playSoundEffect(SoundEffectConstants.CLICK);
 
-                        Intent intent = new Intent(getContext(), PropertiesActivity.class);
-                        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getAtomicNumber());
-                        getContext().startActivity(intent);
+                            Intent intent = new Intent(getContext(), PropertiesActivity.class);
+                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getAtomicNumber());
+                            getContext().startActivity(intent);
+                        }
                     }
+
+                    x += getScaledTileSize() + DEFAULT_SPACING;
                 }
 
-                x += getScaledTileSize() + DEFAULT_SPACING;
+                y += getScaledTileSize() + DEFAULT_SPACING;
             }
-
-            y += getScaledTileSize() + DEFAULT_SPACING;
         }
 
         return true;
@@ -333,7 +303,6 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     public void onLongPress(MotionEvent e) {
-
     }
 
     @Override
@@ -413,5 +382,20 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public void computeScroll() {
         if(mOverScroller.computeScrollOffset())
             scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
+    }
+
+    public void setAdapter(Adapter adapter) {
+        if(adapter != null) {
+            mAdapter = adapter;
+
+            mAdapter.registerDataSetObserver(new DataSetObserver() {
+                @Override
+                public void onChanged() {
+                    invalidate();
+
+                    updateEmptyStatus(mAdapter.isEmpty());
+                }
+            });
+        }
     }
 }
