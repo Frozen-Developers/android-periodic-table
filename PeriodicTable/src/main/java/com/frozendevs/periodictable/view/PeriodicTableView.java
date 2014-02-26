@@ -7,7 +7,6 @@ import android.database.DataSetObserver;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.os.AsyncTask;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -22,7 +21,6 @@ import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
-import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.TableItem;
 
 public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobalLayoutListener,
