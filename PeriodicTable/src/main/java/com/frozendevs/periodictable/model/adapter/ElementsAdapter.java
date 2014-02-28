@@ -17,6 +17,7 @@ import com.frozendevs.periodictable.model.ElementListItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class ElementsAdapter extends BaseAdapter {
 
@@ -104,9 +105,11 @@ public class ElementsAdapter extends BaseAdapter {
             }
         }
 
+        Locale locale = activity.getResources().getConfiguration().locale;
+
         if(items.isEmpty()) {
             for(ElementListItem element : elements) {
-                if(element.getName().toLowerCase().contains(filter.toLowerCase()))
+                if(element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale)))
                     items.add(element);
             }
         }

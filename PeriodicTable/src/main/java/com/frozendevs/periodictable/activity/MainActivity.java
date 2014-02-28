@@ -110,7 +110,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 if(mViewPager.getCurrentItem() > 0)
                     mViewPager.setCurrentItem(0, true);
 
-                adapter.filter(newText.toLowerCase());
+                adapter.filter(newText.toLowerCase(getResources().getConfiguration().locale));
                 return true;
             }
         });

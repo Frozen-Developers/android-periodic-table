@@ -26,6 +26,8 @@ import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.BasicElementProperties;
 
+import java.util.Locale;
+
 public class PropertiesActivity extends ActionBarActivity {
 
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
@@ -62,12 +64,14 @@ public class PropertiesActivity extends ActionBarActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
+            Locale locale = getResources().getConfiguration().locale;
+
             switch (position) {
                 case 0:
-                    return getString(R.string.details_title).toUpperCase();
+                    return getString(R.string.details_title).toUpperCase(locale);
 
                 case 1:
-                    return getString(R.string.isotopes_title).toUpperCase();
+                    return getString(R.string.isotopes_title).toUpperCase(locale);
             }
 
             return null;
