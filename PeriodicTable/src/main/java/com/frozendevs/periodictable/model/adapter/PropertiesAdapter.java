@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,8 @@ public class PropertiesAdapter extends BaseAdapter {
     private static final int VIEW_TYPE_ITEM = 1;
 
     private Context context;
-    private Property[] propertiesPairs = new Property[] {  };
+    private Typeface typeface;
+    private Property[] propertiesPairs = new Property[0];
 
     private class Property {
         int name;
@@ -84,6 +86,8 @@ public class PropertiesAdapter extends BaseAdapter {
     public PropertiesAdapter(Context context, int atomicNumber) {
         this.context = context;
 
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
+
         new LoadProperties().execute(atomicNumber);
     }
 
@@ -110,9 +114,14 @@ public class PropertiesAdapter extends BaseAdapter {
         Property property = getItem(position);
 
         if(getItemViewType(position) == VIEW_TYPE_ITEM) {
-            ((TextView)view.findViewById(R.id.property_name)).setText(property.name);
-            ((TextView)view.findViewById(R.id.property_value)).setText(!property.value.equals("") ?
+            TextView name = (TextView)view.findViewById(R.id.property_name);
+            name.setText(property.name);
+            name.setTypeface(typeface);
+
+            TextView value = (TextView)view.findViewById(R.id.property_value);
+            value.setText(!property.value.equals("") ?
                     property.value : context.getString(R.string.property_value_unknown));
+            value.setTypeface(typeface);
         }
         else {
             ((TextView)view).setText(property.name);

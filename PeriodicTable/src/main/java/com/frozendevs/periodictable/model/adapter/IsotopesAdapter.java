@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +20,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     private Context context;
 
     private ElementProperties properties;
-    private Isotope[] isotopes = new Isotope[] {  };
+    private Typeface typeface;
+    private Isotope[] isotopes = new Isotope[0];
 
     private class LoadProperties extends AsyncTask<Integer, Void, Void> {
 
@@ -39,6 +41,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
     public IsotopesAdapter(Context context, int atomicNumber) {
         this.context = context;
+
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
 
         new LoadProperties().execute(atomicNumber);
     }
@@ -106,6 +110,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.isotope_list_item, parent, false);
 
         ((CheckedTextView)view).setText(getGroup(groupPosition) + properties.getSymbol());
+        ((CheckedTextView)view).setTypeface(typeface);
 
         return view;
     }
@@ -117,16 +122,20 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         String[] property = getChild(groupPosition, childPosition);
 
-        ((TextView)view.findViewById(R.id.property_name)).setText(property[0]);
+        TextView name = (TextView)view.findViewById(R.id.property_name);
+        name.setText(property[0]);
+        name.setTypeface(typeface);
+
         TextView value = (TextView)view.findViewById(R.id.property_value);
-        if((getChild(groupPosition, 0)[1].equals("Stable") && (childPosition == 1 ||
-                childPosition == 2)) ||
+        if((getChild(groupPosition, 0)[1].equals("Stable") &&
+                (childPosition == 1 || childPosition == 2)) ||
                 (property[1].equals("") && childPosition == 4))
             value.setText(getString(R.string.property_value_none));
         else if(property[1].equals(""))
             value.setText(getString(R.string.property_value_unknown));
         else
             value.setText(property[1]);
+        value.setTypeface(typeface);
 
         return view;
     }
