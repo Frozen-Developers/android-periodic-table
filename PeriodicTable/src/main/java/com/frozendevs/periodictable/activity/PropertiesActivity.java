@@ -26,8 +26,6 @@ import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.BasicElementProperties;
 
-import java.util.Locale;
-
 public class PropertiesActivity extends ActionBarActivity {
 
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
@@ -36,45 +34,35 @@ public class PropertiesActivity extends ActionBarActivity {
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private int atomicNumber;
+        private Fragment[] fragments;
 
-        SectionsPagerAdapter(FragmentManager fm, int atomicNumber) {
+        private int[] titles = new int[] {
+                R.string.details_title,
+                R.string.isotopes_title
+        };
+
+        public SectionsPagerAdapter(FragmentManager fm, int atomicNumber) {
             super(fm);
 
-            this.atomicNumber = atomicNumber;
+            fragments = new Fragment[] {
+                    new PropertiesFragment(atomicNumber),
+                    new IsotopesFragment(atomicNumber)
+            };
         }
 
         @Override
         public Fragment getItem(int i) {
-            switch (i) {
-                case 0:
-                    return new PropertiesFragment(atomicNumber);
-
-                case 1:
-                    return new IsotopesFragment(atomicNumber);
-            }
-
-            return null;
+            return fragments[i];
         }
 
         @Override
         public int getCount() {
-            return 2;
+            return fragments.length;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            Locale locale = getResources().getConfiguration().locale;
-
-            switch (position) {
-                case 0:
-                    return getString(R.string.details_title).toUpperCase(locale);
-
-                case 1:
-                    return getString(R.string.isotopes_title).toUpperCase(locale);
-            }
-
-            return null;
+            return getString(titles[position]).toUpperCase(getResources().getConfiguration().locale);
         }
     }
 
