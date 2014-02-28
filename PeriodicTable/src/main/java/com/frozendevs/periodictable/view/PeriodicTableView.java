@@ -4,8 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
@@ -37,7 +39,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private static final float DEFAULT_MAX_ZOOM = 1f;
 
     private View mEmptyView = null;
-    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+    private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
     private float mMinZoom = 0f;
     private float mZoom = 0f;
     private float mMaxZoom = 1f;
@@ -46,6 +48,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     private boolean mIsScrolling = false;
     private OverScroller mOverScroller;
     private Adapter mAdapter;
+    private Bitmap[] mBitmaps;
+    private Matrix mMatrix = new Matrix();
 
     public PeriodicTableView(Context context) {
         super(context);
@@ -113,7 +117,7 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if(mAdapter != null && !mAdapter.isEmpty()) {
+        if(mAdapter != null && !mAdapter.isEmpty() && mBitmaps != null) {
             float y = (getHeight() - getScaledHeight()) / 2f;
 
             for(int row = 0; row < ROWS_COUNT; row++) {
@@ -122,20 +126,11 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
                 for(int column = 0; column < COLUMNS_COUNT; column++) {
                     int position = (row * COLUMNS_COUNT) + column;
 
-                    TableItem item = (TableItem)mAdapter.getItem(position);
-
-                    if(item != null) {
-                        drawTile(canvas, x, y, item.getName(), String.valueOf(item.getAtomicNumber()),
-                                item.getStandardAtomicWeight(), item.getSymbol(),
-                                item.getColor(getContext()));
-                    }
-                    else if(position == 92) {
-                        drawTile(canvas, x, y, "57 - 71", "", "", "",
-                                getContext().getResources().getColor(R.color.lanthanide_bg));
-                    }
-                    else if(position == 110) {
-                        drawTile(canvas, x, y, "89 - 103", "", "", "",
-                                getContext().getResources().getColor(R.color.actinide_bg));
+                    if(mBitmaps[position] != null) {
+                        mMatrix.reset();
+                        mMatrix.postScale(mZoom, mZoom);
+                        mMatrix.postTranslate(x, y);
+                        canvas.drawBitmap(mBitmaps[position], mMatrix, mPaint);
                     }
 
                     x += getScaledTileSize() + DEFAULT_SPACING;
@@ -144,33 +139,6 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
                 y += getScaledTileSize() + DEFAULT_SPACING;
             }
         }
-    }
-
-    private void drawTile(Canvas canvas, float x, float y, String name, String number, String weight,
-                          String symbol, int color) {
-        float padding = dpToPx(5) * mZoom;
-        float tileSize = getScaledTileSize();
-        float textSize = mPaint.getTextSize();
-
-        mPaint.setColor(color);
-        canvas.drawRect(x, y, x + tileSize, y + tileSize, mPaint);
-
-        mPaint.setColor(Color.BLACK);
-        mPaint.setTextAlign(Paint.Align.LEFT);
-        mPaint.setTextSize(spToPx(14) * mZoom);
-
-        canvas.drawText(symbol, x + padding, y + padding + textSize, mPaint);
-
-        mPaint.setTextAlign(Paint.Align.RIGHT);
-
-        canvas.drawText(number, x + tileSize - padding, y + padding + textSize, mPaint);
-
-        canvas.drawText(weight, x + tileSize - padding, y + tileSize - padding, mPaint);
-
-        mPaint.setTextAlign(Paint.Align.CENTER);
-        mPaint.setTextSize(spToPx(12) * mZoom);
-
-        canvas.drawText(name, x + (tileSize / 2), y + (tileSize / 2) + (textSize / 2), mPaint);
     }
 
     private float dpToPx(float dp) {
@@ -389,11 +357,74 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
             mAdapter.registerDataSetObserver(new DataSetObserver() {
                 @Override
                 public void onChanged() {
+                    buildCache();
+
                     invalidate();
 
                     updateEmptyStatus(mAdapter.isEmpty());
                 }
             });
         }
+    }
+
+    private void buildCache() {
+        if(mAdapter != null && !mAdapter.isEmpty()) {
+            mBitmaps = new Bitmap[COLUMNS_COUNT * ROWS_COUNT];
+
+            for(int row = 0; row < ROWS_COUNT; row++) {
+                for(int column = 0; column < COLUMNS_COUNT; column++) {
+                    int position = (row * COLUMNS_COUNT) + column;
+
+                    TableItem item = (TableItem)mAdapter.getItem(position);
+
+                    Bitmap bitmap = Bitmap.createBitmap(Math.round(DEFAULT_TILE_SIZE),
+                            Math.round(DEFAULT_TILE_SIZE), Bitmap.Config.ARGB_8888);
+
+                    Canvas canvas = new Canvas(bitmap);
+
+                    if(item != null) {
+                        drawTile(canvas, item.getName(), String.valueOf(item.getAtomicNumber()),
+                                item.getStandardAtomicWeight(), item.getSymbol(),
+                                item.getColor(getContext()));
+                    }
+                    else if(position == 92) {
+                        drawTile(canvas, "57 - 71", "", "", "",
+                                getContext().getResources().getColor(R.color.lanthanide_bg));
+                    }
+                    else if(position == 110) {
+                        drawTile(canvas, "89 - 103", "", "", "",
+                                getContext().getResources().getColor(R.color.actinide_bg));
+                    }
+
+                    mBitmaps[position] = Bitmap.createBitmap(bitmap);
+                }
+            }
+        }
+    }
+
+    private void drawTile(Canvas canvas, String name, String number, String weight, String symbol, int color) {
+        float padding = dpToPx(5);
+
+        mPaint.setColor(color);
+        canvas.drawRect(0, 0, DEFAULT_TILE_SIZE, DEFAULT_TILE_SIZE, mPaint);
+
+        mPaint.setColor(Color.BLACK);
+        mPaint.setTextAlign(Paint.Align.LEFT);
+        mPaint.setTextSize(spToPx(14));
+        Paint.FontMetrics fontMetrics = mPaint.getFontMetrics();
+
+        canvas.drawText(symbol, padding, padding + mPaint.getTextSize(), mPaint);
+
+        mPaint.setTextAlign(Paint.Align.RIGHT);
+
+        canvas.drawText(number, DEFAULT_TILE_SIZE - padding, padding + mPaint.getTextSize(), mPaint);
+
+        canvas.drawText(weight, DEFAULT_TILE_SIZE - padding, DEFAULT_TILE_SIZE - padding -
+                fontMetrics.descent, mPaint);
+
+        mPaint.setTextAlign(Paint.Align.CENTER);
+        mPaint.setTextSize(spToPx(12));
+
+        canvas.drawText(name, DEFAULT_TILE_SIZE / 2, (DEFAULT_TILE_SIZE / 2) + (mPaint.getTextSize() / 2), mPaint);
     }
 }
