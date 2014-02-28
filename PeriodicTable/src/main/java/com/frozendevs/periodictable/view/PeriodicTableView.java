@@ -198,10 +198,10 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     }
 
     @Override
-    public boolean dispatchTouchEvent(MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
         if(mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress())
             if(!mGestureDetector.onTouchEvent(event) && !mIsScrolling)
-                super.dispatchTouchEvent(event);
+                super.onTouchEvent(event);
 
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_CANCEL:
