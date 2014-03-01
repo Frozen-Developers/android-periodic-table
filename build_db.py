@@ -9,8 +9,9 @@ from collections import defaultdict
 import signal
 import sys
 from bs4 import BeautifulSoup, Tag
+import json
 
-OUTPUT_XML = 'PeriodicTable/src/main/res/raw/elements.xml'
+OUTPUT_XML = 'PeriodicTable/src/main/res/raw/elements.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
@@ -59,10 +60,6 @@ def iter_2d_dict(dct):
             		continue
             cols.append(col)
         yield cols
-
-def add_to_element(root, name, value):
-    subelement = etree.SubElement(root, name)
-    subelement.text = value
 
 def replace_with_superscript(string):
 	return ''.join(dict(zip("-0123456789m", "⁻⁰¹²³⁴⁵⁶⁷⁸⁹ᵐ")).get(c, c) for c in string)
@@ -113,7 +110,7 @@ def remove_html_span_and_sup(string):
         tag.replaceWith('')
     return soup.get_text()
 
-def fetch(url, root):
+def fetch(url, jsonData):
     content = lxml.html.fromstring(urllib.request.urlopen(url).read())
 
     # Properties
@@ -222,63 +219,65 @@ def fetch(url, root):
 
     # Add all the things to the tree
 
-    element = etree.SubElement(root, 'element')
-    element.attrib['number'] = nsm[2]
+    element = { 'atomicNumber': nsm[2] }
 
-    add_to_element(element, 'symbol', nsm[1])
-    add_to_element(element, 'name', nsm[0])
-    add_to_element(element, 'weight', saw)
-    add_to_element(element, 'category', cat)
-    add_to_element(element, 'group', grp)
-    add_to_element(element, 'period', pb[0])
-    add_to_element(element, 'block', pb[1])
-    add_to_element(element, 'configuration', ec)
-    add_to_element(element, 'wiki', url)
-    add_to_element(element, 'appearance', apr)
-    add_to_element(element, 'phase', phase)
-    add_to_element(element, 'density', dens)
-    add_to_element(element, 'density-at-mp', ldmp)
-    add_to_element(element, 'density-at-bp', ldbp)
-    add_to_element(element, 'melting-point', mp)
-    add_to_element(element, 'boiling-point', bp)
-    add_to_element(element, 'triple-point', tp)
-    add_to_element(element, 'critical-point', cp)
-    add_to_element(element, 'heat-of-fusion', hf)
-    add_to_element(element, 'heat-of-vaporization', hv)
-    add_to_element(element, 'molar-heat-capacity', mhc)
-    add_to_element(element, 'oxidation-states', os)
-    add_to_element(element, 'electronegativity', en)
+    element['symbol'] = nsm[1]
+    element['name'] = nsm[0]
+    element['weight'] = saw
+    element['category'] = cat
+    element['group'] = grp
+    element['period'] = pb[0]
+    element['block'] = pb[1]
+    element['configuration'] = ec
+    element['wikipediaLink'] = url
+    element['appearance'] = apr
+    element['phase'] = phase
+    element['density'] = dens
+    element['densityAtMeltingPoint'] = ldmp
+    element['densityAtBoilingPoint'] = ldbp
+    element['meltingPoint'] = mp
+    element['boilingPoint'] = bp
+    element['triplePoint'] = tp
+    element['criticalPoint'] = cp
+    element['heatOfFusion'] = hf
+    element['heatOfVaporization'] = hv
+    element['molarHeatCapacity'] = mhc
+    element['oxidationStates'] = os
+    element['electronegativity'] = en
 
-    isotopes_tag = etree.SubElement(element, 'isotopes')
+    isotopes_tag = []
 
     for isotope in isotopes:
-        isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
-        isotope_tag.attrib['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0]))
-        add_to_element(isotope_tag, 'half-life', translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
+        isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0])) }
+        isotope_tag['halfLife'] = translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
-        	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize())
-        add_to_element(isotope_tag, 'decay-modes', translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
-        	'#', '')).replace('×10', '×10^').replace('−', '-')))
-        add_to_element(isotope_tag, 'daughter-isotopes', re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
-        	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M))
-        add_to_element(isotope_tag, 'spin', isotope[7].replace('#', '').replace('(', '').replace(')', ''))
-        add_to_element(isotope_tag, 'abundance', fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
+        	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize()
+        isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
+        	'#', '')).replace('×10', '×10^').replace('−', '-'))
+        isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
+        	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M)
+        isotope_tag['spin'] = isotope[7].replace('#', '').replace('(', '').replace(')', '')
+        isotope_tag['abundance'] = fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
-        	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
+        	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else ''
+        isotopes_tag.append(isotope_tag)
 
-    #print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-    #	dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en]))
-    print(list([nsm[0], en]))
+    element['isotopes'] = isotopes_tag
+
+    jsonData.append(element)
+
+    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+    	dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
     pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
 
-    root = etree.Element('elements')
+    jsonData = []
 
     for page in pages:
-        fetch(URL_PREFIX + page, root)
+        fetch(URL_PREFIX + page, jsonData)
 
-    with open(OUTPUT_XML, 'w+') as out_file:
-        out_file.write(etree.tostring(root, encoding='utf-8', pretty_print=True, xml_declaration=True).decode('utf-8'));
+    with open(OUTPUT_XML, 'w+') as outfile:
+        json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii=False)
