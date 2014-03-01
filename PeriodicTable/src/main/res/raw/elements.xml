@@ -594,8 +594,7 @@ Graphite: 2.267 g·cm⁻³</density>
     <critical-point></critical-point>
     <heat-of-fusion>117 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
-    <molar-heat-capacity>6.155
-8.517 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <molar-heat-capacity>6.155 diamond: 8.517 graphite: J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <oxidation-states>4, 3, 2, 1, 0, -1, -2, -3, -4</oxidation-states>
     <isotopes>
       <isotope symbol="⁸C">
@@ -1050,8 +1049,8 @@ Solid: transparent (beta)</appearance>
     <critical-point>144.41 K, 5.1724 MPa</critical-point>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization>6.51 kJ·mol⁻¹</heat-of-vaporization>
-    <molar-heat-capacity>Cp: 31 J·mol⁻¹·K⁻¹
-Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <molar-heat-capacity>Cp: 21.1 °C: 31 J·mol⁻¹·K⁻¹
+Cv: 21.1 °C: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <oxidation-states>-1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴F">

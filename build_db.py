@@ -200,9 +200,9 @@ def fetch(url, root):
 
     mhc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Molar heat capacity")]]]/td')
     mhc = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
-    	re.sub(r' +\([^)].*\)', '', translate_script(html_elements_list_to_string(mhc).replace('&#160;',
-    	' ').replace('&#8194;', ' ').replace('&#8722;','-').replace('&#183;', '·').replace('&#8211;','–')
-    	)))).replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '').replace('(',
+    	translate_script(html_elements_list_to_string(mhc).replace('&#160;',' ').replace('&#176;', '°')
+    		.replace('&#8194;', ' ').replace('&#8722;','-').replace('&#183;', '·').replace('&#8211;','–')
+    	))).replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '').replace('(',
     	'').replace(')', ':').replace(':\n', ': ').strip(), flags=re.M) if len(mhc) > 0 else ''
 
     os = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Oxidation states")]]]/td')
