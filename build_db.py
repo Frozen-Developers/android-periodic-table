@@ -209,6 +209,10 @@ def fetch(url, root):
     os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
     	os)))).replace('&#8722;','-').strip() if len(os) > 0 else ''
 
+    en = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electronegativity")]]]/td')
+    en = re.sub(r'\[.+?\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(en))
+    	).replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace('&#160;? ', '').strip() if len(en) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -243,6 +247,7 @@ def fetch(url, root):
     add_to_element(element, 'heat-of-vaporization', hv)
     add_to_element(element, 'molar-heat-capacity', mhc)
     add_to_element(element, 'oxidation-states', os)
+    add_to_element(element, 'electronegativity', en)
 
     isotopes_tag = etree.SubElement(element, 'isotopes')
 
@@ -261,8 +266,9 @@ def fetch(url, root):
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
         	'×10^').replace('−', '-').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else '')
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-    	dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os]))
+    #print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+    #	dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en]))
+    print(list([nsm[0], en]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
