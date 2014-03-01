@@ -256,8 +256,8 @@ public class Database {
                                     liquidDensityAtMeltingPoint = "",
                                     liquidDensityAtBoilingPoint = "", meltingPoint = "",
                                     boilingPoint = "", triplePoint = "", criticalPoint = "",
-                                    heatOfFusion = "", heatOfVaporization = "",
-                                    molarHeatCapacity = "", oxidationStates = "";
+                                    heatOfFusion = "", heatOfVaporization = "", molarHeatCapacity = "",
+                                    oxidationStates = "", electronegativity = "";
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -309,6 +309,8 @@ public class Database {
                                         molarHeatCapacity = readTag(parser, tag);
                                     else if(tag.equals("oxidation-states"))
                                         oxidationStates = readTag(parser, tag);
+                                    else if(tag.equals("electronegativity"))
+                                        electronegativity = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -318,7 +320,8 @@ public class Database {
                                     period, block, category, configuration, wiki, appearance, phase,
                                     density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint,
                                     meltingPoint, boilingPoint, triplePoint, criticalPoint,
-                                    heatOfFusion, heatOfVaporization, molarHeatCapacity, oxidationStates);
+                                    heatOfFusion, heatOfVaporization, molarHeatCapacity, oxidationStates,
+                                    electronegativity);
                         }
                         else
                             skip(parser);

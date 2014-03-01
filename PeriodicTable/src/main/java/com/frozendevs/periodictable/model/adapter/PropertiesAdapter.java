@@ -72,7 +72,8 @@ public class PropertiesAdapter extends BaseAdapter {
                     new Property(R.string.property_molar_heat_capacity,
                             properties.getMolarHeatCapacity()),
                     new Property(R.string.properties_header_atomic, null),
-                    new Property(R.string.property_oxidation_states, properties.getOxidationStates())
+                    new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
+                    new Property(R.string.property_electronegativity, properties.getElectronegativity())
             };
 
             return null;
