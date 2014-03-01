@@ -71,7 +71,8 @@ public class PropertiesAdapter extends BaseAdapter {
                             properties.getHeatOfVaporization()),
                     new Property(R.string.property_molar_heat_capacity,
                             properties.getMolarHeatCapacity()),
-                    new Property(R.string.properties_header_atomic, null)
+                    new Property(R.string.properties_header_atomic, null),
+                    new Property(R.string.property_oxidation_states, properties.getOxidationStates())
             };
 
             return null;

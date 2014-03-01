@@ -4,7 +4,8 @@ public class ElementProperties extends TableItem {
 
     private String block, electronConfiguration, wikiLink, appearance, phase, density,
             liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
-            triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity;
+            triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
+            oxidationStates;
 
     public ElementProperties(String name, String symbol, int atomicNumber, String weight, int group,
                              int period, String block, String category, String electronConfiguration,
@@ -12,7 +13,7 @@ public class ElementProperties extends TableItem {
                              String liquidDensityAtMeltingPoint, String liquidDensityAtBoilingPoint,
                              String meltingPoint, String boilingPoint, String triplePoint,
                              String criticalPoint, String heatOfFusion, String heatOfVaporization,
-                             String molarHeatCapacity) {
+                             String molarHeatCapacity, String oxidationStates) {
         super(name, symbol, atomicNumber, weight, group, period, category);
 
         this.block = block;
@@ -30,6 +31,7 @@ public class ElementProperties extends TableItem {
         this.heatOfFusion = heatOfFusion;
         this.heatOfVaporization = heatOfVaporization;
         this.molarHeatCapacity = molarHeatCapacity;
+        this.oxidationStates = oxidationStates;
     }
 
     public String getBlock() {
@@ -90,5 +92,9 @@ public class ElementProperties extends TableItem {
 
     public String getMolarHeatCapacity() {
         return molarHeatCapacity;
+    }
+
+    public String getOxidationStates() {
+        return oxidationStates;
     }
 }

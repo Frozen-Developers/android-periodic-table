@@ -81,7 +81,7 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         int atomicNumber = Integer.valueOf(parser.getAttributeValue(null, "number"));
-                        String symbol = null, name = null;
+                        String symbol = "", name = "";
 
                         while (parser.next() != XmlPullParser.END_TAG) {
                             if (parser.getEventType() == XmlPullParser.START_TAG) {
@@ -137,7 +137,7 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         if(Integer.valueOf(parser.getAttributeValue(null, "number")) == element) {
-                            String wikiLink = null, name = null;
+                            String wikiLink = "", name = "";
 
                             while (parser.next() != XmlPullParser.END_TAG) {
                                 if (parser.getEventType() == XmlPullParser.START_TAG) {
@@ -191,7 +191,7 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         int atomicNumber = Integer.valueOf(parser.getAttributeValue(null, "number"));
-                        String symbol = null, name = null, weight = null, category = null;
+                        String symbol = "", name = "", weight = "", category = "";
                         int group = 0, period = 0;
 
                         while (parser.next() != XmlPullParser.END_TAG) {
@@ -250,14 +250,14 @@ public class Database {
                         parser.require(XmlPullParser.START_TAG, null, "element");
 
                         if(atomicNumber == Integer.valueOf(parser.getAttributeValue(null, "number"))) {
-                            String symbol = null, name = null, weight = null, block = null,
-                                    category = null, configuration = null, wiki = null,
-                                    appearance = null, phase = null, density = null,
-                                    liquidDensityAtMeltingPoint = null,
-                                    liquidDensityAtBoilingPoint = null, meltingPoint = null,
-                                    boilingPoint = null, triplePoint = null, criticalPoint = null,
-                                    heatOfFusion = null, heatOfVaporization = null,
-                                    molarHeatCapacity = null;
+                            String symbol = "", name = "", weight = "", block = "",
+                                    category = "", configuration = "", wiki = "",
+                                    appearance = "", phase = "", density = "",
+                                    liquidDensityAtMeltingPoint = "",
+                                    liquidDensityAtBoilingPoint = "", meltingPoint = "",
+                                    boilingPoint = "", triplePoint = "", criticalPoint = "",
+                                    heatOfFusion = "", heatOfVaporization = "",
+                                    molarHeatCapacity = "", oxidationStates = "";
                             int group = 0, period = 0;
 
                             while (parser.next() != XmlPullParser.END_TAG) {
@@ -307,6 +307,8 @@ public class Database {
                                         heatOfVaporization = readTag(parser, tag);
                                     else if(tag.equals("molar-heat-capacity"))
                                         molarHeatCapacity = readTag(parser, tag);
+                                    else if(tag.equals("oxidation-states"))
+                                        oxidationStates = readTag(parser, tag);
                                     else
                                         skip(parser);
                                 }
@@ -316,7 +318,7 @@ public class Database {
                                     period, block, category, configuration, wiki, appearance, phase,
                                     density, liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint,
                                     meltingPoint, boilingPoint, triplePoint, criticalPoint,
-                                    heatOfFusion, heatOfVaporization, molarHeatCapacity);
+                                    heatOfFusion, heatOfVaporization, molarHeatCapacity, oxidationStates);
                         }
                         else
                             skip(parser);
@@ -366,9 +368,9 @@ public class Database {
 
                                                     String symbol = parser.getAttributeValue(null,
                                                             "symbol");
-                                                    String halfLife = null, decayModes = null,
-                                                            daughterIsotopes = null, spin = null,
-                                                            abundance = null;
+                                                    String halfLife = "", decayModes = "",
+                                                            daughterIsotopes = "", spin = "",
+                                                            abundance = "";
 
                                                     while (parser.next() != XmlPullParser.END_TAG) {
                                                         if (parser.getEventType() ==
