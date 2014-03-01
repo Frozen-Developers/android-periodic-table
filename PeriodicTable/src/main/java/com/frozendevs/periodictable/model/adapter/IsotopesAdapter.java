@@ -54,7 +54,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int groupPosition) {
-        return 5;
+        return 4;
     }
 
     @Override
@@ -70,18 +70,22 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                         isotopes[groupPosition].getHalfLife() };
 
             case 1:
-                return new String[] { getString(R.string.property_decay_modes),
-                        isotopes[groupPosition].getDecayModes() };
+                String[] decayModes = isotopes[groupPosition].getDecayModes();
+                String[] daughterIsotopes = isotopes[groupPosition].getDaughterIsotopes();
+
+                String combined = "";
+                for(int i = 0; i < decayModes.length; i++) {
+                    combined += decayModes[i] + " -> " + daughterIsotopes[i];
+                    if(i < decayModes.length - 1) combined += "\n";
+                }
+
+                return new String[] { getString(R.string.property_decay_modes), combined };
 
             case 2:
-                return new String[] { getString(R.string.property_daughter_isotopes),
-                        isotopes[groupPosition].getDaughterIsotopes() };
-
-            case 3:
                 return new String[] { getString(R.string.property_spin),
                         isotopes[groupPosition].getSpin() };
 
-            case 4:
+            case 3:
                 return new String[] { getString(R.string.property_abundance),
                         isotopes[groupPosition].getAbundance() };
         }

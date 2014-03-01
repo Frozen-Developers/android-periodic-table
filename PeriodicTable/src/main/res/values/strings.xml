@@ -53,7 +53,6 @@
 
     <string name="property_half_life">Half-life</string>
     <string name="property_decay_modes">Decay modes</string>
-    <string name="property_daughter_isotopes">Daughter isotopes</string>
     <string name="property_spin">Spin</string>
     <string name="property_abundance">Abundance</string>
 
