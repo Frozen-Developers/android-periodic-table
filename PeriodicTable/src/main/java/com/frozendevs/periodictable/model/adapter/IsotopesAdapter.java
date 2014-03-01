@@ -12,14 +12,12 @@ import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.helper.Database;
-import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.Isotope;
 
 public class IsotopesAdapter extends BaseExpandableListAdapter {
 
     private Context context;
 
-    private ElementProperties properties;
     private Typeface typeface;
     private Isotope[] isotopes = new Isotope[0];
 
@@ -27,7 +25,6 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            properties = Database.getElementProperties(context, params[0]);
             isotopes = Database.getIsotopes(context, params[0]);
 
             return null;
@@ -113,7 +110,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                              ViewGroup parent) {
         View view = LayoutInflater.from(context).inflate(R.layout.isotope_list_item, parent, false);
 
-        ((CheckedTextView)view).setText(getGroup(groupPosition) + properties.getSymbol());
+        ((CheckedTextView)view).setText(getGroup(groupPosition));
         ((CheckedTextView)view).setTypeface(typeface);
 
         return view;

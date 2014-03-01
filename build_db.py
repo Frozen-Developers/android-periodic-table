@@ -243,7 +243,7 @@ def fetch(url, root):
 
     for isotope in isotopes:
         isotope_tag = etree.SubElement(isotopes_tag, 'isotope')
-        isotope_tag.attrib['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1].capitalize(), '')))
+        isotope_tag.attrib['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0]))
         add_to_element(isotope_tag, 'half-life', translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
         	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize())
