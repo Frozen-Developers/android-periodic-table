@@ -2,8 +2,7 @@ package com.frozendevs.periodictable.model;
 
 public class Isotope {
 
-    private String symbol, halfLife, spin, abundance;
-    private String[] decayModes, daughterIsotopes;
+    private String symbol, halfLife, spin, abundance, decayModes, daughterIsotopes;
 
     public String getSymbol() {
         return symbol;
@@ -22,10 +21,10 @@ public class Isotope {
     }
 
     public String[] getDecayModes() {
-        return decayModes;
+        return decayModes.split("\n");
     }
 
     public String[] getDaughterIsotopes() {
-        return daughterIsotopes;
+        return daughterIsotopes.split("\n");
     }
 }

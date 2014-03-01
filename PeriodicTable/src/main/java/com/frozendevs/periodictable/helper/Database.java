@@ -9,6 +9,9 @@ import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.Isotope;
 import com.frozendevs.periodictable.model.TableItem;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -44,6 +47,15 @@ public class Database {
     }
 
     public BasicElementProperties getBasicElementProperties(int element) {
+        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
+
+        for(int i = 0; i < jsonArray.size(); i++) {
+            JsonObject object = jsonArray.get(i).getAsJsonObject();
+
+            if(object.get("atomicNumber").getAsInt() == element)
+                return gson.fromJson(object, BasicElementProperties.class);
+        }
+
         return null;
     }
 
@@ -51,11 +63,29 @@ public class Database {
         return gson.fromJson(databaseReader, TableItem[].class);
     }
 
-    public ElementProperties getElementProperties(int atomicNumber) {
+    public ElementProperties getElementProperties(int element) {
+        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
+
+        for(int i = 0; i < jsonArray.size(); i++) {
+            JsonObject object = jsonArray.get(i).getAsJsonObject();
+
+            if(object.get("atomicNumber").getAsInt() == element)
+                return gson.fromJson(object, ElementProperties.class);
+        }
+
         return null;
     }
 
     public Isotope[] getIsotopes(int element) {
+        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
+
+        for(int i = 0; i < jsonArray.size(); i++) {
+            JsonObject object = jsonArray.get(i).getAsJsonObject();
+
+            if(object.get("atomicNumber").getAsInt() == element)
+                return gson.fromJson(object.get("isotopes").getAsJsonArray(), Isotope[].class);
+        }
+
         return null;
     }
 }
