@@ -23,6 +23,7 @@
     <heat-of-fusion>H₂: 0.117 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>H₂: 0.904 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>H₂: 28.836 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹H">
         <half-life>Stable</half-life>
@@ -100,6 +101,7 @@
     <heat-of-fusion>0.0138 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>0.0829 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>0</oxidation-states>
     <isotopes>
       <isotope symbol="²He">
         <half-life></half-life>
@@ -197,6 +199,7 @@
     <heat-of-fusion>3.00 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>136 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.860 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+1</oxidation-states>
     <isotopes>
       <isotope symbol="³Li">
         <half-life></half-life>
@@ -321,6 +324,7 @@
     <heat-of-fusion>12.2 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>292 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>16.443 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁵Be">
         <half-life></half-life>
@@ -446,6 +450,7 @@
     <heat-of-fusion>50.2 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>508 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>11.087 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁶B">
         <half-life></half-life>
@@ -591,6 +596,7 @@ Graphite: 2.267 g·cm⁻³</density>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity>6.155
 8.517 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1, 0, -1, -2, -3, -4</oxidation-states>
     <isotopes>
       <isotope symbol="⁸C">
         <half-life>2.0 × 10-21 s</half-life>
@@ -740,6 +746,7 @@ K-capture (.21%)</decay-modes>
     <heat-of-fusion>N₂: 0.72 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>N₂: 5.56 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>N₂: 29.124 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1, -1, -2, -3</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁰N">
         <half-life>200×10⁻²⁴ s</half-life>
@@ -905,6 +912,7 @@ K-capture (.21%)</decay-modes>
     <heat-of-fusion>O₂: 0.444 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>O₂: 6.82 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>O₂: 29.378 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹²O">
         <half-life>580×10⁻²⁴ s</half-life>
@@ -1044,6 +1052,7 @@ Solid: transparent (beta)</appearance>
     <heat-of-vaporization>6.51 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>Cp: 31 J·mol⁻¹·K⁻¹
 Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>-1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴F">
         <half-life></half-life>
@@ -1213,6 +1222,7 @@ Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <heat-of-fusion>0.335 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>1.71 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, 0</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶Ne">
         <half-life>9×10⁻²¹ s</half-life>
@@ -1388,6 +1398,7 @@ Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <heat-of-fusion>2.60 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>97.42 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>28.230 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁸Na">
         <half-life>1.3×10⁻²¹ s</half-life>
@@ -1606,6 +1617,7 @@ Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <heat-of-fusion>8.48 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>128 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.869 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+2, +1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁹Mg">
         <half-life></half-life>
@@ -1806,6 +1818,7 @@ Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <heat-of-fusion>10.71 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>284 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.200 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁹Al">
         <half-life>&lt;35 ns</half-life>
@@ -2054,6 +2067,7 @@ Cv: 23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
     <heat-of-fusion>50.21 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>383 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>19.789 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1 -1, -2, -3, -4</oxidation-states>
     <isotopes>
       <isotope symbol="²²Si">
         <half-life>29 ms</half-life>
@@ -2259,6 +2273,7 @@ Black: 610 °C</melting-point>
     <heat-of-fusion>White: 0.66 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity>White: 23.824 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1, -1, -2, -3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁴P">
         <half-life>?</half-life>
@@ -2470,6 +2485,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <heat-of-fusion>Mono: 1.727 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>Mono: 45 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>22.75 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="²⁶S">
         <half-life>10 ms</half-life>
@@ -2689,6 +2705,7 @@ Gamma: 1.92 g·cm⁻³</density>
     <heat-of-fusion>Cl₂: 6.406 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>Cl₂: 20.41 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>Cl₂: 33.949 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="²⁸Cl">
         <half-life></half-life>
@@ -2917,6 +2934,7 @@ IT (44.6%)</decay-modes>
     <heat-of-fusion>1.18 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>6.53 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>0</oxidation-states>
     <isotopes>
       <isotope symbol="³⁰Ar">
         <half-life>&lt;20 ns</half-life>
@@ -3132,6 +3150,7 @@ IT (44.6%)</decay-modes>
     <heat-of-fusion>2.33 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>76.9 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>29.6 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="³²K">
         <half-life>Unknown</half-life>
@@ -3383,6 +3402,7 @@ EC (10.72%)
     <heat-of-fusion>8.54 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>154.7 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.929 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+2, +1</oxidation-states>
     <isotopes>
       <isotope symbol="³⁴Ca">
         <half-life>&lt;35 ns</half-life>
@@ -3593,6 +3613,7 @@ EC (10.72%)
     <heat-of-fusion>14.1 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>332.7 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.52 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="³⁶Sc">
         <half-life></half-life>
@@ -3901,6 +3922,7 @@ EC (10.72%)
     <heat-of-fusion>14.15 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>425 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.060 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="³⁸Ti">
         <half-life>&lt;120 ns</half-life>
@@ -4137,6 +4159,7 @@ EC (10.72%)
     <heat-of-fusion>21.5 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>444 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.89 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁴⁰V">
         <half-life></half-life>
@@ -4394,6 +4417,7 @@ EC (10.72%)
     <heat-of-fusion>21.0 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>347 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>23.35 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="⁴²Cr">
         <half-life>14 ms</half-life>
@@ -4636,6 +4660,7 @@ EC (10.72%)
     <heat-of-fusion>12.91 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>221 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.32 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3, 2, 1, -1, -2, -3</oxidation-states>
     <isotopes>
       <isotope symbol="⁴⁴Mn">
         <half-life>&lt;105 ns</half-life>
@@ -4923,6 +4948,7 @@ IT (11.5%)</decay-modes>
     <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>340 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.10 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="⁴⁵Fe">
         <half-life>1.89 ms</half-life>
@@ -5207,6 +5233,7 @@ IT (11.5%)</decay-modes>
     <heat-of-fusion>16.06 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>377 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.81 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁴⁷Co">
         <half-life></half-life>
@@ -5533,6 +5560,7 @@ IT (1%)</decay-modes>
     <heat-of-fusion>17.48 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>379 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.07 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁴⁸Ni">
         <half-life>10 ms</half-life>
@@ -5851,6 +5879,7 @@ IT</decay-modes>
     <heat-of-fusion>13.26 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>300.4 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.440 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+1, +2, +3, +4</oxidation-states>
     <isotopes>
       <isotope symbol="⁵²Cu">
         <half-life></half-life>
@@ -6143,6 +6172,7 @@ p</decay-modes>
     <heat-of-fusion>7.32 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>115 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.470 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+2, +1, 0</oxidation-states>
     <isotopes>
       <isotope symbol="⁵⁴Zn">
         <half-life></half-life>
@@ -6471,6 +6501,7 @@ IT</decay-modes>
     <heat-of-fusion>5.59 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>254 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.86 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁵⁶Ga">
         <half-life></half-life>
@@ -6749,6 +6780,7 @@ EC (0.41%)</decay-modes>
     <heat-of-fusion>36.94 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>334 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>23.222 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1, 0, -1, -2, -3, -4</oxidation-states>
     <isotopes>
       <isotope symbol="⁵⁸Ge">
         <half-life></half-life>
@@ -7110,6 +7142,7 @@ IT (1%)</decay-modes>
     <heat-of-fusion>Grey: 24.44 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>34.76 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.64 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 3, 2, 1, -3</oxidation-states>
     <isotopes>
       <isotope symbol="⁶⁰As">
         <half-life></half-life>
@@ -7453,6 +7486,7 @@ Vitreous: 4.28 g·cm⁻³</density>
     <heat-of-fusion>Gray: 6.69 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>95.48 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.363 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 4, 2, 1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="⁶⁵Se">
         <half-life>&lt;50 ms</half-life>
@@ -7775,6 +7809,7 @@ Solid: metallic luster</appearance>
     <heat-of-fusion>Br₂: 10.571 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>Br₂: 29.96 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>Br₂: 75.69 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 5, 4, 3, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁶⁶Br">
         <half-life></half-life>
@@ -8151,6 +8186,7 @@ IT</decay-modes>
     <heat-of-fusion>1.64 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>9.08 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 1, 0</oxidation-states>
     <isotopes>
       <isotope symbol="⁶⁹Kr">
         <half-life>32 ms</half-life>
@@ -8484,6 +8520,7 @@ IT (21.4%)</decay-modes>
     <heat-of-fusion>2.19 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>69 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>31.060 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁷¹Rb">
         <half-life></half-life>
@@ -8871,6 +8908,7 @@ IT
     <heat-of-fusion>7.43 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>141 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.4 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁷³Sr">
         <half-life>&gt;25 ms</half-life>
@@ -9192,6 +9230,7 @@ EC (.3%)</decay-modes>
     <heat-of-fusion>11.42 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>363 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.53 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁷⁶Y">
         <half-life>500 ns</half-life>
@@ -9685,6 +9724,7 @@ IT (10%)
     <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>591 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.36 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁷⁸Zr">
         <half-life>50 ms</half-life>
@@ -9996,6 +10036,7 @@ IT (10%)
     <heat-of-fusion>30 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>689.9 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.60 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁸¹Nb">
         <half-life>&lt;44 ns</half-life>
@@ -10466,6 +10507,7 @@ IT (3.8%)</decay-modes>
     <heat-of-fusion>37.48 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>598 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.06 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="⁸³Mo">
         <half-life>23 ms</half-life>
@@ -10789,6 +10831,7 @@ IT (3.8%)</decay-modes>
     <heat-of-fusion>33.29 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>585.2 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.27 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3, 2, 1, -1, -3</oxidation-states>
     <isotopes>
       <isotope symbol="⁸⁵Tc">
         <half-life>&lt;110 ns</half-life>
@@ -11237,6 +11280,7 @@ IT (2%)</decay-modes>
     <heat-of-fusion>38.59 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>619 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.06 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>8, 7, 6, 4, 3, 2, 1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="⁸⁷Ru">
         <half-life>50 ms</half-life>
@@ -11562,6 +11606,7 @@ IT (22%)
     <heat-of-fusion>26.59 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>493 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.98 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="⁸⁹Rh">
         <half-life>10 ms</half-life>
@@ -12023,6 +12068,7 @@ IT (.23%)</decay-modes>
     <heat-of-fusion>16.74 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>358 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.98 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>0, +1, +2, +4</oxidation-states>
     <isotopes>
       <isotope symbol="⁹¹Pd">
         <half-life>10 ms</half-life>
@@ -12400,6 +12446,7 @@ IT (8%)</decay-modes>
     <heat-of-fusion>11.28 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>254 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.350 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, 2, 3</oxidation-states>
     <isotopes>
       <isotope symbol="⁹³Ag">
         <half-life>5 ms</half-life>
@@ -13006,6 +13053,7 @@ IT</decay-modes>
     <heat-of-fusion>6.21 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>99.87 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.020 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁹⁵Cd">
         <half-life>5 ms</half-life>
@@ -13398,6 +13446,7 @@ IT (&lt;.1%)</decay-modes>
     <heat-of-fusion>3.281 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>231.8 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.74 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="⁹⁷In">
         <half-life>5 ms</half-life>
@@ -14079,6 +14128,7 @@ Gray: 5.769 g·cm⁻³</density>
     <heat-of-fusion>White: 7.03 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>White: 296.1 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>White: 27.112 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1, -4</oxidation-states>
     <isotopes>
       <isotope symbol="⁹⁹Sn">
         <half-life>5 ms</half-life>
@@ -14630,6 +14680,7 @@ IT (.0004%)</decay-modes>
     <heat-of-fusion>19.79 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>193.43 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.23 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 3, -3</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁰³Sb">
         <half-life>100 ms</half-life>
@@ -15150,6 +15201,7 @@ IT (15%)</decay-modes>
     <heat-of-fusion>17.49 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>114.1 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.73 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 2, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁰⁵Te">
         <half-life>1 µs</half-life>
@@ -15603,6 +15655,7 @@ IT (17.5%)</decay-modes>
     <heat-of-fusion>I₂: 15.52 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>I₂: 41.57 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>I₂: 54.44 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 5, 3, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁰⁸I">
         <half-life>36 ms</half-life>
@@ -16059,6 +16112,7 @@ IT (rare)</decay-modes>
     <heat-of-fusion>101.325 kPa: 2.27 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>101.325 kPa: 12.64 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>0, +1, +2, +4, +6, +8</oxidation-states>
     <isotopes>
       <isotope symbol="¹¹⁰Xe">
         <half-life>310 ms</half-life>
@@ -16463,6 +16517,7 @@ IT (rare)</decay-modes>
     <heat-of-fusion>2.09 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>63.9 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>32.210 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹¹²Cs">
         <half-life>500 µs</half-life>
@@ -17003,6 +17058,7 @@ IT</decay-modes>
     <heat-of-fusion>7.12 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>142 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>28.07 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>+2</oxidation-states>
     <isotopes>
       <isotope symbol="¹¹⁴Ba">
         <half-life>530 ms</half-life>
@@ -17413,6 +17469,7 @@ EC (.0096%)</decay-modes>
     <heat-of-fusion>27.2 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>648 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.73 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁵³Hf">
         <half-life>400 ms</half-life>
@@ -17902,6 +17959,7 @@ IT (42%)</decay-modes>
     <heat-of-fusion>36.57 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>753 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.36 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁵⁵Ta">
         <half-life>13 µs</half-life>
@@ -18465,6 +18523,7 @@ IT
     <heat-of-fusion>35.3 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>774 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.27 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, 0, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁵⁸W">
         <half-life>1.37 ms</half-life>
@@ -18837,6 +18896,7 @@ IT
     <heat-of-fusion>60.43 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>704 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.48 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3, 2, 1, 0, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶⁰Re">
         <half-life>860 µs</half-life>
@@ -19295,6 +19355,7 @@ IT (45.6%)</decay-modes>
     <heat-of-fusion>57.85 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>378 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>24.7 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶²Os">
         <half-life>1.87 ms</half-life>
@@ -19666,6 +19727,7 @@ IT (15%)</decay-modes>
     <heat-of-fusion>41.12 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>564 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.10 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>-3,-1, 0, 1, 2, 3, 4, 5, 6, 8</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶⁴Ir">
         <half-life>1 ms</half-life>
@@ -20226,6 +20288,7 @@ IT (.25%)</decay-modes>
     <heat-of-fusion>22.17 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>510 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.86 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1, -1, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶⁶Pt">
         <half-life>300 µs</half-life>
@@ -20650,6 +20713,7 @@ IT</decay-modes>
     <heat-of-fusion>12.55 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>342 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.418 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁶⁹Au">
         <half-life>150 µs</half-life>
@@ -21232,6 +21296,7 @@ IT (18%)</decay-modes>
     <heat-of-fusion>2.29 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>59.11 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.983 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁷¹Hg">
         <half-life>80 µs</half-life>
@@ -21708,6 +21773,7 @@ EC (8.6%)</decay-modes>
     <heat-of-fusion>4.14 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>165 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.32 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁷⁶Tl">
         <half-life>5.2+30-14 ms</half-life>
@@ -22352,6 +22418,7 @@ EC (2.9%)</decay-modes>
     <heat-of-fusion>4.77 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>179.5 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.650 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁷⁸Pb">
         <half-life>178.003830</half-life>
@@ -23030,6 +23097,7 @@ EC (9.5%)</decay-modes>
     <heat-of-fusion>11.30 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>179 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>25.52 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>5, 4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁸⁴Bi">
         <half-life>6.6 ms</half-life>
@@ -23736,6 +23804,7 @@ Beta: 9.398 g·cm⁻³</density>
     <heat-of-fusion>13 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>102.91 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.4 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 2, -2</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁸⁸Po">
         <half-life>430 µs</half-life>
@@ -24261,6 +24330,7 @@ IT (.07%)</decay-modes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization>At₂: 54.39 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>-1, +1, +3, +5, +7</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁹¹At">
         <half-life>1.7+11-5 millisecond</half-life>
@@ -24732,6 +24802,7 @@ EC (3×10⁻⁷%)</decay-modes>
     <heat-of-fusion>3.247 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>18.10 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>5R/2 = 20.786 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 2, 0</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁹⁵Rn">
         <half-life>6 ms</half-life>
@@ -25137,6 +25208,7 @@ IT (&lt;1%)</decay-modes>
     <heat-of-fusion>2 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>65 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁹⁹Fr">
         <half-life>16 ms</half-life>
@@ -25523,6 +25595,7 @@ CD (8.79×-11%)</decay-modes>
     <heat-of-fusion>8.5 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>113 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2</oxidation-states>
     <isotopes>
       <isotope symbol="²⁰²Ra">
         <half-life>2.6 ms</half-life>
@@ -25917,6 +25990,7 @@ CD (2.6×10⁻⁹%)</decay-modes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>4, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁵³Rf">
         <half-life>13 ms</half-life>
@@ -26106,6 +26180,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>5, 4, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁵⁵Db">
         <half-life>1.7 s</half-life>
@@ -26282,6 +26357,7 @@ EC </decay-modes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁵⁸Sg">
         <half-life>3.3 ms</half-life>
@@ -26422,6 +26498,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>7, 5, 4, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁶⁰Bh">
         <half-life>41 ms</half-life>
@@ -26540,6 +26617,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>8, 6, 5, 4, 3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="²⁶³Hs">
         <half-life>760 µs</half-life>
@@ -26680,6 +26758,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>9, 8, 6, 4, 3, 1</oxidation-states>
     <isotopes>
       <isotope symbol="²⁶⁶Mt">
         <half-life>1.2 ms</half-life>
@@ -26776,6 +26855,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>8, 6, 4, 2, 0</oxidation-states>
     <isotopes>
       <isotope symbol="²⁶⁷Ds">
         <half-life>3+6-2 µs</half-life>
@@ -26883,6 +26963,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>5, 3, 1, -1</oxidation-states>
     <isotopes>
       <isotope symbol="²⁷²Rg">
         <half-life>2.0 ms</half-life>
@@ -26960,6 +27041,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>4, 2, 0</oxidation-states>
     <isotopes>
       <isotope symbol="²⁷⁷Cn">
         <half-life>1.1 ms</half-life>
@@ -27044,6 +27126,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>130 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>1, 2, 3, 5</oxidation-states>
     <isotopes>
       <isotope symbol="²⁷⁸Uut">
         <half-life>340 µs</half-life>
@@ -27112,6 +27195,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization>38 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>0, 2, 4</oxidation-states>
     <isotopes>
       <isotope symbol="²⁸⁵Fl">
         <half-life>125 ms</half-life>
@@ -27188,6 +27272,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>5.90–5.98 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>138 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>1, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁸⁷Uup">
         <half-life>32+155-14 ms</half-life>
@@ -27242,6 +27327,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>7.61 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>42 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>-2, +2, +4</oxidation-states>
     <isotopes>
       <isotope symbol="²⁹⁰Lv">
         <half-life>15+26-6 ms</half-life>
@@ -27296,6 +27382,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>-1, +1, +3, +5</oxidation-states>
     <isotopes>
       <isotope symbol="²⁹³Uus">
         <half-life>14 +11, -4 ms</half-life>
@@ -27336,6 +27423,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>23.5 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>19.4 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>-1, 0, +1, +2, +4, +6</oxidation-states>
     <isotopes>
       <isotope symbol="²⁹⁴Uuo">
         <half-life>890 µs</half-life>
@@ -27369,6 +27457,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>6.20 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>400 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.11 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="¹¹⁷La">
         <half-life>23.5 ms</half-life>
@@ -27776,6 +27865,7 @@ IT</decay-modes>
     <heat-of-fusion>5.46 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>398 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.94 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹¹⁹Ce">
         <half-life>200 ms</half-life>
@@ -28153,6 +28243,7 @@ IT</decay-modes>
     <heat-of-fusion>6.89 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>331 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.20 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="¹²¹Pr">
         <half-life>600 ms</half-life>
@@ -28575,6 +28666,7 @@ EC (.0164%)</decay-modes>
     <heat-of-fusion>7.14 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>289 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.45 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹²⁴Nd">
         <half-life>500 ms</half-life>
@@ -28970,6 +29062,7 @@ IT (11.8%)</decay-modes>
     <heat-of-fusion>7.13 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>289 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>3</oxidation-states>
     <isotopes>
       <isotope symbol="¹²⁶Pᵐ">
         <half-life>0.5 s</half-life>
@@ -29406,6 +29499,7 @@ IT (5%)</decay-modes>
     <heat-of-fusion>8.62 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>192 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>29.54 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹²⁸Sᵐ">
         <half-life>0.5 s</half-life>
@@ -29796,6 +29890,7 @@ IT (.31%)</decay-modes>
     <heat-of-fusion>9.21 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>176 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.66 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹³⁰Eu">
         <half-life>1.1 ms</half-life>
@@ -30235,6 +30330,7 @@ EC (.02%)</decay-modes>
     <heat-of-fusion>10.05 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>301.3 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>37.03 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>1, 2, 3</oxidation-states>
     <isotopes>
       <isotope symbol="¹³⁴Gd">
         <half-life>0.4 s</half-life>
@@ -30609,6 +30705,7 @@ IT (11%)</decay-modes>
     <heat-of-fusion>10.15 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>391 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>28.91 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹³⁵Tb">
         <half-life>0.94+33-22 ms</half-life>
@@ -31127,6 +31224,7 @@ IT (21.8%)
     <heat-of-fusion>11.06 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>280 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.7 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹³⁸Dy">
         <half-life>200 ms</half-life>
@@ -31517,6 +31615,7 @@ IT (35%)</decay-modes>
     <heat-of-fusion>17.0 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>251 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.15 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴⁰Ho">
         <half-life>6 ms</half-life>
@@ -32066,6 +32165,7 @@ IT</decay-modes>
     <heat-of-fusion>19.90 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>280 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>28.12 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴²Er">
         <half-life></half-life>
@@ -32459,6 +32559,7 @@ IT (3.5%)
     <heat-of-fusion>16.84 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>191 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.03 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>2, 3, 4</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴⁵Tᵐ">
         <half-life>3.1 µs</half-life>
@@ -32946,6 +33047,7 @@ EC (.14%)</decay-modes>
     <heat-of-fusion>7.66 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>129 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.74 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁴⁸Yb">
         <half-life>250 ms</half-life>
@@ -33314,6 +33416,7 @@ EC (.14%)</decay-modes>
     <heat-of-fusion>22 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>414 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.86 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="¹⁵⁰Lu">
         <half-life>43 ms</half-life>
@@ -33915,6 +34018,7 @@ IT (21.7%)</decay-modes>
     <heat-of-fusion>14 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>400 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.2 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁰⁶Ac">
         <half-life>25 ms</half-life>
@@ -34261,6 +34365,7 @@ EC (17%)
     <heat-of-fusion>13.81 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>514 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>26.230 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="²⁰⁹Th">
         <half-life>7 ms</half-life>
@@ -34556,6 +34661,7 @@ Various
     <heat-of-fusion>12.34 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>481 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3, 4, 5</oxidation-states>
     <isotopes>
       <isotope symbol="²¹²Pa">
         <half-life>8 ms</half-life>
@@ -34848,6 +34954,7 @@ Various</daughter-isotopes>
     <heat-of-fusion>9.14 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>417.1 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>27.665 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>6, 5, 4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="²¹⁷U">
         <half-life>26 ms</half-life>
@@ -35163,6 +35270,7 @@ Accepted standard value: 19.38 g·cm⁻³</density>
     <heat-of-fusion>5.19 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>336 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>29.46 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²²⁵Np">
         <half-life>3 ms</half-life>
@@ -35388,6 +35496,7 @@ IT (.11%)</decay-modes>
     <heat-of-fusion>2.82 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization>333.5 kJ·mol⁻¹</heat-of-vaporization>
     <molar-heat-capacity>35.5 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>8, 7, 6, 5, 4, 3, 2, 1</oxidation-states>
     <isotopes>
       <isotope symbol="²²⁸Pu">
         <half-life>1.1+20-5 s</half-life>
@@ -35652,6 +35761,7 @@ Various
     <heat-of-fusion>14.39 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity>62.7 J·mol⁻¹·K⁻¹</molar-heat-capacity>
+    <oxidation-states>7, 6, 5, 4, 3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="²³¹Aᵐ">
         <half-life>30 s</half-life>
@@ -35907,6 +36017,7 @@ IT (.01%)</decay-modes>
     <heat-of-fusion>15 kJ·mol⁻¹</heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>8, 6, 4, 3, 2</oxidation-states>
     <isotopes>
       <isotope symbol="²³²Cᵐ">
         <half-life>1? min</half-life>
@@ -36152,6 +36263,7 @@ Beta: 13.25 g·cm⁻³</density>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>3, 4</oxidation-states>
     <isotopes>
       <isotope symbol="²³⁵Bk">
         <half-life>20 s</half-life>
@@ -36398,6 +36510,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3, 4</oxidation-states>
     <isotopes>
       <isotope symbol="²³⁷Cf">
         <half-life>2.1 s</half-life>
@@ -36627,6 +36740,7 @@ Various
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3, 4</oxidation-states>
     <isotopes>
       <isotope symbol="²⁴⁰Es">
         <half-life>1 s</half-life>
@@ -36871,6 +36985,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁴¹Fᵐ">
         <half-life>730 µs</half-life>
@@ -37099,6 +37214,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁴⁵Md">
         <half-life>0.90 ms</half-life>
@@ -37330,6 +37446,7 @@ EC (5%)
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>2, 3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁵⁰No">
         <half-life>5.7 µs</half-life>
@@ -37499,6 +37616,7 @@ Various</daughter-isotopes>
     <heat-of-fusion></heat-of-fusion>
     <heat-of-vaporization></heat-of-vaporization>
     <molar-heat-capacity></molar-heat-capacity>
+    <oxidation-states>3</oxidation-states>
     <isotopes>
       <isotope symbol="²⁵²Lr">
         <half-life>390 ms</half-life>
