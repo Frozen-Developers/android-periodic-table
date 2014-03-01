@@ -74,7 +74,7 @@ public class PropertiesActivity extends ActionBarActivity {
 
         int atomicNumber = getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1);
 
-        elementProperties = Database.getBasicElementProperties(this, atomicNumber);
+        elementProperties = new Database(this).getBasicElementProperties(atomicNumber);
 
         getSupportActionBar().setTitle(elementProperties.getName());
 

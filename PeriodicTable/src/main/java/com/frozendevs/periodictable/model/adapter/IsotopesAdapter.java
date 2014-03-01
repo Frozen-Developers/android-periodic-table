@@ -25,7 +25,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            isotopes = Database.getIsotopes(context, params[0]);
+            isotopes = new Database(context).getIsotopes(params[0]);
 
             return null;
         }

@@ -357,11 +357,13 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
             mAdapter.registerDataSetObserver(new DataSetObserver() {
                 @Override
                 public void onChanged() {
-                    buildCache();
+                    if(!mAdapter.isEmpty()) {
+                        buildCache();
 
-                    invalidate();
+                        invalidate();
 
-                    updateEmptyStatus(mAdapter.isEmpty());
+                        updateEmptyStatus(false);
+                    }
                 }
             });
         }

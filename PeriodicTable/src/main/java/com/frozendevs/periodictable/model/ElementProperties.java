@@ -7,34 +7,6 @@ public class ElementProperties extends TableItem {
             triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
             oxidationStates, electronegativity;
 
-    public ElementProperties(String name, String symbol, int atomicNumber, String weight, int group,
-                             int period, String block, String category, String electronConfiguration,
-                             String wikiLink, String appearance, String phase, String density,
-                             String liquidDensityAtMeltingPoint, String liquidDensityAtBoilingPoint,
-                             String meltingPoint, String boilingPoint, String triplePoint,
-                             String criticalPoint, String heatOfFusion, String heatOfVaporization,
-                             String molarHeatCapacity, String oxidationStates, String electronegativity) {
-        super(name, symbol, atomicNumber, weight, group, period, category);
-
-        this.block = block;
-        this.electronConfiguration = electronConfiguration;
-        this.wikiLink = wikiLink;
-        this.appearance = appearance;
-        this.phase = phase;
-        this.density = density;
-        this.liquidDensityAtMeltingPoint = liquidDensityAtMeltingPoint;
-        this.liquidDensityAtBoilingPoint = liquidDensityAtBoilingPoint;
-        this.meltingPoint = meltingPoint;
-        this.boilingPoint = boilingPoint;
-        this.triplePoint = triplePoint;
-        this.criticalPoint = criticalPoint;
-        this.heatOfFusion = heatOfFusion;
-        this.heatOfVaporization = heatOfVaporization;
-        this.molarHeatCapacity = molarHeatCapacity;
-        this.oxidationStates = oxidationStates;
-        this.electronegativity = electronegativity;
-    }
-
     public String getBlock() {
         return block;
     }
