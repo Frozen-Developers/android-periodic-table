@@ -253,9 +253,9 @@ def fetch(url, jsonData):
         	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
         	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize()
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
-        	'#', '')).replace('×10', '×10^').replace('−', '-'))
+        	'#', '')).replace('×10', '×10^').replace('−', '-')).splitlines()
         isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
-        	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M)
+        	re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '')), flags=re.M).splitlines()
         isotope_tag['spin'] = isotope[7].replace('#', '').replace('(', '').replace(')', '')
         isotope_tag['abundance'] = fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
         	re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
