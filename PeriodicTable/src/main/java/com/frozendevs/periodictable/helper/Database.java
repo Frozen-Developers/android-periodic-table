@@ -13,8 +13,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import java.io.InputStreamReader;
-import java.io.Reader;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -23,18 +23,46 @@ import java.util.List;
 
 public class Database {
 
-    private Reader databaseReader;
+    private String input;
+    private JsonArray jsonArray;
     private Gson gson;
 
-    public Database(Context context) {
-        databaseReader = new InputStreamReader(context.getResources().openRawResource(R.raw.elements));
+    private static Database instance;
 
+    private Database(Context context) {
+        try {
+            InputStream inputStream = context.getResources().openRawResource(R.raw.elements);
+            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            
+            byte[] buffer = new byte[1024];
+            int length;
+
+            while ((length = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, length);
+            }
+
+            input = new String(outputStream.toByteArray());
+
+            outputStream.close();
+            inputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        jsonArray = new JsonParser().parse(input).getAsJsonArray();
         gson = new Gson();
+    }
+
+    public static synchronized Database getInstance(Context context) {
+        if(instance == null)
+            instance = new Database(context);
+
+        return instance;
     }
 
     public List<ElementListItem> getElementListItems() {
         List<ElementListItem> itemsList = new ArrayList<ElementListItem>(Arrays.asList(
-            gson.fromJson(databaseReader, ElementListItem[].class)));
+            gson.fromJson(input, ElementListItem[].class)));
 
         Collections.sort(itemsList, new Comparator<ElementListItem>() {
             @Override
@@ -47,8 +75,6 @@ public class Database {
     }
 
     public BasicElementProperties getBasicElementProperties(int element) {
-        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
-
         for(int i = 0; i < jsonArray.size(); i++) {
             JsonObject object = jsonArray.get(i).getAsJsonObject();
 
@@ -60,12 +86,10 @@ public class Database {
     }
 
     public TableItem[] getTableItems() {
-        return gson.fromJson(databaseReader, TableItem[].class);
+        return gson.fromJson(input, TableItem[].class);
     }
 
     public ElementProperties getElementProperties(int element) {
-        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
-
         for(int i = 0; i < jsonArray.size(); i++) {
             JsonObject object = jsonArray.get(i).getAsJsonObject();
 
@@ -77,8 +101,6 @@ public class Database {
     }
 
     public Isotope[] getIsotopes(int element) {
-        JsonArray jsonArray = new JsonParser().parse(databaseReader).getAsJsonArray();
-
         for(int i = 0; i < jsonArray.size(); i++) {
             JsonObject object = jsonArray.get(i).getAsJsonObject();
 

@@ -28,7 +28,7 @@ public class ElementsAdapter extends BaseAdapter {
 
         @Override
         protected Void doInBackground(Void... params) {
-            elements = new Database(activity).getElementListItems();
+            elements = Database.getInstance(activity).getElementListItems();
             filteredElements = new ArrayList<ElementListItem>(elements);
 
             return null;

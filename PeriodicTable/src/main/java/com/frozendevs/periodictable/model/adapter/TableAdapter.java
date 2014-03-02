@@ -17,7 +17,7 @@ public class TableAdapter extends BaseAdapter {
 
         @Override
         protected Void doInBackground(Context... params) {
-            items = new Database(params[0]).getTableItems();
+            items = Database.getInstance(params[0]).getTableItems();
 
             return null;
         }

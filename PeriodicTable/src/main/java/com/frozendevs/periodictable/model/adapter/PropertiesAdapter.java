@@ -40,7 +40,7 @@ public class PropertiesAdapter extends BaseAdapter {
 
         @Override
         protected Void doInBackground(Integer... params) {
-            ElementProperties properties = new Database(context).getElementProperties(params[0]);
+            ElementProperties properties = Database.getInstance(context).getElementProperties(params[0]);
 
             propertiesPairs = new Property[] {
                     new Property(R.string.properties_header_general, null),
