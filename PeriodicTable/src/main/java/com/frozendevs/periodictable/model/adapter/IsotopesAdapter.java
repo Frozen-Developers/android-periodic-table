@@ -16,6 +16,11 @@ import com.frozendevs.periodictable.model.Isotope;
 
 public class IsotopesAdapter extends BaseExpandableListAdapter {
 
+    private static final int PROPERTY_HALF_LIFE = 0;
+    private static final int PROPERTY_DECAY_MODES = 1;
+    private static final int PROPERTY_SPIN = 2;
+    private static final int PROPERTY_ABUNDANCE = 3;
+
     private Context context;
 
     private Typeface typeface;
@@ -62,11 +67,11 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public String[] getChild(int groupPosition, int childPosition) {
         switch (childPosition) {
-            case 0:
+            case PROPERTY_HALF_LIFE:
                 return new String[] { getString(R.string.property_half_life),
                         isotopes[groupPosition].getHalfLife() };
 
-            case 1:
+            case PROPERTY_DECAY_MODES:
                 String[] decayModes = isotopes[groupPosition].getDecayModes();
                 String[] daughterIsotopes = isotopes[groupPosition].getDaughterIsotopes();
 
@@ -78,11 +83,11 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
                 return new String[] { getString(R.string.property_decay_modes), combined };
 
-            case 2:
+            case PROPERTY_SPIN:
                 return new String[] { getString(R.string.property_spin),
                         isotopes[groupPosition].getSpin() };
 
-            case 3:
+            case PROPERTY_ABUNDANCE:
                 return new String[] { getString(R.string.property_abundance),
                         isotopes[groupPosition].getAbundance() };
         }
@@ -128,9 +133,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         name.setTypeface(typeface);
 
         TextView value = (TextView)view.findViewById(R.id.property_value);
-        if((getChild(groupPosition, 0)[1].equals("Stable") &&
-                (childPosition == 1 || childPosition == 2)) ||
-                (property[1].equals("") && childPosition == 4))
+        if((getChild(groupPosition, 0)[1].equals("Stable") && childPosition == PROPERTY_DECAY_MODES)
+                || (property[1].equals("") && childPosition == PROPERTY_ABUNDANCE))
             value.setText(getString(R.string.property_value_none));
         else if(property[1].equals(""))
             value.setText(getString(R.string.property_value_unknown));
