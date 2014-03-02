@@ -228,13 +228,13 @@ def fetch(url, jsonData):
     element['group'] = grp
     element['period'] = pb[0]
     element['block'] = pb[1]
-    element['configuration'] = ec
+    element['electronConfiguration'] = ec
     element['wikipediaLink'] = url
     element['appearance'] = apr
     element['phase'] = phase
     element['density'] = dens
-    element['densityAtMeltingPoint'] = ldmp
-    element['densityAtBoilingPoint'] = ldbp
+    element['liquidDensityAtMeltingPoint'] = ldmp
+    element['liquidDensityAtBoilingPoint'] = ldbp
     element['meltingPoint'] = mp
     element['boilingPoint'] = bp
     element['triplePoint'] = tp
