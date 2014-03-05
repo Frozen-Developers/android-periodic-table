@@ -1,8 +1,10 @@
 package com.frozendevs.periodictable.model;
 
-public class ElementProperties extends TableItem {
+import java.io.Serializable;
 
-    public class Isotope {
+public class ElementProperties extends TableItem implements Serializable {
+
+    public class Isotope implements Serializable {
 
         private String symbol, halfLife, spin, abundance;
         private String[] decayModes, daughterIsotopes;

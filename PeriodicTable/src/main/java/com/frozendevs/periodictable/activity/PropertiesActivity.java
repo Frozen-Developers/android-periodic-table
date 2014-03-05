@@ -30,11 +30,16 @@ public class PropertiesActivity extends ActionBarActivity {
 
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
 
+    public static final String ARGUMENT_PROPERTIES = "properties";
+
     private ElementProperties elementProperties;
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Fragment[] fragments;
+        private Fragment[] fragments = new Fragment[] {
+                new PropertiesFragment(),
+                new IsotopesFragment()
+        };
 
         private int[] titles = new int[] {
                 R.string.details_title,
@@ -43,15 +48,14 @@ public class PropertiesActivity extends ActionBarActivity {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
-
-            fragments = new Fragment[] {
-                    new PropertiesFragment(elementProperties),
-                    new IsotopesFragment(elementProperties.getIsotopes())
-            };
         }
 
         @Override
         public Fragment getItem(int i) {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
+            fragments[i].setArguments(bundle);
+
             return fragments[i];
         }
 
