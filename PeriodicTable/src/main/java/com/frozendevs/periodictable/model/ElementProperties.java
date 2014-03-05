@@ -4,6 +4,12 @@ import java.io.Serializable;
 
 public class ElementProperties extends TableItem implements Serializable {
 
+    private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
+            liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
+            triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
+            oxidationStates, electronegativity;
+    private Isotope[] isotopes;
+
     public class Isotope implements Serializable {
 
         private String symbol, halfLife, spin, abundance;
@@ -32,16 +38,6 @@ public class ElementProperties extends TableItem implements Serializable {
         public String[] getDaughterIsotopes() {
             return daughterIsotopes;
         }
-    }
-
-    private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
-            liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
-            triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
-            oxidationStates, electronegativity;
-    private Isotope[] isotopes;
-
-    public Isotope[] getIsotopes() {
-        return isotopes;
     }
 
     public String getBlock() {
@@ -110,5 +106,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getElectronegativity() {
         return electronegativity;
+    }
+
+    public Isotope[] getIsotopes() {
+        return isotopes;
     }
 }
