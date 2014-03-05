@@ -1,5 +1,6 @@
 package com.frozendevs.periodictable.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -136,6 +137,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
                 return true;
 
             case R.id.action_about:
+                startActivity(new Intent(this, AboutActivity.class));
                 return true;
         }
 

@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Periodic Table</string>
+    <string name="author_name" translatable="false">Frozen Developers</string>
 
     <!-- Fragments -->
     <string name="elements_title">Elements</string>
@@ -61,5 +62,14 @@
     <!-- Translatable values -->
     <string name="property_value_unknown">Unknown</string>
     <string name="property_value_none">None</string>
+
+    <!-- Preferences -->
+    <string name="preferences_category_about">About</string>
+
+        <!-- About screen -->
+    <string name="preference_about_app">About Periodic Table</string>
+    <string name="preference_author">Author</string>
+    <string name="preference_version_number">Version number</string>
+    <string name="preference_open_source_licences">Open-source licences</string>
 
 </resources>

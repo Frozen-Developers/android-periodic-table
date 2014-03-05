@@ -40,6 +40,20 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name="com.frozendevs.periodictable.activity.AboutActivity"
+            android:parentActivityName="com.frozendevs.periodictable.activity.AboutActivity"
+            android:launchMode="singleTop">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activity.MainActivity" />
+
+            <intent-filter>
+                <category android:name="android.intent.category.PREFERENCE" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

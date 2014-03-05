@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/preference_about_app"
+    android:persistent="false"
+    android:key="about">
+
+    <PreferenceCategory
+        android:title="@string/preferences_category_about">
+
+        <Preference
+            android:title="@string/preference_author"
+            android:summary="@string/author_name"
+            android:key="author">
+
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="@string/authors_url" />
+
+        </Preference>
+
+        <Preference
+            android:title="@string/preference_version_number"
+            android:key="version"/>
+
+        <Preference
+            android:title="@string/preference_open_source_licences"
+            android:key="licences"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
