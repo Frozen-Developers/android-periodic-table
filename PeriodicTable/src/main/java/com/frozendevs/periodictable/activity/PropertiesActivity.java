@@ -1,10 +1,12 @@
 package com.frozendevs.periodictable.activity;
 
+import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -118,6 +120,7 @@ public class PropertiesActivity extends ActionBarActivity {
         menu.setHeaderTitle(R.string.context_title_options);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
@@ -127,14 +130,13 @@ public class PropertiesActivity extends ActionBarActivity {
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
                     ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
                             setText(propertyValue.getText());
                 }
                 else {
                     ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
-                            ClipData.newPlainText(propertyName.getText(), propertyValue.getText())
-                    );
+                            ClipData.newPlainText(propertyName.getText(), propertyValue.getText()));
                 }
                 return true;
         }
