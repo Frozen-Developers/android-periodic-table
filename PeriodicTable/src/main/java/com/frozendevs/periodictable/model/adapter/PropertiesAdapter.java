@@ -2,7 +2,6 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 
 public class PropertiesAdapter extends BaseAdapter {
@@ -36,61 +34,44 @@ public class PropertiesAdapter extends BaseAdapter {
         }
     }
 
-    private class LoadProperties extends AsyncTask<Integer, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Integer... params) {
-            ElementProperties properties = Database.getInstance(context).getElementProperties(params[0]);
-
-            propertiesPairs = new Property[] {
-                    new Property(R.string.properties_header_general, null),
-                    new Property(R.string.property_symbol, properties.getSymbol()),
-                    new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
-                    new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
-                    new Property(R.string.property_group, properties.getGroup() > 0 ?
-                            properties.getGroup() : 3),
-                    new Property(R.string.property_period, properties.getPeriod()),
-                    new Property(R.string.property_block, properties.getBlock()),
-                    new Property(R.string.property_category, properties.getCategory()),
-                    new Property(R.string.property_electron_configuration,
-                            properties.getElectronConfiguration()),
-                    new Property(R.string.properties_header_physical, null),
-                    new Property(R.string.property_appearance, properties.getAppearance()),
-                    new Property(R.string.property_phase, properties.getPhase()),
-                    new Property(R.string.property_density, properties.getDensity()),
-                    new Property(R.string.property_liquid_density_at_mp,
-                            properties.getLiquidDensityAtMeltingPoint()),
-                    new Property(R.string.property_liquid_density_at_bp,
-                            properties.getLiquidDensityAtBoilingPoint()),
-                    new Property(R.string.property_melting_point, properties.getMeltingPoint()),
-                    new Property(R.string.property_boiling_point, properties.getBoilingPoint()),
-                    new Property(R.string.property_triple_point, properties.getTriplePoint()),
-                    new Property(R.string.property_critical_point, properties.getCriticalPoint()),
-                    new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion()),
-                    new Property(R.string.property_heat_of_vaporization,
-                            properties.getHeatOfVaporization()),
-                    new Property(R.string.property_molar_heat_capacity,
-                            properties.getMolarHeatCapacity()),
-                    new Property(R.string.properties_header_atomic, null),
-                    new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
-                    new Property(R.string.property_electronegativity, properties.getElectronegativity())
-            };
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            notifyDataSetChanged();
-        }
-    }
-
-    public PropertiesAdapter(Context context, int atomicNumber) {
+    public PropertiesAdapter(Context context, ElementProperties properties) {
         this.context = context;
 
         typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
 
-        new LoadProperties().execute(atomicNumber);
+        propertiesPairs = new Property[] {
+                new Property(R.string.properties_header_general, null),
+                new Property(R.string.property_symbol, properties.getSymbol()),
+                new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
+                new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
+                new Property(R.string.property_group, properties.getGroup() > 0 ?
+                        properties.getGroup() : 3),
+                new Property(R.string.property_period, properties.getPeriod()),
+                new Property(R.string.property_block, properties.getBlock()),
+                new Property(R.string.property_category, properties.getCategory()),
+                new Property(R.string.property_electron_configuration,
+                        properties.getElectronConfiguration()),
+                new Property(R.string.properties_header_physical, null),
+                new Property(R.string.property_appearance, properties.getAppearance()),
+                new Property(R.string.property_phase, properties.getPhase()),
+                new Property(R.string.property_density, properties.getDensity()),
+                new Property(R.string.property_liquid_density_at_mp,
+                        properties.getLiquidDensityAtMeltingPoint()),
+                new Property(R.string.property_liquid_density_at_bp,
+                        properties.getLiquidDensityAtBoilingPoint()),
+                new Property(R.string.property_melting_point, properties.getMeltingPoint()),
+                new Property(R.string.property_boiling_point, properties.getBoilingPoint()),
+                new Property(R.string.property_triple_point, properties.getTriplePoint()),
+                new Property(R.string.property_critical_point, properties.getCriticalPoint()),
+                new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion()),
+                new Property(R.string.property_heat_of_vaporization,
+                        properties.getHeatOfVaporization()),
+                new Property(R.string.property_molar_heat_capacity,
+                        properties.getMolarHeatCapacity()),
+                new Property(R.string.properties_header_atomic, null),
+                new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
+                new Property(R.string.property_electronegativity, properties.getElectronegativity())
+        };
     }
 
     @Override

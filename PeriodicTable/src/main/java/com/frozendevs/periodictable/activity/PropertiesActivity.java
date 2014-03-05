@@ -24,13 +24,13 @@ import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.helper.Database;
-import com.frozendevs.periodictable.model.BasicElementProperties;
+import com.frozendevs.periodictable.model.ElementProperties;
 
 public class PropertiesActivity extends ActionBarActivity {
 
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
 
-    private BasicElementProperties elementProperties;
+    private ElementProperties elementProperties;
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
@@ -41,12 +41,12 @@ public class PropertiesActivity extends ActionBarActivity {
                 R.string.isotopes_title
         };
 
-        public SectionsPagerAdapter(FragmentManager fm, int atomicNumber) {
+        public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
 
             fragments = new Fragment[] {
-                    new PropertiesFragment(atomicNumber),
-                    new IsotopesFragment(atomicNumber)
+                    new PropertiesFragment(elementProperties),
+                    new IsotopesFragment(elementProperties.getIsotopes())
             };
         }
 
@@ -72,14 +72,13 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        int atomicNumber = getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1);
-
-        elementProperties = Database.getInstance(this).getBasicElementProperties(atomicNumber);
+        elementProperties = Database.getInstance(this).getElementProperties(
+                getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
 
         getSupportActionBar().setTitle(elementProperties.getName());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager(), atomicNumber));
+        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
 
         PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
         pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);
@@ -97,7 +96,7 @@ public class PropertiesActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.action_wiki:
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(elementProperties.getWikiLink())));
+                        Uri.parse(elementProperties.getWikipediaLink())));
                 return true;
 
             case android.R.id.home:

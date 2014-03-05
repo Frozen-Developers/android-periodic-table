@@ -3,10 +3,8 @@ package com.frozendevs.periodictable.helper;
 import android.content.Context;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.BasicElementProperties;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.ElementListItem;
-import com.frozendevs.periodictable.model.Isotope;
 import com.frozendevs.periodictable.model.TableItem;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -74,17 +72,6 @@ public class Database {
         return itemsList;
     }
 
-    public BasicElementProperties getBasicElementProperties(int element) {
-        for(int i = 0; i < jsonArray.size(); i++) {
-            JsonObject object = jsonArray.get(i).getAsJsonObject();
-
-            if(object.get("atomicNumber").getAsInt() == element)
-                return gson.fromJson(object, BasicElementProperties.class);
-        }
-
-        return null;
-    }
-
     public TableItem[] getTableItems() {
         return gson.fromJson(input, TableItem[].class);
     }
@@ -95,17 +82,6 @@ public class Database {
 
             if(object.get("atomicNumber").getAsInt() == element)
                 return gson.fromJson(object, ElementProperties.class);
-        }
-
-        return null;
-    }
-
-    public Isotope[] getIsotopes(int element) {
-        for(int i = 0; i < jsonArray.size(); i++) {
-            JsonObject object = jsonArray.get(i).getAsJsonObject();
-
-            if(object.get("atomicNumber").getAsInt() == element)
-                return gson.fromJson(object.get("isotopes").getAsJsonArray(), Isotope[].class);
         }
 
         return null;

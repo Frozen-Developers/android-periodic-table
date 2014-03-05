@@ -2,10 +2,45 @@ package com.frozendevs.periodictable.model;
 
 public class ElementProperties extends TableItem {
 
-    private String block, electronConfiguration, wikiLink, appearance, phase, density,
+    public class Isotope {
+
+        private String symbol, halfLife, spin, abundance;
+        private String[] decayModes, daughterIsotopes;
+
+        public String getSymbol() {
+            return symbol;
+        }
+
+        public String getHalfLife() {
+            return halfLife;
+        }
+
+        public String getSpin() {
+            return spin;
+        }
+
+        public String getAbundance() {
+            return abundance;
+        }
+
+        public String[] getDecayModes() {
+            return decayModes;
+        }
+
+        public String[] getDaughterIsotopes() {
+            return daughterIsotopes;
+        }
+    }
+
+    private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
             liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
             triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
             oxidationStates, electronegativity;
+    private Isotope[] isotopes;
+
+    public Isotope[] getIsotopes() {
+        return isotopes;
+    }
 
     public String getBlock() {
         return block;
@@ -15,8 +50,8 @@ public class ElementProperties extends TableItem {
         return electronConfiguration;
     }
 
-    public String getWikiLink() {
-        return wikiLink;
+    public String getWikipediaLink() {
+        return wikipediaLink;
     }
 
     public String getAppearance() {

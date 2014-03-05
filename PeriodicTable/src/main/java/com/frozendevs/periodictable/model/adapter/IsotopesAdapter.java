@@ -2,7 +2,6 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +10,7 @@ import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.helper.Database;
-import com.frozendevs.periodictable.model.Isotope;
+import com.frozendevs.periodictable.model.ElementProperties.Isotope;
 
 public class IsotopesAdapter extends BaseExpandableListAdapter {
 
@@ -24,29 +22,14 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     private Context context;
 
     private Typeface typeface;
-    private Isotope[] isotopes = new Isotope[0];
+    private Isotope[] isotopes;
 
-    private class LoadProperties extends AsyncTask<Integer, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Integer... params) {
-            isotopes = Database.getInstance(context).getIsotopes(params[0]);
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            notifyDataSetChanged();
-        }
-    }
-
-    public IsotopesAdapter(Context context, int atomicNumber) {
+    public IsotopesAdapter(Context context, Isotope[] isotopes) {
         this.context = context;
 
         typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
 
-        new LoadProperties().execute(atomicNumber);
+        this.isotopes = isotopes;
     }
 
     @Override
