@@ -29,7 +29,7 @@ public class Database {
 
     private Database(Context context) {
         try {
-            InputStream inputStream = context.getResources().openRawResource(R.raw.elements);
+            InputStream inputStream = context.getResources().openRawResource(R.raw.database);
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             
             byte[] buffer = new byte[1024];

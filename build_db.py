@@ -11,7 +11,7 @@ import sys
 from bs4 import BeautifulSoup, Tag
 import json
 
-OUTPUT_XML = 'PeriodicTable/src/main/res/raw/elements.json'
+OUTPUT_XML = 'PeriodicTable/src/main/res/raw/database.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
