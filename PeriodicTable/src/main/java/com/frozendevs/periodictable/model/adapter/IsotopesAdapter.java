@@ -27,7 +27,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
         this.context = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/DejaVuSans.ttf");
 
         this.isotopes = isotopes;
     }
@@ -113,7 +113,6 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         TextView name = (TextView)view.findViewById(R.id.property_name);
         name.setText(property[0]);
-        name.setTypeface(typeface);
 
         TextView value = (TextView)view.findViewById(R.id.property_value);
         if((getChild(groupPosition, 0)[1].equals("Stable") && childPosition == PROPERTY_DECAY_MODES)

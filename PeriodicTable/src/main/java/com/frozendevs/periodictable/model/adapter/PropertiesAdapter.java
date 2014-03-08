@@ -37,7 +37,7 @@ public class PropertiesAdapter extends BaseAdapter {
     public PropertiesAdapter(Context context, ElementProperties properties) {
         this.context = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/Roboto-Regular.ttf");
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/DejaVuSans.ttf");
 
         propertiesPairs = new Property[] {
                 new Property(R.string.properties_header_general, null),
@@ -99,7 +99,6 @@ public class PropertiesAdapter extends BaseAdapter {
         if(getItemViewType(position) == VIEW_TYPE_ITEM) {
             TextView name = (TextView)view.findViewById(R.id.property_name);
             name.setText(property.name);
-            name.setTypeface(typeface);
 
             TextView value = (TextView)view.findViewById(R.id.property_value);
             value.setText(!property.value.equals("") ?
