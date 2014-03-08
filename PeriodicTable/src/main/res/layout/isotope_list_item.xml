@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:background="?attr/selectableItemBackground"
-    android:paddingLeft="32dip"
+    android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
     android:paddingRight="6dip"
     android:paddingTop="8dip"
     android:paddingBottom="8dip"
