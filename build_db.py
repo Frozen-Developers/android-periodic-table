@@ -248,7 +248,7 @@ def fetch(url, jsonData):
     isotopes_tag = []
 
     for isotope in isotopes:
-        isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0])) }
+        isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1] }
         isotope_tag['halfLife'] = translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
         	isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
         	')', '').replace('×10', '×10^').replace('−', '-').strip()).capitalize()

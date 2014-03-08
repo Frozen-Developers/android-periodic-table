@@ -3672,7 +3672,7 @@
                     "β-"
                 ], 
                 "halfLife": "5.05 min", 
-                "spin": "7/2-", 
+                "spin": "7/2−", 
                 "symbol": "³⁷S"
             }, 
             {
@@ -3696,7 +3696,7 @@
                     "β-"
                 ], 
                 "halfLife": "11.5 s", 
-                "spin": "3/2,5/2,7/2-", 
+                "spin": "3/2,5/2,7/2−", 
                 "symbol": "³⁹S"
             }, 
             {
@@ -3722,7 +3722,7 @@
                     "β-, n (<.1%)"
                 ], 
                 "halfLife": "1.99 s", 
-                "spin": "7/2-", 
+                "spin": "7/2−", 
                 "symbol": "⁴¹S"
             }, 
             {
@@ -3750,7 +3750,7 @@
                     "β-, n (40%)"
                 ], 
                 "halfLife": "260 ms", 
-                "spin": "3/2-", 
+                "spin": "3/2−", 
                 "symbol": "⁴³S"
             }, 
             {
@@ -3758,7 +3758,7 @@
                 "daughterIsotopes": [], 
                 "decayModes": [], 
                 "halfLife": "480 ns", 
-                "spin": "7/2-", 
+                "spin": "7/2−", 
                 "symbol": "⁴³ᵐS"
             }, 
             {
@@ -3786,7 +3786,7 @@
                     "β- (46%)"
                 ], 
                 "halfLife": "68 ms", 
-                "spin": "3/2-", 
+                "spin": "3/2−", 
                 "symbol": "⁴⁵S"
             }, 
             {
@@ -3810,7 +3810,7 @@
                     "β-"
                 ], 
                 "halfLife": "20 ms", 
-                "spin": "3/2-", 
+                "spin": "3/2−", 
                 "symbol": "⁴⁷S"
             }, 
             {
@@ -3834,7 +3834,7 @@
                     "n"
                 ], 
                 "halfLife": "<200 ns", 
-                "spin": "3/2-", 
+                "spin": "3/2−", 
                 "symbol": "⁴⁹S"
             }
         ], 
@@ -12469,7 +12469,7 @@
                 ], 
                 "halfLife": ">635 ns", 
                 "spin": "unknown", 
-                "symbol": "¹⁰¹Kr "
+                "symbol": "¹⁰¹ Kr"
             }
         ], 
         "liquidDensityAtBoilingPoint": "2.413 g·cm⁻³", 
@@ -38905,7 +38905,7 @@
                 ], 
                 "halfLife": "8 s\n16.2 s", 
                 "spin": "\n", 
-                "symbol": "²⁶⁵aSg\n²⁶⁵bSg"
+                "symbol": "²⁶⁵a\n²⁶⁵bSg"
             }, 
             {
                 "abundance": "", 
@@ -40347,7 +40347,7 @@
         "boilingPoint": "350±30 K / 80±30 °C / 170±50 °F", 
         "category": "Noble gas", 
         "criticalPoint": "439 K, 6.8 MPa", 
-        "density": "13.65 g·cm⁻³", 
+        "density": "", 
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶\n2, 8, 18, 32, 32, 18, 8", 
         "electronegativity": "", 
         "group": "18", 
@@ -40368,7 +40368,7 @@
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
-        "liquidDensityAtMeltingPoint": "", 
+        "liquidDensityAtMeltingPoint": "4.9&#8211;5.1 g·cm⁻³", 
         "meltingPoint": "", 
         "molarHeatCapacity": "", 
         "name": "Ununoctium", 
@@ -42886,7 +42886,7 @@
                 "decayModes": [], 
                 "halfLife": "0.5 s", 
                 "spin": "", 
-                "symbol": "¹²⁶Pᵐ"
+                "symbol": "¹²⁶Pm"
             }, 
             {
                 "abundance": "", 
@@ -42894,7 +42894,7 @@
                 "decayModes": [], 
                 "halfLife": "1 s", 
                 "spin": "5/2+", 
-                "symbol": "¹²⁷Pᵐ"
+                "symbol": "¹²⁷Pm"
             }, 
             {
                 "abundance": "", 
@@ -42908,7 +42908,7 @@
                 ], 
                 "halfLife": "1.0 s", 
                 "spin": "6+", 
-                "symbol": "¹²⁸Pᵐ"
+                "symbol": "¹²⁸Pm"
             }, 
             {
                 "abundance": "", 
@@ -42920,7 +42920,7 @@
                 ], 
                 "halfLife": "3 s", 
                 "spin": "5/2+", 
-                "symbol": "¹²⁹Pᵐ"
+                "symbol": "¹²⁹Pm"
             }, 
             {
                 "abundance": "", 
@@ -42934,7 +42934,7 @@
                 ], 
                 "halfLife": "2.6 s", 
                 "spin": "5+,6+,4+", 
-                "symbol": "¹³⁰Pᵐ"
+                "symbol": "¹³⁰Pm"
             }, 
             {
                 "abundance": "", 
@@ -42948,7 +42948,7 @@
                 ], 
                 "halfLife": "6.3 s", 
                 "spin": "5/2+", 
-                "symbol": "¹³¹Pᵐ"
+                "symbol": "¹³¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -42962,7 +42962,7 @@
                 ], 
                 "halfLife": "6.2 s", 
                 "spin": "3+", 
-                "symbol": "¹³²Pᵐ"
+                "symbol": "¹³²Pm"
             }, 
             {
                 "abundance": "", 
@@ -42974,7 +42974,7 @@
                 ], 
                 "halfLife": "15 s", 
                 "spin": "3/2+", 
-                "symbol": "¹³³Pᵐ"
+                "symbol": "¹³³Pm"
             }, 
             {
                 "abundance": "", 
@@ -42988,7 +42988,7 @@
                 ], 
                 "halfLife": "10 s", 
                 "spin": "11/2-", 
-                "symbol": "¹³³ᵐPᵐ"
+                "symbol": "¹³³ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43000,7 +43000,7 @@
                 ], 
                 "halfLife": "22 s", 
                 "spin": "5+", 
-                "symbol": "¹³⁴Pᵐ"
+                "symbol": "¹³⁴Pm"
             }, 
             {
                 "abundance": "", 
@@ -43012,7 +43012,7 @@
                 ], 
                 "halfLife": "~5 s", 
                 "spin": "2+", 
-                "symbol": "¹³⁴ᵐPᵐ"
+                "symbol": "¹³⁴ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43024,7 +43024,7 @@
                 ], 
                 "halfLife": "49 s", 
                 "spin": "5/2+,3/2+", 
-                "symbol": "¹³⁵Pᵐ"
+                "symbol": "¹³⁵Pm"
             }, 
             {
                 "abundance": "", 
@@ -43036,7 +43036,7 @@
                 ], 
                 "halfLife": "40 s", 
                 "spin": "11/2-", 
-                "symbol": "¹³⁵ᵐPᵐ"
+                "symbol": "¹³⁵ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43048,7 +43048,7 @@
                 ], 
                 "halfLife": "107 s", 
                 "spin": "5-", 
-                "symbol": "¹³⁶Pᵐ"
+                "symbol": "¹³⁶Pm"
             }, 
             {
                 "abundance": "", 
@@ -43060,7 +43060,7 @@
                 ], 
                 "halfLife": "47 s", 
                 "spin": "2+", 
-                "symbol": "¹³⁶ᵐPᵐ"
+                "symbol": "¹³⁶ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43072,7 +43072,7 @@
                 ], 
                 "halfLife": "2 min", 
                 "spin": "5/2+", 
-                "symbol": "¹³⁷Pᵐ"
+                "symbol": "¹³⁷Pm"
             }, 
             {
                 "abundance": "", 
@@ -43084,7 +43084,7 @@
                 ], 
                 "halfLife": "2.4 min", 
                 "spin": "11/2-", 
-                "symbol": "¹³⁷ᵐPᵐ"
+                "symbol": "¹³⁷ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43096,7 +43096,7 @@
                 ], 
                 "halfLife": "10 s", 
                 "spin": "1+", 
-                "symbol": "¹³⁸Pᵐ"
+                "symbol": "¹³⁸Pm"
             }, 
             {
                 "abundance": "", 
@@ -43108,7 +43108,7 @@
                 ], 
                 "halfLife": "3.24 min", 
                 "spin": "5-", 
-                "symbol": "¹³⁸ᵐPᵐ"
+                "symbol": "¹³⁸ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43120,7 +43120,7 @@
                 ], 
                 "halfLife": "4.15 min", 
                 "spin": "5/2+", 
-                "symbol": "¹³⁹Pᵐ"
+                "symbol": "¹³⁹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43134,7 +43134,7 @@
                 ], 
                 "halfLife": "180 ms", 
                 "spin": "11/2-", 
-                "symbol": "¹³⁹ᵐPᵐ"
+                "symbol": "¹³⁹ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43146,7 +43146,7 @@
                 ], 
                 "halfLife": "9.2 s", 
                 "spin": "1+", 
-                "symbol": "¹⁴⁰Pᵐ"
+                "symbol": "¹⁴⁰Pm"
             }, 
             {
                 "abundance": "", 
@@ -43158,7 +43158,7 @@
                 ], 
                 "halfLife": "5.95 min", 
                 "spin": "8-", 
-                "symbol": "¹⁴⁰ᵐPᵐ"
+                "symbol": "¹⁴⁰ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43170,7 +43170,7 @@
                 ], 
                 "halfLife": "20.90 min", 
                 "spin": "5/2+", 
-                "symbol": "¹⁴¹Pᵐ"
+                "symbol": "¹⁴¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43178,7 +43178,7 @@
                 "decayModes": [], 
                 "halfLife": "630 ns", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴¹ᵐ¹Pᵐ"
+                "symbol": "¹⁴¹ᵐ¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43186,7 +43186,7 @@
                 "decayModes": [], 
                 "halfLife": ">2 µs", 
                 "spin": "", 
-                "symbol": "¹⁴¹ᵐ²Pᵐ"
+                "symbol": "¹⁴¹ᵐ²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43198,7 +43198,7 @@
                 ], 
                 "halfLife": "40.5 s", 
                 "spin": "1+", 
-                "symbol": "¹⁴²Pᵐ"
+                "symbol": "¹⁴²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43210,7 +43210,7 @@
                 ], 
                 "halfLife": "2.0 ms", 
                 "spin": "8-", 
-                "symbol": "¹⁴²ᵐPᵐ"
+                "symbol": "¹⁴²ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43222,7 +43222,7 @@
                 ], 
                 "halfLife": "265 d", 
                 "spin": "5/2+", 
-                "symbol": "¹⁴³Pᵐ"
+                "symbol": "¹⁴³Pm"
             }, 
             {
                 "abundance": "", 
@@ -43234,7 +43234,7 @@
                 ], 
                 "halfLife": "363 d", 
                 "spin": "5-", 
-                "symbol": "¹⁴⁴Pᵐ"
+                "symbol": "¹⁴⁴Pm"
             }, 
             {
                 "abundance": "", 
@@ -43242,7 +43242,7 @@
                 "decayModes": [], 
                 "halfLife": "780 ns", 
                 "spin": "9+", 
-                "symbol": "¹⁴⁴ᵐ¹Pᵐ"
+                "symbol": "¹⁴⁴ᵐ¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43250,7 +43250,7 @@
                 "decayModes": [], 
                 "halfLife": "~2.7 µs", 
                 "spin": "27+", 
-                "symbol": "¹⁴⁴ᵐ²Pᵐ"
+                "symbol": "¹⁴⁴ᵐ²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43264,7 +43264,7 @@
                 ], 
                 "halfLife": "17.7 a", 
                 "spin": "5/2+", 
-                "symbol": "¹⁴⁵Pᵐ"
+                "symbol": "¹⁴⁵Pm"
             }, 
             {
                 "abundance": "", 
@@ -43278,7 +43278,7 @@
                 ], 
                 "halfLife": "5.53 a", 
                 "spin": "3-", 
-                "symbol": "¹⁴⁶Pᵐ"
+                "symbol": "¹⁴⁶Pm"
             }, 
             {
                 "abundance": "", 
@@ -43290,7 +43290,7 @@
                 ], 
                 "halfLife": "2.6234 a", 
                 "spin": "7/2+", 
-                "symbol": "¹⁴⁷Pᵐ"
+                "symbol": "¹⁴⁷Pm"
             }, 
             {
                 "abundance": "", 
@@ -43302,7 +43302,7 @@
                 ], 
                 "halfLife": "5.368 d", 
                 "spin": "1-", 
-                "symbol": "¹⁴⁸Pᵐ"
+                "symbol": "¹⁴⁸Pm"
             }, 
             {
                 "abundance": "", 
@@ -43316,7 +43316,7 @@
                 ], 
                 "halfLife": "41.29 d", 
                 "spin": "5-,6-", 
-                "symbol": "¹⁴⁸ᵐPᵐ"
+                "symbol": "¹⁴⁸ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43328,7 +43328,7 @@
                 ], 
                 "halfLife": "53.08 h", 
                 "spin": "7/2+", 
-                "symbol": "¹⁴⁹Pᵐ"
+                "symbol": "¹⁴⁹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43336,7 +43336,7 @@
                 "decayModes": [], 
                 "halfLife": "35 µs", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴⁹ᵐPᵐ"
+                "symbol": "¹⁴⁹ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43348,7 +43348,7 @@
                 ], 
                 "halfLife": "2.68 h", 
                 "spin": "1-", 
-                "symbol": "¹⁵⁰Pᵐ"
+                "symbol": "¹⁵⁰Pm"
             }, 
             {
                 "abundance": "", 
@@ -43360,7 +43360,7 @@
                 ], 
                 "halfLife": "28.40 h", 
                 "spin": "5/2+", 
-                "symbol": "¹⁵¹Pᵐ"
+                "symbol": "¹⁵¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43372,7 +43372,7 @@
                 ], 
                 "halfLife": "4.12 min", 
                 "spin": "1+", 
-                "symbol": "¹⁵²Pᵐ"
+                "symbol": "¹⁵²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43380,7 +43380,7 @@
                 "decayModes": [], 
                 "halfLife": "7.52 min", 
                 "spin": "4-", 
-                "symbol": "¹⁵²ᵐ¹Pᵐ"
+                "symbol": "¹⁵²ᵐ¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43388,7 +43388,7 @@
                 "decayModes": [], 
                 "halfLife": "13.8 min", 
                 "spin": "8", 
-                "symbol": "¹⁵²ᵐ²Pᵐ"
+                "symbol": "¹⁵²ᵐ²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43400,7 +43400,7 @@
                 ], 
                 "halfLife": "5.25 min", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵³Pᵐ"
+                "symbol": "¹⁵³Pm"
             }, 
             {
                 "abundance": "", 
@@ -43412,7 +43412,7 @@
                 ], 
                 "halfLife": "1.73 min", 
                 "spin": "0,1", 
-                "symbol": "¹⁵⁴Pᵐ"
+                "symbol": "¹⁵⁴Pm"
             }, 
             {
                 "abundance": "", 
@@ -43424,7 +43424,7 @@
                 ], 
                 "halfLife": "2.68 min", 
                 "spin": "3,4", 
-                "symbol": "¹⁵⁴ᵐPᵐ"
+                "symbol": "¹⁵⁴ᵐPm"
             }, 
             {
                 "abundance": "", 
@@ -43436,7 +43436,7 @@
                 ], 
                 "halfLife": "41.5 s", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵⁵Pᵐ"
+                "symbol": "¹⁵⁵Pm"
             }, 
             {
                 "abundance": "", 
@@ -43448,7 +43448,7 @@
                 ], 
                 "halfLife": "26.70 s", 
                 "spin": "4-", 
-                "symbol": "¹⁵⁶Pᵐ"
+                "symbol": "¹⁵⁶Pm"
             }, 
             {
                 "abundance": "", 
@@ -43460,7 +43460,7 @@
                 ], 
                 "halfLife": "10.56 s", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵⁷Pᵐ"
+                "symbol": "¹⁵⁷Pm"
             }, 
             {
                 "abundance": "", 
@@ -43472,7 +43472,7 @@
                 ], 
                 "halfLife": "4.8 s", 
                 "spin": "", 
-                "symbol": "¹⁵⁸Pᵐ"
+                "symbol": "¹⁵⁸Pm"
             }, 
             {
                 "abundance": "", 
@@ -43484,7 +43484,7 @@
                 ], 
                 "halfLife": "1.47 s", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵⁹Pᵐ"
+                "symbol": "¹⁵⁹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43496,7 +43496,7 @@
                 ], 
                 "halfLife": "2 s", 
                 "spin": "", 
-                "symbol": "¹⁶⁰Pᵐ"
+                "symbol": "¹⁶⁰Pm"
             }, 
             {
                 "abundance": "", 
@@ -43508,7 +43508,7 @@
                 ], 
                 "halfLife": "700 ms", 
                 "spin": "5/2-", 
-                "symbol": "¹⁶¹Pᵐ"
+                "symbol": "¹⁶¹Pm"
             }, 
             {
                 "abundance": "", 
@@ -43520,7 +43520,7 @@
                 ], 
                 "halfLife": "500 ms", 
                 "spin": "", 
-                "symbol": "¹⁶²Pᵐ"
+                "symbol": "¹⁶²Pm"
             }, 
             {
                 "abundance": "", 
@@ -43532,7 +43532,7 @@
                 ], 
                 "halfLife": "200 ms", 
                 "spin": "5/2-", 
-                "symbol": "¹⁶³Pᵐ"
+                "symbol": "¹⁶³Pm"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
@@ -43568,7 +43568,7 @@
                 "decayModes": [], 
                 "halfLife": "0.5 s", 
                 "spin": "0+", 
-                "symbol": "¹²⁸Sᵐ"
+                "symbol": "¹²⁸Sm"
             }, 
             {
                 "abundance": "", 
@@ -43576,7 +43576,7 @@
                 "decayModes": [], 
                 "halfLife": "550 ms", 
                 "spin": "5/2+", 
-                "symbol": "¹²⁹Sᵐ"
+                "symbol": "¹²⁹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43588,7 +43588,7 @@
                 ], 
                 "halfLife": "1 s", 
                 "spin": "0+", 
-                "symbol": "¹³⁰Sᵐ"
+                "symbol": "¹³⁰Sm"
             }, 
             {
                 "abundance": "", 
@@ -43602,7 +43602,7 @@
                 ], 
                 "halfLife": "1.2 s", 
                 "spin": "5/2+", 
-                "symbol": "¹³¹Sᵐ"
+                "symbol": "¹³¹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43616,7 +43616,7 @@
                 ], 
                 "halfLife": "4.0 s", 
                 "spin": "0+", 
-                "symbol": "¹³²Sᵐ"
+                "symbol": "¹³²Sm"
             }, 
             {
                 "abundance": "", 
@@ -43630,7 +43630,7 @@
                 ], 
                 "halfLife": "2.90 s", 
                 "spin": "5/2+", 
-                "symbol": "¹³³Sᵐ"
+                "symbol": "¹³³Sm"
             }, 
             {
                 "abundance": "", 
@@ -43642,7 +43642,7 @@
                 ], 
                 "halfLife": "10 s", 
                 "spin": "0+", 
-                "symbol": "¹³⁴Sᵐ"
+                "symbol": "¹³⁴Sm"
             }, 
             {
                 "abundance": "", 
@@ -43656,7 +43656,7 @@
                 ], 
                 "halfLife": "10.3 s", 
                 "spin": "7/2+", 
-                "symbol": "¹³⁵Sᵐ"
+                "symbol": "¹³⁵Sm"
             }, 
             {
                 "abundance": "", 
@@ -43668,7 +43668,7 @@
                 ], 
                 "halfLife": "2.4 s", 
                 "spin": "3/2+,5/2+", 
-                "symbol": "¹³⁵ᵐSᵐ"
+                "symbol": "¹³⁵ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43680,7 +43680,7 @@
                 ], 
                 "halfLife": "47 s", 
                 "spin": "0+", 
-                "symbol": "¹³⁶Sᵐ"
+                "symbol": "¹³⁶Sm"
             }, 
             {
                 "abundance": "", 
@@ -43688,7 +43688,7 @@
                 "decayModes": [], 
                 "halfLife": "15 µs", 
                 "spin": "8-", 
-                "symbol": "¹³⁶ᵐSᵐ"
+                "symbol": "¹³⁶ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43700,7 +43700,7 @@
                 ], 
                 "halfLife": "45 s", 
                 "spin": "9/2-", 
-                "symbol": "¹³⁷Sᵐ"
+                "symbol": "¹³⁷Sm"
             }, 
             {
                 "abundance": "", 
@@ -43712,7 +43712,7 @@
                 ], 
                 "halfLife": "20 s", 
                 "spin": "1/2+", 
-                "symbol": "¹³⁷ᵐSᵐ"
+                "symbol": "¹³⁷ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43724,7 +43724,7 @@
                 ], 
                 "halfLife": "3.1 min", 
                 "spin": "0+", 
-                "symbol": "¹³⁸Sᵐ"
+                "symbol": "¹³⁸Sm"
             }, 
             {
                 "abundance": "", 
@@ -43736,7 +43736,7 @@
                 ], 
                 "halfLife": "2.57 min", 
                 "spin": "1/2+", 
-                "symbol": "¹³⁹Sᵐ"
+                "symbol": "¹³⁹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43750,7 +43750,7 @@
                 ], 
                 "halfLife": "10.7 s", 
                 "spin": "11/2-", 
-                "symbol": "¹³⁹ᵐSᵐ"
+                "symbol": "¹³⁹ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43762,7 +43762,7 @@
                 ], 
                 "halfLife": "14.82 min", 
                 "spin": "0+", 
-                "symbol": "¹⁴⁰Sᵐ"
+                "symbol": "¹⁴⁰Sm"
             }, 
             {
                 "abundance": "", 
@@ -43774,7 +43774,7 @@
                 ], 
                 "halfLife": "10.2 min", 
                 "spin": "1/2+", 
-                "symbol": "¹⁴¹Sᵐ"
+                "symbol": "¹⁴¹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43788,7 +43788,7 @@
                 ], 
                 "halfLife": "22.6 min", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴¹ᵐSᵐ"
+                "symbol": "¹⁴¹ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43800,7 +43800,7 @@
                 ], 
                 "halfLife": "72.49 min", 
                 "spin": "0+", 
-                "symbol": "¹⁴²Sᵐ"
+                "symbol": "¹⁴²Sm"
             }, 
             {
                 "abundance": "", 
@@ -43812,7 +43812,7 @@
                 ], 
                 "halfLife": "8.75 min", 
                 "spin": "3/2+", 
-                "symbol": "¹⁴³Sᵐ"
+                "symbol": "¹⁴³Sm"
             }, 
             {
                 "abundance": "", 
@@ -43826,7 +43826,7 @@
                 ], 
                 "halfLife": "66 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴³ᵐ¹Sᵐ"
+                "symbol": "¹⁴³ᵐ¹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43834,7 +43834,7 @@
                 "decayModes": [], 
                 "halfLife": "30 ms", 
                 "spin": "23/2-", 
-                "symbol": "¹⁴³ᵐ²Sᵐ"
+                "symbol": "¹⁴³ᵐ²Sm"
             }, 
             {
                 "abundance": "3.07%", 
@@ -43842,7 +43842,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "0+", 
-                "symbol": "¹⁴⁴Sᵐ"
+                "symbol": "¹⁴⁴Sm"
             }, 
             {
                 "abundance": "", 
@@ -43850,7 +43850,7 @@
                 "decayModes": [], 
                 "halfLife": "880 ns", 
                 "spin": "6+", 
-                "symbol": "¹⁴⁴ᵐSᵐ"
+                "symbol": "¹⁴⁴ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -43862,7 +43862,7 @@
                 ], 
                 "halfLife": "340 d", 
                 "spin": "7/2-", 
-                "symbol": "¹⁴⁵Sᵐ"
+                "symbol": "¹⁴⁵Sm"
             }, 
             {
                 "abundance": "", 
@@ -43870,7 +43870,7 @@
                 "decayModes": [], 
                 "halfLife": "990 ns", 
                 "spin": "49/2+", 
-                "symbol": "¹⁴⁵ᵐSᵐ"
+                "symbol": "¹⁴⁵ᵐSm"
             }, 
             {
                 "abundance": "Trace", 
@@ -43882,7 +43882,7 @@
                 ], 
                 "halfLife": "1.03×10⁸ a", 
                 "spin": "0+", 
-                "symbol": "¹⁴⁶Sᵐ"
+                "symbol": "¹⁴⁶Sm"
             }, 
             {
                 "abundance": "14.99%", 
@@ -43894,7 +43894,7 @@
                 ], 
                 "halfLife": "1.06×10¹¹ a", 
                 "spin": "7/2-", 
-                "symbol": "¹⁴⁷Sᵐ"
+                "symbol": "¹⁴⁷Sm"
             }, 
             {
                 "abundance": "11.24%", 
@@ -43906,7 +43906,7 @@
                 ], 
                 "halfLife": "7×10¹⁵ a", 
                 "spin": "0+", 
-                "symbol": "¹⁴⁸Sᵐ"
+                "symbol": "¹⁴⁸Sm"
             }, 
             {
                 "abundance": "13.82%", 
@@ -43914,7 +43914,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "7/2-", 
-                "symbol": "¹⁴⁹Sᵐ"
+                "symbol": "¹⁴⁹Sm"
             }, 
             {
                 "abundance": "7.38%", 
@@ -43922,7 +43922,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "0+", 
-                "symbol": "¹⁵⁰Sᵐ"
+                "symbol": "¹⁵⁰Sm"
             }, 
             {
                 "abundance": "", 
@@ -43934,7 +43934,7 @@
                 ], 
                 "halfLife": "96.6 a", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵¹Sᵐ"
+                "symbol": "¹⁵¹Sm"
             }, 
             {
                 "abundance": "", 
@@ -43942,7 +43942,7 @@
                 "decayModes": [], 
                 "halfLife": "1.4 µs", 
                 "spin": "11/2-", 
-                "symbol": "¹⁵¹ᵐSᵐ"
+                "symbol": "¹⁵¹ᵐSm"
             }, 
             {
                 "abundance": "26.75%", 
@@ -43950,7 +43950,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "0+", 
-                "symbol": "¹⁵²Sᵐ"
+                "symbol": "¹⁵²Sm"
             }, 
             {
                 "abundance": "", 
@@ -43962,7 +43962,7 @@
                 ], 
                 "halfLife": "46.284 h", 
                 "spin": "3/2+", 
-                "symbol": "¹⁵³Sᵐ"
+                "symbol": "¹⁵³Sm"
             }, 
             {
                 "abundance": "", 
@@ -43974,7 +43974,7 @@
                 ], 
                 "halfLife": "10.6 ms", 
                 "spin": "11/2-", 
-                "symbol": "¹⁵³ᵐSᵐ"
+                "symbol": "¹⁵³ᵐSm"
             }, 
             {
                 "abundance": "22.75%", 
@@ -43982,7 +43982,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "0+", 
-                "symbol": "¹⁵⁴Sᵐ"
+                "symbol": "¹⁵⁴Sm"
             }, 
             {
                 "abundance": "", 
@@ -43994,7 +43994,7 @@
                 ], 
                 "halfLife": "22.3 min", 
                 "spin": "3/2-", 
-                "symbol": "¹⁵⁵Sᵐ"
+                "symbol": "¹⁵⁵Sm"
             }, 
             {
                 "abundance": "", 
@@ -44006,7 +44006,7 @@
                 ], 
                 "halfLife": "9.4 h", 
                 "spin": "0+", 
-                "symbol": "¹⁵⁶Sᵐ"
+                "symbol": "¹⁵⁶Sm"
             }, 
             {
                 "abundance": "", 
@@ -44014,7 +44014,7 @@
                 "decayModes": [], 
                 "halfLife": "185 ns", 
                 "spin": "5-", 
-                "symbol": "¹⁵⁶ᵐSᵐ"
+                "symbol": "¹⁵⁶ᵐSm"
             }, 
             {
                 "abundance": "", 
@@ -44026,7 +44026,7 @@
                 ], 
                 "halfLife": "8.03 min", 
                 "spin": "3/2-", 
-                "symbol": "¹⁵⁷Sᵐ"
+                "symbol": "¹⁵⁷Sm"
             }, 
             {
                 "abundance": "", 
@@ -44038,7 +44038,7 @@
                 ], 
                 "halfLife": "5.30 min", 
                 "spin": "0+", 
-                "symbol": "¹⁵⁸Sᵐ"
+                "symbol": "¹⁵⁸Sm"
             }, 
             {
                 "abundance": "", 
@@ -44050,7 +44050,7 @@
                 ], 
                 "halfLife": "11.37 s", 
                 "spin": "5/2-", 
-                "symbol": "¹⁵⁹Sᵐ"
+                "symbol": "¹⁵⁹Sm"
             }, 
             {
                 "abundance": "", 
@@ -44062,7 +44062,7 @@
                 ], 
                 "halfLife": "9.6 s", 
                 "spin": "0+", 
-                "symbol": "¹⁶⁰Sᵐ"
+                "symbol": "¹⁶⁰Sm"
             }, 
             {
                 "abundance": "", 
@@ -44074,7 +44074,7 @@
                 ], 
                 "halfLife": "4.8 s", 
                 "spin": "7/2+", 
-                "symbol": "¹⁶¹Sᵐ"
+                "symbol": "¹⁶¹Sm"
             }, 
             {
                 "abundance": "", 
@@ -44086,7 +44086,7 @@
                 ], 
                 "halfLife": "2.4 s", 
                 "spin": "0+", 
-                "symbol": "¹⁶²Sᵐ"
+                "symbol": "¹⁶²Sm"
             }, 
             {
                 "abundance": "", 
@@ -44098,7 +44098,7 @@
                 ], 
                 "halfLife": "1 s", 
                 "spin": "1/2-", 
-                "symbol": "¹⁶³Sᵐ"
+                "symbol": "¹⁶³Sm"
             }, 
             {
                 "abundance": "", 
@@ -44110,7 +44110,7 @@
                 ], 
                 "halfLife": "500 ms", 
                 "spin": "0+", 
-                "symbol": "¹⁶⁴Sᵐ"
+                "symbol": "¹⁶⁴Sm"
             }, 
             {
                 "abundance": "", 
@@ -44122,7 +44122,7 @@
                 ], 
                 "halfLife": "200 ms", 
                 "spin": "5/2-", 
-                "symbol": "¹⁶⁵Sᵐ"
+                "symbol": "¹⁶⁵Sm"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
@@ -48108,7 +48108,7 @@
                 "decayModes": [], 
                 "halfLife": "3.1 µs", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴⁵Tᵐ"
+                "symbol": "¹⁴⁵Tm"
             }, 
             {
                 "abundance": "", 
@@ -48122,7 +48122,7 @@
                 ], 
                 "halfLife": "240 ms", 
                 "spin": "6-", 
-                "symbol": "¹⁴⁶Tᵐ"
+                "symbol": "¹⁴⁶Tm"
             }, 
             {
                 "abundance": "", 
@@ -48136,7 +48136,7 @@
                 ], 
                 "halfLife": "72 ms", 
                 "spin": "10+", 
-                "symbol": "¹⁴⁶ᵐTᵐ"
+                "symbol": "¹⁴⁶ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48150,7 +48150,7 @@
                 ], 
                 "halfLife": "0.58 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴⁷Tᵐ"
+                "symbol": "¹⁴⁷Tm"
             }, 
             {
                 "abundance": "", 
@@ -48158,7 +48158,7 @@
                 "decayModes": [], 
                 "halfLife": "360 µs", 
                 "spin": "3/2+", 
-                "symbol": "¹⁴⁷ᵐTᵐ"
+                "symbol": "¹⁴⁷ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48170,7 +48170,7 @@
                 ], 
                 "halfLife": "0.7 s", 
                 "spin": "10+", 
-                "symbol": "¹⁴⁸Tᵐ"
+                "symbol": "¹⁴⁸Tm"
             }, 
             {
                 "abundance": "", 
@@ -48178,7 +48178,7 @@
                 "decayModes": [], 
                 "halfLife": "0.7 s", 
                 "spin": "", 
-                "symbol": "¹⁴⁸ᵐTᵐ"
+                "symbol": "¹⁴⁸ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48192,7 +48192,7 @@
                 ], 
                 "halfLife": "0.9 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁴⁹Tᵐ"
+                "symbol": "¹⁴⁹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48204,7 +48204,7 @@
                 ], 
                 "halfLife": "3 s", 
                 "spin": "1+", 
-                "symbol": "¹⁵⁰Tᵐ"
+                "symbol": "¹⁵⁰Tm"
             }, 
             {
                 "abundance": "", 
@@ -48218,7 +48218,7 @@
                 ], 
                 "halfLife": "2.20 s", 
                 "spin": "6-", 
-                "symbol": "¹⁵⁰ᵐ¹Tᵐ"
+                "symbol": "¹⁵⁰ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48226,7 +48226,7 @@
                 "decayModes": [], 
                 "halfLife": "5.2 ms", 
                 "spin": "10+", 
-                "symbol": "¹⁵⁰ᵐ²Tᵐ"
+                "symbol": "¹⁵⁰ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48238,7 +48238,7 @@
                 ], 
                 "halfLife": "4.17 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁵¹Tᵐ"
+                "symbol": "¹⁵¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48250,7 +48250,7 @@
                 ], 
                 "halfLife": "6.6 s", 
                 "spin": "1/2+", 
-                "symbol": "¹⁵¹ᵐ¹Tᵐ"
+                "symbol": "¹⁵¹ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48258,7 +48258,7 @@
                 "decayModes": [], 
                 "halfLife": "451 ns", 
                 "spin": "27/2-", 
-                "symbol": "¹⁵¹ᵐ²Tᵐ"
+                "symbol": "¹⁵¹ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48270,7 +48270,7 @@
                 ], 
                 "halfLife": "8.0 s", 
                 "spin": "2-", 
-                "symbol": "¹⁵²Tᵐ"
+                "symbol": "¹⁵²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48282,7 +48282,7 @@
                 ], 
                 "halfLife": "5.2 s", 
                 "spin": "9+", 
-                "symbol": "¹⁵²ᵐ¹Tᵐ"
+                "symbol": "¹⁵²ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48290,7 +48290,7 @@
                 "decayModes": [], 
                 "halfLife": "294 ns", 
                 "spin": "17+", 
-                "symbol": "¹⁵²ᵐ²Tᵐ"
+                "symbol": "¹⁵²ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48304,7 +48304,7 @@
                 ], 
                 "halfLife": "1.48 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁵³Tᵐ"
+                "symbol": "¹⁵³Tm"
             }, 
             {
                 "abundance": "", 
@@ -48318,7 +48318,7 @@
                 ], 
                 "halfLife": "2.5 s", 
                 "spin": "1/2+", 
-                "symbol": "¹⁵³ᵐTᵐ"
+                "symbol": "¹⁵³ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48332,7 +48332,7 @@
                 ], 
                 "halfLife": "8.1 s", 
                 "spin": "2-", 
-                "symbol": "¹⁵⁴Tᵐ"
+                "symbol": "¹⁵⁴Tm"
             }, 
             {
                 "abundance": "", 
@@ -48346,7 +48346,7 @@
                 ], 
                 "halfLife": "3.30 s", 
                 "spin": "9+", 
-                "symbol": "¹⁵⁴ᵐTᵐ"
+                "symbol": "¹⁵⁴ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48360,7 +48360,7 @@
                 ], 
                 "halfLife": "21.6 s", 
                 "spin": "11/2-", 
-                "symbol": "¹⁵⁵Tᵐ"
+                "symbol": "¹⁵⁵Tm"
             }, 
             {
                 "abundance": "", 
@@ -48374,7 +48374,7 @@
                 ], 
                 "halfLife": "45 s", 
                 "spin": "1/2+", 
-                "symbol": "¹⁵⁵ᵐTᵐ"
+                "symbol": "¹⁵⁵ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48388,7 +48388,7 @@
                 ], 
                 "halfLife": "83.8 s", 
                 "spin": "2-", 
-                "symbol": "¹⁵⁶Tᵐ"
+                "symbol": "¹⁵⁶Tm"
             }, 
             {
                 "abundance": "", 
@@ -48396,7 +48396,7 @@
                 "decayModes": [], 
                 "halfLife": "~400 ns", 
                 "spin": "11-", 
-                "symbol": "¹⁵⁶ᵐTᵐ"
+                "symbol": "¹⁵⁶ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48408,7 +48408,7 @@
                 ], 
                 "halfLife": "3.63 min", 
                 "spin": "1/2+", 
-                "symbol": "¹⁵⁷Tᵐ"
+                "symbol": "¹⁵⁷Tm"
             }, 
             {
                 "abundance": "", 
@@ -48420,7 +48420,7 @@
                 ], 
                 "halfLife": "3.98 min", 
                 "spin": "2-", 
-                "symbol": "¹⁵⁸Tᵐ"
+                "symbol": "¹⁵⁸Tm"
             }, 
             {
                 "abundance": "", 
@@ -48428,7 +48428,7 @@
                 "decayModes": [], 
                 "halfLife": "~20 ns", 
                 "spin": "5+", 
-                "symbol": "¹⁵⁸ᵐTᵐ"
+                "symbol": "¹⁵⁸ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48440,7 +48440,7 @@
                 ], 
                 "halfLife": "9.13 min", 
                 "spin": "5/2+", 
-                "symbol": "¹⁵⁹Tᵐ"
+                "symbol": "¹⁵⁹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48452,7 +48452,7 @@
                 ], 
                 "halfLife": "9.4 min", 
                 "spin": "1-", 
-                "symbol": "¹⁶⁰Tᵐ"
+                "symbol": "¹⁶⁰Tm"
             }, 
             {
                 "abundance": "", 
@@ -48466,7 +48466,7 @@
                 ], 
                 "halfLife": "74.5 s", 
                 "spin": "5+", 
-                "symbol": "¹⁶⁰ᵐ¹Tᵐ"
+                "symbol": "¹⁶⁰ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48474,7 +48474,7 @@
                 "decayModes": [], 
                 "halfLife": "~200 ns", 
                 "spin": "8", 
-                "symbol": "¹⁶⁰ᵐ²Tᵐ"
+                "symbol": "¹⁶⁰ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48486,7 +48486,7 @@
                 ], 
                 "halfLife": "30.2 min", 
                 "spin": "7/2+", 
-                "symbol": "¹⁶¹Tᵐ"
+                "symbol": "¹⁶¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48494,7 +48494,7 @@
                 "decayModes": [], 
                 "halfLife": "5 min", 
                 "spin": "1/2+", 
-                "symbol": "¹⁶¹ᵐ¹Tᵐ"
+                "symbol": "¹⁶¹ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48502,7 +48502,7 @@
                 "decayModes": [], 
                 "halfLife": "110 ns", 
                 "spin": "7/2-", 
-                "symbol": "¹⁶¹ᵐ²Tᵐ"
+                "symbol": "¹⁶¹ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48514,7 +48514,7 @@
                 ], 
                 "halfLife": "21.70 min", 
                 "spin": "1-", 
-                "symbol": "¹⁶²Tᵐ"
+                "symbol": "¹⁶²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48528,7 +48528,7 @@
                 ], 
                 "halfLife": "24.3 s", 
                 "spin": "5+", 
-                "symbol": "¹⁶²ᵐTᵐ"
+                "symbol": "¹⁶²ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48540,7 +48540,7 @@
                 ], 
                 "halfLife": "1.810 h", 
                 "spin": "1/2+", 
-                "symbol": "¹⁶³Tᵐ"
+                "symbol": "¹⁶³Tm"
             }, 
             {
                 "abundance": "", 
@@ -48552,7 +48552,7 @@
                 ], 
                 "halfLife": "2.0 min", 
                 "spin": "1+", 
-                "symbol": "¹⁶⁴Tᵐ"
+                "symbol": "¹⁶⁴Tm"
             }, 
             {
                 "abundance": "", 
@@ -48566,7 +48566,7 @@
                 ], 
                 "halfLife": "5.1 min", 
                 "spin": "6-", 
-                "symbol": "¹⁶⁴ᵐTᵐ"
+                "symbol": "¹⁶⁴ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48578,7 +48578,7 @@
                 ], 
                 "halfLife": "30.06 h", 
                 "spin": "1/2+", 
-                "symbol": "¹⁶⁵Tᵐ"
+                "symbol": "¹⁶⁵Tm"
             }, 
             {
                 "abundance": "", 
@@ -48590,7 +48590,7 @@
                 ], 
                 "halfLife": "7.70 h", 
                 "spin": "2+", 
-                "symbol": "¹⁶⁶Tᵐ"
+                "symbol": "¹⁶⁶Tm"
             }, 
             {
                 "abundance": "", 
@@ -48602,7 +48602,7 @@
                 ], 
                 "halfLife": "340 ms", 
                 "spin": "6-", 
-                "symbol": "¹⁶⁶ᵐTᵐ"
+                "symbol": "¹⁶⁶ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48614,7 +48614,7 @@
                 ], 
                 "halfLife": "9.25 d", 
                 "spin": "1/2+", 
-                "symbol": "¹⁶⁷Tᵐ"
+                "symbol": "¹⁶⁷Tm"
             }, 
             {
                 "abundance": "", 
@@ -48622,7 +48622,7 @@
                 "decayModes": [], 
                 "halfLife": "1.16 µs", 
                 "spin": "7/2+", 
-                "symbol": "¹⁶⁷ᵐ¹Tᵐ"
+                "symbol": "¹⁶⁷ᵐ¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48630,7 +48630,7 @@
                 "decayModes": [], 
                 "halfLife": "0.9 µs", 
                 "spin": "7/2-", 
-                "symbol": "¹⁶⁷ᵐ²Tᵐ"
+                "symbol": "¹⁶⁷ᵐ²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48644,7 +48644,7 @@
                 ], 
                 "halfLife": "93.1 d", 
                 "spin": "3+", 
-                "symbol": "¹⁶⁸Tᵐ"
+                "symbol": "¹⁶⁸Tm"
             }, 
             {
                 "abundance": "100%", 
@@ -48652,7 +48652,7 @@
                 "decayModes": [], 
                 "halfLife": "Stable", 
                 "spin": "1/2+", 
-                "symbol": "¹⁶⁹Tᵐ"
+                "symbol": "¹⁶⁹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48666,7 +48666,7 @@
                 ], 
                 "halfLife": "128.6 d", 
                 "spin": "1-", 
-                "symbol": "¹⁷⁰Tᵐ"
+                "symbol": "¹⁷⁰Tm"
             }, 
             {
                 "abundance": "", 
@@ -48674,7 +48674,7 @@
                 "decayModes": [], 
                 "halfLife": "4.12 µs", 
                 "spin": "3+", 
-                "symbol": "¹⁷⁰ᵐTᵐ"
+                "symbol": "¹⁷⁰ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48686,7 +48686,7 @@
                 ], 
                 "halfLife": "1.92 a", 
                 "spin": "1/2+", 
-                "symbol": "¹⁷¹Tᵐ"
+                "symbol": "¹⁷¹Tm"
             }, 
             {
                 "abundance": "", 
@@ -48694,7 +48694,7 @@
                 "decayModes": [], 
                 "halfLife": "2.60 µs", 
                 "spin": "7/2-", 
-                "symbol": "¹⁷¹ᵐTᵐ"
+                "symbol": "¹⁷¹ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48706,7 +48706,7 @@
                 ], 
                 "halfLife": "63.6 h", 
                 "spin": "2-", 
-                "symbol": "¹⁷²Tᵐ"
+                "symbol": "¹⁷²Tm"
             }, 
             {
                 "abundance": "", 
@@ -48718,7 +48718,7 @@
                 ], 
                 "halfLife": "8.24 h", 
                 "spin": "1/2+", 
-                "symbol": "¹⁷³Tᵐ"
+                "symbol": "¹⁷³Tm"
             }, 
             {
                 "abundance": "", 
@@ -48726,7 +48726,7 @@
                 "decayModes": [], 
                 "halfLife": "10 µs", 
                 "spin": "7/2-", 
-                "symbol": "¹⁷³ᵐTᵐ"
+                "symbol": "¹⁷³ᵐTm"
             }, 
             {
                 "abundance": "", 
@@ -48738,7 +48738,7 @@
                 ], 
                 "halfLife": "5.4 min", 
                 "spin": "4-", 
-                "symbol": "¹⁷⁴Tᵐ"
+                "symbol": "¹⁷⁴Tm"
             }, 
             {
                 "abundance": "", 
@@ -48750,7 +48750,7 @@
                 ], 
                 "halfLife": "15.2 min", 
                 "spin": "1/2+", 
-                "symbol": "¹⁷⁵Tᵐ"
+                "symbol": "¹⁷⁵Tm"
             }, 
             {
                 "abundance": "", 
@@ -48762,7 +48762,7 @@
                 ], 
                 "halfLife": "1.85 min", 
                 "spin": "4+", 
-                "symbol": "¹⁷⁶Tᵐ"
+                "symbol": "¹⁷⁶Tm"
             }, 
             {
                 "abundance": "", 
@@ -48774,7 +48774,7 @@
                 ], 
                 "halfLife": "90 s", 
                 "spin": "7/2-", 
-                "symbol": "¹⁷⁷Tᵐ"
+                "symbol": "¹⁷⁷Tm"
             }, 
             {
                 "abundance": "", 
@@ -48786,7 +48786,7 @@
                 ], 
                 "halfLife": "30 s", 
                 "spin": "", 
-                "symbol": "¹⁷⁸Tᵐ"
+                "symbol": "¹⁷⁸Tm"
             }, 
             {
                 "abundance": "", 
@@ -48798,7 +48798,7 @@
                 ], 
                 "halfLife": "20 s", 
                 "spin": "1/2+", 
-                "symbol": "¹⁷⁹Tᵐ"
+                "symbol": "¹⁷⁹Tm"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
@@ -52843,7 +52843,7 @@
                 ], 
                 "halfLife": "30 s", 
                 "spin": "", 
-                "symbol": "²³¹Aᵐ"
+                "symbol": "²³¹Am"
             }, 
             {
                 "abundance": "", 
@@ -52859,7 +52859,7 @@
                 ], 
                 "halfLife": "79 s", 
                 "spin": "", 
-                "symbol": "²³²Aᵐ"
+                "symbol": "²³²Am"
             }, 
             {
                 "abundance": "", 
@@ -52873,7 +52873,7 @@
                 ], 
                 "halfLife": "3.2 min", 
                 "spin": "", 
-                "symbol": "²³³Aᵐ"
+                "symbol": "²³³Am"
             }, 
             {
                 "abundance": "", 
@@ -52889,7 +52889,7 @@
                 ], 
                 "halfLife": "2.32 min", 
                 "spin": "", 
-                "symbol": "²³⁴Aᵐ"
+                "symbol": "²³⁴Am"
             }, 
             {
                 "abundance": "", 
@@ -52903,7 +52903,7 @@
                 ], 
                 "halfLife": "9.9 min", 
                 "spin": "5/2-", 
-                "symbol": "²³⁵Aᵐ"
+                "symbol": "²³⁵Am"
             }, 
             {
                 "abundance": "", 
@@ -52917,7 +52917,7 @@
                 ], 
                 "halfLife": "3.6 min", 
                 "spin": "", 
-                "symbol": "²³⁶Aᵐ"
+                "symbol": "²³⁶Am"
             }, 
             {
                 "abundance": "", 
@@ -52931,7 +52931,7 @@
                 ], 
                 "halfLife": "73.0 min", 
                 "spin": "5/2-", 
-                "symbol": "²³⁷Aᵐ"
+                "symbol": "²³⁷Am"
             }, 
             {
                 "abundance": "", 
@@ -52945,7 +52945,7 @@
                 ], 
                 "halfLife": "98 min", 
                 "spin": "1+", 
-                "symbol": "²³⁸Aᵐ"
+                "symbol": "²³⁸Am"
             }, 
             {
                 "abundance": "", 
@@ -52953,7 +52953,7 @@
                 "decayModes": [], 
                 "halfLife": "35 µs", 
                 "spin": "", 
-                "symbol": "²³⁸ᵐAᵐ"
+                "symbol": "²³⁸ᵐAm"
             }, 
             {
                 "abundance": "", 
@@ -52967,7 +52967,7 @@
                 ], 
                 "halfLife": "11.9 h", 
                 "spin": "5/2-", 
-                "symbol": "²³⁹Aᵐ"
+                "symbol": "²³⁹Am"
             }, 
             {
                 "abundance": "", 
@@ -52975,7 +52975,7 @@
                 "decayModes": [], 
                 "halfLife": "163 ns", 
                 "spin": "7/2+", 
-                "symbol": "²³⁹ᵐAᵐ"
+                "symbol": "²³⁹ᵐAm"
             }, 
             {
                 "abundance": "", 
@@ -52989,7 +52989,7 @@
                 ], 
                 "halfLife": "50.8 h", 
                 "spin": "3-", 
-                "symbol": "²⁴⁰Aᵐ"
+                "symbol": "²⁴⁰Am"
             }, 
             {
                 "abundance": "", 
@@ -53005,7 +53005,7 @@
                 ], 
                 "halfLife": "432.2 a", 
                 "spin": "5/2-", 
-                "symbol": "²⁴¹Aᵐ"
+                "symbol": "²⁴¹Am"
             }, 
             {
                 "abundance": "", 
@@ -53013,7 +53013,7 @@
                 "decayModes": [], 
                 "halfLife": "1.2 µs", 
                 "spin": "", 
-                "symbol": "²⁴¹ᵐAᵐ"
+                "symbol": "²⁴¹ᵐAm"
             }, 
             {
                 "abundance": "", 
@@ -53027,7 +53027,7 @@
                 ], 
                 "halfLife": "16.02 h", 
                 "spin": "1-", 
-                "symbol": "²⁴²Aᵐ"
+                "symbol": "²⁴²Am"
             }, 
             {
                 "abundance": "", 
@@ -53043,7 +53043,7 @@
                 ], 
                 "halfLife": "141 a", 
                 "spin": "5-", 
-                "symbol": "²⁴²ᵐ¹Aᵐ"
+                "symbol": "²⁴²ᵐ¹Am"
             }, 
             {
                 "abundance": "", 
@@ -53051,7 +53051,7 @@
                 "decayModes": [], 
                 "halfLife": "14.0 ms", 
                 "spin": "2+,3-", 
-                "symbol": "²⁴²ᵐ²Aᵐ"
+                "symbol": "²⁴²ᵐ²Am"
             }, 
             {
                 "abundance": "", 
@@ -53065,7 +53065,7 @@
                 ], 
                 "halfLife": "7,370 a", 
                 "spin": "5/2-", 
-                "symbol": "²⁴³Aᵐ"
+                "symbol": "²⁴³Am"
             }, 
             {
                 "abundance": "", 
@@ -53077,7 +53077,7 @@
                 ], 
                 "halfLife": "10.1 h", 
                 "spin": "6-", 
-                "symbol": "²⁴⁴Aᵐ"
+                "symbol": "²⁴⁴Am"
             }, 
             {
                 "abundance": "", 
@@ -53091,7 +53091,7 @@
                 ], 
                 "halfLife": "26 min", 
                 "spin": "1+", 
-                "symbol": "²⁴⁴ᵐAᵐ"
+                "symbol": "²⁴⁴ᵐAm"
             }, 
             {
                 "abundance": "", 
@@ -53103,7 +53103,7 @@
                 ], 
                 "halfLife": "2.05 h", 
                 "spin": "5/2+", 
-                "symbol": "²⁴⁵Aᵐ"
+                "symbol": "²⁴⁵Am"
             }, 
             {
                 "abundance": "", 
@@ -53115,7 +53115,7 @@
                 ], 
                 "halfLife": "39 min", 
                 "spin": "7-", 
-                "symbol": "²⁴⁶Aᵐ"
+                "symbol": "²⁴⁶Am"
             }, 
             {
                 "abundance": "", 
@@ -53129,7 +53129,7 @@
                 ], 
                 "halfLife": "25.0 min", 
                 "spin": "2-", 
-                "symbol": "²⁴⁶ᵐ¹Aᵐ"
+                "symbol": "²⁴⁶ᵐ¹Am"
             }, 
             {
                 "abundance": "", 
@@ -53137,7 +53137,7 @@
                 "decayModes": [], 
                 "halfLife": "73 µs", 
                 "spin": "", 
-                "symbol": "²⁴⁶ᵐ²Aᵐ"
+                "symbol": "²⁴⁶ᵐ²Am"
             }, 
             {
                 "abundance": "", 
@@ -53149,7 +53149,7 @@
                 ], 
                 "halfLife": "23.0 min", 
                 "spin": "5/2", 
-                "symbol": "²⁴⁷Aᵐ"
+                "symbol": "²⁴⁷Am"
             }, 
             {
                 "abundance": "", 
@@ -53161,7 +53161,7 @@
                 ], 
                 "halfLife": "3 min", 
                 "spin": "", 
-                "symbol": "²⁴⁸Aᵐ"
+                "symbol": "²⁴⁸Am"
             }, 
             {
                 "abundance": "", 
@@ -53173,7 +53173,7 @@
                 ], 
                 "halfLife": "1 min", 
                 "spin": "", 
-                "symbol": "²⁴⁹Aᵐ"
+                "symbol": "²⁴⁹Am"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
@@ -53209,7 +53209,7 @@
                 "decayModes": [], 
                 "halfLife": "1? min", 
                 "spin": "0+", 
-                "symbol": "²³²Cᵐ"
+                "symbol": "²³²Cm"
             }, 
             {
                 "abundance": "", 
@@ -53223,7 +53223,7 @@
                 ], 
                 "halfLife": "1 min", 
                 "spin": "3/2+", 
-                "symbol": "²³³Cᵐ"
+                "symbol": "²³³Cm"
             }, 
             {
                 "abundance": "", 
@@ -53237,7 +53237,7 @@
                 ], 
                 "halfLife": "51 s", 
                 "spin": "0+", 
-                "symbol": "²³⁴Cᵐ"
+                "symbol": "²³⁴Cm"
             }, 
             {
                 "abundance": "", 
@@ -53251,7 +53251,7 @@
                 ], 
                 "halfLife": "5 min", 
                 "spin": "5/2+", 
-                "symbol": "²³⁵Cᵐ"
+                "symbol": "²³⁵Cm"
             }, 
             {
                 "abundance": "", 
@@ -53265,7 +53265,7 @@
                 ], 
                 "halfLife": "10 min", 
                 "spin": "0+", 
-                "symbol": "²³⁶Cᵐ"
+                "symbol": "²³⁶Cm"
             }, 
             {
                 "abundance": "", 
@@ -53279,7 +53279,7 @@
                 ], 
                 "halfLife": "20 min", 
                 "spin": "5/2+", 
-                "symbol": "²³⁷Cᵐ"
+                "symbol": "²³⁷Cm"
             }, 
             {
                 "abundance": "", 
@@ -53293,7 +53293,7 @@
                 ], 
                 "halfLife": "2.4 h", 
                 "spin": "0+", 
-                "symbol": "²³⁸Cᵐ"
+                "symbol": "²³⁸Cm"
             }, 
             {
                 "abundance": "", 
@@ -53307,7 +53307,7 @@
                 ], 
                 "halfLife": "~2.9 h", 
                 "spin": "7/2-", 
-                "symbol": "²³⁹Cᵐ"
+                "symbol": "²³⁹Cm"
             }, 
             {
                 "abundance": "", 
@@ -53323,7 +53323,7 @@
                 ], 
                 "halfLife": "27 d", 
                 "spin": "0+", 
-                "symbol": "²⁴⁰Cᵐ"
+                "symbol": "²⁴⁰Cm"
             }, 
             {
                 "abundance": "", 
@@ -53337,7 +53337,7 @@
                 ], 
                 "halfLife": "32.8 d", 
                 "spin": "1/2+", 
-                "symbol": "²⁴¹Cᵐ"
+                "symbol": "²⁴¹Cm"
             }, 
             {
                 "abundance": "", 
@@ -53355,7 +53355,7 @@
                 ], 
                 "halfLife": "162.8 d", 
                 "spin": "0+", 
-                "symbol": "²⁴²Cᵐ"
+                "symbol": "²⁴²Cm"
             }, 
             {
                 "abundance": "", 
@@ -53371,7 +53371,7 @@
                 ], 
                 "halfLife": "29.1 a", 
                 "spin": "5/2+", 
-                "symbol": "²⁴³Cᵐ"
+                "symbol": "²⁴³Cm"
             }, 
             {
                 "abundance": "", 
@@ -53379,7 +53379,7 @@
                 "decayModes": [], 
                 "halfLife": "1.08 µs", 
                 "spin": "1/2+", 
-                "symbol": "²⁴³ᵐCᵐ"
+                "symbol": "²⁴³ᵐCm"
             }, 
             {
                 "abundance": "", 
@@ -53393,7 +53393,7 @@
                 ], 
                 "halfLife": "18.10 a", 
                 "spin": "0+", 
-                "symbol": "²⁴⁴Cᵐ"
+                "symbol": "²⁴⁴Cm"
             }, 
             {
                 "abundance": "", 
@@ -53405,7 +53405,7 @@
                 ], 
                 "halfLife": "34 ms", 
                 "spin": "6+", 
-                "symbol": "²⁴⁴ᵐCᵐ"
+                "symbol": "²⁴⁴ᵐCm"
             }, 
             {
                 "abundance": "", 
@@ -53419,7 +53419,7 @@
                 ], 
                 "halfLife": "8.5×10³ a", 
                 "spin": "7/2+", 
-                "symbol": "²⁴⁵Cᵐ"
+                "symbol": "²⁴⁵Cm"
             }, 
             {
                 "abundance": "", 
@@ -53427,7 +53427,7 @@
                 "decayModes": [], 
                 "halfLife": "290 ns", 
                 "spin": "1/2+", 
-                "symbol": "²⁴⁵ᵐCᵐ"
+                "symbol": "²⁴⁵ᵐCm"
             }, 
             {
                 "abundance": "", 
@@ -53441,7 +53441,7 @@
                 ], 
                 "halfLife": "4.76×10³ a", 
                 "spin": "0+", 
-                "symbol": "²⁴⁶Cᵐ"
+                "symbol": "²⁴⁶Cm"
             }, 
             {
                 "abundance": "", 
@@ -53453,7 +53453,7 @@
                 ], 
                 "halfLife": "1.56×10⁷ a", 
                 "spin": "9/2-", 
-                "symbol": "²⁴⁷Cᵐ"
+                "symbol": "²⁴⁷Cm"
             }, 
             {
                 "abundance": "", 
@@ -53469,7 +53469,7 @@
                 ], 
                 "halfLife": "3.48×10⁵ a", 
                 "spin": "0+", 
-                "symbol": "²⁴⁸Cᵐ"
+                "symbol": "²⁴⁸Cm"
             }, 
             {
                 "abundance": "", 
@@ -53481,7 +53481,7 @@
                 ], 
                 "halfLife": "64.15 min", 
                 "spin": "1/2+", 
-                "symbol": "²⁴⁹Cᵐ"
+                "symbol": "²⁴⁹Cm"
             }, 
             {
                 "abundance": "", 
@@ -53489,7 +53489,7 @@
                 "decayModes": [], 
                 "halfLife": "23 µs", 
                 "spin": "7/2+", 
-                "symbol": "²⁴⁹ᵐCᵐ"
+                "symbol": "²⁴⁹ᵐCm"
             }, 
             {
                 "abundance": "", 
@@ -53504,7 +53504,7 @@
                 ], 
                 "halfLife": "8,300 a", 
                 "spin": "0+", 
-                "symbol": "²⁵⁰Cᵐ"
+                "symbol": "²⁵⁰Cm"
             }, 
             {
                 "abundance": "", 
@@ -53516,7 +53516,7 @@
                 ], 
                 "halfLife": "16.8 min", 
                 "spin": "1/2+", 
-                "symbol": "²⁵¹Cᵐ"
+                "symbol": "²⁵¹Cm"
             }, 
             {
                 "abundance": "", 
@@ -53528,7 +53528,7 @@
                 ], 
                 "halfLife": "<1 d", 
                 "spin": "0+", 
-                "symbol": "²⁵²Cᵐ"
+                "symbol": "²⁵²Cm"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
@@ -54608,7 +54608,7 @@
                 ], 
                 "halfLife": "730 µs", 
                 "spin": "5/2+", 
-                "symbol": "²⁴¹Fᵐ"
+                "symbol": "²⁴¹Fm"
             }, 
             {
                 "abundance": "", 
@@ -54622,7 +54622,7 @@
                 ], 
                 "halfLife": "0.8 ms", 
                 "spin": "0+", 
-                "symbol": "²⁴²Fᵐ"
+                "symbol": "²⁴²Fm"
             }, 
             {
                 "abundance": "", 
@@ -54638,7 +54638,7 @@
                 ], 
                 "halfLife": "231 ms", 
                 "spin": "7/2-", 
-                "symbol": "²⁴³Fᵐ"
+                "symbol": "²⁴³Fm"
             }, 
             {
                 "abundance": "", 
@@ -54652,7 +54652,7 @@
                 ], 
                 "halfLife": "3.12 ms", 
                 "spin": "0+", 
-                "symbol": "²⁴⁴Fᵐ"
+                "symbol": "²⁴⁴Fm"
             }, 
             {
                 "abundance": "", 
@@ -54668,7 +54668,7 @@
                 ], 
                 "halfLife": "4.2 s", 
                 "spin": "1/2+", 
-                "symbol": "²⁴⁵Fᵐ"
+                "symbol": "²⁴⁵Fm"
             }, 
             {
                 "abundance": "", 
@@ -54686,7 +54686,7 @@
                 ], 
                 "halfLife": "1.54 s", 
                 "spin": "0+", 
-                "symbol": "²⁴⁶Fᵐ"
+                "symbol": "²⁴⁶Fm"
             }, 
             {
                 "abundance": "", 
@@ -54700,7 +54700,7 @@
                 ], 
                 "halfLife": "31 s", 
                 "spin": "7/2+", 
-                "symbol": "²⁴⁷Fᵐ"
+                "symbol": "²⁴⁷Fm"
             }, 
             {
                 "abundance": "", 
@@ -54716,7 +54716,7 @@
                 ], 
                 "halfLife": "35.1 s", 
                 "spin": "0+", 
-                "symbol": "²⁴⁸Fᵐ"
+                "symbol": "²⁴⁸Fm"
             }, 
             {
                 "abundance": "", 
@@ -54730,7 +54730,7 @@
                 ], 
                 "halfLife": "1.6 min", 
                 "spin": "7/2+", 
-                "symbol": "²⁴⁹Fᵐ"
+                "symbol": "²⁴⁹Fm"
             }, 
             {
                 "abundance": "", 
@@ -54746,7 +54746,7 @@
                 ], 
                 "halfLife": "30.4 min", 
                 "spin": "0+", 
-                "symbol": "²⁵⁰Fᵐ"
+                "symbol": "²⁵⁰Fm"
             }, 
             {
                 "abundance": "", 
@@ -54758,7 +54758,7 @@
                 ], 
                 "halfLife": "1.92 s", 
                 "spin": "8-", 
-                "symbol": "²⁵⁰ᵐFᵐ"
+                "symbol": "²⁵⁰ᵐFm"
             }, 
             {
                 "abundance": "", 
@@ -54772,7 +54772,7 @@
                 ], 
                 "halfLife": "5.30 h", 
                 "spin": "9/2-", 
-                "symbol": "²⁵¹Fᵐ"
+                "symbol": "²⁵¹Fm"
             }, 
             {
                 "abundance": "", 
@@ -54780,7 +54780,7 @@
                 "decayModes": [], 
                 "halfLife": "21.1 µs", 
                 "spin": "5/2+", 
-                "symbol": "²⁵¹ᵐFᵐ"
+                "symbol": "²⁵¹ᵐFm"
             }, 
             {
                 "abundance": "", 
@@ -54796,7 +54796,7 @@
                 ], 
                 "halfLife": "25.39 h", 
                 "spin": "0+", 
-                "symbol": "²⁵²Fᵐ"
+                "symbol": "²⁵²Fm"
             }, 
             {
                 "abundance": "", 
@@ -54810,7 +54810,7 @@
                 ], 
                 "halfLife": "3.00 d", 
                 "spin": "1/2+", 
-                "symbol": "²⁵³Fᵐ"
+                "symbol": "²⁵³Fm"
             }, 
             {
                 "abundance": "", 
@@ -54824,7 +54824,7 @@
                 ], 
                 "halfLife": "3.240 h", 
                 "spin": "0+", 
-                "symbol": "²⁵⁴Fᵐ"
+                "symbol": "²⁵⁴Fm"
             }, 
             {
                 "abundance": "", 
@@ -54838,7 +54838,7 @@
                 ], 
                 "halfLife": "20.07 h", 
                 "spin": "7/2+", 
-                "symbol": "²⁵⁵Fᵐ"
+                "symbol": "²⁵⁵Fm"
             }, 
             {
                 "abundance": "", 
@@ -54852,7 +54852,7 @@
                 ], 
                 "halfLife": "157.6 min", 
                 "spin": "0+", 
-                "symbol": "²⁵⁶Fᵐ"
+                "symbol": "²⁵⁶Fm"
             }, 
             {
                 "abundance": "", 
@@ -54866,7 +54866,7 @@
                 ], 
                 "halfLife": "100.5 d", 
                 "spin": "9/2+", 
-                "symbol": "²⁵⁷Fᵐ"
+                "symbol": "²⁵⁷Fm"
             }, 
             {
                 "abundance": "", 
@@ -54878,7 +54878,7 @@
                 ], 
                 "halfLife": "370 µs", 
                 "spin": "0+", 
-                "symbol": "²⁵⁸Fᵐ"
+                "symbol": "²⁵⁸Fm"
             }, 
             {
                 "abundance": "", 
@@ -54890,7 +54890,7 @@
                 ], 
                 "halfLife": "1.5 s", 
                 "spin": "3/2+", 
-                "symbol": "²⁵⁹Fᵐ"
+                "symbol": "²⁵⁹Fm"
             }, 
             {
                 "abundance": "", 
@@ -54898,7 +54898,7 @@
                 "decayModes": [], 
                 "halfLife": "1 min", 
                 "spin": "0+", 
-                "symbol": "²⁶⁰Fᵐ"
+                "symbol": "²⁶⁰Fm"
             }
         ], 
         "liquidDensityAtBoilingPoint": "", 
