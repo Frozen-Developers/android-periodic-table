@@ -88,8 +88,9 @@ def html_elements_list_to_string(elements):
     return ''.join(string)
 
 def fix_particle_symbol(string):
-    for match in re.findall(r'\d+[A-Z]+[a-z]*.*', string):
-        string = string.replace(match, replace_with_superscript(match))
+    for match in re.findall(r'\d+[A-Z]+[a-z]*', string):
+        symbol = re.sub(r'\d+m?', '', match)
+        string = string.replace(match, replace_with_superscript(match.replace(symbol, '')) + symbol)
     return string
 
 def fix_abundance(string):
