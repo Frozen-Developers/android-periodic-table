@@ -37,7 +37,7 @@ public class PropertiesAdapter extends BaseAdapter {
     public PropertiesAdapter(Context context, ElementProperties properties) {
         this.context = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/DejaVuSans.ttf");
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         propertiesPairs = new Property[] {
                 new Property(R.string.properties_header_general, null),

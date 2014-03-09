@@ -27,7 +27,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
         this.context = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/DejaVuSans.ttf");
+        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         this.isotopes = isotopes;
     }
