@@ -60,7 +60,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
                 String combined = "";
                 for(int i = 0; i < decayModes.length; i++) {
-                    combined += decayModes[i] + " -> " + daughterIsotopes[i];
+                    combined += decayModes[i] + " \u2192 " + daughterIsotopes[i];
                     if(i < decayModes.length - 1) combined += "\n";
                 }
 
