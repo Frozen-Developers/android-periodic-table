@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/action_wiki"
-        android:title="@string/action_wiki_page"
+        android:title="@string/action_wikipedia_page"
         android:icon="@drawable/ic_action_wiki"
         app:showAsAction="always" />
 
