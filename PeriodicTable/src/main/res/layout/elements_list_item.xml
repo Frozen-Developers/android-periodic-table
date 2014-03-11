@@ -12,7 +12,7 @@
     android:paddingBottom="8dip">
 
     <LinearLayout
-        android:layout_width="25dp"
+        android:layout_width="26sp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginRight="8dip"
