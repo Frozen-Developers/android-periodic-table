@@ -38896,16 +38896,26 @@
             {
                 "abundance": "", 
                 "daughterIsotopes": [
-                    "²⁶¹Rf", 
                     "²⁶¹Rf"
                 ], 
                 "decayModes": [
-                    "α", 
                     "α"
                 ], 
-                "halfLife": "8 s\n16.2 s", 
-                "spin": "\n", 
-                "symbol": "²⁶⁵ᵃ\n²⁶⁵ᵇSg"
+                "halfLife": "8 s", 
+                "spin": "", 
+                "symbol": "²⁶⁵ᵃSg"
+            }, 
+            {
+                "abundance": "", 
+                "daughterIsotopes": [
+                    "²⁶¹Rf"
+                ], 
+                "decayModes": [
+                    "α"
+                ], 
+                "halfLife": "16.2 s", 
+                "spin": "", 
+                "symbol": "²⁶⁵ᵇSg"
             }, 
             {
                 "abundance": "", 

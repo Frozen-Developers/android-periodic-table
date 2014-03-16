@@ -21,13 +21,16 @@ def table_to_list(table):
     rows = table.xpath('./tr')
     d_row = 0
     for row_i, row in enumerate(rows):
-        if d_row != 0:
+        if d_row > 0:
             d_row -= 1
             continue
         row_height = 0
         rowspan_i = 0
         for col_i, col in enumerate(row.xpath('./td')):
             row_height = max(row_height, int(col.get('rowspan', 1)))
+        moreRows = False
+        if len(row.xpath('./td')) > 0:
+            moreRows = int(row.xpath('./td')[0].get('rowspan', 1)) < row_height
         for col_i, col in enumerate(row.xpath('./td')):
             colspan = int(col.get('colspan', 1))
             rowspan = int(col.get('rowspan', 1))
@@ -45,7 +48,15 @@ def table_to_list(table):
                 rowspan_i += 1
                 d_row = max(d_row, row_j)
             for j in range(col_i, col_i + colspan):
-                result[row_i][j] = col_data if j == col_i else ''
+                if moreRows == False:
+                    result[row_i][j] = col_data if j == col_i else ''
+                else:
+                    for k in range(0, row_height):
+                        col_data = col_data.strip()
+                        if col_data.count('\n') == 0:
+                            result[row_i + k][j] = col_data if j == col_i else ''
+                        elif len(col_data.splitlines()) > k:
+                            result[row_i + k][j] = col_data.splitlines()[k] if j == col_i else ''
     rows = []
     for i, row in sorted(result.items()):
         cols = []
