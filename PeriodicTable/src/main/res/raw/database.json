@@ -997,7 +997,7 @@
         "liquidDensityAtBoilingPoint": "", 
         "liquidDensityAtMeltingPoint": "", 
         "meltingPoint": "", 
-        "molarHeatCapacity": "6.155 diamond: 8.517 graphite: J·mol⁻¹·K⁻¹", 
+        "molarHeatCapacity": "Diamond: 6.155 J·mol⁻¹·K⁻¹\nGraphite: 8.517 J·mol⁻¹·K⁻¹", 
         "name": "Carbon", 
         "oxidationStates": "4, 3, 2, 1, 0, −1, −2, −3, −4", 
         "period": "2", 

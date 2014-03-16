@@ -194,6 +194,15 @@ def fetch(url, jsonData):
         translate_script(html_elements_list_to_string(mhc)))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
         .replace(' (Cp)', '').replace('? ', '').replace('(', '').replace(')', ':').replace(':\n', ': ') \
         .strip(), flags=re.M) if len(mhc) > 0 else ''
+    # Fix malformatted Molar Heat Capacity property
+    if len(mhc) > 0:
+        matches = re.findall(r'[\d.]+ [a-zA-Z]+:', mhc)
+        for match in matches:
+            mhc = mhc.replace(match, ' '.join(match.split()[::-1]).capitalize())
+        matches = re.findall(r'[\d.]+ [a-zA-Z]+:', mhc)
+        for match in matches:
+            words = match.split()
+            mhc = mhc.replace(match, words[0] + ' J·mol⁻¹·K⁻¹\n' + words[1])
 
     os = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Oxidation states")]]]/td')
     os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
