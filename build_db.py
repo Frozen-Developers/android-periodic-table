@@ -63,7 +63,7 @@ def iter_2d_dict(dct):
         yield cols
 
 def replace_with_superscript(string):
-	return ''.join(dict(zip("–−-0123456789m", "⁻⁻⁻⁰¹²³⁴⁵⁶⁷⁸⁹ᵐ")).get(c, c) for c in string)
+	return ''.join(dict(zip("–−-0123456789abm", "⁻⁻⁻⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ")).get(c, c) for c in string)
 
 def replace_with_subscript(string):
     return ''.join(dict(zip("–−-0123456789", "₋₋₋₀₁₂₃₄₅₆₇₈₉")).get(c, c) for c in string)
