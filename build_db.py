@@ -128,45 +128,46 @@ def fetch(url, jsonData):
     cat = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Element category")]]]/td/a/text()')[0].capitalize()
 
     pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
-    grp = re.sub(r'[^0-9]', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0].replace('n/a', '0'))
+    grp = re.sub(r'[^0-9]', '',
+        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0] \
+        .replace('n/a', '0'))
     ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')))))) \
         .replace('\n\n', '\n').replace(' \n', '\n').strip()
 
-    apr = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '', ''.join(content.xpath(
-        '//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'
-        ))).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting'
-        )[0].replace(nsm[0].lower(), '').split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
+    apr = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '',
+        ''.join(content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'))) \
+        .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '').split('corrodes')[0] \
+        .replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
 
     phase = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Phase")]]]/td/a/text()')
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
     dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
-    dens = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
-        translate_script(html_elements_list_to_string(dens)))).replace('(predicted) ',
-        '').replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n').replace('(', '').replace(')', ':').replace(
-        ':\n', ': ').replace('? ', '').strip(), flags=re.M) if len(dens) > 0 else ''
+    dens = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>',
+        '', translate_script(html_elements_list_to_string(dens)))).replace('(predicted) ', '') \
+        .replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n').replace('(', '').replace(')', ':') \
+        .replace(':\n', ': ').replace('? ', '').strip(), flags=re.M) if len(dens) > 0 else ''
 
     ldmp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "m.p.")]]]/td')
-    ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
-        ldmp))))).replace('  ', ' ').strip() if len(ldmp) > 0 else ''
+    ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(
+        html_elements_list_to_string(ldmp))))).replace('  ', ' ').strip() if len(ldmp) > 0 else ''
 
     ldbp = content.xpath('//table[@class="infobox bordered"]/tr[th[span[a[contains(., "b.p.")]]]]/td')
-    ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
-        ldbp))))).replace('  ', ' ').strip() if len(ldbp) > 0 else ''
+    ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(
+        html_elements_list_to_string(ldbp))))).replace('  ', ' ').strip() if len(ldbp) > 0 else ''
 
     mp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Melting\u00a0point")]]]/td')
-    mp = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '',
-        re.sub(r'<[^<]+?>', '', html_elements_list_to_string(mp))).replace('(predicted)',
-        '').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
-        replace('(', '').replace(')', ':').replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
+    mp = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+        html_elements_list_to_string(mp))).replace('(predicted)', '').replace('(extrapolated)', '') \
+        .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
+        .replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
 
     bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
-    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_html_span_and_sup(
-        html_elements_list_to_string(bp).replace(', ',
-        ' / ')).replace('(predicted)',
-        '').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ').replace(', (', '\n').
-        replace('(', '').replace(')', ':').replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) if len(bp) > 0 else ''
+    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_html_span_and_sup(html_elements_list_to_string(bp) \
+        .replace(', ',' / ')).replace('(predicted)', '').replace('(extrapolated)', '').replace('? ', '') \
+        .replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':').replace('circa: ', '') \
+        .replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) if len(bp) > 0 else ''
 
     tp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Triple\u00a0point")]]]/td')
     tp = translate_script(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
@@ -184,23 +185,24 @@ def fetch(url, jsonData):
 
     hv = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat of vaporization")]]]/td')
     hv = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
-        re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hv)
-        )))).replace('(extrapolated) ', '').replace('(predicted) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace(
-        'ca. ', '').strip(), flags=re.M) if len(hv) > 0 else ''
+        re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hv))))).replace('(extrapolated) ', '') \
+        .replace('(predicted) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace('ca. ', '') \
+        .strip(), flags=re.M) if len(hv) > 0 else ''
 
     mhc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Molar heat capacity")]]]/td')
     mhc = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
-        translate_script(html_elements_list_to_string(mhc)
-        ))).replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '').replace('(',
-        '').replace(')', ':').replace(':\n', ': ').strip(), flags=re.M) if len(mhc) > 0 else ''
+        translate_script(html_elements_list_to_string(mhc)))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
+        .replace(' (Cp)', '').replace('? ', '').replace('(', '').replace(')', ':').replace(':\n', ': ') \
+        .strip(), flags=re.M) if len(mhc) > 0 else ''
 
     os = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Oxidation states")]]]/td')
     os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
         os)))).strip() if len(os) > 0 else ''
 
     en = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electronegativity")]]]/td')
-    en = re.sub(r'\[.+?\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(en))
-        ).replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace(' ? ', '').strip() if len(en) > 0 else ''
+    en = re.sub(r'\[.+?\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(en))) \
+        .replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace(' ? ', '') \
+        .strip() if len(en) > 0 else ''
 
     # Isotopes
 
@@ -242,8 +244,8 @@ def fetch(url, jsonData):
     for isotope in isotopes:
         isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1] }
         isotope_tag['halfLife'] = translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
-            isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(
-            ')', '').replace('×10', '×10^').replace('?', '').strip()).capitalize()
+            isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '') \
+            .replace('×10', '×10^').replace('?', '').strip()).capitalize()
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
             '#', '')).replace('×10', '×10^').replace('?', '')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
