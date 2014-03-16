@@ -118,8 +118,9 @@ def fetch(url, jsonData):
     nsm = content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Name, ")]]/td/text()')[0].replace(",", "").split()
     nsm[0] = nsm[0].capitalize()
 
-    saw = re.sub(r'\([0-9]?\)', '', content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')
-        [0]).replace('(', '[').replace(')', ']')
+    saw = re.sub(r'\([0-9]?\)', '',
+        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')[0]) \
+        .replace('(', '[').replace(')', ']')
     try:
         saw = format(float(saw), '.3f').rstrip('0').rstrip('.')
     except ValueError:
@@ -137,8 +138,8 @@ def fetch(url, jsonData):
 
     apr = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '',
         ''.join(content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'))) \
-        .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '').split('corrodes')[0] \
-        .replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
+        .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '') \
+        .split('corrodes')[0].replace('unknown', '').replace('  ', ' ').strip('\n, '), flags=re.M)
 
     phase = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Phase")]]]/td/a/text()')
     phase = phase[0].capitalize() if len(phase) > 0 else ''
@@ -275,7 +276,8 @@ def fetch(url, jsonData):
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
-    pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()).xpath('//table/tr/td/div[@title]/div/a/@href')
+    pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()) \
+        .xpath('//table/tr/td/div[@title]/div/a/@href')
 
     jsonData = []
 
