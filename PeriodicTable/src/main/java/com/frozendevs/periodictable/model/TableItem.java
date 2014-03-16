@@ -46,8 +46,9 @@ public class TableItem extends ElementListItem {
             color = R.color.noble_gas_bg;
         else if (category.equalsIgnoreCase("Polyatomic nonmetal"))
             color = R.color.polyatomic_nonmetal_bg;
-        else if (category.equalsIgnoreCase("Poor metal"))
-            color = R.color.poor_metal_bg;
+        else if (category.equalsIgnoreCase("Other metal") ||
+                category.equalsIgnoreCase("Poor metal"))
+            color = R.color.other_metal_bg;
         else if (category.equalsIgnoreCase("Transition metal"))
             color = R.color.transition_metal_bg;
 

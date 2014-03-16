@@ -8,7 +8,7 @@
     <color name="metalloid_bg">#cccc99</color>
     <color name="noble_gas_bg">#c0ffff</color>
     <color name="polyatomic_nonmetal_bg">#a1ffc3</color>
-    <color name="poor_metal_bg">#cccccc</color>
+    <color name="other_metal_bg">#cccccc</color>
     <color name="transition_metal_bg">#ffc0c0</color>
 
     <color name="holo_gray_light">#33999999</color>
