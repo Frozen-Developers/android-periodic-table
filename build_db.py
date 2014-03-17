@@ -264,9 +264,9 @@ def fetch(url, jsonData):
 
     for isotope in isotopes:
         isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1] }
-        isotope_tag['halfLife'] = translate_script(re.sub(r'\([^)]\d*\)', '', re.sub(r'\[.+?\]\s*', '',
-            isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('(', '').replace(')', '') \
-            .replace('×10', '×10^').replace('?', '').strip()).capitalize()
+        isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)', '', re.sub(r'\[.+?\]\s*', '',
+            isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'). \
+            replace('?', '').strip()).capitalize().replace('Unknown', ''))
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
             '#', '')).replace('×10', '×10^').replace('?', '')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(

@@ -485,7 +485,7 @@
                 "decayModes": [
                     "β−"
                 ], 
-                "halfLife": "1.39×10⁶ years", 
+                "halfLife": "1.39×10⁶ y", 
                 "spin": "0+", 
                 "symbol": "¹⁰Be"
             }, 
@@ -881,7 +881,7 @@
                 "decayModes": [
                     "β−"
                 ], 
-                "halfLife": "5,730 years", 
+                "halfLife": "5,730 y", 
                 "spin": "0+", 
                 "symbol": "¹⁴C"
             }, 
@@ -1421,7 +1421,7 @@
                     "β−", 
                     "n"
                 ], 
-                "halfLife": "Ns", 
+                "halfLife": "40 ns", 
                 "spin": "", 
                 "symbol": "²⁶O"
             }
@@ -2015,7 +2015,7 @@
                 "decayModes": [
                     "β+"
                 ], 
-                "halfLife": "2.6027 yr", 
+                "halfLife": "2.6027 y", 
                 "spin": "3+", 
                 "symbol": "²²Na"
             }, 
@@ -4265,7 +4265,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "Unknown", 
+                "halfLife": "", 
                 "spin": "5-", 
                 "symbol": "³²ᵐAr"
             }, 
@@ -4551,7 +4551,7 @@
                 "decayModes": [
                     "p"
                 ], 
-                "halfLife": "Unknown", 
+                "halfLife": "", 
                 "spin": "1+", 
                 "symbol": "³²K"
             }, 
@@ -4559,7 +4559,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "Unknown", 
+                "halfLife": "", 
                 "spin": "4+", 
                 "symbol": "³²ᵐK"
             }, 
@@ -6804,7 +6804,7 @@
                 "decayModes": [
                     "p"
                 ], 
-                "halfLife": "Unknown", 
+                "halfLife": "", 
                 "spin": "7/2-", 
                 "symbol": "⁴⁵Mn"
             }, 
@@ -14283,7 +14283,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "20", 
+                "halfLife": "20 ms", 
                 "spin": "", 
                 "symbol": "¹⁰⁸Y"
             }
@@ -17157,7 +17157,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "1.1 s\n[1.0+3-2 s", 
+                "halfLife": "1.1 s", 
                 "spin": "9+", 
                 "symbol": "⁹⁰ᵐRh"
             }, 
@@ -17885,7 +17885,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "9.3+25-17 s", 
+                "halfLife": "9.3(+25-17) s", 
                 "spin": "", 
                 "symbol": "⁹³ᵐPd"
             }, 
@@ -18369,7 +18369,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "0.44µs / 0.33µs 2 isomers", 
+                "halfLife": "0.44 µs / 0.33 µs (2 isomers)", 
                 "spin": "", 
                 "symbol": "¹²⁶Pd"
             }, 
@@ -18377,7 +18377,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "5.8µs", 
+                "halfLife": "5.8 µs", 
                 "spin": "", 
                 "symbol": "¹²⁸Pd"
             }
@@ -23095,7 +23095,7 @@
                     "β-", 
                     "β-, n"
                 ], 
-                "halfLife": "300ms", 
+                "halfLife": "300 ms", 
                 "spin": "0+", 
                 "symbol": "¹⁴⁰Te"
             }, 
@@ -23109,7 +23109,7 @@
                     "β-", 
                     "β-, n"
                 ], 
-                "halfLife": "100ms", 
+                "halfLife": "100 ms", 
                 "spin": "5/2-", 
                 "symbol": "¹⁴¹Te"
             }, 
@@ -24269,7 +24269,7 @@
                 "decayModes": [
                     "β-β-"
                 ], 
-                "halfLife": "2.380.02, 0.14×10²¹ yr", 
+                "halfLife": "2.38(0.02, 0.14)×10²¹ y", 
                 "spin": "0+", 
                 "symbol": "¹³⁶Xe"
             }, 
@@ -25515,7 +25515,7 @@
                 "decayModes": [
                     "Double EC"
                 ], 
-                "halfLife": "0.5-2.7×10²¹ yrs", 
+                "halfLife": "1.6×10²¹ y", 
                 "spin": "0+", 
                 "symbol": "¹³⁰Ba"
             }, 
@@ -25571,7 +25571,7 @@
                 "decayModes": [
                     "EC"
                 ], 
-                "halfLife": "10.51 yrs", 
+                "halfLife": "10.51 y", 
                 "spin": "1/2+", 
                 "symbol": "¹³³Ba"
             }, 
@@ -26179,7 +26179,7 @@
                 "decayModes": [
                     "EC"
                 ], 
-                "halfLife": "1.87 yr", 
+                "halfLife": "1.87 y", 
                 "spin": "0+", 
                 "symbol": "¹⁷²Hf"
             }, 
@@ -26211,7 +26211,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "2.0×10¹⁵ yr", 
+                "halfLife": "2.0×10¹⁵ y", 
                 "spin": "0+", 
                 "symbol": "¹⁷⁴Hf"
             }, 
@@ -26319,7 +26319,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "31 yr", 
+                "halfLife": "31 y", 
                 "spin": "16+", 
                 "symbol": "¹⁷⁸ᵐ²Hf"
             }, 
@@ -26455,7 +26455,7 @@
                 "decayModes": [
                     "β-"
                 ], 
-                "halfLife": "8.90×10⁶ yr", 
+                "halfLife": "8.90×10⁶ y", 
                 "spin": "0+", 
                 "symbol": "¹⁸²Hf"
             }, 
@@ -27711,7 +27711,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "1.80.2×10¹⁸ a", 
+                "halfLife": "1.8×10¹⁸ a", 
                 "spin": "0+", 
                 "symbol": "¹⁸⁰W"
             }, 
@@ -32187,7 +32187,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "5.2+30-14 ms", 
+                "halfLife": "5.2(+30-14) ms", 
                 "spin": "3-,4-,5-", 
                 "symbol": "¹⁷⁶Tl"
             }, 
@@ -33491,7 +33491,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "135+25-15 ns", 
+                "halfLife": "135(+25-15) ns", 
                 "spin": "33/2+", 
                 "symbol": "¹⁹³ᵐ²Pb"
             }, 
@@ -33847,7 +33847,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "0.45+10-3 µs", 
+                "halfLife": "0.45(+10-3) µs", 
                 "spin": "7-", 
                 "symbol": "²⁰⁴ᵐ³Pb"
             }, 
@@ -35821,7 +35821,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "1.7+11-5 millisecond", 
+                "halfLife": "1.7(+11-5) millisecond", 
                 "spin": "1/2+", 
                 "symbol": "¹⁹¹At"
             }, 
@@ -35829,7 +35829,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "2.1+4-3 millisecond", 
+                "halfLife": "2.1(+4-3) millisecond", 
                 "spin": "7/2-", 
                 "symbol": "¹⁹¹ᵐAt"
             }, 
@@ -35841,7 +35841,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "28+5-4 millisecond", 
+                "halfLife": "28(+5-4) millisecond", 
                 "spin": "1/2+", 
                 "symbol": "¹⁹³At"
             }, 
@@ -35857,7 +35857,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "27+4-5 ms", 
+                "halfLife": "27(+4-5) ms", 
                 "spin": "13/2+", 
                 "symbol": "¹⁹³ᵐ²At"
             }, 
@@ -38661,7 +38661,7 @@
                     "SF (73%)", 
                     "α (27%)"
                 ], 
-                "halfLife": "4.51.1 s", 
+                "halfLife": "4.5 s", 
                 "spin": "", 
                 "symbol": "²⁶¹Db"
             }, 
@@ -38719,7 +38719,7 @@
                 "decayModes": [
                     "SF"
                 ], 
-                "halfLife": "4.63.7 h", 
+                "halfLife": "4.6 h", 
                 "spin": "", 
                 "symbol": "²⁶⁷Db"
             }, 
@@ -38733,7 +38733,7 @@
                     "SF (~100%)", 
                     "EC"
                 ], 
-                "halfLife": "30.85.0 h", 
+                "halfLife": "30.8 h", 
                 "spin": "", 
                 "symbol": "²⁶⁸Db"
             }, 
@@ -38965,7 +38965,7 @@
                     "α (67%)", 
                     "SF (33%)"
                 ], 
-                "halfLife": "2.4+43-10 min", 
+                "halfLife": "2.4(+43-10) min", 
                 "spin": "", 
                 "symbol": "²⁷¹Sg"
             }
@@ -39019,7 +39019,7 @@
                     "α (95%)", 
                     "SF (5%)"
                 ], 
-                "halfLife": "12.83.2 ms", 
+                "halfLife": "12.8 ms", 
                 "spin": "5/2-", 
                 "symbol": "²⁶¹Bh"
             }, 
@@ -39047,7 +39047,7 @@
                     "α (70%)", 
                     "SF (30%)"
                 ], 
-                "halfLife": "9.51.6 ms", 
+                "halfLife": "9.5 ms", 
                 "spin": "", 
                 "symbol": "²⁶²ᵐBh"
             }, 
@@ -39085,7 +39085,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "2.51.6 s", 
+                "halfLife": "2.5 s", 
                 "spin": "", 
                 "symbol": "²⁶⁶Bh"
             }, 
@@ -39109,7 +39109,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "3.83.0 min", 
+                "halfLife": "3.8 min", 
                 "spin": "", 
                 "symbol": "²⁷⁰Bh"
             }, 
@@ -39133,7 +39133,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "8.82.1 s", 
+                "halfLife": "8.8 s", 
                 "spin": "", 
                 "symbol": "²⁷²Bh"
             }, 
@@ -39211,7 +39211,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "1.960.16 ms", 
+                "halfLife": "1.96 ms", 
                 "spin": "9/2+[a]", 
                 "symbol": "²⁶⁵Hs"
             }, 
@@ -39235,7 +39235,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "3.020.54 ms", 
+                "halfLife": "3.02 ms", 
                 "spin": "0+", 
                 "symbol": "²⁶⁶Hs"
             }, 
@@ -39283,7 +39283,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "1.421.13 s", 
+                "halfLife": "1.42 s", 
                 "spin": "0+", 
                 "symbol": "²⁶⁸Hs"
             }, 
@@ -39307,7 +39307,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "3.6+8-14 s", 
+                "halfLife": "3.6(+8-14) s", 
                 "spin": "0+", 
                 "symbol": "²⁷⁰Hs"
             }, 
@@ -39419,7 +39419,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "21+8-5 ms", 
+                "halfLife": "21(+8-5) ms", 
                 "spin": "5+,6+", 
                 "symbol": "²⁶⁸Mt"
             }, 
@@ -39431,7 +39431,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "0.07+10-3 s", 
+                "halfLife": "0.07(+10-3) s", 
                 "spin": "", 
                 "symbol": "²⁶⁸ᵐMt"
             }, 
@@ -39479,7 +39479,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "9.7+460-44 ms", 
+                "halfLife": "9.7(+460-44) ms", 
                 "spin": "", 
                 "symbol": "²⁷⁵Mt"
             }, 
@@ -39491,7 +39491,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "0.72+87-25 s", 
+                "halfLife": "0.72(+87-25) s", 
                 "spin": "", 
                 "symbol": "²⁷⁶Mt"
             }, 
@@ -39551,7 +39551,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "3+6-2 µs", 
+                "halfLife": "3(+6-2) µs", 
                 "spin": "9/2+", 
                 "symbol": "²⁶⁷Ds"
             }, 
@@ -39623,7 +39623,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "0.17+17-6 ms", 
+                "halfLife": "0.17(+17-6) ms", 
                 "spin": "13/2-", 
                 "symbol": "²⁷³Ds"
             }, 
@@ -39649,7 +39649,7 @@
                     "SF (90%)", 
                     "α (10%)"
                 ], 
-                "halfLife": "0.18+5-3 s", 
+                "halfLife": "0.18(+5-3) s", 
                 "spin": "", 
                 "symbol": "²⁷⁹Ds"
             }, 
@@ -39727,7 +39727,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "6.4+307-29 ms", 
+                "halfLife": "6.4(+307-29) ms", 
                 "spin": "", 
                 "symbol": "²⁷⁴Rg"
             }, 
@@ -39739,7 +39739,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "4.2+75-17 ms", 
+                "halfLife": "4.2(+75-17) ms", 
                 "spin": "", 
                 "symbol": "²⁷⁸Rg"
             }, 
@@ -39751,7 +39751,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "0.17+81-8 s", 
+                "halfLife": "0.17(+81-8) s", 
                 "spin": "", 
                 "symbol": "²⁷⁹Rg"
             }, 
@@ -39763,7 +39763,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "3.6+43-13 s", 
+                "halfLife": "3.6(+43-13) s", 
                 "spin": "", 
                 "symbol": "²⁸⁰Rg"
             }, 
@@ -39979,7 +39979,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "100+490-45 ms", 
+                "halfLife": "100(+490-45) ms", 
                 "spin": "", 
                 "symbol": "²⁸³Uut"
             }, 
@@ -39991,7 +39991,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "0.48+58-17 s", 
+                "halfLife": "0.48(+58-17) s", 
                 "spin": "", 
                 "symbol": "²⁸⁴Uut"
             }, 
@@ -40080,7 +40080,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "510+180-100 ms", 
+                "halfLife": "510(+180-100) ms", 
                 "spin": "", 
                 "symbol": "²⁸⁷Fl"
             }, 
@@ -40104,7 +40104,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": ".8+27-16 s", 
+                "halfLife": ".8(+27-16) s", 
                 "spin": "0+", 
                 "symbol": "²⁸⁸Fl"
             }, 
@@ -40116,7 +40116,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "2.6+12-7 s", 
+                "halfLife": "2.6(+12-7) s", 
                 "spin": "5/2+", 
                 "symbol": "²⁸⁹Fl"
             }, 
@@ -40168,7 +40168,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "32+155-14 ms", 
+                "halfLife": "32(+155-14) ms", 
                 "spin": "", 
                 "symbol": "²⁸⁷Uup"
             }, 
@@ -40180,7 +40180,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "87+105-30 ms", 
+                "halfLife": "87(+105-30) ms", 
                 "spin": "", 
                 "symbol": "²⁸⁸Uup"
             }, 
@@ -40244,7 +40244,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "15+26-6 ms", 
+                "halfLife": "15(+26-6) ms", 
                 "spin": "0+", 
                 "symbol": "²⁹⁰Lv"
             }, 
@@ -40256,7 +40256,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "6.3+116-25 ms", 
+                "halfLife": "6.3(+116-25) ms", 
                 "spin": "", 
                 "symbol": "²⁹¹Lv"
             }, 
@@ -40268,7 +40268,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "18.0+16-6 ms", 
+                "halfLife": "18.0(+16-6) ms", 
                 "spin": "0+", 
                 "symbol": "²⁹²Lv"
             }, 
@@ -40280,7 +40280,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "53+62-19 ms", 
+                "halfLife": "53(+62-19) ms", 
                 "spin": "", 
                 "symbol": "²⁹³Lv"
             }
@@ -40320,7 +40320,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "14 +11, -4 ms", 
+                "halfLife": "14 (+11, -4) ms", 
                 "spin": "", 
                 "symbol": "²⁹³Uus"
             }, 
@@ -40332,7 +40332,7 @@
                 "decayModes": [
                     "α"
                 ], 
-                "halfLife": "78 +370, -36 ms", 
+                "halfLife": "78 (+370, -36) ms", 
                 "spin": "", 
                 "symbol": "²⁹⁴Uus"
             }
@@ -45380,7 +45380,7 @@
                 "abundance": "", 
                 "daughterIsotopes": [], 
                 "decayModes": [], 
-                "halfLife": "0.94+33-22 ms", 
+                "halfLife": "0.94(+33-22) ms", 
                 "spin": "7/2-", 
                 "symbol": "¹³⁵Tb"
             }, 
@@ -52474,7 +52474,7 @@
                     "α (99.9%)", 
                     "β+ (.1%)"
                 ], 
-                "halfLife": "1.1+20-5 s", 
+                "halfLife": "1.1(+20-5) s", 
                 "spin": "0+", 
                 "symbol": "²²⁸Pu"
             }, 
@@ -53758,7 +53758,7 @@
                     "α", 
                     "SF (rare)"
                 ], 
-                "halfLife": "1.38e+3 a", 
+                "halfLife": "1.38×10³ a", 
                 "spin": "3/2-", 
                 "symbol": "²⁴⁷Bk"
             }, 
