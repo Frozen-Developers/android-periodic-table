@@ -53,6 +53,7 @@
     <string name="property_molar_heat_capacity">Molar heat capacity</string>
     <string name="property_oxidation_states">Oxidation states</string>
     <string name="property_electronegativity">Electronegativity</string>
+    <string name="property_ionization_energies">Ionization energies</string>
 
     <string name="property_half_life">Half-life</string>
     <string name="property_decay_modes">Decay modes</string>
