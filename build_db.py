@@ -216,6 +216,15 @@ def fetch(url, jsonData):
         .replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace(' ? ', '') \
         .strip() if len(en) > 0 else ''
 
+    ie = ''
+    _ie = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Ionization energies")]]]')
+    if len(_ie) > 0:
+        ie = _ie[0].xpath('./td')
+        for i in range(1, int(_ie[0].xpath('./th')[0].get('rowspan', 1))):
+            ie += _ie[0].xpath('./following-sibling::*[' + str(i) + ']/td')
+        ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', translate_script(
+            html_elements_list_to_string(ie))))).strip()
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -225,8 +234,8 @@ def fetch(url, jsonData):
 
     # Add all the things to the tree
 
-    element = { 'atomicNumber': nsm[2] }
-
+    element = { }
+    element['atomicNumber'] = nsm[2]
     element['symbol'] = nsm[1]
     element['name'] = nsm[0]
     element['weight'] = saw
@@ -250,11 +259,13 @@ def fetch(url, jsonData):
     element['molarHeatCapacity'] = mhc
     element['oxidationStates'] = os
     element['electronegativity'] = en
+    element['ionizationEnergies'] = ie
 
     isotopes_tag = []
 
     for isotope in isotopes:
-        isotope_tag = { 'symbol': replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1] }
+        isotope_tag = { }
+        isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1]
         isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)', '', re.sub(r'\[.+?\]\s*', '',
             isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'). \
             replace('?', '').strip()).capitalize().replace('Unknown', ''))
@@ -273,7 +284,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en]))
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
