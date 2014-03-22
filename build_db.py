@@ -222,6 +222,10 @@ def fetch(url, jsonData):
         ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', translate_script(
             html_elements_list_to_string(ie))))).strip()
 
+    ar = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Atomic radius")]]]/td')
+    ar = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
+        html_elements_list_to_string(ar)))).strip() if len(ar) > 0 else ''
+
     cr = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Covalent radius")]]]/td')
     cr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
         html_elements_list_to_string(cr)))).strip() if len(cr) > 0 else ''
@@ -261,6 +265,7 @@ def fetch(url, jsonData):
     element['oxidationStates'] = os
     element['electronegativity'] = en
     element['ionizationEnergies'] = ie
+    element['atomicRadius'] = ar
     element['covalentRadius'] = cr
 
     isotopes_tag = []
@@ -286,7 +291,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, cr]))
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
