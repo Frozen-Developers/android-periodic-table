@@ -7,7 +7,8 @@ public class ElementProperties extends TableItem implements Serializable {
     private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
             liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
             triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
-            oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius;
+            oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius,
+            vanDerWaalsRadius;
     private Isotope[] isotopes;
 
     public class Isotope implements Serializable {
@@ -122,5 +123,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getCovalentRadius() {
         return covalentRadius;
+    }
+
+    public String getVanDerWaalsRadius() {
+        return vanDerWaalsRadius;
     }
 }

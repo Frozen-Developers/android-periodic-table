@@ -56,6 +56,7 @@
     <string name="property_ionization_energies">Ionization energies</string>
     <string name="property_atomic_radius">Atomic radius</string>
     <string name="property_covalent_radius">Covalent radius</string>
+    <string name="property_van_der_waals_radius">Van der Waals radius</string>
 
     <string name="property_half_life">Half-life</string>
     <string name="property_decay_modes">Decay modes</string>
