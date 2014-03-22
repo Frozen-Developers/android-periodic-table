@@ -230,6 +230,10 @@ def fetch(url, jsonData):
     cr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
         html_elements_list_to_string(cr)))).strip() if len(cr) > 0 else ''
 
+    vwr = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Van der Waals radius")]]]/td')
+    vwr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '',
+        html_elements_list_to_string(vwr))).strip() if len(vwr) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -267,6 +271,7 @@ def fetch(url, jsonData):
     element['ionizationEnergies'] = ie
     element['atomicRadius'] = ar
     element['covalentRadius'] = cr
+    element['vanDerWaalsRadius'] = vwr
 
     isotopes_tag = []
 
