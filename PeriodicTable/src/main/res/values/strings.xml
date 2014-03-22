@@ -59,6 +59,7 @@
     <string name="property_covalent_radius">Covalent radius</string>
     <string name="property_van_der_waals_radius">Van der Waals radius</string>
     <string name="property_crystal_structure">Crystal structure</string>
+    <string name="property_magnetic_ordering">Magnetic ordering</string>
 
     <!-- Isotopes properties -->
     <string name="property_half_life">Half-life</string>
