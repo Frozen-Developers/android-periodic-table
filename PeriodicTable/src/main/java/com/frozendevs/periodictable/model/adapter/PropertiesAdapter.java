@@ -75,7 +75,8 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_van_der_waals_radius, properties.getVanDerWaalsRadius()),
                 new Property(R.string.properties_header_miscellanea, null),
                 new Property(R.string.property_crystal_structure, properties.getCrystalStructure()),
-                new Property(R.string.property_magnetic_ordering, properties.getMagneticOrdering())
+                new Property(R.string.property_magnetic_ordering, properties.getMagneticOrdering()),
+                new Property(R.string.property_thermal_conductivity, properties.getThermalConductivity())
         };
     }
 

@@ -8,7 +8,7 @@ public class ElementProperties extends TableItem implements Serializable {
             liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
             triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
             oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius,
-            vanDerWaalsRadius, crystalStructure, magneticOrdering;
+            vanDerWaalsRadius, crystalStructure, magneticOrdering, thermalConductivity;
     private Isotope[] isotopes;
 
     public class Isotope implements Serializable {
@@ -135,5 +135,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getMagneticOrdering() {
         return magneticOrdering;
+    }
+
+    public String getThermalConductivity() {
+        return thermalConductivity;
     }
 }
