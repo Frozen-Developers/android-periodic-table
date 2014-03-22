@@ -72,7 +72,8 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_ionization_energies, properties.getIonizationEnergies()),
                 new Property(R.string.property_atomic_radius, properties.getAtomicRadius()),
                 new Property(R.string.property_covalent_radius, properties.getCovalentRadius()),
-                new Property(R.string.property_van_der_waals_radius, properties.getVanDerWaalsRadius())
+                new Property(R.string.property_van_der_waals_radius, properties.getVanDerWaalsRadius()),
+                new Property(R.string.properties_header_miscellanea, null)
         };
     }
 

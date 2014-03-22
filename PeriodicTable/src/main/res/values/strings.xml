@@ -29,6 +29,7 @@
     <string name="properties_header_general">General properties</string>
     <string name="properties_header_physical">Physical properties</string>
     <string name="properties_header_atomic">Atomic properties</string>
+    <string name="properties_header_miscellanea">Miscellanea</string>
 
     <!-- Properties names -->
     <string name="property_symbol">Symbol</string>
