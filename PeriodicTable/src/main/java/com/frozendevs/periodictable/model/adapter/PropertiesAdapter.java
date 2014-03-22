@@ -70,6 +70,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
                 new Property(R.string.property_electronegativity, properties.getElectronegativity()),
                 new Property(R.string.property_ionization_energies, properties.getIonizationEnergies()),
+                new Property(R.string.property_atomic_radius, properties.getAtomicRadius()),
                 new Property(R.string.property_covalent_radius, properties.getCovalentRadius())
         };
     }
