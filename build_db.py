@@ -237,6 +237,10 @@ def fetch(url, jsonData):
     cs = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Crystal structure")]]]/td/a/text()')
     cs = cs[0].capitalize() if len(cs) > 0 else ''
 
+    mo = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Magnetic ordering")]]]/td')
+    mo = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '',
+        html_elements_list_to_string(mo)).strip().replace('no data', ''), flags=re.M) if len(mo) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -276,6 +280,7 @@ def fetch(url, jsonData):
     element['covalentRadius'] = cr
     element['vanDerWaalsRadius'] = vwr
     element['crystalStructure'] = cs
+    element['magneticOrdering'] = mo
 
     isotopes_tag = []
 
@@ -300,8 +305,8 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs]))
-    
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo]))
+
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
