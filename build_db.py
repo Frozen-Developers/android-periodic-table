@@ -76,12 +76,9 @@ def replace_with_subscript(string):
     return ''.join(dict(zip("–−-0123456789", "₋₋₋₀₁₂₃₄₅₆₇₈₉")).get(c, c) for c in string)
 
 def translate_script(string):
-    matches = re.findall(r'<sup>[-–−\d]*</sup>', string)
-    matches += re.findall(r'\^+[-–−]?\d+', string)
-    for match in matches:
+    for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+', string):
         string = string.replace(match, replace_with_superscript(re.sub(r'<[^<]+?>', '', match.replace('^', ''))))
-    matches = re.findall(r'<sub>[-–−\d]*</sub>', string)
-    for match in matches:
+    for match in re.findall(r'<sub>[-–−\d]*</sub>', string):
         string = string.replace(match, replace_with_subscript(re.sub(r'<[^<]+?>', '', match)))
     return string
 
@@ -225,6 +222,10 @@ def fetch(url, jsonData):
         ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', translate_script(
             html_elements_list_to_string(ie))))).strip()
 
+    cr = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Covalent radius")]]]/td')
+    cr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
+        html_elements_list_to_string(cr)))).strip() if len(cr) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -260,6 +261,7 @@ def fetch(url, jsonData):
     element['oxidationStates'] = os
     element['electronegativity'] = en
     element['ionizationEnergies'] = ie
+    element['covalentRadius'] = cr
 
     isotopes_tag = []
 
@@ -284,7 +286,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie]))
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, cr]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
