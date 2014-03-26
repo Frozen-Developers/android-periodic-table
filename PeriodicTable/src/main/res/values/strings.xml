@@ -61,6 +61,7 @@
     <string name="property_crystal_structure">Crystal structure</string>
     <string name="property_magnetic_ordering">Magnetic ordering</string>
     <string name="property_thermal_conductivity">Thermal conductivity</string>
+    <string name="property_thermal_expansion">Thermal expansion</string>
 
     <!-- Isotopes properties -->
     <string name="property_half_life">Half-life</string>
