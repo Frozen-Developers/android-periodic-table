@@ -1049,7 +1049,7 @@
         "phase": "Solid", 
         "symbol": "C", 
         "thermalConductivity": "Diamond: 900-2300 W·m⁻¹·K⁻¹\nGraphite: 119-165 W·m⁻¹·K⁻¹", 
-        "thermalExpansion": "25 °C: 0.8 diamond: µm·m⁻¹·K⁻¹", 
+        "thermalExpansion": "25 °C, diamond: 0.8 µm·m⁻¹·K⁻¹", 
         "triplePoint": "4600 K, 10800 kPa", 
         "vanDerWaalsRadius": "170 pm", 
         "weight": "12.011", 
@@ -33670,13 +33670,11 @@
         "ionizationEnergies": "1st: 715.6 kJ·mol⁻¹\n2nd: 1450.5 kJ·mol⁻¹\n3rd: 3081.5 kJ·mol⁻¹", 
         "isotopes": [
             {
-                "abundance": "0+", 
+                "abundance": "", 
                 "daughterIsotopes": [], 
-                "decayModes": [
-                    "0.23(15) ms"
-                ], 
-                "halfLife": "178.003830", 
-                "spin": "", 
+                "decayModes": [], 
+                "halfLife": "0.23 ms", 
+                "spin": "0+", 
                 "symbol": "¹⁷⁸Pb"
             }, 
             {
@@ -44296,7 +44294,7 @@
         "phase": "Solid", 
         "symbol": "Pm", 
         "thermalConductivity": "17.9 W·m⁻¹·K⁻¹", 
-        "thermalExpansion": "α, poly: est. 11 µm/(m·K)", 
+        "thermalExpansion": "α, poly: 11 µm/(m·K)", 
         "triplePoint": "", 
         "vanDerWaalsRadius": "", 
         "weight": "[145]", 
