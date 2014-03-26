@@ -60,8 +60,11 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
                 String combined = "";
                 for(int i = 0; i < decayModes.length; i++) {
-                    combined += decayModes[i] + " \u2192 " + daughterIsotopes[i];
-                    if(i < decayModes.length - 1) combined += "\n";
+                    combined += decayModes[i];
+                    if(i < daughterIsotopes.length)
+                        combined += " \u2192 " + daughterIsotopes[i];
+                    if(i < decayModes.length - 1)
+                        combined += "\n";
                 }
 
                 return new String[] { getString(R.string.property_decay_modes), combined };

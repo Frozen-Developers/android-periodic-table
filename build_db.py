@@ -247,6 +247,11 @@ def fetch(url, jsonData):
         .replace(', (', ' W·m⁻¹·K⁻¹\n').replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '') \
         .replace(' × ', '×').strip(), flags=re.M) if len(tc) > 0 else ''
 
+    te = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal expansion")]]]/td')
+    te = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'<[^<]+?>|\[.+?\]\s*', '', translate_script(
+        html_elements_list_to_string(te))).replace('(r.t.) ', '').replace(') (', ', ').replace('(', '') \
+        .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').strip(), flags=re.M) if len(te) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -288,6 +293,7 @@ def fetch(url, jsonData):
     element['crystalStructure'] = cs
     element['magneticOrdering'] = mo
     element['thermalConductivity'] = tc
+    element['thermalExpansion'] = te
 
     isotopes_tag = []
 
@@ -311,8 +317,9 @@ def fetch(url, jsonData):
 
     jsonData.append(element)
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc]))
+    #print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+    #    dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te]))
+    print(te)
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
