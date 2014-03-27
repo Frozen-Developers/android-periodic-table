@@ -329,7 +329,7 @@ def fetch(url, jsonData):
             isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'). \
             replace('?', '').strip()).capitalize().replace('Unknown', ''))
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
-            '#', '')).replace('×10', '×10^').replace('?', '')).strip().splitlines()
+            '#', '')).replace('×10', '×10^').replace('?', '').replace('(.', '(0.')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
             re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '').replace('?', '')), flags=re.M).splitlines()
         isotope_tag['spin'] = isotope[7].replace('#', '').replace('(', '').replace(')', '')
