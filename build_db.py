@@ -226,14 +226,16 @@ def fetch(url, jsonData):
         .replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace(' ? ', '') \
         .strip() if len(en) > 0 else ''
 
-    ie = ''
-    _ie = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Ionization energies")]]]')
-    if len(_ie) > 0:
-        ie = _ie[0].xpath('./td')
-        for i in range(1, int(_ie[0].xpath('./th')[0].get('rowspan', 1))):
-            ie += _ie[0].xpath('./following-sibling::*[' + str(i) + ']/td')
+    ie = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Ionization energies")]]]')
+    if len(ie) > 0:
+        parent = ie[0]
+        ie = parent.xpath('./td')
+        for i in range(1, int(parent.xpath('./th')[0].get('rowspan', 1))):
+            ie += parent.xpath('./following-sibling::tr[' + str(i) + ']/td')
         ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', translate_script(
             html_elements_list_to_string(ie))))).strip()
+    else:
+        ie = ''
 
     ar = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Atomic radius")]]]/td')
     ar = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
