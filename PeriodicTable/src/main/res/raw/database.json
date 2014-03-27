@@ -838,7 +838,7 @@
         "category": "Polyatomic nonmetal", 
         "covalentRadius": "sp³: 77 pm\nsp²: 73 pm\nsp: 69 pm", 
         "criticalPoint": "", 
-        "crystalStructure": "Diamond", 
+        "crystalStructure": "Diamond, clear: diamond\nGraphite, black: simple hexagonal", 
         "density": "Amorphous: 1.8–2.1 g·cm⁻³\nDiamond: 3.515 g·cm⁻³\nGraphite: 2.267 g·cm⁻³", 
         "electronConfiguration": "[He] 2s² 2p²\n2, 4", 
         "electronegativity": "2.55 (Pauling scale)", 
@@ -1342,7 +1342,7 @@
                     "β+, p (10.9%)"
                 ], 
                 "halfLife": "8.58 ms", 
-                "spin": "3/2-", 
+                "spin": "3/2−", 
                 "symbol": "¹³O"
             }, 
             {
@@ -1366,7 +1366,7 @@
                     "β+"
                 ], 
                 "halfLife": "122.24 s", 
-                "spin": "1/2-", 
+                "spin": "1/2−", 
                 "symbol": "¹⁵O"
             }, 
             {
@@ -1512,7 +1512,7 @@
         "category": "Diatomic nonmetal", 
         "covalentRadius": "64 pm", 
         "criticalPoint": "144.41 K, 5.1724 MPa", 
-        "crystalStructure": "Monoclinic", 
+        "crystalStructure": "Alpha state: monoclinic", 
         "density": "0 °C, 101.325 kPa: 1.696 g/L", 
         "electronConfiguration": "[He] 2s² 2p⁵\n2, 7", 
         "electronegativity": "3.98 (Pauling scale)", 
@@ -7413,7 +7413,7 @@
         "category": "Transition metal", 
         "covalentRadius": "Low spin: 132±3 pm\nHigh spin: 152±6 pm", 
         "criticalPoint": "", 
-        "crystalStructure": "Body-centered cubic", 
+        "crystalStructure": "a = 286.65 pm: body-centered cubic\nBetween 1185–1667 K: face-centered cubic", 
         "density": "7.874 g·cm⁻³", 
         "electronConfiguration": "[Ar] 3d⁶ 4s²\n2, 8, 14, 2", 
         "electronegativity": "1.83 (Pauling scale)", 
@@ -21314,7 +21314,7 @@
         "category": "Other metal", 
         "covalentRadius": "139±4 pm", 
         "criticalPoint": "", 
-        "crystalStructure": "Tetragonal", 
+        "crystalStructure": "White: tetragonal\nGray: diamond cubic", 
         "density": "White: 7.365 g·cm⁻³\nGray: 5.769 g·cm⁻³", 
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p²\n2, 8, 18, 18, 4", 
         "electronegativity": "1.96 (Pauling scale)", 
@@ -27028,7 +27028,7 @@
         "category": "Transition metal", 
         "covalentRadius": "170±8 pm", 
         "criticalPoint": "", 
-        "crystalStructure": "Body-centered cubic", 
+        "crystalStructure": "α-Ta: body-centered cubic\nβ-Ta: tetragonal", 
         "density": "16.69 g·cm⁻³", 
         "electronConfiguration": "[Xe] 4f¹⁴ 5d³ 6s²\n2, 8, 18, 32, 11, 2", 
         "electronegativity": "1.5 (Pauling scale)", 

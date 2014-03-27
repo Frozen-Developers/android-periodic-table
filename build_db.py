@@ -116,6 +116,19 @@ def remove_html_span_and_sup(string):
         tag.replaceWith('')
     return soup.get_text()
 
+def remove_selected_html_tags(string, tags):
+    soup = BeautifulSoup(string)
+    for tag in tags:
+        for occurence in soup.find_all(tag):
+            occurence.replaceWith('')
+    return soup.get_text()
+
+def capitalize(string):
+    return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
+
+def remove_html_tags(string):
+    return re.sub(r'<[^<]+?>', '', string)
+
 def fetch(url, jsonData):
     print('Parsing properties from ' + url)
 
@@ -234,8 +247,19 @@ def fetch(url, jsonData):
     vwr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '',
         html_elements_list_to_string(vwr))).strip() if len(vwr) > 0 else ''
 
-    cs = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Crystal structure")]]]/td/a/text()')
-    cs = cs[0].capitalize() if len(cs) > 0 else ''
+    cs = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Crystal structure")]]]')
+    if len(cs) > 0:
+        sibling = cs[0].xpath('./following-sibling::tr')[0]
+        cs = [ ': '.join(line for line in remove_selected_html_tags(cs[0].xpath('./td')[0].text_content(), ['div']) \
+            .split('\n')[::-1] if line.strip() != '').strip() ]
+        while sibling.xpath('./th')[0].text_content() == '':
+            cs.append(': '.join(line for line in remove_selected_html_tags(sibling.xpath('./td')[0].text_content(),
+                ['div']).split('\n')[::-1] if line.strip() != '').strip())
+            sibling = sibling.xpath('./following-sibling::tr')[0]
+        cs = capitalize(re.sub(r'\[.+?\] *|\s*\([^)][a-z\-]*\)|[();]', '', '\n'.join(cs))) \
+            .replace('A=', 'a = ').strip()
+    else:
+        cs = ''
 
     mo = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Magnetic ordering")]]]/td')
     mo = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '',
