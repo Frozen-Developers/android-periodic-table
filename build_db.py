@@ -90,7 +90,7 @@ def html_elements_list_to_string(elements):
     string = list()
     for element in elements:
         string.append(etree.tostring(element).decode('utf-8'))
-    return HTMLParser().unescape(''.join(string)).replace('\u00a0', ' ').replace('\u2002', ' ')
+    return ''.join(dict(zip("\u00a0\u2002", "  ")).get(c, c) for c in HTMLParser().unescape(''.join(string)))
 
 def fix_particle_symbol(string):
     for match in re.findall(r'\d+[A-Z]+[a-z]*', string):
@@ -109,12 +109,6 @@ def fix_abundance(string):
     except ValueError:
         pass
     return string
-
-def remove_html_span_and_sup(string):
-    soup = BeautifulSoup(string)
-    for tag in soup.find_all('span') + soup.find_all('sup'):
-        tag.replaceWith('')
-    return soup.get_text()
 
 def remove_selected_html_tags(string, tags):
     soup = BeautifulSoup(string)
@@ -186,10 +180,11 @@ def fetch(url, jsonData):
         .replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
 
     bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
-    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_html_span_and_sup(html_elements_list_to_string(bp) \
-        .replace(', ',' / ')).replace('(predicted)', '').replace('(extrapolated)', '').replace('? ', '') \
-        .replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':').replace('circa: ', '') \
-        .replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) if len(bp) > 0 else ''
+    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_selected_html_tags(html_elements_list_to_string(bp) \
+        .replace(', ',' / '), [ 'span', 'sup' ]).replace('(predicted)', '').replace('(extrapolated)', '') \
+        .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
+        .replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) \
+        if len(bp) > 0 else ''
 
     tp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Triple\u00a0point")]]]/td')
     tp = translate_script(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
@@ -279,6 +274,11 @@ def fetch(url, jsonData):
         .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip(),
         flags=re.M) if len(te) > 0 else ''
 
+    ss = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Speed of sound")]]]/td')
+    ss = capitalize(remove_html_tags(re.sub(r'\[.+?\]\s*', '', translate_script(html_elements_list_to_string(ss)))) \
+        .replace('(r.t.) ', '').replace(') (', ', ').replace('(', '').replace(')', ':').replace(':\n', ': ') \
+        .replace('est. ', '').replace('; ', '\n').strip()) if len(ss) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -321,6 +321,7 @@ def fetch(url, jsonData):
     element['magneticOrdering'] = mo
     element['thermalConductivity'] = tc
     element['thermalExpansion'] = te
+    element['speedOfSound'] = ss
 
     isotopes_tag = []
 
@@ -345,7 +346,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te]))
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss]))
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
