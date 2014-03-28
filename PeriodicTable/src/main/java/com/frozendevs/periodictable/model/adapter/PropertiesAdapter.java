@@ -77,7 +77,8 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_crystal_structure, properties.getCrystalStructure()),
                 new Property(R.string.property_magnetic_ordering, properties.getMagneticOrdering()),
                 new Property(R.string.property_thermal_conductivity, properties.getThermalConductivity()),
-                new Property(R.string.property_thermal_expansion, properties.getThermalExpansion())
+                new Property(R.string.property_thermal_expansion, properties.getThermalExpansion()),
+                new Property(R.string.property_speed_of_sound, properties.getSpeedOfSound())
         };
     }
 
