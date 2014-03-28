@@ -144,12 +144,16 @@ def fetch(url, jsonData):
     cat = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Element category")]]]/td/a/text()')[0].capitalize()
 
     pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
+
     grp = re.sub(r'[^0-9]', '',
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0] \
         .replace('n/a', '0'))
+
     ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', re.sub(r'<[^<]+?>', '', translate_script(html_elements_list_to_string(
         content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')))))) \
         .replace('\n\n', '\n').replace(' \n', '\n').strip()
+
+    wl = URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/table/tr/td/table/tr/td/span/b/a/@href')[0]
 
     apr = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\([^)]\w+\s\w+\s\w+\s\w+\)', '', re.sub(r'\([^)]\w+,\s\w+\)', '',
         ''.join(content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()'))) \
@@ -298,7 +302,7 @@ def fetch(url, jsonData):
     element['period'] = pb[0]
     element['block'] = pb[1]
     element['electronConfiguration'] = ec
-    element['wikipediaLink'] = url
+    element['wikipediaLink'] = wl
     element['appearance'] = apr
     element['phase'] = phase
     element['density'] = dens
@@ -351,13 +355,11 @@ def fetch(url, jsonData):
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
-    pages = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()) \
-        .xpath('//table/tr/td/div[@title]/div/a/@href')
-
     jsonData = []
 
-    for page in pages:
-        fetch(URL_PREFIX + page, jsonData)
+    for element in lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()) \
+        .xpath('//table/tr/td/div[@title]/div/a/@title'):
+        fetch(URL_PREFIX + '/wiki/Template:Infobox_' + element.lower(), jsonData)
 
     with open(OUTPUT_XML, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii=False)
