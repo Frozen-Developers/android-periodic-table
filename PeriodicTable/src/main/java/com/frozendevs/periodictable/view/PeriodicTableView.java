@@ -385,9 +385,35 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
                     Canvas canvas = new Canvas(bitmap);
 
                     if(item != null) {
+                        int color = 0;
+
+                        if (item.getCategory().equalsIgnoreCase("Actinide"))
+                            color = R.color.actinide_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Alkali metal"))
+                            color = R.color.alkali_metal_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Alkaline earth metal") ||
+                                item.getCategory().equalsIgnoreCase("Alkaline earth metals"))
+                            color = R.color.alkaline_earth_metal_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Diatomic nonmetal"))
+                            color = R.color.diatomic_nonmetal_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Lanthanide"))
+                            color = R.color.lanthanide_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Metalloid"))
+                            color = R.color.metalloid_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Noble gas") ||
+                                item.getCategory().equalsIgnoreCase("Noble gases"))
+                            color = R.color.noble_gas_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Polyatomic nonmetal"))
+                            color = R.color.polyatomic_nonmetal_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Other metal") ||
+                                item.getCategory().equalsIgnoreCase("Poor metal"))
+                            color = R.color.other_metal_bg;
+                        else if (item.getCategory().equalsIgnoreCase("Transition metal"))
+                            color = R.color.transition_metal_bg;
+
                         drawTile(canvas, item.getName(), String.valueOf(item.getAtomicNumber()),
                                 item.getStandardAtomicWeight(), item.getSymbol(),
-                                item.getColor(getContext()));
+                                getContext().getResources().getColor(color));
                     }
                     else if(position == 92) {
                         drawTile(canvas, "57 - 71", "", "", "",
