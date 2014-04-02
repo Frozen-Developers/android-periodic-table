@@ -359,7 +359,7 @@ if __name__ == '__main__':
 
     for element in lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + '/wiki/Periodic_table').read()) \
         .xpath('//table/tr/td/div[@title]/div/a/@title'):
-        fetch(URL_PREFIX + '/wiki/Template:Infobox_' + element.lower(), jsonData)
+        fetch(URL_PREFIX + '/wiki/Template:Infobox_' + re.sub(r'\s?\([^)]\w*\)', '', element.lower()), jsonData)
 
     with open(OUTPUT_XML, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii=False)
