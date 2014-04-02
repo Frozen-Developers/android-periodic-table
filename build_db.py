@@ -164,10 +164,10 @@ def fetch(url, jsonData):
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
     dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
-    dens = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>',
+    dens = capitalize(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>',
         '', translate_script(html_elements_list_to_string(dens)))).replace('(predicted) ', '') \
         .replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n').replace('(', '').replace(')', ':') \
-        .replace(':\n', ': ').replace('? ', '').strip(), flags=re.M) if len(dens) > 0 else ''
+        .replace(':\n', ': ').replace('? ', '').strip()) if len(dens) > 0 else ''
 
     ldmp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "m.p.")]]]/td')
     ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '', translate_script(
@@ -178,16 +178,16 @@ def fetch(url, jsonData):
         html_elements_list_to_string(ldbp))))).replace('  ', ' ').strip() if len(ldbp) > 0 else ''
 
     mp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Melting\u00a0point")]]]/td')
-    mp = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    mp = capitalize(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
         html_elements_list_to_string(mp))).replace('(predicted)', '').replace('(extrapolated)', '') \
         .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
-        .replace(', ', ' / ').replace('circa: ', '').strip(), flags=re.M) if len(mp) > 0 else ''
+        .replace(', ', ' / ').replace('circa: ', '').strip()) if len(mp) > 0 else ''
 
     bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
-    bp = re.sub(r'^[a-z]', lambda x: x.group().upper(), remove_selected_html_tags(html_elements_list_to_string(bp) \
+    bp = capitalize(remove_selected_html_tags(html_elements_list_to_string(bp) \
         .replace(', ',' / '), [ 'span', 'sup' ]).replace('(predicted)', '').replace('(extrapolated)', '') \
         .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
-        .replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip(), flags=re.M) \
+        .replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip()) \
         if len(bp) > 0 else ''
 
     tp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Triple\u00a0point")]]]/td')
@@ -199,22 +199,22 @@ def fetch(url, jsonData):
         cp))).replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
 
     hf = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat\u00a0of\u00a0fusion")]]]/td')
-    hf = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    hf = capitalize(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
         re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hf)
         )))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace(
-        'ca. ', '').strip(), flags=re.M) if len(hf) > 0 else ''
+        'ca. ', '').strip()) if len(hf) > 0 else ''
 
     hv = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat of vaporization")]]]/td')
-    hv = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    hv = capitalize(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
         re.sub(r'\s+\([^)]\w*\)', '', translate_script(html_elements_list_to_string(hv))))).replace('(extrapolated) ', '') \
         .replace('(predicted) ', '').replace('? ', '').replace('(', '').replace(')', ':').replace('ca. ', '') \
-        .strip(), flags=re.M) if len(hv) > 0 else ''
+        .strip()) if len(hv) > 0 else ''
 
     mhc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Molar heat capacity")]]]/td')
-    mhc = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
+    mhc = capitalize(re.sub(r'\[[\w#&;]*\]', '', re.sub(r'<[^<]+?>', '',
         translate_script(html_elements_list_to_string(mhc)))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
         .replace(' (Cp)', '').replace('? ', '').replace('(', '').replace(')', ':').replace(':\n', ': ') \
-        .strip(), flags=re.M) if len(mhc) > 0 else ''
+        .strip()) if len(mhc) > 0 else ''
 
     os = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Oxidation states")]]]/td')
     os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', re.sub(r'<[^<]+?>', '', html_elements_list_to_string(
@@ -263,20 +263,20 @@ def fetch(url, jsonData):
         cs = ''
 
     mo = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Magnetic ordering")]]]/td')
-    mo = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '',
-        html_elements_list_to_string(mo)).strip().replace('no data', ''), flags=re.M) if len(mo) > 0 else ''
+    mo = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', html_elements_list_to_string(mo)).strip() \
+        .replace('no data', '')) if len(mo) > 0 else ''
 
     tc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal conductivity")]]]/td')
-    tc = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*',
+    tc = capitalize(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*',
         '', translate_script(html_elements_list_to_string(tc)))).replace('(extrapolated) ', '').replace('est. ', '') \
         .replace(', (', ' W·m⁻¹·K⁻¹\n').replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '') \
-        .replace(' × ', '×').strip(), flags=re.M) if len(tc) > 0 else ''
+        .replace(' × ', '×').strip()) if len(tc) > 0 else ''
 
     te = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal expansion")]]]/td')
-    te = re.sub(r'^[a-z]', lambda x: x.group().upper(), re.sub(r'<[^<]+?>|\[.+?\]\s*', '', translate_script(
+    te = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*', '', translate_script(
         html_elements_list_to_string(te))).replace('(r.t.) ', '').replace(') (', ', ').replace('(', '') \
-        .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip(),
-        flags=re.M) if len(te) > 0 else ''
+        .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip()) \
+        if len(te) > 0 else ''
 
     ss = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Speed of sound")]]]/td')
     ss = capitalize(remove_html_tags(re.sub(r'\[.+?\]\s*', '', translate_script(html_elements_list_to_string(ss)))) \
@@ -331,18 +331,15 @@ def fetch(url, jsonData):
 
     for isotope in isotopes:
         isotope_tag = { }
-        isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*', '', isotope[0].replace(nsm[1], ''))) + nsm[1]
-        isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)', '', re.sub(r'\[.+?\]\s*', '',
-            isotope[4].replace('Observationally ', '')).replace('#', '').lower()).replace('×10', '×10^'). \
-            replace('?', '').strip()).capitalize().replace('Unknown', ''))
-        isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*', '', isotope[5].replace(
-            '#', '')).replace('×10', '×10^').replace('?', '').replace('(.', '(0.')).strip().splitlines()
-        isotope_tag['daughterIsotopes'] = re.sub(r'^[a-z]', lambda x: x.group().upper(), fix_particle_symbol(
-            re.sub(r'\[.+?\]', '', isotope[6]).replace('(', '').replace(')', '').replace('?', '')), flags=re.M).splitlines()
-        isotope_tag['spin'] = isotope[7].replace('#', '').replace('(', '').replace(')', '')
-        isotope_tag['abundance'] = fix_abundance(re.sub(r'^[a-z]', lambda x: x.group().upper(), translate_script(
-            re.sub(r'\([^)]\d*\)', '', re.sub(r'\[[\w ]+\]\s*', '', isotope[8].lower())).replace('×10',
-            '×10^').replace('[', '').replace(']', '')), flags=re.M)) if len(isotope) > 8 else ''
+        isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*|' + nsm[1], '', isotope[0])) + nsm[1]
+        isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)|\[.+?\]\s*|' \
+            + 'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
+        isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*|[#\?]', '', isotope[5]).replace('×10', '×10^') \
+            .replace('(.', '(0.')).strip().splitlines()
+        isotope_tag['daughterIsotopes'] = capitalize(fix_particle_symbol(re.sub(r'\[.+?\]|[()\?]', '', isotope[6]))).splitlines()
+        isotope_tag['spin'] = re.sub(r'[#()\?]', '', isotope[7])
+        isotope_tag['abundance'] = fix_abundance(capitalize(translate_script(re.sub(r'\([^)]\d*\)|\[[\w ]+\]\s*|[\[\]]', '',
+            isotope[8].lower()).replace('×10', '×10^')))) if len(isotope) > 8 else ''
         isotopes_tag.append(isotope_tag)
 
     element['isotopes'] = isotopes_tag
