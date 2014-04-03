@@ -110,17 +110,16 @@ def fix_abundance(string):
         pass
     return string
 
-def remove_selected_html_tags(string, tags):
-    soup = BeautifulSoup(string)
-    for tag in tags:
-        for occurence in soup.find_all(tag):
-            occurence.replaceWith('')
-    return soup.get_text()
-
 def capitalize(string):
     return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
 
-def remove_html_tags(string):
+def remove_html_tags(string, tags=[]):
+    if len(tags) > 0:
+        soup = BeautifulSoup(string)
+        for tag in tags:
+            for occurence in soup.find_all(tag):
+                occurence.replaceWith('')
+        return soup.get_text()
     return re.sub(r'<[^<]+?>', '', string)
 
 def fetch(url, jsonData):
@@ -184,7 +183,7 @@ def fetch(url, jsonData):
         .replace(', ', ' / ').replace('circa: ', '').strip()) if len(mp) > 0 else ''
 
     bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
-    bp = capitalize(remove_selected_html_tags(html_elements_list_to_string(bp) \
+    bp = capitalize(remove_html_tags(html_elements_list_to_string(bp) \
         .replace(', ',' / '), [ 'span', 'sup' ]).replace('(predicted)', '').replace('(extrapolated)', '') \
         .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
         .replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip()) \
@@ -251,10 +250,10 @@ def fetch(url, jsonData):
     cs = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Crystal structure")]]]')
     if len(cs) > 0:
         sibling = cs[0].xpath('./following-sibling::tr')[0]
-        cs = [ ': '.join(line for line in remove_selected_html_tags(cs[0].xpath('./td')[0].text_content(), ['div']) \
+        cs = [ ': '.join(line for line in remove_html_tags(cs[0].xpath('./td')[0].text_content(), ['div']) \
             .split('\n')[::-1] if line.strip() != '').strip() ]
         while sibling.xpath('./th')[0].text_content() == '':
-            cs.append(': '.join(line for line in remove_selected_html_tags(sibling.xpath('./td')[0].text_content(),
+            cs.append(': '.join(line for line in remove_html_tags(sibling.xpath('./td')[0].text_content(),
                 ['div']).split('\n')[::-1] if line.strip() != '').strip())
             sibling = sibling.xpath('./following-sibling::tr')[0]
         cs = capitalize(re.sub(r'\[.+?\] *|\s*\([^)][a-z\-]*\)|[();]', '', '\n'.join(cs))) \
@@ -263,8 +262,8 @@ def fetch(url, jsonData):
         cs = ''
 
     mo = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Magnetic ordering")]]]/td')
-    mo = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', html_elements_list_to_string(mo)).strip() \
-        .replace('no data', '')) if len(mo) > 0 else ''
+    mo = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*|no data', '', html_elements_list_to_string(mo)).strip()) \
+        if len(mo) > 0 else ''
 
     tc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal conductivity")]]]/td')
     tc = capitalize(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*',
@@ -346,8 +345,8 @@ def fetch(url, jsonData):
 
     jsonData.append(element)
 
-    print(list([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss]))
+    print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
