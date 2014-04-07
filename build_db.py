@@ -16,6 +16,9 @@ OUTPUT_XML = 'PeriodicTable/src/main/res/raw/database.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
+def xpath_get_text_content(xpath):
+    return ''.join(dict(zip("\u00a0\u2002", "  ")).get(c, c) for c in HTMLParser().unescape(xpath.text_content()))
+
 def table_to_list(table):
     result = defaultdict(lambda : defaultdict(str))
     rows = table.xpath('./tr')
@@ -34,7 +37,7 @@ def table_to_list(table):
         for col_i, col in enumerate(row.xpath('./td')):
             colspan = int(col.get('colspan', 1))
             rowspan = int(col.get('rowspan', 1))
-            col_data = col.text_content()
+            col_data = xpath_get_text_content(col)
             while row_i in result and col_i in result[row_i]:
                 col_i += 1
             if row_height > rowspan:
@@ -42,7 +45,7 @@ def table_to_list(table):
                 row_j = 0
                 while height_i < row_height:
                     cur_col = rows[row_i + row_j + 1].xpath('./td')[rowspan_i]
-                    col_data += '\n' + cur_col.text_content()
+                    col_data += '\n' + xpath_get_text_content(cur_col)
                     height_i += int(cur_col.get('rowspan', 1))
                     row_j += 1
                 rowspan_i += 1

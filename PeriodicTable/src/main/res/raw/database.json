@@ -41,7 +41,7 @@
                 "decayModes": [
                     "β-"
                 ],
-                "halfLife": "12.32 y",
+                "halfLife": "12.32 y",
                 "spin": "1⁄2+",
                 "symbol": "³H"
             },
@@ -53,7 +53,7 @@
                 "decayModes": [
                     "n"
                 ],
-                "halfLife": "1.39×10⁻²² s",
+                "halfLife": "1.39×10⁻²² s",
                 "spin": "2−",
                 "symbol": "⁴H"
             },
@@ -65,7 +65,7 @@
                 "decayModes": [
                     "n"
                 ],
-                "halfLife": ">9.1×10⁻²² s",
+                "halfLife": ">9.1×10⁻²² s",
                 "spin": "1⁄2+",
                 "symbol": "⁵H"
             },
@@ -79,7 +79,7 @@
                     "3n",
                     "4n"
                 ],
-                "halfLife": "2.90×10⁻²² s",
+                "halfLife": "2.90×10⁻²² s",
                 "spin": "2−",
                 "symbol": "⁶H"
             },
@@ -91,7 +91,7 @@
                 "decayModes": [
                     "4n"
                 ],
-                "halfLife": "2.3×10⁻²³ s",
+                "halfLife": "2.3×10⁻²³ s",
                 "spin": "1⁄2+",
                 "symbol": "⁷H"
             }
@@ -293,7 +293,7 @@
                 "decayModes": [
                     "p"
                 ],
-                "halfLife": "91×10⁻²⁴ s",
+                "halfLife": "91×10⁻²⁴ s",
                 "spin": "",
                 "symbol": "⁴Li"
             },
@@ -305,7 +305,7 @@
                 "decayModes": [
                     "p"
                 ],
-                "halfLife": "370×10⁻²⁴ s",
+                "halfLife": "370×10⁻²⁴ s",
                 "spin": "3/2−",
                 "symbol": "⁵Li"
             },
@@ -333,7 +333,7 @@
                 "decayModes": [
                     "β−"
                 ],
-                "halfLife": "840.3 ms",
+                "halfLife": "840.3 ms",
                 "spin": "2+",
                 "symbol": "⁸Li"
             },
@@ -347,7 +347,7 @@
                     "β−, n (50.8%)",
                     "β− (49.2%)"
                 ],
-                "halfLife": "178.3 ms",
+                "halfLife": "178.3 ms",
                 "spin": "3/2−",
                 "symbol": "⁹Li"
             },
@@ -359,7 +359,7 @@
                 "decayModes": [
                     "n"
                 ],
-                "halfLife": "2.0×10⁻²¹ s",
+                "halfLife": "2.0×10⁻²¹ s",
                 "spin": "1−,2−",
                 "symbol": "¹⁰Li"
             },
@@ -367,7 +367,7 @@
                 "abundance": "",
                 "daughterIsotopes": [],
                 "decayModes": [],
-                "halfLife": "3.7×10⁻²¹ s",
+                "halfLife": "3.7×10⁻²¹ s",
                 "spin": "1+",
                 "symbol": "¹⁰ᵐ¹Li"
             },
@@ -375,7 +375,7 @@
                 "abundance": "",
                 "daughterIsotopes": [],
                 "decayModes": [],
-                "halfLife": "1.35×10⁻²¹ s",
+                "halfLife": "1.35×10⁻²¹ s",
                 "spin": "2+",
                 "symbol": "¹⁰ᵐ²Li"
             },
@@ -399,7 +399,7 @@
                     "β−, fission (0.014%)",
                     "β−, fission (0.013%)"
                 ],
-                "halfLife": "8.75 ms",
+                "halfLife": "8.75 ms",
                 "spin": "3/2−",
                 "symbol": "¹¹Li"
             },
@@ -411,7 +411,7 @@
                 "decayModes": [
                     "n"
                 ],
-                "halfLife": "<10 ns",
+                "halfLife": "<10 ns",
                 "spin": "",
                 "symbol": "¹²Li"
             }
@@ -37096,7 +37096,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
     },
     {
-        "appearance": "Colorless gas",
+        "appearance": "Colorless gas\nA small gold tube filled with  gas",
         "atomicNumber": "86",
         "atomicRadius": "",
         "block": "p",
@@ -39628,7 +39628,7 @@
                 "decayModes": [
                     "α"
                 ],
-                "halfLife": "2 min",
+                "halfLife": "2 min",
                 "spin": "",
                 "symbol": "²⁶⁹Sg"
             },
