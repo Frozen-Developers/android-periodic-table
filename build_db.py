@@ -284,6 +284,9 @@ def fetch(url, jsonData):
         .replace('(r.t.) ', '').replace(') (', ', ').replace('(', '').replace(')', ':').replace(':\n', ': ') \
         .replace('est. ', '').replace('; ', '\n').strip()) if len(ss) > 0 else ''
 
+    ym = get_property(content, 'Young\'s modulus', 'td/text()')
+    ym = capitalize(''.join(ym).replace('(', '').replace(')', ':').strip()) if len(ym) > 0 else '' 
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -327,6 +330,7 @@ def fetch(url, jsonData):
     element['thermalConductivity'] = tc
     element['thermalExpansion'] = te
     element['speedOfSound'] = ss
+    element['youngsModulus'] = ym
 
     isotopes_tag = []
 
@@ -348,7 +352,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss])
+        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
