@@ -290,6 +290,9 @@ def fetch(url, jsonData):
     sm = get_property(content, 'Shear modulus', 'td/text()')
     sm = capitalize(''.join(sm).replace('(', '').replace(')', ':').replace('est. ', '').strip()) if len(sm) > 0 else ''
 
+    bm = get_property(content, 'Bulk modulus', 'td/text()')
+    bm = capitalize(''.join(bm).replace('(', '').replace(')', ':').replace('est. ', '').strip()) if len(bm) > 0 else ''
+
     # Isotopes
 
     content = lxml.html.fromstring(urllib.request.urlopen(URL_PREFIX + content.xpath(
@@ -335,6 +338,7 @@ def fetch(url, jsonData):
     element['speedOfSound'] = ss
     element['youngsModulus'] = ym
     element['shearModulus'] = sm
+    element['bulkModulus'] = bm
 
     isotopes_tag = []
 
@@ -356,7 +360,7 @@ def fetch(url, jsonData):
     jsonData.append(element)
 
     print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp, mp, bp,
-        tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym, sm])
+        tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym, sm, bm])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
