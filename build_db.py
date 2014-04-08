@@ -155,15 +155,16 @@ def fetch(url, jsonData):
 
     grp = re.sub(r'[^0-9]', '', get_property(content, 'Group', 'td/span/a/text()')[0].replace('n/a', '0'))
 
-    ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', remove_html_tags(translate_script(html_elements_to_string(
-        get_property(content, 'Electron configuration', 'td')))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
+    ec = re.sub(r'\([^)]*\)|\[[0-9]?\]', '', remove_html_tags(translate_script(html_elements_to_string(
+        get_property(content, 'Electron configuration', 'td'))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
 
     wl = URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/table/tr/td/table/tr/td/span/b/a/@href')[0]
 
     apr = get_property(content, 'Appearance', 'following-sibling::tr/td/text()')
-    apr = re.sub(r'\s*.+\s+\s+.+', '', capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)', '', ''.join(apr) \
-        .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '') \
-        .split('corrodes')[0].replace('unknown', '').strip('\n, '))) if len(apr) > 0 else ''
+    apr = re.sub(r'\s*.+\s+\s+.+', '', capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)|unknown|' \
+        + nsm[0].lower(), '', ''.join(apr).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',') \
+        .split('exhibiting')[0].replace(nsm[0].lower(), '').split('corrodes')[0].strip('\n, '))) \
+        if len(apr) > 0 else ''
 
     phase = get_property(content, 'Phase', 'td/a/text()')
     phase = phase[0].capitalize() if len(phase) > 0 else ''
