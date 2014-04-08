@@ -16,8 +16,11 @@ OUTPUT_XML = 'PeriodicTable/src/main/res/raw/database.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
+def replace_chars(string, charset1, charset2):
+    return ''.join(dict(zip(charset1, charset2)).get(c, c) for c in string)
+
 def xpath_get_text_content(xpath):
-    return ''.join(dict(zip("\u00a0\u2002", "  ")).get(c, c) for c in HTMLParser().unescape(xpath.text_content()))
+    return replace_chars(HTMLParser().unescape(xpath.text_content()), '\u00a0\u2002', '  ')
 
 def table_to_list(table):
     result = defaultdict(lambda : defaultdict(str))
@@ -82,10 +85,10 @@ def remove_html_tags(string, tags=[]):
     return re.sub(r'<[^<]+?>', '', string)
 
 def replace_with_superscript(string):
-    return ''.join(dict(zip("–−-0123456789abm", "⁻⁻⁻⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ")).get(c, c) for c in string)
+    return replace_chars(string, '–−-0123456789abm', '⁻⁻⁻⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
 
 def replace_with_subscript(string):
-    return ''.join(dict(zip("–−-0123456789", "₋₋₋₀₁₂₃₄₅₆₇₈₉")).get(c, c) for c in string)
+    return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
 
 def translate_script(string):
     for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+', string):
@@ -102,7 +105,7 @@ def html_elements_to_string(elements):
     string = list()
     for element in elements:
         string.append(etree.tostring(element).decode('utf-8'))
-    return ''.join(dict(zip("\u00a0\u2002", "  ")).get(c, c) for c in HTMLParser().unescape(''.join(string)))
+    return replace_chars(HTMLParser().unescape(''.join(string)), '\u00a0\u2002', '  ')
 
 def fix_particle_symbol(string):
     for match in re.findall(r'\d+[A-Z]+[a-z]*', string):
