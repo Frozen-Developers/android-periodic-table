@@ -125,6 +125,10 @@ def fix_abundance(string):
 def capitalize(string):
     return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
 
+def get_property(content, name, extra=''):
+    return content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "' + name + '")]]' \
+        + ('/' + extra if len(extra) > 0 else ''))
+
 def fetch(url, jsonData):
     print('Parsing properties from ' + url)
 
@@ -132,98 +136,94 @@ def fetch(url, jsonData):
 
     # Properties
 
-    nsm = content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Name, ")]]/td/text()')[0].replace(",", "").split()
+    nsm = get_property(content, 'Name, ', 'td/text()')[0].replace(",", "").split()
     nsm[0] = nsm[0].capitalize()
 
-    saw = re.sub(r'\([0-9]?\)', '',
-        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Standard atomic weight")]]]/td/text()')[0]) \
+    saw = re.sub(r'\([0-9]?\)', '', get_property(content, 'Standard atomic weight', 'td/text()')[0]) \
         .replace('(', '[').replace(')', ']')
     try:
         saw = format(float(saw), '.3f').rstrip('0').rstrip('.')
     except ValueError:
         pass
 
-    cat = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Element category")]]]/td/a/text()')[0].capitalize()
+    cat = get_property(content, 'Element category', 'td/a/text()')[0].capitalize()
 
-    pb = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/a/text()')
+    pb = get_property(content, 'Group', 'td/a/text()')
 
-    grp = re.sub(r'[^0-9]', '',
-        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Group")]]]/td/span/a/text()')[0] \
-        .replace('n/a', '0'))
+    grp = re.sub(r'[^0-9]', '', get_property(content, 'Group', 'td/span/a/text()')[0].replace('n/a', '0'))
 
     ec = re.sub(r'\([^)]*\)', '', re.sub(r'\[[0-9]?\]', '', remove_html_tags(translate_script(html_elements_to_string(
-        content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electron configuration")]]]/td')))))) \
-        .replace('\n\n', '\n').replace(' \n', '\n').strip()
+        get_property(content, 'Electron configuration', 'td')))))).replace('\n\n', '\n').replace(' \n', '\n').strip()
 
     wl = URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/table/tr/td/table/tr/td/span/b/a/@href')[0]
 
-    apr = content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "Appearance")]]/following-sibling::tr/td/text()')
+    apr = get_property(content, 'Appearance', 'following-sibling::tr/td/text()')
     apr = capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)', '', ''.join(apr) \
         .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '') \
         .split('corrodes')[0].replace('unknown', '').strip('\n, ')) if len(apr) > 0 else ''
 
-    phase = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Phase")]]]/td/a/text()')
+    phase = get_property(content, 'Phase', 'td/a/text()')
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
-    dens = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Density")]]]/td')
+    dens = get_property(content, 'Density', 'td')
     dens = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(html_elements_to_string(
         dens)))).replace('(predicted) ', '').replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n') \
         .replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '').strip()) if len(dens) > 0 else ''
 
-    ldmp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "m.p.")]]]/td')
+    ldmp = get_property(content, 'm.p.', 'td')
     ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(
         html_elements_to_string(ldmp))))).replace('  ', ' ').strip() if len(ldmp) > 0 else ''
 
-    ldbp = content.xpath('//table[@class="infobox bordered"]/tr[th[span[a[contains(., "b.p.")]]]]/td')
+    ldbp = get_property(content, 'b.p.', 'td')
     ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(
         html_elements_to_string(ldbp))))).replace('  ', ' ').strip() if len(ldbp) > 0 else ''
 
-    mp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Melting\u00a0point")]]]/td')
+    mp = get_property(content, 'Melting\u00a0point', 'td')
     mp = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(mp))) \
         .replace('(predicted)', '').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ') \
         .replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ').replace('circa: ', '') \
         .strip()) if len(mp) > 0 else ''
 
-    bp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Boiling\u00a0point")]]]/td')
+    bp = get_property(content, 'Boiling\u00a0point', 'td')
     bp = capitalize(remove_html_tags(html_elements_to_string(bp) \
         .replace(', ',' / '), [ 'span', 'sup' ]).replace('(predicted)', '').replace('(extrapolated)', '') \
         .replace('? ', '').replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') \
         .replace('circa: ', '').replace('estimation: ', '').replace('estimated: ', '').strip()) \
         if len(bp) > 0 else ''
 
-    tp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Triple\u00a0point")]]]/td')
+    tp = get_property(content, 'Triple\u00a0point', 'td')
     tp = translate_script(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(
         tp))).replace('×10', '×10^')).strip() if len(tp) > 0 else ''
 
-    cp = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Critical\u00a0point")]]]/td')
+    cp = get_property(content, 'Critical\u00a0point', 'td')
     cp = translate_script(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(
         cp))).replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
 
-    hf = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat\u00a0of\u00a0fusion")]]]/td')
+    hf = get_property(content, 'Heat\u00a0of\u00a0fusion', 'td')
     hf = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(re.sub(r'\s+\([^)]\w*\)', '', translate_script(
         html_elements_to_string(hf))))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '') \
         .replace(')', ':').replace('ca. ', '').strip()) if len(hf) > 0 else ''
 
-    hv = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Heat of vaporization")]]]/td')
+    hv = get_property(content, 'Heat of vaporization', 'td')
     hv = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(re.sub(r'\s+\([^)]\w*\)', '', translate_script(
         html_elements_to_string(hv))))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
         .replace('? ', '').replace('(', '').replace(')', ':').replace('ca. ', '').strip()) if len(hv) > 0 else ''
 
-    mhc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Molar heat capacity")]]]/td')
+    mhc = get_property(content, 'Molar heat capacity', 'td')
     mhc = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(html_elements_to_string(mhc)))) \
         .replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '').replace('(', '') \
         .replace(')', ':').replace(':\n', ': ').strip()) if len(mhc) > 0 else ''
 
-    os = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Oxidation states")]]]/td')
+    os = get_property(content, 'Oxidation states', 'td')
     os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', remove_html_tags(html_elements_to_string(
         os)))).strip() if len(os) > 0 else ''
 
-    en = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Electronegativity")]]]/td')
+    en = get_property(content, 'Electronegativity', 'td')
     en = re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(en))) \
         .replace('no data (Pauling scale)', 'None').replace('(predicted) ', '').replace(' ? ', '') \
         .strip() if len(en) > 0 else ''
 
-    ie = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Ionization energies")]]]')
+    ie = get_property(content, 'Ionization energies')
     if len(ie) > 0:
         parent = ie[0]
         ie = parent.xpath('./td')
@@ -234,19 +234,19 @@ def fetch(url, jsonData):
     else:
         ie = ''
 
-    ar = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Atomic radius")]]]/td')
+    ar = get_property(content, 'Atomic radius', 'td')
     ar = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
         html_elements_to_string(ar)))).strip() if len(ar) > 0 else ''
 
-    cr = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Covalent radius")]]]/td')
+    cr = get_property(content, 'Covalent radius', 'td')
     cr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
         html_elements_to_string(cr)))).strip() if len(cr) > 0 else ''
 
-    vwr = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Van der Waals radius")]]]/td')
+    vwr = get_property(content, 'Van der Waals radius', 'td')
     vwr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '',
         html_elements_to_string(vwr))).strip() if len(vwr) > 0 else ''
 
-    cs = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Crystal structure")]]]')
+    cs = get_property(content, 'Crystal structure')
     if len(cs) > 0:
         sibling = cs[0].xpath('./following-sibling::tr')[0]
         cs = [ ': '.join(line for line in remove_html_tags(cs[0].xpath('./td')[0].text_content(), ['div']) \
@@ -260,23 +260,23 @@ def fetch(url, jsonData):
     else:
         cs = ''
 
-    mo = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Magnetic ordering")]]]/td')
+    mo = get_property(content, 'Magnetic ordering', 'td')
     mo = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*|no data', '', html_elements_to_string(mo)).strip()) \
         if len(mo) > 0 else ''
 
-    tc = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal conductivity")]]]/td')
+    tc = get_property(content, 'Thermal conductivity', 'td')
     tc = capitalize(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*',
         '', translate_script(html_elements_to_string(tc)))).replace('(extrapolated) ', '').replace('est. ', '') \
         .replace(', (', ' W·m⁻¹·K⁻¹\n').replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '') \
         .replace(' × ', '×').strip()) if len(tc) > 0 else ''
 
-    te = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Thermal expansion")]]]/td')
+    te = get_property(content, 'Thermal expansion', 'td')
     te = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*', '', translate_script(
         html_elements_to_string(te))).replace('(r.t.) ', '').replace(') (', ', ').replace('(', '') \
         .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip()) \
         if len(te) > 0 else ''
 
-    ss = content.xpath('//table[@class="infobox bordered"]/tr[th[a[contains(., "Speed of sound")]]]/td')
+    ss = get_property(content, 'Speed of sound', 'td')
     ss = capitalize(remove_html_tags(re.sub(r'\[.+?\]\s*', '', translate_script(html_elements_to_string(ss)))) \
         .replace('(r.t.) ', '').replace(') (', ', ').replace('(', '').replace(')', ':').replace(':\n', ': ') \
         .replace('est. ', '').replace('; ', '\n').strip()) if len(ss) > 0 else ''
