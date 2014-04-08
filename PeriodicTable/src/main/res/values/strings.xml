@@ -82,11 +82,15 @@
 
     <!-- Preferences -->
     <string name="preferences_category_about">About</string>
+    <string name="preferences_category_special_thanks">Special thanks</string>
 
         <!-- About screen -->
     <string name="preference_about_app">About Periodic Table</string>
     <string name="preference_author">Author</string>
     <string name="preference_version_number">Version number</string>
     <string name="preference_open_source_licences">Open source licences</string>
+
+    <string name="preference_samuels_graphics">Samuel\'s Graphics</string>
+    <string name="preference_samuels_graphics_desc">Icon design</string>
 
 </resources>

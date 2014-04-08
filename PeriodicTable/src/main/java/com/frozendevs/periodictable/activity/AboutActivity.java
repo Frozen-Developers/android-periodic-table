@@ -17,7 +17,7 @@ public class AboutActivity extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.about);
+        addPreferencesFromResource(R.xml.about_screen);
 
         String versionName = null;
         PackageManager packageManager = getPackageManager();

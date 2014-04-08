@@ -237,8 +237,8 @@ def fetch(url, jsonData):
         ie = parent.xpath('./td')
         for i in range(1, int(parent.xpath('./th')[0].get('rowspan', 1))):
             ie += parent.xpath('./following-sibling::tr[' + str(i) + ']/td')
-        ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*', '', translate_script(
-            html_elements_to_string(ie))))).strip()
+        ie = ''.join(re.sub(r'\s+\s+', ' ', re.sub(r'\[.+?\]|\([^)].*\)', '', remove_html_tags(
+            translate_script(html_elements_to_string(ie)))))).strip()
     else:
         ie = ''
 
