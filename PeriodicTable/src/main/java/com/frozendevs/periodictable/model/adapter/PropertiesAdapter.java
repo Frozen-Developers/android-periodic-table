@@ -60,6 +60,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_liquid_density_at_bp,
                         properties.getLiquidDensityAtBoilingPoint()),
                 new Property(R.string.property_melting_point, properties.getMeltingPoint()),
+                new Property(R.string.property_sublimation_point, properties.getSublimationPoint()),
                 new Property(R.string.property_boiling_point, properties.getBoilingPoint()),
                 new Property(R.string.property_triple_point, properties.getTriplePoint()),
                 new Property(R.string.property_critical_point, properties.getCriticalPoint()),

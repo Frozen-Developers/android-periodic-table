@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class ElementProperties extends TableItem implements Serializable {
 
     private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
-            liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, boilingPoint,
-            triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
+            liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint, sublimationPoint,
+            boilingPoint, triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
             oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius,
             vanDerWaalsRadius, crystalStructure, magneticOrdering, thermalConductivity,
             thermalExpansion, speedOfSound, youngsModulus, shearModulus, bulkModulus, mohsHardness,
@@ -77,6 +77,10 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getMeltingPoint() {
         return meltingPoint;
+    }
+
+    public String getSublimationPoint() {
+        return sublimationPoint;
     }
 
     public String getBoilingPoint() {
