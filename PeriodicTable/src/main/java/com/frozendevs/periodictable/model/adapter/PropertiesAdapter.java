@@ -82,7 +82,8 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_youngs_modulus, properties.getYoungsModulus()),
                 new Property(R.string.property_shear_modulus, properties.getShearModulus()),
                 new Property(R.string.property_bulk_modulus, properties.getBulkModulus()),
-                new Property(R.string.property_mohs_hardness, properties.getMohsHardness())
+                new Property(R.string.property_mohs_hardness, properties.getMohsHardness()),
+                new Property(R.string.property_brinell_hardness, properties.getBrinellHardness())
         };
     }
 
