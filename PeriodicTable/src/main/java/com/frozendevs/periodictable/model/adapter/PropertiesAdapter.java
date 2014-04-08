@@ -80,7 +80,8 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_thermal_expansion, properties.getThermalExpansion()),
                 new Property(R.string.property_speed_of_sound, properties.getSpeedOfSound()),
                 new Property(R.string.property_youngs_modulus, properties.getYoungsModulus()),
-                new Property(R.string.property_shear_modulus, properties.getShearModulus())
+                new Property(R.string.property_shear_modulus, properties.getShearModulus()),
+                new Property(R.string.property_bulk_modulus, properties.getBulkModulus())
         };
     }
 

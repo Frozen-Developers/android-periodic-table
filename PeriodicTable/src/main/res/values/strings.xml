@@ -65,6 +65,7 @@
     <string name="property_speed_of_sound">Speed of sound</string>
     <string name="property_youngs_modulus">Young\'s modulus</string>
     <string name="property_shear_modulus">Shear modulus</string>
+    <string name="property_bulk_modulus">Bulk modulus</string>
 
     <!-- Isotopes properties -->
     <string name="property_half_life">Half-life</string>
