@@ -161,9 +161,9 @@ def fetch(url, jsonData):
     wl = URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/table/tr/td/table/tr/td/span/b/a/@href')[0]
 
     apr = get_property(content, 'Appearance', 'following-sibling::tr/td/text()')
-    apr = capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)', '', ''.join(apr) \
+    apr = re.sub(r'\s*.+\s+\s+.+', '', capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)', '', ''.join(apr) \
         .split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',').split('exhibiting')[0].replace(nsm[0].lower(), '') \
-        .split('corrodes')[0].replace('unknown', '').strip('\n, ')) if len(apr) > 0 else ''
+        .split('corrodes')[0].replace('unknown', '').strip('\n, '))) if len(apr) > 0 else ''
 
     phase = get_property(content, 'Phase', 'td/a/text()')
     phase = phase[0].capitalize() if len(phase) > 0 else ''
