@@ -9,7 +9,7 @@ public class ElementProperties extends TableItem implements Serializable {
             triplePoint, criticalPoint, heatOfFusion, heatOfVaporization, molarHeatCapacity,
             oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius,
             vanDerWaalsRadius, crystalStructure, magneticOrdering, thermalConductivity,
-            thermalExpansion, speedOfSound, youngsModulus, shearModulus, bulkModulus;
+            thermalExpansion, speedOfSound, youngsModulus, shearModulus, bulkModulus, mohsHardness;
     private Isotope[] isotopes;
 
     public class Isotope implements Serializable {
@@ -160,5 +160,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getBulkModulus() {
         return bulkModulus;
+    }
+
+    public String getMohsHardness() {
+        return mohsHardness;
     }
 }
