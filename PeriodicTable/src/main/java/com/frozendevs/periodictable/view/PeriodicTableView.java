@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.support.v4.view.ViewCompat;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.GestureDetector;
@@ -453,6 +455,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
         mPaint.setTextAlign(Paint.Align.CENTER);
         mPaint.setTextSize(spToPx(12));
 
-        canvas.drawText(name, DEFAULT_TILE_SIZE / 2, (DEFAULT_TILE_SIZE / 2) + (mPaint.getTextSize() / 2), mPaint);
+        canvas.drawText(TextUtils.ellipsize(name, new TextPaint(mPaint), DEFAULT_TILE_SIZE - 2 * padding,
+                TextUtils.TruncateAt.END).toString(), DEFAULT_TILE_SIZE / 2,
+                (DEFAULT_TILE_SIZE / 2) + (mPaint.getTextSize() / 2), mPaint);
     }
 }
