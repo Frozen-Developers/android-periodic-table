@@ -43,8 +43,8 @@ public class PropertiesActivity extends ActionBarActivity {
         };
 
         private int[] titles = new int[] {
-                R.string.details_title,
-                R.string.isotopes_title
+                R.string.fragment_title_details,
+                R.string.fragment_title_isotopes
         };
 
         public SectionsPagerAdapter(FragmentManager fm) {

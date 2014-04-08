@@ -30,8 +30,8 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         private Fragment[] fragments;
 
         private int[] titles = new int[] {
-            R.string.elements_title,
-            R.string.table_title
+            R.string.fragment_title_elements,
+            R.string.fragment_title_table
         };
 
         public SectionsPagerAdapter(FragmentManager fm) {
