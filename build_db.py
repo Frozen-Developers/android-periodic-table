@@ -139,7 +139,7 @@ def fetch(url, jsonData):
 
     # Properties
 
-    nsm = get_property(content, 'Name, ', 'td/text()')[0].replace(",", "").split()
+    nsm = get_property(content, 'Name, ', 'td/text()')[0].replace(',', '').split()
     nsm[0] = nsm[0].capitalize()
 
     saw = re.sub(r'\([0-9]?\)', '', get_property(content, 'Standard atomic weight', 'td/text()')[0]) \
@@ -243,16 +243,16 @@ def fetch(url, jsonData):
         ie = ''
 
     ar = get_property(content, 'Atomic radius', 'td')
-    ar = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
-        html_elements_to_string(ar)))).strip() if len(ar) > 0 else ''
+    ar = re.sub(r'\s+\s+', ' ', re.sub(r'\[.+?\]|\([^)][a-z][a-z][a-z]+\)', '', remove_html_tags(
+        translate_script(html_elements_to_string(ar))))).strip() if len(ar) > 0 else ''
 
     cr = get_property(content, 'Covalent radius', 'td')
-    cr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '', translate_script(
-        html_elements_to_string(cr)))).strip() if len(cr) > 0 else ''
+    cr = re.sub(r'\s+\s+', ' ', re.sub(r'\[.+?\]|\([^)][a-z][a-z][a-z]+\)', '', remove_html_tags(
+        translate_script(html_elements_to_string(cr))))).strip() if len(cr) > 0 else ''
 
     vwr = get_property(content, 'Van der Waals radius', 'td')
-    vwr = re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)][a-z][a-z][a-z]+\)\s*', '',
-        html_elements_to_string(vwr))).strip() if len(vwr) > 0 else ''
+    vwr = re.sub(r'\s+\s+', ' ', re.sub(r'\[.+?\]|\([^)][a-z][a-z][a-z]+\)', '',
+        remove_html_tags(html_elements_to_string(vwr)))).strip() if len(vwr) > 0 else ''
 
     cs = get_property(content, 'Crystal structure')
     if len(cs) > 0:
@@ -269,20 +269,18 @@ def fetch(url, jsonData):
         cs = ''
 
     mo = get_property(content, 'Magnetic ordering', 'td')
-    mo = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*|\([^)].*\)\s*|no data', '', html_elements_to_string(mo)).strip()) \
-        if len(mo) > 0 else ''
+    mo = capitalize(re.sub(r'\[.+?\]|\([^)].*\)\s*|no data', '', remove_html_tags(html_elements_to_string(mo))) \
+        .strip()) if len(mo) > 0 else ''
 
     tc = get_property(content, 'Thermal conductivity', 'td')
-    tc = capitalize(re.sub(r'\s+\s+', ' ', re.sub(r'<[^<]+?>|\[.+?\]\s*',
-        '', translate_script(html_elements_to_string(tc)))).replace('(extrapolated) ', '').replace('est. ', '') \
-        .replace(', (', ' W·m⁻¹·K⁻¹\n').replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '') \
-        .replace(' × ', '×').strip()) if len(tc) > 0 else ''
+    tc = capitalize(re.sub(r'\s+\s+', ' ', re.sub(r'\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(
+        tc))))).replace('(extrapolated) ', '').replace('est. ', '').replace(', (', ' W·m⁻¹·K⁻¹\n').replace('(', '') \
+        .replace(')', ':').replace(':\n', ': ').replace('? ', '').replace(' × ', '×').strip()) if len(tc) > 0 else ''
 
     te = get_property(content, 'Thermal expansion', 'td')
-    te = capitalize(re.sub(r'<[^<]+?>|\[.+?\]\s*', '', translate_script(
-        html_elements_to_string(te))).replace('(r.t.) ', '').replace(') (', ', ').replace('(', '') \
-        .replace(')', ':').replace(':\n', ': ').replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip()) \
-        if len(te) > 0 else ''
+    te = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(te)))) \
+        .replace('(r.t.) ', '').replace(') (', ', ').replace('(', '').replace(')', ':').replace(':\n', ': ') \
+        .replace('µm/m·K:', 'µm/(m·K)').replace('est. ', '').strip()) if len(te) > 0 else ''
 
     ss = get_property(content, 'Speed of sound', 'td')
     ss = capitalize(remove_html_tags(re.sub(r'\[.+?\]\s*', '', translate_script(html_elements_to_string(ss)))) \
@@ -360,7 +358,7 @@ def fetch(url, jsonData):
         isotope_tag = { }
         isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*|' + nsm[1], '', isotope[0])) + nsm[1]
         isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)|\[.+?\]\s*|' \
-            + 'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
+            + r'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*|[#\?]', '', isotope[5]).replace('×10', '×10^') \
             .replace('(.', '(0.')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = capitalize(fix_particle_symbol(re.sub(r'\[.+?\]|[()\?]', '', isotope[6]))).splitlines()
