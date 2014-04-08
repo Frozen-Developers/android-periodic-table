@@ -285,7 +285,10 @@ def fetch(url, jsonData):
         .replace('est. ', '').replace('; ', '\n').strip()) if len(ss) > 0 else ''
 
     ym = get_property(content, 'Young\'s modulus', 'td/text()')
-    ym = capitalize(''.join(ym).replace('(', '').replace(')', ':').strip()) if len(ym) > 0 else '' 
+    ym = capitalize(''.join(ym).replace('(', '').replace(')', ':').replace('est. ', '').strip()) if len(ym) > 0 else ''
+
+    sm = get_property(content, 'Shear modulus', 'td/text()')
+    sm = capitalize(''.join(sm).replace('(', '').replace(')', ':').replace('est. ', '').strip()) if len(sm) > 0 else ''
 
     # Isotopes
 
@@ -331,6 +334,7 @@ def fetch(url, jsonData):
     element['thermalExpansion'] = te
     element['speedOfSound'] = ss
     element['youngsModulus'] = ym
+    element['shearModulus'] = sm
 
     isotopes_tag = []
 
@@ -351,8 +355,8 @@ def fetch(url, jsonData):
 
     jsonData.append(element)
 
-    print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase,
-        dens, ldmp, ldbp, mp, bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym])
+    print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp, mp, bp,
+        tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym, sm])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
