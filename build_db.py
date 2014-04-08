@@ -187,6 +187,11 @@ def fetch(url, jsonData):
         .replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ').replace('circa: ', '') \
         .strip()) if len(mp) > 0 else ''
 
+    sp = get_property(content, 'Sublimation\u00a0point', 'td')
+    sp = capitalize(re.sub(r'\[[\w#&;]*\]|(predicted)\s*|(extrapolated)\s*|[\?]|circa: ', '', remove_html_tags(
+        html_elements_to_string(sp))).replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ') \
+        .strip()) if len(sp) > 0 else ''
+
     bp = get_property(content, 'Boiling\u00a0point', 'td')
     bp = capitalize(remove_html_tags(html_elements_to_string(bp) \
         .replace(', ',' / '), [ 'span', 'sup' ]).replace('(predicted)', '').replace('(extrapolated)', '') \
@@ -325,6 +330,7 @@ def fetch(url, jsonData):
     element['liquidDensityAtMeltingPoint'] = ldmp
     element['liquidDensityAtBoilingPoint'] = ldbp
     element['meltingPoint'] = mp
+    element['sublimationPoint'] = sp
     element['boilingPoint'] = bp
     element['triplePoint'] = tp
     element['criticalPoint'] = cp
@@ -367,8 +373,8 @@ def fetch(url, jsonData):
 
     jsonData.append(element)
 
-    print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp, mp, bp,
-        tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym, sm, bm, mh, bh])
+    print([nsm[0], nsm[1], nsm[2], saw, cat, grp, pb[0], pb[1], ec.splitlines(), apr, phase, dens, ldmp, ldbp, mp, sp,
+        bp, tp, cp, hf, hv, mhc, os, en, ie, ar, cr, cs, mo, tc, te, ss, ym, sm, bm, mh, bh])
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
