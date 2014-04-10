@@ -142,8 +142,8 @@ def fetch(url, jsonData):
     nsm = get_property(content, 'Name, ', 'td/text()')[0].replace(',', '').split()
     nsm[0] = nsm[0].capitalize()
 
-    saw = re.sub(r'\([0-9]?\)', '', get_property(content, 'Standard atomic weight', 'td/text()')[0]) \
-        .replace('(', '[').replace(')', ']')
+    saw = replace_chars(re.sub(r'\([0-9]?\)', '', get_property(content, 'Standard atomic weight', 'td/text()')[0]),
+        '()', '[]')
     try:
         saw = format(float(saw), '.3f').rstrip('0').rstrip('.')
     except ValueError:
@@ -170,26 +170,26 @@ def fetch(url, jsonData):
     phase = phase[0].capitalize() if len(phase) > 0 else ''
 
     dens = get_property(content, 'Density', 'td')
-    dens = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(html_elements_to_string(
+    dens = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(
         dens)))).replace('(predicted) ', '').replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n') \
         .replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '').strip()) if len(dens) > 0 else ''
 
     ldmp = get_property(content, 'm.p.', 'td')
-    ldmp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(
-        html_elements_to_string(ldmp))))).replace('  ', ' ').strip() if len(ldmp) > 0 else ''
+    ldmp = re.sub(r'\s*\([^)]*\)|\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(ldmp)))) \
+        .strip() if len(ldmp) > 0 else ''
 
     ldbp = get_property(content, 'b.p.', 'td')
-    ldbp = re.sub(r'\([^)]*\)', '', re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(
-        html_elements_to_string(ldbp))))).replace('  ', ' ').strip() if len(ldbp) > 0 else ''
+    ldbp = re.sub(r'\s*\([^)]*\)|\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(ldbp)))) \
+        .strip() if len(ldbp) > 0 else ''
 
     mp = get_property(content, 'Melting\u00a0point', 'td')
-    mp = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(mp))) \
+    mp = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(mp))) \
         .replace('(predicted)', '').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ') \
         .replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ').replace('circa: ', '') \
         .strip()) if len(mp) > 0 else ''
 
     sp = get_property(content, 'Sublimation\u00a0point', 'td')
-    sp = capitalize(re.sub(r'\[[\w#&;]*\]|(predicted)\s*|(extrapolated)\s*|[\?]|circa: ', '', remove_html_tags(
+    sp = capitalize(re.sub(r'\[.+?\]|(predicted)\s*|(extrapolated)\s*|[\?]|circa: ', '', remove_html_tags(
         html_elements_to_string(sp))).replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ') \
         .strip()) if len(sp) > 0 else ''
 
@@ -201,31 +201,31 @@ def fetch(url, jsonData):
         if len(bp) > 0 else ''
 
     tp = get_property(content, 'Triple\u00a0point', 'td')
-    tp = translate_script(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(
+    tp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(
         tp))).replace('×10', '×10^')).strip() if len(tp) > 0 else ''
 
     cp = get_property(content, 'Critical\u00a0point', 'td')
-    cp = translate_script(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(html_elements_to_string(
+    cp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(
         cp))).replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
 
     hf = get_property(content, 'Heat\u00a0of\u00a0fusion', 'td')
-    hf = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(re.sub(r'\s+\([^)]\w*\)', '', translate_script(
-        html_elements_to_string(hf))))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '') \
+    hf = capitalize(re.sub(r'\[.+?\]|\s+\([^)]\w*\)', '', remove_html_tags(translate_script(
+        html_elements_to_string(hf)))).replace('(extrapolated) ', '').replace('? ', '').replace('(', '') \
         .replace(')', ':').replace('ca. ', '').strip()) if len(hf) > 0 else ''
 
     hv = get_property(content, 'Heat of vaporization', 'td')
-    hv = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(re.sub(r'\s+\([^)]\w*\)', '', translate_script(
-        html_elements_to_string(hv))))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
+    hv = capitalize(re.sub(r'\[.+?\]|\s+\([^)]\w*\)', '', remove_html_tags(translate_script(
+        html_elements_to_string(hv)))).replace('(extrapolated) ', '').replace('(predicted) ', '') \
         .replace('? ', '').replace('(', '').replace(')', ':').replace('ca. ', '').strip()) if len(hv) > 0 else ''
 
     mhc = get_property(content, 'Molar heat capacity', 'td')
-    mhc = capitalize(re.sub(r'\[[\w#&;]*\]', '', remove_html_tags(translate_script(html_elements_to_string(mhc)))) \
-        .replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '').replace('(', '') \
-        .replace(')', ':').replace(':\n', ': ').strip()) if len(mhc) > 0 else ''
+    mhc = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(mhc)))) \
+        .replace('(extrapolated) ', '').replace('(predicted) ', '').replace(' (Cp)', '').replace('? ', '') \
+        .replace('(', '').replace(')', ':').replace(':\n', ': ').strip()) if len(mhc) > 0 else ''
 
     os = get_property(content, 'Oxidation states', 'td')
-    os = re.sub(r'\[.+?\]', '', re.sub(r'\([^)].*\)', '', remove_html_tags(html_elements_to_string(
-        os)))).strip() if len(os) > 0 else ''
+    os = re.sub(r'\[.+?\]|\([^)].*\)', '', remove_html_tags(html_elements_to_string(os))).strip() \
+        if len(os) > 0 else ''
 
     en = get_property(content, 'Electronegativity', 'td')
     en = re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(en))) \
