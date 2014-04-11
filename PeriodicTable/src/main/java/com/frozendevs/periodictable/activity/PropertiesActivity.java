@@ -18,7 +18,9 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.AdapterView;
+import android.widget.CheckedTextView;
+import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -123,20 +125,40 @@ public class PropertiesActivity extends ActionBarActivity {
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onContextItemSelected(MenuItem item) {
-        AdapterContextMenuInfo info = (AdapterContextMenuInfo) item.getMenuInfo();
+        CharSequence propertyName, propertyValue;
 
-        TextView propertyName = (TextView)info.targetView.findViewById(R.id.property_name);
-        TextView propertyValue = (TextView)info.targetView.findViewById(R.id.property_value);
+        ContextMenu.ContextMenuInfo info = item.getMenuInfo();
+
+        if(info instanceof AdapterView.AdapterContextMenuInfo) {
+            propertyName = ((TextView)((AdapterView.AdapterContextMenuInfo)info).targetView.
+                    findViewById(R.id.property_name)).getText();
+            propertyValue = ((TextView)((AdapterView.AdapterContextMenuInfo)info).targetView.
+                    findViewById(R.id.property_value)).getText();
+        }
+        else {
+            View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
+
+            if(view instanceof CheckedTextView) {
+                propertyName = getString(R.string.property_symbol);
+                propertyValue = ((CheckedTextView)view).getText();
+            }
+            else {
+                propertyName = ((TextView)((ExpandableListView.ExpandableListContextMenuInfo)info).
+                        targetView.findViewById(R.id.property_name)).getText();
+                propertyValue = ((TextView)((ExpandableListView.ExpandableListContextMenuInfo)info).
+                        targetView.findViewById(R.id.property_value)).getText();
+            }
+        }
 
         switch (item.getItemId()) {
             case R.id.context_copy:
                 if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
                     ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
-                            setText(propertyValue.getText());
+                            setText(propertyValue);
                 }
                 else {
-                    ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).setPrimaryClip(
-                            ClipData.newPlainText(propertyName.getText(), propertyValue.getText()));
+                    ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).
+                            setPrimaryClip(ClipData.newPlainText(propertyName, propertyValue));
                 }
                 return true;
         }
