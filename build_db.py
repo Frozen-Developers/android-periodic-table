@@ -201,12 +201,12 @@ def fetch(url, jsonData):
         if len(bp) > 0 else ''
 
     tp = get_property(content, 'Triple\u00a0point', 'td')
-    tp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(
-        tp))).replace('×10', '×10^')).strip() if len(tp) > 0 else ''
+    tp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(tp))) \
+        .replace('×10', '×10^')).strip() if len(tp) > 0 else ''
 
     cp = get_property(content, 'Critical\u00a0point', 'td')
-    cp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(
-        cp))).replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
+    cp = translate_script(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(cp))) \
+        .replace('×10', '×10^').replace('(extrapolated)', '')).strip() if len(cp) > 0 else ''
 
     hf = get_property(content, 'Heat\u00a0of\u00a0fusion', 'td')
     hf = capitalize(re.sub(r'\[.+?\]|\s+\([^)]\w*\)', '', remove_html_tags(translate_script(
