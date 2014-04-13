@@ -2865,7 +2865,7 @@
                 "decayModes": [
                     "β+"
                 ],
-                "halfLife": "7.17×10⁵ a",
+                "halfLife": "7.17×10⁵ s",
                 "spin": "5+",
                 "symbol": "²⁶Al"
             },
@@ -13632,7 +13632,7 @@
         "symbol": "Rb",
         "thermalConductivity": "58.2 W·m⁻¹·K⁻¹",
         "thermalExpansion": "",
-        "triplePoint": "312.41 K,  kPa",
+        "triplePoint": "312.41 K, ? kPa",
         "vanDerWaalsRadius": "303 pm",
         "weight": "85.468",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium",
