@@ -105,7 +105,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             @Override
             public boolean onQueryTextChange(String newText) {
                 if(mViewPager.getCurrentItem() > 0)
-                    mViewPager.setCurrentItem(0, true);
+                    mViewPager.setCurrentItem(0, false);
 
                 adapter.filter(newText.toLowerCase(getResources().getConfiguration().locale));
                 return true;
@@ -133,7 +133,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         switch (item.getItemId()) {
             case R.id.action_search:
                 if(mViewPager.getCurrentItem() > 0)
-                    mViewPager.setCurrentItem(0, true);
+                    mViewPager.setCurrentItem(0, false);
                 return true;
 
             case R.id.action_about:
