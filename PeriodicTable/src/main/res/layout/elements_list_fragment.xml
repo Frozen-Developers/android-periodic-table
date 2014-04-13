@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/no_such_element"
+        android:text="@string/empty_view_no_such_element"
         android:gravity="center"/>
 
 </LinearLayout>

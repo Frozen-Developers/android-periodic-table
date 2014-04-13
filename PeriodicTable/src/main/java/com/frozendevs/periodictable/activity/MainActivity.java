@@ -94,7 +94,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
         final SearchView searchView = (SearchView)MenuItemCompat.getActionView(searchItem);
-        searchView.setQueryHint(getString(R.string.query_hint));
+        searchView.setQueryHint(getString(R.string.search_query_hint));
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

@@ -21,9 +21,11 @@
     <string name="context_title_options">Options</string>
     <string name="context_copy">Copy</string>
 
-    <string name="query_hint">Element, symbol or Z</string>
+    <!-- Search -->
+    <string name="search_query_hint">Element, symbol or Z</string>
 
-    <string name="no_such_element">No such element.</string>
+    <!-- Empty views -->
+    <string name="empty_view_no_such_element">No such element.</string>
 
     <!-- Properties headers -->
     <string name="properties_header_general">General properties</string>
