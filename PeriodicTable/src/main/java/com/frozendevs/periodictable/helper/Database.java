@@ -32,7 +32,7 @@ public class Database {
             InputStream inputStream = context.getResources().openRawResource(R.raw.database);
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
             
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[8192];
             int length;
 
             while ((length = inputStream.read(buffer)) != -1) {
