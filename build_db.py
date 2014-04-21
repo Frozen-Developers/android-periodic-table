@@ -361,7 +361,7 @@ def fetch(url, jsonData):
         isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)|\[.+?\]\s*|' \
             + r'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
         isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*|[#\?]', '', isotope[5]).replace('×10', '×10^') \
-            .replace('(.', '(0.')).strip().splitlines()
+            .replace('(.', '(0.').replace('>.', '>0.').replace('<.', '<0.')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = capitalize(fix_particle_symbol(re.sub(r'\[.+?\]|[()\?]', '', isotope[6]))).splitlines()
         isotope_tag['spin'] = re.sub(r'[#()\?]', '', isotope[7])
         isotope_tag['abundance'] = fix_abundance(capitalize(translate_script(re.sub(r'\([^)]\d*\)|\[[\w ]+\]\s*|[\[\]]', '',
