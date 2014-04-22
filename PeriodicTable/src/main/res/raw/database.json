@@ -24,7 +24,7 @@
                 "daughterIsotopes": [],
                 "decayModes": [],
                 "halfLife": "Stable",
-                "spin": "1⁄2",
+                "spin": "1/2",
                 "symbol": "¹H"
             },
             {
@@ -44,7 +44,7 @@
                     "β-"
                 ],
                 "halfLife": "12.32 y",
-                "spin": "1⁄2",
+                "spin": "1/2",
                 "symbol": "³H"
             },
             {
@@ -68,7 +68,7 @@
                     "n"
                 ],
                 "halfLife": ">9.1×10⁻²² s",
-                "spin": "1⁄2",
+                "spin": "1/2",
                 "symbol": "⁵H"
             },
             {
@@ -94,7 +94,7 @@
                     "4n"
                 ],
                 "halfLife": "2.3×10⁻²³ s",
-                "spin": "1⁄2",
+                "spin": "1/2",
                 "symbol": "⁷H"
             }
         ],
@@ -684,7 +684,7 @@
                     "p"
                 ],
                 "halfLife": "350×10⁻²⁴ s",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "⁷B"
             },
             {
@@ -708,7 +708,7 @@
                     "p"
                 ],
                 "halfLife": "800×10⁻²¹ s",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "⁹B"
             },
             {
@@ -724,7 +724,7 @@
                 "daughterIsotopes": [],
                 "decayModes": [],
                 "halfLife": "Stable",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "¹¹B"
             },
             {
@@ -752,7 +752,7 @@
                     "β−, n (0.279%)"
                 ],
                 "halfLife": "17.33 ms",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "¹³B"
             },
             {
@@ -782,7 +782,7 @@
                     "β−, 2n (0.40%)"
                 ],
                 "halfLife": "9.87 ms",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "¹⁵B"
             },
             {
@@ -814,7 +814,7 @@
                     "β−, 4n (0.40%)"
                 ],
                 "halfLife": "5.08 ms",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "¹⁷B"
             },
             {
@@ -838,7 +838,7 @@
                     "β−"
                 ],
                 "halfLife": "2.92 ms",
-                "spin": "−3⁄2",
+                "spin": "−3/2",
                 "symbol": "¹⁹B"
             }
         ],
@@ -1560,7 +1560,7 @@
         "youngsModulus": ""
     },
     {
-        "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: transparent (beta)",
+        "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: transparent",
         "atomicNumber": "9",
         "atomicRadius": "",
         "block": "p",
@@ -21660,12 +21660,12 @@
         "covalentRadius": "139±4 pm",
         "criticalPoint": "",
         "crystalStructure": "White: tetragonal\nGray: diamond cubic",
-        "density": "White: 7.365 g·cm⁻³\nGray: 5.769 g·cm⁻³",
+        "density": "White, β: 7.365 g·cm⁻³\nGray, α: 5.769 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p²\n2, 8, 18, 18, 4",
         "electronegativity": "1.96 (Pauling scale)",
         "group": "14",
-        "heatOfFusion": "White: 7.03 kJ·mol⁻¹",
-        "heatOfVaporization": "White: 296.1 kJ·mol⁻¹",
+        "heatOfFusion": "White, β: 7.03 kJ·mol⁻¹",
+        "heatOfVaporization": "White, β: 296.1 kJ·mol⁻¹",
         "ionizationEnergies": "1st: 708.6 kJ·mol⁻¹\n2nd: 1411.8 kJ·mol⁻¹\n3rd: 2943.0 kJ·mol⁻¹",
         "isotopes": [
             {
@@ -22422,7 +22422,7 @@
         "magneticOrdering": "Gray: diamagnetic\nWhite: paramagnetic",
         "meltingPoint": "505.08 K / 231.93 °C / 449.47 °F",
         "mohsHardness": "1.5",
-        "molarHeatCapacity": "White: 27.112 J·mol⁻¹·K⁻¹",
+        "molarHeatCapacity": "White, β: 27.112 J·mol⁻¹·K⁻¹",
         "name": "Tin",
         "oxidationStates": "4, 3, 2, 1, -4",
         "period": "5",

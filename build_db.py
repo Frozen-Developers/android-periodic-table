@@ -161,7 +161,7 @@ def fetch(url, jsonData):
     wl = URL_PREFIX + content.xpath('//table[@class="infobox bordered"]/tr/td/table/tr/td/table/tr/td/span/b/a/@href')[0]
 
     apr = get_property(content, 'Appearance', 'following-sibling::tr/td/text()')
-    apr = re.sub(r'\s*.+\s+\s+.+', '', capitalize(re.sub(r'\s*\([^)]\w+\s\w+\s\w+\s\w+\)|\s*\([^)]\w+,\s\w+\)|unknown|' \
+    apr = re.sub(r'\s*.+\s+\s+.+', '', capitalize(re.sub(r'\s*\([^)].+?\)|unknown|' \
         + nsm[0].lower(), '', ''.join(apr).split('\n\n')[0]).split('.')[0].split(',')[0].replace(';', ',') \
         .split('exhibiting')[0].replace(nsm[0].lower(), '').split('corrodes')[0].strip('\n, '))) \
         if len(apr) > 0 else ''
@@ -270,7 +270,7 @@ def fetch(url, jsonData):
         cs = ''
 
     mo = get_property(content, 'Magnetic ordering', 'td')
-    mo = capitalize(re.sub(r'\[.+?\]|\([^)].*\)\s*|no data', '', remove_html_tags(html_elements_to_string(mo))) \
+    mo = capitalize(re.sub(r'\[.+?\]|\s*\([^)].*\)|no data', '', remove_html_tags(html_elements_to_string(mo))) \
         .strip()) if len(mo) > 0 else ''
 
     tc = get_property(content, 'Thermal conductivity', 'td')
@@ -360,10 +360,10 @@ def fetch(url, jsonData):
         isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*|' + nsm[1], '', isotope[0])) + nsm[1]
         isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)|\[.+?\]\s*|' \
             + r'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
-        isotope_tag['decayModes'] = translate_script(re.sub(r'\[.+?\]\s*|[#\?]', '', isotope[5]).replace('×10', '×10^') \
-            .replace('(.', '(0.').replace('>.', '>0.').replace('<.', '<0.')).strip().splitlines()
+        isotope_tag['decayModes'] = translate_script(re.sub(r'([(<>])(\.)', r'\1(0)\2',
+            re.sub(r'\[.+?\]\s*|[#\?]', '', isotope[5]).replace('×10', '×10^')).replace('(0)', '0')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = capitalize(fix_particle_symbol(re.sub(r'\[.+?\]|[()\?]', '', isotope[6]))).splitlines()
-        isotope_tag['spin'] = re.sub(r'([\d\/\⁄]+)([−])', r'\2\1', re.sub(r'[#()\?\+]', '', isotope[7].replace('-', '−')))
+        isotope_tag['spin'] = re.sub(r'([\d\/]+)(−)', r'\2\1', re.sub(r'[#()\?\+]', '', replace_chars(isotope[7], '-⁄', '−/')))
         isotope_tag['abundance'] = fix_abundance(capitalize(translate_script(re.sub(r'\([^)]\d*\)|\[[\w ]+\]\s*|[\[\]]', '',
             isotope[8].lower()).replace('×10', '×10^')))) if len(isotope) > 8 else ''
         isotopes_tag.append(isotope_tag)
