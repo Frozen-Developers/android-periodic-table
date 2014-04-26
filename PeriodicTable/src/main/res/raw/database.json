@@ -2865,7 +2865,7 @@
                 "decayModes": [
                     "β⁺"
                 ],
-                "halfLife": "7.17×10⁵ s",
+                "halfLife": "7.17×10⁵ y",
                 "spin": "5",
                 "symbol": "²⁶Al"
             },
@@ -3083,7 +3083,7 @@
         "magneticOrdering": "Paramagnetic",
         "meltingPoint": "933.47 K / 660.32 °C / 1220.58 °F",
         "mohsHardness": "2.75",
-        "molarHeatCapacity": "24.200 J·mol⁻¹·K⁻¹",
+        "molarHeatCapacity": "24.20 J·mol⁻¹·K⁻¹",
         "name": "Aluminium",
         "oxidationStates": "3, 2, 1",
         "period": "3",
@@ -14175,7 +14175,7 @@
                 ],
                 "decayModes": [
                     "p (>99.9%)",
-                    "β⁺ (<0.01%)"
+                    "β⁺ (<0.1%)"
                 ],
                 "halfLife": "63 ms",
                 "spin": "5/2",
