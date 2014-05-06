@@ -1860,7 +1860,7 @@
                 "abundance": "",
                 "daughterIsotopes": [
                     "¹⁶O",
-                    "¹³C",
+                    "¹³N",
                     "¹⁷F"
                 ],
                 "decayModes": [
@@ -2467,7 +2467,7 @@
                 "daughterIsotopes": [
                     "²¹Na",
                     "²⁰Ne",
-                    "¹⁶F"
+                    "¹⁷F"
                 ],
                 "decayModes": [
                     "β⁺ (66.9%)",
@@ -2993,7 +2993,7 @@
                 "abundance": "",
                 "daughterIsotopes": [
                     "³⁵Si",
-                    "³³Si"
+                    "³⁴Si"
                 ],
                 "decayModes": [
                     "β⁻ (74%)",
@@ -3469,7 +3469,7 @@
                 "decayModes": [
                     "β⁺ (98.1%)",
                     "β⁺, 2p (1.0%)",
-                    "β⁺, p (0.09%)"
+                    "β⁺, p (0.9%)"
                 ],
                 "halfLife": "43.7 ms",
                 "spin": "3",
@@ -39854,10 +39854,12 @@
             {
                 "abundance": "",
                 "daughterIsotopes": [
-                    "Various"
+                    "Various",
+                    "²⁶⁶Lr"
                 ],
                 "decayModes": [
-                    "SF"
+                    "SF",
+                    "α"
                 ],
                 "halfLife": "23.15 h",
                 "spin": "",
@@ -57446,6 +57448,38 @@
                 "halfLife": "216 min",
                 "spin": "",
                 "symbol": "²⁶²Lr"
+            },
+            {
+                "abundance": "",
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "5 h",
+                "spin": "",
+                "symbol": "²⁶³Lr"
+            },
+            {
+                "abundance": "",
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "10 h",
+                "spin": "",
+                "symbol": "²⁶⁴Lr"
+            },
+            {
+                "abundance": "",
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "10 h",
+                "spin": "",
+                "symbol": "²⁶⁵Lr"
+            },
+            {
+                "abundance": "",
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "1 h",
+                "spin": "",
+                "symbol": "²⁶⁶Lr"
             }
         ],
         "liquidDensityAtBoilingPoint": "",
