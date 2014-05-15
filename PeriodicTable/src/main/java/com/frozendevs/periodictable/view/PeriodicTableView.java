@@ -89,6 +89,8 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
     public void onGlobalLayout() {
         measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
 
+        boolean isMinZoom = mMinZoom == mZoom;
+
         mMinZoom = Math.min((getWidth() - (HORIZONTAL_SPACERS_COUNT * DEFAULT_SPACING)) / COLUMNS_COUNT,
                 (getHeight() - (VERTICAL_SPACERS_COUNT * DEFAULT_SPACING)) / ROWS_COUNT) / DEFAULT_TILE_SIZE;
 
@@ -97,10 +99,21 @@ public class PeriodicTableView extends View implements ViewTreeObserver.OnGlobal
         else
             mMaxZoom = DEFAULT_MAX_ZOOM;
 
-        mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
+        if(!isMinZoom)
+            mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
+        else
+            mZoom = mMinZoom;
 
         if(mZoom > 0f) {
-            scrollTo(getMinimalScrollX(), getMinimalScrollY());
+            if(getScrollX() < getMinimalScrollX())
+                scrollTo(getMinimalScrollX(), getScrollY());
+            else if(getScrollX() > getMaximalScrollX())
+                scrollTo(getMaximalScrollX(), getScrollY());
+
+            if(getScrollY() < getMinimalScrollY())
+                scrollTo(getScrollX(), getMinimalScrollY());
+            else if(getScrollY() > getMaximalScrollY())
+                scrollTo(getScrollX(), getMaximalScrollY());
         }
 
         invalidate();
