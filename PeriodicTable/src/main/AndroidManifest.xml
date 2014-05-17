@@ -28,8 +28,7 @@
 
         <activity android:name="com.frozendevs.periodictable.activity.PropertiesActivity"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
-            android:launchMode="singleTop"
-            android:configChanges="orientation|screenSize" >
+            android:launchMode="singleTop">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
