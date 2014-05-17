@@ -359,7 +359,7 @@ def fetch(url, jsonData):
         isotope_tag = { }
         isotope_tag['symbol'] = replace_with_superscript(re.sub(r'\[.+?\]\s*|' + nsm[1], '', isotope[0])) + nsm[1]
         isotope_tag['halfLife'] = re.sub(r'yr[s]?|years', 'y', translate_script(re.sub(r'\([^)][\d\.]*\)|\[.+?\]\s*|' \
-            + r'observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
+            + r'\([^)][^\-\+]+, [^\-\+]+\)|observationally|[#\?]|unknown', '', isotope[4].lower()).replace('×10', '×10^').strip()).capitalize())
         isotope_tag['decayModes'] = translate_script(re.sub(r'([(<>])(\.)', r'\1(0)\2', re.sub(r'\[.+?\]\s*|[#\?]', '',
             isotope[5]).replace('×10', '×10^')).replace('(0)', '0')).strip().splitlines()
         isotope_tag['daughterIsotopes'] = capitalize(fix_particle_symbol(re.sub(r'\[.+?\]|[()\?]', '', isotope[6]))).splitlines()
