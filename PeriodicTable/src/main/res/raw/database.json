@@ -4165,7 +4165,7 @@
                 "abundance": "",
                 "daughterIsotopes": [
                     "³²S",
-                    "²⁸Al",
+                    "²⁸Si",
                     "³¹P"
                 ],
                 "decayModes": [
@@ -25070,7 +25070,7 @@
                 "decayModes": [
                     "β⁻β⁻"
                 ],
-                "halfLife": "2.38(0.02, 0.14)×10²¹ y",
+                "halfLife": "2.165×10²¹ y",
                 "spin": "0",
                 "symbol": "¹³⁶Xe"
             },
@@ -51815,6 +51815,18 @@
         "isotopes": [
             {
                 "abundance": "",
+                "daughterIsotopes": [
+                    "²⁰¹Fr"
+                ],
+                "decayModes": [
+                    "α"
+                ],
+                "halfLife": "20(+97-9) ms",
+                "spin": "",
+                "symbol": "²⁰⁵Ac"
+            },
+            {
+                "abundance": "",
                 "daughterIsotopes": [],
                 "decayModes": [],
                 "halfLife": "25 ms",
@@ -57452,32 +57464,10 @@
             {
                 "abundance": "",
                 "daughterIsotopes": [],
-                "decayModes": [],
-                "halfLife": "5 h",
-                "spin": "",
-                "symbol": "²⁶³Lr"
-            },
-            {
-                "abundance": "",
-                "daughterIsotopes": [],
-                "decayModes": [],
-                "halfLife": "10 h",
-                "spin": "",
-                "symbol": "²⁶⁴Lr"
-            },
-            {
-                "abundance": "",
-                "daughterIsotopes": [],
-                "decayModes": [],
-                "halfLife": "10 h",
-                "spin": "",
-                "symbol": "²⁶⁵Lr"
-            },
-            {
-                "abundance": "",
-                "daughterIsotopes": [],
-                "decayModes": [],
-                "halfLife": "1 h",
+                "decayModes": [
+                    "SF"
+                ],
+                "halfLife": "11 h",
                 "spin": "",
                 "symbol": "²⁶⁶Lr"
             }
@@ -57500,7 +57490,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
-        "weight": "[262]",
+        "weight": "[266]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium",
         "youngsModulus": ""
     }
