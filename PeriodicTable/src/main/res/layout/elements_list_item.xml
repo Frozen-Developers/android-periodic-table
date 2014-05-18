@@ -22,13 +22,15 @@
             android:id="@+id/element_symbol"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:singleLine="true"/>
 
         <TextView
             android:id="@+id/element_number"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"/>
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:singleLine="true"/>
 
     </LinearLayout>
 
@@ -37,6 +39,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_gravity="center_vertical"/>
+        android:layout_gravity="center_vertical"
+        android:singleLine="true"/>
 
 </LinearLayout>
