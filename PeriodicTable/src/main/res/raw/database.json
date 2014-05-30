@@ -62,10 +62,10 @@
             {
                 "abundance": "",
                 "daughterIsotopes": [
-                    "⁴H"
+                    "³H"
                 ],
                 "decayModes": [
-                    "n"
+                    "2n"
                 ],
                 "halfLife": ">9.1×10⁻²² s",
                 "spin": "1/2",
