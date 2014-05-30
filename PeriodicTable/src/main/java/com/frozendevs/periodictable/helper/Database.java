@@ -8,6 +8,7 @@ import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.TableItem;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -77,8 +78,8 @@ public class Database {
     }
 
     public ElementProperties getElementProperties(int element) {
-        for(int i = 0; i < jsonArray.size(); i++) {
-            JsonObject object = jsonArray.get(i).getAsJsonObject();
+        for(JsonElement jsonElement : jsonArray) {
+            JsonObject object = jsonElement.getAsJsonObject();
 
             if(object.get("atomicNumber").getAsInt() == element)
                 return gson.fromJson(object, ElementProperties.class);

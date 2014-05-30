@@ -44,21 +44,17 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_symbol, properties.getSymbol()),
                 new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
                 new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
-                new Property(R.string.property_group, properties.getGroup() > 0 ?
-                        properties.getGroup() : 3),
+                new Property(R.string.property_group, properties.getGroup() > 0 ? properties.getGroup() : 3),
                 new Property(R.string.property_period, properties.getPeriod()),
                 new Property(R.string.property_block, properties.getBlock()),
                 new Property(R.string.property_category, properties.getCategory()),
-                new Property(R.string.property_electron_configuration,
-                        properties.getElectronConfiguration()),
+                new Property(R.string.property_electron_configuration, properties.getElectronConfiguration()),
                 new Property(R.string.properties_header_physical, null),
                 new Property(R.string.property_appearance, properties.getAppearance()),
                 new Property(R.string.property_phase, properties.getPhase()),
                 new Property(R.string.property_density, properties.getDensity()),
-                new Property(R.string.property_liquid_density_at_mp,
-                        properties.getLiquidDensityAtMeltingPoint()),
-                new Property(R.string.property_liquid_density_at_bp,
-                        properties.getLiquidDensityAtBoilingPoint()),
+                new Property(R.string.property_liquid_density_at_mp, properties.getLiquidDensityAtMeltingPoint()),
+                new Property(R.string.property_liquid_density_at_bp, properties.getLiquidDensityAtBoilingPoint()),
                 new Property(R.string.property_melting_point, properties.getMeltingPoint()),
                 new Property(R.string.property_sublimation_point, properties.getSublimationPoint()),
                 new Property(R.string.property_boiling_point, properties.getBoilingPoint()),
@@ -111,12 +107,11 @@ public class PropertiesAdapter extends BaseAdapter {
         Property property = getItem(position);
 
         if(getItemViewType(position) == VIEW_TYPE_ITEM) {
-            TextView name = (TextView)view.findViewById(R.id.property_name);
-            name.setText(property.name);
+            ((TextView)view.findViewById(R.id.property_name)).setText(property.name);
 
             TextView value = (TextView)view.findViewById(R.id.property_value);
-            value.setText(!property.value.equals("") ?
-                    property.value : context.getString(R.string.property_value_unknown));
+            value.setText(!property.value.equals("") ? property.value :
+                    context.getString(R.string.property_value_unknown));
             value.setTypeface(typeface);
         }
         else {

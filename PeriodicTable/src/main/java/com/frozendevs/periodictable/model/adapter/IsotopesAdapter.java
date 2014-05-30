@@ -59,7 +59,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                 String[] daughterIsotopes = isotopes[groupPosition].getDaughterIsotopes();
 
                 String combined = "";
-                for(int i = 0; i < decayModes.length; i++) {
+                for(int i = 0; i < decayModes.length && i < daughterIsotopes.length; i++) {
                     combined += decayModes[i];
                     if(i < daughterIsotopes.length)
                         combined += " \u2192 " + daughterIsotopes[i];
@@ -118,7 +118,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         name.setText(property[0]);
 
         TextView value = (TextView)view.findViewById(R.id.property_value);
-        if((getChild(groupPosition, 0)[1].equals("Stable") && childPosition == PROPERTY_DECAY_MODES)
+        if((getChild(groupPosition, 0)[1].equalsIgnoreCase("Stable") && childPosition == PROPERTY_DECAY_MODES)
                 || (property[1].equals("") && childPosition == PROPERTY_ABUNDANCE))
             value.setText(getString(R.string.property_value_none));
         else if(property[1].equals(""))
