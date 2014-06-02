@@ -21,15 +21,15 @@ import java.util.Locale;
 
 public class ElementsAdapter extends BaseAdapter {
 
-    private List<ElementListItem> elements, filteredElements;
-    private Activity activity;
+    private List<ElementListItem> mElements, mFilteredElements;
+    private Activity mActivity;
 
     private class LoadItems extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected Void doInBackground(Void... params) {
-            elements = Database.getInstance(activity).getElementListItems();
-            filteredElements = new ArrayList<ElementListItem>(elements);
+            mElements = Database.getInstance(mActivity).getElementListItems();
+            mFilteredElements = new ArrayList<ElementListItem>(mElements);
 
             return null;
         }
@@ -38,28 +38,28 @@ public class ElementsAdapter extends BaseAdapter {
         protected void onPostExecute(Void result) {
             notifyDataSetChanged();
 
-            ListView listView = (ListView)activity.findViewById(R.id.elements_list);
-            listView.setEmptyView(activity.findViewById(R.id.empty_elements_list));
+            ListView listView = (ListView)mActivity.findViewById(R.id.elements_list);
+            listView.setEmptyView(mActivity.findViewById(R.id.empty_elements_list));
         }
     }
 
     public ElementsAdapter(Activity activity) {
-        this.activity = activity;
+        mActivity = activity;
 
-        elements = new ArrayList<ElementListItem>();
-        filteredElements = new ArrayList<ElementListItem>();
+        mElements = new ArrayList<ElementListItem>();
+        mFilteredElements = new ArrayList<ElementListItem>();
 
         new LoadItems().execute();
     }
 
     @Override
     public int getCount() {
-        return filteredElements.size();
+        return mFilteredElements.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return filteredElements.get(position);
+        return mFilteredElements.get(position);
     }
 
     @Override
@@ -69,9 +69,9 @@ public class ElementsAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final ElementListItem element = filteredElements.get(position);
+        final ElementListItem element = mFilteredElements.get(position);
 
-        View view = LayoutInflater.from(activity).inflate(R.layout.elements_list_item, parent, false);
+        View view = LayoutInflater.from(mActivity).inflate(R.layout.elements_list_item, parent, false);
 
         TextView symbol = (TextView)view.findViewById(R.id.element_symbol);
         symbol.setText(element.getSymbol());
@@ -85,9 +85,9 @@ public class ElementsAdapter extends BaseAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity, PropertiesActivity.class);
+                Intent intent = new Intent(mActivity, PropertiesActivity.class);
                 intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, element.getAtomicNumber());
-                activity.startActivity(intent);
+                mActivity.startActivity(intent);
             }
         });
 
@@ -97,7 +97,7 @@ public class ElementsAdapter extends BaseAdapter {
     public void filter(String filter) {
         List<ElementListItem> items = new ArrayList<ElementListItem>();
 
-        for(ElementListItem element : elements) {
+        for(ElementListItem element : mElements) {
             if(element.getSymbol().equalsIgnoreCase(filter) ||
                     String.valueOf(element.getAtomicNumber()).equals(filter)) {
                 items.add(element);
@@ -105,22 +105,22 @@ public class ElementsAdapter extends BaseAdapter {
             }
         }
 
-        Locale locale = activity.getResources().getConfiguration().locale;
+        Locale locale = mActivity.getResources().getConfiguration().locale;
 
         if(items.isEmpty()) {
-            for(ElementListItem element : elements) {
+            for(ElementListItem element : mElements) {
                 if(element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale)))
                     items.add(element);
             }
         }
 
-        filteredElements = items;
+        mFilteredElements = items;
 
         notifyDataSetChanged();
     }
 
     public void clearFilter() {
-        filteredElements = new ArrayList<ElementListItem>(elements);
+        mFilteredElements = new ArrayList<ElementListItem>(mElements);
 
         notifyDataSetChanged();
     }

@@ -19,22 +19,22 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     private static final int PROPERTY_SPIN = 2;
     private static final int PROPERTY_ABUNDANCE = 3;
 
-    private Context context;
+    private Context mContext;
 
-    private Typeface typeface;
-    private Isotope[] isotopes;
+    private Typeface mTypeface;
+    private Isotope[] mIsotopes;
 
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
-        this.context = context;
+        mContext = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
+        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        this.isotopes = isotopes;
+        mIsotopes = isotopes;
     }
 
     @Override
     public int getGroupCount() {
-        return isotopes.length;
+        return mIsotopes.length;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
     @Override
     public String getGroup(int groupPosition) {
-        return isotopes[groupPosition].getSymbol();
+        return mIsotopes[groupPosition].getSymbol();
     }
 
     @Override
@@ -52,11 +52,11 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         switch (childPosition) {
             case PROPERTY_HALF_LIFE:
                 return new String[] { getString(R.string.property_half_life),
-                        isotopes[groupPosition].getHalfLife() };
+                        mIsotopes[groupPosition].getHalfLife() };
 
             case PROPERTY_DECAY_MODES:
-                String[] decayModes = isotopes[groupPosition].getDecayModes();
-                String[] daughterIsotopes = isotopes[groupPosition].getDaughterIsotopes();
+                String[] decayModes = mIsotopes[groupPosition].getDecayModes();
+                String[] daughterIsotopes = mIsotopes[groupPosition].getDaughterIsotopes();
 
                 String combined = "";
                 for(int i = 0; i < decayModes.length && i < daughterIsotopes.length; i++) {
@@ -71,11 +71,11 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
             case PROPERTY_SPIN:
                 return new String[] { getString(R.string.property_spin),
-                        isotopes[groupPosition].getSpin() };
+                        mIsotopes[groupPosition].getSpin() };
 
             case PROPERTY_ABUNDANCE:
                 return new String[] { getString(R.string.property_abundance),
-                        isotopes[groupPosition].getAbundance() };
+                        mIsotopes[groupPosition].getAbundance() };
         }
 
         return null;
@@ -99,10 +99,10 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                              ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.isotope_list_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
 
         ((CheckedTextView)view).setText(getGroup(groupPosition));
-        ((CheckedTextView)view).setTypeface(typeface);
+        ((CheckedTextView)view).setTypeface(mTypeface);
 
         return view;
     }
@@ -110,7 +110,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.properties_list_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item, parent, false);
 
         String[] property = getChild(groupPosition, childPosition);
 
@@ -125,7 +125,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
             value.setText(getString(R.string.property_value_unknown));
         else
             value.setText(property[1]);
-        value.setTypeface(typeface);
+        value.setTypeface(mTypeface);
 
         return view;
     }
@@ -136,6 +136,6 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     }
 
     private String getString(int resId) {
-        return context.getString(resId);
+        return mContext.getString(resId);
     }
 }

@@ -16,30 +16,38 @@ public class PropertiesAdapter extends BaseAdapter {
     private static final int VIEW_TYPE_HEADER = 0;
     private static final int VIEW_TYPE_ITEM = 1;
 
-    private Context context;
-    private Typeface typeface;
-    private Property[] propertiesPairs = new Property[0];
+    private Context mContext;
+    private Typeface mTypeface;
+    private Property[] mPropertiesPairs = new Property[0];
 
     private class Property {
-        int name;
-        String value;
+        int mName;
+        String mValue;
 
         Property(int name, String value) {
-            this.name = name;
-            this.value = value;
+            mName = name;
+            mValue = value;
         }
 
         Property(int name, int value) {
             this(name, String.valueOf(value));
         }
+
+        int getName() {
+            return mName;
+        }
+
+        String getValue() {
+            return mValue;
+        }
     }
 
     public PropertiesAdapter(Context context, ElementProperties properties) {
-        this.context = context;
+        mContext = context;
 
-        typeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
+        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        propertiesPairs = new Property[] {
+        mPropertiesPairs = new Property[] {
                 new Property(R.string.properties_header_general, null),
                 new Property(R.string.property_symbol, properties.getSymbol()),
                 new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
@@ -86,12 +94,12 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return propertiesPairs.length;
+        return mPropertiesPairs.length;
     }
 
     @Override
     public Property getItem(int position) {
-        return propertiesPairs[position];
+        return mPropertiesPairs[position];
     }
 
     @Override
@@ -101,21 +109,21 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
+        View view = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
                 ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
 
         Property property = getItem(position);
 
         if(getItemViewType(position) == VIEW_TYPE_ITEM) {
-            ((TextView)view.findViewById(R.id.property_name)).setText(property.name);
+            ((TextView)view.findViewById(R.id.property_name)).setText(property.getName());
 
             TextView value = (TextView)view.findViewById(R.id.property_value);
-            value.setText(!property.value.equals("") ? property.value :
-                    context.getString(R.string.property_value_unknown));
-            value.setTypeface(typeface);
+            value.setText(!property.getValue().equals("") ? property.getValue() :
+                    mContext.getString(R.string.property_value_unknown));
+            value.setTypeface(mTypeface);
         }
         else {
-            ((TextView)view).setText(property.name);
+            ((TextView)view).setText(property.getName());
         }
 
         return view;
@@ -133,7 +141,7 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public int getItemViewType(int position) {
-        return getItem(position).value != null ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
+        return getItem(position).getValue() != null ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
     }
 
     @Override

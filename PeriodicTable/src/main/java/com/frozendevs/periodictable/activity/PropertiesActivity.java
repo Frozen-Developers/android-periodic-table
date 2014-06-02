@@ -35,16 +35,16 @@ public class PropertiesActivity extends ActionBarActivity {
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
-    private ElementProperties elementProperties;
+    private ElementProperties mElementProperties;
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Fragment[] fragments = new Fragment[] {
+        private Fragment[] mFragments = new Fragment[] {
                 new PropertiesFragment(),
                 new IsotopesFragment()
         };
 
-        private int[] titles = new int[] {
+        private int[] mTitles = new int[] {
                 R.string.fragment_title_details,
                 R.string.fragment_title_isotopes
         };
@@ -56,20 +56,20 @@ public class PropertiesActivity extends ActionBarActivity {
         @Override
         public Fragment getItem(int i) {
             Bundle bundle = new Bundle();
-            bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
-            fragments[i].setArguments(bundle);
+            bundle.putSerializable(ARGUMENT_PROPERTIES, mElementProperties);
+            mFragments[i].setArguments(bundle);
 
-            return fragments[i];
+            return mFragments[i];
         }
 
         @Override
         public int getCount() {
-            return fragments.length;
+            return mFragments.length;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return getString(titles[position]).toUpperCase(getResources().getConfiguration().locale);
+            return getString(mTitles[position]).toUpperCase(getResources().getConfiguration().locale);
         }
     }
 
@@ -79,10 +79,10 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        elementProperties = Database.getInstance(this).getElementProperties(
+        mElementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
 
-        getSupportActionBar().setTitle(elementProperties.getName());
+        getSupportActionBar().setTitle(mElementProperties.getName());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
@@ -103,7 +103,7 @@ public class PropertiesActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.action_wiki:
                 startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(elementProperties.getWikipediaLink())));
+                        Uri.parse(mElementProperties.getWikipediaLink())));
                 return true;
 
             case android.R.id.home:

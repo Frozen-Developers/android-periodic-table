@@ -22,9 +22,9 @@ import java.util.List;
 
 public class Database {
 
-    private String input;
-    private JsonArray jsonArray;
-    private Gson gson;
+    private String mInput;
+    private JsonArray mJsonArray;
+    private Gson mGson;
 
     private static Database instance;
 
@@ -40,7 +40,7 @@ public class Database {
                 outputStream.write(buffer, 0, length);
             }
 
-            input = new String(outputStream.toByteArray());
+            mInput = new String(outputStream.toByteArray());
 
             outputStream.close();
             inputStream.close();
@@ -48,8 +48,8 @@ public class Database {
             e.printStackTrace();
         }
 
-        jsonArray = new JsonParser().parse(input).getAsJsonArray();
-        gson = new Gson();
+        mJsonArray = new JsonParser().parse(mInput).getAsJsonArray();
+        mGson = new Gson();
     }
 
     public static synchronized Database getInstance(Context context) {
@@ -61,7 +61,7 @@ public class Database {
 
     public List<ElementListItem> getElementListItems() {
         List<ElementListItem> itemsList = new ArrayList<ElementListItem>(Arrays.asList(
-            gson.fromJson(input, ElementListItem[].class)));
+                mGson.fromJson(mInput, ElementListItem[].class)));
 
         Collections.sort(itemsList, new Comparator<ElementListItem>() {
             @Override
@@ -74,15 +74,15 @@ public class Database {
     }
 
     public TableItem[] getTableItems() {
-        return gson.fromJson(input, TableItem[].class);
+        return mGson.fromJson(mInput, TableItem[].class);
     }
 
     public ElementProperties getElementProperties(int element) {
-        for(JsonElement jsonElement : jsonArray) {
+        for(JsonElement jsonElement : mJsonArray) {
             JsonObject object = jsonElement.getAsJsonObject();
 
             if(object.get("atomicNumber").getAsInt() == element)
-                return gson.fromJson(object, ElementProperties.class);
+                return mGson.fromJson(object, ElementProperties.class);
         }
 
         return null;

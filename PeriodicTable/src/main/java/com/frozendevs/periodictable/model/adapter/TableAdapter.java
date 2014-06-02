@@ -11,13 +11,13 @@ import com.frozendevs.periodictable.model.TableItem;
 
 public class TableAdapter extends BaseAdapter {
 
-    private TableItem[] items = new TableItem[0];
+    private TableItem[] mItems = new TableItem[0];
 
     private class LoadItems extends AsyncTask<Context, Void, Void> {
 
         @Override
         protected Void doInBackground(Context... params) {
-            items = Database.getInstance(params[0]).getTableItems();
+            mItems = Database.getInstance(params[0]).getTableItems();
 
             return null;
         }
@@ -34,12 +34,12 @@ public class TableAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return items.length;
+        return mItems.length;
     }
 
     @Override
     public TableItem getItem(int position) {
-        for (TableItem item : items) {
+        for (TableItem item : mItems) {
             if (((item.getPeriod() - 1) * 18) + item.getGroup() - 1 == position)
                 return item;
             else if (position >= 128 && position <= 142) {
