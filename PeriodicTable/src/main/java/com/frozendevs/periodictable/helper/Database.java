@@ -26,7 +26,7 @@ public class Database {
     private JsonArray mJsonArray;
     private Gson mGson;
 
-    private static Database instance;
+    private static Database mInstance;
 
     private Database(Context context) {
         try {
@@ -53,10 +53,11 @@ public class Database {
     }
 
     public static synchronized Database getInstance(Context context) {
-        if(instance == null)
-            instance = new Database(context);
+        if(mInstance == null) {
+            mInstance = new Database(context);
+        }
 
-        return instance;
+        return mInstance;
     }
 
     public List<ElementListItem> getElementListItems() {
