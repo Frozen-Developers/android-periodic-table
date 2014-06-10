@@ -39,37 +39,50 @@ public class PropertiesActivity extends ActionBarActivity {
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Fragment[] mFragments = new Fragment[] {
-                new PropertiesFragment(),
-                new IsotopesFragment()
-        };
-
-        private int[] mTitles = new int[] {
-                R.string.fragment_title_details,
-                R.string.fragment_title_isotopes
-        };
-
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int i) {
+            Fragment fragment;
+
+            switch (i) {
+                case 0:
+                    fragment = new PropertiesFragment();
+                    break;
+
+                case 1:
+                    fragment = new IsotopesFragment();
+                    break;
+
+                default:
+                    return null;
+            }
+
             Bundle bundle = new Bundle();
             bundle.putSerializable(ARGUMENT_PROPERTIES, mElementProperties);
-            mFragments[i].setArguments(bundle);
+            fragment.setArguments(bundle);
 
-            return mFragments[i];
+            return fragment;
         }
 
         @Override
         public int getCount() {
-            return mFragments.length;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return getString(mTitles[position]).toUpperCase(getResources().getConfiguration().locale);
+            switch (position) {
+                case 0:
+                    return getString(R.string.fragment_title_details);
+
+                case 1:
+                    return getString(R.string.fragment_title_isotopes);
+            }
+
+            return null;
         }
     }
 

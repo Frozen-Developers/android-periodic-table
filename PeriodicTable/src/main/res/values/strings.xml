@@ -7,8 +7,8 @@
     <!-- Fragments -->
     <string name="fragment_title_elements">Elements</string>
     <string name="fragment_title_table">Table</string>
-    <string name="fragment_title_details">Details</string>
-    <string name="fragment_title_isotopes">Isotopes</string>
+    <string name="fragment_title_details">DETAILS</string>
+    <string name="fragment_title_isotopes">ISOTOPES</string>
 
     <!-- Progress bar -->
     <string name="progressbar_loading">Loading…</string>

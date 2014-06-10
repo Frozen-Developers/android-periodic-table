@@ -27,33 +27,39 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
 
     private class SectionsPagerAdapter extends FragmentPagerAdapter {
 
-        private Fragment[] mFragments = new Fragment[] {
-                new ElementsFragment(),
-                new TableFragment()
-        };
-
-        private int[] mTitles = new int[] {
-            R.string.fragment_title_elements,
-            R.string.fragment_title_table
-        };
-
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
         @Override
         public Fragment getItem(int i) {
-            return mFragments[i];
+            switch (i) {
+                case 0:
+                    return new ElementsFragment();
+
+                case 1:
+                    return new TableFragment();
+            }
+
+            return null;
         }
 
         @Override
         public int getCount() {
-            return mFragments.length;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return getString(mTitles[position]);
+            switch (position) {
+                case 0:
+                    return getString(R.string.fragment_title_elements);
+
+                case 1:
+                    return getString(R.string.fragment_title_table);
+            }
+
+            return null;
         }
     }
 
