@@ -28,6 +28,7 @@
     <string name="empty_view_no_such_element">No such element.</string>
 
     <!-- Properties headers -->
+    <string name="properties_header_summary">Summary</string>
     <string name="properties_header_general">General properties</string>
     <string name="properties_header_physical">Physical properties</string>
     <string name="properties_header_atomic">Atomic properties</string>
@@ -71,6 +72,9 @@
     <string name="property_bulk_modulus">Bulk modulus</string>
     <string name="property_mohs_hardness">Mohs hardness</string>
     <string name="property_brinell_hardness">Brinell hardness</string>
+
+    <!-- Properties symbols -->
+    <string name="property_electronegativity_symbol">X</string>
 
     <!-- Isotopes properties -->
     <string name="property_half_life">Half-life</string>

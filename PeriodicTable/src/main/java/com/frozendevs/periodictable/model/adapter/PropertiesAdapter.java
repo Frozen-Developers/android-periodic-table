@@ -15,9 +15,11 @@ public class PropertiesAdapter extends BaseAdapter {
 
     private static final int VIEW_TYPE_HEADER = 0;
     private static final int VIEW_TYPE_ITEM = 1;
+    private static final int VIEW_TYPE_SUMMARY = 2;
 
     private Context mContext;
     private Typeface mTypeface;
+    private ElementProperties mElementProperties;
     private Property[] mPropertiesPairs = new Property[0];
 
     private class Property {
@@ -47,7 +49,11 @@ public class PropertiesAdapter extends BaseAdapter {
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
+        mElementProperties = properties;
+
         mPropertiesPairs = new Property[] {
+                new Property(R.string.properties_header_summary, null),
+                null,
                 new Property(R.string.properties_header_general, null),
                 new Property(R.string.property_symbol, properties.getSymbol()),
                 new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
@@ -109,21 +115,45 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
-                ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
+        View view;
 
         Property property = getItem(position);
 
-        if(getItemViewType(position) == VIEW_TYPE_ITEM) {
-            ((TextView)view.findViewById(R.id.property_name)).setText(property.getName());
+        if(property == null) {
+            view = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item, parent, false);
 
-            TextView value = (TextView)view.findViewById(R.id.property_value);
-            value.setText(!property.getValue().equals("") ? property.getValue() :
-                    mContext.getString(R.string.property_value_unknown));
-            value.setTypeface(mTypeface);
+            view.findViewById(R.id.table_item).setBackgroundColor(mElementProperties.getBackgroundColor(mContext));
+
+            ((TextView)view.findViewById(R.id.element_symbol)).setText(mElementProperties.getSymbol());
+            ((TextView)view.findViewById(R.id.element_number)).setText(String.valueOf(
+                    mElementProperties.getAtomicNumber()));
+            ((TextView)view.findViewById(R.id.element_name)).setText(mElementProperties.getName());
+            ((TextView)view.findViewById(R.id.element_weight)).setText(
+                    mElementProperties.getStandardAtomicWeight());
+            ((TextView)view.findViewById(R.id.element_electron_configuration)).setText(
+                    mElementProperties.getElectronConfiguration());
+            ((TextView)view.findViewById(R.id.element_electron_configuration)).setTypeface(mTypeface);
+            ((TextView)view.findViewById(R.id.element_electronegativity)).setText(
+                    mContext.getString(R.string.property_electronegativity_symbol) +
+                    ": " + (!mElementProperties.getElectronegativity().equals("") ?
+                    mElementProperties.getElectronegativity() : mContext.getString(R.string.property_value_unknown)));
+            ((TextView)view.findViewById(R.id.element_oxidation_states)).setText(
+                    mElementProperties.getOxidationStates());
         }
         else {
-            ((TextView)view).setText(property.getName());
+            view = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
+                    ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
+
+            if (getItemViewType(position) == VIEW_TYPE_ITEM) {
+                ((TextView) view.findViewById(R.id.property_name)).setText(property.getName());
+
+                TextView value = (TextView) view.findViewById(R.id.property_value);
+                value.setText(!property.getValue().equals("") ? property.getValue() :
+                        mContext.getString(R.string.property_value_unknown));
+                value.setTypeface(mTypeface);
+            } else {
+                ((TextView) view).setText(property.getName());
+            }
         }
 
         return view;
@@ -136,16 +166,18 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public boolean isEnabled(int position) {
-        return getItemViewType(position) != VIEW_TYPE_HEADER;
+        return getItemViewType(position) == VIEW_TYPE_ITEM;
     }
 
     @Override
     public int getItemViewType(int position) {
+        if(getItem(position) == null) return VIEW_TYPE_SUMMARY;
+
         return getItem(position).getValue() != null ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
     }
 
     @Override
     public int getViewTypeCount() {
-        return 2;
+        return 3;
     }
 }
