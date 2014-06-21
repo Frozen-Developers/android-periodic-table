@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
-import android.widget.CheckedTextView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -101,8 +100,23 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                              ViewGroup parent) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
 
-        ((CheckedTextView)view).setText(getGroup(groupPosition));
-        ((CheckedTextView)view).setTypeface(mTypeface);
+        TextView symbol = (TextView)view.findViewById(R.id.property_symbol);
+        symbol.setText(getGroup(groupPosition));
+        symbol.setTypeface(mTypeface);
+
+        String propertyHalfLife = getChild(groupPosition, PROPERTY_HALF_LIFE)[1];
+
+        TextView halfLife = (TextView)view.findViewById(R.id.property_half_life);
+        halfLife.setText(getString(R.string.property_half_life_symbol) + ": " +
+                (!propertyHalfLife.equals("") ? propertyHalfLife : getString(R.string.property_value_unknown)));
+        halfLife.setTypeface(mTypeface);
+
+        String propertyAbundance = getChild(groupPosition, PROPERTY_ABUNDANCE)[1];
+
+        TextView abundance = (TextView)view.findViewById(R.id.property_abundance);
+        abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": " +
+                (!propertyAbundance.equals("") ? propertyAbundance : getString(R.string.property_value_none)));
+        abundance.setTypeface(mTypeface);
 
         return view;
     }

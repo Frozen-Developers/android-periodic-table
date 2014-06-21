@@ -19,7 +19,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.CheckedTextView;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -151,15 +150,15 @@ public class PropertiesActivity extends ActionBarActivity {
         else {
             View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
 
-            if(view instanceof CheckedTextView) {
+            TextView propertySymbol = (TextView)view.findViewById(R.id.property_symbol);
+
+            if(propertySymbol != null) {
                 propertyName = getString(R.string.property_symbol);
-                propertyValue = ((CheckedTextView)view).getText();
+                propertyValue = propertySymbol.getText();
             }
             else {
-                propertyName = ((TextView)((ExpandableListView.ExpandableListContextMenuInfo)info).
-                        targetView.findViewById(R.id.property_name)).getText();
-                propertyValue = ((TextView)((ExpandableListView.ExpandableListContextMenuInfo)info).
-                        targetView.findViewById(R.id.property_value)).getText();
+                propertyName = ((TextView)view.findViewById(R.id.property_name)).getText();
+                propertyValue = ((TextView)view.findViewById(R.id.property_value)).getText();
             }
         }
 
