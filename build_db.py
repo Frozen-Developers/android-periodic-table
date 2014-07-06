@@ -12,7 +12,7 @@ from bs4 import BeautifulSoup, Tag
 import json
 from html.parser import HTMLParser
 
-OUTPUT_XML = 'PeriodicTable/src/main/res/raw/database.json'
+OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
@@ -129,7 +129,7 @@ def capitalize(string):
     return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
 
 def get_property(content, name, extra=''):
-    return content.xpath('//table[@class="infobox bordered"]/tr[th[contains(., "' + name + '")]]' \
+    return content.xpath('//div[@id="mw-content-text"]/table[@class="infobox bordered"]/tr[th[contains(., "' + name + '")]]' \
         + ('/' + extra if len(extra) > 0 else ''))
 
 def fetch(url, jsonData):
@@ -224,7 +224,7 @@ def fetch(url, jsonData):
         .replace('(', '').replace(')', ':').replace(':\n', ': ').strip()) if len(mhc) > 0 else ''
 
     os = get_property(content, 'Oxidation states', 'td')
-    os = re.sub(r'\[.+?\]|\([^)].*\)', '', remove_html_tags(html_elements_to_string(os))).strip() \
+    os = re.sub(r'\[.+?\]|\([^)\d].*\)|[\(\)]', '', remove_html_tags(html_elements_to_string(os))).strip() \
         if len(os) > 0 else ''
 
     en = get_property(content, 'Electronegativity', 'td')
@@ -384,5 +384,5 @@ if __name__ == '__main__':
         .xpath('//table/tr/td/div[@title]/div/a/@title'):
         fetch(URL_PREFIX + '/wiki/Template:Infobox_' + re.sub(r'\s?\([^)]\w*\)', '', element.lower()), jsonData)
 
-    with open(OUTPUT_XML, 'w+') as outfile:
-        json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii=False)
+    with open(OUTPUT_JSON, 'w+') as outfile:
+        json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)
