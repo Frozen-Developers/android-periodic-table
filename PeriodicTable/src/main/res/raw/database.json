@@ -6113,7 +6113,7 @@
                 "decayModes": [
                     "EC"
                 ],
-                "halfLife": "60.0 a",
+                "halfLife": "60.0 y",
                 "spin": "0",
                 "symbol": "⁴⁴Ti"
             },
@@ -28587,7 +28587,7 @@
                 "decayModes": [
                     "α"
                 ],
-                "halfLife": "1.8×10¹⁸ a",
+                "halfLife": "1.8×10¹⁸ y",
                 "spin": "0",
                 "symbol": "¹⁸⁰W"
             },
@@ -39602,7 +39602,7 @@
         "mohsHardness": "",
         "molarHeatCapacity": "",
         "name": "Rutherfordium",
-        "oxidationStates": "4, 3",
+        "oxidationStates": "4, 3, 2",
         "period": "7",
         "phase": "Solid",
         "shearModulus": "",
@@ -41148,7 +41148,7 @@
         "mohsHardness": "",
         "molarHeatCapacity": "",
         "name": "Copernicium",
-        "oxidationStates": "4, 2, 0",
+        "oxidationStates": "4, 2, 1, 0",
         "period": "7",
         "phase": "",
         "shearModulus": "",
@@ -41391,7 +41391,7 @@
         "mohsHardness": "",
         "molarHeatCapacity": "",
         "name": "Flerovium",
-        "oxidationStates": "0, 2, 4",
+        "oxidationStates": "0, 2, 4, 6",
         "period": "7",
         "phase": "Solid",
         "shearModulus": "",
@@ -54479,7 +54479,7 @@
         "atomicNumber": "95",
         "atomicRadius": "173 pm",
         "block": "f",
-        "boilingPoint": "2880 K / 2607 °C / 4725 °F",
+        "boilingPoint": "Calculated: 2880 K / 2607 °C / 4725 °F",
         "brinellHardness": "",
         "bulkModulus": "",
         "category": "Actinide",
