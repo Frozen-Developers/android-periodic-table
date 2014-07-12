@@ -41,9 +41,9 @@ public class PeriodicTableView extends ViewGroup implements GestureDetector.OnGe
     private boolean mIsScrolling = false;
     private OverScroller mOverScroller;
     private Adapter mAdapter;
-    private View[] mViews;
     private Bitmap[] mBitmaps;
     private Matrix mMatrix = new Matrix();
+    private View mConvertView;
 
     public PeriodicTableView(Context context) {
         super(context);
@@ -238,7 +238,7 @@ public class PeriodicTableView extends ViewGroup implements GestureDetector.OnGe
 
                 for(int column = 0; column < COLUMNS_COUNT; column++) {
                     if(x <= rawX && x + tileSize >= rawX && y <= rawY && y + tileSize >= rawY) {
-                        View view = mViews[(row * COLUMNS_COUNT) + column];
+                        View view = mAdapter.getView((row * COLUMNS_COUNT) + column, mConvertView, this);
 
                         if(view != null) {
                             view.performClick();
@@ -355,18 +355,15 @@ public class PeriodicTableView extends ViewGroup implements GestureDetector.OnGe
                 @Override
                 public void onChanged() {
                     if(!mAdapter.isEmpty()) {
-                        mViews = new View[COLUMNS_COUNT * ROWS_COUNT];
                         mBitmaps = new Bitmap[COLUMNS_COUNT * ROWS_COUNT];
 
                         for(int row = 0; row < ROWS_COUNT; row++) {
                             for(int column = 0; column < COLUMNS_COUNT; column++) {
                                 int position = (row * COLUMNS_COUNT) + column;
 
-                                View view = mAdapter.getView(position, null, PeriodicTableView.this);
+                                View view = mAdapter.getView(position, mConvertView, PeriodicTableView.this);
 
                                 if(view != null) {
-                                    mViews[position] = view;
-
                                     view.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(), MeasureSpec.EXACTLY),
                                             MeasureSpec.makeMeasureSpec(getDefaultTileSize(), MeasureSpec.EXACTLY));
                                     view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());

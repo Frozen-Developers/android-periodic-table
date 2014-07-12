@@ -73,31 +73,35 @@ public class TableAdapter extends BaseAdapter {
         switch (position) {
             case 92:
             case 110:
-                View view = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
+                if(convertView == null) {
+                    convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
+                }
 
-                view.setBackgroundColor(mContext.getResources().getColor(position == 92 ?
+                convertView.setBackgroundColor(mContext.getResources().getColor(position == 92 ?
                         R.color.lanthanide_bg : R.color.actinide_bg));
 
-                TextView elementName = (TextView)view.findViewById(R.id.element_name);
+                TextView elementName = (TextView)convertView.findViewById(R.id.element_name);
                 elementName.setTextSize(14f);
                 elementName.setText(position == 92 ? "57 - 71" : "89 - 103");
 
-                return view;
+                return convertView;
 
             default:
                 final TableItem item = getItem(position);
 
                 if(item != null) {
-                    view = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
+                    if(convertView == null) {
+                        convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
+                    }
 
-                    view.setBackgroundColor(item.getBackgroundColor(mContext));
+                    convertView.setBackgroundColor(item.getBackgroundColor(mContext));
 
-                    ((TextView)view.findViewById(R.id.element_symbol)).setText(item.getSymbol());
-                    ((TextView)view.findViewById(R.id.element_number)).setText(String.valueOf(item.getAtomicNumber()));
-                    ((TextView)view.findViewById(R.id.element_name)).setText(item.getName());
-                    ((TextView)view.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
+                    ((TextView)convertView.findViewById(R.id.element_symbol)).setText(item.getSymbol());
+                    ((TextView)convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getAtomicNumber()));
+                    ((TextView)convertView.findViewById(R.id.element_name)).setText(item.getName());
+                    ((TextView)convertView.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
 
-                    view.setOnClickListener(new View.OnClickListener() {
+                    convertView.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(mContext, PropertiesActivity.class);
@@ -106,7 +110,7 @@ public class TableAdapter extends BaseAdapter {
                         }
                     });
 
-                    return view;
+                    return convertView;
                 }
                 break;
         }
