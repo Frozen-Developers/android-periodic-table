@@ -184,9 +184,9 @@ def fetch(url, jsonData):
 
     mp = get_property(content, 'Melting\u00a0point', 'td')
     mp = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(html_elements_to_string(mp))) \
-        .replace('(predicted)', '').replace('(extrapolated)', '').replace('? ', '').replace('  ', ' ') \
-        .replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ').replace('circa: ', '') \
-        .strip()) if len(mp) > 0 else ''
+        .replace('(predicted)', '').replace('(extrapolated)', '').replace('(estimated)', '').replace('? ', '') \
+        .replace('  ', ' ').replace(', (', '\n').replace('(', '').replace(')', ':') .replace(', ', ' / ') \
+        .replace('circa: ', '').strip()) if len(mp) > 0 else ''
 
     sp = get_property(content, 'Sublimation\u00a0point', 'td')
     sp = capitalize(re.sub(r'\[.+?\]|(predicted)\s*|(extrapolated)\s*|[\?]|circa: ', '', remove_html_tags(
