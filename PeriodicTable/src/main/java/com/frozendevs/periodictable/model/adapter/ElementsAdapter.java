@@ -71,18 +71,20 @@ public class ElementsAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         final ElementListItem element = mFilteredElements.get(position);
 
-        View view = LayoutInflater.from(mActivity).inflate(R.layout.elements_list_item, parent, false);
+        if(convertView == null) {
+            convertView = LayoutInflater.from(mActivity).inflate(R.layout.elements_list_item, parent, false);
+        }
 
-        TextView symbol = (TextView)view.findViewById(R.id.element_symbol);
+        TextView symbol = (TextView)convertView.findViewById(R.id.element_symbol);
         symbol.setText(element.getSymbol());
 
-        TextView atomicNumber = (TextView)view.findViewById(R.id.element_number);
+        TextView atomicNumber = (TextView)convertView.findViewById(R.id.element_number);
         atomicNumber.setText(String.valueOf(element.getAtomicNumber()));
 
-        TextView name = (TextView)view.findViewById(R.id.element_name);
+        TextView name = (TextView)convertView.findViewById(R.id.element_name);
         name.setText(element.getName());
 
-        view.setOnClickListener(new View.OnClickListener() {
+        convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mActivity, PropertiesActivity.class);
@@ -91,7 +93,7 @@ public class ElementsAdapter extends BaseAdapter {
             }
         });
 
-        return view;
+        return convertView;
     }
 
     public void filter(String filter) {

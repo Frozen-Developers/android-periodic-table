@@ -115,48 +115,52 @@ public class PropertiesAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view;
-
         Property property = getItem(position);
 
         if(property == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item, parent, false);
+            if(convertView == null || (Integer)convertView.getTag() != VIEW_TYPE_SUMMARY) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item, parent, false);
+                convertView.setTag(VIEW_TYPE_SUMMARY);
+            }
 
-            view.findViewById(R.id.table_item).setBackgroundColor(mElementProperties.getBackgroundColor(mContext));
+            convertView.findViewById(R.id.table_item).setBackgroundColor(mElementProperties.getBackgroundColor(mContext));
 
-            ((TextView)view.findViewById(R.id.element_symbol)).setText(mElementProperties.getSymbol());
-            ((TextView)view.findViewById(R.id.element_number)).setText(String.valueOf(
+            ((TextView)convertView.findViewById(R.id.element_symbol)).setText(mElementProperties.getSymbol());
+            ((TextView)convertView.findViewById(R.id.element_number)).setText(String.valueOf(
                     mElementProperties.getAtomicNumber()));
-            ((TextView)view.findViewById(R.id.element_name)).setText(mElementProperties.getName());
-            ((TextView)view.findViewById(R.id.element_weight)).setText(
+            ((TextView)convertView.findViewById(R.id.element_name)).setText(mElementProperties.getName());
+            ((TextView)convertView.findViewById(R.id.element_weight)).setText(
                     mElementProperties.getStandardAtomicWeight());
-            ((TextView)view.findViewById(R.id.element_electron_configuration)).setText(
+            ((TextView)convertView.findViewById(R.id.element_electron_configuration)).setText(
                     mElementProperties.getElectronConfiguration());
-            ((TextView)view.findViewById(R.id.element_electron_configuration)).setTypeface(mTypeface);
-            ((TextView)view.findViewById(R.id.element_electronegativity)).setText(
+            ((TextView)convertView.findViewById(R.id.element_electron_configuration)).setTypeface(mTypeface);
+            ((TextView)convertView.findViewById(R.id.element_electronegativity)).setText(
                     mContext.getString(R.string.property_electronegativity_symbol) +
                     ": " + (!mElementProperties.getElectronegativity().equals("") ?
                     mElementProperties.getElectronegativity() : mContext.getString(R.string.property_value_unknown)));
-            ((TextView)view.findViewById(R.id.element_oxidation_states)).setText(
+            ((TextView)convertView.findViewById(R.id.element_oxidation_states)).setText(
                     mElementProperties.getOxidationStates());
         }
         else {
-            view = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
-                    ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
+            if(convertView == null || (Integer)convertView.getTag() != getItemViewType(position)) {
+                convertView = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
+                        ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
+                convertView.setTag(getItemViewType(position));
+            }
 
             if (getItemViewType(position) == VIEW_TYPE_ITEM) {
-                ((TextView) view.findViewById(R.id.property_name)).setText(property.getName());
+                ((TextView) convertView.findViewById(R.id.property_name)).setText(property.getName());
 
-                TextView value = (TextView) view.findViewById(R.id.property_value);
+                TextView value = (TextView) convertView.findViewById(R.id.property_value);
                 value.setText(!property.getValue().equals("") ? property.getValue() :
                         mContext.getString(R.string.property_value_unknown));
                 value.setTypeface(mTypeface);
             } else {
-                ((TextView) view).setText(property.getName());
+                ((TextView) convertView).setText(property.getName());
             }
         }
 
-        return view;
+        return convertView;
     }
 
     @Override

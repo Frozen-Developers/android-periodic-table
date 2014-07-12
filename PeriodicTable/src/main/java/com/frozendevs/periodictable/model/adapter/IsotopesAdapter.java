@@ -98,40 +98,44 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                              ViewGroup parent) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
+        if(convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
+        }
 
-        TextView symbol = (TextView)view.findViewById(R.id.property_symbol);
+        TextView symbol = (TextView)convertView.findViewById(R.id.property_symbol);
         symbol.setText(getGroup(groupPosition));
         symbol.setTypeface(mTypeface);
 
         String propertyHalfLife = getChild(groupPosition, PROPERTY_HALF_LIFE)[1];
 
-        TextView halfLife = (TextView)view.findViewById(R.id.property_half_life);
+        TextView halfLife = (TextView)convertView.findViewById(R.id.property_half_life);
         halfLife.setText(getString(R.string.property_half_life_symbol) + ": " +
                 (!propertyHalfLife.equals("") ? propertyHalfLife : getString(R.string.property_value_unknown)));
         halfLife.setTypeface(mTypeface);
 
         String propertyAbundance = getChild(groupPosition, PROPERTY_ABUNDANCE)[1];
 
-        TextView abundance = (TextView)view.findViewById(R.id.property_abundance);
+        TextView abundance = (TextView)convertView.findViewById(R.id.property_abundance);
         abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": " +
                 (!propertyAbundance.equals("") ? propertyAbundance : getString(R.string.property_value_none)));
         abundance.setTypeface(mTypeface);
 
-        return view;
+        return convertView;
     }
 
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item, parent, false);
+        if(convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item, parent, false);
+        }
 
         String[] property = getChild(groupPosition, childPosition);
 
-        TextView name = (TextView)view.findViewById(R.id.property_name);
+        TextView name = (TextView)convertView.findViewById(R.id.property_name);
         name.setText(property[0]);
 
-        TextView value = (TextView)view.findViewById(R.id.property_value);
+        TextView value = (TextView)convertView.findViewById(R.id.property_value);
         if((getChild(groupPosition, 0)[1].equalsIgnoreCase("Stable") && childPosition == PROPERTY_DECAY_MODES)
                 || (property[1].equals("") && childPosition == PROPERTY_ABUNDANCE))
             value.setText(getString(R.string.property_value_none));
@@ -141,7 +145,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
             value.setText(property[1]);
         value.setTypeface(mTypeface);
 
-        return view;
+        return convertView;
     }
 
     @Override
