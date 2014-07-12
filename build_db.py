@@ -11,6 +11,7 @@ import sys
 from bs4 import BeautifulSoup, Tag
 import json
 from html.parser import HTMLParser
+from decimal import Decimal
 
 OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
@@ -173,6 +174,12 @@ def fetch(url, jsonData):
     dens = capitalize(re.sub(r'\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(
         dens)))).replace('(predicted) ', '').replace('(extrapolated) ', '').replace(', (', ' g·cm⁻³\n') \
         .replace('(', '').replace(')', ':').replace(':\n', ': ').replace('? ', '').strip()) if len(dens) > 0 else ''
+    dens = dens.split(' ')
+    for index, word in enumerate(dens):
+        if word == 'g/L' and index > 0:
+            dens[index - 1] += '×10⁻³'
+            dens[index] = 'g·cm⁻³'
+    dens = ' '.join(dens)
 
     ldmp = get_property(content, 'm.p.', 'td')
     ldmp = re.sub(r'\s*\([^)]*\)|\[.+?\]', '', remove_html_tags(translate_script(html_elements_to_string(ldmp)))) \
