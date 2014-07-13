@@ -15,18 +15,6 @@ repositories {
 android {
     compileSdkVersion 19
     buildToolsVersion '20'
-
-    buildTypes {
-        release {
-            runProguard true
-            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
-        }
-    }
-    productFlavors {
-        defaultFlavor {
-            proguardFile 'proguard-rules.txt'
-        }
-    }
 }
 
 dependencies {
