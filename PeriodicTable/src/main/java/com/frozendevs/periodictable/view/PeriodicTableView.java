@@ -230,25 +230,15 @@ public class PeriodicTableView extends ViewGroup implements GestureDetector.OnGe
         if(mAdapter != null && !mAdapter.isEmpty()) {
             float rawX = e.getX() + getScrollX();
             float rawY = e.getY() + getScrollY();
-            float tileSize = getScaledTileSize();
-            float y = (getHeight() - getScaledHeight()) / 2f;
+            float tileSize = getScaledTileSize() + DEFAULT_SPACING;
+            float startY = (getHeight() - getScaledHeight()) / 2f;
+            float startX = (getWidth() - getScaledWidth()) / 2f;
 
-            for(int row = 0; row < ROWS_COUNT; row++) {
-                float x = (getWidth() - getScaledWidth()) / 2f;
+            View view = mAdapter.getView(((int)((rawY - startY) / tileSize) * COLUMNS_COUNT) +
+                    (int)((rawX - startX) / tileSize), mConvertView, this);
 
-                for(int column = 0; column < COLUMNS_COUNT; column++) {
-                    if(x <= rawX && x + tileSize >= rawX && y <= rawY && y + tileSize >= rawY) {
-                        View view = mAdapter.getView((row * COLUMNS_COUNT) + column, mConvertView, this);
-
-                        if(view != null) {
-                            view.performClick();
-                        }
-                    }
-
-                    x += getScaledTileSize() + DEFAULT_SPACING;
-                }
-
-                y += getScaledTileSize() + DEFAULT_SPACING;
+            if(view != null) {
+                view.performClick();
             }
         }
 
