@@ -12,3 +12,8 @@ database.json
 -------------
 
 This file uses material from the Wikipedia article "Periodic table", which is released under the Creative Commons Attribution-Share-Alike License 3.0.
+
+Download
+--------
+
+[![](http://developer.android.com/images/brand/en_generic_rgb_wo_60.png)](https://play.google.com/store/apps/details?id=com.frozendevs.periodictable)
