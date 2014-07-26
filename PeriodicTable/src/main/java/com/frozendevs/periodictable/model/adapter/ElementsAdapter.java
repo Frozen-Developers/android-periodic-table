@@ -1,18 +1,15 @@
 package com.frozendevs.periodictable.model.adapter;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
-import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementListItem;
 
 import java.util.ArrayList;
@@ -21,35 +18,13 @@ import java.util.Locale;
 
 public class ElementsAdapter extends BaseAdapter {
 
-    private List<ElementListItem> mElements, mFilteredElements;
-    private Activity mActivity;
+    private List<ElementListItem> mElements = new ArrayList<ElementListItem>();
+    private List<ElementListItem> mFilteredElements = new ArrayList<ElementListItem>();
 
-    private class LoadItems extends AsyncTask<Void, Void, Void> {
+    private Context mContext;
 
-        @Override
-        protected Void doInBackground(Void... params) {
-            mElements = Database.getInstance(mActivity).getElementListItems();
-            mFilteredElements = new ArrayList<ElementListItem>(mElements);
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            notifyDataSetChanged();
-
-            ListView listView = (ListView)mActivity.findViewById(R.id.elements_list);
-            listView.setEmptyView(mActivity.findViewById(R.id.empty_elements_list));
-        }
-    }
-
-    public ElementsAdapter(Activity activity) {
-        mActivity = activity;
-
-        mElements = new ArrayList<ElementListItem>();
-        mFilteredElements = new ArrayList<ElementListItem>();
-
-        new LoadItems().execute();
+    public ElementsAdapter(Context context) {
+        mContext = context;
     }
 
     @Override
@@ -72,7 +47,7 @@ public class ElementsAdapter extends BaseAdapter {
         final ElementListItem element = mFilteredElements.get(position);
 
         if(convertView == null) {
-            convertView = LayoutInflater.from(mActivity).inflate(R.layout.elements_list_item, parent, false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.elements_list_item, parent, false);
         }
 
         TextView symbol = (TextView)convertView.findViewById(R.id.element_symbol);
@@ -87,9 +62,9 @@ public class ElementsAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mActivity, PropertiesActivity.class);
+                Intent intent = new Intent(mContext, PropertiesActivity.class);
                 intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, element.getAtomicNumber());
-                mActivity.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -107,7 +82,7 @@ public class ElementsAdapter extends BaseAdapter {
             }
         }
 
-        Locale locale = mActivity.getResources().getConfiguration().locale;
+        Locale locale = mContext.getResources().getConfiguration().locale;
 
         if(items.isEmpty()) {
             for(ElementListItem element : mElements) {
@@ -125,5 +100,11 @@ public class ElementsAdapter extends BaseAdapter {
         mFilteredElements = new ArrayList<ElementListItem>(mElements);
 
         notifyDataSetChanged();
+    }
+
+    public void setData(List<ElementListItem> elements) {
+        mElements = new ArrayList<ElementListItem>(elements);
+
+        clearFilter();
     }
 }
