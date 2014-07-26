@@ -2,7 +2,6 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,39 +10,24 @@ import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
-import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.TableItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TableAdapter extends BaseAdapter {
 
-    private TableItem[] mItems = new TableItem[0];
+    private List<TableItem> mItems = new ArrayList<TableItem>();
 
     private Context mContext;
 
-    private class LoadItems extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected Void doInBackground(Void... params) {
-            mItems = Database.getInstance(mContext).getTableItems();
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            notifyDataSetChanged();
-        }
-    }
-
     public TableAdapter(Context context) {
         mContext = context;
-
-        new LoadItems().execute();
     }
 
     @Override
     public int getCount() {
-        return mItems.length;
+        return mItems.size();
     }
 
     @Override
@@ -116,5 +100,11 @@ public class TableAdapter extends BaseAdapter {
         }
 
         return null;
+    }
+
+    public void setData(List<TableItem> items) {
+        mItems = new ArrayList<TableItem>(items);
+
+        notifyDataSetChanged();
     }
 }
