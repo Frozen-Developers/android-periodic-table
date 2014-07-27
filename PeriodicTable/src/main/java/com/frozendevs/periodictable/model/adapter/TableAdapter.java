@@ -5,19 +5,13 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.model.TableItem;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class TableAdapter extends BaseAdapter {
-
-    private List<TableItem> mItems = new ArrayList<TableItem>();
+public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
     private Context mContext;
 
@@ -26,13 +20,8 @@ public class TableAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return mItems.size();
-    }
-
-    @Override
     public TableItem getItem(int position) {
-        for (TableItem item : mItems) {
+        for (TableItem item : getAllItems()) {
             if (((item.getPeriod() - 1) * 18) + item.getGroup() - 1 == position)
                 return item;
             else if (position >= 128 && position <= 142) {
@@ -45,11 +34,6 @@ public class TableAdapter extends BaseAdapter {
         }
 
         return null;
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
     }
 
     @Override
@@ -101,14 +85,8 @@ public class TableAdapter extends BaseAdapter {
         return null;
     }
 
-    public void setData(List<TableItem> items) {
-        mItems = new ArrayList<TableItem>(items);
-
-        notifyDataSetChanged();
-    }
-
     public int getItemPosition(TableItem item) {
-        for (TableItem tableItem : mItems) {
+        for (TableItem tableItem : getAllItems()) {
             if(tableItem.equals(item)) {
                 if (item.getAtomicNumber() + 71 >= 128 && item.getAtomicNumber() + 71 <= 142) {
                     return item.getAtomicNumber() + 71;
@@ -123,10 +101,6 @@ public class TableAdapter extends BaseAdapter {
         }
 
         return -1;
-    }
-
-    public TableItem[] getAllItems() {
-        return mItems.toArray(new TableItem[mItems.size()]);
     }
 
     private int getBackgroundColor(int position) {

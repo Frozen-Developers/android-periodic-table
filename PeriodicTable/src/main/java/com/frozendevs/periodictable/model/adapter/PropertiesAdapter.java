@@ -54,7 +54,7 @@ public class PropertiesAdapter extends BaseAdapter {
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         mTableAdapter = new TableAdapter(context);
-        mTableAdapter.setData(Arrays.asList((TableItem)properties));
+        mTableAdapter.setItems(Arrays.asList((TableItem)properties));
 
         mPropertiesPairs = new Property[] {
                 new Property(R.string.properties_header_summary, null),
@@ -128,7 +128,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 convertView.setTag(VIEW_TYPE_SUMMARY);
             }
 
-            ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems()[0];
+            ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems().get(0);
 
             if(mTileView == null) {
                 mTileView = mTableAdapter.getView(mTableAdapter.getItemPosition(properties),

@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -16,10 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ElementsAdapter extends BaseAdapter {
+public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
 
-    private List<ElementListItem> mElements = new ArrayList<ElementListItem>();
-    private List<ElementListItem> mFilteredElements = new ArrayList<ElementListItem>();
+    private List<ElementListItem> mAllItems = new ArrayList<ElementListItem>();
 
     private Context mContext;
 
@@ -28,23 +26,8 @@ public class ElementsAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
-        return mFilteredElements.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return mFilteredElements.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        final ElementListItem element = mFilteredElements.get(position);
+        final ElementListItem element = getItem(position);
 
         if(convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.elements_list_item, parent, false);
@@ -72,39 +55,37 @@ public class ElementsAdapter extends BaseAdapter {
     }
 
     public void filter(String filter) {
-        List<ElementListItem> items = new ArrayList<ElementListItem>();
+        List<ElementListItem> filteredItems = new ArrayList<ElementListItem>();
 
-        for(ElementListItem element : mElements) {
+        for(ElementListItem element : mAllItems) {
             if(element.getSymbol().equalsIgnoreCase(filter) ||
                     String.valueOf(element.getAtomicNumber()).equals(filter)) {
-                items.add(element);
+                filteredItems.add(element);
                 break;
             }
         }
 
         Locale locale = mContext.getResources().getConfiguration().locale;
 
-        if(items.isEmpty()) {
-            for(ElementListItem element : mElements) {
-                if(element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale)))
-                    items.add(element);
+        if(filteredItems.isEmpty()) {
+            for(ElementListItem element : mAllItems) {
+                if(element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale))) {
+                    filteredItems.add(element);
+                }
             }
         }
 
-        mFilteredElements = items;
-
-        notifyDataSetChanged();
+        super.setItems(filteredItems);
     }
 
     public void clearFilter() {
-        mFilteredElements = new ArrayList<ElementListItem>(mElements);
-
-        notifyDataSetChanged();
+        super.setItems(new ArrayList<ElementListItem>(mAllItems));
     }
 
-    public void setData(List<ElementListItem> elements) {
-        mElements = new ArrayList<ElementListItem>(elements);
+    @Override
+    public void setItems(List<ElementListItem> items) {
+        mAllItems = new ArrayList<ElementListItem>(items);
 
-        clearFilter();
+        super.setItems(items);
     }
 }

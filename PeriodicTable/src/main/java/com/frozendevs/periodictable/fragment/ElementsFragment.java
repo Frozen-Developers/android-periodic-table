@@ -32,7 +32,7 @@ public class ElementsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(List<ElementListItem> result) {
-            ((ElementsAdapter)mListView.getAdapter()).setData(result);
+            ((ElementsAdapter)mListView.getAdapter()).setItems(result);
 
             mListView.setEmptyView(getActivity().findViewById(R.id.empty_elements_list));
         }

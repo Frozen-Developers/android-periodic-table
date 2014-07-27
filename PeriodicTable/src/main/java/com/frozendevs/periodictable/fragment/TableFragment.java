@@ -33,7 +33,7 @@ public class TableFragment extends Fragment {
 
         @Override
         protected void onPostExecute(List<TableItem> result) {
-            mAdapter.setData(result);
+            mAdapter.setItems(result);
         }
     }
 
