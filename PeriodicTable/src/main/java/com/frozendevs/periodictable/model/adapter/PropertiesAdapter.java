@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementProperties;
+import com.frozendevs.periodictable.model.TableItem;
+
+import java.util.Arrays;
 
 public class PropertiesAdapter extends BaseAdapter {
 
@@ -19,8 +22,9 @@ public class PropertiesAdapter extends BaseAdapter {
 
     private Context mContext;
     private Typeface mTypeface;
-    private ElementProperties mElementProperties;
+    private TableAdapter mTableAdapter;
     private Property[] mPropertiesPairs = new Property[0];
+    private View mTileView;
 
     private class Property {
         int mName;
@@ -49,7 +53,8 @@ public class PropertiesAdapter extends BaseAdapter {
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        mElementProperties = properties;
+        mTableAdapter = new TableAdapter(context);
+        mTableAdapter.setData(Arrays.asList((TableItem)properties));
 
         mPropertiesPairs = new Property[] {
                 new Property(R.string.properties_header_summary, null),
@@ -123,33 +128,46 @@ public class PropertiesAdapter extends BaseAdapter {
                 convertView.setTag(VIEW_TYPE_SUMMARY);
             }
 
-            convertView.findViewById(R.id.table_item).setBackgroundColor(mElementProperties.getBackgroundColor(mContext));
+            ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems()[0];
 
-            ((TextView)convertView.findViewById(R.id.element_symbol)).setText(mElementProperties.getSymbol());
-            ((TextView)convertView.findViewById(R.id.element_number)).setText(String.valueOf(
-                    mElementProperties.getAtomicNumber()));
-            ((TextView)convertView.findViewById(R.id.element_name)).setText(mElementProperties.getName());
-            ((TextView)convertView.findViewById(R.id.element_weight)).setText(
-                    mElementProperties.getStandardAtomicWeight());
-            ((TextView)convertView.findViewById(R.id.element_electron_configuration)).setText(
-                    mElementProperties.getElectronConfiguration());
-            ((TextView)convertView.findViewById(R.id.element_electron_configuration)).setTypeface(mTypeface);
-            ((TextView)convertView.findViewById(R.id.element_electronegativity)).setText(
-                    mContext.getString(R.string.property_electronegativity_symbol) +
-                    ": " + (!mElementProperties.getElectronegativity().equals("") ?
-                    mElementProperties.getElectronegativity() : mContext.getString(R.string.property_value_unknown)));
-            ((TextView)convertView.findViewById(R.id.element_oxidation_states)).setText(
-                    mElementProperties.getOxidationStates());
-        }
-        else {
-            if(convertView == null || (Integer)convertView.getTag() != getItemViewType(position)) {
-                convertView = LayoutInflater.from(mContext).inflate(getItemViewType(position) == VIEW_TYPE_ITEM
-                        ? R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
-                convertView.setTag(getItemViewType(position));
+            if(mTileView == null) {
+                mTileView = mTableAdapter.getView(mTableAdapter.getItemPosition(properties),
+                        null, (ViewGroup)convertView);
+                mTileView.setEnabled(false);
             }
 
-            if (getItemViewType(position) == VIEW_TYPE_ITEM) {
-                ((TextView) convertView.findViewById(R.id.property_name)).setText(property.getName());
+            if(convertView.findViewById(mTileView.getId()) == null) {
+                if(mTileView.getParent() != null) {
+                    ((ViewGroup) mTileView.getParent()).removeView(mTileView);
+                }
+                ((ViewGroup) convertView).addView(mTileView, 0);
+            }
+
+            TextView configuration = (TextView)convertView.findViewById(R.id.element_electron_configuration);
+            configuration.setText(properties.getElectronConfiguration());
+            configuration.setTypeface(mTypeface);
+
+            TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
+            electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol) + ": ");
+            electronegativity.append(!properties.getElectronegativity().equals("") ?
+                    properties.getElectronegativity() : mContext.getString(R.string.property_value_unknown));
+
+            TextView oxidationStates = (TextView)convertView.findViewById(R.id.element_oxidation_states);
+            oxidationStates.setText(!properties.getOxidationStates().equals("") ?
+                    properties.getOxidationStates() : mContext.getString(R.string.property_value_unknown));
+        }
+        else {
+            int viewType = getItemViewType(position);
+
+            if(convertView == null || (Integer)convertView.getTag() != viewType) {
+                convertView = LayoutInflater.from(mContext).inflate(viewType == VIEW_TYPE_ITEM ?
+                        R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
+                convertView.setTag(viewType);
+            }
+
+            if (viewType == VIEW_TYPE_ITEM) {
+                TextView name = (TextView) convertView.findViewById(R.id.property_name);
+                name.setText(property.getName());
 
                 TextView value = (TextView) convertView.findViewById(R.id.property_value);
                 value.setText(!property.getValue().equals("") ? property.getValue() :

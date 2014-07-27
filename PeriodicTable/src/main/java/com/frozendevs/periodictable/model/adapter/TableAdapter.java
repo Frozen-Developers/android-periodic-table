@@ -57,14 +57,13 @@ public class TableAdapter extends BaseAdapter {
         switch (position) {
             case 92:
             case 110:
-                if(convertView == null) {
+                if (convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
                 }
 
-                convertView.setBackgroundColor(mContext.getResources().getColor(position == 92 ?
-                        R.color.lanthanide_bg : R.color.actinide_bg));
+                convertView.setBackgroundColor(getBackgroundColor(position));
 
-                TextView elementName = (TextView)convertView.findViewById(R.id.element_name);
+                TextView elementName = (TextView) convertView.findViewById(R.id.element_name);
                 elementName.setTextSize(14f);
                 elementName.setText(position == 92 ? "57 - 71" : "89 - 103");
 
@@ -73,17 +72,17 @@ public class TableAdapter extends BaseAdapter {
             default:
                 final TableItem item = getItem(position);
 
-                if(item != null) {
-                    if(convertView == null) {
+                if (item != null) {
+                    if (convertView == null) {
                         convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
                     }
 
-                    convertView.setBackgroundColor(item.getBackgroundColor(mContext));
+                    convertView.setBackgroundColor(getBackgroundColor(position));
 
-                    ((TextView)convertView.findViewById(R.id.element_symbol)).setText(item.getSymbol());
-                    ((TextView)convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getAtomicNumber()));
-                    ((TextView)convertView.findViewById(R.id.element_name)).setText(item.getName());
-                    ((TextView)convertView.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
+                    ((TextView) convertView.findViewById(R.id.element_symbol)).setText(item.getSymbol());
+                    ((TextView) convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getAtomicNumber()));
+                    ((TextView) convertView.findViewById(R.id.element_name)).setText(item.getName());
+                    ((TextView) convertView.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
 
                     convertView.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -106,5 +105,185 @@ public class TableAdapter extends BaseAdapter {
         mItems = new ArrayList<TableItem>(items);
 
         notifyDataSetChanged();
+    }
+
+    public int getItemPosition(TableItem item) {
+        for (TableItem tableItem : mItems) {
+            if(tableItem.equals(item)) {
+                if (item.getAtomicNumber() + 71 >= 128 && item.getAtomicNumber() + 71 <= 142) {
+                    return item.getAtomicNumber() + 71;
+                }
+                else if (item.getAtomicNumber() + 57 >= 146 && item.getAtomicNumber() + 57 <= 160) {
+                    return item.getAtomicNumber() + 57;
+                }
+                else {
+                    return ((item.getPeriod() - 1) * 18) + item.getGroup() - 1;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+    public TableItem[] getAllItems() {
+        return mItems.toArray(new TableItem[mItems.size()]);
+    }
+
+    private int getBackgroundColor(int position) {
+        int color = android.R.color.transparent;
+
+        switch (position) {
+            case 110:
+            case 146:
+            case 147:
+            case 148:
+            case 149:
+            case 150:
+            case 151:
+            case 152:
+            case 153:
+            case 154:
+            case 155:
+            case 156:
+            case 157:
+            case 158:
+            case 159:
+            case 160:
+                color = R.color.actinide_bg;
+                break;
+
+            case 18:
+            case 36:
+            case 54:
+            case 72:
+            case 90:
+            case 108:
+                color = R.color.alkali_metal_bg;
+                break;
+
+            case 19:
+            case 37:
+            case 55:
+            case 73:
+            case 91:
+            case 109:
+                color = R.color.alkaline_earth_metal_bg;
+                break;
+
+            case 0:
+            case 32:
+            case 33:
+            case 34:
+            case 52:
+            case 70:
+            case 88:
+                color = R.color.diatomic_nonmetal_bg;
+                break;
+
+            case 92:
+            case 128:
+            case 129:
+            case 130:
+            case 131:
+            case 132:
+            case 133:
+            case 134:
+            case 135:
+            case 136:
+            case 137:
+            case 138:
+            case 139:
+            case 140:
+            case 141:
+            case 142:
+                color = R.color.lanthanide_bg;
+                break;
+
+            case 30:
+            case 49:
+            case 67:
+            case 68:
+            case 86:
+            case 87:
+            case 106:
+            case 124:
+                color = R.color.metalloid_bg;
+                break;
+
+            case 17:
+            case 35:
+            case 53:
+            case 71:
+            case 89:
+            case 107:
+            case 125:
+                color = R.color.noble_gas_bg;
+                break;
+
+            case 31:
+            case 50:
+            case 51:
+            case 69:
+                color = R.color.polyatomic_nonmetal_bg;
+                break;
+
+            case 48:
+            case 66:
+            case 84:
+            case 85:
+            case 102:
+            case 103:
+            case 104:
+            case 105:
+            case 120:
+            case 121:
+            case 122:
+            case 123:
+                color = R.color.other_metal_bg;
+                break;
+
+            case 56:
+            case 57:
+            case 58:
+            case 59:
+            case 60:
+            case 61:
+            case 62:
+            case 63:
+            case 64:
+            case 65:
+            case 74:
+            case 75:
+            case 76:
+            case 77:
+            case 78:
+            case 79:
+            case 80:
+            case 81:
+            case 82:
+            case 83:
+            case 93:
+            case 94:
+            case 95:
+            case 96:
+            case 97:
+            case 98:
+            case 99:
+            case 100:
+            case 101:
+            case 111:
+            case 112:
+            case 113:
+            case 114:
+            case 115:
+            case 116:
+            case 117:
+            case 118:
+            case 119:
+                color = R.color.transition_metal_bg;
+                break;
+        }
+
+        return mContext.getResources().getColor(color);
     }
 }
