@@ -53,7 +53,7 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def fetch(url):
+def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>', '',
@@ -97,7 +97,8 @@ def fetch(url):
         'period': period,
         'block': block,
         'electronConfiguration': configuration,
-        'electronsPerShell': shells
+        'electronsPerShell': shells,
+        'wikipediaLink': articleUrl
     }
 
     print(element)
@@ -109,10 +110,9 @@ if __name__ == '__main__':
 
     jsonData = []
 
-    for element in html.parse(URL_PREFIX + '/wiki/Periodic_table') \
-        .xpath('//table/tr/td/div[@title]/div/a/@title'):
+    for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         jsonData.append(fetch(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' +
-            re.sub(r'\s?\([^)]\w*\)', '', element.lower())))
+            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower()), URL_PREFIX + element.attrib['href']))
 
     with open(OUTPUT_JSON, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)

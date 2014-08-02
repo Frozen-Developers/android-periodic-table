@@ -9,7 +9,8 @@
         "number": "1",
         "period": "1",
         "symbol": "H",
-        "weight": "1.008"
+        "weight": "1.008",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen"
     },
     {
         "block": "s",
@@ -21,7 +22,8 @@
         "number": "2",
         "period": "1",
         "symbol": "He",
-        "weight": "4.003"
+        "weight": "4.003",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Helium"
     },
     {
         "block": "s",
@@ -33,7 +35,8 @@
         "number": "3",
         "period": "2",
         "symbol": "Li",
-        "weight": "6.94"
+        "weight": "6.94",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium"
     },
     {
         "block": "s",
@@ -45,7 +48,8 @@
         "number": "4",
         "period": "2",
         "symbol": "Be",
-        "weight": "9.012"
+        "weight": "9.012",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium"
     },
     {
         "block": "p",
@@ -57,7 +61,8 @@
         "number": "5",
         "period": "2",
         "symbol": "B",
-        "weight": "10.81"
+        "weight": "10.81",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Boron"
     },
     {
         "block": "p",
@@ -69,7 +74,8 @@
         "number": "6",
         "period": "2",
         "symbol": "C",
-        "weight": "12.011"
+        "weight": "12.011",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon"
     },
     {
         "block": "p",
@@ -81,7 +87,8 @@
         "number": "7",
         "period": "2",
         "symbol": "N",
-        "weight": "14.007"
+        "weight": "14.007",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen"
     },
     {
         "block": "p",
@@ -93,7 +100,8 @@
         "number": "8",
         "period": "2",
         "symbol": "O",
-        "weight": "15.999"
+        "weight": "15.999",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen"
     },
     {
         "block": "p",
@@ -105,7 +113,8 @@
         "number": "9",
         "period": "2",
         "symbol": "F",
-        "weight": "18.998"
+        "weight": "18.998",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine"
     },
     {
         "block": "p",
@@ -117,7 +126,8 @@
         "number": "10",
         "period": "2",
         "symbol": "Ne",
-        "weight": "20.18"
+        "weight": "20.18",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neon"
     },
     {
         "block": "s",
@@ -129,7 +139,8 @@
         "number": "11",
         "period": "3",
         "symbol": "Na",
-        "weight": "22.99"
+        "weight": "22.99",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium"
     },
     {
         "block": "s",
@@ -141,7 +152,8 @@
         "number": "12",
         "period": "3",
         "symbol": "Mg",
-        "weight": "24.305"
+        "weight": "24.305",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium"
     },
     {
         "block": "p",
@@ -153,7 +165,8 @@
         "number": "13",
         "period": "3",
         "symbol": "Al",
-        "weight": "26.982"
+        "weight": "26.982",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium"
     },
     {
         "block": "p",
@@ -165,7 +178,8 @@
         "number": "14",
         "period": "3",
         "symbol": "Si",
-        "weight": "28.085"
+        "weight": "28.085",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon"
     },
     {
         "block": "p",
@@ -177,7 +191,8 @@
         "number": "15",
         "period": "3",
         "symbol": "P",
-        "weight": "30.974"
+        "weight": "30.974",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus"
     },
     {
         "block": "p",
@@ -189,7 +204,8 @@
         "number": "16",
         "period": "3",
         "symbol": "S",
-        "weight": "32.06"
+        "weight": "32.06",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur"
     },
     {
         "block": "p",
@@ -201,7 +217,8 @@
         "number": "17",
         "period": "3",
         "symbol": "Cl",
-        "weight": "35.45"
+        "weight": "35.45",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine"
     },
     {
         "block": "p",
@@ -213,7 +230,8 @@
         "number": "18",
         "period": "3",
         "symbol": "Ar",
-        "weight": "39.948"
+        "weight": "39.948",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Argon"
     },
     {
         "block": "s",
@@ -225,7 +243,8 @@
         "number": "19",
         "period": "4",
         "symbol": "K",
-        "weight": "39.098"
+        "weight": "39.098",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium"
     },
     {
         "block": "s",
@@ -237,7 +256,8 @@
         "number": "20",
         "period": "4",
         "symbol": "Ca",
-        "weight": "40.078"
+        "weight": "40.078",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium"
     },
     {
         "block": "d",
@@ -249,7 +269,8 @@
         "number": "21",
         "period": "4",
         "symbol": "Sc",
-        "weight": "44.956"
+        "weight": "44.956",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium"
     },
     {
         "block": "d",
@@ -261,7 +282,8 @@
         "number": "22",
         "period": "4",
         "symbol": "Ti",
-        "weight": "47.867"
+        "weight": "47.867",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium"
     },
     {
         "block": "d",
@@ -273,7 +295,8 @@
         "number": "23",
         "period": "4",
         "symbol": "V",
-        "weight": "50.941"
+        "weight": "50.941",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium"
     },
     {
         "block": "d",
@@ -285,7 +308,8 @@
         "number": "24",
         "period": "4",
         "symbol": "Cr",
-        "weight": "51.996"
+        "weight": "51.996",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium"
     },
     {
         "block": "d",
@@ -297,7 +321,8 @@
         "number": "25",
         "period": "4",
         "symbol": "Mn",
-        "weight": "54.938"
+        "weight": "54.938",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese"
     },
     {
         "block": "d",
@@ -309,7 +334,8 @@
         "number": "26",
         "period": "4",
         "symbol": "Fe",
-        "weight": "55.845"
+        "weight": "55.845",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iron"
     },
     {
         "block": "d",
@@ -321,7 +347,8 @@
         "number": "27",
         "period": "4",
         "symbol": "Co",
-        "weight": "58.933"
+        "weight": "58.933",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt"
     },
     {
         "block": "d",
@@ -333,7 +360,8 @@
         "number": "28",
         "period": "4",
         "symbol": "Ni",
-        "weight": "58.693"
+        "weight": "58.693",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel"
     },
     {
         "block": "d",
@@ -345,7 +373,8 @@
         "number": "29",
         "period": "4",
         "symbol": "Cu",
-        "weight": "63.546"
+        "weight": "63.546",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Copper"
     },
     {
         "block": "d",
@@ -357,7 +386,8 @@
         "number": "30",
         "period": "4",
         "symbol": "Zn",
-        "weight": "65.38"
+        "weight": "65.38",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc"
     },
     {
         "block": "p",
@@ -369,7 +399,8 @@
         "number": "31",
         "period": "4",
         "symbol": "Ga",
-        "weight": "69.723"
+        "weight": "69.723",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium"
     },
     {
         "block": "p",
@@ -381,7 +412,8 @@
         "number": "32",
         "period": "4",
         "symbol": "Ge",
-        "weight": "72.63"
+        "weight": "72.63",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium"
     },
     {
         "block": "p",
@@ -393,7 +425,8 @@
         "number": "33",
         "period": "4",
         "symbol": "As",
-        "weight": "74.922"
+        "weight": "74.922",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic"
     },
     {
         "block": "p",
@@ -405,7 +438,8 @@
         "number": "34",
         "period": "4",
         "symbol": "Se",
-        "weight": "78.971"
+        "weight": "78.971",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium"
     },
     {
         "block": "p",
@@ -417,7 +451,8 @@
         "number": "35",
         "period": "4",
         "symbol": "Br",
-        "weight": "79.904"
+        "weight": "79.904",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine"
     },
     {
         "block": "p",
@@ -429,7 +464,8 @@
         "number": "36",
         "period": "4",
         "symbol": "Kr",
-        "weight": "83.8"
+        "weight": "83.8",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton"
     },
     {
         "block": "s",
@@ -441,7 +477,8 @@
         "number": "37",
         "period": "5",
         "symbol": "Rb",
-        "weight": "85.468"
+        "weight": "85.468",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium"
     },
     {
         "block": "s",
@@ -453,7 +490,8 @@
         "number": "38",
         "period": "5",
         "symbol": "Sr",
-        "weight": "87.62"
+        "weight": "87.62",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium"
     },
     {
         "block": "d",
@@ -465,7 +503,8 @@
         "number": "39",
         "period": "5",
         "symbol": "Y",
-        "weight": "88.906"
+        "weight": "88.906",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium"
     },
     {
         "block": "d",
@@ -477,7 +516,8 @@
         "number": "40",
         "period": "5",
         "symbol": "Zr",
-        "weight": "91.224"
+        "weight": "91.224",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium"
     },
     {
         "block": "d",
@@ -489,7 +529,8 @@
         "number": "41",
         "period": "5",
         "symbol": "Nb",
-        "weight": "92.906"
+        "weight": "92.906",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium"
     },
     {
         "block": "d",
@@ -501,7 +542,8 @@
         "number": "42",
         "period": "5",
         "symbol": "Mo",
-        "weight": "95.95"
+        "weight": "95.95",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum"
     },
     {
         "block": "d",
@@ -513,7 +555,8 @@
         "number": "43",
         "period": "5",
         "symbol": "Tc",
-        "weight": "[98]"
+        "weight": "[98]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium"
     },
     {
         "block": "d",
@@ -525,7 +568,8 @@
         "number": "44",
         "period": "5",
         "symbol": "Ru",
-        "weight": "101.07"
+        "weight": "101.07",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium"
     },
     {
         "block": "d",
@@ -537,7 +581,8 @@
         "number": "45",
         "period": "5",
         "symbol": "Rh",
-        "weight": "102.906"
+        "weight": "102.906",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium"
     },
     {
         "block": "d",
@@ -549,7 +594,8 @@
         "number": "46",
         "period": "5",
         "symbol": "Pd",
-        "weight": "106.42"
+        "weight": "106.42",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium"
     },
     {
         "block": "d",
@@ -561,7 +607,8 @@
         "number": "47",
         "period": "5",
         "symbol": "Ag",
-        "weight": "107.868"
+        "weight": "107.868",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Silver"
     },
     {
         "block": "d",
@@ -573,7 +620,8 @@
         "number": "48",
         "period": "5",
         "symbol": "Cd",
-        "weight": "112.414"
+        "weight": "112.414",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium"
     },
     {
         "block": "p",
@@ -585,7 +633,8 @@
         "number": "49",
         "period": "5",
         "symbol": "In",
-        "weight": "114.818"
+        "weight": "114.818",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Indium"
     },
     {
         "block": "p",
@@ -597,7 +646,8 @@
         "number": "50",
         "period": "5",
         "symbol": "Sn",
-        "weight": "118.71"
+        "weight": "118.71",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tin"
     },
     {
         "block": "p",
@@ -609,7 +659,8 @@
         "number": "51",
         "period": "5",
         "symbol": "Sb",
-        "weight": "121.76"
+        "weight": "121.76",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony"
     },
     {
         "block": "p",
@@ -621,7 +672,8 @@
         "number": "52",
         "period": "5",
         "symbol": "Te",
-        "weight": "127.6"
+        "weight": "127.6",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium"
     },
     {
         "block": "p",
@@ -633,7 +685,8 @@
         "number": "53",
         "period": "5",
         "symbol": "I",
-        "weight": "126.904"
+        "weight": "126.904",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine"
     },
     {
         "block": "p",
@@ -645,7 +698,8 @@
         "number": "54",
         "period": "5",
         "symbol": "Xe",
-        "weight": "131.293"
+        "weight": "131.293",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon"
     },
     {
         "block": "s",
@@ -657,7 +711,8 @@
         "number": "55",
         "period": "6",
         "symbol": "Cs",
-        "weight": "132.905"
+        "weight": "132.905",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium"
     },
     {
         "block": "s",
@@ -669,7 +724,8 @@
         "number": "56",
         "period": "6",
         "symbol": "Ba",
-        "weight": "137.327"
+        "weight": "137.327",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Barium"
     },
     {
         "block": "d",
@@ -681,7 +737,8 @@
         "number": "72",
         "period": "6",
         "symbol": "Hf",
-        "weight": "178.49"
+        "weight": "178.49",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium"
     },
     {
         "block": "d",
@@ -693,7 +750,8 @@
         "number": "73",
         "period": "6",
         "symbol": "Ta",
-        "weight": "180.948"
+        "weight": "180.948",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum"
     },
     {
         "block": "d",
@@ -705,7 +763,8 @@
         "number": "74",
         "period": "6",
         "symbol": "W",
-        "weight": "183.84"
+        "weight": "183.84",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten"
     },
     {
         "block": "d",
@@ -717,7 +776,8 @@
         "number": "75",
         "period": "6",
         "symbol": "Re",
-        "weight": "186.207"
+        "weight": "186.207",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium"
     },
     {
         "block": "d",
@@ -729,7 +789,8 @@
         "number": "76",
         "period": "6",
         "symbol": "Os",
-        "weight": "190.23"
+        "weight": "190.23",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium"
     },
     {
         "block": "d",
@@ -741,7 +802,8 @@
         "number": "77",
         "period": "6",
         "symbol": "Ir",
-        "weight": "192.217"
+        "weight": "192.217",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium"
     },
     {
         "block": "d",
@@ -753,7 +815,8 @@
         "number": "78",
         "period": "6",
         "symbol": "Pt",
-        "weight": "195.084"
+        "weight": "195.084",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum"
     },
     {
         "block": "d",
@@ -765,7 +828,8 @@
         "number": "79",
         "period": "6",
         "symbol": "Au",
-        "weight": "196.967"
+        "weight": "196.967",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gold"
     },
     {
         "block": "d",
@@ -777,7 +841,8 @@
         "number": "80",
         "period": "6",
         "symbol": "Hg",
-        "weight": "200.592"
+        "weight": "200.592",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)"
     },
     {
         "block": "p",
@@ -789,7 +854,8 @@
         "number": "81",
         "period": "6",
         "symbol": "Tl",
-        "weight": "204.38"
+        "weight": "204.38",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium"
     },
     {
         "block": "p",
@@ -801,7 +867,8 @@
         "number": "82",
         "period": "6",
         "symbol": "Pb",
-        "weight": "207.2"
+        "weight": "207.2",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lead"
     },
     {
         "block": "p",
@@ -813,7 +880,8 @@
         "number": "83",
         "period": "6",
         "symbol": "Bi",
-        "weight": "208.98"
+        "weight": "208.98",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth"
     },
     {
         "block": "p",
@@ -825,7 +893,8 @@
         "number": "84",
         "period": "6",
         "symbol": "Po",
-        "weight": "[209]"
+        "weight": "[209]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium"
     },
     {
         "block": "p",
@@ -837,7 +906,8 @@
         "number": "85",
         "period": "6",
         "symbol": "At",
-        "weight": "[210]"
+        "weight": "[210]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
     },
     {
         "block": "p",
@@ -849,7 +919,8 @@
         "number": "86",
         "period": "6",
         "symbol": "Rn",
-        "weight": "[222]"
+        "weight": "[222]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Radon"
     },
     {
         "block": "s",
@@ -861,7 +932,8 @@
         "number": "87",
         "period": "7",
         "symbol": "Fr",
-        "weight": "[223]"
+        "weight": "[223]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Francium"
     },
     {
         "block": "s",
@@ -873,7 +945,8 @@
         "number": "88",
         "period": "7",
         "symbol": "Ra",
-        "weight": "[226]"
+        "weight": "[226]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Radium"
     },
     {
         "block": "d",
@@ -885,7 +958,8 @@
         "number": "104",
         "period": "7",
         "symbol": "Rf",
-        "weight": "[267]"
+        "weight": "[267]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium"
     },
     {
         "block": "d",
@@ -897,7 +971,8 @@
         "number": "105",
         "period": "7",
         "symbol": "Db",
-        "weight": "[268]"
+        "weight": "[268]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium"
     },
     {
         "block": "d",
@@ -909,7 +984,8 @@
         "number": "106",
         "period": "7",
         "symbol": "Sg",
-        "weight": "[269]"
+        "weight": "[269]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium"
     },
     {
         "block": "d",
@@ -921,7 +997,8 @@
         "number": "107",
         "period": "7",
         "symbol": "Bh",
-        "weight": "[270]"
+        "weight": "[270]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium"
     },
     {
         "block": "d",
@@ -933,7 +1010,8 @@
         "number": "108",
         "period": "7",
         "symbol": "Hs",
-        "weight": "[269]"
+        "weight": "[269]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium"
     },
     {
         "block": "d",
@@ -945,7 +1023,8 @@
         "number": "109",
         "period": "7",
         "symbol": "Mt",
-        "weight": "[278]"
+        "weight": "[278]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium"
     },
     {
         "block": "d",
@@ -957,7 +1036,8 @@
         "number": "110",
         "period": "7",
         "symbol": "Ds",
-        "weight": "[281]"
+        "weight": "[281]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium"
     },
     {
         "block": "d",
@@ -969,7 +1049,8 @@
         "number": "111",
         "period": "7",
         "symbol": "Rg",
-        "weight": "[281]"
+        "weight": "[281]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium"
     },
     {
         "block": "d",
@@ -981,7 +1062,8 @@
         "number": "112",
         "period": "7",
         "symbol": "Cn",
-        "weight": "[285]"
+        "weight": "[285]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium"
     },
     {
         "block": "p",
@@ -993,7 +1075,8 @@
         "number": "113",
         "period": "7",
         "symbol": "Uut",
-        "weight": "[286]"
+        "weight": "[286]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium"
     },
     {
         "block": "p",
@@ -1005,7 +1088,8 @@
         "number": "114",
         "period": "7",
         "symbol": "Fl",
-        "weight": "[289]"
+        "weight": "[289]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium"
     },
     {
         "block": "p",
@@ -1017,7 +1101,8 @@
         "number": "115",
         "period": "7",
         "symbol": "Uup",
-        "weight": "[289]"
+        "weight": "[289]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium"
     },
     {
         "block": "p",
@@ -1029,7 +1114,8 @@
         "number": "116",
         "period": "7",
         "symbol": "Lv",
-        "weight": "[293]"
+        "weight": "[293]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium"
     },
     {
         "block": "p",
@@ -1041,7 +1127,8 @@
         "number": "117",
         "period": "7",
         "symbol": "Uus",
-        "weight": "[294]"
+        "weight": "[294]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium"
     },
     {
         "block": "p",
@@ -1053,7 +1140,8 @@
         "number": "118",
         "period": "7",
         "symbol": "Uuo",
-        "weight": "[294]"
+        "weight": "[294]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium"
     },
     {
         "block": "f",
@@ -1065,7 +1153,8 @@
         "number": "57",
         "period": "6",
         "symbol": "La",
-        "weight": "138.905"
+        "weight": "138.905",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum"
     },
     {
         "block": "f",
@@ -1077,7 +1166,8 @@
         "number": "58",
         "period": "6",
         "symbol": "Ce",
-        "weight": "140.116"
+        "weight": "140.116",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium"
     },
     {
         "block": "f",
@@ -1089,7 +1179,8 @@
         "number": "59",
         "period": "6",
         "symbol": "Pr",
-        "weight": "140.908"
+        "weight": "140.908",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium"
     },
     {
         "block": "f",
@@ -1101,7 +1192,8 @@
         "number": "60",
         "period": "6",
         "symbol": "Nd",
-        "weight": "144.242"
+        "weight": "144.242",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium"
     },
     {
         "block": "f",
@@ -1113,7 +1205,8 @@
         "number": "61",
         "period": "6",
         "symbol": "Pm",
-        "weight": "[145]"
+        "weight": "[145]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium"
     },
     {
         "block": "f",
@@ -1125,7 +1218,8 @@
         "number": "62",
         "period": "6",
         "symbol": "Sm",
-        "weight": "150.36"
+        "weight": "150.36",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium"
     },
     {
         "block": "f",
@@ -1137,7 +1231,8 @@
         "number": "63",
         "period": "6",
         "symbol": "Eu",
-        "weight": "151.964"
+        "weight": "151.964",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Europium"
     },
     {
         "block": "f",
@@ -1149,7 +1244,8 @@
         "number": "64",
         "period": "6",
         "symbol": "Gd",
-        "weight": "157.25"
+        "weight": "157.25",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium"
     },
     {
         "block": "f",
@@ -1161,7 +1257,8 @@
         "number": "65",
         "period": "6",
         "symbol": "Tb",
-        "weight": "158.925"
+        "weight": "158.925",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium"
     },
     {
         "block": "f",
@@ -1173,7 +1270,8 @@
         "number": "66",
         "period": "6",
         "symbol": "Dy",
-        "weight": "162.5"
+        "weight": "162.5",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium"
     },
     {
         "block": "f",
@@ -1185,7 +1283,8 @@
         "number": "67",
         "period": "6",
         "symbol": "Ho",
-        "weight": "164.93"
+        "weight": "164.93",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium"
     },
     {
         "block": "f",
@@ -1197,7 +1296,8 @@
         "number": "68",
         "period": "6",
         "symbol": "Er",
-        "weight": "167.259"
+        "weight": "167.259",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium"
     },
     {
         "block": "f",
@@ -1209,7 +1309,8 @@
         "number": "69",
         "period": "6",
         "symbol": "Tm",
-        "weight": "168.934"
+        "weight": "168.934",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium"
     },
     {
         "block": "f",
@@ -1221,7 +1322,8 @@
         "number": "70",
         "period": "6",
         "symbol": "Yb",
-        "weight": "173.054"
+        "weight": "173.054",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium"
     },
     {
         "block": "d",
@@ -1233,7 +1335,8 @@
         "number": "71",
         "period": "6",
         "symbol": "Lu",
-        "weight": "174.967"
+        "weight": "174.967",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium"
     },
     {
         "block": "f",
@@ -1245,7 +1348,8 @@
         "number": "89",
         "period": "7",
         "symbol": "Ac",
-        "weight": "[227]"
+        "weight": "[227]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium"
     },
     {
         "block": "f",
@@ -1257,7 +1361,8 @@
         "number": "90",
         "period": "7",
         "symbol": "Th",
-        "weight": "232.038"
+        "weight": "232.038",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium"
     },
     {
         "block": "f",
@@ -1269,7 +1374,8 @@
         "number": "91",
         "period": "7",
         "symbol": "Pa",
-        "weight": "231.036"
+        "weight": "231.036",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium"
     },
     {
         "block": "f",
@@ -1281,7 +1387,8 @@
         "number": "92",
         "period": "7",
         "symbol": "U",
-        "weight": "238.029"
+        "weight": "238.029",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium"
     },
     {
         "block": "f",
@@ -1293,7 +1400,8 @@
         "number": "93",
         "period": "7",
         "symbol": "Np",
-        "weight": "[237]"
+        "weight": "[237]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium"
     },
     {
         "block": "f",
@@ -1305,7 +1413,8 @@
         "number": "94",
         "period": "7",
         "symbol": "Pu",
-        "weight": "[244]"
+        "weight": "[244]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium"
     },
     {
         "block": "f",
@@ -1317,7 +1426,8 @@
         "number": "95",
         "period": "7",
         "symbol": "Am",
-        "weight": "[243]"
+        "weight": "[243]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Americium"
     },
     {
         "block": "f",
@@ -1329,7 +1439,8 @@
         "number": "96",
         "period": "7",
         "symbol": "Cm",
-        "weight": "[247]"
+        "weight": "[247]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Curium"
     },
     {
         "block": "f",
@@ -1341,7 +1452,8 @@
         "number": "97",
         "period": "7",
         "symbol": "Bk",
-        "weight": "[247]"
+        "weight": "[247]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium"
     },
     {
         "block": "f",
@@ -1353,7 +1465,8 @@
         "number": "98",
         "period": "7",
         "symbol": "Cf",
-        "weight": "[251]"
+        "weight": "[251]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Californium"
     },
     {
         "block": "f",
@@ -1365,7 +1478,8 @@
         "number": "99",
         "period": "7",
         "symbol": "Es",
-        "weight": "[252]"
+        "weight": "[252]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium"
     },
     {
         "block": "f",
@@ -1377,7 +1491,8 @@
         "number": "100",
         "period": "7",
         "symbol": "Fm",
-        "weight": "[257]"
+        "weight": "[257]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium"
     },
     {
         "block": "f",
@@ -1389,7 +1504,8 @@
         "number": "101",
         "period": "7",
         "symbol": "Md",
-        "weight": "[258]"
+        "weight": "[258]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium"
     },
     {
         "block": "f",
@@ -1401,7 +1517,8 @@
         "number": "102",
         "period": "7",
         "symbol": "No",
-        "weight": "[259]"
+        "weight": "[259]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium"
     },
     {
         "block": "d",
@@ -1413,6 +1530,7 @@
         "number": "103",
         "period": "7",
         "symbol": "Lr",
-        "weight": "[266]"
+        "weight": "[266]",
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium"
     }
 ]
