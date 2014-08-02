@@ -21,14 +21,16 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     private Context mContext;
 
     private Typeface mTypeface;
-    private Isotope[] mIsotopes;
+    private Isotope[] mIsotopes = new Isotope[0];
 
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
         mContext = context;
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        mIsotopes = isotopes;
+        if(isotopes != null) {
+            mIsotopes = isotopes;
+        }
     }
 
     @Override

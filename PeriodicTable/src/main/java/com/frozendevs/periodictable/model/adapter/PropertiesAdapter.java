@@ -144,17 +144,31 @@ public class PropertiesAdapter extends BaseAdapter {
             }
 
             TextView configuration = (TextView)convertView.findViewById(R.id.element_electron_configuration);
-            configuration.setText(properties.getElectronConfiguration());
+            if(properties.getElectronConfiguration() != null &&
+                    !properties.getElectronConfiguration().equals("")) {
+                configuration.setText(properties.getElectronConfiguration());
+            }
+            else {
+                configuration.setText(R.string.property_value_unknown);
+            }
             configuration.setTypeface(mTypeface);
 
             TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
             electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol) + ": ");
-            electronegativity.append(!properties.getElectronegativity().equals("") ?
-                    properties.getElectronegativity() : mContext.getString(R.string.property_value_unknown));
+            if(properties.getElectronegativity() != null && !properties.getElectronegativity().equals("")) {
+                electronegativity.append(properties.getElectronegativity());
+            }
+            else {
+                electronegativity.append(mContext.getString(R.string.property_value_unknown));
+            }
 
             TextView oxidationStates = (TextView)convertView.findViewById(R.id.element_oxidation_states);
-            oxidationStates.setText(!properties.getOxidationStates().equals("") ?
-                    properties.getOxidationStates() : mContext.getString(R.string.property_value_unknown));
+            if(properties.getOxidationStates() != null && !properties.getOxidationStates().equals("")) {
+                oxidationStates.setText(properties.getOxidationStates());
+            }
+            else {
+                oxidationStates.setText(R.string.property_value_unknown);
+            }
         }
         else {
             int viewType = getItemViewType(position);
@@ -170,8 +184,12 @@ public class PropertiesAdapter extends BaseAdapter {
                 name.setText(property.getName());
 
                 TextView value = (TextView) convertView.findViewById(R.id.property_value);
-                value.setText(!property.getValue().equals("") ? property.getValue() :
-                        mContext.getString(R.string.property_value_unknown));
+                if(property.getValue() != null && !property.getValue().equals("")) {
+                    value.setText(property.getValue());
+                }
+                else {
+                    value.setText(R.string.property_value_unknown);
+                }
                 value.setTypeface(mTypeface);
             } else {
                 ((TextView) convertView).setText(property.getName());
