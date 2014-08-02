@@ -85,6 +85,8 @@ def fetch(url):
 
     configuration = re.sub(r'\[\[\[(.*)\|(.*)\]\]\]', r'[\2]', get_property(content, 'electron configuration'))
 
+    shells = get_property(content, 'electrons per shell')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -94,11 +96,11 @@ def fetch(url):
         'group': group,
         'period': period,
         'block': block,
-        'electronConfiguration': configuration
+        'electronConfiguration': configuration,
+        'electronsPerShell': shells
     }
 
-    #print(element)
-    print(element['electronConfiguration'])
+    print(element)
 
     return element
 
