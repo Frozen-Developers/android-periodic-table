@@ -45,8 +45,7 @@ def translate_script(string):
 def get_property(content, name, default = ''):
     for prop in content:
         if prop.strip().startswith(name + '='):
-            value = re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\s*\(predicted\)|\s*\(estimated\)', '',
-                prop.strip()[len(name) + 1:])).strip(' \n\t\'')
+            value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
             if not value.lower().startswith('unknown') and value.lower() != 'n/a':
                 return translate_script(value)
             else:
@@ -60,8 +59,9 @@ def signal_handler(signal, frame):
 def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
-    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>', '',
-        etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))
+    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
+        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
@@ -111,8 +111,7 @@ def fetch(url, articleUrl):
         'phase': phase
     }
 
-    #print(element)
-    print(element['phase'])
+    print(element)
 
     return element
 
