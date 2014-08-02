@@ -123,7 +123,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 158:
             case 159:
             case 160:
-                color = R.color.actinide_bg;
+                color = R.color.category_actinides_bg;
                 break;
 
             case 18:
@@ -132,7 +132,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 72:
             case 90:
             case 108:
-                color = R.color.alkali_metal_bg;
+                color = R.color.category_alkali_metals_bg;
                 break;
 
             case 19:
@@ -141,7 +141,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 73:
             case 91:
             case 109:
-                color = R.color.alkaline_earth_metal_bg;
+                color = R.color.category_alkaline_earth_metals_bg;
                 break;
 
             case 0:
@@ -151,7 +151,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 52:
             case 70:
             case 88:
-                color = R.color.diatomic_nonmetal_bg;
+                color = R.color.category_diatomic_nonmetals_bg;
                 break;
 
             case 92:
@@ -170,7 +170,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 140:
             case 141:
             case 142:
-                color = R.color.lanthanide_bg;
+                color = R.color.category_lanthanides_bg;
                 break;
 
             case 30:
@@ -180,8 +180,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 86:
             case 87:
             case 106:
-            case 124:
-                color = R.color.metalloid_bg;
+                color = R.color.category_metalloids_bg;
                 break;
 
             case 17:
@@ -190,15 +189,14 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 71:
             case 89:
             case 107:
-            case 125:
-                color = R.color.noble_gas_bg;
+                color = R.color.category_noble_gases_bg;
                 break;
 
             case 31:
             case 50:
             case 51:
             case 69:
-                color = R.color.polyatomic_nonmetal_bg;
+                color = R.color.category_polyatomic_nonmetals_bg;
                 break;
 
             case 48:
@@ -209,11 +207,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 103:
             case 104:
             case 105:
-            case 120:
-            case 121:
-            case 122:
-            case 123:
-                color = R.color.other_metal_bg;
+                color = R.color.category_other_metals_bg;
                 break;
 
             case 56:
@@ -250,11 +244,20 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 113:
             case 114:
             case 115:
+            case 119:
+                color = R.color.category_transition_metals_bg;
+                break;
+
             case 116:
             case 117:
             case 118:
-            case 119:
-                color = R.color.transition_metal_bg;
+            case 120:
+            case 121:
+            case 122:
+            case 123:
+            case 124:
+            case 125:
+                color = R.color.category_unknown_bg;
                 break;
         }
 
