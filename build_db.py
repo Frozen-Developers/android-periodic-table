@@ -8,6 +8,7 @@ import signal
 import sys
 import json
 from html.parser import HTMLParser
+from bs4 import BeautifulSoup, Tag
 
 OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
@@ -16,12 +17,34 @@ URL_PREFIX = 'http://en.wikipedia.org'
 def replace_chars(string, charset1, charset2):
     return ''.join(dict(zip(charset1, charset2)).get(c, c) for c in string)
 
+def remove_html_tags(string, tags=[]):
+    if len(tags) > 0:
+        soup = BeautifulSoup(string)
+        for tag in tags:
+            for occurence in soup.find_all(tag):
+                occurence.replaceWith('')
+        return soup.get_text()
+    return re.sub(r'<[^<]+?>', '', string)
+
+def replace_with_superscript(string):
+    return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
+
+def replace_with_subscript(string):
+    return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
+
+def translate_script(string):
+    for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+|β[-–−+]', string):
+        string = string.replace(match, replace_with_superscript(remove_html_tags(match.replace('^', ''))))
+    for match in re.findall(r'<sub>[-–−\d]*</sub>', string):
+        string = string.replace(match, replace_with_subscript(remove_html_tags(match)))
+    return string
+
 def get_property(content, name, default = ''):
     for prop in content:
         if prop.strip().startswith(name + '='):
-            value = prop.strip()[len(name) + 1:]
+            value = re.sub(r'\(predicted\)|\(estimated\)', '', prop.strip()[len(name) + 1:]).strip(' \n\t\'')
             if value.lower() != 'unknown' and value.lower() != 'n/a':
-                return value
+                return translate_script(value)
             else:
                 break
     return default
@@ -33,7 +56,8 @@ def signal_handler(signal, frame):
 def fetch(url):
     print('Parsing properties from ' + url)
 
-    content = re.sub(r'<.?includeonly[^>]*>', '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
+    content = re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>', '',
+        etree.parse(url).xpath("//*[local-name()='text']/text()")[0]).replace('<br/>', '\n')
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
@@ -59,6 +83,8 @@ def fetch(url):
 
     block = get_property(content, 'block')
 
+    configuration = re.sub(r'\[\[\[(.*)\|(.*)\]\]\]', r'[\2]', get_property(content, 'electron configuration'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -67,11 +93,12 @@ def fetch(url):
         'category': category,
         'group': group,
         'period': period,
-        'block': block
+        'block': block,
+        'electronConfiguration': configuration
     }
 
     #print(element)
-    print(element['block'])
+    print(element['electronConfiguration'])
 
     return element
 
