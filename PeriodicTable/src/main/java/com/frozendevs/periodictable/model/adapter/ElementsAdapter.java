@@ -37,7 +37,7 @@ public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
         symbol.setText(element.getSymbol());
 
         TextView atomicNumber = (TextView)convertView.findViewById(R.id.element_number);
-        atomicNumber.setText(String.valueOf(element.getAtomicNumber()));
+        atomicNumber.setText(String.valueOf(element.getNumber()));
 
         TextView name = (TextView)convertView.findViewById(R.id.element_name);
         name.setText(element.getName());
@@ -46,7 +46,7 @@ public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, PropertiesActivity.class);
-                intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, element.getAtomicNumber());
+                intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, element.getNumber());
                 mContext.startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
 
         for(ElementListItem element : mAllItems) {
             if(element.getSymbol().equalsIgnoreCase(filter) ||
-                    String.valueOf(element.getAtomicNumber()).equals(filter)) {
+                    String.valueOf(element.getNumber()).equals(filter)) {
                 filteredItems.add(element);
                 break;
             }

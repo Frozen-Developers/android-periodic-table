@@ -61,7 +61,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 null,
                 new Property(R.string.properties_header_general, null),
                 new Property(R.string.property_symbol, properties.getSymbol()),
-                new Property(R.string.property_atomic_number, properties.getAtomicNumber()),
+                new Property(R.string.property_atomic_number, properties.getNumber()),
                 new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
                 new Property(R.string.property_group, properties.getGroup() > 0 ? properties.getGroup() : 3),
                 new Property(R.string.property_period, properties.getPeriod()),

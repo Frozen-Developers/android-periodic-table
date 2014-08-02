@@ -3,8 +3,8 @@ package com.frozendevs.periodictable.helper;
 import android.content.Context;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.ElementListItem;
+import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.TableItem;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -67,7 +67,7 @@ public class Database {
         Collections.sort(itemsList, new Comparator<ElementListItem>() {
             @Override
             public int compare(ElementListItem lhs, ElementListItem rhs) {
-                return lhs.getAtomicNumber() - rhs.getAtomicNumber();
+                return lhs.getNumber() - rhs.getNumber();
             }
         });
 
@@ -82,7 +82,7 @@ public class Database {
         for(JsonElement jsonElement : mJsonArray) {
             JsonObject object = jsonElement.getAsJsonObject();
 
-            if(object.get("atomicNumber").getAsInt() == element)
+            if(object.get("number").getAsInt() == element)
                 return mGson.fromJson(object, ElementProperties.class);
         }
 

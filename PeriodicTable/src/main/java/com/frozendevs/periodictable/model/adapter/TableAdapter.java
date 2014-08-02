@@ -25,10 +25,10 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             if (((item.getPeriod() - 1) * 18) + item.getGroup() - 1 == position)
                 return item;
             else if (position >= 128 && position <= 142) {
-                if (item.getAtomicNumber() + 71 == position)
+                if (item.getNumber() + 71 == position)
                     return item;
             } else if (position >= 146 && position <= 160) {
-                if (item.getAtomicNumber() + 57 == position)
+                if (item.getNumber() + 57 == position)
                     return item;
             }
         }
@@ -64,7 +64,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                     convertView.setBackgroundColor(getBackgroundColor(position));
 
                     ((TextView) convertView.findViewById(R.id.element_symbol)).setText(item.getSymbol());
-                    ((TextView) convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getAtomicNumber()));
+                    ((TextView) convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getNumber()));
                     ((TextView) convertView.findViewById(R.id.element_name)).setText(item.getName());
                     ((TextView) convertView.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
 
@@ -72,7 +72,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(mContext, PropertiesActivity.class);
-                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getAtomicNumber());
+                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
                             mContext.startActivity(intent);
                         }
                     });
@@ -88,11 +88,11 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
     public int getItemPosition(TableItem item) {
         for (TableItem tableItem : getAllItems()) {
             if(tableItem.equals(item)) {
-                if (item.getAtomicNumber() + 71 >= 128 && item.getAtomicNumber() + 71 <= 142) {
-                    return item.getAtomicNumber() + 71;
+                if (item.getNumber() + 71 >= 128 && item.getNumber() + 71 <= 142) {
+                    return item.getNumber() + 71;
                 }
-                else if (item.getAtomicNumber() + 57 >= 146 && item.getAtomicNumber() + 57 <= 160) {
-                    return item.getAtomicNumber() + 57;
+                else if (item.getNumber() + 57 >= 146 && item.getNumber() + 57 <= 160) {
+                    return item.getNumber() + 57;
                 }
                 else {
                     return ((item.getPeriod() - 1) * 18) + item.getGroup() - 1;

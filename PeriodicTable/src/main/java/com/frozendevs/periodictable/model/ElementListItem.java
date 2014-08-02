@@ -3,7 +3,7 @@ package com.frozendevs.periodictable.model;
 public class ElementListItem {
 
     private String name, symbol;
-    private int atomicNumber;
+    private int number;
 
     public String getName() {
         return name;
@@ -13,7 +13,7 @@ public class ElementListItem {
         return symbol;
     }
 
-    public int getAtomicNumber() {
-        return atomicNumber;
+    public int getNumber() {
+        return number;
     }
 }
