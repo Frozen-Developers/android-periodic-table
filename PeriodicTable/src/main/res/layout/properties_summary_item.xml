@@ -25,6 +25,13 @@
         </TextView>
 
         <TextView
+            android:id="@+id/element_electrons_per_shell"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall">
+        </TextView>
+
+        <TextView
             android:id="@+id/element_electronegativity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

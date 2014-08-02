@@ -43,6 +43,7 @@
     <string name="property_block">Block</string>
     <string name="property_category">Category</string>
     <string name="property_electron_configuration">Electron configuration</string>
+    <string name="property_electrons_per_shell">Electrons per shell</string>
     <string name="property_appearance">Appearance</string>
     <string name="property_phase">Phase</string>
     <string name="property_density">Density</string>

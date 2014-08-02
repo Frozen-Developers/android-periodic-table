@@ -68,6 +68,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_block, properties.getBlock()),
                 new Property(R.string.property_category, properties.getCategory()),
                 new Property(R.string.property_electron_configuration, properties.getElectronConfiguration()),
+                new Property(R.string.property_electrons_per_shell, properties.getElectronsPerShell()),
                 new Property(R.string.properties_header_physical, null),
                 new Property(R.string.property_appearance, properties.getAppearance()),
                 new Property(R.string.property_phase, properties.getPhase()),
@@ -152,6 +153,15 @@ public class PropertiesAdapter extends BaseAdapter {
                 configuration.setText(R.string.property_value_unknown);
             }
             configuration.setTypeface(mTypeface);
+
+            TextView shells = (TextView)convertView.findViewById(R.id.element_electrons_per_shell);
+            if(properties.getElectronsPerShell() != null &&
+                    !properties.getElectronsPerShell().equals("")) {
+                shells.setText(properties.getElectronsPerShell());
+            }
+            else {
+                shells.setText(R.string.property_value_unknown);
+            }
 
             TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
             electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol) + ": ");
