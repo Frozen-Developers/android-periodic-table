@@ -1,5 +1,6 @@
 [
     {
+        "appearance": "Colorless gas",
         "block": "s",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "1s¹",
@@ -13,6 +14,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen"
     },
     {
+        "appearance": "Colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
         "block": "s",
         "category": "Noble gas",
         "electronConfiguration": "1s²",
@@ -26,6 +28,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Helium"
     },
     {
+        "appearance": "Silvery-white",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[He] 2s¹",
@@ -39,6 +42,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium"
     },
     {
+        "appearance": "White-gray metallic",
         "block": "s",
         "category": "Alkaline earth metal",
         "electronConfiguration": "[He] 2s²",
@@ -52,6 +56,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium"
     },
     {
+        "appearance": "Black-brown",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[He] 2s² 2p¹",
@@ -65,6 +70,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Boron"
     },
     {
+        "appearance": "Diamond: clear\nGraphite: black",
         "block": "p",
         "category": "Polyatomic nonmetal",
         "electronConfiguration": "[He] 2s² 2p²",
@@ -78,6 +84,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon"
     },
     {
+        "appearance": "Colorless gas, liquid or solid",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[He] 2s² 2p³",
@@ -91,6 +98,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen"
     },
     {
+        "appearance": "Colorless gas, pale blue liquid",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[He] 2s² 2p⁴",
@@ -104,6 +112,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen"
     },
     {
+        "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: alpha is opaque, beta is transparent",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[He] 2s² 2p⁵",
@@ -117,6 +126,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine"
     },
     {
+        "appearance": "Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
         "block": "p",
         "category": "Noble gas",
         "electronConfiguration": "[He] 2s² 2p⁶",
@@ -130,6 +140,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neon"
     },
     {
+        "appearance": "Silvery white metallic",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[Ne] 3s¹",
@@ -143,6 +154,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium"
     },
     {
+        "appearance": "Shiny grey solid",
         "block": "s",
         "category": "Alkaline earth metal",
         "electronConfiguration": "[Ne] 3s²",
@@ -156,6 +168,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium"
     },
     {
+        "appearance": "Silvery gray metallic",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Ne] 3s² 3p¹",
@@ -169,6 +182,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium"
     },
     {
+        "appearance": "Crystalline, reflective with bluish-tinged faces",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Ne] 3s² 3p²",
@@ -182,6 +196,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon"
     },
     {
+        "appearance": "Colourless, waxy white, yellow, scarlet, red, violet, black",
         "block": "p",
         "category": "Polyatomic nonmetal",
         "electronConfiguration": "[Ne] 3s² 3p³",
@@ -195,6 +210,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus"
     },
     {
+        "appearance": "Lemon yellow sintered microcrystals",
         "block": "p",
         "category": "Polyatomic nonmetal",
         "electronConfiguration": "[Ne] 3s² 3p⁴",
@@ -208,6 +224,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur"
     },
     {
+        "appearance": "Pale yellow-green gas",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[Ne] 3s² 3p⁵",
@@ -221,6 +238,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine"
     },
     {
+        "appearance": "Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
         "block": "p",
         "category": "Noble gas",
         "electronConfiguration": "[Ne] 3s² 3p⁶",
@@ -234,6 +252,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Argon"
     },
     {
+        "appearance": "Silvery gray",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[Ar] 4s¹",
@@ -247,6 +266,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium"
     },
     {
+        "appearance": "Dull gray, silver",
         "block": "s",
         "category": "Alkaline earth metal",
         "electronConfiguration": "[Ar] 4s²",
@@ -260,6 +280,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d¹ 4s²",
@@ -273,6 +294,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium"
     },
     {
+        "appearance": "Silvery grey-white metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d² 4s²",
@@ -286,6 +308,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium"
     },
     {
+        "appearance": "Blue-silver-grey metal",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d³ 4s²",
@@ -299,6 +322,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium"
     },
     {
+        "appearance": "Silvery metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d⁵ 4s¹",
@@ -312,6 +336,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium"
     },
     {
+        "appearance": "Silvery metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d⁵ 4s²",
@@ -325,6 +350,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese"
     },
     {
+        "appearance": "Lustrous metallic with a grayish tinge",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d⁶ 4s²",
@@ -338,6 +364,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iron"
     },
     {
+        "appearance": "Hard lustrous gray metal",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d⁷ 4s²",
@@ -351,6 +378,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt"
     },
     {
+        "appearance": "Lustrous, metallic, and silver with a gold tinge",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d⁹ 4s¹",
@@ -364,6 +392,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel"
     },
     {
+        "appearance": "Red-orange metallic luster",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s¹",
@@ -377,6 +406,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copper"
     },
     {
+        "appearance": "Silver-gray",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s²",
@@ -390,6 +420,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc"
     },
     {
+        "appearance": "Silver-white",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p¹",
@@ -403,6 +434,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium"
     },
     {
+        "appearance": "Grayish-white",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p²",
@@ -416,6 +448,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium"
     },
     {
+        "appearance": "Metallic grey",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p³",
@@ -429,6 +462,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic"
     },
     {
+        "appearance": "Black and red allotropes",
         "block": "p",
         "category": "Polyatomic nonmetal",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁴",
@@ -442,6 +476,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium"
     },
     {
+        "appearance": "Gas/liquid: red-brown\nSolid: metallic luster",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁵",
@@ -455,6 +490,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine"
     },
     {
+        "appearance": "Colorless gas, exhibiting a whitish glow in a high electric field",
         "block": "p",
         "category": "Noble gas",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁶",
@@ -468,6 +504,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton"
     },
     {
+        "appearance": "Grey white",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[Kr] 5s¹",
@@ -481,6 +518,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium"
     },
     {
+        "appearance": "Silvery white metallic",
         "block": "s",
         "category": "Alkaline earth metal",
         "electronConfiguration": "[Kr] 5s²",
@@ -494,6 +532,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d¹ 5s²",
@@ -507,6 +546,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d² 5s²",
@@ -520,6 +560,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium"
     },
     {
+        "appearance": "Gray metallic, bluish when oxidized",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d⁴ 5s¹",
@@ -533,6 +574,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium"
     },
     {
+        "appearance": "Gray metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d⁵ 5s¹",
@@ -546,6 +588,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum"
     },
     {
+        "appearance": "Shiny gray metal",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d⁵ 5s²",
@@ -559,6 +602,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium"
     },
     {
+        "appearance": "Silvery white metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d⁷ 5s¹",
@@ -572,6 +616,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium"
     },
     {
+        "appearance": "Silvery white metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d⁸ 5s¹",
@@ -585,6 +630,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d¹⁰",
@@ -598,6 +644,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium"
     },
     {
+        "appearance": "Lustrous white metal",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s¹",
@@ -611,6 +658,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silver"
     },
     {
+        "appearance": "Silvery bluish-gray metallic",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s²",
@@ -624,6 +672,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium"
     },
     {
+        "appearance": "Silvery lustrous gray",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p¹",
@@ -637,6 +686,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Indium"
     },
     {
+        "appearance": "Silvery or gray",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p²",
@@ -650,6 +700,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tin"
     },
     {
+        "appearance": "Silvery lustrous gray",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p³",
@@ -663,6 +714,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony"
     },
     {
+        "appearance": "Silvery lustrous gray",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁴",
@@ -676,6 +728,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium"
     },
     {
+        "appearance": "Lustrous metallic gray, violet as a gas",
         "block": "p",
         "category": "Diatomic nonmetal",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁵",
@@ -689,6 +742,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine"
     },
     {
+        "appearance": "Colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
         "block": "p",
         "category": "Noble gas",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁶",
@@ -702,6 +756,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon"
     },
     {
+        "appearance": "Silvery gold",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[Xe] 6s¹",
@@ -715,6 +770,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium"
     },
     {
+        "appearance": "Silvery gray",
         "block": "s",
         "category": "Alkaline earth metals",
         "electronConfiguration": "[Xe] 6s²",
@@ -728,6 +784,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Barium"
     },
     {
+        "appearance": "Steel gray",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d² 6s²",
@@ -741,6 +798,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium"
     },
     {
+        "appearance": "Gray blue",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d³ 6s²",
@@ -754,6 +812,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum"
     },
     {
+        "appearance": "Grayish white, lustrous",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁴ 6s²",
@@ -767,6 +826,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten"
     },
     {
+        "appearance": "Silvery-white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁵ 6s²",
@@ -780,6 +840,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium"
     },
     {
+        "appearance": "Silvery, blue cast",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁶ 6s²",
@@ -793,6 +854,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
@@ -806,6 +868,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium"
     },
     {
+        "appearance": "Grayish white",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁹ 6s¹",
@@ -819,6 +882,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum"
     },
     {
+        "appearance": "Metallic yellow",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
@@ -832,6 +896,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gold"
     },
     {
+        "appearance": "Silvery",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s²",
@@ -845,6 +910,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)"
     },
     {
+        "appearance": "Silvery white",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",
@@ -858,6 +924,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium"
     },
     {
+        "appearance": "Metallic gray",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²",
@@ -871,6 +938,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lead"
     },
     {
+        "appearance": "Lustrous silver",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³",
@@ -884,6 +952,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth"
     },
     {
+        "appearance": "Silvery",
         "block": "p",
         "category": "Post-transition metal",
         "electronConfiguration": "[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p⁴",
@@ -897,6 +966,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "Metalloid",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",
@@ -910,6 +980,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
     },
     {
+        "appearance": "Colorless gas",
         "block": "p",
         "category": "Noble gas",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶",
@@ -923,6 +994,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radon"
     },
     {
+        "appearance": "",
         "block": "s",
         "category": "Alkali metal",
         "electronConfiguration": "[Rn] 7s¹",
@@ -936,6 +1008,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Francium"
     },
     {
+        "appearance": "Silvery white metallic",
         "block": "s",
         "category": "Alkaline earth metal",
         "electronConfiguration": "[Rn] 7s²",
@@ -949,6 +1022,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d² 7s²",
@@ -962,6 +1036,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d³ 7s²",
@@ -975,6 +1050,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁴ 7s²",
@@ -988,6 +1064,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁵ 7s²",
@@ -1001,6 +1078,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium"
     },
     {
+        "appearance": "Silvery",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁶ 7s²",
@@ -1014,6 +1092,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁷ 7s²",
@@ -1027,6 +1106,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁸ 7s²",
@@ -1040,6 +1120,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium"
     },
     {
+        "appearance": "Silvery",
         "block": "d",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁹ 7s²",
@@ -1053,6 +1134,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Transition metal",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s²",
@@ -1066,6 +1148,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹",
@@ -1079,6 +1162,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²",
@@ -1092,6 +1176,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³",
@@ -1105,6 +1190,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴",
@@ -1118,6 +1204,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium"
     },
     {
+        "appearance": "Semimetallic",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵",
@@ -1131,6 +1218,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium"
     },
     {
+        "appearance": "",
         "block": "p",
         "category": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶",
@@ -1144,6 +1232,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 5d¹ 6s²",
@@ -1157,6 +1246,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹ 5d¹ 6s²",
@@ -1170,6 +1260,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium"
     },
     {
+        "appearance": "Grayish white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f³ 6s²",
@@ -1183,6 +1274,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁴ 6s²",
@@ -1196,6 +1288,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium"
     },
     {
+        "appearance": "Metallic",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁵ 6s²",
@@ -1209,6 +1302,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁶ 6s²",
@@ -1222,6 +1316,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium"
     },
     {
+        "appearance": "Silvery white, but rarely seen without oxide discoloration",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁷ 6s²",
@@ -1235,6 +1330,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Europium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁷ 5d¹ 6s²",
@@ -1248,6 +1344,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f⁹ 6s²",
@@ -1261,6 +1358,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹⁰ 6s²",
@@ -1274,6 +1372,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹¹ 6s²",
@@ -1287,6 +1386,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹² 6s²",
@@ -1300,6 +1400,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium"
     },
     {
+        "appearance": "Silvery gray",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹³ 6s²",
@@ -1313,6 +1414,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 4f¹⁴ 6s²",
@@ -1326,6 +1428,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium"
     },
     {
+        "appearance": "Silvery white",
         "block": "d",
         "category": "Lanthanide",
         "electronConfiguration": "[Xe] 6s² 4f¹⁴ 5d¹",
@@ -1339,6 +1442,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium"
     },
     {
+        "appearance": "Silvery-white, glowing with an eerie blue light, sometimes with a golden cast",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 6d¹ 7s²",
@@ -1352,6 +1456,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium"
     },
     {
+        "appearance": "Silvery, often with black tarnish",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 6d² 7s²",
@@ -1365,6 +1470,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium"
     },
     {
+        "appearance": "Bright, silvery metallic luster",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f² 6d¹ 7s²",
@@ -1378,6 +1484,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium"
     },
     {
+        "appearance": "Silvery gray metallic, corrodes to a spalling black oxide coat in air",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f³ 6d¹ 7s²",
@@ -1391,6 +1498,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium"
     },
     {
+        "appearance": "Silvery metallic",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f⁴ 6d¹ 7s²",
@@ -1404,6 +1512,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium"
     },
     {
+        "appearance": "Silvery white, tarnishing to dark gray in air",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f⁶ 7s²",
@@ -1417,6 +1526,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium"
     },
     {
+        "appearance": "Silvery white",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f⁷ 7s²",
@@ -1430,6 +1540,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Americium"
     },
     {
+        "appearance": "Silvery",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f⁷ 6d¹ 7s²",
@@ -1443,6 +1554,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Curium"
     },
     {
+        "appearance": "Silvery",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f⁹ 7s²",
@@ -1456,6 +1568,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium"
     },
     {
+        "appearance": "Silvery",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹⁰ 7s²",
@@ -1469,6 +1582,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Californium"
     },
     {
+        "appearance": "Silver-colored",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹¹ 7s²",
@@ -1482,6 +1596,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium"
     },
     {
+        "appearance": "",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹² 7s²",
@@ -1495,6 +1610,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium"
     },
     {
+        "appearance": "",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹³ 7s²",
@@ -1508,6 +1624,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium"
     },
     {
+        "appearance": "",
         "block": "f",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹⁴ 7s²",
@@ -1521,6 +1638,7 @@
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium"
     },
     {
+        "appearance": "",
         "block": "d",
         "category": "Actinide",
         "electronConfiguration": "[Rn] 5f¹⁴ 7s² 7p¹",

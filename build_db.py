@@ -14,6 +14,9 @@ OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
 URL_PREFIX = 'http://en.wikipedia.org'
 
+def capitalize(string):
+    return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
+
 def replace_chars(string, charset1, charset2):
     return ''.join(dict(zip(charset1, charset2)).get(c, c) for c in string)
 
@@ -42,8 +45,9 @@ def translate_script(string):
 def get_property(content, name, default = ''):
     for prop in content:
         if prop.strip().startswith(name + '='):
-            value = re.sub(r'\(predicted\)|\(estimated\)', '', prop.strip()[len(name) + 1:]).strip(' \n\t\'')
-            if value.lower() != 'unknown' and value.lower() != 'n/a':
+            value = re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\s*\(predicted\)|\s*\(estimated\)', '',
+                prop.strip()[len(name) + 1:])).strip(' \n\t\'')
+            if not value.lower().startswith('unknown') and value.lower() != 'n/a':
                 return translate_script(value)
             else:
                 break
@@ -56,8 +60,8 @@ def signal_handler(signal, frame):
 def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
-    content = re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>', '',
-        etree.parse(url).xpath("//*[local-name()='text']/text()")[0]).replace('<br/>', '\n')
+    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>', '',
+        etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
@@ -83,9 +87,11 @@ def fetch(url, articleUrl):
 
     block = get_property(content, 'block')
 
-    configuration = re.sub(r'\[\[\[(.*)\|(.*)\]\]\]', r'[\2]', get_property(content, 'electron configuration'))
+    configuration = re.sub(r'\[(.*)\|(.*)\]', r'[\2]', get_property(content, 'electron configuration'))
 
     shells = get_property(content, 'electrons per shell')
+
+    appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(get_property(content, 'appearance')).replace(';', ','))
 
     element = {
         'number': number,
@@ -98,7 +104,8 @@ def fetch(url, articleUrl):
         'block': block,
         'electronConfiguration': configuration,
         'electronsPerShell': shells,
-        'wikipediaLink': articleUrl
+        'wikipediaLink': articleUrl,
+        'appearance': appearance
     }
 
     print(element)
