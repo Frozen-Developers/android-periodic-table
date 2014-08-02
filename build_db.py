@@ -93,6 +93,8 @@ def fetch(url, articleUrl):
 
     appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(get_property(content, 'appearance')).replace(';', ','))
 
+    phase = get_property(content, 'phase').capitalize()
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -105,10 +107,12 @@ def fetch(url, articleUrl):
         'electronConfiguration': configuration,
         'electronsPerShell': shells,
         'wikipediaLink': articleUrl,
-        'appearance': appearance
+        'appearance': appearance,
+        'phase': phase
     }
 
-    print(element)
+    #print(element)
+    print(element['phase'])
 
     return element
 

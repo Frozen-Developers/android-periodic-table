@@ -9,6 +9,7 @@
         "name": "Hydrogen",
         "number": "1",
         "period": "1",
+        "phase": "Gas",
         "symbol": "H",
         "weight": "1.008",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen"
@@ -23,6 +24,7 @@
         "name": "Helium",
         "number": "2",
         "period": "1",
+        "phase": "Gas",
         "symbol": "He",
         "weight": "4.003",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Helium"
@@ -37,6 +39,7 @@
         "name": "Lithium",
         "number": "3",
         "period": "2",
+        "phase": "Solid",
         "symbol": "Li",
         "weight": "6.94",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium"
@@ -51,6 +54,7 @@
         "name": "Beryllium",
         "number": "4",
         "period": "2",
+        "phase": "Solid",
         "symbol": "Be",
         "weight": "9.012",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium"
@@ -65,6 +69,7 @@
         "name": "Boron",
         "number": "5",
         "period": "2",
+        "phase": "Solid",
         "symbol": "B",
         "weight": "10.81",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Boron"
@@ -79,6 +84,7 @@
         "name": "Carbon",
         "number": "6",
         "period": "2",
+        "phase": "Solid",
         "symbol": "C",
         "weight": "12.011",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon"
@@ -93,6 +99,7 @@
         "name": "Nitrogen",
         "number": "7",
         "period": "2",
+        "phase": "Gas",
         "symbol": "N",
         "weight": "14.007",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen"
@@ -107,6 +114,7 @@
         "name": "Oxygen",
         "number": "8",
         "period": "2",
+        "phase": "Gas",
         "symbol": "O",
         "weight": "15.999",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen"
@@ -121,6 +129,7 @@
         "name": "Fluorine",
         "number": "9",
         "period": "2",
+        "phase": "Gas",
         "symbol": "F",
         "weight": "18.998",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine"
@@ -135,6 +144,7 @@
         "name": "Neon",
         "number": "10",
         "period": "2",
+        "phase": "Gas",
         "symbol": "Ne",
         "weight": "20.18",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neon"
@@ -149,6 +159,7 @@
         "name": "Sodium",
         "number": "11",
         "period": "3",
+        "phase": "Solid",
         "symbol": "Na",
         "weight": "22.99",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium"
@@ -163,6 +174,7 @@
         "name": "Magnesium",
         "number": "12",
         "period": "3",
+        "phase": "Solid",
         "symbol": "Mg",
         "weight": "24.305",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium"
@@ -177,6 +189,7 @@
         "name": "Aluminium",
         "number": "13",
         "period": "3",
+        "phase": "Solid",
         "symbol": "Al",
         "weight": "26.982",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium"
@@ -191,6 +204,7 @@
         "name": "Silicon",
         "number": "14",
         "period": "3",
+        "phase": "Solid",
         "symbol": "Si",
         "weight": "28.085",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon"
@@ -205,6 +219,7 @@
         "name": "Phosphorus",
         "number": "15",
         "period": "3",
+        "phase": "Solid",
         "symbol": "P",
         "weight": "30.974",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus"
@@ -219,6 +234,7 @@
         "name": "Sulfur",
         "number": "16",
         "period": "3",
+        "phase": "Solid",
         "symbol": "S",
         "weight": "32.06",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur"
@@ -233,6 +249,7 @@
         "name": "Chlorine",
         "number": "17",
         "period": "3",
+        "phase": "Gas",
         "symbol": "Cl",
         "weight": "35.45",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine"
@@ -247,6 +264,7 @@
         "name": "Argon",
         "number": "18",
         "period": "3",
+        "phase": "Gas",
         "symbol": "Ar",
         "weight": "39.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Argon"
@@ -261,6 +279,7 @@
         "name": "Potassium",
         "number": "19",
         "period": "4",
+        "phase": "Solid",
         "symbol": "K",
         "weight": "39.098",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium"
@@ -275,6 +294,7 @@
         "name": "Calcium",
         "number": "20",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Ca",
         "weight": "40.078",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium"
@@ -289,6 +309,7 @@
         "name": "Scandium",
         "number": "21",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Sc",
         "weight": "44.956",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium"
@@ -303,6 +324,7 @@
         "name": "Titanium",
         "number": "22",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Ti",
         "weight": "47.867",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium"
@@ -317,6 +339,7 @@
         "name": "Vanadium",
         "number": "23",
         "period": "4",
+        "phase": "Solid",
         "symbol": "V",
         "weight": "50.941",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium"
@@ -331,6 +354,7 @@
         "name": "Chromium",
         "number": "24",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Cr",
         "weight": "51.996",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium"
@@ -345,6 +369,7 @@
         "name": "Manganese",
         "number": "25",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Mn",
         "weight": "54.938",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese"
@@ -359,6 +384,7 @@
         "name": "Iron",
         "number": "26",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Fe",
         "weight": "55.845",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iron"
@@ -373,6 +399,7 @@
         "name": "Cobalt",
         "number": "27",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Co",
         "weight": "58.933",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt"
@@ -387,6 +414,7 @@
         "name": "Nickel",
         "number": "28",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Ni",
         "weight": "58.693",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel"
@@ -401,6 +429,7 @@
         "name": "Copper",
         "number": "29",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Cu",
         "weight": "63.546",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copper"
@@ -415,6 +444,7 @@
         "name": "Zinc",
         "number": "30",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Zn",
         "weight": "65.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc"
@@ -429,6 +459,7 @@
         "name": "Gallium",
         "number": "31",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Ga",
         "weight": "69.723",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium"
@@ -443,6 +474,7 @@
         "name": "Germanium",
         "number": "32",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Ge",
         "weight": "72.63",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium"
@@ -457,6 +489,7 @@
         "name": "Arsenic",
         "number": "33",
         "period": "4",
+        "phase": "Solid",
         "symbol": "As",
         "weight": "74.922",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic"
@@ -471,6 +504,7 @@
         "name": "Selenium",
         "number": "34",
         "period": "4",
+        "phase": "Solid",
         "symbol": "Se",
         "weight": "78.971",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium"
@@ -485,6 +519,7 @@
         "name": "Bromine",
         "number": "35",
         "period": "4",
+        "phase": "Liquid",
         "symbol": "Br",
         "weight": "79.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine"
@@ -499,6 +534,7 @@
         "name": "Krypton",
         "number": "36",
         "period": "4",
+        "phase": "Gas",
         "symbol": "Kr",
         "weight": "83.8",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton"
@@ -513,6 +549,7 @@
         "name": "Rubidium",
         "number": "37",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Rb",
         "weight": "85.468",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium"
@@ -527,6 +564,7 @@
         "name": "Strontium",
         "number": "38",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Sr",
         "weight": "87.62",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium"
@@ -541,6 +579,7 @@
         "name": "Yttrium",
         "number": "39",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Y",
         "weight": "88.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium"
@@ -555,6 +594,7 @@
         "name": "Zirconium",
         "number": "40",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Zr",
         "weight": "91.224",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium"
@@ -569,6 +609,7 @@
         "name": "Niobium",
         "number": "41",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Nb",
         "weight": "92.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium"
@@ -583,6 +624,7 @@
         "name": "Molybdenum",
         "number": "42",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Mo",
         "weight": "95.95",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum"
@@ -597,6 +639,7 @@
         "name": "Technetium",
         "number": "43",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Tc",
         "weight": "[98]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium"
@@ -611,6 +654,7 @@
         "name": "Ruthenium",
         "number": "44",
         "period": "5",
+        "phase": "",
         "symbol": "Ru",
         "weight": "101.07",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium"
@@ -625,6 +669,7 @@
         "name": "Rhodium",
         "number": "45",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Rh",
         "weight": "102.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium"
@@ -639,6 +684,7 @@
         "name": "Palladium",
         "number": "46",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Pd",
         "weight": "106.42",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium"
@@ -653,6 +699,7 @@
         "name": "Silver",
         "number": "47",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Ag",
         "weight": "107.868",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silver"
@@ -667,6 +714,7 @@
         "name": "Cadmium",
         "number": "48",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Cd",
         "weight": "112.414",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium"
@@ -681,6 +729,7 @@
         "name": "Indium",
         "number": "49",
         "period": "5",
+        "phase": "Solid",
         "symbol": "In",
         "weight": "114.818",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Indium"
@@ -695,6 +744,7 @@
         "name": "Tin",
         "number": "50",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Sn",
         "weight": "118.71",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tin"
@@ -709,6 +759,7 @@
         "name": "Antimony",
         "number": "51",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Sb",
         "weight": "121.76",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony"
@@ -723,6 +774,7 @@
         "name": "Tellurium",
         "number": "52",
         "period": "5",
+        "phase": "Solid",
         "symbol": "Te",
         "weight": "127.6",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium"
@@ -737,6 +789,7 @@
         "name": "Iodine",
         "number": "53",
         "period": "5",
+        "phase": "Solid",
         "symbol": "I",
         "weight": "126.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine"
@@ -751,6 +804,7 @@
         "name": "Xenon",
         "number": "54",
         "period": "5",
+        "phase": "Gas",
         "symbol": "Xe",
         "weight": "131.293",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon"
@@ -765,6 +819,7 @@
         "name": "Caesium",
         "number": "55",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Cs",
         "weight": "132.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium"
@@ -779,6 +834,7 @@
         "name": "Barium",
         "number": "56",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Ba",
         "weight": "137.327",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Barium"
@@ -793,6 +849,7 @@
         "name": "Hafnium",
         "number": "72",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Hf",
         "weight": "178.49",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium"
@@ -807,6 +864,7 @@
         "name": "Tantalum",
         "number": "73",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Ta",
         "weight": "180.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum"
@@ -821,6 +879,7 @@
         "name": "Tungsten",
         "number": "74",
         "period": "6",
+        "phase": "Solid",
         "symbol": "W",
         "weight": "183.84",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten"
@@ -835,6 +894,7 @@
         "name": "Rhenium",
         "number": "75",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Re",
         "weight": "186.207",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium"
@@ -849,6 +909,7 @@
         "name": "Osmium",
         "number": "76",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Os",
         "weight": "190.23",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium"
@@ -863,6 +924,7 @@
         "name": "Iridium",
         "number": "77",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Ir",
         "weight": "192.217",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium"
@@ -877,6 +939,7 @@
         "name": "Platinum",
         "number": "78",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Pt",
         "weight": "195.084",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum"
@@ -891,6 +954,7 @@
         "name": "Gold",
         "number": "79",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Au",
         "weight": "196.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gold"
@@ -905,6 +969,7 @@
         "name": "Mercury",
         "number": "80",
         "period": "6",
+        "phase": "Liquid",
         "symbol": "Hg",
         "weight": "200.592",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)"
@@ -919,6 +984,7 @@
         "name": "Thallium",
         "number": "81",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Tl",
         "weight": "204.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium"
@@ -933,6 +999,7 @@
         "name": "Lead",
         "number": "82",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Pb",
         "weight": "207.2",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lead"
@@ -947,6 +1014,7 @@
         "name": "Bismuth",
         "number": "83",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Bi",
         "weight": "208.98",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth"
@@ -961,6 +1029,7 @@
         "name": "Polonium",
         "number": "84",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Po",
         "weight": "[209]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium"
@@ -975,6 +1044,7 @@
         "name": "Astatine",
         "number": "85",
         "period": "6",
+        "phase": "Solid",
         "symbol": "At",
         "weight": "[210]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
@@ -989,6 +1059,7 @@
         "name": "Radon",
         "number": "86",
         "period": "6",
+        "phase": "Gas",
         "symbol": "Rn",
         "weight": "[222]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radon"
@@ -1003,6 +1074,7 @@
         "name": "Francium",
         "number": "87",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Fr",
         "weight": "[223]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Francium"
@@ -1017,6 +1089,7 @@
         "name": "Radium",
         "number": "88",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Ra",
         "weight": "[226]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radium"
@@ -1031,6 +1104,7 @@
         "name": "Rutherfordium",
         "number": "104",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Rf",
         "weight": "[267]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium"
@@ -1045,6 +1119,7 @@
         "name": "Dubnium",
         "number": "105",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Db",
         "weight": "[268]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium"
@@ -1059,6 +1134,7 @@
         "name": "Seaborgium",
         "number": "106",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Sg",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium"
@@ -1073,6 +1149,7 @@
         "name": "Bohrium",
         "number": "107",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Bh",
         "weight": "[270]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium"
@@ -1087,6 +1164,7 @@
         "name": "Hassium",
         "number": "108",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Hs",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium"
@@ -1101,6 +1179,7 @@
         "name": "Meitnerium",
         "number": "109",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Mt",
         "weight": "[278]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium"
@@ -1115,6 +1194,7 @@
         "name": "Darmstadtium",
         "number": "110",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Ds",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium"
@@ -1129,6 +1209,7 @@
         "name": "Roentgenium",
         "number": "111",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Rg",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium"
@@ -1143,6 +1224,7 @@
         "name": "Copernicium",
         "number": "112",
         "period": "7",
+        "phase": "",
         "symbol": "Cn",
         "weight": "[285]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium"
@@ -1157,6 +1239,7 @@
         "name": "Ununtrium",
         "number": "113",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Uut",
         "weight": "[286]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium"
@@ -1171,6 +1254,7 @@
         "name": "Flerovium",
         "number": "114",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Fl",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium"
@@ -1185,6 +1269,7 @@
         "name": "Ununpentium",
         "number": "115",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Uup",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium"
@@ -1199,6 +1284,7 @@
         "name": "Livermorium",
         "number": "116",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Lv",
         "weight": "[293]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium"
@@ -1213,6 +1299,7 @@
         "name": "Ununseptium",
         "number": "117",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Uus",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium"
@@ -1227,6 +1314,7 @@
         "name": "Ununoctium",
         "number": "118",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Uuo",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium"
@@ -1241,6 +1329,7 @@
         "name": "Lanthanum",
         "number": "57",
         "period": "6",
+        "phase": "Solid",
         "symbol": "La",
         "weight": "138.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum"
@@ -1255,6 +1344,7 @@
         "name": "Cerium",
         "number": "58",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Ce",
         "weight": "140.116",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium"
@@ -1269,6 +1359,7 @@
         "name": "Praseodymium",
         "number": "59",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Pr",
         "weight": "140.908",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium"
@@ -1283,6 +1374,7 @@
         "name": "Neodymium",
         "number": "60",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Nd",
         "weight": "144.242",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium"
@@ -1297,6 +1389,7 @@
         "name": "Promethium",
         "number": "61",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Pm",
         "weight": "[145]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium"
@@ -1311,6 +1404,7 @@
         "name": "Samarium",
         "number": "62",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Sm",
         "weight": "150.36",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium"
@@ -1325,6 +1419,7 @@
         "name": "Europium",
         "number": "63",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Eu",
         "weight": "151.964",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Europium"
@@ -1339,6 +1434,7 @@
         "name": "Gadolinium",
         "number": "64",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Gd",
         "weight": "157.25",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium"
@@ -1353,6 +1449,7 @@
         "name": "Terbium",
         "number": "65",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Tb",
         "weight": "158.925",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium"
@@ -1367,6 +1464,7 @@
         "name": "Dysprosium",
         "number": "66",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Dy",
         "weight": "162.5",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium"
@@ -1381,6 +1479,7 @@
         "name": "Holmium",
         "number": "67",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Ho",
         "weight": "164.93",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium"
@@ -1395,6 +1494,7 @@
         "name": "Erbium",
         "number": "68",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Er",
         "weight": "167.259",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium"
@@ -1409,6 +1509,7 @@
         "name": "Thulium",
         "number": "69",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Tm",
         "weight": "168.934",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium"
@@ -1423,6 +1524,7 @@
         "name": "Ytterbium",
         "number": "70",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Yb",
         "weight": "173.054",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium"
@@ -1437,6 +1539,7 @@
         "name": "Lutetium",
         "number": "71",
         "period": "6",
+        "phase": "Solid",
         "symbol": "Lu",
         "weight": "174.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium"
@@ -1451,6 +1554,7 @@
         "name": "Actinium",
         "number": "89",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Ac",
         "weight": "[227]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium"
@@ -1465,6 +1569,7 @@
         "name": "Thorium",
         "number": "90",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Th",
         "weight": "232.038",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium"
@@ -1479,6 +1584,7 @@
         "name": "Protactinium",
         "number": "91",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Pa",
         "weight": "231.036",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium"
@@ -1493,6 +1599,7 @@
         "name": "Uranium",
         "number": "92",
         "period": "7",
+        "phase": "Solid",
         "symbol": "U",
         "weight": "238.029",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium"
@@ -1507,6 +1614,7 @@
         "name": "Neptunium",
         "number": "93",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Np",
         "weight": "[237]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium"
@@ -1521,6 +1629,7 @@
         "name": "Plutonium",
         "number": "94",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Pu",
         "weight": "[244]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium"
@@ -1535,6 +1644,7 @@
         "name": "Americium",
         "number": "95",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Am",
         "weight": "[243]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Americium"
@@ -1549,6 +1659,7 @@
         "name": "Curium",
         "number": "96",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Cm",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Curium"
@@ -1563,6 +1674,7 @@
         "name": "Berkelium",
         "number": "97",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Bk",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium"
@@ -1577,6 +1689,7 @@
         "name": "Californium",
         "number": "98",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Cf",
         "weight": "[251]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Californium"
@@ -1591,6 +1704,7 @@
         "name": "Einsteinium",
         "number": "99",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Es",
         "weight": "[252]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium"
@@ -1605,6 +1719,7 @@
         "name": "Fermium",
         "number": "100",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Fm",
         "weight": "[257]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium"
@@ -1619,6 +1734,7 @@
         "name": "Mendelevium",
         "number": "101",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Md",
         "weight": "[258]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium"
@@ -1633,6 +1749,7 @@
         "name": "Nobelium",
         "number": "102",
         "period": "7",
+        "phase": "Solid",
         "symbol": "No",
         "weight": "[259]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium"
@@ -1647,6 +1764,7 @@
         "name": "Lawrencium",
         "number": "103",
         "period": "7",
+        "phase": "Solid",
         "symbol": "Lr",
         "weight": "[266]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium"
