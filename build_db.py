@@ -129,6 +129,9 @@ def fetch(url, articleUrl):
     triplePoint = capitalize(', '.join(filter(len, [ get_property(content, 'triple point K', '', ' K'),
         get_property(content, 'triple point kPa', '', ' kPa') ])))
 
+    criticalPoint = capitalize(', '.join(filter(len, [ get_property(content, 'critical point K', '', ' K'),
+        get_property(content, 'critical point MPa', '', ' MPa') ])))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -149,7 +152,8 @@ def fetch(url, articleUrl):
         'meltingPoint': meltingPoint,
         'sublimationPoint': sublimationPoint,
         'boilingPoint': boilingPoint,
-        'triplePoint': triplePoint
+        'triplePoint': triplePoint,
+        'criticalPoint': criticalPoint
     }
 
     print(element)
