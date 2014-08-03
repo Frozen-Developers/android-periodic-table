@@ -36,10 +36,10 @@ def replace_with_subscript(string):
     return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
 
 def translate_script(string):
-    for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+|β[-–−+]', string):
-        string = string.replace(match, replace_with_superscript(remove_html_tags(match.replace('^', ''))))
-    for match in re.findall(r'<sub>[-–−\d]*</sub>', string):
-        string = string.replace(match, replace_with_subscript(remove_html_tags(match)))
+    for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', string):
+        string = string.replace(match, replace_with_superscript(remove_html_tags(re.sub(r'\^|{{sup\||}}', '', match))))
+    for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', string):
+        string = string.replace(match, replace_with_subscript(remove_html_tags(re.sub(r'{{sub\||}}', '', match))))
     return string
 
 def get_property(content, name, default = '', append = ''):
@@ -47,7 +47,7 @@ def get_property(content, name, default = '', append = ''):
         if prop.strip().startswith(name + '='):
             value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
             if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                return translate_script(value) + append
+                return re.sub(r'{{.*}}', '', translate_script(value)) + append
             else:
                 break
     return default
@@ -59,7 +59,7 @@ def get_all_property(content, name, append = ''):
             if prop.strip().startswith(match):
                 value = prop.strip()[len(match):].strip(' \n\t\'')
                 if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                    result.append(translate_script(value) + append)
+                    result.append(re.sub(r'{{.*}}', '', translate_script(value)) + append)
     return result
 
 def signal_handler(signal, frame):
@@ -70,7 +70,7 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|{{.*}}|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
         '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
@@ -126,6 +126,9 @@ def fetch(url, articleUrl):
     boilingPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'boiling point K', '', ' K'),
         get_property(content, 'boiling point C', '', ' °C'), get_property(content, 'boiling point F', '', ' °F') ])))
 
+    triplePoint = capitalize(', '.join(filter(len, [ get_property(content, 'triple point K', '', ' K'),
+        get_property(content, 'triple point kPa', '', ' kPa') ])))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -145,7 +148,8 @@ def fetch(url, articleUrl):
         'liquidDensityAtBoilingPoint': densityBP,
         'meltingPoint': meltingPoint,
         'sublimationPoint': sublimationPoint,
-        'boilingPoint': boilingPoint
+        'boilingPoint': boilingPoint,
+        'triplePoint': triplePoint
     }
 
     print(element)
