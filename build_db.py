@@ -70,7 +70,7 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
         '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
@@ -132,6 +132,9 @@ def fetch(url, articleUrl):
     criticalPoint = capitalize(', '.join(filter(len, [ get_property(content, 'critical point K', '', ' K'),
         get_property(content, 'critical point MPa', '', ' MPa') ])))
 
+    heatOfFusion = capitalize(replace_chars('\n'.join(get_all_property(content, 'heat fusion', ' kJ·mol⁻¹')),
+        ')', ':').replace('(', ''))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -153,7 +156,8 @@ def fetch(url, articleUrl):
         'sublimationPoint': sublimationPoint,
         'boilingPoint': boilingPoint,
         'triplePoint': triplePoint,
-        'criticalPoint': criticalPoint
+        'criticalPoint': criticalPoint,
+        'heatOfFusion': heatOfFusion
     }
 
     print(element)
