@@ -52,6 +52,16 @@ def get_property(content, name, default = ''):
                 break
     return default
 
+def get_all_property(content, name):
+    result = []
+    for prop in content:
+        for match in re.findall(name + r'\s?\d*=', prop):
+            if prop.strip().startswith(match):
+                value = prop.strip()[len(match):].strip(' \n\t\'')
+                if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
+                    result.append(translate_script(value))
+    return result
+
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
@@ -95,6 +105,15 @@ def fetch(url, articleUrl):
 
     phase = get_property(content, 'phase').capitalize()
 
+    density = ''
+    for dens in get_all_property(content, 'density gpcm3nrt'):
+        density += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
+    density = density.strip()
+    if density == '':
+        density = capitalize(replace_chars(get_property(content, 'density gplstp'), ')', ':').replace('(', ''))
+        if density != '':
+            density += '×10⁻³ g·cm⁻³'
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -108,10 +127,12 @@ def fetch(url, articleUrl):
         'electronsPerShell': shells,
         'wikipediaLink': articleUrl,
         'appearance': appearance,
-        'phase': phase
+        'phase': phase,
+        'density': density
     }
 
-    print(element)
+    #print(element)
+    print(element['density'])
 
     return element
 
