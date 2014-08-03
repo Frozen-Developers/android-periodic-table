@@ -120,6 +120,9 @@ def fetch(url, articleUrl):
     meltingPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'melting point K', '', ' K'),
         get_property(content, 'melting point C', '', ' °C'), get_property(content, 'melting point F', '', ' °F') ])))
 
+    sublimationPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'sublimation point K', '', ' K'),
+        get_property(content, 'sublimation point C', '', ' °C'), get_property(content, 'sublimation point F', '', ' °F') ])))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -137,7 +140,8 @@ def fetch(url, articleUrl):
         'density': density,
         'liquidDensityAtMeltingPoint': densityMP,
         'liquidDensityAtBoilingPoint': densityBP,
-        'meltingPoint': meltingPoint
+        'meltingPoint': meltingPoint,
+        'sublimationPoint': sublimationPoint
     }
 
     print(element)

@@ -14,6 +14,7 @@
         "number": "1",
         "period": "1",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "H",
         "weight": "1.008",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen"
@@ -33,6 +34,7 @@
         "number": "2",
         "period": "1",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "He",
         "weight": "4.003",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Helium"
@@ -52,6 +54,7 @@
         "number": "3",
         "period": "2",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Li",
         "weight": "6.94",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium"
@@ -71,6 +74,7 @@
         "number": "4",
         "period": "2",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Be",
         "weight": "9.012",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium"
@@ -90,6 +94,7 @@
         "number": "5",
         "period": "2",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "B",
         "weight": "10.81",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Boron"
@@ -109,6 +114,7 @@
         "number": "6",
         "period": "2",
         "phase": "Solid",
+        "sublimationPoint": "3915 K / 3642 °C / 6588 °F",
         "symbol": "C",
         "weight": "12.011",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon"
@@ -128,6 +134,7 @@
         "number": "7",
         "period": "2",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "N",
         "weight": "14.007",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen"
@@ -147,6 +154,7 @@
         "number": "8",
         "period": "2",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "O",
         "weight": "15.999",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen"
@@ -166,6 +174,7 @@
         "number": "9",
         "period": "2",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "F",
         "weight": "18.998",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine"
@@ -185,6 +194,7 @@
         "number": "10",
         "period": "2",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Ne",
         "weight": "20.18",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neon"
@@ -204,6 +214,7 @@
         "number": "11",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Na",
         "weight": "22.99",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium"
@@ -223,6 +234,7 @@
         "number": "12",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Mg",
         "weight": "24.305",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium"
@@ -242,6 +254,7 @@
         "number": "13",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Al",
         "weight": "26.982",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium"
@@ -261,6 +274,7 @@
         "number": "14",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Si",
         "weight": "28.085",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon"
@@ -280,6 +294,7 @@
         "number": "15",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "Red: ≈ 416–590 °C\nViolet: 620 °C",
         "symbol": "P",
         "weight": "30.974",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus"
@@ -299,6 +314,7 @@
         "number": "16",
         "period": "3",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "S",
         "weight": "32.06",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur"
@@ -318,6 +334,7 @@
         "number": "17",
         "period": "3",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Cl",
         "weight": "35.45",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine"
@@ -337,6 +354,7 @@
         "number": "18",
         "period": "3",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Ar",
         "weight": "39.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Argon"
@@ -356,6 +374,7 @@
         "number": "19",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "K",
         "weight": "39.098",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium"
@@ -375,6 +394,7 @@
         "number": "20",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ca",
         "weight": "40.078",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium"
@@ -394,6 +414,7 @@
         "number": "21",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sc",
         "weight": "44.956",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium"
@@ -413,6 +434,7 @@
         "number": "22",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ti",
         "weight": "47.867",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium"
@@ -432,6 +454,7 @@
         "number": "23",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "V",
         "weight": "50.941",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium"
@@ -451,6 +474,7 @@
         "number": "24",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cr",
         "weight": "51.996",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium"
@@ -470,6 +494,7 @@
         "number": "25",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Mn",
         "weight": "54.938",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese"
@@ -489,6 +514,7 @@
         "number": "26",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Fe",
         "weight": "55.845",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iron"
@@ -508,6 +534,7 @@
         "number": "27",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Co",
         "weight": "58.933",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt"
@@ -527,6 +554,7 @@
         "number": "28",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ni",
         "weight": "58.693",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel"
@@ -546,6 +574,7 @@
         "number": "29",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cu",
         "weight": "63.546",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copper"
@@ -565,6 +594,7 @@
         "number": "30",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Zn",
         "weight": "65.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc"
@@ -584,6 +614,7 @@
         "number": "31",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ga",
         "weight": "69.723",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium"
@@ -603,6 +634,7 @@
         "number": "32",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ge",
         "weight": "72.63",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium"
@@ -622,6 +654,7 @@
         "number": "33",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "887 K / 615 °C / 1137 °F",
         "symbol": "As",
         "weight": "74.922",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic"
@@ -641,6 +674,7 @@
         "number": "34",
         "period": "4",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Se",
         "weight": "78.971",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium"
@@ -660,6 +694,7 @@
         "number": "35",
         "period": "4",
         "phase": "Liquid",
+        "sublimationPoint": "",
         "symbol": "Br",
         "weight": "79.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine"
@@ -679,6 +714,7 @@
         "number": "36",
         "period": "4",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Kr",
         "weight": "83.8",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton"
@@ -698,6 +734,7 @@
         "number": "37",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Rb",
         "weight": "85.468",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium"
@@ -717,6 +754,7 @@
         "number": "38",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sr",
         "weight": "87.62",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium"
@@ -736,6 +774,7 @@
         "number": "39",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Y",
         "weight": "88.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium"
@@ -755,6 +794,7 @@
         "number": "40",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Zr",
         "weight": "91.224",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium"
@@ -774,6 +814,7 @@
         "number": "41",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Nb",
         "weight": "92.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium"
@@ -793,6 +834,7 @@
         "number": "42",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Mo",
         "weight": "95.95",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum"
@@ -812,6 +854,7 @@
         "number": "43",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Tc",
         "weight": "[98]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium"
@@ -831,6 +874,7 @@
         "number": "44",
         "period": "5",
         "phase": "",
+        "sublimationPoint": "",
         "symbol": "Ru",
         "weight": "101.07",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium"
@@ -850,6 +894,7 @@
         "number": "45",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Rh",
         "weight": "102.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium"
@@ -869,6 +914,7 @@
         "number": "46",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pd",
         "weight": "106.42",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium"
@@ -888,6 +934,7 @@
         "number": "47",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ag",
         "weight": "107.868",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silver"
@@ -907,6 +954,7 @@
         "number": "48",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cd",
         "weight": "112.414",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium"
@@ -926,6 +974,7 @@
         "number": "49",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "In",
         "weight": "114.818",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Indium"
@@ -945,6 +994,7 @@
         "number": "50",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sn",
         "weight": "118.71",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tin"
@@ -964,6 +1014,7 @@
         "number": "51",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sb",
         "weight": "121.76",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony"
@@ -983,6 +1034,7 @@
         "number": "52",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Te",
         "weight": "127.6",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium"
@@ -1002,6 +1054,7 @@
         "number": "53",
         "period": "5",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "I",
         "weight": "126.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine"
@@ -1021,6 +1074,7 @@
         "number": "54",
         "period": "5",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Xe",
         "weight": "131.293",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon"
@@ -1040,6 +1094,7 @@
         "number": "55",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cs",
         "weight": "132.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium"
@@ -1059,6 +1114,7 @@
         "number": "56",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ba",
         "weight": "137.327",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Barium"
@@ -1078,6 +1134,7 @@
         "number": "72",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Hf",
         "weight": "178.49",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium"
@@ -1097,6 +1154,7 @@
         "number": "73",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ta",
         "weight": "180.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum"
@@ -1116,6 +1174,7 @@
         "number": "74",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "W",
         "weight": "183.84",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten"
@@ -1135,6 +1194,7 @@
         "number": "75",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Re",
         "weight": "186.207",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium"
@@ -1154,6 +1214,7 @@
         "number": "76",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Os",
         "weight": "190.23",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium"
@@ -1173,6 +1234,7 @@
         "number": "77",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ir",
         "weight": "192.217",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium"
@@ -1192,6 +1254,7 @@
         "number": "78",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pt",
         "weight": "195.084",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum"
@@ -1211,6 +1274,7 @@
         "number": "79",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Au",
         "weight": "196.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gold"
@@ -1230,6 +1294,7 @@
         "number": "80",
         "period": "6",
         "phase": "Liquid",
+        "sublimationPoint": "",
         "symbol": "Hg",
         "weight": "200.592",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)"
@@ -1249,6 +1314,7 @@
         "number": "81",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Tl",
         "weight": "204.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium"
@@ -1268,6 +1334,7 @@
         "number": "82",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pb",
         "weight": "207.2",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lead"
@@ -1287,6 +1354,7 @@
         "number": "83",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Bi",
         "weight": "208.98",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth"
@@ -1306,6 +1374,7 @@
         "number": "84",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Po",
         "weight": "[209]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium"
@@ -1325,6 +1394,7 @@
         "number": "85",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "At",
         "weight": "[210]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
@@ -1344,6 +1414,7 @@
         "number": "86",
         "period": "6",
         "phase": "Gas",
+        "sublimationPoint": "",
         "symbol": "Rn",
         "weight": "[222]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radon"
@@ -1363,6 +1434,7 @@
         "number": "87",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Fr",
         "weight": "[223]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Francium"
@@ -1382,6 +1454,7 @@
         "number": "88",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ra",
         "weight": "[226]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radium"
@@ -1401,6 +1474,7 @@
         "number": "104",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Rf",
         "weight": "[267]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium"
@@ -1420,6 +1494,7 @@
         "number": "105",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Db",
         "weight": "[268]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium"
@@ -1439,6 +1514,7 @@
         "number": "106",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sg",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium"
@@ -1458,6 +1534,7 @@
         "number": "107",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Bh",
         "weight": "[270]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium"
@@ -1477,6 +1554,7 @@
         "number": "108",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Hs",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium"
@@ -1496,6 +1574,7 @@
         "number": "109",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Mt",
         "weight": "[278]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium"
@@ -1515,6 +1594,7 @@
         "number": "110",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ds",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium"
@@ -1534,6 +1614,7 @@
         "number": "111",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Rg",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium"
@@ -1553,6 +1634,7 @@
         "number": "112",
         "period": "7",
         "phase": "",
+        "sublimationPoint": "",
         "symbol": "Cn",
         "weight": "[285]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium"
@@ -1572,6 +1654,7 @@
         "number": "113",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Uut",
         "weight": "[286]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium"
@@ -1591,6 +1674,7 @@
         "number": "114",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Fl",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium"
@@ -1610,6 +1694,7 @@
         "number": "115",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Uup",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium"
@@ -1629,6 +1714,7 @@
         "number": "116",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Lv",
         "weight": "[293]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium"
@@ -1648,6 +1734,7 @@
         "number": "117",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Uus",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium"
@@ -1667,6 +1754,7 @@
         "number": "118",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Uuo",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium"
@@ -1686,6 +1774,7 @@
         "number": "57",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "La",
         "weight": "138.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum"
@@ -1705,6 +1794,7 @@
         "number": "58",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ce",
         "weight": "140.116",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium"
@@ -1724,6 +1814,7 @@
         "number": "59",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pr",
         "weight": "140.908",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium"
@@ -1743,6 +1834,7 @@
         "number": "60",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Nd",
         "weight": "144.242",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium"
@@ -1762,6 +1854,7 @@
         "number": "61",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pm",
         "weight": "[145]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium"
@@ -1781,6 +1874,7 @@
         "number": "62",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Sm",
         "weight": "150.36",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium"
@@ -1800,6 +1894,7 @@
         "number": "63",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Eu",
         "weight": "151.964",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Europium"
@@ -1819,6 +1914,7 @@
         "number": "64",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Gd",
         "weight": "157.25",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium"
@@ -1838,6 +1934,7 @@
         "number": "65",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Tb",
         "weight": "158.925",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium"
@@ -1857,6 +1954,7 @@
         "number": "66",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Dy",
         "weight": "162.5",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium"
@@ -1876,6 +1974,7 @@
         "number": "67",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ho",
         "weight": "164.93",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium"
@@ -1895,6 +1994,7 @@
         "number": "68",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Er",
         "weight": "167.259",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium"
@@ -1914,6 +2014,7 @@
         "number": "69",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Tm",
         "weight": "168.934",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium"
@@ -1933,6 +2034,7 @@
         "number": "70",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Yb",
         "weight": "173.054",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium"
@@ -1952,6 +2054,7 @@
         "number": "71",
         "period": "6",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Lu",
         "weight": "174.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium"
@@ -1971,6 +2074,7 @@
         "number": "89",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Ac",
         "weight": "[227]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium"
@@ -1990,6 +2094,7 @@
         "number": "90",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Th",
         "weight": "232.038",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium"
@@ -2009,6 +2114,7 @@
         "number": "91",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pa",
         "weight": "231.036",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium"
@@ -2028,6 +2134,7 @@
         "number": "92",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "U",
         "weight": "238.029",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium"
@@ -2047,6 +2154,7 @@
         "number": "93",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Np",
         "weight": "[237]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium"
@@ -2066,6 +2174,7 @@
         "number": "94",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Pu",
         "weight": "[244]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium"
@@ -2085,6 +2194,7 @@
         "number": "95",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Am",
         "weight": "[243]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Americium"
@@ -2104,6 +2214,7 @@
         "number": "96",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cm",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Curium"
@@ -2123,6 +2234,7 @@
         "number": "97",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Bk",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium"
@@ -2142,6 +2254,7 @@
         "number": "98",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Cf",
         "weight": "[251]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Californium"
@@ -2161,6 +2274,7 @@
         "number": "99",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Es",
         "weight": "[252]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium"
@@ -2180,6 +2294,7 @@
         "number": "100",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Fm",
         "weight": "[257]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium"
@@ -2199,6 +2314,7 @@
         "number": "101",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Md",
         "weight": "[258]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium"
@@ -2218,6 +2334,7 @@
         "number": "102",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "No",
         "weight": "[259]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium"
@@ -2237,6 +2354,7 @@
         "number": "103",
         "period": "7",
         "phase": "Solid",
+        "sublimationPoint": "",
         "symbol": "Lr",
         "weight": "[266]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium"
