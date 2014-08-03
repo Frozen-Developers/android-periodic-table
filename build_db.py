@@ -119,6 +119,11 @@ def fetch(url, articleUrl):
         densityMP += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
     densityMP = densityMP.strip()
 
+    densityBP = ''
+    for dens in get_all_property(content, 'density gpcm3bp'):
+        densityBP += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
+    densityBP = densityBP.strip()
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -134,7 +139,8 @@ def fetch(url, articleUrl):
         'appearance': appearance,
         'phase': phase,
         'density': density,
-        'liquidDensityAtMeltingPoint': densityMP
+        'liquidDensityAtMeltingPoint': densityMP,
+        'liquidDensityAtBoilingPoint': densityBP
     }
 
     print(element)
