@@ -114,6 +114,11 @@ def fetch(url, articleUrl):
         if density != '':
             density += '×10⁻³ g·cm⁻³'
 
+    densityMP = ''
+    for dens in get_all_property(content, 'density gpcm3mp'):
+        densityMP += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
+    densityMP = densityMP.strip()
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -128,11 +133,11 @@ def fetch(url, articleUrl):
         'wikipediaLink': articleUrl,
         'appearance': appearance,
         'phase': phase,
-        'density': density
+        'density': density,
+        'liquidDensityAtMeltingPoint': densityMP
     }
 
-    #print(element)
-    print(element['density'])
+    print(element)
 
     return element
 
