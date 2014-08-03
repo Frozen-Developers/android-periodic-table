@@ -70,7 +70,7 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|{{.*}}|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)',
         '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
@@ -123,6 +123,9 @@ def fetch(url, articleUrl):
     sublimationPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'sublimation point K', '', ' K'),
         get_property(content, 'sublimation point C', '', ' °C'), get_property(content, 'sublimation point F', '', ' °F') ])))
 
+    boilingPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'boiling point K', '', ' K'),
+        get_property(content, 'boiling point C', '', ' °C'), get_property(content, 'boiling point F', '', ' °F') ])))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -141,7 +144,8 @@ def fetch(url, articleUrl):
         'liquidDensityAtMeltingPoint': densityMP,
         'liquidDensityAtBoilingPoint': densityBP,
         'meltingPoint': meltingPoint,
-        'sublimationPoint': sublimationPoint
+        'sublimationPoint': sublimationPoint,
+        'boilingPoint': boilingPoint
     }
 
     print(element)

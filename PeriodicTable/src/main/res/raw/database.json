@@ -2,6 +2,7 @@
     {
         "appearance": "Colorless gas",
         "block": "s",
+        "boilingPoint": "20.271 K / −252.879 °C / −423.182 °F",
         "category": "Diatomic nonmetal",
         "density": "0.08988×10⁻³ g·cm⁻³",
         "electronConfiguration": "1s¹",
@@ -22,6 +23,7 @@
     {
         "appearance": "Colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
         "block": "s",
+        "boilingPoint": "4.222 K / −268.928 °C / −452.070 °F",
         "category": "Noble gas",
         "density": "0.1786×10⁻³ g·cm⁻³",
         "electronConfiguration": "1s²",
@@ -42,6 +44,7 @@
     {
         "appearance": "Silvery-white",
         "block": "s",
+        "boilingPoint": "1603 K / 1330 °C / 2426 °F",
         "category": "Alkali metal",
         "density": "0.534 g·cm⁻³",
         "electronConfiguration": "[He] 2s¹",
@@ -62,6 +65,7 @@
     {
         "appearance": "White-gray metallic",
         "block": "s",
+        "boilingPoint": "3243 K / 2970 °C / 5338 °F",
         "category": "Alkaline earth metal",
         "density": "1.85 g·cm⁻³",
         "electronConfiguration": "[He] 2s²",
@@ -82,6 +86,7 @@
     {
         "appearance": "Black-brown",
         "block": "p",
+        "boilingPoint": "4200 K / 3927 °C / 7101 °F",
         "category": "Metalloid",
         "density": "",
         "electronConfiguration": "[He] 2s² 2p¹",
@@ -102,6 +107,7 @@
     {
         "appearance": "Diamond: clear\nGraphite: black",
         "block": "p",
+        "boilingPoint": "",
         "category": "Polyatomic nonmetal",
         "density": "Amorphous: 1.8–2.1 g·cm⁻³\nDiamond: 3.515 g·cm⁻³\nGraphite: 2.267 g·cm⁻³",
         "electronConfiguration": "[He] 2s² 2p²",
@@ -122,6 +128,7 @@
     {
         "appearance": "Colorless gas, liquid or solid",
         "block": "p",
+        "boilingPoint": "77.355 K / −195.795 °C / −320.431 °F",
         "category": "Diatomic nonmetal",
         "density": "1.251×10⁻³ g·cm⁻³",
         "electronConfiguration": "[He] 2s² 2p³",
@@ -142,6 +149,7 @@
     {
         "appearance": "Colorless gas, pale blue liquid",
         "block": "p",
+        "boilingPoint": "90.188 K / −182.962 °C / −297.332 °F",
         "category": "Diatomic nonmetal",
         "density": "1.429×10⁻³ g·cm⁻³",
         "electronConfiguration": "[He] 2s² 2p⁴",
@@ -162,6 +170,7 @@
     {
         "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: alpha is opaque, beta is transparent",
         "block": "p",
+        "boilingPoint": "85.03 K / −188.11 °C / −306.60 °F",
         "category": "Diatomic nonmetal",
         "density": "1.696×10⁻³ g·cm⁻³",
         "electronConfiguration": "[He] 2s² 2p⁵",
@@ -182,6 +191,7 @@
     {
         "appearance": "Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
         "block": "p",
+        "boilingPoint": "27.104 K / −246.046 °C / −410.883 °F",
         "category": "Noble gas",
         "density": "0.9002×10⁻³ g·cm⁻³",
         "electronConfiguration": "[He] 2s² 2p⁶",
@@ -202,6 +212,7 @@
     {
         "appearance": "Silvery white metallic",
         "block": "s",
+        "boilingPoint": "1156.090 K / 882.940 °C / 1621.292 °F",
         "category": "Alkali metal",
         "density": "0.968 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s¹",
@@ -222,6 +233,7 @@
     {
         "appearance": "Shiny grey solid",
         "block": "s",
+        "boilingPoint": "1363 K / 1091 °C / 1994 °F",
         "category": "Alkaline earth metal",
         "density": "1.738 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s²",
@@ -242,6 +254,7 @@
     {
         "appearance": "Silvery gray metallic",
         "block": "p",
+        "boilingPoint": "2743 K / 2470 °C / 4478 °F",
         "category": "Post-transition metal",
         "density": "2.70 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p¹",
@@ -262,6 +275,7 @@
     {
         "appearance": "Crystalline, reflective with bluish-tinged faces",
         "block": "p",
+        "boilingPoint": "3538 K / 3265 °C / 5909 °F",
         "category": "Metalloid",
         "density": "2.3290 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p²",
@@ -282,6 +296,7 @@
     {
         "appearance": "Colourless, waxy white, yellow, scarlet, red, violet, black",
         "block": "p",
+        "boilingPoint": "White: 280.5 °C",
         "category": "Polyatomic nonmetal",
         "density": "White: 1.823 g·cm⁻³\nRed: ≈ 2.2–2.34 g·cm⁻³\nViolet: 2.36 g·cm⁻³\nBlack: 2.69 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p³",
@@ -302,6 +317,7 @@
     {
         "appearance": "Lemon yellow sintered microcrystals",
         "block": "p",
+        "boilingPoint": "717.8 K / 444.6 °C / 832.3 °F",
         "category": "Polyatomic nonmetal",
         "density": "Alpha: 2.07 g·cm⁻³\nBeta: 1.96 g·cm⁻³\nGamma: 1.92 g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p⁴",
@@ -322,6 +338,7 @@
     {
         "appearance": "Pale yellow-green gas",
         "block": "p",
+        "boilingPoint": "239.11 K / −34.04 °C / −29.27 °F",
         "category": "Diatomic nonmetal",
         "density": "3.2×10⁻³ g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p⁵",
@@ -342,6 +359,7 @@
     {
         "appearance": "Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
         "block": "p",
+        "boilingPoint": "87.302 K / −185.848 °C / −302.526 °F",
         "category": "Noble gas",
         "density": "1.784×10⁻³ g·cm⁻³",
         "electronConfiguration": "[Ne] 3s² 3p⁶",
@@ -362,6 +380,7 @@
     {
         "appearance": "Silvery gray",
         "block": "s",
+        "boilingPoint": "1032 K / 759 °C / 1398 °F",
         "category": "Alkali metal",
         "density": "0.862 g·cm⁻³",
         "electronConfiguration": "[Ar] 4s¹",
@@ -382,6 +401,7 @@
     {
         "appearance": "Dull gray, silver",
         "block": "s",
+        "boilingPoint": "1757 K / 1484 °C / 2703 °F",
         "category": "Alkaline earth metal",
         "density": "1.55 g·cm⁻³",
         "electronConfiguration": "[Ar] 4s²",
@@ -402,6 +422,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "3109 K / 2836 °C / 5136 °F",
         "category": "Transition metal",
         "density": "2.985 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹ 4s²",
@@ -422,6 +443,7 @@
     {
         "appearance": "Silvery grey-white metallic",
         "block": "d",
+        "boilingPoint": "3560 K / 3287 °C / 5949 °F",
         "category": "Transition metal",
         "density": "4.506 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d² 4s²",
@@ -442,6 +464,7 @@
     {
         "appearance": "Blue-silver-grey metal",
         "block": "d",
+        "boilingPoint": "3680 K / 3407 °C / 6165 °F",
         "category": "Transition metal",
         "density": "6.0 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d³ 4s²",
@@ -462,6 +485,7 @@
     {
         "appearance": "Silvery metallic",
         "block": "d",
+        "boilingPoint": "2944 K / 2671 °C / 4840 °F",
         "category": "Transition metal",
         "density": "7.19 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d⁵ 4s¹",
@@ -482,6 +506,7 @@
     {
         "appearance": "Silvery metallic",
         "block": "d",
+        "boilingPoint": "2334 K / 2061 °C / 3742 °F",
         "category": "Transition metal",
         "density": "7.21 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d⁵ 4s²",
@@ -502,6 +527,7 @@
     {
         "appearance": "Lustrous metallic with a grayish tinge",
         "block": "d",
+        "boilingPoint": "3134 K / 2862 °C / 5182 °F",
         "category": "Transition metal",
         "density": "7.874 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d⁶ 4s²",
@@ -522,6 +548,7 @@
     {
         "appearance": "Hard lustrous gray metal",
         "block": "d",
+        "boilingPoint": "3200 K / 2927 °C / 5301 °F",
         "category": "Transition metal",
         "density": "8.90 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d⁷ 4s²",
@@ -542,6 +569,7 @@
     {
         "appearance": "Lustrous, metallic, and silver with a gold tinge",
         "block": "d",
+        "boilingPoint": "3003 K / 2730 °C / 4946 °F",
         "category": "Transition metal",
         "density": "8.908 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d⁹ 4s¹",
@@ -562,6 +590,7 @@
     {
         "appearance": "Red-orange metallic luster",
         "block": "d",
+        "boilingPoint": "2835 K / 2562 °C / 4643 °F",
         "category": "Transition metal",
         "density": "8.96 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s¹",
@@ -582,6 +611,7 @@
     {
         "appearance": "Silver-gray",
         "block": "d",
+        "boilingPoint": "1180 K / 907 °C / 1665 °F",
         "category": "Transition metal",
         "density": "7.14 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s²",
@@ -602,6 +632,7 @@
     {
         "appearance": "Silver-white",
         "block": "p",
+        "boilingPoint": "2673 K / 2400 °C / 4352 °F",
         "category": "Post-transition metal",
         "density": "5.91 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p¹",
@@ -622,6 +653,7 @@
     {
         "appearance": "Grayish-white",
         "block": "p",
+        "boilingPoint": "3106 K / 2833 °C / 5131 °F",
         "category": "Metalloid",
         "density": "5.323 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p²",
@@ -642,6 +674,7 @@
     {
         "appearance": "Metallic grey",
         "block": "p",
+        "boilingPoint": "",
         "category": "Metalloid",
         "density": "5.727 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p³",
@@ -662,6 +695,7 @@
     {
         "appearance": "Black and red allotropes",
         "block": "p",
+        "boilingPoint": "958 K / 685 °C / 1265 °F",
         "category": "Polyatomic nonmetal",
         "density": "Gray: 4.81 g·cm⁻³\nAlpha: 4.39 g·cm⁻³\nVitreous: 4.28 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁴",
@@ -682,6 +716,7 @@
     {
         "appearance": "Gas/liquid: red-brown\nSolid: metallic luster",
         "block": "p",
+        "boilingPoint": "332.0 K / 58.8 °C / 137.8 °F",
         "category": "Diatomic nonmetal",
         "density": "Br₂, liquid: 3.1028 g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁵",
@@ -702,6 +737,7 @@
     {
         "appearance": "Colorless gas, exhibiting a whitish glow in a high electric field",
         "block": "p",
+        "boilingPoint": "119.93 K / −153.415 °C / −244.147 °F",
         "category": "Noble gas",
         "density": "3.749×10⁻³ g·cm⁻³",
         "electronConfiguration": "[Ar] 3d¹⁰ 4s² 4p⁶",
@@ -722,6 +758,7 @@
     {
         "appearance": "Grey white",
         "block": "s",
+        "boilingPoint": "961 K / 688 °C / 1270 °F",
         "category": "Alkali metal",
         "density": "1.532 g·cm⁻³",
         "electronConfiguration": "[Kr] 5s¹",
@@ -742,6 +779,7 @@
     {
         "appearance": "Silvery white metallic",
         "block": "s",
+        "boilingPoint": "1650 K / 1377 °C / 2511 °F",
         "category": "Alkaline earth metal",
         "density": "2.64 g·cm⁻³",
         "electronConfiguration": "[Kr] 5s²",
@@ -762,6 +800,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "3203 K / 2730 °C / 5306 °F",
         "category": "Transition metal",
         "density": "4.472 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹ 5s²",
@@ -782,6 +821,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "4650 K / 4377 °C / 7911 °F",
         "category": "Transition metal",
         "density": "6.52 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d² 5s²",
@@ -802,6 +842,7 @@
     {
         "appearance": "Gray metallic, bluish when oxidized",
         "block": "d",
+        "boilingPoint": "5017 K / 4744 °C / 8571 °F",
         "category": "Transition metal",
         "density": "8.57 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d⁴ 5s¹",
@@ -822,6 +863,7 @@
     {
         "appearance": "Gray metallic",
         "block": "d",
+        "boilingPoint": "4912 K / 4639 °C / 8382 °F",
         "category": "Transition metal",
         "density": "10.28 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d⁵ 5s¹",
@@ -842,6 +884,7 @@
     {
         "appearance": "Shiny gray metal",
         "block": "d",
+        "boilingPoint": "4538 K / 4265 °C / 7709 °F",
         "category": "Transition metal",
         "density": "11 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d⁵ 5s²",
@@ -862,6 +905,7 @@
     {
         "appearance": "Silvery white metallic",
         "block": "d",
+        "boilingPoint": "4423 K / 4150 °C / 7502 °F",
         "category": "Transition metal",
         "density": "12.45 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d⁷ 5s¹",
@@ -882,6 +926,7 @@
     {
         "appearance": "Silvery white metallic",
         "block": "d",
+        "boilingPoint": "3968 K / 3695 °C / 6683 °F",
         "category": "Transition metal",
         "density": "12.41 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d⁸ 5s¹",
@@ -902,6 +947,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "3236 K / 2963 °C / 5365 °F",
         "category": "Transition metal",
         "density": "12.023 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰",
@@ -922,6 +968,7 @@
     {
         "appearance": "Lustrous white metal",
         "block": "d",
+        "boilingPoint": "2435 K / 2162 °C / 3924 °F",
         "category": "Transition metal",
         "density": "10.49 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s¹",
@@ -942,6 +989,7 @@
     {
         "appearance": "Silvery bluish-gray metallic",
         "block": "d",
+        "boilingPoint": "1040 K / 767 °C / 1413 °F",
         "category": "Transition metal",
         "density": "8.65 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s²",
@@ -962,6 +1010,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "block": "p",
+        "boilingPoint": "2345 K / 2072 °C / 3762 °F",
         "category": "Post-transition metal",
         "density": "7.31 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p¹",
@@ -982,6 +1031,7 @@
     {
         "appearance": "Silvery or gray",
         "block": "p",
+        "boilingPoint": "2875 K / 2602 °C / 4716 °F",
         "category": "Post-transition metal",
         "density": "White, β: 7.365 g·cm⁻³\nGray, α: 5.769 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p²",
@@ -1002,6 +1052,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "block": "p",
+        "boilingPoint": "1908 K / 1635 °C / 2975 °F",
         "category": "Metalloid",
         "density": "6.697 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p³",
@@ -1022,6 +1073,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "block": "p",
+        "boilingPoint": "1261 K / 988 °C / 1810 °F",
         "category": "Metalloid",
         "density": "6.24 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁴",
@@ -1042,6 +1094,7 @@
     {
         "appearance": "Lustrous metallic gray, violet as a gas",
         "block": "p",
+        "boilingPoint": "457.4 K / 184.3 °C / 363.7 °F",
         "category": "Diatomic nonmetal",
         "density": "4.933 g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁵",
@@ -1062,6 +1115,7 @@
     {
         "appearance": "Colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
         "block": "p",
+        "boilingPoint": "165.051 K / −108.099 °C / −162.578 °F",
         "category": "Noble gas",
         "density": "5.894×10⁻³ g·cm⁻³",
         "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁶",
@@ -1082,6 +1136,7 @@
     {
         "appearance": "Silvery gold",
         "block": "s",
+        "boilingPoint": "944 K / 671 °C / 1240 °F",
         "category": "Alkali metal",
         "density": "1.93 g·cm⁻³",
         "electronConfiguration": "[Xe] 6s¹",
@@ -1102,6 +1157,7 @@
     {
         "appearance": "Silvery gray",
         "block": "s",
+        "boilingPoint": "2118 K / 1845 °C / 3353 °F",
         "category": "Alkaline earth metals",
         "density": "3.51 g·cm⁻³",
         "electronConfiguration": "[Xe] 6s²",
@@ -1122,6 +1178,7 @@
     {
         "appearance": "Steel gray",
         "block": "d",
+        "boilingPoint": "4876 K / 4603 °C / 8317 °F",
         "category": "Transition metal",
         "density": "13.31 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d² 6s²",
@@ -1142,6 +1199,7 @@
     {
         "appearance": "Gray blue",
         "block": "d",
+        "boilingPoint": "5731 K / 5458 °C / 9856 °F",
         "category": "Transition metal",
         "density": "16.69 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d³ 6s²",
@@ -1162,6 +1220,7 @@
     {
         "appearance": "Grayish white, lustrous",
         "block": "d",
+        "boilingPoint": "6203 K / 5930 °C / 10706 °F",
         "category": "Transition metal",
         "density": "19.25 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁴ 6s²",
@@ -1182,6 +1241,7 @@
     {
         "appearance": "Silvery-white",
         "block": "d",
+        "boilingPoint": "5869 K / 5596 °C / 10105 °F",
         "category": "Transition metal",
         "density": "21.02 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁵ 6s²",
@@ -1202,6 +1262,7 @@
     {
         "appearance": "Silvery, blue cast",
         "block": "d",
+        "boilingPoint": "5285 K / 5012 °C / 9054 °F",
         "category": "Transition metal",
         "density": "22.59 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁶ 6s²",
@@ -1222,6 +1283,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "4403 K / 4130 °C / 7466 °F",
         "category": "Transition metal",
         "density": "22.56 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁷ 6s²",
@@ -1242,6 +1304,7 @@
     {
         "appearance": "Grayish white",
         "block": "d",
+        "boilingPoint": "4098 K / 3825 °C / 6917 °F",
         "category": "Transition metal",
         "density": "21.45 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d⁹ 6s¹",
@@ -1262,6 +1325,7 @@
     {
         "appearance": "Metallic yellow",
         "block": "d",
+        "boilingPoint": "3243 K / 2970 °C / 5378 °F",
         "category": "Transition metal",
         "density": "19.30 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s¹",
@@ -1282,6 +1346,7 @@
     {
         "appearance": "Silvery",
         "block": "d",
+        "boilingPoint": "629.88 K / 356.73 °C / 674.11 °F",
         "category": "Transition metal",
         "density": "13.534 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s²",
@@ -1302,6 +1367,7 @@
     {
         "appearance": "Silvery white",
         "block": "p",
+        "boilingPoint": "1746 K / 1473 °C / 2683 °F",
         "category": "Post-transition metal",
         "density": "11.85 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p¹",
@@ -1322,6 +1388,7 @@
     {
         "appearance": "Metallic gray",
         "block": "p",
+        "boilingPoint": "2022 K / 1749 °C / 3180 °F",
         "category": "Post-transition metal",
         "density": "11.34 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p²",
@@ -1342,6 +1409,7 @@
     {
         "appearance": "Lustrous silver",
         "block": "p",
+        "boilingPoint": "1837 K / 1564 °C / 2847 °F",
         "category": "Post-transition metal",
         "density": "9.78 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p³",
@@ -1362,6 +1430,7 @@
     {
         "appearance": "Silvery",
         "block": "p",
+        "boilingPoint": "1235 K / 962 °C / 1764 °F",
         "category": "Post-transition metal",
         "density": "Alpha: 9.196 g·cm⁻³\nBeta: 9.398 g·cm⁻³",
         "electronConfiguration": "[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p⁴",
@@ -1382,6 +1451,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "610 K / 337 °C / 639 °F",
         "category": "Metalloid",
         "density": "At₂: 6.2–6.5 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁵",
@@ -1402,6 +1472,7 @@
     {
         "appearance": "Colorless gas",
         "block": "p",
+        "boilingPoint": "211.5 K / −61.7 °C / −79.1 °F",
         "category": "Noble gas",
         "density": "9.73×10⁻³ g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶",
@@ -1422,6 +1493,7 @@
     {
         "appearance": "",
         "block": "s",
+        "boilingPoint": "950 K / 677 °C / 1250 °F",
         "category": "Alkali metal",
         "density": "1.87 g·cm⁻³",
         "electronConfiguration": "[Rn] 7s¹",
@@ -1442,6 +1514,7 @@
     {
         "appearance": "Silvery white metallic",
         "block": "s",
+        "boilingPoint": "2010 K / 1737 °C / 3158.6 °F",
         "category": "Alkaline earth metal",
         "density": "5.5 g·cm⁻³",
         "electronConfiguration": "[Rn] 7s²",
@@ -1462,6 +1535,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "5800 K / 5500 °C / 9900 °F",
         "category": "Transition metal",
         "density": "23.2 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d² 7s²",
@@ -1482,6 +1556,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "Transition metal",
         "density": "29.3 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d³ 7s²",
@@ -1502,6 +1577,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "Transition metal",
         "density": "35.0 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁴ 7s²",
@@ -1522,6 +1598,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "Transition metal",
         "density": "37.1 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁵ 7s²",
@@ -1542,6 +1619,7 @@
     {
         "appearance": "Silvery",
         "block": "d",
+        "boilingPoint": "",
         "category": "Transition metal",
         "density": "40.7 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁶ 7s²",
@@ -1562,6 +1640,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "",
         "density": "37.4 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁷ 7s²",
@@ -1582,6 +1661,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "",
         "density": "34.8 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁸ 7s²",
@@ -1602,6 +1682,7 @@
     {
         "appearance": "Silvery",
         "block": "d",
+        "boilingPoint": "",
         "category": "",
         "density": "28.7 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁹ 7s²",
@@ -1622,6 +1703,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "357 K / 84 °C / 183 °F",
         "category": "Transition metal",
         "density": "23.7 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s²",
@@ -1642,6 +1724,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "1430 K / 1130 °C / 2070 °F",
         "category": "",
         "density": "16 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p¹",
@@ -1662,6 +1745,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "420 K / 147 °C / 297 °F",
         "category": "",
         "density": "14 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p²",
@@ -1682,6 +1766,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "~1400 K / ~1100 °C / ~2000 °F",
         "category": "",
         "density": "13.5 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p³",
@@ -1702,6 +1787,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "1035–1135 K / 762–862 °C / 1403–1583 °F",
         "category": "",
         "density": "12.9 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁴",
@@ -1722,6 +1808,7 @@
     {
         "appearance": "Semimetallic",
         "block": "p",
+        "boilingPoint": "823 K / 550 °C / 1022 °F",
         "category": "",
         "density": "7.1–7.3 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁵",
@@ -1742,6 +1829,7 @@
     {
         "appearance": "",
         "block": "p",
+        "boilingPoint": "350±30 K / 80±30 °C / 170±50 °F",
         "category": "",
         "density": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d¹⁰ 7s² 7p⁶",
@@ -1762,6 +1850,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3737 K / 3464 °C / 6267 °F",
         "category": "Lanthanide",
         "density": "6.162 g·cm⁻³",
         "electronConfiguration": "[Xe] 5d¹ 6s²",
@@ -1782,6 +1871,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3716 K / 3443 °C / 6229 °F",
         "category": "Lanthanide",
         "density": "6.770 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹ 5d¹ 6s²",
@@ -1802,6 +1892,7 @@
     {
         "appearance": "Grayish white",
         "block": "f",
+        "boilingPoint": "3403 K / 3130 °C / 5666 °F",
         "category": "Lanthanide",
         "density": "6.77 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f³ 6s²",
@@ -1822,6 +1913,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3347 K / 3074 °C / 5565 °F",
         "category": "Lanthanide",
         "density": "7.01 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁴ 6s²",
@@ -1842,6 +1934,7 @@
     {
         "appearance": "Metallic",
         "block": "f",
+        "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "category": "Lanthanide",
         "density": "7.26 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁵ 6s²",
@@ -1862,6 +1955,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "2173 K / 1900 °C / 3452 °F",
         "category": "Lanthanide",
         "density": "7.52 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁶ 6s²",
@@ -1882,6 +1976,7 @@
     {
         "appearance": "Silvery white, but rarely seen without oxide discoloration",
         "block": "f",
+        "boilingPoint": "1802 K / 1529 °C / 2784 °F",
         "category": "Lanthanide",
         "density": "5.264 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁷ 6s²",
@@ -1902,6 +1997,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "category": "Lanthanide",
         "density": "7.90 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁷ 5d¹ 6s²",
@@ -1922,6 +2018,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3396 K / 3123 °C / 5653 °F",
         "category": "Lanthanide",
         "density": "8.23 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f⁹ 6s²",
@@ -1942,6 +2039,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "2840 K / 2562 °C / 4653 °F",
         "category": "Lanthanide",
         "density": "8.540 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁰ 6s²",
@@ -1962,6 +2060,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "2873 K / 2600 °C / 4712 °F",
         "category": "Lanthanide",
         "density": "8.79 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹¹ 6s²",
@@ -1982,6 +2081,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "3141 K / 2868 °C / 5194 °F",
         "category": "Lanthanide",
         "density": "9.066 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹² 6s²",
@@ -2002,6 +2102,7 @@
     {
         "appearance": "Silvery gray",
         "block": "f",
+        "boilingPoint": "2003 K / 1730 °C / 3146 °F",
         "category": "Lanthanide",
         "density": "9.32 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹³ 6s²",
@@ -2022,6 +2123,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "1469 K / 1196 °C / 2185 °F",
         "category": "Lanthanide",
         "density": "6.90 g·cm⁻³",
         "electronConfiguration": "[Xe] 4f¹⁴ 6s²",
@@ -2042,6 +2144,7 @@
     {
         "appearance": "Silvery white",
         "block": "d",
+        "boilingPoint": "3675 K / 3402 °C / 6156 °F",
         "category": "Lanthanide",
         "density": "9.841 g·cm⁻³",
         "electronConfiguration": "[Xe] 6s² 4f¹⁴ 5d¹",
@@ -2062,6 +2165,7 @@
     {
         "appearance": "Silvery-white, glowing with an eerie blue light, sometimes with a golden cast",
         "block": "f",
+        "boilingPoint": "3500±300 K / 3200±300 °C / 5800±500 °F",
         "category": "Actinide",
         "density": "10 g·cm⁻³",
         "electronConfiguration": "[Rn] 6d¹ 7s²",
@@ -2082,6 +2186,7 @@
     {
         "appearance": "Silvery, often with black tarnish",
         "block": "f",
+        "boilingPoint": "5061 K / 4788 °C / 8650 °F",
         "category": "Actinide",
         "density": "11.724 g·cm⁻³",
         "electronConfiguration": "[Rn] 6d² 7s²",
@@ -2102,6 +2207,7 @@
     {
         "appearance": "Bright, silvery metallic luster",
         "block": "f",
+        "boilingPoint": "4300 K / 4027 °C / 7280 °F",
         "category": "Actinide",
         "density": "15.37 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f² 6d¹ 7s²",
@@ -2122,6 +2228,7 @@
     {
         "appearance": "Silvery gray metallic, corrodes to a spalling black oxide coat in air",
         "block": "f",
+        "boilingPoint": "4404 K / 4131 °C / 7468 °F",
         "category": "Actinide",
         "density": "19.1 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f³ 6d¹ 7s²",
@@ -2142,6 +2249,7 @@
     {
         "appearance": "Silvery metallic",
         "block": "f",
+        "boilingPoint": "4447 K / 4174 °C / 7545 °F",
         "category": "Actinide",
         "density": "Alpha: 20.45 g·cm⁻³\nAccepted standard value: 19.38 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f⁴ 6d¹ 7s²",
@@ -2162,6 +2270,7 @@
     {
         "appearance": "Silvery white, tarnishing to dark gray in air",
         "block": "f",
+        "boilingPoint": "3505 K / 3228 °C / 5842 °F",
         "category": "Actinide",
         "density": "19.816 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f⁶ 7s²",
@@ -2182,6 +2291,7 @@
     {
         "appearance": "Silvery white",
         "block": "f",
+        "boilingPoint": "2880 K / 2607 °C / 4725 °F",
         "category": "Actinide",
         "density": "12 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f⁷ 7s²",
@@ -2202,6 +2312,7 @@
     {
         "appearance": "Silvery",
         "block": "f",
+        "boilingPoint": "3383 K / 3110 °C / 5630 °F",
         "category": "Actinide",
         "density": "13.51 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f⁷ 6d¹ 7s²",
@@ -2222,6 +2333,7 @@
     {
         "appearance": "Silvery",
         "block": "f",
+        "boilingPoint": "Beta: 2900 K / 2627 °C / 4760 °F",
         "category": "Actinide",
         "density": "Alpha: 14.78 g·cm⁻³\nBeta: 13.25 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f⁹ 7s²",
@@ -2242,6 +2354,7 @@
     {
         "appearance": "Silvery",
         "block": "f",
+        "boilingPoint": "1743 K / 1470 °C / 2678 °F",
         "category": "Actinide",
         "density": "15.1 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹⁰ 7s²",
@@ -2262,6 +2375,7 @@
     {
         "appearance": "Silver-colored",
         "block": "f",
+        "boilingPoint": "1269 K / 996 °C / 1825 °F",
         "category": "Actinide",
         "density": "8.84 g·cm⁻³",
         "electronConfiguration": "[Rn] 5f¹¹ 7s²",
@@ -2282,6 +2396,7 @@
     {
         "appearance": "",
         "block": "f",
+        "boilingPoint": "",
         "category": "Actinide",
         "density": "",
         "electronConfiguration": "[Rn] 5f¹² 7s²",
@@ -2302,6 +2417,7 @@
     {
         "appearance": "",
         "block": "f",
+        "boilingPoint": "",
         "category": "Actinide",
         "density": "",
         "electronConfiguration": "[Rn] 5f¹³ 7s²",
@@ -2322,6 +2438,7 @@
     {
         "appearance": "",
         "block": "f",
+        "boilingPoint": "",
         "category": "Actinide",
         "density": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 7s²",
@@ -2342,6 +2459,7 @@
     {
         "appearance": "",
         "block": "d",
+        "boilingPoint": "",
         "category": "Actinide",
         "density": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 7s² 7p¹",
