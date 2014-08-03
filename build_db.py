@@ -42,24 +42,24 @@ def translate_script(string):
         string = string.replace(match, replace_with_subscript(remove_html_tags(match)))
     return string
 
-def get_property(content, name, default = ''):
+def get_property(content, name, default = '', append = ''):
     for prop in content:
         if prop.strip().startswith(name + '='):
             value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
-            if not value.lower().startswith('unknown') and value.lower() != 'n/a':
-                return translate_script(value)
+            if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
+                return translate_script(value) + append
             else:
                 break
     return default
 
-def get_all_property(content, name):
+def get_all_property(content, name, append = ''):
     result = []
     for prop in content:
         for match in re.findall(name + r'\s?\d*=', prop):
             if prop.strip().startswith(match):
                 value = prop.strip()[len(match):].strip(' \n\t\'')
                 if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                    result.append(translate_script(value))
+                    result.append(translate_script(value) + append)
     return result
 
 def signal_handler(signal, frame):
@@ -105,24 +105,17 @@ def fetch(url, articleUrl):
 
     phase = get_property(content, 'phase').capitalize()
 
-    density = ''
-    for dens in get_all_property(content, 'density gpcm3nrt'):
-        density += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
-    density = density.strip()
+    density = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3nrt', ' g·cm⁻³')),
+        ')', ':').replace('(', ''))
     if density == '':
-        density = capitalize(replace_chars(get_property(content, 'density gplstp'), ')', ':').replace('(', ''))
-        if density != '':
-            density += '×10⁻³ g·cm⁻³'
+        density = capitalize(replace_chars(get_property(content, 'density gplstp', '', '×10⁻³ g·cm⁻³'),
+            ')', ':').replace('(', ''))
 
-    densityMP = ''
-    for dens in get_all_property(content, 'density gpcm3mp'):
-        densityMP += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
-    densityMP = densityMP.strip()
+    densityMP = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3mp', ' g·cm⁻³')),
+        ')', ':').replace('(', ''))
 
-    densityBP = ''
-    for dens in get_all_property(content, 'density gpcm3bp'):
-        densityBP += capitalize(replace_chars(dens, ')', ':').replace('(', '')) + ' g·cm⁻³\n'
-    densityBP = densityBP.strip()
+    densityBP = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3bp', ' g·cm⁻³')),
+        ')', ':').replace('(', ''))
 
     element = {
         'number': number,
