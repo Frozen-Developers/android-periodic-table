@@ -135,6 +135,9 @@ def fetch(url, articleUrl):
     heatOfFusion = capitalize(replace_chars('\n'.join(get_all_property(content, 'heat fusion', ' kJ·mol⁻¹')),
         ')', ':').replace('(', ''))
 
+    heatOfVaporization = capitalize(replace_chars(get_property(content, 'heat vaporization', '', ' kJ·mol⁻¹'),
+        ')', ':').replace('(', ''))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -157,7 +160,8 @@ def fetch(url, articleUrl):
         'boilingPoint': boilingPoint,
         'triplePoint': triplePoint,
         'criticalPoint': criticalPoint,
-        'heatOfFusion': heatOfFusion
+        'heatOfFusion': heatOfFusion,
+        'heatOfVaporization': heatOfVaporization
     }
 
     print(element)
