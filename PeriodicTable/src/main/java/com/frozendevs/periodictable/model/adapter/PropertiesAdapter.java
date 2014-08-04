@@ -165,7 +165,12 @@ public class PropertiesAdapter extends BaseAdapter {
 
             TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
             electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol) + ": ");
-            if(properties.getElectronegativity() != null && !properties.getElectronegativity().equals("")) {
+            if(properties.getElectronegativity() != null &&
+                    properties.getElectronegativity().equals("-")) {
+                electronegativity.append(mContext.getString(R.string.property_value_none));
+            }
+            else if(properties.getElectronegativity() != null &&
+                    !properties.getElectronegativity().equals("")) {
                 electronegativity.append(properties.getElectronegativity());
             }
             else {
@@ -194,7 +199,10 @@ public class PropertiesAdapter extends BaseAdapter {
                 name.setText(property.getName());
 
                 TextView value = (TextView) convertView.findViewById(R.id.property_value);
-                if(property.getValue() != null && !property.getValue().equals("")) {
+                if(property.getValue() != null && property.getValue().equals("-")) {
+                    value.setText(mContext.getString(R.string.property_value_none));
+                }
+                else if(property.getValue() != null && !property.getValue().equals("")) {
                     value.setText(property.getValue());
                 }
                 else {

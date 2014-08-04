@@ -47,7 +47,7 @@ def get_property(content, name, default = '', append = ''):
         if prop.strip().startswith(name + '='):
             value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
             if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                return translate_script(value) + append
+                return translate_script(value) + (append if value != '-' else '')
             else:
                 break
     return default
@@ -59,7 +59,7 @@ def get_all_property(content, name, append = ''):
             if prop.strip().startswith(match):
                 value = prop.strip()[len(match):].strip(' \n\t\'')
                 if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                    result.append(translate_script(value) + append)
+                    result.append(translate_script(value) + (append if value != '-' else ''))
     return result
 
 def signal_handler(signal, frame):
@@ -70,8 +70,9 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*|no data',
-        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))
+        re.sub(r'no data', '-',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
+        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
