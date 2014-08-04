@@ -70,7 +70,7 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*|no data',
         '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
@@ -143,6 +143,8 @@ def fetch(url, articleUrl):
 
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', get_property(content, 'oxidation states'))
 
+    electronegativity = get_property(content, 'electronegativity', '', ' (Pauling scale)')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -168,10 +170,11 @@ def fetch(url, articleUrl):
         'heatOfFusion': heatOfFusion,
         'heatOfVaporization': heatOfVaporization,
         'molarHeatCapacity': molarHeatCapacity,
-        'oxidationStates': oxidationStates
+        'oxidationStates': oxidationStates,
+        'electronegativity': electronegativity
     }
 
-    print(element['oxidationStates'])
+    print(element)
 
     return element
 
