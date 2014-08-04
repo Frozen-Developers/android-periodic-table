@@ -70,7 +70,7 @@ def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
     content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
+        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
         '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
@@ -138,8 +138,10 @@ def fetch(url, articleUrl):
     heatOfVaporization = capitalize(replace_chars(get_property(content, 'heat vaporization', '', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
-    molarHeatCapacity = capitalize(re.sub(r'[\(]|\'\'', '', replace_chars(
+    molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
         '\n'.join(get_all_property(content, 'heat capacity', ' kJ·mol⁻¹')), ')', ':').replace(':\n', ': ')))
+
+    oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', get_property(content, 'oxidation states'))
 
     element = {
         'number': number,
@@ -165,10 +167,11 @@ def fetch(url, articleUrl):
         'criticalPoint': criticalPoint,
         'heatOfFusion': heatOfFusion,
         'heatOfVaporization': heatOfVaporization,
-        'molarHeatCapacity': molarHeatCapacity
+        'molarHeatCapacity': molarHeatCapacity,
+        'oxidationStates': oxidationStates
     }
 
-    print(element)
+    print(element['oxidationStates'])
 
     return element
 
