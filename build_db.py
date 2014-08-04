@@ -27,7 +27,7 @@ def remove_html_tags(string, tags=[]):
             for occurence in soup.find_all(tag):
                 occurence.replaceWith('')
         return soup.get_text()
-    return re.sub(r'<[^<]+?>', '', string)
+    return re.sub(r'<[^<]+?>|{{.*}}', '', string)
 
 def replace_with_superscript(string):
     return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
@@ -40,14 +40,14 @@ def translate_script(string):
         string = string.replace(match, replace_with_superscript(remove_html_tags(re.sub(r'\^|{{sup\||}}', '', match))))
     for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', string):
         string = string.replace(match, replace_with_subscript(remove_html_tags(re.sub(r'{{sub\||}}', '', match))))
-    return string
+    return remove_html_tags(string)
 
 def get_property(content, name, default = '', append = ''):
     for prop in content:
         if prop.strip().startswith(name + '='):
             value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
             if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                return re.sub(r'{{.*}}', '', translate_script(value)) + append
+                return translate_script(value) + append
             else:
                 break
     return default
@@ -59,7 +59,7 @@ def get_all_property(content, name, append = ''):
             if prop.strip().startswith(match):
                 value = prop.strip()[len(match):].strip(' \n\t\'')
                 if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                    result.append(re.sub(r'{{.*}}', '', translate_script(value)) + append)
+                    result.append(translate_script(value) + append)
     return result
 
 def signal_handler(signal, frame):
@@ -69,9 +69,9 @@ def signal_handler(signal, frame):
 def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
-    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1',
+    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2',
         re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
-        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))
+        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
@@ -138,6 +138,9 @@ def fetch(url, articleUrl):
     heatOfVaporization = capitalize(replace_chars(get_property(content, 'heat vaporization', '', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
+    molarHeatCapacity = capitalize(re.sub(r'[\(]|\'\'', '', replace_chars(
+        '\n'.join(get_all_property(content, 'heat capacity', ' kJ·mol⁻¹')), ')', ':').replace(':\n', ': ')))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -161,7 +164,8 @@ def fetch(url, articleUrl):
         'triplePoint': triplePoint,
         'criticalPoint': criticalPoint,
         'heatOfFusion': heatOfFusion,
-        'heatOfVaporization': heatOfVaporization
+        'heatOfVaporization': heatOfVaporization,
+        'molarHeatCapacity': molarHeatCapacity
     }
 
     print(element)
