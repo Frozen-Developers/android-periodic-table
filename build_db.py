@@ -69,10 +69,10 @@ def signal_handler(signal, frame):
 def fetch(url, articleUrl):
     print('Parsing properties from ' + url)
 
-    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2',
-        re.sub(r'no data', '-',
+    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\s*{{nowrap\|([^}]*)}}', r'\1',
+        re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2', re.sub(r'no data', '-',
         re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
-        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0])))))
+        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))))
     start = content.lower().index('{{infobox element') + 17
     content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
