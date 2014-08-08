@@ -27,7 +27,7 @@ class Article:
 
         # Strip unwanted data
 
-        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*-->', r'[\?]',
+        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->', r'[\?]',
             r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*' ]
         for item in strip:
             content = re.sub(item, '', content)
@@ -59,8 +59,12 @@ class Article:
 
         # Parse properties
 
-        start = content.lower().index('{{infobox element') + 17
-        self.__properties = content[start : content.lower().index('}}<noinclude>', start)].split('\n|')
+        self.properties = []
+        try:
+            start = content.lower().index('{{infobox element') + 17
+            self.properties = content[start : content.lower().index('}}<noinclude>', start)].split('\n|')
+        except ValueError:
+            pass
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -88,7 +92,7 @@ class Article:
         return self.removeHtmlTags(value) + (append if value != '-' else '')
 
     def getProperty(self, name, default = '', append = ''):
-        for prop in self.__properties:
+        for prop in self.properties:
             if prop.strip().startswith(name + '='):
                 value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
                 if self.isPropertyValid(value):
@@ -99,7 +103,7 @@ class Article:
 
     def getAllProperty(self, name, append = ''):
         result = []
-        for prop in self.__properties:
+        for prop in self.properties:
             for match in re.findall(name + r'\s?\d*=', prop):
                 if prop.strip().startswith(match):
                     value = prop.strip()[len(match):].strip(' \n\t\'')

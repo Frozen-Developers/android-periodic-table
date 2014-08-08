@@ -2454,7 +2454,7 @@
         "molarHeatCapacity": "",
         "name": "Ununoctium",
         "number": "118",
-        "oxidationStates": "−1, 2, 6",
+        "oxidationStates": "−1, 0, 1, 2, 4, 6",
         "period": "7",
         "phase": "Solid",
         "sublimationPoint": "",
