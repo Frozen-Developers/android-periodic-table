@@ -53,6 +53,10 @@ class Article:
             {
                 'target': r'no data',
                 'replacement': '-'
+            },
+            {
+                'target': r'{{sort\|([^{}]*)\|([^{}]*)}}',
+                'replacement': r'\1'
             }
         ]
         for item in replace:
@@ -66,6 +70,30 @@ class Article:
             self.properties = content[start : content.lower().index('}}<noinclude>', start)].split('\n|')
         except ValueError:
             pass
+
+        # Parse tables
+
+        self.tables = {}
+        for match in re.findall(r'=[^\n]*=\n+{\|[^\n]*\n?', content, flags=re.S):
+            name = match.splitlines()[0].strip(' =')
+            start = content.index(match) + len(match)
+            rows = content[start : content.index('|}', start)].split('\n|-')
+            rows = list(filter(len, (row.strip(' \n\t!|') for row in rows)))
+            headers = []
+            for row_i, row in enumerate(rows):
+                delimiter = '|' if row_i > 0 else '!'
+                rows[row_i] = (value.strip(' \n\t!|') for value in row.split(delimiter))
+                rows[row_i] = list(filter(len, rows[row_i]))
+            if len(rows) > 0:
+                headers = rows[0]
+                rows[0] = ''
+            rows = list(filter(len, rows))
+            self.tables[name] = []
+            for row in rows:
+                item = {}
+                for header, value in zip(headers, row):
+                    item[header] = self.getPropertyFinalValue(value)
+                self.tables[name].append(item)
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -85,7 +113,7 @@ class Article:
     def isPropertyValid(self, value):
         return not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != ''
 
-    def getPropertyFinalValue(self, value, append):
+    def getPropertyFinalValue(self, value, append = ''):
         for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', value):
             value = value.replace(match, self.replaceWithSuperscript(re.sub(r'\^|{{sup\||}}', '', match)))
         for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', value):
@@ -111,6 +139,12 @@ class Article:
                     if self.isPropertyValid(value):
                         result.append(self.getPropertyFinalValue(value, append))
         return result
+
+    def getTable(self, name):
+        for key, value in self.tables.items():
+            if name == key:
+                return value
+        return []
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
