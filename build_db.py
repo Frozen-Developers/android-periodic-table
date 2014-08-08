@@ -20,131 +20,165 @@ def capitalize(string):
 def replace_chars(string, charset1, charset2):
     return ''.join(dict(zip(charset1, charset2)).get(c, c) for c in string)
 
-def remove_html_tags(string, tags=[]):
-    if len(tags) > 0:
-        soup = BeautifulSoup(string)
-        for tag in tags:
-            for occurence in soup.find_all(tag):
-                occurence.replaceWith('')
-        return soup.get_text()
-    return re.sub(r'<[^<]+?>|{{.*}}', '', string)
+class Article:
 
-def replace_with_superscript(string):
-    return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
+    def __init__(self, url, start, end):
+        content = etree.parse(url).xpath("//*[local-name()='text']/text()")[0]
 
-def replace_with_subscript(string):
-    return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
+        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*-->', r'[\?]',
+            r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*' ]
+        for item in strip:
+            content = re.sub(item, '', content)
 
-def translate_script(string):
-    for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', string):
-        string = string.replace(match, replace_with_superscript(remove_html_tags(re.sub(r'\^|{{sup\||}}', '', match))))
-    for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', string):
-        string = string.replace(match, replace_with_subscript(remove_html_tags(re.sub(r'{{sub\||}}', '', match))))
-    return remove_html_tags(string)
+        replace = [
+            {
+                'target': r'<br>|<br/>',
+                'replacement': '\n'
+            },
+            {
+                'target': r'\[\[(.*)\|(.*)\]\]',
+                'replacement': r'\2'
+            },
+            {
+                'target': r'\[\[(.*)\]\]',
+                'replacement': r'\1'
+            },
+            {
+                'target': r'{{nowrap\|([^}]*)}}',
+                'replacement': r'\1'
+            },
+            {
+                'target': r'no data',
+                'replacement': '-'
+            }
+        ]
+        for item in replace:
+            content = re.sub(item['target'], item['replacement'], content)
 
-def get_property(content, name, default = '', append = ''):
-    for prop in content:
-        if prop.strip().startswith(name + '='):
-            value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
-            if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                return translate_script(value) + (append if value != '-' else '')
-            else:
-                break
-    return default
+        startIndex = content.lower().index(start) + len(start)
+        self.content = HTMLParser().unescape(content[startIndex : content.lower().index(end, startIndex)]).split('\n|')
 
-def get_all_property(content, name, append = ''):
-    result = []
-    for prop in content:
-        for match in re.findall(name + r'\s?\d*=', prop):
-            if prop.strip().startswith(match):
-                value = prop.strip()[len(match):].strip(' \n\t\'')
-                if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-                    result.append(translate_script(value) + (append if value != '-' else ''))
-    return result
+    def removeHtmlTags(self, string, tags=[]):
+        if len(tags) > 0:
+            soup = BeautifulSoup(string)
+            for tag in tags:
+                for occurence in soup.find_all(tag):
+                    occurence.replaceWith('')
+            return soup.get_text()
+        return re.sub(r'<[^<]+?>|{{.*}}', '', string)
+
+    def replaceWithSuperscript(self, string):
+        return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
+
+    def replaceWithSubscript(self, string):
+        return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
+
+    def isPropertyValid(self, value):
+        return not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != ''
+
+    def getPropertyFinalValue(self, value, append):
+        for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', value):
+            value = value.replace(match, self.replaceWithSuperscript(re.sub(r'\^|{{sup\||}}', '', match)))
+        for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', value):
+            value = value.replace(match, self.replaceWithSubscript(re.sub(r'{{sub\||}}', '', match)))
+        return self.removeHtmlTags(value) + (append if value != '-' else '')
+
+    def getProperty(self, name, default = '', append = ''):
+        for prop in self.content:
+            if prop.strip().startswith(name + '='):
+                value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
+                if self.isPropertyValid(value):
+                    return self.getPropertyFinalValue(value, append)
+                else:
+                    break
+        return default
+
+    def getAllProperty(self, name, append = ''):
+        result = []
+        for prop in self.content:
+            for match in re.findall(name + r'\s?\d*=', prop):
+                if prop.strip().startswith(match):
+                    value = prop.strip()[len(match):].strip(' \n\t\'')
+                    if self.isPropertyValid(value):
+                        result.append(self.getPropertyFinalValue(value, append))
+        return result
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def fetch(url, articleUrl):
+def parse(article, articleUrl):
     print('Parsing properties from ' + url)
-
-    content = re.sub(r'<br>|<br/>', '\n', re.sub(r'\[\[(.*)\]\]', r'\1', re.sub(r'\s*{{nowrap\|([^}]*)}}', r'\1',
-        re.sub(r'\[\[(.*)\|(.*)\]\]', r'\2', re.sub(r'no data', '-',
-        re.sub(r'<.?includeonly[^>]*>|<ref[^>]*>.*?</ref>|<ref[^>]*>|<!--.*-->|[\?]|\'+\'+|\s*\(predicted\)|\s*\(estimated\)|\s*\(extrapolated\)|ca\.\s*',
-        '', etree.parse(url).xpath("//*[local-name()='text']/text()")[0]))))))
-    start = content.lower().index('{{infobox element') + 17
-    content = HTMLParser().unescape(content[start:content.index('}}<noinclude>', start)]).split('\n|')
 
     # Properties
 
-    number = get_property(content, 'number')
+    number = article.getProperty('number')
 
-    symbol = get_property(content, 'symbol')
+    symbol = article.getProperty('symbol')
 
-    name = get_property(content, 'name').capitalize()
+    name = article.getProperty('name').capitalize()
 
-    weight = replace_chars(get_property(content, 'atomic mass'), '()', '[]')
+    weight = replace_chars(article.getProperty('atomic mass'), '()', '[]')
     try:
         weight = format(float(weight), '.3f').rstrip('0').rstrip('.')
     except ValueError:
         pass
 
-    category = get_property(content, 'series').capitalize()
+    category = article.getProperty('series').capitalize()
 
-    group = get_property(content, 'group', '3')
+    group = article.getProperty('group', '3')
 
-    period = get_property(content, 'period')
+    period = article.getProperty('period')
 
-    block = get_property(content, 'block')
+    block = article.getProperty('block')
 
-    configuration = re.sub(r'\[(.*)\|(.*)\]', r'[\2]', get_property(content, 'electron configuration'))
+    configuration = re.sub(r'\[(.*)\|(.*)\]', r'[\2]', article.getProperty('electron configuration'))
 
-    shells = get_property(content, 'electrons per shell')
+    shells = article.getProperty('electrons per shell')
 
-    appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(get_property(content, 'appearance')).replace(';', ','))
+    appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(article.getProperty('appearance')).replace(';', ','))
 
-    phase = get_property(content, 'phase').capitalize()
+    phase = article.getProperty('phase').capitalize()
 
-    density = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3nrt', ' g·cm⁻³')),
+    density = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3nrt', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
     if density == '':
-        density = capitalize(replace_chars(get_property(content, 'density gplstp', '', '×10⁻³ g·cm⁻³'),
+        density = capitalize(replace_chars(article.getProperty('density gplstp', '', '×10⁻³ g·cm⁻³'),
             ')', ':').replace('(', ''))
 
-    densityMP = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3mp', ' g·cm⁻³')),
+    densityMP = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3mp', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
 
-    densityBP = capitalize(replace_chars('\n'.join(get_all_property(content, 'density gpcm3bp', ' g·cm⁻³')),
+    densityBP = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3bp', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
 
-    meltingPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'melting point K', '', ' K'),
-        get_property(content, 'melting point C', '', ' °C'), get_property(content, 'melting point F', '', ' °F') ])))
+    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point K', '', ' K'),
+        article.getProperty('melting point C', '', ' °C'), article.getProperty('melting point F', '', ' °F') ])))
 
-    sublimationPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'sublimation point K', '', ' K'),
-        get_property(content, 'sublimation point C', '', ' °C'), get_property(content, 'sublimation point F', '', ' °F') ])))
+    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point K', '', ' K'),
+        article.getProperty('sublimation point C', '', ' °C'), article.getProperty('sublimation point F', '', ' °F') ])))
 
-    boilingPoint = capitalize(' / '.join(filter(len, [ get_property(content, 'boiling point K', '', ' K'),
-        get_property(content, 'boiling point C', '', ' °C'), get_property(content, 'boiling point F', '', ' °F') ])))
+    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point K', '', ' K'),
+        article.getProperty('boiling point C', '', ' °C'), article.getProperty('boiling point F', '', ' °F') ])))
 
-    triplePoint = capitalize(', '.join(filter(len, [ get_property(content, 'triple point K', '', ' K'),
-        get_property(content, 'triple point kPa', '', ' kPa') ])))
+    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point K', '', ' K'),
+        article.getProperty('triple point kPa', '', ' kPa') ])))
 
-    criticalPoint = capitalize(', '.join(filter(len, [ get_property(content, 'critical point K', '', ' K'),
-        get_property(content, 'critical point MPa', '', ' MPa') ])))
+    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point K', '', ' K'),
+        article.getProperty('critical point MPa', '', ' MPa') ])))
 
-    heatOfFusion = capitalize(replace_chars('\n'.join(get_all_property(content, 'heat fusion', ' kJ·mol⁻¹')),
+    heatOfFusion = capitalize(replace_chars('\n'.join(article.getAllProperty('heat fusion', ' kJ·mol⁻¹')),
         ')', ':').replace('(', ''))
 
-    heatOfVaporization = capitalize(replace_chars(get_property(content, 'heat vaporization', '', ' kJ·mol⁻¹'),
+    heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization', '', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
     molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
-        '\n'.join(get_all_property(content, 'heat capacity', ' kJ·mol⁻¹')), ')', ':').replace(':\n', ': ')))
+        '\n'.join(article.getAllProperty('heat capacity', ' kJ·mol⁻¹')), ')', ':').replace(':\n', ': ')))
 
-    oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', get_property(content, 'oxidation states'))
+    oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', article.getProperty('oxidation states'))
 
-    electronegativity = get_property(content, 'electronegativity', '', ' (Pauling scale)')
+    electronegativity = article.getProperty('electronegativity', '', ' (Pauling scale)')
 
     element = {
         'number': number,
@@ -185,8 +219,10 @@ if __name__ == '__main__':
     jsonData = []
 
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
-        jsonData.append(fetch(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' +
-            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower()), URL_PREFIX + element.attrib['href']))
+        url = URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
+            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())
+        jsonData.append(parse(Article(url, '{{infobox element', '}}<noinclude>'),
+            URL_PREFIX + element.attrib['href']))
 
     with open(OUTPUT_JSON, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)
