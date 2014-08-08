@@ -22,8 +22,10 @@ def replace_chars(string, charset1, charset2):
 
 class Article:
 
-    def __init__(self, url, start, end):
-        content = etree.parse(url).xpath("//*[local-name()='text']/text()")[0]
+    def __init__(self, url):
+        content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
+
+        # Strip unwanted data
 
         strip = [ r'<.?includeonly[^>]*>', r'<ref[^>]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*-->', r'[\?]',
             r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*' ]
@@ -36,15 +38,15 @@ class Article:
                 'replacement': '\n'
             },
             {
-                'target': r'\[\[(.*)\|(.*)\]\]',
+                'target': r'\[\[([^\[\]]*)\|([^\[\]\|]*)\]\]',
                 'replacement': r'\2'
             },
             {
-                'target': r'\[\[(.*)\]\]',
+                'target': r'\[\[([^\[\]]*)\]\]',
                 'replacement': r'\1'
             },
             {
-                'target': r'{{nowrap\|([^}]*)}}',
+                'target': r'{{nowrap\|([^{}]*)}}',
                 'replacement': r'\1'
             },
             {
@@ -55,8 +57,10 @@ class Article:
         for item in replace:
             content = re.sub(item['target'], item['replacement'], content)
 
-        startIndex = content.lower().index(start) + len(start)
-        self.content = HTMLParser().unescape(content[startIndex : content.lower().index(end, startIndex)]).split('\n|')
+        # Parse properties
+
+        start = content.lower().index('{{infobox element') + 17
+        self.__properties = content[start : content.lower().index('}}<noinclude>', start)].split('\n|')
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -84,7 +88,7 @@ class Article:
         return self.removeHtmlTags(value) + (append if value != '-' else '')
 
     def getProperty(self, name, default = '', append = ''):
-        for prop in self.content:
+        for prop in self.__properties:
             if prop.strip().startswith(name + '='):
                 value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
                 if self.isPropertyValid(value):
@@ -95,7 +99,7 @@ class Article:
 
     def getAllProperty(self, name, append = ''):
         result = []
-        for prop in self.content:
+        for prop in self.__properties:
             for match in re.findall(name + r'\s?\d*=', prop):
                 if prop.strip().startswith(match):
                     value = prop.strip()[len(match):].strip(' \n\t\'')
@@ -132,7 +136,7 @@ def parse(article, articleUrl):
 
     block = article.getProperty('block')
 
-    configuration = re.sub(r'\[(.*)\|(.*)\]', r'[\2]', article.getProperty('electron configuration'))
+    configuration = article.getProperty('electron configuration')
 
     shells = article.getProperty('electrons per shell')
 
@@ -221,8 +225,7 @@ if __name__ == '__main__':
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         url = URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
             re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())
-        jsonData.append(parse(Article(url, '{{infobox element', '}}<noinclude>'),
-            URL_PREFIX + element.attrib['href']))
+        jsonData.append(parse(Article(url), URL_PREFIX + element.attrib['href']))
 
     with open(OUTPUT_JSON, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)
