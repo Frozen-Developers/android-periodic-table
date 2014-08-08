@@ -9,6 +9,7 @@ import sys
 import json
 from html.parser import HTMLParser
 from bs4 import BeautifulSoup, Tag
+from collections import OrderedDict
 
 OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
@@ -64,25 +65,26 @@ class Article:
 
         # Parse properties
 
-        self.properties = []
-        try:
-            start = content.lower().index('{{infobox element') + 17
-            self.properties = content[start : content.lower().index('}}<noinclude>', start)].split('\n|')
-        except ValueError:
-            pass
+        self.properties = OrderedDict()
+        properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content, flags=re.S) \
+            .split('\n|')
+        for prop in properties:
+            nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
+            if len(nameValue) > 1:
+                self.properties[nameValue[0]] = self.parseProperty(nameValue[1])
 
         # Parse tables
 
-        self.tables = {}
+        self.tables = OrderedDict()
         for match in re.findall(r'=[^\n]*=\n+{\|[^\n]*\n?', content, flags=re.S):
             name = match.splitlines()[0].strip(' =')
             start = content.index(match) + len(match)
             rows = content[start : content.index('|}', start)].split('\n|-')
-            rows = list(filter(len, (row.strip(' \n\t!|') for row in rows)))
+            rows = list(filter(len, (row.strip(' \n\t!|\'') for row in rows)))
             headers = []
             for row_i, row in enumerate(rows):
                 delimiter = '|' if row_i > 0 else '!'
-                rows[row_i] = (value.strip(' \n\t!|') for value in row.split(delimiter))
+                rows[row_i] = (value.strip(' \n\t!|\'') for value in row.split(delimiter))
                 rows[row_i] = list(filter(len, rows[row_i]))
             if len(rows) > 0:
                 headers = rows[0]
@@ -90,9 +92,9 @@ class Article:
             rows = list(filter(len, rows))
             self.tables[name] = []
             for row in rows:
-                item = {}
+                item = OrderedDict()
                 for header, value in zip(headers, row):
-                    item[header] = self.getPropertyFinalValue(value)
+                    item[header] = self.parseProperty(value)
                 self.tables[name].append(item)
 
     def removeHtmlTags(self, string, tags=[]):
@@ -110,40 +112,31 @@ class Article:
     def replaceWithSubscript(self, string):
         return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
 
-    def isPropertyValid(self, value):
-        return not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != ''
+    def parseProperty(self, value):
+        if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
+            for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', value):
+                value = value.replace(match, self.replaceWithSuperscript(re.sub(r'\^|{{sup\||}}', '', match)))
+            for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', value):
+                value = value.replace(match, self.replaceWithSubscript(re.sub(r'{{sub\||}}', '', match)))
+            return self.removeHtmlTags(value)
+        return ''
 
-    def getPropertyFinalValue(self, value, append = ''):
-        for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]', value):
-            value = value.replace(match, self.replaceWithSuperscript(re.sub(r'\^|{{sup\||}}', '', match)))
-        for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', value):
-            value = value.replace(match, self.replaceWithSubscript(re.sub(r'{{sub\||}}', '', match)))
-        return self.removeHtmlTags(value) + (append if value != '-' else '')
-
-    def getProperty(self, name, default = '', append = ''):
-        for prop in self.properties:
-            if prop.strip().startswith(name + '='):
-                value = prop.strip()[len(name) + 1:].strip(' \n\t\'')
-                if self.isPropertyValid(value):
-                    return self.getPropertyFinalValue(value, append)
-                else:
-                    break
+    def getProperty(self, name, append = '', default = ''):
+        if name in self.properties.keys():
+            if self.properties[name] != '':
+                return self.properties[name] + (append if self.properties[name] != '-' else '')
         return default
 
     def getAllProperty(self, name, append = ''):
         result = []
-        for prop in self.properties:
-            for match in re.findall(name + r'\s?\d*=', prop):
-                if prop.strip().startswith(match):
-                    value = prop.strip()[len(match):].strip(' \n\t\'')
-                    if self.isPropertyValid(value):
-                        result.append(self.getPropertyFinalValue(value, append))
+        for key, value in self.properties.items():
+            if re.match(r'^' + name + r'\s?\d*$', key) != None and value != '':
+                result.append(value + (append if value != '-' else ''))
         return result
 
     def getTable(self, name):
-        for key, value in self.tables.items():
-            if name == key:
-                return value
+        if name in self.tables.keys():
+            return self.tables[name]
         return []
 
 def signal_handler(signal, frame):
@@ -151,8 +144,6 @@ def signal_handler(signal, frame):
     sys.exit(0)
 
 def parse(article, articleUrl):
-    print('Parsing properties from ' + url)
-
     # Properties
 
     number = article.getProperty('number')
@@ -169,7 +160,7 @@ def parse(article, articleUrl):
 
     category = article.getProperty('series').capitalize()
 
-    group = article.getProperty('group', '3')
+    group = article.getProperty('group', default='3')
 
     period = article.getProperty('period')
 
@@ -186,7 +177,7 @@ def parse(article, articleUrl):
     density = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3nrt', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
     if density == '':
-        density = capitalize(replace_chars(article.getProperty('density gplstp', '', '×10⁻³ g·cm⁻³'),
+        density = capitalize(replace_chars(article.getProperty('density gplstp', '×10⁻³ g·cm⁻³'),
             ')', ':').replace('(', ''))
 
     densityMP = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3mp', ' g·cm⁻³')),
@@ -195,25 +186,25 @@ def parse(article, articleUrl):
     densityBP = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3bp', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
 
-    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point K', '', ' K'),
-        article.getProperty('melting point C', '', ' °C'), article.getProperty('melting point F', '', ' °F') ])))
+    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point K', ' K'),
+        article.getProperty('melting point C', ' °C'), article.getProperty('melting point F', ' °F') ])))
 
-    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point K', '', ' K'),
-        article.getProperty('sublimation point C', '', ' °C'), article.getProperty('sublimation point F', '', ' °F') ])))
+    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point K', ' K'),
+        article.getProperty('sublimation point C', ' °C'), article.getProperty('sublimation point F', ' °F') ])))
 
-    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point K', '', ' K'),
-        article.getProperty('boiling point C', '', ' °C'), article.getProperty('boiling point F', '', ' °F') ])))
+    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point K', ' K'),
+        article.getProperty('boiling point C', ' °C'), article.getProperty('boiling point F', ' °F') ])))
 
-    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point K', '', ' K'),
-        article.getProperty('triple point kPa', '', ' kPa') ])))
+    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point K', ' K'),
+        article.getProperty('triple point kPa', ' kPa') ])))
 
-    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point K', '', ' K'),
-        article.getProperty('critical point MPa', '', ' MPa') ])))
+    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point K', ' K'),
+        article.getProperty('critical point MPa', ' MPa') ])))
 
     heatOfFusion = capitalize(replace_chars('\n'.join(article.getAllProperty('heat fusion', ' kJ·mol⁻¹')),
         ')', ':').replace('(', ''))
 
-    heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization', '', ' kJ·mol⁻¹'),
+    heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
     molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
@@ -221,7 +212,7 @@ def parse(article, articleUrl):
 
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', article.getProperty('oxidation states'))
 
-    electronegativity = article.getProperty('electronegativity', '', ' (Pauling scale)')
+    electronegativity = article.getProperty('electronegativity', ' (Pauling scale)')
 
     element = {
         'number': number,
@@ -252,8 +243,6 @@ def parse(article, articleUrl):
         'electronegativity': electronegativity
     }
 
-    print(element)
-
     return element
 
 if __name__ == '__main__':
@@ -264,6 +253,7 @@ if __name__ == '__main__':
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         url = URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
             re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())
+        print('Parsing properties from ' + url)
         jsonData.append(parse(Article(url), URL_PREFIX + element.attrib['href']))
 
     with open(OUTPUT_JSON, 'w+') as outfile:
