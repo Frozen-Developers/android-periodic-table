@@ -24,6 +24,7 @@ class Article:
 
     def __init__(self, url):
         content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
+        content = replace_chars(content, '\u00a0\u2002', '  ')
 
         # Strip unwanted data
 
