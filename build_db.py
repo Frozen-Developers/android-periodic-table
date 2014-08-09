@@ -220,6 +220,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     ionizationEnergies = '\n'.join([key + ': ' + value + ' kJ·mol⁻¹'
         for key, value in ionizationEnergiesDict[str(number)].items()])
 
+    atomicRadius = article.getProperty('atomic radius', ' pm')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -247,7 +249,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'molarHeatCapacity': molarHeatCapacity,
         'oxidationStates': oxidationStates,
         'electronegativity': electronegativity,
-        'ionizationEnergies': ionizationEnergies
+        'ionizationEnergies': ionizationEnergies,
+        'atomicRadius': atomicRadius
     }
 
     return element

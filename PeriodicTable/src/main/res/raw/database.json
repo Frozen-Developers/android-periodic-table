@@ -1,6 +1,7 @@
 [
     {
         "appearance": "Colorless gas",
+        "atomicRadius": "",
         "block": "s",
         "boilingPoint": "20.271 K / −252.879 °C / −423.182 °F",
         "category": "Diatomic nonmetal",
@@ -30,6 +31,7 @@
     },
     {
         "appearance": "Colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
+        "atomicRadius": "",
         "block": "s",
         "boilingPoint": "4.222 K / −268.928 °C / −452.070 °F",
         "category": "Noble gas",
@@ -59,6 +61,7 @@
     },
     {
         "appearance": "Silvery-white",
+        "atomicRadius": "152 pm",
         "block": "s",
         "boilingPoint": "1603 K / 1330 °C / 2426 °F",
         "category": "Alkali metal",
@@ -88,6 +91,7 @@
     },
     {
         "appearance": "White-gray metallic",
+        "atomicRadius": "112 pm",
         "block": "s",
         "boilingPoint": "3243 K / 2970 °C / 5338 °F",
         "category": "Alkaline earth metal",
@@ -117,6 +121,7 @@
     },
     {
         "appearance": "Black-brown",
+        "atomicRadius": "90 pm",
         "block": "p",
         "boilingPoint": "4200 K / 3927 °C / 7101 °F",
         "category": "Metalloid",
@@ -146,6 +151,7 @@
     },
     {
         "appearance": "Diamond: clear\nGraphite: black",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "",
         "category": "Polyatomic nonmetal",
@@ -175,6 +181,7 @@
     },
     {
         "appearance": "Colorless gas, liquid or solid",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "77.355 K / −195.795 °C / −320.431 °F",
         "category": "Diatomic nonmetal",
@@ -204,6 +211,7 @@
     },
     {
         "appearance": "Colorless gas, pale blue liquid",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "90.188 K / −182.962 °C / −297.332 °F",
         "category": "Diatomic nonmetal",
@@ -233,6 +241,7 @@
     },
     {
         "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: alpha is opaque, beta is transparent",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "85.03 K / −188.11 °C / −306.60 °F",
         "category": "Diatomic nonmetal",
@@ -262,6 +271,7 @@
     },
     {
         "appearance": "Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "27.104 K / −246.046 °C / −410.883 °F",
         "category": "Noble gas",
@@ -291,6 +301,7 @@
     },
     {
         "appearance": "Silvery white metallic",
+        "atomicRadius": "186 pm",
         "block": "s",
         "boilingPoint": "1156.090 K / 882.940 °C / 1621.292 °F",
         "category": "Alkali metal",
@@ -320,6 +331,7 @@
     },
     {
         "appearance": "Shiny grey solid",
+        "atomicRadius": "160 pm",
         "block": "s",
         "boilingPoint": "1363 K / 1091 °C / 1994 °F",
         "category": "Alkaline earth metal",
@@ -349,6 +361,7 @@
     },
     {
         "appearance": "Silvery gray metallic",
+        "atomicRadius": "143 pm",
         "block": "p",
         "boilingPoint": "2743 K / 2470 °C / 4478 °F",
         "category": "Post-transition metal",
@@ -378,6 +391,7 @@
     },
     {
         "appearance": "Crystalline, reflective with bluish-tinged faces",
+        "atomicRadius": "111 pm",
         "block": "p",
         "boilingPoint": "3538 K / 3265 °C / 5909 °F",
         "category": "Metalloid",
@@ -407,6 +421,7 @@
     },
     {
         "appearance": "Colourless, waxy white, yellow, scarlet, red, violet, black",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "White: 280.5 °C",
         "category": "Polyatomic nonmetal",
@@ -436,6 +451,7 @@
     },
     {
         "appearance": "Lemon yellow sintered microcrystals",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "717.8 K / 444.6 °C / 832.3 °F",
         "category": "Polyatomic nonmetal",
@@ -465,6 +481,7 @@
     },
     {
         "appearance": "Pale yellow-green gas",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "239.11 K / −34.04 °C / −29.27 °F",
         "category": "Diatomic nonmetal",
@@ -494,6 +511,7 @@
     },
     {
         "appearance": "Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "87.302 K / −185.848 °C / −302.526 °F",
         "category": "Noble gas",
@@ -523,6 +541,7 @@
     },
     {
         "appearance": "Silvery gray",
+        "atomicRadius": "227 pm",
         "block": "s",
         "boilingPoint": "1032 K / 759 °C / 1398 °F",
         "category": "Alkali metal",
@@ -552,6 +571,7 @@
     },
     {
         "appearance": "Dull gray, silver",
+        "atomicRadius": "197 pm",
         "block": "s",
         "boilingPoint": "1757 K / 1484 °C / 2703 °F",
         "category": "Alkaline earth metal",
@@ -581,6 +601,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "162 pm",
         "block": "d",
         "boilingPoint": "3109 K / 2836 °C / 5136 °F",
         "category": "Transition metal",
@@ -610,6 +631,7 @@
     },
     {
         "appearance": "Silvery grey-white metallic",
+        "atomicRadius": "147 pm",
         "block": "d",
         "boilingPoint": "3560 K / 3287 °C / 5949 °F",
         "category": "Transition metal",
@@ -639,6 +661,7 @@
     },
     {
         "appearance": "Blue-silver-grey metal",
+        "atomicRadius": "134 pm",
         "block": "d",
         "boilingPoint": "3680 K / 3407 °C / 6165 °F",
         "category": "Transition metal",
@@ -668,6 +691,7 @@
     },
     {
         "appearance": "Silvery metallic",
+        "atomicRadius": "128 pm",
         "block": "d",
         "boilingPoint": "2944 K / 2671 °C / 4840 °F",
         "category": "Transition metal",
@@ -697,6 +721,7 @@
     },
     {
         "appearance": "Silvery metallic",
+        "atomicRadius": "127 pm",
         "block": "d",
         "boilingPoint": "2334 K / 2061 °C / 3742 °F",
         "category": "Transition metal",
@@ -726,6 +751,7 @@
     },
     {
         "appearance": "Lustrous metallic with a grayish tinge",
+        "atomicRadius": "126 pm",
         "block": "d",
         "boilingPoint": "3134 K / 2862 °C / 5182 °F",
         "category": "Transition metal",
@@ -755,6 +781,7 @@
     },
     {
         "appearance": "Hard lustrous gray metal",
+        "atomicRadius": "125 pm",
         "block": "d",
         "boilingPoint": "3200 K / 2927 °C / 5301 °F",
         "category": "Transition metal",
@@ -784,6 +811,7 @@
     },
     {
         "appearance": "Lustrous, metallic, and silver with a gold tinge",
+        "atomicRadius": "124 pm",
         "block": "d",
         "boilingPoint": "3003 K / 2730 °C / 4946 °F",
         "category": "Transition metal",
@@ -813,6 +841,7 @@
     },
     {
         "appearance": "Red-orange metallic luster",
+        "atomicRadius": "128 pm",
         "block": "d",
         "boilingPoint": "2835 K / 2562 °C / 4643 °F",
         "category": "Transition metal",
@@ -842,6 +871,7 @@
     },
     {
         "appearance": "Silver-gray",
+        "atomicRadius": "134 pm",
         "block": "d",
         "boilingPoint": "1180 K / 907 °C / 1665 °F",
         "category": "Transition metal",
@@ -871,6 +901,7 @@
     },
     {
         "appearance": "Silver-white",
+        "atomicRadius": "135 pm",
         "block": "p",
         "boilingPoint": "2673 K / 2400 °C / 4352 °F",
         "category": "Post-transition metal",
@@ -900,6 +931,7 @@
     },
     {
         "appearance": "Grayish-white",
+        "atomicRadius": "122 pm",
         "block": "p",
         "boilingPoint": "3106 K / 2833 °C / 5131 °F",
         "category": "Metalloid",
@@ -929,6 +961,7 @@
     },
     {
         "appearance": "Metallic grey",
+        "atomicRadius": "119 pm",
         "block": "p",
         "boilingPoint": "",
         "category": "Metalloid",
@@ -958,6 +991,7 @@
     },
     {
         "appearance": "Black and red allotropes",
+        "atomicRadius": "120 pm",
         "block": "p",
         "boilingPoint": "958 K / 685 °C / 1265 °F",
         "category": "Polyatomic nonmetal",
@@ -987,6 +1021,7 @@
     },
     {
         "appearance": "Gas/liquid: red-brown\nSolid: metallic luster",
+        "atomicRadius": "120 pm",
         "block": "p",
         "boilingPoint": "332.0 K / 58.8 °C / 137.8 °F",
         "category": "Diatomic nonmetal",
@@ -1016,6 +1051,7 @@
     },
     {
         "appearance": "Colorless gas, exhibiting a whitish glow in a high electric field",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "119.93 K / −153.415 °C / −244.147 °F",
         "category": "Noble gas",
@@ -1045,6 +1081,7 @@
     },
     {
         "appearance": "Grey white",
+        "atomicRadius": "248 pm",
         "block": "s",
         "boilingPoint": "961 K / 688 °C / 1270 °F",
         "category": "Alkali metal",
@@ -1074,6 +1111,7 @@
     },
     {
         "appearance": "Silvery white metallic",
+        "atomicRadius": "215 pm",
         "block": "s",
         "boilingPoint": "1650 K / 1377 °C / 2511 °F",
         "category": "Alkaline earth metal",
@@ -1103,6 +1141,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "180 pm",
         "block": "d",
         "boilingPoint": "3203 K / 2730 °C / 5306 °F",
         "category": "Transition metal",
@@ -1132,6 +1171,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "160 pm",
         "block": "d",
         "boilingPoint": "4650 K / 4377 °C / 7911 °F",
         "category": "Transition metal",
@@ -1161,6 +1201,7 @@
     },
     {
         "appearance": "Gray metallic, bluish when oxidized",
+        "atomicRadius": "146 pm",
         "block": "d",
         "boilingPoint": "5017 K / 4744 °C / 8571 °F",
         "category": "Transition metal",
@@ -1190,6 +1231,7 @@
     },
     {
         "appearance": "Gray metallic",
+        "atomicRadius": "139 pm",
         "block": "d",
         "boilingPoint": "4912 K / 4639 °C / 8382 °F",
         "category": "Transition metal",
@@ -1219,6 +1261,7 @@
     },
     {
         "appearance": "Shiny gray metal",
+        "atomicRadius": "136 pm",
         "block": "d",
         "boilingPoint": "4538 K / 4265 °C / 7709 °F",
         "category": "Transition metal",
@@ -1248,6 +1291,7 @@
     },
     {
         "appearance": "Silvery white metallic",
+        "atomicRadius": "134 pm",
         "block": "d",
         "boilingPoint": "4423 K / 4150 °C / 7502 °F",
         "category": "Transition metal",
@@ -1277,6 +1321,7 @@
     },
     {
         "appearance": "Silvery white metallic",
+        "atomicRadius": "134 pm",
         "block": "d",
         "boilingPoint": "3968 K / 3695 °C / 6683 °F",
         "category": "Transition metal",
@@ -1306,6 +1351,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "137 pm",
         "block": "d",
         "boilingPoint": "3236 K / 2963 °C / 5365 °F",
         "category": "Transition metal",
@@ -1335,6 +1381,7 @@
     },
     {
         "appearance": "Lustrous white metal",
+        "atomicRadius": "144 pm",
         "block": "d",
         "boilingPoint": "2435 K / 2162 °C / 3924 °F",
         "category": "Transition metal",
@@ -1364,6 +1411,7 @@
     },
     {
         "appearance": "Silvery bluish-gray metallic",
+        "atomicRadius": "151 pm",
         "block": "d",
         "boilingPoint": "1040 K / 767 °C / 1413 °F",
         "category": "Transition metal",
@@ -1393,6 +1441,7 @@
     },
     {
         "appearance": "Silvery lustrous gray",
+        "atomicRadius": "167 pm",
         "block": "p",
         "boilingPoint": "2345 K / 2072 °C / 3762 °F",
         "category": "Post-transition metal",
@@ -1422,6 +1471,7 @@
     },
     {
         "appearance": "Silvery or gray",
+        "atomicRadius": "140 pm",
         "block": "p",
         "boilingPoint": "2875 K / 2602 °C / 4716 °F",
         "category": "Post-transition metal",
@@ -1451,6 +1501,7 @@
     },
     {
         "appearance": "Silvery lustrous gray",
+        "atomicRadius": "140 pm",
         "block": "p",
         "boilingPoint": "1908 K / 1635 °C / 2975 °F",
         "category": "Metalloid",
@@ -1480,6 +1531,7 @@
     },
     {
         "appearance": "Silvery lustrous gray",
+        "atomicRadius": "140 pm",
         "block": "p",
         "boilingPoint": "1261 K / 988 °C / 1810 °F",
         "category": "Metalloid",
@@ -1509,6 +1561,7 @@
     },
     {
         "appearance": "Lustrous metallic gray, violet as a gas",
+        "atomicRadius": "140 pm",
         "block": "p",
         "boilingPoint": "457.4 K / 184.3 °C / 363.7 °F",
         "category": "Diatomic nonmetal",
@@ -1538,6 +1591,7 @@
     },
     {
         "appearance": "Colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "165.051 K / −108.099 °C / −162.578 °F",
         "category": "Noble gas",
@@ -1567,6 +1621,7 @@
     },
     {
         "appearance": "Silvery gold",
+        "atomicRadius": "265 pm",
         "block": "s",
         "boilingPoint": "944 K / 671 °C / 1240 °F",
         "category": "Alkali metal",
@@ -1596,6 +1651,7 @@
     },
     {
         "appearance": "Silvery gray",
+        "atomicRadius": "222 pm",
         "block": "s",
         "boilingPoint": "2118 K / 1845 °C / 3353 °F",
         "category": "Alkaline earth metals",
@@ -1625,6 +1681,7 @@
     },
     {
         "appearance": "Steel gray",
+        "atomicRadius": "159 pm",
         "block": "d",
         "boilingPoint": "4876 K / 4603 °C / 8317 °F",
         "category": "Transition metal",
@@ -1654,6 +1711,7 @@
     },
     {
         "appearance": "Gray blue",
+        "atomicRadius": "146 pm",
         "block": "d",
         "boilingPoint": "5731 K / 5458 °C / 9856 °F",
         "category": "Transition metal",
@@ -1683,6 +1741,7 @@
     },
     {
         "appearance": "Grayish white, lustrous",
+        "atomicRadius": "139 pm",
         "block": "d",
         "boilingPoint": "6203 K / 5930 °C / 10706 °F",
         "category": "Transition metal",
@@ -1712,6 +1771,7 @@
     },
     {
         "appearance": "Silvery-white",
+        "atomicRadius": "137 pm",
         "block": "d",
         "boilingPoint": "5869 K / 5596 °C / 10105 °F",
         "category": "Transition metal",
@@ -1741,6 +1801,7 @@
     },
     {
         "appearance": "Silvery, blue cast",
+        "atomicRadius": "135 pm",
         "block": "d",
         "boilingPoint": "5285 K / 5012 °C / 9054 °F",
         "category": "Transition metal",
@@ -1770,6 +1831,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "136 pm",
         "block": "d",
         "boilingPoint": "4403 K / 4130 °C / 7466 °F",
         "category": "Transition metal",
@@ -1799,6 +1861,7 @@
     },
     {
         "appearance": "Grayish white",
+        "atomicRadius": "139 pm",
         "block": "d",
         "boilingPoint": "4098 K / 3825 °C / 6917 °F",
         "category": "Transition metal",
@@ -1828,6 +1891,7 @@
     },
     {
         "appearance": "Metallic yellow",
+        "atomicRadius": "144 pm",
         "block": "d",
         "boilingPoint": "3243 K / 2970 °C / 5378 °F",
         "category": "Transition metal",
@@ -1857,6 +1921,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "151 pm",
         "block": "d",
         "boilingPoint": "629.88 K / 356.73 °C / 674.11 °F",
         "category": "Transition metal",
@@ -1886,6 +1951,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "170 pm",
         "block": "p",
         "boilingPoint": "1746 K / 1473 °C / 2683 °F",
         "category": "Post-transition metal",
@@ -1915,6 +1981,7 @@
     },
     {
         "appearance": "Metallic gray",
+        "atomicRadius": "175 pm",
         "block": "p",
         "boilingPoint": "2022 K / 1749 °C / 3180 °F",
         "category": "Post-transition metal",
@@ -1944,6 +2011,7 @@
     },
     {
         "appearance": "Lustrous silver",
+        "atomicRadius": "156 pm",
         "block": "p",
         "boilingPoint": "1837 K / 1564 °C / 2847 °F",
         "category": "Post-transition metal",
@@ -1973,6 +2041,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "168 pm",
         "block": "p",
         "boilingPoint": "1235 K / 962 °C / 1764 °F",
         "category": "Post-transition metal",
@@ -2002,6 +2071,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "610 K / 337 °C / 639 °F",
         "category": "Metalloid",
@@ -2031,6 +2101,7 @@
     },
     {
         "appearance": "Colorless gas",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "211.5 K / −61.7 °C / −79.1 °F",
         "category": "Noble gas",
@@ -2060,6 +2131,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "s",
         "boilingPoint": "950 K / 677 °C / 1250 °F",
         "category": "Alkali metal",
@@ -2089,6 +2161,7 @@
     },
     {
         "appearance": "Silvery white metallic",
+        "atomicRadius": "",
         "block": "s",
         "boilingPoint": "2010 K / 1737 °C / 3158.6 °F",
         "category": "Alkaline earth metal",
@@ -2118,6 +2191,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "150 pm",
         "block": "d",
         "boilingPoint": "5800 K / 5500 °C / 9900 °F",
         "category": "Transition metal",
@@ -2147,6 +2221,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "139 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "Transition metal",
@@ -2176,6 +2251,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "132 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "Transition metal",
@@ -2205,6 +2281,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "128 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "Transition metal",
@@ -2234,6 +2311,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "126 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "Transition metal",
@@ -2263,6 +2341,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "128 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "",
@@ -2292,6 +2371,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "132 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "",
@@ -2321,6 +2401,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "138 pm",
         "block": "d",
         "boilingPoint": "",
         "category": "",
@@ -2350,6 +2431,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "147 pm",
         "block": "d",
         "boilingPoint": "357 K / 84 °C / 183 °F",
         "category": "Transition metal",
@@ -2379,6 +2461,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "170 pm",
         "block": "p",
         "boilingPoint": "1430 K / 1130 °C / 2070 °F",
         "category": "",
@@ -2408,6 +2491,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "180 pm",
         "block": "p",
         "boilingPoint": "420 K / 147 °C / 297 °F",
         "category": "",
@@ -2437,6 +2521,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "187 pm",
         "block": "p",
         "boilingPoint": "~1400 K / ~1100 °C / ~2000 °F",
         "category": "",
@@ -2466,6 +2551,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "183 pm",
         "block": "p",
         "boilingPoint": "1035–1135 K / 762–862 °C / 1403–1583 °F",
         "category": "",
@@ -2495,6 +2581,7 @@
     },
     {
         "appearance": "Semimetallic",
+        "atomicRadius": "138 pm",
         "block": "p",
         "boilingPoint": "823 K / 550 °C / 1022 °F",
         "category": "",
@@ -2524,6 +2611,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "p",
         "boilingPoint": "350±30 K / 80±30 °C / 170±50 °F",
         "category": "",
@@ -2553,6 +2641,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "187 pm",
         "block": "f",
         "boilingPoint": "3737 K / 3464 °C / 6267 °F",
         "category": "Lanthanide",
@@ -2582,6 +2671,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "181.8 pm",
         "block": "f",
         "boilingPoint": "3716 K / 3443 °C / 6229 °F",
         "category": "Lanthanide",
@@ -2611,6 +2701,7 @@
     },
     {
         "appearance": "Grayish white",
+        "atomicRadius": "182 pm",
         "block": "f",
         "boilingPoint": "3403 K / 3130 °C / 5666 °F",
         "category": "Lanthanide",
@@ -2640,6 +2731,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "181 pm",
         "block": "f",
         "boilingPoint": "3347 K / 3074 °C / 5565 °F",
         "category": "Lanthanide",
@@ -2669,6 +2761,7 @@
     },
     {
         "appearance": "Metallic",
+        "atomicRadius": "183 pm",
         "block": "f",
         "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "category": "Lanthanide",
@@ -2698,6 +2791,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "180 pm",
         "block": "f",
         "boilingPoint": "2173 K / 1900 °C / 3452 °F",
         "category": "Lanthanide",
@@ -2727,6 +2821,7 @@
     },
     {
         "appearance": "Silvery white, but rarely seen without oxide discoloration",
+        "atomicRadius": "180 pm",
         "block": "f",
         "boilingPoint": "1802 K / 1529 °C / 2784 °F",
         "category": "Lanthanide",
@@ -2756,6 +2851,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "180 pm",
         "block": "f",
         "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "category": "Lanthanide",
@@ -2785,6 +2881,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "177 pm",
         "block": "f",
         "boilingPoint": "3396 K / 3123 °C / 5653 °F",
         "category": "Lanthanide",
@@ -2814,6 +2911,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "178 pm",
         "block": "f",
         "boilingPoint": "2840 K / 2562 °C / 4653 °F",
         "category": "Lanthanide",
@@ -2843,6 +2941,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "176 pm",
         "block": "f",
         "boilingPoint": "2873 K / 2600 °C / 4712 °F",
         "category": "Lanthanide",
@@ -2872,6 +2971,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "176 pm",
         "block": "f",
         "boilingPoint": "3141 K / 2868 °C / 5194 °F",
         "category": "Lanthanide",
@@ -2901,6 +3001,7 @@
     },
     {
         "appearance": "Silvery gray",
+        "atomicRadius": "176 pm",
         "block": "f",
         "boilingPoint": "2003 K / 1730 °C / 3146 °F",
         "category": "Lanthanide",
@@ -2930,6 +3031,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "176 pm",
         "block": "f",
         "boilingPoint": "1469 K / 1196 °C / 2185 °F",
         "category": "Lanthanide",
@@ -2959,6 +3061,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "174 pm",
         "block": "d",
         "boilingPoint": "3675 K / 3402 °C / 6156 °F",
         "category": "Lanthanide",
@@ -2988,6 +3091,7 @@
     },
     {
         "appearance": "Silvery-white, glowing with an eerie blue light, sometimes with a golden cast",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "3500±300 K / 3200±300 °C / 5800±500 °F",
         "category": "Actinide",
@@ -3017,6 +3121,7 @@
     },
     {
         "appearance": "Silvery, often with black tarnish",
+        "atomicRadius": "179.8 pm",
         "block": "f",
         "boilingPoint": "5061 K / 4788 °C / 8650 °F",
         "category": "Actinide",
@@ -3046,6 +3151,7 @@
     },
     {
         "appearance": "Bright, silvery metallic luster",
+        "atomicRadius": "163 pm",
         "block": "f",
         "boilingPoint": "4300 K / 4027 °C / 7280 °F",
         "category": "Actinide",
@@ -3075,6 +3181,7 @@
     },
     {
         "appearance": "Silvery gray metallic, corrodes to a spalling black oxide coat in air",
+        "atomicRadius": "156 pm",
         "block": "f",
         "boilingPoint": "4404 K / 4131 °C / 7468 °F",
         "category": "Actinide",
@@ -3104,6 +3211,7 @@
     },
     {
         "appearance": "Silvery metallic",
+        "atomicRadius": "155 pm",
         "block": "f",
         "boilingPoint": "4447 K / 4174 °C / 7545 °F",
         "category": "Actinide",
@@ -3133,6 +3241,7 @@
     },
     {
         "appearance": "Silvery white, tarnishing to dark gray in air",
+        "atomicRadius": "159 pm",
         "block": "f",
         "boilingPoint": "3505 K / 3228 °C / 5842 °F",
         "category": "Actinide",
@@ -3162,6 +3271,7 @@
     },
     {
         "appearance": "Silvery white",
+        "atomicRadius": "173 pm",
         "block": "f",
         "boilingPoint": "2880 K / 2607 °C / 4725 °F",
         "category": "Actinide",
@@ -3191,6 +3301,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "174 pm",
         "block": "f",
         "boilingPoint": "3383 K / 3110 °C / 5630 °F",
         "category": "Actinide",
@@ -3220,6 +3331,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "170 pm",
         "block": "f",
         "boilingPoint": "Beta: 2900 K / 2627 °C / 4760 °F",
         "category": "Actinide",
@@ -3249,6 +3361,7 @@
     },
     {
         "appearance": "Silvery",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "1743 K / 1470 °C / 2678 °F",
         "category": "Actinide",
@@ -3278,6 +3391,7 @@
     },
     {
         "appearance": "Silver-colored",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "1269 K / 996 °C / 1825 °F",
         "category": "Actinide",
@@ -3307,6 +3421,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "",
         "category": "Actinide",
@@ -3336,6 +3451,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "",
         "category": "Actinide",
@@ -3365,6 +3481,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "f",
         "boilingPoint": "",
         "category": "Actinide",
@@ -3394,6 +3511,7 @@
     },
     {
         "appearance": "",
+        "atomicRadius": "",
         "block": "d",
         "boilingPoint": "",
         "category": "Actinide",
