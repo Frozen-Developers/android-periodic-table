@@ -224,6 +224,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     covalentRadius = article.getProperty('covalent radius', ' pm')
 
+    vanDerWaalsRadius = article.getProperty('Van der Waals radius', ' pm')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -253,7 +255,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'electronegativity': electronegativity,
         'ionizationEnergies': ionizationEnergies,
         'atomicRadius': atomicRadius,
-        'covalentRadius': covalentRadius
+        'covalentRadius': covalentRadius,
+        'vanDerWaalsRadius': vanDerWaalsRadius
     }
 
     return element
