@@ -139,11 +139,14 @@ class Article:
             return self.tables[name]
         return []
 
+    def getAllTables(self):
+        return self.tables
+
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, articleUrl):
+def parse(article, articleUrl, ionizationEnergiesDict):
     # Properties
 
     number = article.getProperty('number')
@@ -214,6 +217,9 @@ def parse(article, articleUrl):
 
     electronegativity = article.getProperty('electronegativity', ' (Pauling scale)')
 
+    ionizationEnergies = '\n'.join([key + ': ' + value + ' kJ·mol⁻¹'
+        for key, value in ionizationEnergiesDict[str(number)].items()])
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -240,7 +246,8 @@ def parse(article, articleUrl):
         'heatOfVaporization': heatOfVaporization,
         'molarHeatCapacity': molarHeatCapacity,
         'oxidationStates': oxidationStates,
-        'electronegativity': electronegativity
+        'electronegativity': electronegativity,
+        'ionizationEnergies': ionizationEnergies
     }
 
     return element
@@ -250,11 +257,34 @@ if __name__ == '__main__':
 
     jsonData = []
 
+    # Parse all ionization energies
+
+    url = URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements'
+    print('Parsing properties from ' + url)
+    article = Article(url)
+    ionizationEnergiesDict = {}
+    for tableName, table in article.getAllTables().items():
+        if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
+            for row in table:
+                index = row['number']
+                if index in ionizationEnergiesDict.keys():
+                    ionizationEnergiesDict[index] = OrderedDict(list(
+                        ionizationEnergiesDict[index].items()) + list(row.items()))
+                else:
+                    ionizationEnergiesDict[index] = row
+                ionizationEnergiesDict[index].pop('number', None)
+                ionizationEnergiesDict[index].pop('name', None)
+                ionizationEnergiesDict[index].pop('symbol', None)
+
+    # Parse articles
+
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         url = URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
             re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())
         print('Parsing properties from ' + url)
-        jsonData.append(parse(Article(url), URL_PREFIX + element.attrib['href']))
+        jsonData.append(parse(Article(url), URL_PREFIX + element.attrib['href'], ionizationEnergiesDict))
+
+    # Save
 
     with open(OUTPUT_JSON, 'w+') as outfile:
         json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)
