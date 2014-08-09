@@ -222,6 +222,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     atomicRadius = article.getProperty('atomic radius', ' pm')
 
+    covalentRadius = article.getProperty('covalent radius', ' pm')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -250,7 +252,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'oxidationStates': oxidationStates,
         'electronegativity': electronegativity,
         'ionizationEnergies': ionizationEnergies,
-        'atomicRadius': atomicRadius
+        'atomicRadius': atomicRadius,
+        'covalentRadius': covalentRadius
     }
 
     return element
