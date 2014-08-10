@@ -260,6 +260,12 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         ' µm·m⁻¹·K⁻¹', article.getProperty('thermal expansion', ' µm·m⁻¹·K⁻¹')), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
+    speedOfSound = article.getProperty('speed of sound', ' m·s⁻¹')
+    speedOfSound = capitalize(replace_chars('\n'.join(filter(len, [ article.getProperty('speed of sound', ' m·s⁻¹'),
+        article.getProperty('speed of sound rod at 20', ' m·s⁻¹'),
+        article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹') ])), ')', ':') \
+        .replace('(', '').replace(':\n', ': '))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -294,7 +300,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'crystalStructure': crystalStructure,
         'magneticOrdering': magneticOrdering,
         'thermalConductivity': thermalConductivity,
-        'thermalExpansion': thermalExpansion
+        'thermalExpansion': thermalExpansion,
+        'speedOfSound': speedOfSound
     }
 
     return element
