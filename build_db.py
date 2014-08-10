@@ -261,6 +261,9 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         ' µm·m⁻¹·K⁻¹', article.getProperty('thermal expansion', ' µm·m⁻¹·K⁻¹')), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
+    thermalDiffusivity = capitalize(replace_chars(article.getProperty('thermal diffusivity',
+        ' mm²·s⁻¹', prepend='At 300 K'), ')', ':').replace('(', '').replace(':\n', ': '))
+
     speedOfSound = article.getProperty('speed of sound', ' m·s⁻¹')
     speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound', ' m·s⁻¹',
         article.getProperty('speed of sound rod at 20', ' m·s⁻¹',
@@ -312,6 +315,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'magneticOrdering': magneticOrdering,
         'thermalConductivity': thermalConductivity,
         'thermalExpansion': thermalExpansion,
+        'thermalDiffusivity': thermalDiffusivity,
         'speedOfSound': speedOfSound,
         'youngsModulus': youngsModulus,
         'shearModulus': shearModulus,
