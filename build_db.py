@@ -30,7 +30,7 @@ class Article:
         # Strip unwanted data
 
         strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->', r'[\?]',
-            r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*' ]
+            r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*|est.\s*' ]
         for item in strip:
             content = re.sub(item, '', content)
 
@@ -251,6 +251,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     magneticOrdering = capitalize(re.sub(r'\s*\([^)]*\)', '',
         article.getProperty('magnetic ordering', comments=False)))
 
+    thermalConductivity = capitalize(article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -283,7 +285,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'covalentRadius': covalentRadius,
         'vanDerWaalsRadius': vanDerWaalsRadius,
         'crystalStructure': crystalStructure,
-        'magneticOrdering': magneticOrdering
+        'magneticOrdering': magneticOrdering,
+        'thermalConductivity': thermalConductivity
     }
 
     return element
