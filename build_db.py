@@ -267,6 +267,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹'))), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
+    youngsModulus = capitalize(article.getProperty('Young\'s modulus', ' GPa'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -302,7 +304,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'magneticOrdering': magneticOrdering,
         'thermalConductivity': thermalConductivity,
         'thermalExpansion': thermalExpansion,
-        'speedOfSound': speedOfSound
+        'speedOfSound': speedOfSound,
+        'youngsModulus': youngsModulus
     }
 
     return element

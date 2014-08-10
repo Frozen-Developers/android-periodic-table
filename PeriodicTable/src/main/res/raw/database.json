@@ -34,7 +34,8 @@
         "triplePoint": "13.8033 K, 7.041 kPa",
         "vanDerWaalsRadius": "120 pm",
         "weight": "1.008",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
@@ -71,7 +72,8 @@
         "triplePoint": "2.177 K, 5.043 kPa",
         "vanDerWaalsRadius": "140 pm",
         "weight": "4.003",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Helium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Helium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery-white",
@@ -108,7 +110,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "182 pm",
         "weight": "6.94",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium",
+        "youngsModulus": "4.9 GPa"
     },
     {
         "appearance": "White-gray metallic",
@@ -145,7 +148,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "153 pm",
         "weight": "9.012",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium",
+        "youngsModulus": "287 GPa"
     },
     {
         "appearance": "Black-brown",
@@ -182,7 +186,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "192 pm",
         "weight": "10.81",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Boron"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Boron",
+        "youngsModulus": ""
     },
     {
         "appearance": "Diamond: clear\nGraphite: black",
@@ -219,7 +224,8 @@
         "triplePoint": "4600 K, 10800 kPa",
         "vanDerWaalsRadius": "170 pm",
         "weight": "12.011",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon",
+        "youngsModulus": "Diamond: 1050 GPa"
     },
     {
         "appearance": "Colorless gas, liquid or solid",
@@ -256,7 +262,8 @@
         "triplePoint": "63.151 K, 12.52 kPa",
         "vanDerWaalsRadius": "155 pm",
         "weight": "14.007",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas, pale blue liquid",
@@ -293,7 +300,8 @@
         "triplePoint": "54.361 K, 0.1463 kPa",
         "vanDerWaalsRadius": "152 pm",
         "weight": "15.999",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen",
+        "youngsModulus": ""
     },
     {
         "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: alpha is opaque, beta is transparent",
@@ -330,7 +338,8 @@
         "triplePoint": "53.48 K, 90 kPa",
         "vanDerWaalsRadius": "135 pm",
         "weight": "18.998",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
@@ -367,7 +376,8 @@
         "triplePoint": "24.556 K, 43.37 kPa",
         "vanDerWaalsRadius": "154 pm",
         "weight": "20.18",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Neon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neon",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white metallic",
@@ -404,7 +414,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "227 pm",
         "weight": "22.99",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium",
+        "youngsModulus": "10 GPa"
     },
     {
         "appearance": "Shiny grey solid",
@@ -441,7 +452,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "173 pm",
         "weight": "24.305",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium",
+        "youngsModulus": "45 GPa"
     },
     {
         "appearance": "Silvery gray metallic",
@@ -478,7 +490,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "184 pm",
         "weight": "26.982",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium",
+        "youngsModulus": "70 GPa"
     },
     {
         "appearance": "Crystalline, reflective with bluish-tinged faces",
@@ -515,7 +528,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "210 pm",
         "weight": "28.085",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon",
+        "youngsModulus": "130-188 GPa"
     },
     {
         "appearance": "Colourless, waxy white, yellow, scarlet, red, violet, black",
@@ -552,7 +566,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "180 pm",
         "weight": "30.974",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus",
+        "youngsModulus": ""
     },
     {
         "appearance": "Lemon yellow sintered microcrystals",
@@ -589,7 +604,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "180 pm",
         "weight": "32.06",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur",
+        "youngsModulus": ""
     },
     {
         "appearance": "Pale yellow-green gas",
@@ -626,7 +642,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "175 pm",
         "weight": "35.45",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
@@ -663,7 +680,8 @@
         "triplePoint": "83.8058 K, 68.89 kPa",
         "vanDerWaalsRadius": "188 pm",
         "weight": "39.948",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Argon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Argon",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery gray",
@@ -700,7 +718,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "275 pm",
         "weight": "39.098",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium",
+        "youngsModulus": "3.53 GPa"
     },
     {
         "appearance": "Dull gray, silver",
@@ -737,7 +756,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "231 pm",
         "weight": "40.078",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium",
+        "youngsModulus": "20 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -774,7 +794,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "211 pm",
         "weight": "44.956",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium",
+        "youngsModulus": "74.4 GPa"
     },
     {
         "appearance": "Silvery grey-white metallic",
@@ -811,7 +832,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "47.867",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium",
+        "youngsModulus": "116 GPa"
     },
     {
         "appearance": "Blue-silver-grey metal",
@@ -848,7 +870,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "50.941",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium",
+        "youngsModulus": "128 GPa"
     },
     {
         "appearance": "Silvery metallic",
@@ -885,7 +908,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "51.996",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium",
+        "youngsModulus": "279 GPa"
     },
     {
         "appearance": "Silvery metallic",
@@ -922,7 +946,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "54.938",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese",
+        "youngsModulus": "198 GPa"
     },
     {
         "appearance": "Lustrous metallic with a grayish tinge",
@@ -959,7 +984,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "55.845",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Iron"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iron",
+        "youngsModulus": "211 GPa"
     },
     {
         "appearance": "Hard lustrous gray metal",
@@ -996,7 +1022,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "58.933",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt",
+        "youngsModulus": "209 GPa"
     },
     {
         "appearance": "Lustrous, metallic, and silver with a gold tinge",
@@ -1033,7 +1060,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "163 pm",
         "weight": "58.693",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel",
+        "youngsModulus": "200 GPa"
     },
     {
         "appearance": "Red-orange metallic luster",
@@ -1070,7 +1098,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "140 pm",
         "weight": "63.546",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Copper"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Copper",
+        "youngsModulus": "110–128 GPa"
     },
     {
         "appearance": "Silver-gray",
@@ -1107,7 +1136,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "139 pm",
         "weight": "65.38",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc",
+        "youngsModulus": "108 GPa"
     },
     {
         "appearance": "Silver-white",
@@ -1144,7 +1174,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "187 pm",
         "weight": "69.723",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium",
+        "youngsModulus": "9.8 GPa"
     },
     {
         "appearance": "Grayish-white",
@@ -1181,7 +1212,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "211 pm",
         "weight": "72.63",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium",
+        "youngsModulus": "103 GPa"
     },
     {
         "appearance": "Metallic grey",
@@ -1218,7 +1250,8 @@
         "triplePoint": "1090 K, 3628 kPa",
         "vanDerWaalsRadius": "185 pm",
         "weight": "74.922",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic",
+        "youngsModulus": "8 GPa"
     },
     {
         "appearance": "Black and red allotropes",
@@ -1255,7 +1288,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "190 pm",
         "weight": "78.971",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium",
+        "youngsModulus": "10 GPa"
     },
     {
         "appearance": "Gas/liquid: red-brown\nSolid: metallic luster",
@@ -1292,7 +1326,8 @@
         "triplePoint": "265.90 K, 5.8 kPa",
         "vanDerWaalsRadius": "185 pm",
         "weight": "79.904",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas, exhibiting a whitish glow in a high electric field",
@@ -1329,7 +1364,8 @@
         "triplePoint": "115.775 K, 73.53 kPa",
         "vanDerWaalsRadius": "202 pm",
         "weight": "83.798",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton",
+        "youngsModulus": ""
     },
     {
         "appearance": "Grey white",
@@ -1366,7 +1402,8 @@
         "triplePoint": "312.41 K",
         "vanDerWaalsRadius": "303 pm",
         "weight": "85.468",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium",
+        "youngsModulus": "2.4 GPa"
     },
     {
         "appearance": "Silvery white metallic",
@@ -1403,7 +1440,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "249 pm",
         "weight": "87.62",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium",
+        "youngsModulus": "15.7 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -1440,7 +1478,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "88.906",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium",
+        "youngsModulus": "63.5 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -1477,7 +1516,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "91.224",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium",
+        "youngsModulus": "88 GPa"
     },
     {
         "appearance": "Gray metallic, bluish when oxidized",
@@ -1514,7 +1554,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "92.906",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium",
+        "youngsModulus": "105 GPa"
     },
     {
         "appearance": "Gray metallic",
@@ -1551,7 +1592,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "95.95",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum",
+        "youngsModulus": "329 GPa"
     },
     {
         "appearance": "Shiny gray metal",
@@ -1588,7 +1630,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[98]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white metallic",
@@ -1625,7 +1668,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "101.07",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium",
+        "youngsModulus": "447 GPa"
     },
     {
         "appearance": "Silvery white metallic",
@@ -1662,7 +1706,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "102.906",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium",
+        "youngsModulus": "380 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -1699,7 +1744,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "163 pm",
         "weight": "106.42",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium",
+        "youngsModulus": "121 GPa"
     },
     {
         "appearance": "Lustrous white metal",
@@ -1736,7 +1782,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "172 pm",
         "weight": "107.868",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Silver"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Silver",
+        "youngsModulus": "83 GPa"
     },
     {
         "appearance": "Silvery bluish-gray metallic",
@@ -1773,7 +1820,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "158 pm",
         "weight": "112.414",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium",
+        "youngsModulus": "50 GPa"
     },
     {
         "appearance": "Silvery lustrous gray",
@@ -1810,7 +1858,8 @@
         "triplePoint": "429.7445 K, ~1 kPa",
         "vanDerWaalsRadius": "193 pm",
         "weight": "114.818",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Indium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Indium",
+        "youngsModulus": "11 GPa"
     },
     {
         "appearance": "Silvery or gray",
@@ -1847,7 +1896,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "217 pm",
         "weight": "118.71",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Tin"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tin",
+        "youngsModulus": "50 GPa"
     },
     {
         "appearance": "Silvery lustrous gray",
@@ -1884,7 +1934,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "206 pm",
         "weight": "121.76",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony",
+        "youngsModulus": "55 GPa"
     },
     {
         "appearance": "Silvery lustrous gray",
@@ -1921,7 +1972,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "206 pm",
         "weight": "127.6",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium",
+        "youngsModulus": "43 GPa"
     },
     {
         "appearance": "Lustrous metallic gray, violet as a gas",
@@ -1958,7 +2010,8 @@
         "triplePoint": "386.65 K, 12.1 kPa",
         "vanDerWaalsRadius": "198 pm",
         "weight": "126.904",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
@@ -1995,7 +2048,8 @@
         "triplePoint": "161.405 K, 81.77 kPa",
         "vanDerWaalsRadius": "216 pm",
         "weight": "131.293",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery gold",
@@ -2032,7 +2086,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "343 pm",
         "weight": "132.905",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium",
+        "youngsModulus": "1.7 GPa"
     },
     {
         "appearance": "Silvery gray",
@@ -2069,7 +2124,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "268 pm",
         "weight": "137.327",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Barium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Barium",
+        "youngsModulus": "13 GPa"
     },
     {
         "appearance": "Steel gray",
@@ -2106,7 +2162,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "178.49",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium",
+        "youngsModulus": "78 GPa"
     },
     {
         "appearance": "Gray blue",
@@ -2143,7 +2200,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "180.948",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum",
+        "youngsModulus": "186 GPa"
     },
     {
         "appearance": "Grayish white, lustrous",
@@ -2180,7 +2238,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "183.84",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten",
+        "youngsModulus": "411 GPa"
     },
     {
         "appearance": "Silvery-white",
@@ -2217,7 +2276,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "186.207",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium",
+        "youngsModulus": "463 GPa"
     },
     {
         "appearance": "Silvery, blue cast",
@@ -2254,7 +2314,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "190.23",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white",
@@ -2291,7 +2352,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "192.217",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium",
+        "youngsModulus": "528 GPa"
     },
     {
         "appearance": "Grayish white",
@@ -2328,7 +2390,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "175 pm",
         "weight": "195.084",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum",
+        "youngsModulus": "168 GPa"
     },
     {
         "appearance": "Metallic yellow",
@@ -2365,7 +2428,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "166 pm",
         "weight": "196.967",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Gold"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gold",
+        "youngsModulus": "79 GPa"
     },
     {
         "appearance": "Silvery",
@@ -2402,7 +2466,8 @@
         "triplePoint": "234.3156 K, 1.65×10⁻⁷ kPa",
         "vanDerWaalsRadius": "155 pm",
         "weight": "200.592",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white",
@@ -2439,7 +2504,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "196 pm",
         "weight": "204.38",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium",
+        "youngsModulus": "8 GPa"
     },
     {
         "appearance": "Metallic gray",
@@ -2476,7 +2542,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "202 pm",
         "weight": "207.2",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Lead"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lead",
+        "youngsModulus": "16 GPa"
     },
     {
         "appearance": "Lustrous silver",
@@ -2513,7 +2580,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "207 pm",
         "weight": "208.98",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth",
+        "youngsModulus": "32 GPa"
     },
     {
         "appearance": "Silvery",
@@ -2550,7 +2618,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "197 pm",
         "weight": "[209]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2587,7 +2656,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "202 pm",
         "weight": "[210]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine",
+        "youngsModulus": ""
     },
     {
         "appearance": "Colorless gas",
@@ -2624,7 +2694,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "220 pm",
         "weight": "[222]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Radon"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Radon",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2661,7 +2732,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "348 pm",
         "weight": "[223]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Francium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Francium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white metallic",
@@ -2698,7 +2770,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "283 pm",
         "weight": "[226]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Radium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Radium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2735,7 +2808,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[267]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2772,7 +2846,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[268]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2809,7 +2884,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[269]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2846,7 +2922,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[270]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery",
@@ -2883,7 +2960,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[269]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2920,7 +2998,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[278]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -2957,7 +3036,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[281]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery",
@@ -2994,7 +3074,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[281]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3031,7 +3112,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[285]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3068,7 +3150,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[286]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3105,7 +3188,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[289]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3142,7 +3226,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[289]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3179,7 +3264,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[293]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Semimetallic",
@@ -3216,7 +3302,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[294]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -3253,7 +3340,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[294]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white",
@@ -3290,7 +3378,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "138.905",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum",
+        "youngsModulus": "α form: 36.6 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3327,7 +3416,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "140.116",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium",
+        "youngsModulus": "γ form: 33.6 GPa"
     },
     {
         "appearance": "Grayish white",
@@ -3364,7 +3454,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "140.908",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium",
+        "youngsModulus": "α form: 37.3 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3401,7 +3492,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "144.242",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium",
+        "youngsModulus": "α form: 41.4 GPa"
     },
     {
         "appearance": "Metallic",
@@ -3438,7 +3530,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[145]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium",
+        "youngsModulus": "α form: 46 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3475,7 +3568,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "150.36",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium",
+        "youngsModulus": "α form: 49.7 GPa"
     },
     {
         "appearance": "Silvery white, but rarely seen without oxide discoloration",
@@ -3512,7 +3606,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "151.964",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Europium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Europium",
+        "youngsModulus": "18.2 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3549,7 +3644,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "157.25",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium",
+        "youngsModulus": "α form: 54.8 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3586,7 +3682,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "158.925",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium",
+        "youngsModulus": "α form: 55.7 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3623,7 +3720,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "162.5",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium",
+        "youngsModulus": "α form: 61.4 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3660,7 +3758,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "164.93",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium",
+        "youngsModulus": "64.8 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3697,7 +3796,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "167.259",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium",
+        "youngsModulus": "69.9 GPa"
     },
     {
         "appearance": "Silvery gray",
@@ -3734,7 +3834,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "168.934",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium",
+        "youngsModulus": "74.0 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3771,7 +3872,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "173.054",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium",
+        "youngsModulus": "β form: 23.9 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -3808,7 +3910,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "174.967",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium",
+        "youngsModulus": "68.6 GPa"
     },
     {
         "appearance": "Silvery-white, glowing with an eerie blue light, sometimes with a golden cast",
@@ -3845,7 +3948,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[227]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery, often with black tarnish",
@@ -3882,7 +3986,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "232.038",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium",
+        "youngsModulus": "79 GPa"
     },
     {
         "appearance": "Bright, silvery metallic luster",
@@ -3919,7 +4024,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "231.036",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery gray metallic, corrodes to a spalling black oxide coat in air",
@@ -3956,7 +4062,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "186 pm",
         "weight": "238.029",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium",
+        "youngsModulus": "208 GPa"
     },
     {
         "appearance": "Silvery metallic",
@@ -3993,7 +4100,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[237]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery white, tarnishing to dark gray in air",
@@ -4030,7 +4138,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[244]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium",
+        "youngsModulus": "96 GPa"
     },
     {
         "appearance": "Silvery white",
@@ -4067,7 +4176,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[243]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Americium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Americium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery",
@@ -4104,7 +4214,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[247]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Curium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Curium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery",
@@ -4141,7 +4252,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[247]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silvery",
@@ -4178,7 +4290,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[251]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Californium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Californium",
+        "youngsModulus": ""
     },
     {
         "appearance": "Silver-colored",
@@ -4215,7 +4328,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[252]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -4252,7 +4366,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[257]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -4289,7 +4404,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[258]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -4326,7 +4442,8 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[259]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium",
+        "youngsModulus": ""
     },
     {
         "appearance": "",
@@ -4363,6 +4480,7 @@
         "triplePoint": "",
         "vanDerWaalsRadius": "",
         "weight": "[266]",
-        "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium"
+        "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium",
+        "youngsModulus": ""
     }
 ]
