@@ -121,17 +121,22 @@ class Article:
             return self.removeHtmlTags(value)
         return ''
 
-    def getProperty(self, name, append = '', default = ''):
+    def getProperty(self, name, append = '', default = '', prepend = ''):
         if name in self.properties.keys():
             if self.properties[name] != '':
-                return self.properties[name] + (append if self.properties[name] != '-' else '')
+                if self.properties[name] != '-':
+                    return (prepend + ': ' if prepend != '' else '') + self.properties[name] + append
+                return self.properties[name]
         return default
 
-    def getAllProperty(self, name, append = ''):
+    def getAllProperty(self, name, append = '', prepend = ''):
         result = []
         for key, value in self.properties.items():
             if re.match(r'^' + name + r'\s?\d*$', key) != None and value != '':
-                result.append(value + (append if value != '-' else ''))
+                if value != '-':
+                    result.append((prepend + ': ' if prepend != '' else '') + value + append)
+                else:
+                    result.append(value)
         return result
 
     def getTable(self, name):
@@ -180,8 +185,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     density = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3nrt', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
     if density == '':
-        density = capitalize(replace_chars(article.getProperty('density gplstp', '×10⁻³ g·cm⁻³'),
-            ')', ':').replace('(', ''))
+        density = capitalize(replace_chars(article.getProperty('density gplstp', '×10⁻³ g·cm⁻³',
+            prepend='At 0 °C, 101.325 kPa'), ')', ':').replace('(', ''))
 
     densityMP = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3mp', ' g·cm⁻³')),
         ')', ':').replace('(', ''))
