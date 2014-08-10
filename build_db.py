@@ -133,18 +133,8 @@ class Article:
                 return self.properties[name + ' prefix'].strip('():; \n').replace(' (', ', ')
         return ''
 
-    def getProperty(self, name, append = '', default = '', prepend = '', comments = True):
-        if name in self.properties.keys():
-            if self.properties[name] != '':
-                if self.properties[name] != '-':
-                    prefix = ', '.join([ prepend, self.getPrefix(name),
-                        (self.getComment(name) if comments else '') ]).strip(', ')
-                    delimiter = ', ' if ': ' in self.properties[name] else ': '
-                    return (prefix + delimiter if prefix != '' else '') + self.properties[name] + append
-                return self.properties[name]
-        return default
-
-    def getAllProperty(self, name, append = '', prepend = '', comments = True):
+    def getProperty(self, name, append = '', default = '', prepend = '', comments = True,
+        delimiter = '\n'):
         result = []
         for key, value in self.properties.items():
             fullName = re.match(r'^' + name + r'\s?\d*$', key)
@@ -152,11 +142,11 @@ class Article:
                 if value != '-':
                     prefix = ', '.join([ prepend, self.getPrefix(fullName.group(0)),
                         (self.getComment(fullName.group(0)) if comments else '') ]).strip(', ')
-                    delimiter = ', ' if ': ' in value else ': '
-                    result.append((prefix + delimiter if prefix != '' else '') + value + append)
+                    result.append((prefix + (', ' if ': ' in value else ': ')
+                        if prefix != '' else '') + value + append)
                 else:
                     result.append(value)
-        return result
+        return delimiter.join(result) if len(result) > 0 else default
 
     def getTable(self, name):
         if name in self.tables.keys():
@@ -179,7 +169,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     name = article.getProperty('name').capitalize()
 
-    weight = replace_chars(article.getProperty('atomic mass'), '()', '[]')
+    weight = replace_chars(article.getProperty('atomic mass').splitlines()[0], '()', '[]')
     try:
         weight = format(float(weight), '.3f').rstrip('0').rstrip('.')
     except ValueError:
@@ -197,23 +187,24 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     shells = article.getProperty('electrons per shell')
 
-    appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(article.getProperty('appearance')).replace(';', ','))
+    appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(article.getProperty('appearance')) \
+        .replace(';', ','))
 
     phase = article.getProperty('phase', comments=False).capitalize()
 
-    density = capitalize(replace_chars('\n'.join(article.getAllProperty('density gpcm3nrt', ' g·cm⁻³')),
+    density = capitalize(replace_chars(article.getProperty('density gpcm3nrt', ' g·cm⁻³'),
         ')', ':').replace('(', ''))
     if density == '':
         density = capitalize(replace_chars(article.getProperty('density gplstp', '×10⁻³ g·cm⁻³',
             prepend='At 0 °C, 101.325 kPa'), ')', ':').replace('(', ''))
     density = '\n'.join(sorted(density.replace('g·cm⁻³: ', 'g·cm⁻³\n').splitlines()))
 
-    densityMP = '\n'.join(sorted(capitalize(replace_chars('\n'.join(
-        article.getAllProperty('density gpcm3mp', ' g·cm⁻³')), ')', ':').replace('(', '') \
+    densityMP = '\n'.join(sorted(capitalize(replace_chars(
+        article.getProperty('density gpcm3mp', ' g·cm⁻³'), ')', ':').replace('(', '') \
             .replace('g·cm⁻³: ', 'g·cm⁻³\n')).splitlines()))
 
-    densityBP = '\n'.join(sorted(capitalize(replace_chars('\n'.join(
-        article.getAllProperty('density gpcm3bp', ' g·cm⁻³')), ')', ':').replace('(', '') \
+    densityBP = '\n'.join(sorted(capitalize(replace_chars(
+        article.getProperty('density gpcm3bp', ' g·cm⁻³'), ')', ':').replace('(', '') \
             .replace('g·cm⁻³: ', 'g·cm⁻³\n')).splitlines()))
 
     meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point K', ' K'),
@@ -231,14 +222,14 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point K', ' K'),
         article.getProperty('critical point MPa', ' MPa') ])))
 
-    heatOfFusion = capitalize(replace_chars('\n'.join(article.getAllProperty('heat fusion', ' kJ·mol⁻¹')),
+    heatOfFusion = capitalize(replace_chars(article.getProperty('heat fusion', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
     heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
 
     molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
-        '\n'.join(article.getAllProperty('heat capacity', ' kJ·mol⁻¹')), ')', ':').replace(':\n', ': ')))
+        article.getProperty('heat capacity', ' kJ·mol⁻¹'), ')', ':').replace(':\n', ': ')))
 
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
         article.getProperty('oxidation states', comments=False))
@@ -254,7 +245,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     vanDerWaalsRadius = article.getProperty('Van der Waals radius', ' pm')
 
-    crystalStructure = capitalize('\n'.join(article.getAllProperty('crystal structure'))) \
+    crystalStructure = capitalize(article.getProperty('crystal structure')) \
         .replace('A=', 'a=')
 
     magneticOrdering = capitalize(re.sub(r'\s*\([^)]*\)', '',
