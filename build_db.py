@@ -29,8 +29,9 @@ class Article:
 
         # Strip unwanted data
 
-        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->', r'[\?]',
-            r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)', r'ca\.\s*|est.\s*' ]
+        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->',
+            r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
+            r'ca\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*' ]
         for item in strip:
             content = re.sub(item, '', content)
 
@@ -58,6 +59,10 @@ class Article:
             {
                 'target': r'{{sort\|([^{}]*)\|([^{}]*)}}',
                 'replacement': r'\1'
+            },
+            {
+                'target': r'{{abbr\|([^{}]*)\|([^{}]*)}}',
+                'replacement': r'\2'
             }
         ]
         for item in replace:
@@ -253,6 +258,10 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     thermalConductivity = capitalize(article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'))
 
+    thermalExpansion = capitalize(replace_chars(article.getProperty('thermal expansion at 25',
+        ' µm·m⁻¹·K⁻¹', article.getProperty('thermal expansion', ' µm·m⁻¹·K⁻¹')), ')', ':') \
+        .replace('(', '').replace(':\n', ': '))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -286,7 +295,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'vanDerWaalsRadius': vanDerWaalsRadius,
         'crystalStructure': crystalStructure,
         'magneticOrdering': magneticOrdering,
-        'thermalConductivity': thermalConductivity
+        'thermalConductivity': thermalConductivity,
+        'thermalExpansion': thermalExpansion
     }
 
     return element
