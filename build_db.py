@@ -253,7 +253,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     magneticOrdering = capitalize(re.sub(r'\s*\([^)]*\)', '',
         article.getProperty('magnetic ordering', comments=False)))
 
-    thermalConductivity = capitalize(replace_chars(article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'), ')', ':') \
+    thermalConductivity = capitalize(replace_chars(
+        article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
     thermalExpansion = capitalize(replace_chars(article.getProperty('thermal expansion at 25',
@@ -261,9 +262,9 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         .replace('(', '').replace(':\n', ': '))
 
     speedOfSound = article.getProperty('speed of sound', ' m·s⁻¹')
-    speedOfSound = capitalize(replace_chars('\n'.join(filter(len, [ article.getProperty('speed of sound', ' m·s⁻¹'),
-        article.getProperty('speed of sound rod at 20', ' m·s⁻¹'),
-        article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹') ])), ')', ':') \
+    speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound', ' m·s⁻¹',
+        article.getProperty('speed of sound rod at 20', ' m·s⁻¹',
+        article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹'))), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
     element = {
