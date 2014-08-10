@@ -124,13 +124,13 @@ class Article:
     def getComment(self, name):
         if name + ' comment' in self.properties.keys():
             if self.properties[name + ' comment'] != '':
-                return self.properties[name + ' comment'].strip('():;').replace(' (', ', ')
+                return self.properties[name + ' comment'].strip('():; \n').replace(' (', ', ')
         return ''
 
     def getPrefix(self, name):
         if name + ' prefix' in self.properties.keys():
             if self.properties[name + ' prefix'] != '':
-                return self.properties[name + ' prefix'].strip('():;').replace(' (', ', ')
+                return self.properties[name + ' prefix'].strip('():; \n').replace(' (', ', ')
         return ''
 
     def getProperty(self, name, append = '', default = '', prepend = '', comments = True):
@@ -257,6 +257,9 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     crystalStructure = capitalize('\n'.join(article.getAllProperty('crystal structure'))) \
         .replace('A=', 'a=')
 
+    magneticOrdering = capitalize(re.sub(r'\s*\([^)]*\)', '',
+        article.getProperty('magnetic ordering', comments=False)))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -288,7 +291,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'atomicRadius': atomicRadius,
         'covalentRadius': covalentRadius,
         'vanDerWaalsRadius': vanDerWaalsRadius,
-        'crystalStructure': crystalStructure
+        'crystalStructure': crystalStructure,
+        'magneticOrdering': magneticOrdering
     }
 
     return element
