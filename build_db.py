@@ -121,20 +121,29 @@ class Article:
             return self.removeHtmlTags(value)
         return ''
 
+    def getPrefix(self, name):
+        if name + ' prefix' in self.properties.keys():
+            if self.properties[name + ' prefix'] != '':
+                return self.properties[name + ' prefix'].strip('():')
+        return ''
+
     def getProperty(self, name, append = '', default = '', prepend = ''):
         if name in self.properties.keys():
             if self.properties[name] != '':
                 if self.properties[name] != '-':
-                    return (prepend + ': ' if prepend != '' else '') + self.properties[name] + append
+                    prefix = ', '.join([ prepend, self.getPrefix(name) ]).strip(', ')
+                    return (prefix + ': ' if prefix != '' else '') + self.properties[name] + append
                 return self.properties[name]
         return default
 
     def getAllProperty(self, name, append = '', prepend = ''):
         result = []
         for key, value in self.properties.items():
-            if re.match(r'^' + name + r'\s?\d*$', key) != None and value != '':
+            fullName = re.match(r'^' + name + r'\s?\d*$', key)
+            if fullName != None and value != '':
                 if value != '-':
-                    result.append((prepend + ': ' if prepend != '' else '') + value + append)
+                    prefix = ', '.join([ prepend, self.getPrefix(fullName.group(0)) ]).strip(', ')
+                    result.append((prefix + ': ' if prefix != '' else '') + value + append)
                 else:
                     result.append(value)
         return result
@@ -231,6 +240,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     vanDerWaalsRadius = article.getProperty('Van der Waals radius', ' pm')
 
+    crystalStructure = capitalize('\n'.join(article.getAllProperty('crystal structure')).lower())
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -261,7 +272,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'ionizationEnergies': ionizationEnergies,
         'atomicRadius': atomicRadius,
         'covalentRadius': covalentRadius,
-        'vanDerWaalsRadius': vanDerWaalsRadius
+        'vanDerWaalsRadius': vanDerWaalsRadius,
+        'crystalStructure': crystalStructure
     }
 
     return element
