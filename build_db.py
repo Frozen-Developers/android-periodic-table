@@ -273,6 +273,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     bulkModulus = capitalize(article.getProperty('Bulk modulus', ' GPa'))
 
+    mohsHardness = capitalize(article.getProperty('Mohs hardness'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -311,7 +313,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'speedOfSound': speedOfSound,
         'youngsModulus': youngsModulus,
         'shearModulus': shearModulus,
-        'bulkModulus': bulkModulus
+        'bulkModulus': bulkModulus,
+        'mohsHardness': mohsHardness
     }
 
     return element
