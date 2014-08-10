@@ -275,6 +275,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     mohsHardness = capitalize(article.getProperty('Mohs hardness'))
 
+    brinellHardness = capitalize(article.getProperty('Brinell hardness').replace('HB=: ', ''))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -314,7 +316,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'youngsModulus': youngsModulus,
         'shearModulus': shearModulus,
         'bulkModulus': bulkModulus,
-        'mohsHardness': mohsHardness
+        'mohsHardness': mohsHardness,
+        'brinellHardness': brinellHardness
     }
 
     return element
