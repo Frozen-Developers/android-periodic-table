@@ -197,12 +197,9 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     phase = article.getProperty('phase', comments=False).capitalize()
 
-    density = capitalize(replace_chars(article.getProperty('density gpcm3nrt', ' g·cm⁻³'),
-        ')', ':').replace('(', ''))
-    if density == '':
-        density = capitalize(replace_chars(article.getProperty('density gplstp', '×10⁻³ g·cm⁻³',
-            prepend='At 0 °C, 101.325 kPa'), ')', ':').replace('(', ''))
-    density = '\n'.join(sorted(density.replace('g·cm⁻³: ', 'g·cm⁻³\n').splitlines()))
+    density = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3nrt', ' g·cm⁻³',
+        article.getProperty('density gplstp', '×10⁻³ g·cm⁻³', prepend='At 0 °C, 101.325 kPa')),
+        ')', ':').replace('(', '')).replace('g·cm⁻³: ', 'g·cm⁻³\n').splitlines()))
 
     densityMP = '\n'.join(sorted(capitalize(replace_chars(
         article.getProperty('density gpcm3mp', ' g·cm⁻³'), ')', ':').replace('(', '') \
@@ -256,7 +253,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     magneticOrdering = capitalize(re.sub(r'\s*\([^)]*\)', '',
         article.getProperty('magnetic ordering', comments=False)))
 
-    thermalConductivity = capitalize(article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'))
+    thermalConductivity = capitalize(replace_chars(article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'), ')', ':') \
+        .replace('(', '').replace(':\n', ': '))
 
     thermalExpansion = capitalize(replace_chars(article.getProperty('thermal expansion at 25',
         ' µm·m⁻¹·K⁻¹', article.getProperty('thermal expansion', ' µm·m⁻¹·K⁻¹')), ')', ':') \
