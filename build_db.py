@@ -269,6 +269,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     youngsModulus = capitalize(article.getProperty('Young\'s modulus', ' GPa'))
 
+    shearModulus = capitalize(article.getProperty('Shear modulus', ' GPa'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -305,7 +307,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'thermalConductivity': thermalConductivity,
         'thermalExpansion': thermalExpansion,
         'speedOfSound': speedOfSound,
-        'youngsModulus': youngsModulus
+        'youngsModulus': youngsModulus,
+        'shearModulus': shearModulus
     }
 
     return element
