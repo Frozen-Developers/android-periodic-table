@@ -294,6 +294,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     bandGap = capitalize(article.getProperty('band gap', ' eV', prepend='At 300 K'))
 
+    curiePoint = capitalize(article.getProperty('Curie point K', ' K'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -337,7 +339,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'mohsHardness': mohsHardness,
         'brinellHardness': brinellHardness,
         'electricalResistivity': electricalResistivity,
-        'bandGap': bandGap
+        'bandGap': bandGap,
+        'curiePoint': curiePoint
     }
 
     return element
