@@ -68,6 +68,10 @@ class Article:
             {
                 'target': r'{{abbr\|([^{}]*)\|([^{}]*)}}',
                 'replacement': r'\2'
+            },
+            {
+                'target': r'\[[^ \]]* ([^\]]*)\]',
+                'replacement': r'\1'
             }
         ]
         for item in replace:
@@ -302,6 +306,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     vickersHardness = capitalize(article.getProperty('Vickers hardness', ' MPa'))
 
+    casNumber = capitalize(article.getProperty('CAS number'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -349,7 +355,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'curiePoint': curiePoint,
         'tensileStrength': tensileStrength,
         'poissonRatio': poissonRatio,
-        'vickersHardness': vickersHardness
+        'vickersHardness': vickersHardness,
+        'casNumber': casNumber
     }
 
     return element
