@@ -296,6 +296,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     curiePoint = capitalize(article.getProperty('Curie point K', ' K'))
 
+    tensileStrength = article.getProperty('tensile strength', ' MPa')
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -340,7 +342,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'brinellHardness': brinellHardness,
         'electricalResistivity': electricalResistivity,
         'bandGap': bandGap,
-        'curiePoint': curiePoint
+        'curiePoint': curiePoint,
+        'tensileStrength': tensileStrength
     }
 
     return element
