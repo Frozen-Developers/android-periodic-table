@@ -98,6 +98,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_thermal_diffusivity, properties.getThermalDiffusivity()),
                 new Property(R.string.property_electrical_resistivity, properties.getElectricalResistivity()),
                 new Property(R.string.property_band_gap, properties.getBandGap()),
+                new Property(R.string.property_curie_point, properties.getCuriePoint()),
                 new Property(R.string.property_speed_of_sound, properties.getSpeedOfSound()),
                 new Property(R.string.property_youngs_modulus, properties.getYoungsModulus()),
                 new Property(R.string.property_shear_modulus, properties.getShearModulus()),
