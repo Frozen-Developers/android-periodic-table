@@ -2,6 +2,7 @@
     {
         "appearance": "Colorless gas",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "20.271 K / −252.879 °C / −423.182 °F",
         "brinellHardness": "",
@@ -46,6 +47,7 @@
     {
         "appearance": "Colorless gas, exhibiting a red-orange glow when placed in a high-voltage electric field",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "4.222 K / −268.928 °C / −452.070 °F",
         "brinellHardness": "",
@@ -90,6 +92,7 @@
     {
         "appearance": "Silvery-white",
         "atomicRadius": "152 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1603 K / 1330 °C / 2426 °F",
         "brinellHardness": "",
@@ -134,6 +137,7 @@
     {
         "appearance": "White-gray metallic",
         "atomicRadius": "112 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "3243 K / 2970 °C / 5338 °F",
         "brinellHardness": "600",
@@ -178,6 +182,7 @@
     {
         "appearance": "Black-brown",
         "atomicRadius": "90 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "4200 K / 3927 °C / 7101 °F",
         "brinellHardness": "",
@@ -222,6 +227,7 @@
     {
         "appearance": "Diamond: clear\nGraphite: black",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -266,6 +272,7 @@
     {
         "appearance": "Colorless gas, liquid or solid",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "77.355 K / −195.795 °C / −320.431 °F",
         "brinellHardness": "",
@@ -308,8 +315,9 @@
         "youngsModulus": ""
     },
     {
-        "appearance": "Colorless gas, pale blue liquid",
+        "appearance": "Gas: colorless\nLiquid: pale blue",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "90.188 K / −182.962 °C / −297.332 °F",
         "brinellHardness": "",
@@ -354,6 +362,7 @@
     {
         "appearance": "Gas: very pale yellow\nLiquid: bright yellow\nSolid: alpha is opaque, beta is transparent",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "85.03 K / −188.11 °C / −306.60 °F",
         "brinellHardness": "",
@@ -398,6 +407,7 @@
     {
         "appearance": "Colorless gas exhibiting an orange-red glow when placed in a high voltage electric field",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "27.104 K / −246.046 °C / −410.883 °F",
         "brinellHardness": "",
@@ -442,6 +452,7 @@
     {
         "appearance": "Silvery white metallic",
         "atomicRadius": "186 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1156.090 K / 882.940 °C / 1621.292 °F",
         "brinellHardness": "0.69",
@@ -486,6 +497,7 @@
     {
         "appearance": "Shiny grey solid",
         "atomicRadius": "160 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1363 K / 1091 °C / 1994 °F",
         "brinellHardness": "260",
@@ -530,6 +542,7 @@
     {
         "appearance": "Silvery gray metallic",
         "atomicRadius": "143 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "2743 K / 2470 °C / 4478 °F",
         "brinellHardness": "245",
@@ -574,6 +587,7 @@
     {
         "appearance": "Crystalline, reflective with bluish-tinged faces",
         "atomicRadius": "111 pm",
+        "bandGap": "At 300 K: 1.12 eV",
         "block": "p",
         "boilingPoint": "3538 K / 3265 °C / 5909 °F",
         "brinellHardness": "",
@@ -618,6 +632,7 @@
     {
         "appearance": "Colourless, waxy white, yellow, scarlet, red, violet, black",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "White: 280.5 °C",
         "brinellHardness": "",
@@ -662,6 +677,7 @@
     {
         "appearance": "Lemon yellow sintered microcrystals",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "717.8 K / 444.6 °C / 832.3 °F",
         "brinellHardness": "",
@@ -706,6 +722,7 @@
     {
         "appearance": "Pale yellow-green gas",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "239.11 K / −34.04 °C / −29.27 °F",
         "brinellHardness": "",
@@ -750,6 +767,7 @@
     {
         "appearance": "Colorless gas exhibiting a lilac/violet glow when placed in a high voltage electric field",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "87.302 K / −185.848 °C / −302.526 °F",
         "brinellHardness": "",
@@ -794,6 +812,7 @@
     {
         "appearance": "Silvery gray",
         "atomicRadius": "227 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1032 K / 759 °C / 1398 °F",
         "brinellHardness": "0.363",
@@ -838,6 +857,7 @@
     {
         "appearance": "Dull gray, silver",
         "atomicRadius": "197 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1757 K / 1484 °C / 2703 °F",
         "brinellHardness": "167",
@@ -882,6 +902,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "162 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3109 K / 2836 °C / 5136 °F",
         "brinellHardness": "750",
@@ -926,6 +947,7 @@
     {
         "appearance": "Silvery grey-white metallic",
         "atomicRadius": "147 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3560 K / 3287 °C / 5949 °F",
         "brinellHardness": "716",
@@ -970,6 +992,7 @@
     {
         "appearance": "Blue-silver-grey metal",
         "atomicRadius": "134 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3680 K / 3407 °C / 6165 °F",
         "brinellHardness": "",
@@ -1014,6 +1037,7 @@
     {
         "appearance": "Silvery metallic",
         "atomicRadius": "128 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "2944 K / 2671 °C / 4840 °F",
         "brinellHardness": "1120",
@@ -1058,6 +1082,7 @@
     {
         "appearance": "Silvery metallic",
         "atomicRadius": "127 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "2334 K / 2061 °C / 3742 °F",
         "brinellHardness": "196",
@@ -1102,6 +1127,7 @@
     {
         "appearance": "Lustrous metallic with a grayish tinge",
         "atomicRadius": "126 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3134 K / 2862 °C / 5182 °F",
         "brinellHardness": "490",
@@ -1146,6 +1172,7 @@
     {
         "appearance": "Hard lustrous gray metal",
         "atomicRadius": "125 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3200 K / 2927 °C / 5301 °F",
         "brinellHardness": "700",
@@ -1190,6 +1217,7 @@
     {
         "appearance": "Lustrous, metallic, and silver with a gold tinge",
         "atomicRadius": "124 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3003 K / 2730 °C / 4946 °F",
         "brinellHardness": "700",
@@ -1234,6 +1262,7 @@
     {
         "appearance": "Red-orange metallic luster",
         "atomicRadius": "128 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "2835 K / 2562 °C / 4643 °F",
         "brinellHardness": "35 HB=874",
@@ -1278,6 +1307,7 @@
     {
         "appearance": "Silver-gray",
         "atomicRadius": "134 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "1180 K / 907 °C / 1665 °F",
         "brinellHardness": "412",
@@ -1322,6 +1352,7 @@
     {
         "appearance": "Silver-white",
         "atomicRadius": "135 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "2673 K / 2400 °C / 4352 °F",
         "brinellHardness": "60",
@@ -1366,6 +1397,7 @@
     {
         "appearance": "Grayish-white",
         "atomicRadius": "122 pm",
+        "bandGap": "At 300 K: 0.67 eV",
         "block": "p",
         "boilingPoint": "3106 K / 2833 °C / 5131 °F",
         "brinellHardness": "",
@@ -1410,6 +1442,7 @@
     {
         "appearance": "Metallic grey",
         "atomicRadius": "119 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "",
         "brinellHardness": "1440",
@@ -1454,6 +1487,7 @@
     {
         "appearance": "Black and red allotropes",
         "atomicRadius": "120 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "958 K / 685 °C / 1265 °F",
         "brinellHardness": "736",
@@ -1498,6 +1532,7 @@
     {
         "appearance": "Gas/liquid: red-brown\nSolid: metallic luster",
         "atomicRadius": "120 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "332.0 K / 58.8 °C / 137.8 °F",
         "brinellHardness": "",
@@ -1542,6 +1577,7 @@
     {
         "appearance": "Colorless gas, exhibiting a whitish glow in a high electric field",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "119.93 K / −153.415 °C / −244.147 °F",
         "brinellHardness": "",
@@ -1586,6 +1622,7 @@
     {
         "appearance": "Grey white",
         "atomicRadius": "248 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "961 K / 688 °C / 1270 °F",
         "brinellHardness": "0.216",
@@ -1630,6 +1667,7 @@
     {
         "appearance": "Silvery white metallic",
         "atomicRadius": "215 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "1650 K / 1377 °C / 2511 °F",
         "brinellHardness": "",
@@ -1674,6 +1712,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "180 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3203 K / 2730 °C / 5306 °F",
         "brinellHardness": "589",
@@ -1718,6 +1757,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "160 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4650 K / 4377 °C / 7911 °F",
         "brinellHardness": "650",
@@ -1762,6 +1802,7 @@
     {
         "appearance": "Gray metallic, bluish when oxidized",
         "atomicRadius": "146 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "5017 K / 4744 °C / 8571 °F",
         "brinellHardness": "736",
@@ -1806,6 +1847,7 @@
     {
         "appearance": "Gray metallic",
         "atomicRadius": "139 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4912 K / 4639 °C / 8382 °F",
         "brinellHardness": "1500",
@@ -1850,6 +1892,7 @@
     {
         "appearance": "Shiny gray metal",
         "atomicRadius": "136 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4538 K / 4265 °C / 7709 °F",
         "brinellHardness": "",
@@ -1894,6 +1937,7 @@
     {
         "appearance": "Silvery white metallic",
         "atomicRadius": "134 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4423 K / 4150 °C / 7502 °F",
         "brinellHardness": "2160",
@@ -1938,6 +1982,7 @@
     {
         "appearance": "Silvery white metallic",
         "atomicRadius": "134 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3968 K / 3695 °C / 6683 °F",
         "brinellHardness": "1100",
@@ -1982,6 +2027,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "137 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3236 K / 2963 °C / 5365 °F",
         "brinellHardness": "310",
@@ -2026,6 +2072,7 @@
     {
         "appearance": "Lustrous white metal",
         "atomicRadius": "144 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "2435 K / 2162 °C / 3924 °F",
         "brinellHardness": "206",
@@ -2070,6 +2117,7 @@
     {
         "appearance": "Silvery bluish-gray metallic",
         "atomicRadius": "151 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "1040 K / 767 °C / 1413 °F",
         "brinellHardness": "203",
@@ -2114,6 +2162,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "atomicRadius": "167 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "2345 K / 2072 °C / 3762 °F",
         "brinellHardness": "8.83",
@@ -2158,6 +2207,7 @@
     {
         "appearance": "Silvery or gray",
         "atomicRadius": "140 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "2875 K / 2602 °C / 4716 °F",
         "brinellHardness": "~350",
@@ -2202,6 +2252,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "atomicRadius": "140 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1908 K / 1635 °C / 2975 °F",
         "brinellHardness": "294",
@@ -2246,6 +2297,7 @@
     {
         "appearance": "Silvery lustrous gray",
         "atomicRadius": "140 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1261 K / 988 °C / 1810 °F",
         "brinellHardness": "180",
@@ -2290,6 +2342,7 @@
     {
         "appearance": "Lustrous metallic gray, violet as a gas",
         "atomicRadius": "140 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "457.4 K / 184.3 °C / 363.7 °F",
         "brinellHardness": "",
@@ -2334,6 +2387,7 @@
     {
         "appearance": "Colorless gas, exhibiting a blue glow when placed in a high voltage electric field",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "165.051 K / −108.099 °C / −162.578 °F",
         "brinellHardness": "",
@@ -2378,6 +2432,7 @@
     {
         "appearance": "Silvery gold",
         "atomicRadius": "265 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "944 K / 671 °C / 1240 °F",
         "brinellHardness": "0.14",
@@ -2422,6 +2477,7 @@
     {
         "appearance": "Silvery gray",
         "atomicRadius": "222 pm",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "2118 K / 1845 °C / 3353 °F",
         "brinellHardness": "",
@@ -2466,6 +2522,7 @@
     {
         "appearance": "Steel gray",
         "atomicRadius": "159 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4876 K / 4603 °C / 8317 °F",
         "brinellHardness": "1700",
@@ -2510,6 +2567,7 @@
     {
         "appearance": "Gray blue",
         "atomicRadius": "146 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "5731 K / 5458 °C / 9856 °F",
         "brinellHardness": "800",
@@ -2554,6 +2612,7 @@
     {
         "appearance": "Grayish white, lustrous",
         "atomicRadius": "139 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "6203 K / 5930 °C / 10706 °F",
         "brinellHardness": "2570",
@@ -2598,6 +2657,7 @@
     {
         "appearance": "Silvery-white",
         "atomicRadius": "137 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "5869 K / 5596 °C / 10105 °F",
         "brinellHardness": "1320",
@@ -2642,6 +2702,7 @@
     {
         "appearance": "Silvery, blue cast",
         "atomicRadius": "135 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "5285 K / 5012 °C / 9054 °F",
         "brinellHardness": "3920",
@@ -2686,6 +2747,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "136 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4403 K / 4130 °C / 7466 °F",
         "brinellHardness": "1670",
@@ -2730,6 +2792,7 @@
     {
         "appearance": "Grayish white",
         "atomicRadius": "139 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "4098 K / 3825 °C / 6917 °F",
         "brinellHardness": "392",
@@ -2774,6 +2837,7 @@
     {
         "appearance": "Metallic yellow",
         "atomicRadius": "144 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3243 K / 2970 °C / 5378 °F",
         "brinellHardness": "25",
@@ -2818,6 +2882,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "151 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "629.88 K / 356.73 °C / 674.11 °F",
         "brinellHardness": "",
@@ -2862,6 +2927,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "170 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1746 K / 1473 °C / 2683 °F",
         "brinellHardness": "26.4",
@@ -2906,6 +2972,7 @@
     {
         "appearance": "Metallic gray",
         "atomicRadius": "175 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "2022 K / 1749 °C / 3180 °F",
         "brinellHardness": "HB=38.3: 5.0",
@@ -2950,6 +3017,7 @@
     {
         "appearance": "Lustrous silver",
         "atomicRadius": "156 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1837 K / 1564 °C / 2847 °F",
         "brinellHardness": "94.2",
@@ -2994,6 +3062,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "168 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1235 K / 962 °C / 1764 °F",
         "brinellHardness": "",
@@ -3038,6 +3107,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "610 K / 337 °C / 639 °F",
         "brinellHardness": "",
@@ -3082,6 +3152,7 @@
     {
         "appearance": "Colorless gas",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "211.5 K / −61.7 °C / −79.1 °F",
         "brinellHardness": "",
@@ -3126,6 +3197,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "950 K / 677 °C / 1250 °F",
         "brinellHardness": "",
@@ -3170,6 +3242,7 @@
     {
         "appearance": "Silvery white metallic",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "s",
         "boilingPoint": "2010 K / 1737 °C / 3158.6 °F",
         "brinellHardness": "",
@@ -3214,6 +3287,7 @@
     {
         "appearance": "",
         "atomicRadius": "150 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "5800 K / 5500 °C / 9900 °F",
         "brinellHardness": "",
@@ -3258,6 +3332,7 @@
     {
         "appearance": "",
         "atomicRadius": "139 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3302,6 +3377,7 @@
     {
         "appearance": "",
         "atomicRadius": "132 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3346,6 +3422,7 @@
     {
         "appearance": "",
         "atomicRadius": "128 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3390,6 +3467,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "126 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3434,6 +3512,7 @@
     {
         "appearance": "",
         "atomicRadius": "128 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3478,6 +3557,7 @@
     {
         "appearance": "",
         "atomicRadius": "132 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3522,6 +3602,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "138 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -3566,6 +3647,7 @@
     {
         "appearance": "",
         "atomicRadius": "147 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "357 K / 84 °C / 183 °F",
         "brinellHardness": "",
@@ -3610,6 +3692,7 @@
     {
         "appearance": "",
         "atomicRadius": "170 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1430 K / 1130 °C / 2070 °F",
         "brinellHardness": "",
@@ -3654,6 +3737,7 @@
     {
         "appearance": "",
         "atomicRadius": "180 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "420 K / 147 °C / 297 °F",
         "brinellHardness": "",
@@ -3698,6 +3782,7 @@
     {
         "appearance": "",
         "atomicRadius": "187 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "~1400 K / ~1100 °C / ~2000 °F",
         "brinellHardness": "",
@@ -3742,6 +3827,7 @@
     {
         "appearance": "",
         "atomicRadius": "183 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "1035–1135 K / 762–862 °C / 1403–1583 °F",
         "brinellHardness": "",
@@ -3786,6 +3872,7 @@
     {
         "appearance": "Semimetallic",
         "atomicRadius": "138 pm",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "823 K / 550 °C / 1022 °F",
         "brinellHardness": "",
@@ -3830,6 +3917,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "p",
         "boilingPoint": "350±30 K / 80±30 °C / 170±50 °F",
         "brinellHardness": "",
@@ -3874,6 +3962,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "187 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3737 K / 3464 °C / 6267 °F",
         "brinellHardness": "363",
@@ -3918,6 +4007,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "181.8 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3716 K / 3443 °C / 6229 °F",
         "brinellHardness": "412",
@@ -3962,6 +4052,7 @@
     {
         "appearance": "Grayish white",
         "atomicRadius": "182 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3403 K / 3130 °C / 5666 °F",
         "brinellHardness": "481",
@@ -4006,6 +4097,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "181 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3347 K / 3074 °C / 5565 °F",
         "brinellHardness": "265",
@@ -4050,6 +4142,7 @@
     {
         "appearance": "Metallic",
         "atomicRadius": "183 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "brinellHardness": "",
@@ -4094,6 +4187,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "180 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "2173 K / 1900 °C / 3452 °F",
         "brinellHardness": "441",
@@ -4138,6 +4232,7 @@
     {
         "appearance": "Silvery white, but rarely seen without oxide discoloration",
         "atomicRadius": "180 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "1802 K / 1529 °C / 2784 °F",
         "brinellHardness": "",
@@ -4182,6 +4277,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "180 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3273 K / 3000 °C / 5432 °F",
         "brinellHardness": "",
@@ -4226,6 +4322,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "177 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3396 K / 3123 °C / 5653 °F",
         "brinellHardness": "677",
@@ -4270,6 +4367,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "178 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "2840 K / 2562 °C / 4653 °F",
         "brinellHardness": "500",
@@ -4314,6 +4412,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "176 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "2873 K / 2600 °C / 4712 °F",
         "brinellHardness": "746",
@@ -4358,6 +4457,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "176 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3141 K / 2868 °C / 5194 °F",
         "brinellHardness": "814",
@@ -4402,6 +4502,7 @@
     {
         "appearance": "Silvery gray",
         "atomicRadius": "176 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "2003 K / 1730 °C / 3146 °F",
         "brinellHardness": "471",
@@ -4446,6 +4547,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "176 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "1469 K / 1196 °C / 2185 °F",
         "brinellHardness": "343",
@@ -4490,6 +4592,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "174 pm",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "3675 K / 3402 °C / 6156 °F",
         "brinellHardness": "893",
@@ -4534,6 +4637,7 @@
     {
         "appearance": "Silvery-white, glowing with an eerie blue light, sometimes with a golden cast",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3500±300 K / 3200±300 °C / 5800±500 °F",
         "brinellHardness": "",
@@ -4578,6 +4682,7 @@
     {
         "appearance": "Silvery, often with black tarnish",
         "atomicRadius": "179.8 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "5061 K / 4788 °C / 8650 °F",
         "brinellHardness": "400",
@@ -4622,6 +4727,7 @@
     {
         "appearance": "Bright, silvery metallic luster",
         "atomicRadius": "163 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "4300 K / 4027 °C / 7280 °F",
         "brinellHardness": "",
@@ -4666,6 +4772,7 @@
     {
         "appearance": "Silvery gray metallic, corrodes to a spalling black oxide coat in air",
         "atomicRadius": "156 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "4404 K / 4131 °C / 7468 °F",
         "brinellHardness": "",
@@ -4710,6 +4817,7 @@
     {
         "appearance": "Silvery metallic",
         "atomicRadius": "155 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "4447 K / 4174 °C / 7545 °F",
         "brinellHardness": "",
@@ -4754,6 +4862,7 @@
     {
         "appearance": "Silvery white, tarnishing to dark gray in air",
         "atomicRadius": "159 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3505 K / 3228 °C / 5842 °F",
         "brinellHardness": "",
@@ -4798,6 +4907,7 @@
     {
         "appearance": "Silvery white",
         "atomicRadius": "173 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "2880 K / 2607 °C / 4725 °F",
         "brinellHardness": "",
@@ -4842,6 +4952,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "174 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "3383 K / 3110 °C / 5630 °F",
         "brinellHardness": "",
@@ -4886,6 +4997,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "170 pm",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "Beta: 2900 K / 2627 °C / 4760 °F",
         "brinellHardness": "",
@@ -4930,6 +5042,7 @@
     {
         "appearance": "Silvery",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "1743 K / 1470 °C / 2678 °F",
         "brinellHardness": "",
@@ -4974,6 +5087,7 @@
     {
         "appearance": "Silver-colored",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "1269 K / 996 °C / 1825 °F",
         "brinellHardness": "",
@@ -5018,6 +5132,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -5062,6 +5177,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -5106,6 +5222,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "f",
         "boilingPoint": "",
         "brinellHardness": "",
@@ -5150,6 +5267,7 @@
     {
         "appearance": "",
         "atomicRadius": "",
+        "bandGap": "",
         "block": "d",
         "boilingPoint": "",
         "brinellHardness": "",

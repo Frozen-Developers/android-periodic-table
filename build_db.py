@@ -292,6 +292,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
                 article.getProperty('electrical resistivity at 20', ' ' + unitPrefix + 'Ω·m'),
                 'At 0 °C')), ')', ':').replace('(', '').replace(':\n', ': '))
 
+    bandGap = capitalize(article.getProperty('band gap', ' eV', prepend='At 300 K'))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -334,7 +336,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'bulkModulus': bulkModulus,
         'mohsHardness': mohsHardness,
         'brinellHardness': brinellHardness,
-        'electricalResistivity': electricalResistivity
+        'electricalResistivity': electricalResistivity,
+        'bandGap': bandGap
     }
 
     return element
