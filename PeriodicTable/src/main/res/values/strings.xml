@@ -78,6 +78,7 @@
     <string name="property_shear_modulus">Shear modulus</string>
     <string name="property_bulk_modulus">Bulk modulus</string>
     <string name="property_mohs_hardness">Mohs hardness</string>
+    <string name="property_vickers_hardness">Vickers hardness</string>
     <string name="property_brinell_hardness">Brinell hardness</string>
 
     <!-- Properties symbols -->
