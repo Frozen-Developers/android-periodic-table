@@ -11,7 +11,7 @@ public class ElementProperties extends TableItem implements Serializable {
             vanDerWaalsRadius, crystalStructure, magneticOrdering, thermalConductivity,
             thermalExpansion, speedOfSound, youngsModulus, shearModulus, bulkModulus, mohsHardness,
             brinellHardness, electronsPerShell, thermalDiffusivity, electricalResistivity,
-            bandGap, curiePoint;
+            bandGap, curiePoint, tensileStrength;
     private Isotope[] isotopes;
 
     public class Isotope implements Serializable {
@@ -194,5 +194,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getCuriePoint() {
         return curiePoint;
+    }
+
+    public String getTensileStrength() {
+        return tensileStrength;
     }
 }

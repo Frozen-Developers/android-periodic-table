@@ -71,6 +71,7 @@
     <string name="property_electrical_resistivity">Electrical resistivity</string>
     <string name="property_band_gap">Band gap</string>
     <string name="property_curie_point">Curie point</string>
+    <string name="property_tensile_strength">Tensile strength</string>
     <string name="property_speed_of_sound">Speed of sound</string>
     <string name="property_youngs_modulus">Young\'s modulus</string>
     <string name="property_shear_modulus">Shear modulus</string>
