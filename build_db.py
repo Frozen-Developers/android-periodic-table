@@ -31,7 +31,8 @@ class Article:
 
         strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->',
             r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
-            r'ca\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*' ]
+            r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
+            r'\s*\(calculated\)' ]
         for item in strip:
             content = re.sub(item, '', content)
 
@@ -39,6 +40,10 @@ class Article:
             {
                 'target': r'<br>|<br/>',
                 'replacement': '\n'
+            },
+            {
+                'target': r'\[\[room temperature\|r\.t\.\]\]',
+                'replacement': 'room temperature'
             },
             {
                 'target': r'\[\[([^\[\]]*)\|([^\[\]\|]*)\]\]',
@@ -280,6 +285,13 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     brinellHardness = capitalize(article.getProperty('Brinell hardness').replace('HB=: ', ''))
 
+    unitPrefix = article.getProperty('electrical resistivity unit prefix')
+    electricalResistivity = capitalize(replace_chars(
+        article.getProperty('electrical resistivity', ' ' + unitPrefix + 'Ω·m',
+            article.getProperty('electrical resistivity at 0', ' ' + unitPrefix + 'Ω·m',
+                article.getProperty('electrical resistivity at 20', ' ' + unitPrefix + 'Ω·m'),
+                'At 0 °C')), ')', ':').replace('(', '').replace(':\n', ': '))
+
     element = {
         'number': number,
         'symbol': symbol,
@@ -321,7 +333,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'shearModulus': shearModulus,
         'bulkModulus': bulkModulus,
         'mohsHardness': mohsHardness,
-        'brinellHardness': brinellHardness
+        'brinellHardness': brinellHardness,
+        'electricalResistivity': electricalResistivity
     }
 
     return element
