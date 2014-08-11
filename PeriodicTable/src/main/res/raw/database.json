@@ -43,6 +43,7 @@
         "thermalExpansion": "",
         "triplePoint": "13.8033 K, 7.041 kPa",
         "vanDerWaalsRadius": "120 pm",
+        "vickersHardness": "",
         "weight": "1.008",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hydrogen",
         "youngsModulus": ""
@@ -91,6 +92,7 @@
         "thermalExpansion": "",
         "triplePoint": "2.177 K, 5.043 kPa",
         "vanDerWaalsRadius": "140 pm",
+        "vickersHardness": "",
         "weight": "4.003",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Helium",
         "youngsModulus": ""
@@ -139,6 +141,7 @@
         "thermalExpansion": "46 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "182 pm",
+        "vickersHardness": "",
         "weight": "6.94",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lithium",
         "youngsModulus": "4.9 GPa"
@@ -187,6 +190,7 @@
         "thermalExpansion": "11.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "153 pm",
+        "vickersHardness": "1670 MPa",
         "weight": "9.012",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Beryllium",
         "youngsModulus": "287 GPa"
@@ -235,6 +239,7 @@
         "thermalExpansion": "β form: 5–7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "192 pm",
+        "vickersHardness": "",
         "weight": "10.81",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Boron",
         "youngsModulus": ""
@@ -283,6 +288,7 @@
         "thermalExpansion": "Diamond: 0.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "4600 K, 10800 kPa",
         "vanDerWaalsRadius": "170 pm",
+        "vickersHardness": "",
         "weight": "12.011",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Carbon",
         "youngsModulus": "Diamond: 1050 GPa"
@@ -331,6 +337,7 @@
         "thermalExpansion": "",
         "triplePoint": "63.151 K, 12.52 kPa",
         "vanDerWaalsRadius": "155 pm",
+        "vickersHardness": "",
         "weight": "14.007",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nitrogen",
         "youngsModulus": ""
@@ -379,6 +386,7 @@
         "thermalExpansion": "",
         "triplePoint": "54.361 K, 0.1463 kPa",
         "vanDerWaalsRadius": "152 pm",
+        "vickersHardness": "",
         "weight": "15.999",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Oxygen",
         "youngsModulus": ""
@@ -427,6 +435,7 @@
         "thermalExpansion": "",
         "triplePoint": "53.48 K, 90 kPa",
         "vanDerWaalsRadius": "135 pm",
+        "vickersHardness": "",
         "weight": "18.998",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fluorine",
         "youngsModulus": ""
@@ -475,6 +484,7 @@
         "thermalExpansion": "",
         "triplePoint": "24.556 K, 43.37 kPa",
         "vanDerWaalsRadius": "154 pm",
+        "vickersHardness": "",
         "weight": "20.18",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neon",
         "youngsModulus": ""
@@ -523,6 +533,7 @@
         "thermalExpansion": "71 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "227 pm",
+        "vickersHardness": "",
         "weight": "22.99",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sodium",
         "youngsModulus": "10 GPa"
@@ -571,6 +582,7 @@
         "thermalExpansion": "24.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "173 pm",
+        "vickersHardness": "",
         "weight": "24.305",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Magnesium",
         "youngsModulus": "45 GPa"
@@ -619,6 +631,7 @@
         "thermalExpansion": "23.1 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "184 pm",
+        "vickersHardness": "167 MPa",
         "weight": "26.982",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Aluminium",
         "youngsModulus": "70 GPa"
@@ -667,6 +680,7 @@
         "thermalExpansion": "2.6 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "210 pm",
+        "vickersHardness": "",
         "weight": "28.085",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silicon",
         "youngsModulus": "130-188 GPa"
@@ -715,6 +729,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "180 pm",
+        "vickersHardness": "",
         "weight": "30.974",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Phosphorus",
         "youngsModulus": ""
@@ -763,6 +778,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "180 pm",
+        "vickersHardness": "",
         "weight": "32.06",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Sulfur",
         "youngsModulus": ""
@@ -811,6 +827,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "175 pm",
+        "vickersHardness": "",
         "weight": "35.45",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chlorine",
         "youngsModulus": ""
@@ -859,6 +876,7 @@
         "thermalExpansion": "",
         "triplePoint": "83.8058 K, 68.89 kPa",
         "vanDerWaalsRadius": "188 pm",
+        "vickersHardness": "",
         "weight": "39.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Argon",
         "youngsModulus": ""
@@ -907,6 +925,7 @@
         "thermalExpansion": "83.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "275 pm",
+        "vickersHardness": "",
         "weight": "39.098",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Potassium",
         "youngsModulus": "3.53 GPa"
@@ -955,6 +974,7 @@
         "thermalExpansion": "22.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "231 pm",
+        "vickersHardness": "",
         "weight": "40.078",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Calcium",
         "youngsModulus": "20 GPa"
@@ -1003,6 +1023,7 @@
         "thermalExpansion": "α, poly: 10.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "211 pm",
+        "vickersHardness": "",
         "weight": "44.956",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Scandium",
         "youngsModulus": "74.4 GPa"
@@ -1051,6 +1072,7 @@
         "thermalExpansion": "8.6 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "970 MPa",
         "weight": "47.867",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Titanium",
         "youngsModulus": "116 GPa"
@@ -1099,6 +1121,7 @@
         "thermalExpansion": "8.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "50.941",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Vanadium",
         "youngsModulus": "128 GPa"
@@ -1147,6 +1170,7 @@
         "thermalExpansion": "4.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1060 MPa",
         "weight": "51.996",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Chromium",
         "youngsModulus": "279 GPa"
@@ -1195,6 +1219,7 @@
         "thermalExpansion": "21.7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "54.938",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Manganese",
         "youngsModulus": "198 GPa"
@@ -1243,6 +1268,7 @@
         "thermalExpansion": "11.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "608 MPa",
         "weight": "55.845",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iron",
         "youngsModulus": "211 GPa"
@@ -1291,6 +1317,7 @@
         "thermalExpansion": "13.0 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1043 MPa",
         "weight": "58.933",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cobalt",
         "youngsModulus": "209 GPa"
@@ -1339,6 +1366,7 @@
         "thermalExpansion": "13.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "163 pm",
+        "vickersHardness": "638 MPa",
         "weight": "58.693",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nickel",
         "youngsModulus": "200 GPa"
@@ -1387,6 +1415,7 @@
         "thermalExpansion": "16.5 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "140 pm",
+        "vickersHardness": "369 MPa",
         "weight": "63.546",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copper",
         "youngsModulus": "110–128 GPa"
@@ -1435,6 +1464,7 @@
         "thermalExpansion": "30.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "139 pm",
+        "vickersHardness": "",
         "weight": "65.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zinc",
         "youngsModulus": "108 GPa"
@@ -1483,6 +1513,7 @@
         "thermalExpansion": "18 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "187 pm",
+        "vickersHardness": "",
         "weight": "69.723",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gallium",
         "youngsModulus": "9.8 GPa"
@@ -1531,6 +1562,7 @@
         "thermalExpansion": "6.0 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "211 pm",
+        "vickersHardness": "",
         "weight": "72.63",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Germanium",
         "youngsModulus": "103 GPa"
@@ -1579,6 +1611,7 @@
         "thermalExpansion": "",
         "triplePoint": "1090 K, 3628 kPa",
         "vanDerWaalsRadius": "185 pm",
+        "vickersHardness": "",
         "weight": "74.922",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Arsenic",
         "youngsModulus": "8 GPa"
@@ -1627,6 +1660,7 @@
         "thermalExpansion": "Amorphous: 37 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "190 pm",
+        "vickersHardness": "",
         "weight": "78.971",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Selenium",
         "youngsModulus": "10 GPa"
@@ -1675,6 +1709,7 @@
         "thermalExpansion": "",
         "triplePoint": "265.90 K, 5.8 kPa",
         "vanDerWaalsRadius": "185 pm",
+        "vickersHardness": "",
         "weight": "79.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bromine",
         "youngsModulus": ""
@@ -1723,6 +1758,7 @@
         "thermalExpansion": "",
         "triplePoint": "115.775 K, 73.53 kPa",
         "vanDerWaalsRadius": "202 pm",
+        "vickersHardness": "",
         "weight": "83.798",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Krypton",
         "youngsModulus": ""
@@ -1771,6 +1807,7 @@
         "thermalExpansion": "",
         "triplePoint": "312.41 K",
         "vanDerWaalsRadius": "303 pm",
+        "vickersHardness": "",
         "weight": "85.468",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rubidium",
         "youngsModulus": "2.4 GPa"
@@ -1819,6 +1856,7 @@
         "thermalExpansion": "22.5 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "249 pm",
+        "vickersHardness": "",
         "weight": "87.62",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Strontium",
         "youngsModulus": "15.7 GPa"
@@ -1867,6 +1905,7 @@
         "thermalExpansion": "At room temperature, α, poly: 10.6 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "88.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Yttrium",
         "youngsModulus": "63.5 GPa"
@@ -1915,6 +1954,7 @@
         "thermalExpansion": "5.7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "903 MPa",
         "weight": "91.224",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Zirconium",
         "youngsModulus": "88 GPa"
@@ -1963,6 +2003,7 @@
         "thermalExpansion": "7.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1320 MPa",
         "weight": "92.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Niobium",
         "youngsModulus": "105 GPa"
@@ -2011,6 +2052,7 @@
         "thermalExpansion": "4.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1530 MPa",
         "weight": "95.95",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Molybdenum",
         "youngsModulus": "329 GPa"
@@ -2059,6 +2101,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[98]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Technetium",
         "youngsModulus": ""
@@ -2107,6 +2150,7 @@
         "thermalExpansion": "6.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "101.07",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ruthenium",
         "youngsModulus": "447 GPa"
@@ -2155,6 +2199,7 @@
         "thermalExpansion": "8.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1246 MPa",
         "weight": "102.906",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhodium",
         "youngsModulus": "380 GPa"
@@ -2203,6 +2248,7 @@
         "thermalExpansion": "11.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "163 pm",
+        "vickersHardness": "461 MPa",
         "weight": "106.42",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Palladium",
         "youngsModulus": "121 GPa"
@@ -2251,6 +2297,7 @@
         "thermalExpansion": "18.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "172 pm",
+        "vickersHardness": "251 MPa",
         "weight": "107.868",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Silver",
         "youngsModulus": "83 GPa"
@@ -2299,6 +2346,7 @@
         "thermalExpansion": "30.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "158 pm",
+        "vickersHardness": "",
         "weight": "112.414",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cadmium",
         "youngsModulus": "50 GPa"
@@ -2347,6 +2395,7 @@
         "thermalExpansion": "32.1 µm·m⁻¹·K⁻¹",
         "triplePoint": "429.7445 K, ~1 kPa",
         "vanDerWaalsRadius": "193 pm",
+        "vickersHardness": "",
         "weight": "114.818",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Indium",
         "youngsModulus": "11 GPa"
@@ -2395,6 +2444,7 @@
         "thermalExpansion": "22.0 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "217 pm",
+        "vickersHardness": "",
         "weight": "118.71",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tin",
         "youngsModulus": "50 GPa"
@@ -2443,6 +2493,7 @@
         "thermalExpansion": "11 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "206 pm",
+        "vickersHardness": "",
         "weight": "121.76",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Antimony",
         "youngsModulus": "55 GPa"
@@ -2491,6 +2542,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "206 pm",
+        "vickersHardness": "",
         "weight": "127.6",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tellurium",
         "youngsModulus": "43 GPa"
@@ -2539,6 +2591,7 @@
         "thermalExpansion": "",
         "triplePoint": "386.65 K, 12.1 kPa",
         "vanDerWaalsRadius": "198 pm",
+        "vickersHardness": "",
         "weight": "126.904",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iodine",
         "youngsModulus": ""
@@ -2587,6 +2640,7 @@
         "thermalExpansion": "",
         "triplePoint": "161.405 K, 81.77 kPa",
         "vanDerWaalsRadius": "216 pm",
+        "vickersHardness": "",
         "weight": "131.293",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Xenon",
         "youngsModulus": ""
@@ -2635,6 +2689,7 @@
         "thermalExpansion": "97 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "343 pm",
+        "vickersHardness": "",
         "weight": "132.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Caesium",
         "youngsModulus": "1.7 GPa"
@@ -2683,6 +2738,7 @@
         "thermalExpansion": "20.6 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "268 pm",
+        "vickersHardness": "",
         "weight": "137.327",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Barium",
         "youngsModulus": "13 GPa"
@@ -2731,6 +2787,7 @@
         "thermalExpansion": "5.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1760 MPa",
         "weight": "178.49",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hafnium",
         "youngsModulus": "78 GPa"
@@ -2779,6 +2836,7 @@
         "thermalExpansion": "6.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "873 MPa",
         "weight": "180.948",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tantalum",
         "youngsModulus": "186 GPa"
@@ -2827,6 +2885,7 @@
         "thermalExpansion": "4.5 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "3430 MPa",
         "weight": "183.84",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Tungsten",
         "youngsModulus": "411 GPa"
@@ -2875,6 +2934,7 @@
         "thermalExpansion": "6.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "2450 MPa",
         "weight": "186.207",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rhenium",
         "youngsModulus": "463 GPa"
@@ -2923,6 +2983,7 @@
         "thermalExpansion": "5.1 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "190.23",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Osmium",
         "youngsModulus": ""
@@ -2971,6 +3032,7 @@
         "thermalExpansion": "6.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1760 MPa",
         "weight": "192.217",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Iridium",
         "youngsModulus": "528 GPa"
@@ -3019,6 +3081,7 @@
         "thermalExpansion": "8.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "175 pm",
+        "vickersHardness": "549 MPa",
         "weight": "195.084",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Platinum",
         "youngsModulus": "168 GPa"
@@ -3067,6 +3130,7 @@
         "thermalExpansion": "14.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "166 pm",
+        "vickersHardness": "216 MPa",
         "weight": "196.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gold",
         "youngsModulus": "79 GPa"
@@ -3115,6 +3179,7 @@
         "thermalExpansion": "60.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "234.3156 K, 1.65×10⁻⁷ kPa",
         "vanDerWaalsRadius": "155 pm",
+        "vickersHardness": "",
         "weight": "200.592",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mercury_(element)",
         "youngsModulus": ""
@@ -3163,6 +3228,7 @@
         "thermalExpansion": "29.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "196 pm",
+        "vickersHardness": "",
         "weight": "204.38",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thallium",
         "youngsModulus": "8 GPa"
@@ -3211,6 +3277,7 @@
         "thermalExpansion": "28.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "202 pm",
+        "vickersHardness": "",
         "weight": "207.2",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lead",
         "youngsModulus": "16 GPa"
@@ -3259,6 +3326,7 @@
         "thermalExpansion": "13.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "207 pm",
+        "vickersHardness": "",
         "weight": "208.98",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bismuth",
         "youngsModulus": "32 GPa"
@@ -3307,6 +3375,7 @@
         "thermalExpansion": "23.5 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "197 pm",
+        "vickersHardness": "",
         "weight": "[209]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Polonium",
         "youngsModulus": ""
@@ -3355,6 +3424,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "202 pm",
+        "vickersHardness": "",
         "weight": "[210]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Astatine",
         "youngsModulus": ""
@@ -3403,6 +3473,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "220 pm",
+        "vickersHardness": "",
         "weight": "[222]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radon",
         "youngsModulus": ""
@@ -3451,6 +3522,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "348 pm",
+        "vickersHardness": "",
         "weight": "[223]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Francium",
         "youngsModulus": ""
@@ -3499,6 +3571,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "283 pm",
+        "vickersHardness": "",
         "weight": "[226]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Radium",
         "youngsModulus": ""
@@ -3547,6 +3620,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[267]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Rutherfordium",
         "youngsModulus": ""
@@ -3595,6 +3669,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[268]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dubnium",
         "youngsModulus": ""
@@ -3643,6 +3718,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Seaborgium",
         "youngsModulus": ""
@@ -3691,6 +3767,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[270]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Bohrium",
         "youngsModulus": ""
@@ -3739,6 +3816,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[269]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Hassium",
         "youngsModulus": ""
@@ -3787,6 +3865,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[278]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Meitnerium",
         "youngsModulus": ""
@@ -3835,6 +3914,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Darmstadtium",
         "youngsModulus": ""
@@ -3883,6 +3963,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[281]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Roentgenium",
         "youngsModulus": ""
@@ -3931,6 +4012,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[285]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Copernicium",
         "youngsModulus": ""
@@ -3979,6 +4061,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[286]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununtrium",
         "youngsModulus": ""
@@ -4027,6 +4110,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Flerovium",
         "youngsModulus": ""
@@ -4075,6 +4159,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[289]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununpentium",
         "youngsModulus": ""
@@ -4123,6 +4208,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[293]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Livermorium",
         "youngsModulus": ""
@@ -4171,6 +4257,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununseptium",
         "youngsModulus": ""
@@ -4219,6 +4306,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[294]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ununoctium",
         "youngsModulus": ""
@@ -4267,6 +4355,7 @@
         "thermalExpansion": "At room temperature, α, poly: 12.1 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "491 MPa",
         "weight": "138.905",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lanthanum",
         "youngsModulus": "α form: 36.6 GPa"
@@ -4315,6 +4404,7 @@
         "thermalExpansion": "At room temperature, γ, poly: 6.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "270 MPa",
         "weight": "140.116",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Cerium",
         "youngsModulus": "γ form: 33.6 GPa"
@@ -4363,6 +4453,7 @@
         "thermalExpansion": "At room temperature, α, poly: 6.7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "400 MPa",
         "weight": "140.908",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Praseodymium",
         "youngsModulus": "α form: 37.3 GPa"
@@ -4411,6 +4502,7 @@
         "thermalExpansion": "At room temperature, α, poly: 9.6 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "343 MPa",
         "weight": "144.242",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neodymium",
         "youngsModulus": "α form: 41.4 GPa"
@@ -4459,6 +4551,7 @@
         "thermalExpansion": "At room temperature: 11 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[145]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Promethium",
         "youngsModulus": "α form: 46 GPa"
@@ -4507,6 +4600,7 @@
         "thermalExpansion": "α, poly: 12.7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "412 MPa",
         "weight": "150.36",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Samarium",
         "youngsModulus": "α form: 49.7 GPa"
@@ -4555,6 +4649,7 @@
         "thermalExpansion": "Room temperature, poly: 35.0 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "167 MPa",
         "weight": "151.964",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Europium",
         "youngsModulus": "18.2 GPa"
@@ -4603,6 +4698,7 @@
         "thermalExpansion": "At 100 °C, α poly: 9.4 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "570 MPa",
         "weight": "157.25",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Gadolinium",
         "youngsModulus": "α form: 54.8 GPa"
@@ -4651,6 +4747,7 @@
         "thermalExpansion": "At room temperature α, poly: 10.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "863 MPa",
         "weight": "158.925",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Terbium",
         "youngsModulus": "α form: 55.7 GPa"
@@ -4699,6 +4796,7 @@
         "thermalExpansion": "Room temperature, α, poly: 9.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "540 MPa",
         "weight": "162.5",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Dysprosium",
         "youngsModulus": "α form: 61.4 GPa"
@@ -4747,6 +4845,7 @@
         "thermalExpansion": "At room temperature, poly: 11.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "481 MPa",
         "weight": "164.93",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Holmium",
         "youngsModulus": "64.8 GPa"
@@ -4795,6 +4894,7 @@
         "thermalExpansion": "Room temperature, poly: 12.2 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "589 MPa",
         "weight": "167.259",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Erbium",
         "youngsModulus": "69.9 GPa"
@@ -4843,6 +4943,7 @@
         "thermalExpansion": "Room temperature, poly: 13.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "520 MPa",
         "weight": "168.934",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thulium",
         "youngsModulus": "74.0 GPa"
@@ -4891,6 +4992,7 @@
         "thermalExpansion": "Room temperature, β, poly: 26.3 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "206 MPa",
         "weight": "173.054",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Ytterbium",
         "youngsModulus": "β form: 23.9 GPa"
@@ -4939,6 +5041,7 @@
         "thermalExpansion": "At room temperature, poly: 9.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "1160 MPa",
         "weight": "174.967",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lutetium",
         "youngsModulus": "68.6 GPa"
@@ -4987,6 +5090,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[227]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Actinium",
         "youngsModulus": ""
@@ -5035,6 +5139,7 @@
         "thermalExpansion": "11.0 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "350 MPa",
         "weight": "232.038",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Thorium",
         "youngsModulus": "79 GPa"
@@ -5083,6 +5188,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "231.036",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Protactinium",
         "youngsModulus": ""
@@ -5131,6 +5237,7 @@
         "thermalExpansion": "13.9 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "186 pm",
+        "vickersHardness": "",
         "weight": "238.029",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Uranium",
         "youngsModulus": "208 GPa"
@@ -5179,6 +5286,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[237]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Neptunium",
         "youngsModulus": ""
@@ -5227,6 +5335,7 @@
         "thermalExpansion": "46.7 µm·m⁻¹·K⁻¹",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[244]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Plutonium",
         "youngsModulus": "96 GPa"
@@ -5275,6 +5384,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[243]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Americium",
         "youngsModulus": ""
@@ -5323,6 +5433,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Curium",
         "youngsModulus": ""
@@ -5371,6 +5482,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[247]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Berkelium",
         "youngsModulus": ""
@@ -5419,6 +5531,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[251]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Californium",
         "youngsModulus": ""
@@ -5467,6 +5580,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[252]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Einsteinium",
         "youngsModulus": ""
@@ -5515,6 +5629,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[257]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Fermium",
         "youngsModulus": ""
@@ -5563,6 +5678,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[258]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Mendelevium",
         "youngsModulus": ""
@@ -5611,6 +5727,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[259]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Nobelium",
         "youngsModulus": ""
@@ -5659,6 +5776,7 @@
         "thermalExpansion": "",
         "triplePoint": "",
         "vanDerWaalsRadius": "",
+        "vickersHardness": "",
         "weight": "[266]",
         "wikipediaLink": "http://en.wikipedia.org/wiki/Lawrencium",
         "youngsModulus": ""
