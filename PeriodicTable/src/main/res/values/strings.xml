@@ -73,6 +73,7 @@
     <string name="property_curie_point">Curie point</string>
     <string name="property_tensile_strength">Tensile strength</string>
     <string name="property_speed_of_sound">Speed of sound</string>
+    <string name="property_poisson_ratio">Poisson ratio</string>
     <string name="property_youngs_modulus">Young\'s modulus</string>
     <string name="property_shear_modulus">Shear modulus</string>
     <string name="property_bulk_modulus">Bulk modulus</string>
