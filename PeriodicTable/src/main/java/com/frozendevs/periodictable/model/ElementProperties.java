@@ -10,7 +10,8 @@ public class ElementProperties extends TableItem implements Serializable {
             oxidationStates, electronegativity, ionizationEnergies, atomicRadius, covalentRadius,
             vanDerWaalsRadius, crystalStructure, magneticOrdering, thermalConductivity,
             thermalExpansion, speedOfSound, youngsModulus, shearModulus, bulkModulus, mohsHardness,
-            brinellHardness, electronsPerShell, thermalDiffusivity, electricalResistivity;
+            brinellHardness, electronsPerShell, thermalDiffusivity, electricalResistivity,
+            bandGap;
     private Isotope[] isotopes;
 
     public class Isotope implements Serializable {
@@ -185,5 +186,9 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public String getElectricalResistivity() {
         return electricalResistivity;
+    }
+
+    public String getBandGap() {
+        return bandGap;
     }
 }
