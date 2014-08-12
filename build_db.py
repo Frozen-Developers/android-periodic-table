@@ -24,6 +24,8 @@ def replace_chars(string, charset1, charset2):
 class Article:
 
     def __init__(self, url):
+        print('Parsing properties from ' + url)
+
         content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
         content = replace_chars(content, '\u00a0\u2002', '  ')
 
@@ -85,13 +87,13 @@ class Article:
         for prop in properties:
             nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
             if len(nameValue) > 1:
-                self.properties[nameValue[0]] = self.parseProperty(nameValue[1])
+                self.properties[nameValue[0].lower()] = self.parseProperty(nameValue[1])
 
         # Parse tables
 
         self.tables = OrderedDict()
         for match in re.findall(r'=[^\n]*=\n+{\|[^\n]*\n?', content, flags=re.S):
-            name = match.splitlines()[0].strip(' =')
+            name = match.splitlines()[0].strip(' =').lower()
             start = content.index(match) + len(match)
             rows = content[start : content.index('|}', start)].split('\n|-')
             rows = list(filter(len, (row.strip(' \n\t!|\'') for row in rows)))
@@ -101,7 +103,7 @@ class Article:
                 rows[row_i] = (value.strip(' \n\t!|\'') for value in row.split(delimiter))
                 rows[row_i] = list(filter(len, rows[row_i]))
             if len(rows) > 0:
-                headers = rows[0]
+                headers = [header.lower() for header in rows[0]]
                 rows[0] = ''
             rows = list(filter(len, rows))
             self.tables[name] = []
@@ -185,7 +187,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     weight = replace_chars(article.getProperty('atomic mass').splitlines()[0], '()', '[]')
     try:
-        weight = format(float(weight), '.3f').rstrip('0').rstrip('.')
+        weight = format(float(weight), '.3f').rstrip('.0')
     except ValueError:
         pass
 
@@ -218,20 +220,20 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         article.getProperty('density gpcm3bp', ' g·cm⁻³'), ')', ':').replace('(', '') \
             .replace('g·cm⁻³: ', 'g·cm⁻³\n')).splitlines()))
 
-    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point K', ' K'),
-        article.getProperty('melting point C', ' °C'), article.getProperty('melting point F', ' °F') ])))
+    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point k', ' K'),
+        article.getProperty('melting point c', ' °C'), article.getProperty('melting point f', ' °F') ])))
 
-    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point K', ' K'),
-        article.getProperty('sublimation point C', ' °C'), article.getProperty('sublimation point F', ' °F') ])))
+    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point k', ' K'),
+        article.getProperty('sublimation point c', ' °C'), article.getProperty('sublimation point f', ' °F') ])))
 
-    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point K', ' K'),
-        article.getProperty('boiling point C', ' °C'), article.getProperty('boiling point F', ' °F') ])))
+    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point k', ' K'),
+        article.getProperty('boiling point c', ' °C'), article.getProperty('boiling point f', ' °F') ])))
 
-    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point K', ' K'),
-        article.getProperty('triple point kPa', ' kPa') ])))
+    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point k', ' K'),
+        article.getProperty('triple point kpa', ' kPa') ])))
 
-    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point K', ' K'),
-        article.getProperty('critical point MPa', ' MPa') ])))
+    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point k', ' K'),
+        article.getProperty('critical point mpa', ' MPa') ])))
 
     heatOfFusion = capitalize(replace_chars(article.getProperty('heat fusion', ' kJ·mol⁻¹'),
         ')', ':').replace('(', ''))
@@ -254,7 +256,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     covalentRadius = article.getProperty('covalent radius', ' pm')
 
-    vanDerWaalsRadius = article.getProperty('Van der Waals radius', ' pm')
+    vanDerWaalsRadius = article.getProperty('van der waals radius', ' pm')
 
     crystalStructure = capitalize(article.getProperty('crystal structure')) \
         .replace('A=', 'a=')
@@ -279,15 +281,15 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹'))), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
-    youngsModulus = capitalize(article.getProperty('Young\'s modulus', ' GPa'))
+    youngsModulus = capitalize(article.getProperty('young\'s modulus', ' GPa'))
 
-    shearModulus = capitalize(article.getProperty('Shear modulus', ' GPa'))
+    shearModulus = capitalize(article.getProperty('shear modulus', ' GPa'))
 
-    bulkModulus = capitalize(article.getProperty('Bulk modulus', ' GPa'))
+    bulkModulus = capitalize(article.getProperty('bulk modulus', ' GPa'))
 
-    mohsHardness = capitalize(article.getProperty('Mohs hardness'))
+    mohsHardness = capitalize(article.getProperty('mohs hardness'))
 
-    brinellHardness = capitalize(article.getProperty('Brinell hardness', ' MPa').replace('HB=: ', ''))
+    brinellHardness = capitalize(article.getProperty('brinell hardness', ' MPa').replace('HB=: ', ''))
 
     unitPrefix = article.getProperty('electrical resistivity unit prefix')
     electricalResistivity = capitalize(replace_chars(
@@ -298,17 +300,17 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     bandGap = capitalize(article.getProperty('band gap', ' eV', prepend='At 300 K'))
 
-    curiePoint = capitalize(article.getProperty('Curie point K', ' K'))
+    curiePoint = capitalize(article.getProperty('curie point k', ' K'))
 
     tensileStrength = article.getProperty('tensile strength', ' MPa')
 
-    poissonRatio = capitalize(article.getProperty('Poisson ratio'))
+    poissonRatio = capitalize(article.getProperty('poisson ratio'))
 
-    vickersHardness = capitalize(article.getProperty('Vickers hardness', ' MPa'))
+    vickersHardness = capitalize(article.getProperty('vickers hardness', ' MPa'))
 
-    casNumber = capitalize(article.getProperty('CAS number'))
+    casNumber = capitalize(article.getProperty('cas number'))
 
-    element = {
+    return {
         'number': number,
         'symbol': symbol,
         'name': name,
@@ -359,8 +361,6 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'casNumber': casNumber
     }
 
-    return element
-
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
@@ -368,9 +368,7 @@ if __name__ == '__main__':
 
     # Parse all ionization energies
 
-    url = URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements'
-    print('Parsing properties from ' + url)
-    article = Article(url)
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
     ionizationEnergiesDict = {}
     for tableName, table in article.getAllTables().items():
         if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
@@ -388,10 +386,9 @@ if __name__ == '__main__':
     # Parse articles
 
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
-        url = URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
-            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())
-        print('Parsing properties from ' + url)
-        jsonData.append(parse(Article(url), URL_PREFIX + element.attrib['href'], ionizationEnergiesDict))
+        jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
+            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
+            URL_PREFIX + element.attrib['href'], ionizationEnergiesDict))
 
     # Save
 
