@@ -31,59 +31,35 @@ class Article:
 
         # Strip unwanted data
 
-        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--[^>]*-->',
+        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
             r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
             r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
             r'\s*\(calculated\)' ]
-        for item in strip:
-            content = re.sub(item, '', content)
+        content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
 
         replace = [
-            {
-                'target': r'<br>|<br/>',
-                'replacement': '\n'
-            },
-            {
-                'target': r'\[\[room temperature\|r\.t\.\]\]',
-                'replacement': 'room temperature'
-            },
-            {
-                'target': r'\[\[([^\[\]]*)\|([^\[\]\|]*)\]\]',
-                'replacement': r'\2'
-            },
-            {
-                'target': r'\[\[([^\[\]]*)\]\]',
-                'replacement': r'\1'
-            },
-            {
-                'target': r'{{nowrap\|([^{}]*)}}',
-                'replacement': r'\1'
-            },
-            {
-                'target': r'no data',
-                'replacement': '-'
-            },
-            {
-                'target': r'{{sort\|([^{}]*)\|([^{}]*)}}',
-                'replacement': r'\1'
-            },
-            {
-                'target': r'{{abbr\|([^{}]*)\|([^{}]*)}}',
-                'replacement': r'\2'
-            },
-            {
-                'target': r'\[[^ \]]* ([^\]]*)\]',
-                'replacement': r'\1'
-            }
+            [ r'<br[ /]*>', '\n' ],
+            [ r'\[\[room temperature\|r\.t\.\]\]', 'room temperature' ],
+            [ r'\[\[([^\[\]]*)\|([^\[\]\|]*)\]\]', r'\2' ],
+            [ r'\[\[([^\[\]]*)\]\]', r'\1' ],
+            [ r'{{nowrap\|([^{}]*)}}', r'\1' ],
+            [ r'no data', '-' ],
+            [ r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1' ],
+            [ r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2' ],
+            [ r'\[[^ \]]* ([^\]]*)\]', r'\1' ],
+            [ r'{{sup\|([-–−\d]*)}}', r'<sup>\1</sup>' ],
+            [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
+            [ r'{{[^{}]*}}', '' ],
+            [ r'\|\|', '\n|' ]
         ]
         for item in replace:
-            content = re.sub(item['target'], item['replacement'], content)
+            content = re.sub(item[0], item[1], content)
 
         # Parse properties
 
         self.properties = OrderedDict()
-        properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content, flags=re.S) \
-            .split('\n|')
+        properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content,
+            flags=re.S).split('\n|')
         for prop in properties:
             nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
             if len(nameValue) > 1:
@@ -92,26 +68,24 @@ class Article:
         # Parse tables
 
         self.tables = OrderedDict()
-        for match in re.findall(r'=[^\n]*=\n+{\|[^\n]*\n?', content, flags=re.S):
-            name = match.splitlines()[0].strip(' =').lower()
-            start = content.index(match) + len(match)
-            rows = content[start : content.index('|}', start)].split('\n|-')
-            rows = list(filter(len, (row.strip(' \n\t!|\'') for row in rows)))
+        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?\|?\-?(.*?)\|}', content, flags=re.S):
+            name = match.group(1).strip(' =').lower()
+            rows = list(filter(len, (row.strip(' \n\t!|\'') for row in match.group(2).split('\n|-'))))
             headers = []
             for row_i, row in enumerate(rows):
-                delimiter = '|' if row_i > 0 else '!'
+                delimiter = '\n|' if row_i > 0 else '!'
                 rows[row_i] = (value.strip(' \n\t!|\'') for value in row.split(delimiter))
                 rows[row_i] = list(filter(len, rows[row_i]))
             if len(rows) > 0:
-                headers = [header.lower() for header in rows[0]]
+                headers = [re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s]', ' ', header.lower())) \
+                    .split('|')[-1].strip(' \n\t!|\'') for header in rows[0]]
                 rows[0] = ''
             rows = list(filter(len, rows))
-            self.tables[name] = []
-            for row in rows:
-                item = OrderedDict()
+            self.tables[name] = [OrderedDict() for row in rows]
+            for row_i, row in enumerate(rows):
                 for header, value in zip(headers, row):
-                    item[header] = self.parseProperty(value)
-                self.tables[name].append(item)
+                    if header not in self.tables[name][row_i]:
+                        self.tables[name][row_i][header] = self.parseProperty(value)
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -120,7 +94,7 @@ class Article:
                 for occurence in soup.find_all(tag):
                     occurence.replaceWith('')
             return soup.get_text()
-        return re.sub(r'<[^<]+?>|{{[^{}]*}}', '', string, flags=re.S)
+        return re.sub(r'<[^<]+?>', '', string, flags=re.S)
 
     def replaceWithSuperscript(self, string):
         return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
@@ -130,10 +104,10 @@ class Article:
 
     def parseProperty(self, value):
         if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-            for match in re.findall(r'<sup>[-–−\d]*</sup>|{{sup\|[-–−\d]*}}|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
-                value = value.replace(match, self.replaceWithSuperscript(re.sub(r'\^|{{sup\||}}', '', match)))
-            for match in re.findall(r'<sub>[-–−\d]*</sub>|{{sub\|[-–−\d]*}}', value):
-                value = value.replace(match, self.replaceWithSubscript(re.sub(r'{{sub\||}}', '', match)))
+            for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
+                value = value.replace(match, self.replaceWithSuperscript(match))
+            for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
+                value = value.replace(match, self.replaceWithSubscript(match))
             return self.removeHtmlTags(value)
         return ''
 
