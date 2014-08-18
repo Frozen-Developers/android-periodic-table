@@ -4664,7 +4664,7 @@
         "crystalStructure": "Rhombohedral",
         "curiePoint": "",
         "density": "7.52 g·cm⁻³",
-        "electricalResistivity": "α, poly: 0.940 µ Ω·m",
+        "electricalResistivity": "α, poly: 0.940 µΩ·m",
         "electronConfiguration": "[Xe] 4f⁶ 6s²",
         "electronegativity": "1.17 (Pauling scale)",
         "electronsPerShell": "2, 8, 18, 24, 8, 2",
@@ -5850,7 +5850,7 @@
         "youngsModulus": ""
     },
     {
-        "appearance": "",
+        "appearance": "Silvery",
         "atomicRadius": "",
         "bandGap": "",
         "block": "d",
