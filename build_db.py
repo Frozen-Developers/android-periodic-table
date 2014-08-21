@@ -21,6 +21,33 @@ def capitalize(string):
 def replace_chars(string, charset1, charset2):
     return ''.join(dict(zip(charset1, charset2)).get(c, c) for c in string)
 
+class TableCell:
+
+    def __init__(self, value):
+        self.properties = {}
+        segments = value.split('|')
+        if len(segments) > 1:
+            for segment in segments[0::-2]:
+                for subsegment in segment.split(' '):
+                    nameValue = subsegment.split('=', 1)
+                    if len(nameValue) > 1:
+                        self.properties[nameValue[0].lower().strip(' \n\t\'"')] = \
+                            nameValue[1].strip(' \n\t\'"')
+        self.properties['value'] = segments[-1].strip(' \n\t\'"')
+
+    def getProperty(self, key):
+        if key in self.properties.keys():
+            return self.properties[key]
+        return ''
+
+    def getIntProperty(self, key):
+        if key in self.properties.keys():
+            try:
+                return int(self.properties[key])
+            except ValueError:
+                pass
+        return 1
+
 class Article:
 
     def __init__(self, url):
@@ -40,20 +67,23 @@ class Article:
         replace = [
             [ r'<br[ /]*>', '\n' ],
             [ r'\[\[room temperature\|r\.t\.\]\]', 'room temperature' ],
-            [ r'\[\[([^\[\]]*)\|([^\[\]\|]*)\]\]', r'\2' ],
+            [ r'\[\[([^\[\]\|]*)\|([^\[\]]*)\]\]', r'\2' ],
             [ r'\[\[([^\[\]]*)\]\]', r'\1' ],
             [ r'{{nowrap\|([^{}]*)}}', r'\1' ],
             [ r'no data', '-' ],
             [ r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1' ],
             [ r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2' ],
             [ r'\[[^ \]]* ([^\]]*)\]', r'\1' ],
-            [ r'{{sup\|([-–−\d]*)}}', r'<sup>\1</sup>' ],
+            [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
             [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
+            [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
+            [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{[^{}]*}}', '' ],
-            [ r'\|\|', '\n|' ]
+            [ r'\|\|', '\n|' ],
+            [ r'!!', '\n!' ]
         ]
         for item in replace:
-            content = re.sub(item[0], item[1], content)
+            content = re.sub(item[0], item[1], content, flags=re.IGNORECASE)
 
         # Parse properties
 
@@ -68,24 +98,48 @@ class Article:
         # Parse tables
 
         self.tables = OrderedDict()
-        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?\|?\-?(.*?)\|}', content, flags=re.S):
+        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?(\|\+[^\n]*\n)?\|?\-?(.*?)\|}',
+            content, flags=re.S):
             name = match.group(1).strip(' =').lower()
-            rows = list(filter(len, (row.strip(' \n\t!|\'') for row in match.group(2).split('\n|-'))))
+            rows = list(filter(len, [ row.strip(' \n\t!\'') for row in match.group(3).split('\n|-') ]))
             headers = []
             for row_i, row in enumerate(rows):
-                delimiter = '\n|' if row_i > 0 else '!'
-                rows[row_i] = (value.strip(' \n\t!|\'') for value in row.split(delimiter))
-                rows[row_i] = list(filter(len, rows[row_i]))
+                delimiter = '\n|' if row_i > 0 else '\n!'
+                rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\'')) \
+                    for value in row.split(delimiter) ]
             if len(rows) > 0:
-                headers = [re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s]', ' ', header.lower())) \
-                    .split('|')[-1].strip(' \n\t!|\'') for header in rows[0]]
-                rows[0] = ''
-            rows = list(filter(len, rows))
-            self.tables[name] = [OrderedDict() for row in rows]
-            for row_i, row in enumerate(rows):
-                for header, value in zip(headers, row):
-                    if header not in self.tables[name][row_i]:
-                        self.tables[name][row_i][header] = self.parseProperty(value)
+                headers = [ re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s]', ' ',
+                    cell.getProperty('value').lower())) for cell in rows[0] ]
+                rows = list(filter(len, rows[rows[0][0].getIntProperty('rowspan'):]))
+            self.tables[name] = []
+            nextRows = []
+            for rowNo, row in enumerate(rows):
+                if len(row) > 0:
+                    rowHeight = 1
+                    if len(nextRows) == 0:
+                        cleanRow = OrderedDict()
+                    else:
+                        cleanRow = nextRows.pop(0)
+                    for cellNo, cell in enumerate(row):
+                        if cellNo == 0: rowHeight = cell.getIntProperty('rowspan')
+                        header = headers[cellNo]
+                        if header not in cleanRow.keys():
+                            cleanRow[header] = self.parseProperty(cell.getProperty('value'))
+                            for i in range(cell.getIntProperty('colspan') - 1):
+                               cleanRow[headers[cellNo + i + 1]] = ''
+                            rowSpan = cell.getIntProperty('rowspan')
+                            rowOffset = 0
+                            while rowSpan < rowHeight:
+                                rowOffset += 1
+                                cell = rows[rowNo + rowOffset].pop(0)
+                                cleanRow[header] += '\n' + self.parseProperty(cell.getProperty('value'))
+                                rowSpan += cell.getIntProperty('rowspan')
+                            while rowSpan > rowHeight:
+                                nextRow = OrderedDict()
+                                nextRow[header] = self.parseProperty(cell.getProperty('value'))
+                                nextRows.append(nextRow)
+                                rowSpan -= cell.getIntProperty('rowspan')
+                    self.tables[name].append(cleanRow)
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -104,7 +158,7 @@ class Article:
 
     def parseProperty(self, value):
         if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-            for match in re.findall(r'<sup>[-–−\d]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
+            for match in re.findall(r'<sup>[-–−\dabm]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
                 value = value.replace(match, self.replaceWithSuperscript(match))
             for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
                 value = value.replace(match, self.replaceWithSubscript(match))
@@ -224,7 +278,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     electronegativity = article.getProperty('electronegativity', ' (Pauling scale)')
 
     ionizationEnergies = '\n'.join([key + ': ' + value + ' kJ·mol⁻¹'
-        for key, value in ionizationEnergiesDict[str(number)].items()])
+        for key, value in ionizationEnergiesDict[str(number)].items() if value != ''])
 
     atomicRadius = article.getProperty('atomic radius', ' pm')
 

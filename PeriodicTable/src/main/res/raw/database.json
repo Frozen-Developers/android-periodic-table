@@ -5271,7 +5271,7 @@
         "group": "3",
         "heatOfFusion": "12.34 kJ·mol⁻¹",
         "heatOfVaporization": "481 kJ·mol⁻¹",
-        "ionizationEnergies": "1st: 568 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 2991 kJ·mol⁻¹",
+        "ionizationEnergies": "1st: 568 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 1814 kJ·mol⁻¹\n4th: 2991 kJ·mol⁻¹",
         "liquidDensityAtBoilingPoint": "",
         "liquidDensityAtMeltingPoint": "",
         "magneticOrdering": "Paramagnetic",
