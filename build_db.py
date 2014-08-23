@@ -61,7 +61,7 @@ class Article:
         strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
             r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
             r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
-            r'\s*\(calculated\)' ]
+            r'\s*\(calculated\)', r'__notoc__\n?' ]
         content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
 
         replace = [
@@ -76,6 +76,8 @@ class Article:
             [ r'\[[^ \]]* ([^\]]*)\]', r'\1' ],
             [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
             [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
+            [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
+            [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{[^{}]*}}', '' ],
@@ -113,25 +115,27 @@ class Article:
                 rows = list(filter(len, rows[rows[0][0].getIntProperty('rowspan'):]))
             self.tables[name] = []
             nextRows = []
-            for rowNo, row in enumerate(rows):
-                if len(row) > 0:
-                    rowHeight = 1
+            for row in range(len(rows)):
+                if len(rows[row]) > 0:
+                    rowHeight = rows[row][0].getIntProperty('rowspan')
                     if len(nextRows) == 0:
                         cleanRow = OrderedDict()
                     else:
                         cleanRow = nextRows.pop(0)
-                    for cellNo, cell in enumerate(row):
-                        if cellNo == 0: rowHeight = cell.getIntProperty('rowspan')
-                        header = headers[cellNo]
+                    headerOffset = 0
+                    for cellNo, cell in enumerate(rows[row]):
+                        header = headers[cellNo + headerOffset]
                         if header not in cleanRow.keys():
                             cleanRow[header] = self.parseProperty(cell.getProperty('value'))
-                            for i in range(cell.getIntProperty('colspan') - 1):
-                               cleanRow[headers[cellNo + i + 1]] = ''
+                            colspan = cell.getIntProperty('colspan')
+                            for i in range(1, cell.getIntProperty('colspan')):
+                               cleanRow[headers[cellNo + headerOffset + i]] = ''
+                            headerOffset += colspan - 1
                             rowSpan = cell.getIntProperty('rowspan')
                             rowOffset = 0
                             while rowSpan < rowHeight:
                                 rowOffset += 1
-                                cell = rows[rowNo + rowOffset].pop(0)
+                                cell = rows[row + rowOffset].pop(0)
                                 cleanRow[header] += '\n' + self.parseProperty(cell.getProperty('value'))
                                 rowSpan += cell.getIntProperty('rowspan')
                             while rowSpan > rowHeight:
