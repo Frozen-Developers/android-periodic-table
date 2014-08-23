@@ -60,12 +60,14 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                 String[] daughterIsotopes = mIsotopes[groupPosition].getDaughterIsotopes();
 
                 String combined = "";
-                for(int i = 0; i < decayModes.length && i < daughterIsotopes.length; i++) {
-                    combined += decayModes[i];
-                    if(i < daughterIsotopes.length)
-                        combined += " \u2192 " + daughterIsotopes[i];
-                    if(i < decayModes.length - 1)
-                        combined += "\n";
+                if(decayModes != null && daughterIsotopes != null) {
+                    for (int i = 0; i < decayModes.length && i < daughterIsotopes.length; i++) {
+                        combined += decayModes[i];
+                        if (i < daughterIsotopes.length)
+                            combined += " \u2192 " + daughterIsotopes[i];
+                        if (i < decayModes.length - 1)
+                            combined += "\n";
+                    }
                 }
 
                 return new String[] { getString(R.string.property_decay_modes), combined };
@@ -111,15 +113,28 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         String propertyHalfLife = getChild(groupPosition, PROPERTY_HALF_LIFE)[1];
 
         TextView halfLife = (TextView)convertView.findViewById(R.id.property_half_life);
-        halfLife.setText(getString(R.string.property_half_life_symbol) + ": " +
-                (!propertyHalfLife.equals("") ? propertyHalfLife : getString(R.string.property_value_unknown)));
+        halfLife.setText(getString(R.string.property_half_life_symbol) + ": ");
+        if(propertyHalfLife != null && propertyHalfLife.equals("-")) {
+            halfLife.append(getString(R.string.property_value_stable));
+        }
+        else if(propertyHalfLife != null && !propertyHalfLife.equals("")) {
+            halfLife.append(propertyHalfLife);
+        }
+        else {
+            halfLife.append(getString(R.string.property_value_unknown));
+        }
         halfLife.setTypeface(mTypeface);
 
         String propertyAbundance = getChild(groupPosition, PROPERTY_ABUNDANCE)[1];
 
         TextView abundance = (TextView)convertView.findViewById(R.id.property_abundance);
-        abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": " +
-                (!propertyAbundance.equals("") ? propertyAbundance : getString(R.string.property_value_none)));
+        abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": ");
+        if(propertyAbundance != null && !propertyAbundance.equals("")) {
+            abundance.append(propertyAbundance);
+        }
+        else {
+            abundance.append(getString(R.string.property_value_none));
+        }
         abundance.setTypeface(mTypeface);
 
         return convertView;
@@ -133,16 +148,21 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         }
 
         String[] property = getChild(groupPosition, childPosition);
+        if (property[1] == null) property[1] = "";
+        String[] halfLife = getChild(groupPosition, PROPERTY_HALF_LIFE);
+        if (halfLife[1] == null) property[1] = "";
 
         TextView name = (TextView)convertView.findViewById(R.id.property_name);
         name.setText(property[0]);
 
         TextView value = (TextView)convertView.findViewById(R.id.property_value);
-        if((getChild(groupPosition, 0)[1].equalsIgnoreCase("Stable") && childPosition == PROPERTY_DECAY_MODES)
+        if((halfLife[1].equals("-") && childPosition == PROPERTY_DECAY_MODES)
                 || (property[1].equals("") && childPosition == PROPERTY_ABUNDANCE))
-            value.setText(getString(R.string.property_value_none));
+            value.setText(R.string.property_value_none);
+        else if(halfLife[1].equals("-") && childPosition == PROPERTY_HALF_LIFE)
+            value.setText(R.string.property_value_stable);
         else if(property[1].equals(""))
-            value.setText(getString(R.string.property_value_unknown));
+            value.setText(R.string.property_value_unknown);
         else
             value.setText(property[1]);
         value.setTypeface(mTypeface);
