@@ -104,7 +104,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
     }
 
     private int getBackgroundColor(int position) {
-        int color = android.R.color.transparent;
+        int color = R.color.category_unknown_bg;
 
         switch (position) {
             case 110:
@@ -246,18 +246,6 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             case 115:
             case 119:
                 color = R.color.category_transition_metals_bg;
-                break;
-
-            case 116:
-            case 117:
-            case 118:
-            case 120:
-            case 121:
-            case 122:
-            case 123:
-            case 124:
-            case 125:
-                color = R.color.category_unknown_bg;
                 break;
         }
 
