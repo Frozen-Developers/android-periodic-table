@@ -71,15 +71,21 @@ class Article:
             [ r'\[\[([^\[\]]*)\]\]', r'\1' ],
             [ r'{{nowrap\|([^{}]*)}}', r'\1' ],
             [ r'no data', '-' ],
+            [ r'observationally stable', '-' ],
+            [ r'stable', '-' ],
             [ r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1' ],
             [ r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2' ],
-            [ r'\[[^ \]]* ([^\]]*)\]', r'\1' ],
+            [ r'\[[^ \]\(\)<>]* ([^\]]*)\]', r'\1' ],
             [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
             [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
+            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
+            [ r'{{val\|([\d\.\-]*)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
+            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2' ],
+            [ r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2' ],
             [ r'{{[^{}]*}}', '' ],
             [ r'\|\|', '\n|' ],
             [ r'!!', '\n!' ]
@@ -354,8 +360,12 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     for row in article.getTable('table'):
         isotopeSymbol = re.sub(r'\s*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
 
+        halfLife = re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\s*[\?#]', '',
+            re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×'))
+
         isotopes.append({
-            'symbol': isotopeSymbol
+            'symbol': isotopeSymbol,
+            'halfLife': halfLife
         })
 
     return {
