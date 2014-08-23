@@ -342,6 +342,17 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     casNumber = capitalize(article.getProperty('cas number'))
 
+    # Isotopes
+
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Isotopes_of_' + name.lower())
+
+    isotopes = []
+    for row in article.getTable('table'):
+        isotopeSymbol = re.sub(r'\s*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
+        isotopes.append({
+            'symbol': isotopeSymbol
+        })
+
     return {
         'number': number,
         'symbol': symbol,
@@ -390,7 +401,8 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         'tensileStrength': tensileStrength,
         'poissonRatio': poissonRatio,
         'vickersHardness': vickersHardness,
-        'casNumber': casNumber
+        'casNumber': casNumber,
+        'isotopes': isotopes
     }
 
 if __name__ == '__main__':
