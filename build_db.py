@@ -110,39 +110,43 @@ class Article:
                 rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\'')) \
                     for value in row.split(delimiter) ]
             if len(rows) > 0:
-                headers = [ re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s]', ' ',
+                headers = [ re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
                     cell.getProperty('value').lower())) for cell in rows[0] ]
                 rows = list(filter(len, rows[rows[0][0].getIntProperty('rowspan'):]))
             self.tables[name] = []
             nextRows = []
-            for row in range(len(rows)):
-                if len(rows[row]) > 0:
-                    rowHeight = rows[row][0].getIntProperty('rowspan')
+            for rowNo in range(len(rows)):
+                if len(rows[rowNo]) > 0:
+                    rowHeight = rows[rowNo][0].getIntProperty('rowspan')
                     if len(nextRows) == 0:
-                        cleanRow = OrderedDict()
+                        cleanRow = OrderedDict.fromkeys(headers, None)
                     else:
                         cleanRow = nextRows.pop(0)
                     headerOffset = 0
-                    for cellNo, cell in enumerate(rows[row]):
-                        header = headers[cellNo + headerOffset]
-                        if header not in cleanRow.keys():
-                            cleanRow[header] = self.parseProperty(cell.getProperty('value'))
-                            colspan = cell.getIntProperty('colspan')
-                            for i in range(1, cell.getIntProperty('colspan')):
-                               cleanRow[headers[cellNo + headerOffset + i]] = ''
-                            headerOffset += colspan - 1
-                            rowSpan = cell.getIntProperty('rowspan')
-                            rowOffset = 0
-                            while rowSpan < rowHeight:
-                                rowOffset += 1
-                                cell = rows[row + rowOffset].pop(0)
-                                cleanRow[header] += '\n' + self.parseProperty(cell.getProperty('value'))
-                                rowSpan += cell.getIntProperty('rowspan')
-                            while rowSpan > rowHeight:
-                                nextRow = OrderedDict()
-                                nextRow[header] = self.parseProperty(cell.getProperty('value'))
-                                nextRows.append(nextRow)
-                                rowSpan -= cell.getIntProperty('rowspan')
+                    for headerNo, header in enumerate(cleanRow.keys()):
+                        if cleanRow[header] is None:
+                            if headerNo - headerOffset < len(rows[rowNo]):
+                                cell = rows[rowNo][headerNo - headerOffset]
+                                cleanRow[header] = self.parseProperty(cell.getProperty('value'))
+                                colspan = cell.getIntProperty('colspan')
+                                for i in range(1, colspan):
+                                   cleanRow[headers[headerNo + i]] = ''
+                                headerOffset += colspan - 1
+                                rowSpan = cell.getIntProperty('rowspan')
+                                rowOffset = 0
+                                while rowSpan < rowHeight:
+                                    rowOffset += 1
+                                    cell = rows[rowNo + rowOffset].pop(0)
+                                    cleanRow[header] += '\n' + \
+                                        self.parseProperty(cell.getProperty('value'))
+                                    rowSpan += cell.getIntProperty('rowspan')
+                                while rowSpan > rowHeight:
+                                    nextRow = OrderedDict.fromkeys(headers, None)
+                                    nextRow[header] = self.parseProperty(cell.getProperty('value'))
+                                    nextRows.append(nextRow)
+                                    rowSpan -= cell.getIntProperty('rowspan')
+                            else:
+                                cleanRow[header] = ''
                     self.tables[name].append(cleanRow)
 
     def removeHtmlTags(self, string, tags=[]):
@@ -349,6 +353,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
     isotopes = []
     for row in article.getTable('table'):
         isotopeSymbol = re.sub(r'\s*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
+
         isotopes.append({
             'symbol': isotopeSymbol
         })
