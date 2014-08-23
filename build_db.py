@@ -274,7 +274,7 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         ')', ':').replace('(', ''))
 
     molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
-        article.getProperty('heat capacity', ' kJ·mol⁻¹'), ')', ':').replace(':\n', ': ')))
+        article.getProperty('heat capacity', ' J·mol⁻¹·K⁻¹'), ')', ':').replace(':\n', ': ')))
 
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
         article.getProperty('oxidation states', comments=False))
