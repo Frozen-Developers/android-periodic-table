@@ -128,16 +128,16 @@ class Article:
                         cleanRow = OrderedDict.fromkeys(headers, None)
                     else:
                         cleanRow = nextRows.pop(0)
-                    headerOffset = 0
+                    cellOffset = 0
                     for headerNo, header in enumerate(cleanRow.keys()):
                         if cleanRow[header] is None:
-                            if headerNo - headerOffset < len(rows[rowNo]):
-                                cell = rows[rowNo][headerNo - headerOffset]
+                            if cellOffset < len(rows[rowNo]):
+                                cell = rows[rowNo][cellOffset]
                                 cleanRow[header] = self.parseProperty(cell.getProperty('value'))
                                 colspan = cell.getIntProperty('colspan')
                                 for i in range(1, colspan):
                                    cleanRow[headers[headerNo + i]] = ''
-                                headerOffset += colspan - 1
+                                cellOffset += 1
                                 rowSpan = cell.getIntProperty('rowspan')
                                 rowOffset = 0
                                 while rowSpan < rowHeight:
@@ -146,11 +146,15 @@ class Article:
                                     cleanRow[header] += '\n' + \
                                         self.parseProperty(cell.getProperty('value'))
                                     rowSpan += cell.getIntProperty('rowspan')
+                                rowOffset = 1
                                 while rowSpan > rowHeight:
-                                    nextRow = OrderedDict.fromkeys(headers, None)
-                                    nextRow[header] = self.parseProperty(cell.getProperty('value'))
-                                    nextRows.append(nextRow)
+                                    if len(nextRows) < rowOffset:
+                                        nextRow = OrderedDict.fromkeys(headers, None)
+                                        nextRows.append(nextRow)
+                                    nextRows[rowOffset - 1][header] = self.parseProperty(
+                                        cell.getProperty('value'))
                                     rowSpan -= cell.getIntProperty('rowspan')
+                                    rowOffset += 1
                             else:
                                 cleanRow[header] = ''
                     self.tables[name].append(cleanRow)
