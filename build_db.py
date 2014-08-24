@@ -86,6 +86,7 @@ class Article:
             [ r'{{val\|([\d\.\-]*)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
             [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2' ],
             [ r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2' ],
+            [ r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2' ],
             [ r'{{[^{}]*}}', '' ],
             [ r'\|\|', '\n|' ],
             [ r'!!', '\n!' ]
@@ -375,11 +376,19 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
                 daughterIsotopes, flags=re.IGNORECASE)
         daughterIsotopes = capitalize(daughterIsotopes).splitlines()
 
+        spin = ''
+        if 'nuclear spin' in row.keys():
+            spin = row['nuclear spin']
+        elif 'spin' in row.keys():
+            spin = row['spin']
+        spin = replace_chars(re.sub(r'[()#]', '', spin), '⁻⁺', '-+')
+
         isotopes.append({
             'symbol': isotopeSymbol,
             'halfLife': halfLife,
             'decayModes': decayModes,
-            'daughterIsotopes': daughterIsotopes
+            'daughterIsotopes': daughterIsotopes,
+            'spin': spin
         })
 
     return {
