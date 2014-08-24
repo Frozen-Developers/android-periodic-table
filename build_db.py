@@ -222,7 +222,7 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, articleUrl, ionizationEnergiesDict):
+def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
     # Properties
 
     number = article.getProperty('number')
@@ -362,17 +362,24 @@ def parse(article, articleUrl, ionizationEnergiesDict):
 
     isotopes = []
     for row in article.getTable('table'):
-        isotopeSymbol = re.sub(r'\s*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
+        isotopeSymbol = re.sub(r'[ ]*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
 
         halfLife = re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\s*[\?#]', '',
             re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×'))
 
         decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
 
+        daughterIsotopes = re.sub(r'[()]', '', row['daughter isotope'])
+        for pair in elementNames:
+            daughterIsotopes = re.sub(r'[ ]*' + pair[0] + r'| ' + pair[1], pair[1],
+                daughterIsotopes, flags=re.IGNORECASE)
+        daughterIsotopes = capitalize(daughterIsotopes).splitlines()
+
         isotopes.append({
             'symbol': isotopeSymbol,
             'halfLife': halfLife,
-            'decayModes': decayModes
+            'decayModes': decayModes,
+            'daughterIsotopes': daughterIsotopes
         })
 
     return {
@@ -436,6 +443,7 @@ if __name__ == '__main__':
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
     ionizationEnergiesDict = {}
+    elementNames = []
     for tableName, table in article.getAllTables().items():
         if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
             for row in table:
@@ -446,15 +454,16 @@ if __name__ == '__main__':
                 else:
                     ionizationEnergiesDict[index] = row
                 ionizationEnergiesDict[index].pop('number', None)
-                ionizationEnergiesDict[index].pop('name', None)
-                ionizationEnergiesDict[index].pop('symbol', None)
+                name = ionizationEnergiesDict[index].pop('name', None)
+                symbol = ionizationEnergiesDict[index].pop('symbol', None)
+                elementNames.append([ name, symbol ])
 
     # Parse articles
 
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
             re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
-            URL_PREFIX + element.attrib['href'], ionizationEnergiesDict))
+            URL_PREFIX + element.attrib['href'], ionizationEnergiesDict, elementNames))
 
     # Save
 
