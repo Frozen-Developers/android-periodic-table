@@ -176,7 +176,7 @@ class Article:
 
     def parseProperty(self, value):
         if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-            for match in re.findall(r'<sup>[-–−+\dabm]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
+            for match in re.findall(r'<sup>[-–−+\dabm]*</sup>', value):
                 value = value.replace(match, self.replaceWithSuperscript(match))
             for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
                 value = value.replace(match, self.replaceWithSubscript(match))
