@@ -176,7 +176,7 @@ class Article:
 
     def parseProperty(self, value):
         if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
-            for match in re.findall(r'<sup>[-–−\dabm]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
+            for match in re.findall(r'<sup>[-–−+\dabm]*</sup>|\^+[-–−]?\d+|β[-–−+]$|β[-–−+] ', value):
                 value = value.replace(match, self.replaceWithSuperscript(match))
             for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
                 value = value.replace(match, self.replaceWithSubscript(match))
@@ -367,9 +367,12 @@ def parse(article, articleUrl, ionizationEnergiesDict):
         halfLife = re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\s*[\?#]', '',
             re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×'))
 
+        decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
+
         isotopes.append({
             'symbol': isotopeSymbol,
-            'halfLife': halfLife
+            'halfLife': halfLife,
+            'decayModes': decayModes
         })
 
     return {
