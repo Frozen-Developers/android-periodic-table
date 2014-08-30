@@ -97,6 +97,7 @@
     <string name="property_value_unknown">Unknown</string>
     <string name="property_value_none">None</string>
     <string name="property_value_stable">Stable</string>
+    <string name="property_value_trace">Trace</string>
 
     <!-- Preferences -->
     <string name="preferences_category_about">About</string>

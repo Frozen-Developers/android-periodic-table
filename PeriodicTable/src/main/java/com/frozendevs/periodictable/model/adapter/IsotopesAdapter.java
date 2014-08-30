@@ -129,7 +129,10 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         TextView abundance = (TextView)convertView.findViewById(R.id.property_abundance);
         abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": ");
-        if(propertyAbundance != null && !propertyAbundance.equals("")) {
+        if(propertyAbundance != null && propertyAbundance.equals("-")) {
+            abundance.append(getString(R.string.property_value_trace));
+        }
+        else if(propertyAbundance != null && !propertyAbundance.equals("")) {
             abundance.append(propertyAbundance);
         }
         else {
@@ -161,6 +164,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
             value.setText(R.string.property_value_none);
         else if(halfLife[1].equals("-") && childPosition == PROPERTY_HALF_LIFE)
             value.setText(R.string.property_value_stable);
+        else if(property[1].equals("-") && childPosition == PROPERTY_ABUNDANCE)
+            value.setText(R.string.property_value_trace);
         else if(property[1].equals(""))
             value.setText(R.string.property_value_unknown);
         else
