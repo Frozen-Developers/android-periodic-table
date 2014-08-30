@@ -80,10 +80,12 @@ class Article:
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
+            [ r'{{val\|fmt=commas\|([\d\.]*)\|([^}]*)}}', r'\1' ],
             [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
             [ r'{{val\|([\d\.\-]*)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
             [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2' ],
             [ r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2' ],
+            [ r'{{val\|([\d\.]*)\|([^}]*)}}', r'\1' ],
             [ r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2' ],
             [ r'{{[^{}]*}}', '' ],
             [ r'\|\|', '\n|' ],
@@ -382,12 +384,27 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
             spin = row['spin']
         spin = replace_chars(re.sub(r'[()#]', '', spin), '⁻⁺', '-+')
 
+        abundance = ''
+        if 'representative isotopic composition' in row.keys():
+            abundance = re.sub(r'^trace$', '-', re.sub(r'\(\d*\)', '',
+                row['representative isotopic composition']), flags=re.IGNORECASE).strip('[]')
+            complexNumber = abundance.split('×')
+            try:
+                value = float(complexNumber[0])
+                if value <= 1.0 or len(complexNumber) > 1:
+                    value *= 100
+                    complexNumber[0] = format(value, '.6f').rstrip('0').rstrip('.')
+                abundance = '×'.join(complexNumber) + '%'
+            except ValueError:
+                pass
+
         isotopes.append({
             'symbol': isotopeSymbol,
             'halfLife': halfLife,
             'decayModes': decayModes,
             'daughterIsotopes': daughterIsotopes,
-            'spin': spin
+            'spin': spin,
+            'abundance': abundance
         })
 
     return {
