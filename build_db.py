@@ -368,7 +368,7 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
         isotopeSymbol = re.sub(r'[ ]*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
 
         halfLife = re.sub(r'observationally stable|stable', '-',
-            re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\s*[\?#]', '',
+            re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\([\d\.]+ \(\w+\)\, [\d\.]+ \(\w+\)\)|\s*[\?#]', '',
             re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×')), flags=re.IGNORECASE)
 
         decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
