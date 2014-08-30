@@ -1183,7 +1183,7 @@
                 "decayModes": [
                     "p"
                 ],
-                "halfLife": "200 s",
+                "halfLife": "200×10⁻²⁴ s",
                 "spin": "2−",
                 "symbol": "¹⁰N"
             },
@@ -1195,7 +1195,7 @@
                 "decayModes": [
                     "p"
                 ],
-                "halfLife": "590 s",
+                "halfLife": "590×10⁻²⁴ s",
                 "spin": "1/2+",
                 "symbol": "¹¹N"
             },
@@ -1203,7 +1203,7 @@
                 "abundance": "",
                 "daughterIsotopes": [],
                 "decayModes": [],
-                "halfLife": "6.90 s",
+                "halfLife": "6.90×10⁻²² s",
                 "spin": "1/2−",
                 "symbol": "¹¹ᵐN"
             },
@@ -4601,7 +4601,7 @@
         "sublimationPoint": "",
         "symbol": "Cl",
         "tensileStrength": "",
-        "thermalConductivity": "8.9 W·m⁻¹·K⁻¹",
+        "thermalConductivity": "8.9×10⁻³ W·m⁻¹·K⁻¹",
         "thermalDiffusivity": "",
         "thermalExpansion": "",
         "triplePoint": "",
@@ -4951,7 +4951,7 @@
         "sublimationPoint": "",
         "symbol": "Ar",
         "tensileStrength": "",
-        "thermalConductivity": "17.72 W·m⁻¹·K⁻¹",
+        "thermalConductivity": "17.72×10⁻³ W·m⁻¹·K⁻¹",
         "thermalDiffusivity": "",
         "thermalExpansion": "",
         "triplePoint": "83.8058 K, 68.89 kPa",
@@ -25539,7 +25539,7 @@
                 "decayModes": [
                     "β⁻β⁻"
                 ],
-                "halfLife": "2.165(0.016 (stat), 0.059 (sys)) y",
+                "halfLife": "2.165(0.016 (stat), 0.059 (sys))×10²¹ y",
                 "spin": "0+",
                 "symbol": "¹³⁶Xe"
             },
@@ -38749,7 +38749,7 @@
         "sublimationPoint": "",
         "symbol": "Rn",
         "tensileStrength": "",
-        "thermalConductivity": "3.61 W·m⁻¹·K⁻¹",
+        "thermalConductivity": "3.61×10⁻³ W·m⁻¹·K⁻¹",
         "thermalDiffusivity": "",
         "thermalExpansion": "",
         "triplePoint": "",
@@ -41756,7 +41756,7 @@
         "atomicRadius": "147 pm",
         "bandGap": "",
         "block": "d",
-        "boilingPoint": "357 K / 84 °C / 183 °F",
+        "boilingPoint": "357(+112−108) K / 84(+112−108) °C / 183(+202−194) °F",
         "brinellHardness": "",
         "bulkModulus": "",
         "casNumber": "54084-26-3",

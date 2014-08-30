@@ -61,7 +61,8 @@ class Article:
         strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
             r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
             r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
-            r'\s*\(calculated\)', r'__notoc__\n?' ]
+            r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}', r'{{citation needed\|[^}]*}}',
+            r'{{dubious\|[^}]*}}' ]
         content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
 
         replace = [
@@ -81,13 +82,14 @@ class Article:
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
             [ r'{{val\|fmt=commas\|([\d\.]*)\|([^}]*)}}', r'\1' ],
-            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
-            [ r'{{val\|([\d\.\-]*)\|e=([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
+            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
+            [ r'{{val\|([\d\.\-]*)\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
             [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2' ],
             [ r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2' ],
             [ r'{{val\|([\d\.]*)\|([^}]*)}}', r'\1' ],
             [ r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2' ],
-            [ r'{{[^{}]*}}', '' ],
+            [ r'{{e\|([\d\.\-–−]*)}}', r'×10<sup>\1</sup>' ],
+            [ r'{{su\|p=([\d\.\-–−+]*)\|b=([\d\.\-–−+]*)}}', r'(\1\2)' ],
             [ r'\|\|', '\n|' ],
             [ r'!!', '\n!' ]
         ]
