@@ -4601,7 +4601,7 @@
                 "symbol": "⁵³Ar"
             }
         ],
-        "liquidDensityAtBoilingPoint": "1.40 g·cm⁻³",
+        "liquidDensityAtBoilingPoint": "1.3954 g·cm⁻³",
         "liquidDensityAtMeltingPoint": "",
         "magneticOrdering": "Diamagnetic",
         "meltingPoint": "83.81 K / −189.34 °C / −308.81 °F",
@@ -5328,7 +5328,395 @@
         "heatOfFusion": "14.1 kJ·mol⁻¹",
         "heatOfVaporization": "332.7 kJ·mol⁻¹",
         "ionizationEnergies": "1st: 633.1 kJ·mol⁻¹\n2nd: 1235.0 kJ·mol⁻¹\n3rd: 2388.6 kJ·mol⁻¹\n4th: 7090.6 kJ·mol⁻¹\n5th: 8843 kJ·mol⁻¹\n6th: 10679 kJ·mol⁻¹\n7th: 13310 kJ·mol⁻¹\n8th: 15250 kJ·mol⁻¹\n9th: 17370 kJ·mol⁻¹\n10th: 21726 kJ·mol⁻¹\n11th: 24102 kJ·mol⁻¹\n12th: 66320 kJ·mol⁻¹\n13th: 73010 kJ·mol⁻¹\n14th: 80160 kJ·mol⁻¹\n15th: 89490 kJ·mol⁻¹\n16th: 97400 kJ·mol⁻¹\n17th: 105600 kJ·mol⁻¹\n18th: 117000 kJ·mol⁻¹\n19th: 124270 kJ·mol⁻¹\n20th: 547530 kJ·mol⁻¹\n21st: 582163 kJ·mol⁻¹",
-        "isotopes": [],
+        "isotopes": [
+            {
+                "daughterIsotopes": [
+                    "³⁶Ca"
+                ],
+                "decayModes": [
+                    "p"
+                ],
+                "halfLife": "",
+                "spin": "7/2-",
+                "symbol": "³⁷Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "³⁷Ca"
+                ],
+                "decayModes": [
+                    "p"
+                ],
+                "halfLife": "<300 ns",
+                "spin": "2-",
+                "symbol": "³⁸Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "³⁷Ca"
+                ],
+                "decayModes": [
+                    "p"
+                ],
+                "halfLife": "",
+                "spin": "",
+                "symbol": "³⁸ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "³⁸Ca"
+                ],
+                "decayModes": [
+                    "p"
+                ],
+                "halfLife": "<300 ns",
+                "spin": "7/2-",
+                "symbol": "³⁹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁰Ca",
+                    "³⁹K",
+                    "³⁶Ar"
+                ],
+                "decayModes": [
+                    "β⁺ (99.54%)",
+                    "β⁺, p (0.44%)",
+                    "β⁺, α (0.017%)"
+                ],
+                "halfLife": "182.3 ms",
+                "spin": "4-",
+                "symbol": "⁴⁰Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴¹Ca"
+                ],
+                "decayModes": [
+                    "β⁺"
+                ],
+                "halfLife": "596.3 ms",
+                "spin": "7/2-",
+                "symbol": "⁴¹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴²Ca"
+                ],
+                "decayModes": [
+                    "β⁺"
+                ],
+                "halfLife": "681.3 ms",
+                "spin": "0+",
+                "symbol": "⁴²Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴²Ca"
+                ],
+                "decayModes": [
+                    "β⁺"
+                ],
+                "halfLife": "61.7 s",
+                "spin": "7,5,6+",
+                "symbol": "⁴²ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴³Ca"
+                ],
+                "decayModes": [
+                    "β⁺"
+                ],
+                "halfLife": "3.891 h",
+                "spin": "7/2-",
+                "symbol": "⁴³Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "438 µs",
+                "spin": "3/2+",
+                "symbol": "⁴³ᵐ¹Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "470 ns",
+                "spin": "19/2-",
+                "symbol": "⁴³ᵐ²Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁴Ca"
+                ],
+                "decayModes": [
+                    "β⁺"
+                ],
+                "halfLife": "3.97 h",
+                "spin": "2+",
+                "symbol": "⁴⁴Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "154.2 ns",
+                "spin": "1-",
+                "symbol": "⁴⁴ᵐ¹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁴Sc",
+                    "⁴⁴Ca"
+                ],
+                "decayModes": [
+                    "IT (98.8%)",
+                    "β⁺ (1.2%)"
+                ],
+                "halfLife": "58.61 h",
+                "spin": "6+",
+                "symbol": "⁴⁴ᵐ²Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "50.4 µs",
+                "spin": "0-",
+                "symbol": "⁴⁴ᵐ³Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "-",
+                "spin": "7/2-",
+                "symbol": "⁴⁵Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁵Sc"
+                ],
+                "decayModes": [
+                    "IT"
+                ],
+                "halfLife": "318 ms",
+                "spin": "3/2+",
+                "symbol": "⁴⁵ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁶Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "83.79 d",
+                "spin": "4+",
+                "symbol": "⁴⁶Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "9.4 µs",
+                "spin": "6+",
+                "symbol": "⁴⁶ᵐ¹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁶Sc"
+                ],
+                "decayModes": [
+                    "IT"
+                ],
+                "halfLife": "18.75 s",
+                "spin": "1-",
+                "symbol": "⁴⁶ᵐ²Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁷Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "3.3492 d",
+                "spin": "7/2-",
+                "symbol": "⁴⁷Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "272 ns",
+                "spin": "3/2+",
+                "symbol": "⁴⁷ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁸Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "43.67 h",
+                "spin": "6+",
+                "symbol": "⁴⁸Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁴⁹Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "57.2 min",
+                "spin": "7/2-",
+                "symbol": "⁴⁹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁰Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "102.5 s",
+                "spin": "5+",
+                "symbol": "⁵⁰Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁰Sc",
+                    "⁵⁰Ti"
+                ],
+                "decayModes": [
+                    "IT (97.5%)",
+                    "β⁻ (2.5%)"
+                ],
+                "halfLife": "350 ms",
+                "spin": "2+,3+",
+                "symbol": "⁵⁰ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵¹Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "12.4 s",
+                "spin": "7/2-",
+                "symbol": "⁵¹Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵²Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "8.2 s",
+                "spin": "3+",
+                "symbol": "⁵²Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵³Ti",
+                    "⁵²Ti"
+                ],
+                "decayModes": [
+                    "β⁻ (>99.9%)",
+                    "β⁻, n (<0.1%)"
+                ],
+                "halfLife": ">3 s",
+                "spin": "7/2-",
+                "symbol": "⁵³Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁴Ti",
+                    "⁵³Ti"
+                ],
+                "decayModes": [
+                    "β⁻ (>99.9%)",
+                    "β⁻, n (<0.1%)"
+                ],
+                "halfLife": "260 ms",
+                "spin": "3+",
+                "symbol": "⁵⁴Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "7 µs",
+                "spin": "5+",
+                "symbol": "⁵⁴ᵐSc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁵Ti",
+                    "⁵⁴Ti"
+                ],
+                "decayModes": [
+                    "β⁻ (>99.9%)",
+                    "β⁻, n (<0.1%)"
+                ],
+                "halfLife": "0.115 s",
+                "spin": "7/2-",
+                "symbol": "⁵⁵Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁶Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "35 ms",
+                "spin": "1+",
+                "symbol": "⁵⁶Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁷Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "13 ms",
+                "spin": "7/2-",
+                "symbol": "⁵⁷Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁸Ti"
+                ],
+                "decayModes": [
+                    "β⁻"
+                ],
+                "halfLife": "12 ms",
+                "spin": "3+",
+                "symbol": "⁵⁸Sc"
+            },
+            {
+                "daughterIsotopes": [
+                    "⁵⁸Ti",
+                    "⁵⁹Ti"
+                ],
+                "decayModes": [
+                    "β⁻, n",
+                    "β⁻"
+                ],
+                "halfLife": "10 ms",
+                "spin": "7/2-",
+                "symbol": "⁵⁹Sc"
+            },
+            {
+                "daughterIsotopes": [],
+                "decayModes": [],
+                "halfLife": "3 ms",
+                "spin": "3+",
+                "symbol": "⁶⁰Sc"
+            }
+        ],
         "liquidDensityAtBoilingPoint": "",
         "liquidDensityAtMeltingPoint": "2.80 g·cm⁻³",
         "magneticOrdering": "Paramagnetic",
