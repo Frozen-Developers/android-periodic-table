@@ -50,8 +50,10 @@ class TableCell:
 
 class Article:
 
-    def __init__(self, url):
+    def __init__(self, url, units = {}):
         print('Parsing properties from ' + url)
+
+        self.units = units
 
         content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
         content = replace_chars(content, '\u00a0\u2002', '  ')
@@ -95,6 +97,8 @@ class Article:
         ]
         for item in replace:
             content = re.sub(item[0], item[1], content, flags=re.IGNORECASE)
+
+        self.content = content
 
         # Parse properties
 
@@ -198,17 +202,20 @@ class Article:
                 return self.properties[name + ' prefix'].strip('():; \n').replace(' (', ', ')
         return ''
 
-    def getProperty(self, name, append = '', default = '', prepend = '', comments = True,
-        delimiter = '\n'):
+    def getProperty(self, name, default = '', prepend = '', comments = True, delimiter = '\n',
+        unitPrefix = '', append = '', units = True):
         result = []
         for key, value in self.properties.items():
             fullName = re.match(r'^' + name + r'\s?\d*$', key)
             if fullName != None and value != '':
                 if value != '-':
-                    prefix = ', '.join([ prepend, self.getPrefix(fullName.group(0)),
-                        (self.getComment(fullName.group(0)) if comments else '') ]).strip(', ')
+                    fullName = fullName.group(0)
+                    prefix = ', '.join([ prepend, self.getPrefix(fullName),
+                        (self.getComment(fullName) if comments else '') ]).strip(', ')
+                    unit = ' ' + unitPrefix + self.getUnit(fullName)
                     result.append((prefix + (', ' if ': ' in value else ': ')
-                        if prefix != '' else '') + value + append)
+                        if prefix != '' else '') + value + append + \
+                        (unit if units and len(unit) > 1 else ''))
                 else:
                     result.append(value)
         return delimiter.join(result) if len(result) > 0 else default
@@ -220,6 +227,14 @@ class Article:
 
     def getAllTables(self):
         return self.tables
+
+    def getContent(self):
+        return self.content
+
+    def getUnit(self, name):
+        if name in self.units.keys():
+            return self.units[name]
+        return ''
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
@@ -242,11 +257,11 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
 
     category = article.getProperty('series', comments=False).capitalize()
 
-    group = article.getProperty('group', default='3')
+    group = article.getProperty('group', '3')
 
     period = article.getProperty('period')
 
-    block = article.getProperty('block')
+    block = article.getProperty('block', units=False)
 
     configuration = article.getProperty('electron configuration', comments=False)
 
@@ -257,55 +272,57 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
 
     phase = article.getProperty('phase', comments=False).capitalize()
 
-    density = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3nrt', ' g·cm⁻³',
-        article.getProperty('density gplstp', '×10⁻³ g·cm⁻³', prepend='At 0 °C, 101.325 kPa')),
-        ')', ':').replace('(', '')).replace('g·cm⁻³: ', 'g·cm⁻³\n').splitlines()))
+    density = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3nrt',
+        article.getProperty('density gplstp', prepend='At 0 °C, 101.325 kPa')),
+        ')', ':').strip('(')).replace(' ' + article.getUnit('density gplstp'), '×10⁻³ ' + \
+        article.getUnit('density gpcm3nrt')).replace(article.getUnit('density gpcm3nrt') + ': ',
+        article.getUnit('density gpcm3nrt') + '\n').splitlines()))
 
-    densityMP = '\n'.join(sorted(capitalize(replace_chars(
-        article.getProperty('density gpcm3mp', ' g·cm⁻³'), ')', ':').replace('(', '') \
-            .replace('g·cm⁻³: ', 'g·cm⁻³\n')).splitlines()))
+    densityMP = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3mp'),
+        ')', ':').replace('(', '').replace(article.getUnit('density gpcm3mp') + ': ',
+        article.getUnit('density gpcm3mp') + '\n')).splitlines()))
 
-    densityBP = '\n'.join(sorted(capitalize(replace_chars(
-        article.getProperty('density gpcm3bp', ' g·cm⁻³'), ')', ':').replace('(', '') \
-            .replace('g·cm⁻³: ', 'g·cm⁻³\n')).splitlines()))
+    densityBP = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3bp'),
+        ')', ':').replace('(', '').replace(article.getUnit('density gpcm3bp') + ': ',
+        article.getUnit('density gpcm3bp') + '\n')).splitlines()))
 
-    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point k', ' K'),
-        article.getProperty('melting point c', ' °C'), article.getProperty('melting point f', ' °F') ])))
+    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point k'),
+        article.getProperty('melting point c'), article.getProperty('melting point f') ])))
 
-    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point k', ' K'),
-        article.getProperty('sublimation point c', ' °C'), article.getProperty('sublimation point f', ' °F') ])))
+    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point k'),
+        article.getProperty('sublimation point c'), article.getProperty('sublimation point f') ])))
 
-    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point k', ' K'),
-        article.getProperty('boiling point c', ' °C'), article.getProperty('boiling point f', ' °F') ])))
+    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point k'),
+        article.getProperty('boiling point c'), article.getProperty('boiling point f') ])))
 
-    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point k', ' K'),
-        article.getProperty('triple point kpa', ' kPa') ])))
+    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point k'),
+        article.getProperty('triple point kpa') ])))
 
-    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point k', ' K'),
-        article.getProperty('critical point mpa', ' MPa') ])))
+    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point k'),
+        article.getProperty('critical point mpa') ])))
 
-    heatOfFusion = capitalize(replace_chars(article.getProperty('heat fusion', ' kJ·mol⁻¹'),
-        ')', ':').replace('(', ''))
+    heatOfFusion = capitalize(replace_chars(article.getProperty('heat fusion'), ')', ':') \
+        .replace('(', ''))
 
-    heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization', ' kJ·mol⁻¹'),
+    heatOfVaporization = capitalize(replace_chars(article.getProperty('heat vaporization'),
         ')', ':').replace('(', ''))
 
     molarHeatCapacity = capitalize(re.sub(r'[\(]', '', replace_chars(
-        article.getProperty('heat capacity', ' J·mol⁻¹·K⁻¹'), ')', ':').replace(':\n', ': ')))
+        article.getProperty('heat capacity'), ')', ':').replace(':\n', ': ')))
 
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
         article.getProperty('oxidation states', comments=False))
 
-    electronegativity = article.getProperty('electronegativity', ' (Pauling scale)')
+    electronegativity = article.getProperty('electronegativity')
 
-    ionizationEnergies = '\n'.join([key + ': ' + value + ' kJ·mol⁻¹'
+    ionizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
         for key, value in ionizationEnergiesDict[str(number)].items() if value != ''])
 
-    atomicRadius = article.getProperty('atomic radius', ' pm')
+    atomicRadius = article.getProperty('atomic radius')
 
-    covalentRadius = article.getProperty('covalent radius', ' pm')
+    covalentRadius = article.getProperty('covalent radius')
 
-    vanDerWaalsRadius = article.getProperty('van der waals radius', ' pm')
+    vanDerWaalsRadius = article.getProperty('van der waals radius')
 
     crystalStructure = capitalize(article.getProperty('crystal structure')) \
         .replace('A=', 'a=')
@@ -314,48 +331,46 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
         article.getProperty('magnetic ordering', comments=False)))
 
     thermalConductivity = capitalize(replace_chars(
-        article.getProperty('thermal conductivity', ' W·m⁻¹·K⁻¹'), ')', ':') \
+        article.getProperty('thermal conductivity'), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
     thermalExpansion = capitalize(replace_chars(article.getProperty('thermal expansion at 25',
-        ' µm·m⁻¹·K⁻¹', article.getProperty('thermal expansion', ' µm·m⁻¹·K⁻¹')), ')', ':') \
-        .replace('(', '').replace(':\n', ': '))
+        article.getProperty('thermal expansion')), ')', ':').replace('(', '').replace(':\n', ': '))
 
     thermalDiffusivity = capitalize(replace_chars(article.getProperty('thermal diffusivity',
-        ' mm²·s⁻¹', prepend='At 300 K'), ')', ':').replace('(', '').replace(':\n', ': '))
+        prepend='At 300 K'), ')', ':').replace('(', '').replace(':\n', ': '))
 
-    speedOfSound = article.getProperty('speed of sound', ' m·s⁻¹')
-    speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound', ' m·s⁻¹',
-        article.getProperty('speed of sound rod at 20', ' m·s⁻¹',
-        article.getProperty('speed of sound rod at r.t.', ' m·s⁻¹'))), ')', ':') \
+    speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound',
+        article.getProperty('speed of sound rod at 20',
+        article.getProperty('speed of sound rod at r.t.'))), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
-    youngsModulus = capitalize(article.getProperty('young\'s modulus', ' GPa'))
+    youngsModulus = capitalize(article.getProperty('young\'s modulus'))
 
-    shearModulus = capitalize(article.getProperty('shear modulus', ' GPa'))
+    shearModulus = capitalize(article.getProperty('shear modulus'))
 
-    bulkModulus = capitalize(article.getProperty('bulk modulus', ' GPa'))
+    bulkModulus = capitalize(article.getProperty('bulk modulus'))
 
     mohsHardness = capitalize(article.getProperty('mohs hardness'))
 
-    brinellHardness = capitalize(article.getProperty('brinell hardness', ' MPa').replace('HB=: ', ''))
+    brinellHardness = capitalize(article.getProperty('brinell hardness').replace('HB=: ', ''))
 
-    unitPrefix = article.getProperty('electrical resistivity unit prefix')
-    electricalResistivity = capitalize(replace_chars(
-        article.getProperty('electrical resistivity', ' ' + unitPrefix + 'Ω·m',
-            article.getProperty('electrical resistivity at 0', ' ' + unitPrefix + 'Ω·m',
-                article.getProperty('electrical resistivity at 20', ' ' + unitPrefix + 'Ω·m'),
-                'At 0 °C')), ')', ':').replace('(', '').replace(':\n', ': '))
+    prefix = article.getProperty('electrical resistivity unit prefix', units=False) + \
+        article.getUnit('electrical resistivity unit prefix')
+    electricalResistivity = capitalize(replace_chars(article.getProperty('electrical resistivity',
+        article.getProperty('electrical resistivity at 0', article.getProperty(
+            'electrical resistivity at 20', unitPrefix=prefix), 'At 0 °C', unitPrefix=prefix),
+        unitPrefix=prefix), ')', ':').replace('(', '').replace(':\n', ': '))
 
-    bandGap = capitalize(article.getProperty('band gap', ' eV', prepend='At 300 K'))
+    bandGap = capitalize(article.getProperty('band gap', prepend='At 300 K'))
 
-    curiePoint = capitalize(article.getProperty('curie point k', ' K'))
+    curiePoint = capitalize(article.getProperty('curie point k'))
 
-    tensileStrength = article.getProperty('tensile strength', ' MPa')
+    tensileStrength = article.getProperty('tensile strength')
 
     poissonRatio = capitalize(article.getProperty('poisson ratio'))
 
-    vickersHardness = capitalize(article.getProperty('vickers hardness', ' MPa'))
+    vickersHardness = capitalize(article.getProperty('vickers hardness'))
 
     casNumber = capitalize(article.getProperty('cas number'))
 
@@ -466,6 +481,21 @@ if __name__ == '__main__':
 
     jsonData = []
 
+    # Parse all units
+
+    units = {}
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_element')
+    for match in re.finditer(r'{{{([^\|\}]*)\|?}}}([^\{\},\|\u200b]+)', article.getContent()):
+        key = match.group(1).lower()
+        if key not in units.keys():
+            units[key] = ''
+        if units[key] == '':
+            units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
+                article.parseProperty(match.group(2).strip()))
+            if units[key].startswith('(') == False:
+                units[key] = units[key].rstrip('()')
+    units['van der waals radius'] = units['covalent radius'] = units['atomic radius']
+
     # Parse all ionization energies
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
@@ -489,7 +519,7 @@ if __name__ == '__main__':
 
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
-            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
+            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower()), units),
             URL_PREFIX + element.attrib['href'], ionizationEnergiesDict, elementNames))
 
     # Save
