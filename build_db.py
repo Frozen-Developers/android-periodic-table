@@ -53,8 +53,6 @@ class Article:
     def __init__(self, url, units = {}):
         print('Parsing properties from ' + url)
 
-        self.units = units
-
         content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
         content = replace_chars(content, '\u00a0\u2002', '  ')
 
@@ -97,8 +95,6 @@ class Article:
         ]
         for item in replace:
             content = re.sub(item[0], item[1], content, flags=re.IGNORECASE)
-
-        self.content = content
 
         # Parse properties
 
@@ -166,6 +162,22 @@ class Article:
                                 cleanRow[header] = ''
                     self.tables[name].append(cleanRow)
 
+        # Parse units
+
+        if units == {}:
+            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}([^\{\},\|\u200b]+)', content):
+                key = match.group(1).lower()
+                if key not in units.keys():
+                    units[key] = ''
+                if units[key] == '':
+                    units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
+                        self.parseProperty(match.group(2).strip()))
+                    if units[key].startswith('(') == False:
+                        units[key] = units[key].rstrip('()')
+            for match in re.finditer(r'{{{([^\|\}]*)}}} {{#if:{{{([^\|\}]*)\|?}}}', content):
+                units[match.group(1).lower()] = units[match.group(2).lower()]
+        self.units = units
+
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
             soup = BeautifulSoup(string)
@@ -228,13 +240,13 @@ class Article:
     def getAllTables(self):
         return self.tables
 
-    def getContent(self):
-        return self.content
-
     def getUnit(self, name):
         if name in self.units.keys():
             return self.units[name]
         return ''
+
+    def getUnits(self):
+        return self.units
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
@@ -483,18 +495,8 @@ if __name__ == '__main__':
 
     # Parse all units
 
-    units = {}
     article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_element')
-    for match in re.finditer(r'{{{([^\|\}]*)\|?}}}([^\{\},\|\u200b]+)', article.getContent()):
-        key = match.group(1).lower()
-        if key not in units.keys():
-            units[key] = ''
-        if units[key] == '':
-            units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
-                article.parseProperty(match.group(2).strip()))
-            if units[key].startswith('(') == False:
-                units[key] = units[key].rstrip('()')
-    units['van der waals radius'] = units['covalent radius'] = units['atomic radius']
+    units = article.getUnits()
 
     # Parse all ionization energies
 
