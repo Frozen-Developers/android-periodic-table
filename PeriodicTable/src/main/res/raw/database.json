@@ -42095,7 +42095,7 @@
                 "decayModes": [
                     "α"
                 ],
-                "halfLife": "5.5s",
+                "halfLife": "5.5 s",
                 "spin": "",
                 "symbol": "²⁸⁷ᵐFl"
             },
@@ -57667,7 +57667,7 @@
                 "abundance": "",
                 "daughterIsotopes": [],
                 "decayModes": [],
-                "halfLife": "1 min",
+                "halfLife": "4 ms",
                 "spin": "0+",
                 "symbol": "²⁶⁰Fm"
             }
