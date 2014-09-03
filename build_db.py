@@ -50,7 +50,10 @@ class TableCell:
 
 class Article:
 
-    def __init__(self, url, units = {}):
+    units = {}
+    comments = {}
+
+    def __init__(self, url):
         print('Parsing properties from ' + url)
 
         content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
@@ -75,6 +78,8 @@ class Article:
             [ r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1' ],
             [ r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2' ],
             [ r'\[[^ \]\(\)<>]* ([^\]]*)\]', r'\1' ],
+            [ r'(at room temperature)', '' ],
+            [ r'at melting point', '' ],
             [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
             [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
@@ -164,19 +169,36 @@ class Article:
 
         # Parse units
 
-        if units == {}:
+        if self.units == {}:
             for match in re.finditer(r'{{{([^\|\}]*)\|?}}}([^\{\},\|\u200b]+)', content):
                 key = match.group(1).lower()
-                if key not in units.keys():
-                    units[key] = ''
-                if units[key] == '':
-                    units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
+                if key not in self.units.keys():
+                    self.units[key] = ''
+                if self.units[key] == '':
+                    self.units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
                         self.parseProperty(match.group(2).strip()))
-                    if units[key].startswith('(') == False:
-                        units[key] = units[key].rstrip('()')
+                    if self.units[key].startswith('(') == False:
+                        self.units[key] = self.units[key].rstrip('()')
             for match in re.finditer(r'{{{([^\|\}]*)}}} {{#if:{{{([^\|\}]*)\|?}}}', content):
-                units[match.group(1).lower()] = units[match.group(2).lower()]
-        self.units = units
+                self.units[match.group(1).lower()] = self.units[match.group(2).lower()]
+
+        # Parse comments
+
+        if self.comments == {}:
+            for match in re.finditer(r'{{{([^\|\}]*) comment\|?}}}}}([^\|\}]*)}}', content):
+                self.comments[match.group(1).lower() + ' comment'] = match.group(2).strip()
+            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}[^\{\},\|\u200b\(]*(\([^\)]+\))', content):
+                key = match.group(1).lower() + ' comment'
+                if key not in self.comments.keys():
+                    self.comments[key] = ''
+                if self.comments[key] == '':
+                    self.comments[key] = self.parseProperty(match.group(2).strip())
+            for match in re.finditer(r'{{#if:{{{([^\|\}]*)\|?}}}\n? \|([^\|\{\},\|\u200b\(<>]*)', content):
+                key = match.group(1).lower() + ' comment'
+                if key not in self.comments.keys():
+                    self.comments[key] = ''
+                if self.comments[key] == '':
+                    self.comments[key] = self.parseProperty(match.group(2).strip())
 
     def removeHtmlTags(self, string, tags=[]):
         if len(tags) > 0:
@@ -203,10 +225,15 @@ class Article:
         return ''
 
     def getComment(self, name):
+        comment = ''
+        if name + ' comment' in self.comments.keys():
+            comment = self.comments[name + ' comment'].strip('():; \n').replace(' (', ', ')
         if name + ' comment' in self.properties.keys():
-            if self.properties[name + ' comment'] != '':
-                return self.properties[name + ' comment'].strip('():; \n').replace(' (', ', ')
-        return ''
+            prop = self.properties[name + ' comment'].strip('():; \n').replace(' (', ', ')
+            if len(comment) > 0 and len(prop) > 0:
+                comment += ', '
+            comment += prop
+        return comment
 
     def getPrefix(self, name):
         if name + ' prefix' in self.properties.keys():
@@ -225,11 +252,11 @@ class Article:
                     prefix = ', '.join([ prepend, self.getPrefix(fullName),
                         (self.getComment(fullName) if comments else '') ]).strip(', ')
                     unit = ' ' + unitPrefix + self.getUnit(fullName)
-                    result.append((prefix + (', ' if ': ' in value else ': ')
+                    result.append(((prefix + (', ' if ': ' in value else ': ')
                         if prefix != '' else '') + value + append + \
-                        (unit if units and len(unit) > 1 else ''))
+                        (unit if units and len(unit) > 1 else '')).strip())
                 else:
-                    result.append(value)
+                    result.append(value.strip())
         return delimiter.join(result) if len(result) > 0 else default
 
     def getTable(self, name):
@@ -244,9 +271,6 @@ class Article:
         if name in self.units.keys():
             return self.units[name]
         return ''
-
-    def getUnits(self):
-        return self.units
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
@@ -277,7 +301,7 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
 
     configuration = article.getProperty('electron configuration', comments=False)
 
-    shells = article.getProperty('electrons per shell')
+    shells = article.getProperty('electrons per shell', comments=False)
 
     appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(article.getProperty('appearance')) \
         .replace(';', ','))
@@ -285,10 +309,10 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
     phase = article.getProperty('phase', comments=False).capitalize()
 
     density = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3nrt',
-        article.getProperty('density gplstp', prepend='At 0 °C, 101.325 kPa')),
-        ')', ':').strip('(')).replace(' ' + article.getUnit('density gplstp'), '×10⁻³ ' + \
-        article.getUnit('density gpcm3nrt')).replace(article.getUnit('density gpcm3nrt') + ': ',
-        article.getUnit('density gpcm3nrt') + '\n').splitlines()))
+        article.getProperty('density gplstp')), ')', ':').strip('(')).replace(' ' + \
+        article.getUnit('density gplstp'), '×10⁻³ ' + article.getUnit('density gpcm3nrt')) \
+        .replace(article.getUnit('density gpcm3nrt') + ': ', article.getUnit('density gpcm3nrt') \
+        + '\n').splitlines()))
 
     densityMP = '\n'.join(sorted(capitalize(replace_chars(article.getProperty('density gpcm3mp'),
         ')', ':').replace('(', '').replace(article.getUnit('density gpcm3mp') + ': ',
@@ -325,12 +349,12 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
         article.getProperty('oxidation states', comments=False))
 
-    electronegativity = article.getProperty('electronegativity')
+    electronegativity = article.getProperty('electronegativity', comments=False)
 
     ionizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
         for key, value in ionizationEnergiesDict[str(number)].items() if value != ''])
 
-    atomicRadius = article.getProperty('atomic radius')
+    atomicRadius = article.getProperty('atomic radius', comments=False)
 
     covalentRadius = article.getProperty('covalent radius')
 
@@ -349,8 +373,8 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
     thermalExpansion = capitalize(replace_chars(article.getProperty('thermal expansion at 25',
         article.getProperty('thermal expansion')), ')', ':').replace('(', '').replace(':\n', ': '))
 
-    thermalDiffusivity = capitalize(replace_chars(article.getProperty('thermal diffusivity',
-        prepend='At 300 K'), ')', ':').replace('(', '').replace(':\n', ': '))
+    thermalDiffusivity = capitalize(replace_chars(article.getProperty('thermal diffusivity'), ')',
+        ':').replace('(', '').replace(':\n', ': '))
 
     speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound',
         article.getProperty('speed of sound rod at 20',
@@ -371,10 +395,10 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
         article.getUnit('electrical resistivity unit prefix')
     electricalResistivity = capitalize(replace_chars(article.getProperty('electrical resistivity',
         article.getProperty('electrical resistivity at 0', article.getProperty(
-            'electrical resistivity at 20', unitPrefix=prefix), 'At 0 °C', unitPrefix=prefix),
+            'electrical resistivity at 20', unitPrefix=prefix), unitPrefix=prefix),
         unitPrefix=prefix), ')', ':').replace('(', '').replace(':\n', ': '))
 
-    bandGap = capitalize(article.getProperty('band gap', prepend='At 300 K'))
+    bandGap = capitalize(article.getProperty('band gap'))
 
     curiePoint = capitalize(article.getProperty('curie point k'))
 
@@ -495,8 +519,7 @@ if __name__ == '__main__':
 
     # Parse all units
 
-    article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_element')
-    units = article.getUnits()
+    Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_element')
 
     # Parse all ionization energies
 
@@ -521,7 +544,7 @@ if __name__ == '__main__':
 
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
-            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower()), units),
+            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
             URL_PREFIX + element.attrib['href'], ionizationEnergiesDict, elementNames))
 
     # Save
