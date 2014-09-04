@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
+    android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
     android:paddingRight="6dip"
+    android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+    android:paddingEnd="6dip"
     android:paddingTop="8dip"
     android:paddingBottom="8dip"
     android:weightSum="1">
@@ -16,8 +19,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
         android:paddingRight="12dip"
+        android:paddingEnd="12dip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_vertical"/>
 
@@ -26,7 +29,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
-        android:layout_gravity="center_vertical">
+        android:layout_gravity="center_vertical"
+        android:gravity="end">
 
         <TextView
             android:id="@+id/property_half_life"
