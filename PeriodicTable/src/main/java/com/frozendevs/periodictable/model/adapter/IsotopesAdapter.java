@@ -13,29 +13,105 @@ import com.frozendevs.periodictable.model.ElementProperties.Isotope;
 
 public class IsotopesAdapter extends BaseExpandableListAdapter {
 
-    private static final int PROPERTY_HALF_LIFE = 0;
-    private static final int PROPERTY_DECAY_MODES = 1;
-    private static final int PROPERTY_SPIN = 2;
-    private static final int PROPERTY_ABUNDANCE = 3;
-
     private Context mContext;
-
     private Typeface mTypeface;
-    private Isotope[] mIsotopes = new Isotope[0];
+    private IsotopeProperties[] mProperties = new IsotopeProperties[0];
+
+    private class Property {
+        String mName = "", mValue = "";
+
+        Property(String value) {
+            if (value != null) {
+                if (!value.equals("")) mValue = value;
+                else mValue = mContext.getString(R.string.property_value_unknown);
+            }
+        }
+
+        Property(int name, String value) {
+            this(value);
+
+            mName = mContext.getString(name);
+        }
+
+        Property(int name, String value, int noneValue) {
+            this(name, value);
+
+            if (value != null && value.equals("")) {
+                mValue = mContext.getString(noneValue);
+            }
+        }
+
+        Property(int name, String value, int noneValue, int specialValue) {
+            this(name, value, noneValue);
+
+            if (value != null && value.equals("-")) {
+                mValue = mContext.getString(specialValue);
+            }
+        }
+
+        String getName() {
+            return mName;
+        }
+
+        String getValue() {
+            return mValue;
+        }
+    }
+
+    private class IsotopeProperties {
+
+        Property symbol, halfLife, spin, abundance, decayModes;
+
+        public IsotopeProperties(Isotope isotope) {
+            symbol = new Property(isotope.getSymbol());
+            halfLife = new Property(R.string.property_half_life, isotope.getHalfLife(),
+                    R.string.property_value_unknown, R.string.property_value_stable);
+            spin = new Property(R.string.property_spin, isotope.getSpin(),
+                    R.string.property_value_unknown);
+            abundance = new Property(R.string.property_abundance, isotope.getAbundance(),
+                    R.string.property_value_none, R.string.property_value_trace);
+            decayModes = new Property(R.string.property_decay_modes, isotope.getHalfLife().equals("-")
+                    ? mContext.getString(R.string.property_value_none) : isotope.getDecayModes());
+        }
+
+        public Property getSymbol() {
+            return symbol;
+        }
+
+        public Property getHalfLife() {
+            return halfLife;
+        }
+
+        public Property getSpin() {
+            return spin;
+        }
+
+        public Property getAbundance() {
+            return abundance;
+        }
+
+        public Property getDecayModes() {
+            return decayModes;
+        }
+    }
 
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
         mContext = context;
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        if(isotopes != null) {
-            mIsotopes = isotopes;
+        if (isotopes != null) {
+            mProperties = new IsotopeProperties[isotopes.length];
+
+            for (int i = 0; i < isotopes.length; i++) {
+                mProperties[i] = new IsotopeProperties(isotopes[i]);
+            }
         }
     }
 
     @Override
     public int getGroupCount() {
-        return mIsotopes.length;
+        return mProperties.length;
     }
 
     @Override
@@ -44,27 +120,23 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public String getGroup(int groupPosition) {
-        return mIsotopes[groupPosition].getSymbol();
+    public IsotopeProperties getGroup(int groupPosition) {
+        return mProperties[groupPosition];
     }
 
     @Override
-    public String[] getChild(int groupPosition, int childPosition) {
+    public Property getChild(int groupPosition, int childPosition) {
+        IsotopeProperties properties = getGroup(groupPosition);
+
         switch (childPosition) {
-            case PROPERTY_HALF_LIFE:
-                return new String[] { getString(R.string.property_half_life),
-                        mIsotopes[groupPosition].getHalfLife() };
-
-            case PROPERTY_DECAY_MODES:
-                return new String[] { getString(R.string.property_decay_modes), mIsotopes[groupPosition].getDecayModes() };
-
-            case PROPERTY_SPIN:
-                return new String[] { getString(R.string.property_spin),
-                        mIsotopes[groupPosition].getSpin() };
-
-            case PROPERTY_ABUNDANCE:
-                return new String[] { getString(R.string.property_abundance),
-                        mIsotopes[groupPosition].getAbundance() };
+            case 0:
+                return properties.getHalfLife();
+            case 1:
+                return properties.getDecayModes();
+            case 2:
+                return properties.getSpin();
+            case 3:
+                return properties.getAbundance();
         }
 
         return null;
@@ -88,42 +160,24 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                              ViewGroup parent) {
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
         }
 
-        TextView symbol = (TextView)convertView.findViewById(R.id.property_symbol);
-        symbol.setText(getGroup(groupPosition));
+        IsotopeProperties properties = getGroup(groupPosition);
+
+        TextView symbol = (TextView) convertView.findViewById(R.id.property_symbol);
+        symbol.setText(properties.getSymbol().getValue());
         symbol.setTypeface(mTypeface);
 
-        String propertyHalfLife = getChild(groupPosition, PROPERTY_HALF_LIFE)[1];
-
-        TextView halfLife = (TextView)convertView.findViewById(R.id.property_half_life);
-        halfLife.setText(getString(R.string.property_half_life_symbol) + ": ");
-        if(propertyHalfLife != null && propertyHalfLife.equals("-")) {
-            halfLife.append(getString(R.string.property_value_stable));
-        }
-        else if(propertyHalfLife != null && !propertyHalfLife.equals("")) {
-            halfLife.append(propertyHalfLife);
-        }
-        else {
-            halfLife.append(getString(R.string.property_value_unknown));
-        }
+        TextView halfLife = (TextView) convertView.findViewById(R.id.property_half_life);
+        halfLife.setText(mContext.getString(R.string.property_half_life_symbol) + ": " +
+                properties.getHalfLife().getValue());
         halfLife.setTypeface(mTypeface);
 
-        String propertyAbundance = getChild(groupPosition, PROPERTY_ABUNDANCE)[1];
-
-        TextView abundance = (TextView)convertView.findViewById(R.id.property_abundance);
-        abundance.setText(getString(R.string.property_natural_abundance_symbol) + ": ");
-        if(propertyAbundance != null && propertyAbundance.equals("-")) {
-            abundance.append(getString(R.string.property_value_trace));
-        }
-        else if(propertyAbundance != null && !propertyAbundance.equals("")) {
-            abundance.append(propertyAbundance);
-        }
-        else {
-            abundance.append(getString(R.string.property_value_none));
-        }
+        TextView abundance = (TextView) convertView.findViewById(R.id.property_abundance);
+        abundance.setText(mContext.getString(R.string.property_natural_abundance_symbol) + ": " +
+                properties.getAbundance().getValue());
         abundance.setTypeface(mTypeface);
 
         return convertView;
@@ -132,30 +186,17 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item, parent, false);
         }
 
-        String[] property = getChild(groupPosition, childPosition);
-        if (property[1] == null) property[1] = "";
-        String[] halfLife = getChild(groupPosition, PROPERTY_HALF_LIFE);
-        if (halfLife[1] == null) property[1] = "";
+        Property property = getChild(groupPosition, childPosition);
 
-        TextView name = (TextView)convertView.findViewById(R.id.property_name);
-        name.setText(property[0]);
+        TextView name = (TextView) convertView.findViewById(R.id.property_name);
+        name.setText(property.getName());
 
-        TextView value = (TextView)convertView.findViewById(R.id.property_value);
-        if((halfLife[1].equals("-") && childPosition == PROPERTY_DECAY_MODES)
-                || (property[1].equals("") && childPosition == PROPERTY_ABUNDANCE))
-            value.setText(R.string.property_value_none);
-        else if(halfLife[1].equals("-") && childPosition == PROPERTY_HALF_LIFE)
-            value.setText(R.string.property_value_stable);
-        else if(property[1].equals("-") && childPosition == PROPERTY_ABUNDANCE)
-            value.setText(R.string.property_value_trace);
-        else if(property[1].equals(""))
-            value.setText(R.string.property_value_unknown);
-        else
-            value.setText(property[1]);
+        TextView value = (TextView) convertView.findViewById(R.id.property_value);
+        value.setText(property.getValue());
         value.setTypeface(mTypeface);
 
         return convertView;
@@ -164,9 +205,5 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
-    }
-
-    private String getString(int resId) {
-        return mContext.getString(resId);
     }
 }
