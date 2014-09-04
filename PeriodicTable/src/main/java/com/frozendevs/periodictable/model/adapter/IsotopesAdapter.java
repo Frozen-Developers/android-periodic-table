@@ -56,21 +56,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                         mIsotopes[groupPosition].getHalfLife() };
 
             case PROPERTY_DECAY_MODES:
-                String[] decayModes = mIsotopes[groupPosition].getDecayModes();
-                String[] daughterIsotopes = mIsotopes[groupPosition].getDaughterIsotopes();
-
-                String combined = "";
-                if(decayModes != null && daughterIsotopes != null) {
-                    for (int i = 0; i < decayModes.length && i < daughterIsotopes.length; i++) {
-                        combined += decayModes[i];
-                        if (i < daughterIsotopes.length)
-                            combined += " \u2192 " + daughterIsotopes[i];
-                        if (i < decayModes.length - 1)
-                            combined += "\n";
-                    }
-                }
-
-                return new String[] { getString(R.string.property_decay_modes), combined };
+                return new String[] { getString(R.string.property_decay_modes), mIsotopes[groupPosition].getDecayModes() };
 
             case PROPERTY_SPIN:
                 return new String[] { getString(R.string.property_spin),

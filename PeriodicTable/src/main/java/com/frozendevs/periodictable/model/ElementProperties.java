@@ -16,8 +16,7 @@ public class ElementProperties extends TableItem implements Serializable {
 
     public class Isotope implements Serializable {
 
-        private String symbol, halfLife, spin, abundance;
-        private String[] decayModes, daughterIsotopes;
+        private String symbol, halfLife, spin, abundance, decayModes;
 
         public String getSymbol() {
             return symbol;
@@ -35,12 +34,8 @@ public class ElementProperties extends TableItem implements Serializable {
             return abundance;
         }
 
-        public String[] getDecayModes() {
+        public String getDecayModes() {
             return decayModes;
-        }
-
-        public String[] getDaughterIsotopes() {
-            return daughterIsotopes;
         }
     }
 
