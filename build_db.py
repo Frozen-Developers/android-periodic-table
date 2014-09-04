@@ -430,6 +430,9 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
                 daughterIsotopes, flags=re.IGNORECASE)
         daughterIsotopes = capitalize(daughterIsotopes).splitlines()
 
+        decayModesAndProducts = '\n'.join([ mode + ' → ' + product for mode, product in \
+            zip(decayModes, daughterIsotopes) ])
+
         spin = ''
         if 'nuclear spin' in row.keys():
             spin = row['nuclear spin']
@@ -454,8 +457,7 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
         isotopes.append({
             'symbol': isotopeSymbol,
             'halfLife': halfLife,
-            'decayModes': decayModes,
-            'daughterIsotopes': daughterIsotopes,
+            'decayModes': decayModesAndProducts,
             'spin': spin,
             'abundance': abundance
         })
