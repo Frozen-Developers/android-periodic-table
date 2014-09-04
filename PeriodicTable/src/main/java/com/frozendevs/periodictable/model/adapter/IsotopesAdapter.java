@@ -9,7 +9,7 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.ElementProperties.Isotope;
+import com.frozendevs.periodictable.model.Isotope;
 
 public class IsotopesAdapter extends BaseExpandableListAdapter {
 
