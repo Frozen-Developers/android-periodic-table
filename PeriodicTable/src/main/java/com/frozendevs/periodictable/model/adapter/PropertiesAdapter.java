@@ -1,5 +1,6 @@
 package com.frozendevs.periodictable.model.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,7 +21,8 @@ import com.frozendevs.periodictable.model.TableItem;
 
 import java.util.Arrays;
 
-public class PropertiesAdapter extends BaseExpandableListAdapter {
+public class PropertiesAdapter extends BaseExpandableListAdapter implements
+        ExpandableListView.OnGroupClickListener {
 
     private static final int PROPERTY_TYPE_HEADER = 0;
     private static final int PROPERTY_TYPE_ITEM = 1;
@@ -182,13 +185,13 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, final ViewGroup parent) {
         Property property = getGroup(groupPosition);
 
         if(property == null) {
             if(convertView == null || (Integer)convertView.getTag() != PROPERTY_TYPE_SUMMARY) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item,
-                        parent, false);
+                convertView = LayoutInflater.from(mContext).inflate(
+                        R.layout.properties_summary_item, parent, false);
                 convertView.setTag(PROPERTY_TYPE_SUMMARY);
             }
 
@@ -226,24 +229,21 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
             else {
                 shells.setText(R.string.property_value_unknown);
             }
-            configuration.setTypeface(mTypeface);
+            shells.setTypeface(mTypeface);
 
             TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
-            String value = "";
             if(properties.getElectronegativity() != null &&
                     properties.getElectronegativity().equals("-")) {
-                value = mContext.getString(R.string.property_value_none);
+                electronegativity.setText(R.string.property_value_none);
             }
             else if(properties.getElectronegativity() != null &&
                     !properties.getElectronegativity().equals("")) {
-                value = properties.getElectronegativity();
+                electronegativity.setText(properties.getElectronegativity());
             }
             else {
-                value = mContext.getString(R.string.property_value_unknown);
+                electronegativity.setText(R.string.property_value_unknown);
             }
-            electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol)
-                    + ": " + value);
-            configuration.setTypeface(mTypeface);
+            electronegativity.setTypeface(mTypeface);
 
             TextView oxidationStates = (TextView)convertView.findViewById(R.id.element_oxidation_states);
             if(properties.getOxidationStates() != null && !properties.getOxidationStates().equals("")) {
@@ -252,7 +252,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
             else {
                 oxidationStates.setText(R.string.property_value_unknown);
             }
-            configuration.setTypeface(mTypeface);
+            oxidationStates.setTypeface(mTypeface);
         }
         else {
             int viewType = property.getType();
@@ -305,6 +305,59 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
+        return false;
+    }
+
+    @Override
+    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
+        Property property = getGroup(groupPosition);
+
+        if(property == null) {
+            ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems().get(0);
+
+            View view = LayoutInflater.from(mContext).inflate(
+                    R.layout.properties_summary_item, null);
+
+            View tileView = mTableAdapter.getView(
+                    mTableAdapter.getItemPosition(properties), null, (ViewGroup) view);
+            tileView.setEnabled(false);
+            ((TextView) tileView.findViewById(R.id.element_symbol)).setText(
+                    R.string.property_atom_symbol);
+            ((TextView) tileView.findViewById(R.id.element_number)).setText(
+                    R.string.property_atomic_number_symbol);
+            ((TextView) tileView.findViewById(R.id.element_name)).setText(
+                    R.string.property_name);
+            ((TextView) tileView.findViewById(R.id.element_weight)).setText(
+                    R.string.property_relative_atomic_mass_symbol);
+
+            ((ViewGroup) view).addView(tileView, 0);
+
+            TextView configuration =
+                    (TextView) view.findViewById(R.id.element_electron_configuration);
+            configuration.setText(R.string.property_electron_configuration);
+            configuration.setTypeface(mTypeface);
+
+            TextView shells = (TextView) view.findViewById(R.id.element_electrons_per_shell);
+            shells.setText(R.string.property_electrons_per_shell);
+            shells.setTypeface(mTypeface);
+
+            TextView electronegativity =
+                    (TextView) view.findViewById(R.id.element_electronegativity);
+            electronegativity.setText(
+                    mContext.getString(R.string.property_electronegativity));
+            electronegativity.setTypeface(mTypeface);
+
+            TextView oxidationStates =
+                    (TextView) view.findViewById(R.id.element_oxidation_states);
+            oxidationStates.setText(R.string.property_oxidation_states);
+            oxidationStates.setTypeface(mTypeface);
+
+            AlertDialog dialog = new AlertDialog.Builder(mContext).create();
+            dialog.setTitle(R.string.context_title_legend);
+            dialog.setView(view);
+            dialog.show();
+        }
+
         return false;
     }
 }

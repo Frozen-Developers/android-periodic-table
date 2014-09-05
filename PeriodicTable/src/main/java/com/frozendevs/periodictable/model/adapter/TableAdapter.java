@@ -2,6 +2,7 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,12 @@ import com.frozendevs.periodictable.model.TableItem;
 public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
     private Context mContext;
+    private Typeface mTypeface;
 
     public TableAdapter(Context context) {
         mContext = context;
+
+        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
     }
 
     @Override
@@ -50,6 +54,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 TextView elementName = (TextView) convertView.findViewById(R.id.element_name);
                 elementName.setTextSize(14f);
                 elementName.setText(position == 92 ? "57 - 71" : "89 - 103");
+                elementName.setTypeface(mTypeface);
 
                 return convertView;
 
@@ -63,10 +68,21 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
                     convertView.setBackgroundColor(getBackgroundColor(position));
 
-                    ((TextView) convertView.findViewById(R.id.element_symbol)).setText(item.getSymbol());
-                    ((TextView) convertView.findViewById(R.id.element_number)).setText(String.valueOf(item.getNumber()));
-                    ((TextView) convertView.findViewById(R.id.element_name)).setText(item.getName());
-                    ((TextView) convertView.findViewById(R.id.element_weight)).setText(item.getStandardAtomicWeight());
+                    TextView symbol = (TextView) convertView.findViewById(R.id.element_symbol);
+                    symbol.setText(item.getSymbol());
+                    symbol.setTypeface(mTypeface);
+
+                    TextView number = (TextView) convertView.findViewById(R.id.element_number);
+                    number.setText(String.valueOf(item.getNumber()));
+                    number.setTypeface(mTypeface);
+
+                    TextView name = (TextView) convertView.findViewById(R.id.element_name);
+                    name.setText(item.getName());
+                    name.setTypeface(mTypeface);
+
+                    TextView weight = (TextView) convertView.findViewById(R.id.element_weight);
+                    weight.setText(item.getStandardAtomicWeight());
+                    weight.setTypeface(mTypeface);
 
                     convertView.setOnClickListener(new View.OnClickListener() {
                         @Override

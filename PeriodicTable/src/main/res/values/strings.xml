@@ -18,6 +18,7 @@
     <string name="action_about">About</string>
     <string name="action_wikipedia_article">Wikipedia article</string>
 
+    <string name="context_title_legend">Legend</string>
     <string name="context_title_options">Options</string>
     <string name="context_copy">Copy</string>
 
@@ -35,6 +36,7 @@
     <string name="properties_header_miscellanea">Miscellanea</string>
 
     <!-- Properties names -->
+    <string name="property_name">Name</string>
     <string name="property_symbol">Symbol</string>
     <string name="property_atomic_number">Atomic number</string>
     <string name="property_weight">Standard atomic weight</string>
@@ -83,9 +85,11 @@
     <string name="property_cas_number">CAS Number</string>
 
     <!-- Properties symbols -->
-    <string name="property_electronegativity_symbol">X</string>
+    <string name="property_atom_symbol">X</string>
     <string name="property_half_life_symbol">t½</string>
     <string name="property_natural_abundance_symbol">NA</string>
+    <string name="property_relative_atomic_mass_symbol">Aᵣ</string>
+    <string name="property_atomic_number_symbol">Z</string>
 
     <!-- Isotopes properties -->
     <string name="property_half_life">Half-life</string>

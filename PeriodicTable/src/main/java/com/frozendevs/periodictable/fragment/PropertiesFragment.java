@@ -19,8 +19,11 @@ public class PropertiesFragment extends Fragment {
         View layout = inflater.inflate(R.layout.properties_fragment, container, false);
 
         ExpandableListView listView = (ExpandableListView)layout.findViewById(R.id.properties_list);
-        listView.setAdapter(new PropertiesAdapter(getActivity(),
-                (ElementProperties)getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES)));
+
+        PropertiesAdapter adapter = new PropertiesAdapter(getActivity(),
+                (ElementProperties)getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES));
+        listView.setAdapter(adapter);
+        listView.setOnGroupClickListener(adapter);
 
         getActivity().registerForContextMenu(listView);
 
