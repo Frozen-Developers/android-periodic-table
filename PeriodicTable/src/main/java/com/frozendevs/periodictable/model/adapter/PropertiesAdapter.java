@@ -197,7 +197,8 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
             if(mTileView == null) {
                 mTileView = mTableAdapter.getView(mTableAdapter.getItemPosition(properties),
                         null, (ViewGroup)convertView);
-                mTileView.setEnabled(false);
+                mTileView.setClickable(false);
+                mTileView.setDuplicateParentStateEnabled(true);
             }
 
             if(convertView.findViewById(mTileView.getId()) == null) {
@@ -225,20 +226,24 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
             else {
                 shells.setText(R.string.property_value_unknown);
             }
+            configuration.setTypeface(mTypeface);
 
             TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
-            electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol) + ": ");
+            String value = "";
             if(properties.getElectronegativity() != null &&
                     properties.getElectronegativity().equals("-")) {
-                electronegativity.append(mContext.getString(R.string.property_value_none));
+                value = mContext.getString(R.string.property_value_none);
             }
             else if(properties.getElectronegativity() != null &&
                     !properties.getElectronegativity().equals("")) {
-                electronegativity.append(properties.getElectronegativity());
+                value = properties.getElectronegativity();
             }
             else {
-                electronegativity.append(mContext.getString(R.string.property_value_unknown));
+                value = mContext.getString(R.string.property_value_unknown);
             }
+            electronegativity.setText(mContext.getString(R.string.property_electronegativity_symbol)
+                    + ": " + value);
+            configuration.setTypeface(mTypeface);
 
             TextView oxidationStates = (TextView)convertView.findViewById(R.id.element_oxidation_states);
             if(properties.getOxidationStates() != null && !properties.getOxidationStates().equals("")) {
@@ -247,6 +252,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter {
             else {
                 oxidationStates.setText(R.string.property_value_unknown);
             }
+            configuration.setTypeface(mTypeface);
         }
         else {
             int viewType = property.getType();
