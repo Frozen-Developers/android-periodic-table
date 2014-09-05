@@ -1,11 +1,16 @@
 package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.graphics.drawable.StateListDrawable;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -14,29 +19,46 @@ import com.frozendevs.periodictable.model.TableItem;
 
 import java.util.Arrays;
 
-public class PropertiesAdapter extends BaseAdapter {
+public class PropertiesAdapter extends BaseExpandableListAdapter {
 
-    private static final int VIEW_TYPE_HEADER = 0;
-    private static final int VIEW_TYPE_ITEM = 1;
-    private static final int VIEW_TYPE_SUMMARY = 2;
+    private static final int PROPERTY_TYPE_HEADER = 0;
+    private static final int PROPERTY_TYPE_ITEM = 1;
+    private static final int PROPERTY_TYPE_SUMMARY = 2;
 
     private Context mContext;
     private Typeface mTypeface;
     private TableAdapter mTableAdapter;
     private Property[] mPropertiesPairs = new Property[0];
     private View mTileView;
+    private StateListDrawable mGroupIndicator;
 
     private class Property {
         int mName;
-        String mValue;
+        String mValue = "";
+        int mType = PROPERTY_TYPE_ITEM;
 
         Property(int name, String value) {
             mName = name;
-            mValue = value;
+
+            if(value != null) {
+                if(value.equals("")) {
+                    mValue = mContext.getString(R.string.property_value_unknown);
+                }
+                else if(value.equals("-")) {
+                    mValue = mContext.getString(R.string.property_value_none);
+                }
+                else mValue = value;
+            }
         }
 
         Property(int name, int value) {
             this(name, String.valueOf(value));
+        }
+
+        Property(int name, String value, int type) {
+            this(name, value);
+
+            mType = type;
         }
 
         int getName() {
@@ -46,6 +68,10 @@ public class PropertiesAdapter extends BaseAdapter {
         String getValue() {
             return mValue;
         }
+
+        int getType() {
+            return mType;
+        }
     }
 
     public PropertiesAdapter(Context context, ElementProperties properties) {
@@ -53,13 +79,21 @@ public class PropertiesAdapter extends BaseAdapter {
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
+        Resources.Theme theme = mContext.getTheme();
+        TypedValue typedValue = new TypedValue();
+        theme.resolveAttribute(android.R.attr.expandableListViewStyle, typedValue , true);
+        TypedArray typedArray = theme.obtainStyledAttributes(typedValue.resourceId,
+                new int[] { android.R.attr.groupIndicator });
+        mGroupIndicator = (StateListDrawable)typedArray.getDrawable(0);
+        typedArray.recycle();
+
         mTableAdapter = new TableAdapter(context);
         mTableAdapter.setItems(Arrays.asList((TableItem)properties));
 
         mPropertiesPairs = new Property[] {
-                new Property(R.string.properties_header_summary, null),
+                new Property(R.string.properties_header_summary, null, PROPERTY_TYPE_HEADER),
                 null,
-                new Property(R.string.properties_header_general, null),
+                new Property(R.string.properties_header_general, null, PROPERTY_TYPE_HEADER),
                 new Property(R.string.property_symbol, properties.getSymbol()),
                 new Property(R.string.property_atomic_number, properties.getNumber()),
                 new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
@@ -69,7 +103,7 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_category, properties.getCategory()),
                 new Property(R.string.property_electron_configuration, properties.getElectronConfiguration()),
                 new Property(R.string.property_electrons_per_shell, properties.getElectronsPerShell()),
-                new Property(R.string.properties_header_physical, null),
+                new Property(R.string.properties_header_physical, null, PROPERTY_TYPE_HEADER),
                 new Property(R.string.property_appearance, properties.getAppearance()),
                 new Property(R.string.property_phase, properties.getPhase()),
                 new Property(R.string.property_density, properties.getDensity()),
@@ -83,14 +117,14 @@ public class PropertiesAdapter extends BaseAdapter {
                 new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion()),
                 new Property(R.string.property_heat_of_vaporization,properties.getHeatOfVaporization()),
                 new Property(R.string.property_molar_heat_capacity, properties.getMolarHeatCapacity()),
-                new Property(R.string.properties_header_atomic, null),
+                new Property(R.string.properties_header_atomic, null, PROPERTY_TYPE_HEADER),
                 new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
                 new Property(R.string.property_electronegativity, properties.getElectronegativity()),
                 new Property(R.string.property_ionization_energies, properties.getIonizationEnergies()),
                 new Property(R.string.property_atomic_radius, properties.getAtomicRadius()),
                 new Property(R.string.property_covalent_radius, properties.getCovalentRadius()),
                 new Property(R.string.property_van_der_waals_radius, properties.getVanDerWaalsRadius()),
-                new Property(R.string.properties_header_miscellanea, null),
+                new Property(R.string.properties_header_miscellanea, null, PROPERTY_TYPE_HEADER),
                 new Property(R.string.property_crystal_structure, properties.getCrystalStructure()),
                 new Property(R.string.property_magnetic_ordering, properties.getMagneticOrdering()),
                 new Property(R.string.property_thermal_conductivity, properties.getThermalConductivity()),
@@ -113,28 +147,49 @@ public class PropertiesAdapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getGroupCount() {
         return mPropertiesPairs.length;
     }
 
     @Override
-    public Property getItem(int position) {
-        return mPropertiesPairs[position];
+    public int getChildrenCount(int groupPosition) {
+        return 0;
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public Property getGroup(int groupPosition) {
+        return mPropertiesPairs[groupPosition];
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Property property = getItem(position);
+    public Property getChild(int groupPosition, int childPosition) {
+        return null;
+    }
+
+    @Override
+    public long getGroupId(int groupPosition) {
+        return groupPosition;
+    }
+
+    @Override
+    public long getChildId(int groupPosition, int childPosition) {
+        return 0;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return true;
+    }
+
+    @Override
+    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
+        Property property = getGroup(groupPosition);
 
         if(property == null) {
-            if(convertView == null || (Integer)convertView.getTag() != VIEW_TYPE_SUMMARY) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item, parent, false);
-                convertView.setTag(VIEW_TYPE_SUMMARY);
+            if(convertView == null || (Integer)convertView.getTag() != PROPERTY_TYPE_SUMMARY) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_summary_item,
+                        parent, false);
+                convertView.setTag(PROPERTY_TYPE_SUMMARY);
             }
 
             ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems().get(0);
@@ -194,31 +249,42 @@ public class PropertiesAdapter extends BaseAdapter {
             }
         }
         else {
-            int viewType = getItemViewType(position);
+            int viewType = property.getType();
 
             if(convertView == null || (Integer)convertView.getTag() != viewType) {
-                convertView = LayoutInflater.from(mContext).inflate(viewType == VIEW_TYPE_ITEM ?
+                convertView = LayoutInflater.from(mContext).inflate(viewType == PROPERTY_TYPE_ITEM ?
                         R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
                 convertView.setTag(viewType);
             }
 
-            if (viewType == VIEW_TYPE_ITEM) {
+            if (viewType == PROPERTY_TYPE_ITEM) {
+                ImageView indicator = (ImageView) convertView.findViewById(R.id.group_indicator);
+
                 TextView name = (TextView) convertView.findViewById(R.id.property_name);
                 name.setText(property.getName());
 
                 TextView value = (TextView) convertView.findViewById(R.id.property_value);
-                if(property.getValue() != null && property.getValue().equals("-")) {
-                    value.setText(mContext.getString(R.string.property_value_none));
-                }
-                else if(property.getValue() != null && !property.getValue().equals("")) {
+                String[] lines = property.getValue().split("\\n");
+                if(lines.length > 3) {
+                    mGroupIndicator.setState(isExpanded ?
+                            new int[] { android.R.attr.state_expanded } : null);
+                    indicator.setImageDrawable(mGroupIndicator.getCurrent());
+                    indicator.setVisibility(View.VISIBLE);
+
                     value.setText(property.getValue());
+                    if (isExpanded) value.setMaxLines(Integer.MAX_VALUE);
+                    else value.setMaxLines(1);
                 }
                 else {
-                    value.setText(R.string.property_value_unknown);
+                    indicator.setVisibility(View.GONE);
+
+                    value.setText(property.getValue());
                 }
                 value.setTypeface(mTypeface);
             } else {
                 ((TextView) convertView).setText(property.getName());
+
+                convertView.setOnClickListener(null);
             }
         }
 
@@ -226,24 +292,13 @@ public class PropertiesAdapter extends BaseAdapter {
     }
 
     @Override
-    public boolean areAllItemsEnabled() {
+    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
+                             View convertView, ViewGroup parent) {
+        return null;
+    }
+
+    @Override
+    public boolean isChildSelectable(int groupPosition, int childPosition) {
         return false;
-    }
-
-    @Override
-    public boolean isEnabled(int position) {
-        return getItemViewType(position) == VIEW_TYPE_ITEM;
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if(getItem(position) == null) return VIEW_TYPE_SUMMARY;
-
-        return getItem(position).getValue() != null ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return 3;
     }
 }

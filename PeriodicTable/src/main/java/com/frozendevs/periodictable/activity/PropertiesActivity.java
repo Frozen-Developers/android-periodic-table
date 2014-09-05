@@ -18,13 +18,12 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
+import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 
@@ -141,25 +140,17 @@ public class PropertiesActivity extends ActionBarActivity {
 
         ContextMenu.ContextMenuInfo info = item.getMenuInfo();
 
-        if(info instanceof AdapterView.AdapterContextMenuInfo) {
-            propertyName = ((TextView)((AdapterView.AdapterContextMenuInfo)info).targetView.
-                    findViewById(R.id.property_name)).getText();
-            propertyValue = ((TextView)((AdapterView.AdapterContextMenuInfo)info).targetView.
-                    findViewById(R.id.property_value)).getText();
+        View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
+
+        TextView propertySymbol = (TextView)view.findViewById(R.id.property_symbol);
+
+        if(propertySymbol != null) {
+            propertyName = getString(R.string.property_symbol);
+            propertyValue = propertySymbol.getText();
         }
         else {
-            View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
-
-            TextView propertySymbol = (TextView)view.findViewById(R.id.property_symbol);
-
-            if(propertySymbol != null) {
-                propertyName = getString(R.string.property_symbol);
-                propertyValue = propertySymbol.getText();
-            }
-            else {
-                propertyName = ((TextView)view.findViewById(R.id.property_name)).getText();
-                propertyValue = ((TextView)view.findViewById(R.id.property_value)).getText();
-            }
+            propertyName = ((TextView)view.findViewById(R.id.property_name)).getText();
+            propertyValue = ((TextView)view.findViewById(R.id.property_value)).getText();
         }
 
         switch (item.getItemId()) {
