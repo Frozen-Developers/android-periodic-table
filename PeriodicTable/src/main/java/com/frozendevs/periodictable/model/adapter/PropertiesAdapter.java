@@ -24,9 +24,9 @@ import java.util.Arrays;
 public class PropertiesAdapter extends BaseExpandableListAdapter implements
         ExpandableListView.OnGroupClickListener {
 
-    private static final int PROPERTY_TYPE_HEADER = 0;
-    private static final int PROPERTY_TYPE_ITEM = 1;
-    private static final int PROPERTY_TYPE_SUMMARY = 2;
+    private static final int VIEW_TYPE_HEADER = 0;
+    private static final int VIEW_TYPE_ITEM = 1;
+    private static final int VIEW_TYPE_SUMMARY = 2;
 
     private Context mContext;
     private Typeface mTypeface;
@@ -39,7 +39,6 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     private class Property {
         int mName;
         String mValue = "";
-        int mType = PROPERTY_TYPE_ITEM;
 
         Property(int name, String value) {
             mName = name;
@@ -59,22 +58,12 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             this(name, String.valueOf(value));
         }
 
-        Property(int name, String value, int type) {
-            this(name, value);
-
-            mType = type;
-        }
-
         int getName() {
             return mName;
         }
 
         String getValue() {
             return mValue;
-        }
-
-        int getType() {
-            return mType;
         }
     }
 
@@ -95,9 +84,9 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         mTableAdapter.setItems(Arrays.asList((TableItem)properties));
 
         mPropertiesPairs = new Property[] {
-                new Property(R.string.properties_header_summary, null, PROPERTY_TYPE_HEADER),
+                new Property(R.string.properties_header_summary, null),
                 null,
-                new Property(R.string.properties_header_general, null, PROPERTY_TYPE_HEADER),
+                new Property(R.string.properties_header_general, null),
                 new Property(R.string.property_symbol, properties.getSymbol()),
                 new Property(R.string.property_atomic_number, properties.getNumber()),
                 new Property(R.string.property_weight, properties.getStandardAtomicWeight()),
@@ -107,7 +96,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 new Property(R.string.property_category, properties.getCategory()),
                 new Property(R.string.property_electron_configuration, properties.getElectronConfiguration()),
                 new Property(R.string.property_electrons_per_shell, properties.getElectronsPerShell()),
-                new Property(R.string.properties_header_physical, null, PROPERTY_TYPE_HEADER),
+                new Property(R.string.properties_header_physical, null),
                 new Property(R.string.property_appearance, properties.getAppearance()),
                 new Property(R.string.property_phase, properties.getPhase()),
                 new Property(R.string.property_density, properties.getDensity()),
@@ -121,14 +110,14 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 new Property(R.string.property_heat_of_fusion, properties.getHeatOfFusion()),
                 new Property(R.string.property_heat_of_vaporization,properties.getHeatOfVaporization()),
                 new Property(R.string.property_molar_heat_capacity, properties.getMolarHeatCapacity()),
-                new Property(R.string.properties_header_atomic, null, PROPERTY_TYPE_HEADER),
+                new Property(R.string.properties_header_atomic, null),
                 new Property(R.string.property_oxidation_states, properties.getOxidationStates()),
                 new Property(R.string.property_electronegativity, properties.getElectronegativity()),
                 new Property(R.string.property_ionization_energies, properties.getIonizationEnergies()),
                 new Property(R.string.property_atomic_radius, properties.getAtomicRadius()),
                 new Property(R.string.property_covalent_radius, properties.getCovalentRadius()),
                 new Property(R.string.property_van_der_waals_radius, properties.getVanDerWaalsRadius()),
-                new Property(R.string.properties_header_miscellanea, null, PROPERTY_TYPE_HEADER),
+                new Property(R.string.properties_header_miscellanea, null),
                 new Property(R.string.property_crystal_structure, properties.getCrystalStructure()),
                 new Property(R.string.property_magnetic_ordering, properties.getMagneticOrdering()),
                 new Property(R.string.property_thermal_conductivity, properties.getThermalConductivity()),
@@ -190,10 +179,10 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         Property property = getGroup(groupPosition);
 
         if(property == null) {
-            if(convertView == null || (Integer)convertView.getTag() != PROPERTY_TYPE_SUMMARY) {
+            if(convertView == null || (Integer)convertView.getTag() != VIEW_TYPE_SUMMARY) {
                 convertView = LayoutInflater.from(mContext).inflate(
                         R.layout.properties_summary_item, parent, false);
-                convertView.setTag(PROPERTY_TYPE_SUMMARY);
+                convertView.setTag(VIEW_TYPE_SUMMARY);
             }
 
             ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems().get(0);
@@ -256,15 +245,15 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             oxidationStates.setTypeface(mTypeface);
         }
         else {
-            int viewType = property.getType();
+            int viewType = getGroupType(groupPosition);
 
             if(convertView == null || (Integer)convertView.getTag() != viewType) {
-                convertView = LayoutInflater.from(mContext).inflate(viewType == PROPERTY_TYPE_ITEM ?
+                convertView = LayoutInflater.from(mContext).inflate(viewType == VIEW_TYPE_ITEM ?
                         R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
                 convertView.setTag(viewType);
             }
 
-            if (viewType == PROPERTY_TYPE_ITEM) {
+            if (viewType == VIEW_TYPE_ITEM) {
                 ImageView indicator = (ImageView) convertView.findViewById(R.id.group_indicator);
 
                 TextView name = (TextView) convertView.findViewById(R.id.property_name);
@@ -317,7 +306,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             if(mLegendDialog == null) {
                 mLegendDialog = new AlertDialog.Builder(mContext).create();
                 mLegendDialog.setTitle(R.string.context_title_legend);
-                
+
                 ElementProperties properties =
                         (ElementProperties)mTableAdapter.getAllItems().get(0);
 
@@ -367,5 +356,24 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         }
 
         return false;
+    }
+
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public int getGroupType(int groupPosition) {
+        Property property = getGroup(groupPosition);
+
+        if(property == null) return VIEW_TYPE_SUMMARY;
+
+        return !property.getValue().equals("") ? VIEW_TYPE_ITEM : VIEW_TYPE_HEADER;
+    }
+
+    @Override
+    public int getGroupTypeCount() {
+        return 3;
     }
 }
