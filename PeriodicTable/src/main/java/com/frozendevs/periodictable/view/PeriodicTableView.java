@@ -74,6 +74,8 @@ public class PeriodicTableView extends ZoomableScrollView {
 
                 y += getScaledTileSize() + DEFAULT_SPACING;
             }
+
+            super.onDraw(canvas);
         }
     }
 
