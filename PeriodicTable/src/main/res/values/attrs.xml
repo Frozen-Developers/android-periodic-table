@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="PeriodicTableView">
+    <declare-styleable name="ZoomableScrollView">
         <attr name="android:background"/>
         <attr name="android:clickable"/>
         <attr name="android:contentDescription"/>
