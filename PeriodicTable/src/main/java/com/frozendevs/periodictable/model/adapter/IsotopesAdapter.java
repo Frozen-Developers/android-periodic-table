@@ -70,8 +70,9 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                     R.string.property_value_unknown);
             abundance = new Property(R.string.property_abundance, isotope.getAbundance(),
                     R.string.property_value_none, R.string.property_value_trace);
-            decayModes = new Property(R.string.property_decay_modes, isotope.getHalfLife().equals("-")
-                    ? mContext.getString(R.string.property_value_none) : isotope.getDecayModes());
+            decayModes = new Property(
+                    R.string.property_decay_modes, isotope.getHalfLife().equals("-") ?
+                    mContext.getString(R.string.property_value_none) : isotope.getDecayModes());
         }
 
         public Property getSymbol() {
@@ -93,6 +94,14 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         public Property getDecayModes() {
             return decayModes;
         }
+    }
+
+    private class GroupHolder {
+        TextView symbol, halfLife, abundance;
+    }
+
+    private class ChildHolder {
+        TextView name, value;
     }
 
     public IsotopesAdapter(Context context, Isotope[] isotopes) {
@@ -144,12 +153,12 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
     @Override
     public long getGroupId(int groupPosition) {
-        return groupPosition + 1;
+        return groupPosition;
     }
 
     @Override
     public long getChildId(int groupPosition, int childPosition) {
-        return getGroupId(groupPosition) * (childPosition + 1);
+        return (getGroupId(groupPosition) * getChildrenCount(groupPosition)) + childPosition;
     }
 
     @Override
@@ -161,24 +170,30 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
                              ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item, parent, false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item,
+                    parent, false);
+
+            GroupHolder groupHolder = new GroupHolder();
+
+            groupHolder.symbol = (TextView) convertView.findViewById(R.id.property_symbol);
+            groupHolder.symbol.setTypeface(mTypeface);
+            groupHolder.halfLife = (TextView) convertView.findViewById(R.id.property_half_life);
+            groupHolder.halfLife.setTypeface(mTypeface);
+            groupHolder.abundance = (TextView) convertView.findViewById(R.id.property_abundance);
+            groupHolder.abundance.setTypeface(mTypeface);
+
+            convertView.setTag(groupHolder);
         }
 
         IsotopeProperties properties = getGroup(groupPosition);
 
-        TextView symbol = (TextView) convertView.findViewById(R.id.property_symbol);
-        symbol.setText(properties.getSymbol().getValue());
-        symbol.setTypeface(mTypeface);
+        GroupHolder groupHolder = (GroupHolder)convertView.getTag();
 
-        TextView halfLife = (TextView) convertView.findViewById(R.id.property_half_life);
-        halfLife.setText(mContext.getString(R.string.property_half_life_symbol) + ": " +
+        groupHolder.symbol.setText(properties.getSymbol().getValue());
+        groupHolder.halfLife.setText(mContext.getString(R.string.property_half_life_symbol) + ": " +
                 properties.getHalfLife().getValue());
-        halfLife.setTypeface(mTypeface);
-
-        TextView abundance = (TextView) convertView.findViewById(R.id.property_abundance);
-        abundance.setText(mContext.getString(R.string.property_natural_abundance_symbol) + ": " +
-                properties.getAbundance().getValue());
-        abundance.setTypeface(mTypeface);
+        groupHolder.abundance.setText(mContext.getString(R.string.property_natural_abundance_symbol)
+                + ": " + properties.getAbundance().getValue());
 
         return convertView;
     }
@@ -187,17 +202,24 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
                              View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item, parent, false);
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item,
+                    parent, false);
+
+            ChildHolder childHolder = new ChildHolder();
+
+            childHolder.name = (TextView) convertView.findViewById(R.id.property_name);
+            childHolder.value = (TextView) convertView.findViewById(R.id.property_value);
+            childHolder.value.setTypeface(mTypeface);
+
+            convertView.setTag(childHolder);
         }
 
         Property property = getChild(groupPosition, childPosition);
 
-        TextView name = (TextView) convertView.findViewById(R.id.property_name);
-        name.setText(property.getName());
+        ChildHolder childHolder = (ChildHolder)convertView.getTag();
 
-        TextView value = (TextView) convertView.findViewById(R.id.property_value);
-        value.setText(property.getValue());
-        value.setTypeface(mTypeface);
+        childHolder.name.setText(property.getName());
+        childHolder.value.setText(property.getValue());
 
         return convertView;
     }
