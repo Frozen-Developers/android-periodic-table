@@ -97,7 +97,7 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     @Override
-    public boolean onSingleTapUp(MotionEvent e) {
+    public boolean onSingleTapConfirmed(MotionEvent e) {
         if(mAdapter != null && !mAdapter.isEmpty()) {
             float rawX = e.getX() + getScrollX();
             float rawY = e.getY() + getScrollY();
