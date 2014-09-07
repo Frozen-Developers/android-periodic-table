@@ -108,9 +108,9 @@ public class PeriodicTableView extends ZoomableScrollView {
             if(view != null) {
                 if(view.isClickable()) {
                     playSoundEffect(SoundEffectConstants.CLICK);
-                }
 
-                view.performClick();
+                    view.performClick();
+                }
             }
         }
 
