@@ -70,10 +70,14 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 convertView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(mContext, PropertiesActivity.class);
-                        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
-                                ((ViewHolder)v.getTag()).integerNumber);
-                        mContext.startActivity(intent);
+                        ViewHolder viewHolder = (ViewHolder)v.getTag();
+
+                        if(viewHolder.integerNumber > 0) {
+                            Intent intent = new Intent(mContext, PropertiesActivity.class);
+                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
+                                    viewHolder.integerNumber);
+                            mContext.startActivity(intent);
+                        }
                     }
                 });
             }
