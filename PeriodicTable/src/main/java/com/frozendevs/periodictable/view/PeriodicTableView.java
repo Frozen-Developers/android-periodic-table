@@ -55,25 +55,30 @@ public class PeriodicTableView extends ZoomableScrollView {
     @Override
     protected void onDraw(Canvas canvas) {
         if(mAdapter != null && !mAdapter.isEmpty() && mBitmaps != null) {
+            float tileSize = getScaledTileSize();
+
             float y = (getHeight() - getScaledHeight()) / 2f;
 
             for(int row = 0; row < ROWS_COUNT; row++) {
                 float x = (getWidth() - getScaledWidth()) / 2f;
 
                 for(int column = 0; column < COLUMNS_COUNT; column++) {
-                    int position = (row * COLUMNS_COUNT) + column;
+                    if(x + tileSize > getScrollX() && x < getScrollX() + getWidth() &&
+                            y + tileSize > getScrollY() && y < getScrollY() + getHeight()) {
+                        int position = (row * COLUMNS_COUNT) + column;
 
-                    if(mBitmaps[position] != null) {
-                        mMatrix.reset();
-                        mMatrix.postScale(getZoom(), getZoom());
-                        mMatrix.postTranslate(x, y);
-                        canvas.drawBitmap(mBitmaps[position], mMatrix, mPaint);
+                        if (mBitmaps[position] != null) {
+                            mMatrix.reset();
+                            mMatrix.postScale(getZoom(), getZoom());
+                            mMatrix.postTranslate(x, y);
+                            canvas.drawBitmap(mBitmaps[position], mMatrix, mPaint);
+                        }
                     }
 
-                    x += getScaledTileSize() + DEFAULT_SPACING;
+                    x += tileSize + DEFAULT_SPACING;
                 }
 
-                y += getScaledTileSize() + DEFAULT_SPACING;
+                y += tileSize + DEFAULT_SPACING;
             }
 
             super.onDraw(canvas);
