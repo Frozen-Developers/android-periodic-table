@@ -17,6 +17,11 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
     private Context mContext;
     private Typeface mTypeface;
 
+    private class ViewHolder {
+        TextView symbol, number, name, weight;
+        int integerNumber;
+    }
+
     public TableAdapter(Context context) {
         mContext = context;
 
@@ -42,64 +47,66 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        switch (position) {
-            case 92:
-            case 110:
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
-                }
+        TableItem item = getItem(position);
 
-                convertView.setBackgroundColor(getBackgroundColor(position));
+        if (item != null || position == 92 || position == 110) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
+                        parent, false);
 
-                TextView elementName = (TextView) convertView.findViewById(R.id.element_name);
-                elementName.setTextSize(14f);
-                elementName.setText(position == 92 ? "57 - 71" : "89 - 103");
-                elementName.setTypeface(mTypeface);
+                ViewHolder viewHolder = new ViewHolder();
 
-                convertView.setClickable(false);
+                viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
+                viewHolder.symbol.setTypeface(mTypeface);
+                viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
+                viewHolder.number.setTypeface(mTypeface);
+                viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
+                viewHolder.name.setTypeface(mTypeface);
+                viewHolder.weight = (TextView) convertView.findViewById(R.id.element_weight);
+                viewHolder.weight.setTypeface(mTypeface);
 
-                return convertView;
+                convertView.setTag(viewHolder);
 
-            default:
-                final TableItem item = getItem(position);
-
-                if (item != null) {
-                    if (convertView == null) {
-                        convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item, parent, false);
+                convertView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(mContext, PropertiesActivity.class);
+                        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
+                                ((ViewHolder)v.getTag()).integerNumber);
+                        mContext.startActivity(intent);
                     }
+                });
+            }
 
-                    convertView.setBackgroundColor(getBackgroundColor(position));
+            convertView.setBackgroundColor(getBackgroundColor(position));
 
-                    TextView symbol = (TextView) convertView.findViewById(R.id.element_symbol);
-                    symbol.setText(item.getSymbol());
-                    symbol.setTypeface(mTypeface);
+            ViewHolder viewHolder = (ViewHolder)convertView.getTag();
 
-                    TextView number = (TextView) convertView.findViewById(R.id.element_number);
-                    number.setText(String.valueOf(item.getNumber()));
-                    number.setTypeface(mTypeface);
+            switch (position) {
+                case 92:
+                case 110:
+                    viewHolder.symbol.setText("");
+                    viewHolder.number.setText("");
+                    viewHolder.name.setTextSize(14f);
+                    viewHolder.name.setText(position == 92 ? "57 - 71" : "89 - 103");
+                    viewHolder.weight.setText("");
 
-                    TextView name = (TextView) convertView.findViewById(R.id.element_name);
-                    name.setText(item.getName());
-                    name.setTypeface(mTypeface);
+                    convertView.setClickable(false);
+                    break;
 
-                    TextView weight = (TextView) convertView.findViewById(R.id.element_weight);
-                    weight.setText(item.getStandardAtomicWeight());
-                    weight.setTypeface(mTypeface);
-
-                    convertView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(mContext, PropertiesActivity.class);
-                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
-                            mContext.startActivity(intent);
-                        }
-                    });
+                default:
+                    viewHolder.symbol.setText(item.getSymbol());
+                    viewHolder.number.setText(String.valueOf(item.getNumber()));
+                    viewHolder.name.setTextSize(12f);
+                    viewHolder.name.setText(item.getName());
+                    viewHolder.weight.setText(item.getStandardAtomicWeight());
+                    viewHolder.integerNumber = item.getNumber();
 
                     convertView.setClickable(true);
+                    break;
+            }
 
-                    return convertView;
-                }
-                break;
+            return convertView;
         }
 
         return null;
