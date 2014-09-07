@@ -2,14 +2,14 @@ package com.frozendevs.periodictable.activity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -109,7 +109,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
             @Override
             public boolean onQueryTextChange(String newText) {
                 if(mViewPager.getCurrentItem() > 0)
-                    mViewPager.setCurrentItem(0, false);
+                    mViewPager.setCurrentItem(0);
 
                 adapter.filter(newText.toLowerCase(getResources().getConfiguration().locale));
                 return true;
@@ -137,7 +137,7 @@ public class MainActivity extends ActionBarActivity implements ActionBar.TabList
         switch (item.getItemId()) {
             case R.id.action_search:
                 if(mViewPager.getCurrentItem() > 0)
-                    mViewPager.setCurrentItem(0, false);
+                    mViewPager.setCurrentItem(0);
                 return true;
 
             case R.id.action_about:
