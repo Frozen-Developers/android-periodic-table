@@ -25,9 +25,8 @@ public class PeriodicTableView extends ZoomableScrollView {
     private View mEmptyView = null;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
     private Adapter mAdapter;
-    private Bitmap[] mBitmaps;
+    private View[] mViews;
     private Matrix mMatrix = new Matrix();
-    private View mConvertView;
 
     public PeriodicTableView(Context context) {
         super(context);
@@ -54,26 +53,35 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if(mAdapter != null && !mAdapter.isEmpty() && mBitmaps != null) {
+        if(mAdapter != null && !mAdapter.isEmpty() && mViews != null) {
+            float tileSize = getScaledTileSize();
+
             float y = (getHeight() - getScaledHeight()) / 2f;
 
             for(int row = 0; row < ROWS_COUNT; row++) {
                 float x = (getWidth() - getScaledWidth()) / 2f;
 
                 for(int column = 0; column < COLUMNS_COUNT; column++) {
-                    int position = (row * COLUMNS_COUNT) + column;
+                    if(x + tileSize > getScrollX() && x < getScrollX() + getWidth() &&
+                            y + tileSize > getScrollY() && y < getScrollY() + getHeight()) {
+                        int position = (row * COLUMNS_COUNT) + column;
 
-                    if(mBitmaps[position] != null) {
-                        mMatrix.reset();
-                        mMatrix.postScale(getZoom(), getZoom());
-                        mMatrix.postTranslate(x, y);
-                        canvas.drawBitmap(mBitmaps[position], mMatrix, mPaint);
+                        if (mViews[position] != null) {
+                            Bitmap bitmap = mViews[position].getDrawingCache();
+
+                            if (bitmap != null) {
+                                mMatrix.reset();
+                                mMatrix.postScale(getZoom(), getZoom());
+                                mMatrix.postTranslate(x, y);
+                                canvas.drawBitmap(bitmap, mMatrix, mPaint);
+                            }
+                        }
                     }
 
-                    x += getScaledTileSize() + DEFAULT_SPACING;
+                    x += tileSize + DEFAULT_SPACING;
                 }
 
-                y += getScaledTileSize() + DEFAULT_SPACING;
+                y += tileSize + DEFAULT_SPACING;
             }
 
             super.onDraw(canvas);
@@ -97,15 +105,19 @@ public class PeriodicTableView extends ZoomableScrollView {
             float startY = (getHeight() - getScaledHeight()) / 2f;
             float startX = (getWidth() - getScaledWidth()) / 2f;
 
-            View view = mAdapter.getView(((int)((rawY - startY) / tileSize) * COLUMNS_COUNT) +
-                    (int)((rawX - startX) / tileSize), mConvertView, this);
+            int position = ((int) ((rawY - startY) / tileSize) * COLUMNS_COUNT) +
+                    (int) ((rawX - startX) / tileSize);
 
-            if(view != null) {
-                if(view.isClickable()) {
-                    playSoundEffect(SoundEffectConstants.CLICK);
+            if(position >= 0 && position < mViews.length) {
+                View view = mViews[position];
+
+                if (view != null) {
+                    if (view.isClickable()) {
+                        playSoundEffect(SoundEffectConstants.CLICK);
+                    }
+
+                    view.performClick();
                 }
-
-                view.performClick();
             }
         }
 
@@ -132,36 +144,29 @@ public class PeriodicTableView extends ZoomableScrollView {
                 @Override
                 public void onChanged() {
                     if(!mAdapter.isEmpty()) {
-                        mBitmaps = new Bitmap[COLUMNS_COUNT * ROWS_COUNT];
+                        mViews = new View[COLUMNS_COUNT * ROWS_COUNT];
 
                         for(int row = 0; row < ROWS_COUNT; row++) {
                             for(int column = 0; column < COLUMNS_COUNT; column++) {
                                 int position = (row * COLUMNS_COUNT) + column;
 
-                                View view = mAdapter.getView(position, mConvertView,
-                                        PeriodicTableView.this);
+                                View view = mAdapter.getView(position, null, PeriodicTableView.this);
 
                                 if(view != null) {
                                     view.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                                                     MeasureSpec.EXACTLY),
                                             MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                                                     MeasureSpec.EXACTLY));
+
                                     view.layout(0, 0, view.getMeasuredWidth(),
                                             view.getMeasuredHeight());
 
                                     view.buildDrawingCache();
 
-                                    if(view.getDrawingCache() != null) {
-                                        mBitmaps[position] = Bitmap.createBitmap(
-                                                view.getDrawingCache());
-                                    }
-
-                                    view.destroyDrawingCache();
+                                    mViews[position] = view;
                                 }
                             }
                         }
-
-                        invalidate();
 
                         updateEmptyStatus(false);
                     }
