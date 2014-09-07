@@ -8,6 +8,7 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.widget.Adapter;
 
@@ -100,6 +101,10 @@ public class PeriodicTableView extends ZoomableScrollView {
                     (int)((rawX - startX) / tileSize), mConvertView, this);
 
             if(view != null) {
+                if(view.isClickable()) {
+                    playSoundEffect(SoundEffectConstants.CLICK);
+                }
+
                 view.performClick();
             }
         }

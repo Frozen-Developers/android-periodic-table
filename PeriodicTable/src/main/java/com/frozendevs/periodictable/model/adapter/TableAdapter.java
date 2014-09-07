@@ -56,6 +56,8 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 elementName.setText(position == 92 ? "57 - 71" : "89 - 103");
                 elementName.setTypeface(mTypeface);
 
+                convertView.setClickable(false);
+
                 return convertView;
 
             default:
@@ -92,6 +94,8 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                             mContext.startActivity(intent);
                         }
                     });
+
+                    convertView.setClickable(true);
 
                     return convertView;
                 }
