@@ -4,6 +4,7 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.os.Build;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.widget.EdgeEffectCompat;
@@ -15,13 +16,15 @@ import android.widget.FrameLayout;
 import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.widget.Zoomer;
 
 public class ZoomableScrollView extends FrameLayout implements GestureDetector.OnGestureListener,
-        ScaleGestureDetector.OnScaleGestureListener {
+        ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnDoubleTapListener {
 
     private static final float DEFAULT_MAX_ZOOM = 1f;
 
     private OverScroller mOverScroller;
+    private Zoomer mZoomer;
     private ScaleGestureDetector mScaleDetector;
     private GestureDetector mGestureDetector;
     private EdgeEffectCompat mEdgeEffectTop;
@@ -32,6 +35,8 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     private float mMinZoom = 0f;
     private float mZoom = 0f;
     private float mMaxZoom = 1f;
+    private Point mZoomFocalPoint = new Point();
+    private float mStartZoom;
 
     public ZoomableScrollView(Context context) {
         super(context);
@@ -59,6 +64,7 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
         styledAttributes.recycle();
 
         mOverScroller = new OverScroller(context);
+        mZoomer = new Zoomer(context);
         mScaleDetector = new ScaleGestureDetector(context, this);
         mGestureDetector = new GestureDetector(context, this);
 
@@ -145,12 +151,12 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
             int oldX = getScrollX() - getMinimalScrollX() + x;
             int oldY = getScrollY() - getMinimalScrollY() + y;
 
-            mZoom = zoom;
+            mZoom = clamp(mMinZoom, zoom, mMaxZoom);
 
             scrollTo(getMinimalScrollX() + Math.round(oldX * zoomRatio) - x,
                     getMinimalScrollY() + Math.round(oldY * zoomRatio) - y);
 
-            invalidate();
+            ViewCompat.postInvalidateOnAnimation(this);
         }
     }
 
@@ -316,12 +322,12 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     @Override
     public void computeScroll() {
+        boolean needsInvalidate = false;
+
         if(mOverScroller.computeScrollOffset()) {
             scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                boolean needsInvalidate = false;
-
                 if(getScaledWidth() > getWidth()) {
                     if (getScrollX() == getMinimalScrollX() && mEdgeEffectLeft.isFinished()) {
                         mEdgeEffectLeft.onAbsorb((int)mOverScroller.getCurrVelocity());
@@ -343,11 +349,16 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
                         needsInvalidate = true;
                     }
                 }
-
-                if (needsInvalidate) {
-                    ViewCompat.postInvalidateOnAnimation(this);
-                }
             }
+        }
+
+        if(mZoomer.computeZoom()) {
+            zoomTo(mZoomFocalPoint.x, mZoomFocalPoint.y, mStartZoom + mZoomer.getCurrZoom());
+            needsInvalidate = true;
+        }
+
+        if (needsInvalidate) {
+            ViewCompat.postInvalidateOnAnimation(this);
         }
     }
 
@@ -395,5 +406,31 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     private int clamp(int min, int val, int max) {
         return Math.max(min, Math.min(val, max));
+    }
+
+    @Override
+    public boolean onSingleTapConfirmed(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onDoubleTap(MotionEvent e) {
+        mZoomer.forceFinished(true);
+
+        mZoomFocalPoint.x = (int)e.getX();
+        mZoomFocalPoint.y = (int)e.getY();
+
+        mStartZoom = mZoom;
+
+        mZoomer.startZoom(mZoom > mMinZoom + 0.001f ? -(mZoom - mMinZoom) : mMaxZoom - mZoom);
+
+        ViewCompat.postInvalidateOnAnimation(this);
+
+        return true;
+    }
+
+    @Override
+    public boolean onDoubleTapEvent(MotionEvent e) {
+        return false;
     }
 }
