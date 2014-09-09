@@ -32,16 +32,14 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     private Typeface mTypeface;
     private TableAdapter mTableAdapter;
     private Property[] mPropertiesPairs = new Property[0];
-    private View mTileView;
     private StateListDrawable mGroupIndicator;
     private AlertDialog mLegendDialog;
 
     private class Property {
-        int mName;
-        String mValue = "";
+        String mName = "", mValue = "";
 
         Property(int name, String value) {
-            mName = name;
+            mName = mContext.getString(name);
 
             if(value != null) {
                 if(value.equals("")) {
@@ -58,13 +56,18 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             this(name, String.valueOf(value));
         }
 
-        int getName() {
+        String getName() {
             return mName;
         }
 
         String getValue() {
             return mValue;
         }
+    }
+
+    private class ViewHolder {
+        ImageView indicator;
+        TextView name, value;
     }
 
     public PropertiesAdapter(Context context, ElementProperties properties) {
@@ -175,108 +178,83 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     }
 
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, final ViewGroup parent) {
+    public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
+                             final ViewGroup parent) {
         Property property = getGroup(groupPosition);
 
         if(property == null) {
-            if(convertView == null || (Integer)convertView.getTag() != VIEW_TYPE_SUMMARY) {
+            if(convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(
                         R.layout.properties_summary_item, parent, false);
-                convertView.setTag(VIEW_TYPE_SUMMARY);
-            }
 
-            ElementProperties properties = (ElementProperties)mTableAdapter.getAllItems().get(0);
+                View tileView = convertView.findViewById(R.id.tile_view);
+                mTableAdapter.getView(mTableAdapter.getItemPosition(
+                        mTableAdapter.getAllItems().get(0)), tileView, (ViewGroup)convertView);
+                tileView.setClickable(false);
+                tileView.setDuplicateParentStateEnabled(true);
 
-            if(mTileView == null) {
-                mTileView = mTableAdapter.getView(mTableAdapter.getItemPosition(properties),
-                        null, (ViewGroup)convertView);
-                mTileView.setClickable(false);
-                mTileView.setDuplicateParentStateEnabled(true);
-            }
+                TextView configuration =
+                        (TextView)convertView.findViewById(R.id.element_electron_configuration);
+                configuration.setText(mPropertiesPairs[10].getValue());
+                configuration.setTypeface(mTypeface);
 
-            if(convertView.findViewById(mTileView.getId()) == null) {
-                if(mTileView.getParent() != null) {
-                    ((ViewGroup) mTileView.getParent()).removeView(mTileView);
-                }
-                ((ViewGroup) convertView).addView(mTileView, 0);
-            }
+                TextView shells =
+                        (TextView)convertView.findViewById(R.id.element_electrons_per_shell);
+                shells.setText(mPropertiesPairs[11].getValue());
+                shells.setTypeface(mTypeface);
 
-            TextView configuration = (TextView)convertView.findViewById(R.id.element_electron_configuration);
-            if(properties.getElectronConfiguration() != null &&
-                    !properties.getElectronConfiguration().equals("")) {
-                configuration.setText(properties.getElectronConfiguration());
-            }
-            else {
-                configuration.setText(R.string.property_value_unknown);
-            }
-            configuration.setTypeface(mTypeface);
+                TextView electronegativity =
+                        (TextView)convertView.findViewById(R.id.element_electronegativity);
+                electronegativity.setText(mPropertiesPairs[28].getValue());
+                electronegativity.setTypeface(mTypeface);
 
-            TextView shells = (TextView)convertView.findViewById(R.id.element_electrons_per_shell);
-            if(properties.getElectronsPerShell() != null &&
-                    !properties.getElectronsPerShell().equals("")) {
-                shells.setText(properties.getElectronsPerShell());
+                TextView oxidationStates =
+                        (TextView)convertView.findViewById(R.id.element_oxidation_states);
+                oxidationStates.setText(mPropertiesPairs[27].getValue());
+                oxidationStates.setTypeface(mTypeface);
             }
-            else {
-                shells.setText(R.string.property_value_unknown);
-            }
-            shells.setTypeface(mTypeface);
-
-            TextView electronegativity = (TextView)convertView.findViewById(R.id.element_electronegativity);
-            if(properties.getElectronegativity() != null &&
-                    properties.getElectronegativity().equals("-")) {
-                electronegativity.setText(R.string.property_value_none);
-            }
-            else if(properties.getElectronegativity() != null &&
-                    !properties.getElectronegativity().equals("")) {
-                electronegativity.setText(properties.getElectronegativity());
-            }
-            else {
-                electronegativity.setText(R.string.property_value_unknown);
-            }
-            electronegativity.setTypeface(mTypeface);
-
-            TextView oxidationStates = (TextView)convertView.findViewById(R.id.element_oxidation_states);
-            if(properties.getOxidationStates() != null && !properties.getOxidationStates().equals("")) {
-                oxidationStates.setText(properties.getOxidationStates());
-            }
-            else {
-                oxidationStates.setText(R.string.property_value_unknown);
-            }
-            oxidationStates.setTypeface(mTypeface);
         }
         else {
             int viewType = getGroupType(groupPosition);
 
-            if(convertView == null || (Integer)convertView.getTag() != viewType) {
-                convertView = LayoutInflater.from(mContext).inflate(viewType == VIEW_TYPE_ITEM ?
-                        R.layout.properties_list_item : R.layout.properties_list_header, parent, false);
-                convertView.setTag(viewType);
+            if(convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(
+                        viewType == VIEW_TYPE_ITEM ? R.layout.properties_list_item :
+                                R.layout.properties_list_header, parent, false);
             }
 
             if (viewType == VIEW_TYPE_ITEM) {
-                ImageView indicator = (ImageView) convertView.findViewById(R.id.group_indicator);
+                ViewHolder viewHolder = (ViewHolder)convertView.getTag();
 
-                TextView name = (TextView) convertView.findViewById(R.id.property_name);
-                name.setText(property.getName());
+                if(viewHolder == null) {
+                    viewHolder = new ViewHolder();
 
-                TextView value = (TextView) convertView.findViewById(R.id.property_value);
+                    viewHolder.indicator = (ImageView)convertView.findViewById(R.id.group_indicator);
+                    viewHolder.name = (TextView)convertView.findViewById(R.id.property_name);
+                    viewHolder.value = (TextView)convertView.findViewById(R.id.property_value);
+                    viewHolder.value.setTypeface(mTypeface);
+
+                    convertView.setTag(viewHolder);
+                }
+
+                viewHolder.name.setText(property.getName());
+
                 String[] lines = property.getValue().split("\\n");
                 if(lines.length > 3) {
                     mGroupIndicator.setState(isExpanded ?
                             new int[] { android.R.attr.state_expanded } : null);
-                    indicator.setImageDrawable(mGroupIndicator.getCurrent());
-                    indicator.setVisibility(View.VISIBLE);
+                    viewHolder.indicator.setImageDrawable(mGroupIndicator.getCurrent());
+                    viewHolder.indicator.setVisibility(View.VISIBLE);
 
-                    value.setText(property.getValue());
-                    if (isExpanded) value.setMaxLines(Integer.MAX_VALUE);
-                    else value.setMaxLines(1);
+                    viewHolder.value.setText(property.getValue());
+                    if (isExpanded) viewHolder.value.setMaxLines(Integer.MAX_VALUE);
+                    else viewHolder.value.setMaxLines(1);
                 }
                 else {
-                    indicator.setVisibility(View.GONE);
+                    viewHolder.indicator.setVisibility(View.GONE);
 
-                    value.setText(property.getValue());
+                    viewHolder.value.setText(property.getValue());
                 }
-                value.setTypeface(mTypeface);
             } else {
                 ((TextView) convertView).setText(property.getName());
 
@@ -307,15 +285,14 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 mLegendDialog = new AlertDialog.Builder(mContext).create();
                 mLegendDialog.setTitle(R.string.context_title_legend);
 
-                ElementProperties properties =
-                        (ElementProperties)mTableAdapter.getAllItems().get(0);
-
                 View view = LayoutInflater.from(mContext).inflate(
                         R.layout.properties_summary_item, null);
 
-                View tileView = mTableAdapter.getView(
-                        mTableAdapter.getItemPosition(properties), null, (ViewGroup) view);
-                tileView.setEnabled(false);
+                View tileView = view.findViewById(R.id.tile_view);
+                mTableAdapter.getView(mTableAdapter.getItemPosition(
+                        mTableAdapter.getAllItems().get(0)), tileView, (ViewGroup)view);
+                tileView.setClickable(false);
+
                 ((TextView) tileView.findViewById(R.id.element_symbol)).setText(
                         R.string.property_atom_symbol);
                 ((TextView) tileView.findViewById(R.id.element_number)).setText(
@@ -324,8 +301,6 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                         R.string.property_name);
                 ((TextView) tileView.findViewById(R.id.element_weight)).setText(
                         R.string.property_relative_atomic_mass_symbol);
-
-                ((ViewGroup) view).addView(tileView, 0);
 
                 TextView configuration =
                         (TextView) view.findViewById(R.id.element_electron_configuration);

@@ -53,8 +53,12 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             if (convertView == null) {
                 convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
                         parent, false);
+            }
 
-                ViewHolder viewHolder = new ViewHolder();
+            ViewHolder viewHolder = (ViewHolder)convertView.getTag();
+
+            if(viewHolder == null) {
+                viewHolder = new ViewHolder();
 
                 viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
                 viewHolder.symbol.setTypeface(mTypeface);
@@ -83,8 +87,6 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
             }
 
             convertView.setBackgroundColor(getBackgroundColor(position));
-
-            ViewHolder viewHolder = (ViewHolder)convertView.getTag();
 
             switch (position) {
                 case 92:
