@@ -14,6 +14,9 @@ import com.frozendevs.periodictable.model.TableItem;
 
 public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
+    private static final int VIEW_TYPE_ITEM = 0;
+    private static final int VIEW_TYPE_TEXT = 1;
+
     private Context mContext;
     private Typeface mTypeface;
 
@@ -47,60 +50,113 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        TableItem item = getItem(position);
+        switch (getItemViewType(position)) {
+            case VIEW_TYPE_TEXT:
+                if (convertView == null) {
+                    convertView = LayoutInflater.from(mContext).inflate(R.layout.table_text,
+                            parent, false);
+                }
 
-        if (item != null || position == 92 || position == 110) {
-            if (convertView == null) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
-                        parent, false);
-            }
+                convertView.setBackgroundColor(getBackgroundColor(position));
 
-            ViewHolder viewHolder = (ViewHolder)convertView.getTag();
+                switch (position) {
+                    case 4:
+                        ((TextView)convertView).setText(R.string.category_actinide);
+                        break;
 
-            if(viewHolder == null) {
-                viewHolder = new ViewHolder();
+                    case 5:
+                        ((TextView)convertView).setText(R.string.category_alkali_metal);
+                        break;
 
-                viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
-                viewHolder.symbol.setTypeface(mTypeface);
-                viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
-                viewHolder.number.setTypeface(mTypeface);
-                viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
-                viewHolder.name.setTypeface(mTypeface);
-                viewHolder.weight = (TextView) convertView.findViewById(R.id.element_weight);
-                viewHolder.weight.setTypeface(mTypeface);
+                    case 6:
+                        ((TextView)convertView).setText(R.string.category_alkaline_earth_metal);
+                        break;
 
-                convertView.setTag(viewHolder);
+                    case 7:
+                        ((TextView)convertView).setText(R.string.category_diatomic_nonmetal);
+                        break;
 
-                convertView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ViewHolder viewHolder = (ViewHolder)v.getTag();
+                    case 8:
+                        ((TextView)convertView).setText(R.string.category_lanthanide);
+                        break;
 
-                        if(viewHolder.integerNumber > 0) {
-                            Intent intent = new Intent(mContext, PropertiesActivity.class);
-                            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
-                                    viewHolder.integerNumber);
-                            mContext.startActivity(intent);
-                        }
+                    case 9:
+                        ((TextView)convertView).setText(R.string.category_metalloid);
+                        break;
+
+                    case 22:
+                        ((TextView)convertView).setText(R.string.category_noble_gas);
+                        break;
+
+                    case 23:
+                        ((TextView)convertView).setText(R.string.category_polyatomic_nonmetal);
+                        break;
+
+                    case 24:
+                        ((TextView)convertView).setText(R.string.category_other_metal);
+                        break;
+
+                    case 25:
+                        ((TextView)convertView).setText(R.string.category_transition_metal);
+                        break;
+
+                    case 26:
+                        ((TextView)convertView).setText(R.string.category_unknown);
+                        break;
+
+                    case 92:
+                        ((TextView)convertView).setText("57 - 71");
+                        break;
+
+                    case 110:
+                        ((TextView)convertView).setText("89 - 103");
+                        break;
+                }
+
+                return convertView;
+
+            case VIEW_TYPE_ITEM:
+                TableItem item = getItem(position);
+
+                if(item != null) {
+                    if (convertView == null) {
+                        convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
+                                parent, false);
                     }
-                });
-            }
 
-            convertView.setBackgroundColor(getBackgroundColor(position));
+                    ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 
-            switch (position) {
-                case 92:
-                case 110:
-                    viewHolder.symbol.setText("");
-                    viewHolder.number.setText("");
-                    viewHolder.name.setTextSize(14f);
-                    viewHolder.name.setText(position == 92 ? "57 - 71" : "89 - 103");
-                    viewHolder.weight.setText("");
+                    if (viewHolder == null) {
+                        viewHolder = new ViewHolder();
 
-                    convertView.setClickable(false);
-                    break;
+                        viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
+                        viewHolder.symbol.setTypeface(mTypeface);
+                        viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
+                        viewHolder.number.setTypeface(mTypeface);
+                        viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
+                        viewHolder.name.setTypeface(mTypeface);
+                        viewHolder.weight = (TextView) convertView.findViewById(R.id.element_weight);
+                        viewHolder.weight.setTypeface(mTypeface);
 
-                default:
+                        convertView.setTag(viewHolder);
+
+                        convertView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                ViewHolder viewHolder = (ViewHolder) v.getTag();
+
+                                if (viewHolder.integerNumber > 0) {
+                                    Intent intent = new Intent(mContext, PropertiesActivity.class);
+                                    intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
+                                            viewHolder.integerNumber);
+                                    mContext.startActivity(intent);
+                                }
+                            }
+                        });
+                    }
+
+                    convertView.setBackgroundColor(getBackgroundColor(position));
+
                     viewHolder.symbol.setText(item.getSymbol());
                     viewHolder.number.setText(String.valueOf(item.getNumber()));
                     viewHolder.name.setTextSize(12f);
@@ -109,10 +165,9 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                     viewHolder.integerNumber = item.getNumber();
 
                     convertView.setClickable(true);
-                    break;
-            }
 
-            return convertView;
+                    return convertView;
+                }
         }
 
         return null;
@@ -140,6 +195,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
         int color = R.color.category_unknown_bg;
 
         switch (position) {
+            case 4:
             case 110:
             case 146:
             case 147:
@@ -159,6 +215,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_actinides_bg;
                 break;
 
+            case 5:
             case 18:
             case 36:
             case 54:
@@ -168,6 +225,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_alkali_metals_bg;
                 break;
 
+            case 6:
             case 19:
             case 37:
             case 55:
@@ -178,6 +236,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 break;
 
             case 0:
+            case 7:
             case 32:
             case 33:
             case 34:
@@ -187,6 +246,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_diatomic_nonmetals_bg;
                 break;
 
+            case 8:
             case 92:
             case 128:
             case 129:
@@ -206,6 +266,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_lanthanides_bg;
                 break;
 
+            case 9:
             case 30:
             case 49:
             case 67:
@@ -216,6 +277,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_metalloids_bg;
                 break;
 
+            case 22:
             case 17:
             case 35:
             case 53:
@@ -225,6 +287,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_noble_gases_bg;
                 break;
 
+            case 23:
             case 31:
             case 50:
             case 51:
@@ -232,6 +295,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_polyatomic_nonmetals_bg;
                 break;
 
+            case 24:
             case 48:
             case 66:
             case 84:
@@ -243,6 +307,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
                 color = R.color.category_other_metals_bg;
                 break;
 
+            case 25:
             case 56:
             case 57:
             case 58:
@@ -283,5 +348,20 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
         }
 
         return mContext.getResources().getColor(color);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if(position == 92 || position == 110 || (position >= 4 && position <= 9) ||
+                (position >= 22 && position <= 26)) {
+            return VIEW_TYPE_TEXT;
+        }
+
+        return VIEW_TYPE_ITEM;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 2;
     }
 }
