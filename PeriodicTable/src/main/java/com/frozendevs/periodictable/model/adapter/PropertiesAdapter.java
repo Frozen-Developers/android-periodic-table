@@ -24,27 +24,29 @@ import java.util.Arrays;
 public class PropertiesAdapter extends BaseExpandableListAdapter implements
         ExpandableListView.OnGroupClickListener {
 
-    private static final int VIEW_TYPE_HEADER = 0;
-    private static final int VIEW_TYPE_ITEM = 1;
-    private static final int VIEW_TYPE_SUMMARY = 2;
+    private static enum ViewType {
+        HEADER,
+        ITEM,
+        SUMMARY
+    }
 
     private Context mContext;
     private Typeface mTypeface;
     private TableAdapter mTableAdapter;
-    private Property[] mPropertiesPairs = new Property[0];
+    private Property[] mProperties = new Property[0];
     private StateListDrawable mGroupIndicator;
     private AlertDialog mLegendDialog;
 
     private class Property<T> {
         String mName = "";
         T mValue;
-        int mType = VIEW_TYPE_ITEM;
+        ViewType mType = ViewType.ITEM;
 
         Property(int name, T value) {
             mName = mContext.getString(name);
 
             if(value == null) {
-                mType = VIEW_TYPE_HEADER;
+                mType = ViewType.HEADER;
             }
             else if(value instanceof String) {
                 mValue = (T)parseString((String)value);
@@ -64,7 +66,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             }
         }
 
-        Property(int name, T value, int type) {
+        Property(int name, T value, ViewType type) {
             this(name, value);
 
             mType = type;
@@ -88,7 +90,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             return mValue;
         }
 
-        int getType() {
+        ViewType getType() {
             return mType;
         }
     }
@@ -114,12 +116,12 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         mTableAdapter = new TableAdapter(context);
         mTableAdapter.setItems(Arrays.asList((TableItem)properties));
 
-        mPropertiesPairs = new Property[] {
+        mProperties = new Property[] {
                 new Property<String>(R.string.properties_header_summary, null),
                 new Property<String[]>(R.string.properties_header_summary, new String[] {
                         properties.getElectronConfiguration(), properties.getElectronsPerShell(),
                         properties.getElectronegativity(), properties.getOxidationStates()
-                }, VIEW_TYPE_SUMMARY),
+                }, ViewType.SUMMARY),
                 new Property<String>(R.string.properties_header_general, null),
                 new Property<String>(R.string.property_symbol, properties.getSymbol()),
                 new Property<String>(R.string.property_atomic_number,
@@ -198,7 +200,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
     @Override
     public int getGroupCount() {
-        return mPropertiesPairs.length;
+        return mProperties.length;
     }
 
     @Override
@@ -208,7 +210,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
     @Override
     public Property getGroup(int groupPosition) {
-        return mPropertiesPairs[groupPosition];
+        return mProperties[groupPosition];
     }
 
     @Override
@@ -236,8 +238,8 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                              final ViewGroup parent) {
         Property property = getGroup(groupPosition);
 
-        switch (getGroupType(groupPosition)) {
-            case VIEW_TYPE_SUMMARY:
+        switch (property.getType()) {
+            case SUMMARY:
                 if(convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(
                             R.layout.properties_summary_item, parent, false);
@@ -272,7 +274,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 }
                 break;
 
-            case VIEW_TYPE_ITEM:
+            case ITEM:
                 if(convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(
                             R.layout.properties_list_item, parent, false);
@@ -311,7 +313,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 }
                 break;
 
-            case VIEW_TYPE_HEADER:
+            case HEADER:
                 if(convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(
                             R.layout.properties_list_header, parent, false);
@@ -339,8 +341,8 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
     @Override
     public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-        switch (getGroupType(groupPosition)) {
-            case VIEW_TYPE_SUMMARY:
+        switch (getGroup(groupPosition).getType()) {
+            case SUMMARY:
                 if(mLegendDialog == null) {
                     mLegendDialog = new AlertDialog.Builder(mContext).create();
                     mLegendDialog.setTitle(R.string.context_title_legend);
@@ -401,11 +403,11 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
     @Override
     public int getGroupType(int groupPosition) {
-        return getGroup(groupPosition).getType();
+        return getGroup(groupPosition).getType().ordinal();
     }
 
     @Override
     public int getGroupTypeCount() {
-        return 3;
+        return ViewType.values().length;
     }
 }
