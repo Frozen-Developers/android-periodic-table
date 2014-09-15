@@ -276,7 +276,7 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
+def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames):
     # Properties
 
     number = article.getProperty('number')
@@ -351,8 +351,8 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
 
     electronegativity = article.getProperty('electronegativity', comments=False)
 
-    ionizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
-        for key, value in ionizationEnergiesDict[str(number)].items() if value != ''])
+    molarIonizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
+        for key, value in molarIonizationEnergiesDict[str(number)].items() if value != ''])
 
     atomicRadius = article.getProperty('atomic radius', comments=False)
 
@@ -489,7 +489,7 @@ def parse(article, articleUrl, ionizationEnergiesDict, elementNames):
         'molarHeatCapacity': molarHeatCapacity,
         'oxidationStates': oxidationStates,
         'electronegativity': electronegativity,
-        'ionizationEnergies': ionizationEnergies,
+        'molarIonizationEnergies': molarIonizationEnergies,
         'atomicRadius': atomicRadius,
         'covalentRadius': covalentRadius,
         'vanDerWaalsRadius': vanDerWaalsRadius,
@@ -526,20 +526,20 @@ if __name__ == '__main__':
     # Parse all ionization energies
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
-    ionizationEnergiesDict = {}
+    molarIonizationEnergiesDict = {}
     elementNames = []
     for tableName, table in article.getAllTables().items():
         if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
             for row in table:
                 index = row['number']
-                if index in ionizationEnergiesDict.keys():
-                    ionizationEnergiesDict[index] = OrderedDict(list(
-                        ionizationEnergiesDict[index].items()) + list(row.items()))
+                if index in molarIonizationEnergiesDict.keys():
+                    molarIonizationEnergiesDict[index] = OrderedDict(list(
+                        molarIonizationEnergiesDict[index].items()) + list(row.items()))
                 else:
-                    ionizationEnergiesDict[index] = row
-                ionizationEnergiesDict[index].pop('number', None)
-                name = ionizationEnergiesDict[index].pop('name', None)
-                symbol = ionizationEnergiesDict[index].pop('symbol', None)
+                    molarIonizationEnergiesDict[index] = row
+                molarIonizationEnergiesDict[index].pop('number', None)
+                name = molarIonizationEnergiesDict[index].pop('name', None)
+                symbol = molarIonizationEnergiesDict[index].pop('symbol', None)
                 elementNames.append([ name, symbol ])
 
     # Parse articles
@@ -547,7 +547,7 @@ if __name__ == '__main__':
     for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
         jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
             re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
-            URL_PREFIX + element.attrib['href'], ionizationEnergiesDict, elementNames))
+            URL_PREFIX + element.attrib['href'], molarIonizationEnergiesDict, elementNames))
 
     # Save
 
