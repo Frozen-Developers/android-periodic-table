@@ -114,19 +114,36 @@ class Article:
         # Parse tables
 
         self.tables = OrderedDict()
-        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?(\|\+[^\n]*\n)?\|?\-?(.*?)\|}',
+        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
             content, flags=re.S):
             name = match.group(1).strip(' =').lower()
-            rows = list(filter(len, [ row.strip(' \n\t!\'') for row in match.group(3).split('\n|-') ]))
+            rows = list(filter(len, [ row.strip(' \n\t!\'') for row in re.split(r'\n\|\-[^\n]*',
+                match.group(3), flags=re.S) ]))
             headers = []
             for row_i, row in enumerate(rows):
-                delimiter = '\n|' if row_i > 0 else '\n!'
+                delimiter = '\n!' if '\n!' in row else '\n|'
                 rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\'')) \
                     for value in row.split(delimiter) ]
             if len(rows) > 0:
-                headers = [ re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
-                    cell.getProperty('value').lower())) for cell in rows[0] ]
-                rows = list(filter(len, rows[rows[0][0].getIntProperty('rowspan'):]))
+                rowHeight = 1
+                for cell in rows[0]:
+                    rowHeight = max(cell.getIntProperty('rowspan'), rowHeight)
+                cellOffset = 0
+                for cell in rows[0]:
+                    rowSpan = cell.getIntProperty('rowspan')
+                    colspan = cell.getIntProperty('colspan')
+                    if rowHeight > rowSpan and colspan > 1:
+                        for cellNo in range(colspan):
+                            if cellOffset < len(rows[rowSpan]):
+                                headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
+                                    rows[rowSpan][cellOffset].getProperty('value').lower())))
+                                cellOffset += 1
+                            else:
+                                break
+                    else:
+                        headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
+                            cell.getProperty('value').lower())))
+                rows = list(filter(len, rows[rowHeight:]))
             self.tables[name] = []
             nextRows = []
             for rowNo in range(len(rows)):
@@ -419,7 +436,7 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames):
         isotopeSymbol = re.sub(r'[ ]*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
 
         halfLife = re.sub(r'observationally stable|stable', '-',
-            re.sub(r'\s*\[.+?\]|\([^)][\d\.]*\)|\([\d\.]+ \(\w+\)\, [\d\.]+ \(\w+\)\)|\s*[\?#]', '',
+            re.sub(r'\s*\[[^\]]+\]?|\([^)][\d\.]*\)|\([\d\.]+ \(\w+\)\, [\d\.]+ \(\w+\)\)|\s*[\?#]', '',
             re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×')), flags=re.IGNORECASE)
 
         decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()

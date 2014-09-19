@@ -21,7 +21,6 @@
         "group": "1",
         "heatOfFusion": "H₂: 0.117 kJ·mol⁻¹",
         "heatOfVaporization": "H₂: 0.904 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1312.0 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "99.9885%",
@@ -79,6 +78,7 @@
         "meltingPoint": "13.99 K / −259.16 °C / −434.49 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "H₂: 28.836 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1312.0 kJ·mol⁻¹",
         "name": "Hydrogen",
         "number": "1",
         "oxidationStates": "1, −1",
@@ -122,7 +122,6 @@
         "group": "18",
         "heatOfFusion": "0.0138 kJ·mol⁻¹",
         "heatOfVaporization": "0.0829 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 2372.3 kJ·mol⁻¹\n2nd: 5250.5 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -194,6 +193,7 @@
         "meltingPoint": "0.95 K / −272.20 °C / −457.96 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 2372.3 kJ·mol⁻¹\n2nd: 5250.5 kJ·mol⁻¹",
         "name": "Helium",
         "number": "2",
         "oxidationStates": "0",
@@ -237,7 +237,6 @@
         "group": "1",
         "heatOfFusion": "3.00 kJ·mol⁻¹",
         "heatOfVaporization": "136 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 520.2 kJ·mol⁻¹\n2nd: 7298.1 kJ·mol⁻¹\n3rd: 11815.0 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -330,6 +329,7 @@
         "meltingPoint": "453.65 K / 180.50 °C / 356.90 °F",
         "mohsHardness": "0.6",
         "molarHeatCapacity": "24.860 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 520.2 kJ·mol⁻¹\n2nd: 7298.1 kJ·mol⁻¹\n3rd: 11815.0 kJ·mol⁻¹",
         "name": "Lithium",
         "number": "3",
         "oxidationStates": "1",
@@ -373,7 +373,6 @@
         "group": "2",
         "heatOfFusion": "12.2 kJ·mol⁻¹",
         "heatOfVaporization": "292 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 899.5 kJ·mol⁻¹\n2nd: 1757.1 kJ·mol⁻¹\n3rd: 14848.7 kJ·mol⁻¹\n4th: 21006.6 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -473,6 +472,7 @@
         "meltingPoint": "1560 K / 1287 °C / 2349 °F",
         "mohsHardness": "5.5",
         "molarHeatCapacity": "16.443 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 899.5 kJ·mol⁻¹\n2nd: 1757.1 kJ·mol⁻¹\n3rd: 14848.7 kJ·mol⁻¹\n4th: 21006.6 kJ·mol⁻¹",
         "name": "Beryllium",
         "number": "4",
         "oxidationStates": "2, 1",
@@ -516,7 +516,6 @@
         "group": "13",
         "heatOfFusion": "50.2 kJ·mol⁻¹",
         "heatOfVaporization": "508 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 800.6 kJ·mol⁻¹\n2nd: 2427.1 kJ·mol⁻¹\n3rd: 3659.7 kJ·mol⁻¹\n4th: 25025.8 kJ·mol⁻¹\n5th: 32826.7 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -623,6 +622,7 @@
         "meltingPoint": "2349 K / 2076 °C / 3769 °F",
         "mohsHardness": "~9.5",
         "molarHeatCapacity": "11.087 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 800.6 kJ·mol⁻¹\n2nd: 2427.1 kJ·mol⁻¹\n3rd: 3659.7 kJ·mol⁻¹\n4th: 25025.8 kJ·mol⁻¹\n5th: 32826.7 kJ·mol⁻¹",
         "name": "Boron",
         "number": "5",
         "oxidationStates": "3, 2, 1",
@@ -666,7 +666,6 @@
         "group": "14",
         "heatOfFusion": "Graphite: 117 kJ·mol⁻¹",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 1086.5 kJ·mol⁻¹\n2nd: 2352.6 kJ·mol⁻¹\n3rd: 4620.5 kJ·mol⁻¹\n4th: 6222.7 kJ·mol⁻¹\n5th: 37831 kJ·mol⁻¹\n6th: 47277.0 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -780,6 +779,7 @@
         "meltingPoint": "",
         "mohsHardness": "Diamond: 10\nGraphite: 1–2",
         "molarHeatCapacity": "Diamond: 6.155 J·mol⁻¹·K⁻¹\nGraphite: 8.517 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1086.5 kJ·mol⁻¹\n2nd: 2352.6 kJ·mol⁻¹\n3rd: 4620.5 kJ·mol⁻¹\n4th: 6222.7 kJ·mol⁻¹\n5th: 37831 kJ·mol⁻¹\n6th: 47277.0 kJ·mol⁻¹",
         "name": "Carbon",
         "number": "6",
         "oxidationStates": "4, 3, 2, 1, 0, −1, −2, −3, −4",
@@ -823,7 +823,6 @@
         "group": "15",
         "heatOfFusion": "N₂: 0.72 kJ·mol⁻¹",
         "heatOfVaporization": "N₂: 5.56 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1402.3 kJ·mol⁻¹\n2nd: 2856 kJ·mol⁻¹\n3rd: 4578.1 kJ·mol⁻¹\n4th: 7475.0 kJ·mol⁻¹\n5th: 9444.9 kJ·mol⁻¹\n6th: 53266.6 kJ·mol⁻¹\n7th: 64360 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -951,6 +950,7 @@
         "meltingPoint": "63.15 K / −210.00 °C / −346.00 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "N₂: 29.124 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1402.3 kJ·mol⁻¹\n2nd: 2856 kJ·mol⁻¹\n3rd: 4578.1 kJ·mol⁻¹\n4th: 7475.0 kJ·mol⁻¹\n5th: 9444.9 kJ·mol⁻¹\n6th: 53266.6 kJ·mol⁻¹\n7th: 64360 kJ·mol⁻¹",
         "name": "Nitrogen",
         "number": "7",
         "oxidationStates": "5, 4, 3, 2, 1, −1, −2, −3",
@@ -994,7 +994,6 @@
         "group": "16",
         "heatOfFusion": "O₂: 0.444 kJ·mol⁻¹",
         "heatOfVaporization": "O₂: 6.82 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1313.9 kJ·mol⁻¹\n2nd: 3388.3 kJ·mol⁻¹\n3rd: 5300.5 kJ·mol⁻¹\n4th: 7469.2 kJ·mol⁻¹\n5th: 10989.5 kJ·mol⁻¹\n6th: 13326.5 kJ·mol⁻¹\n7th: 71330 kJ·mol⁻¹\n8th: 84078.0 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -1101,6 +1100,7 @@
         "meltingPoint": "54.36 K / −218.79 °C / −361.82 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "O₂: 29.378 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1313.9 kJ·mol⁻¹\n2nd: 3388.3 kJ·mol⁻¹\n3rd: 5300.5 kJ·mol⁻¹\n4th: 7469.2 kJ·mol⁻¹\n5th: 10989.5 kJ·mol⁻¹\n6th: 13326.5 kJ·mol⁻¹\n7th: 71330 kJ·mol⁻¹\n8th: 84078.0 kJ·mol⁻¹",
         "name": "Oxygen",
         "number": "8",
         "oxidationStates": "2, 1, −1, −2",
@@ -1144,7 +1144,6 @@
         "group": "17",
         "heatOfFusion": "",
         "heatOfVaporization": "6.51 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1681.0 kJ·mol⁻¹\n2nd: 3374.2 kJ·mol⁻¹\n3rd: 6050.4 kJ·mol⁻¹\n4th: 8407.7 kJ·mol⁻¹\n5th: 11022.7 kJ·mol⁻¹\n6th: 15164.1 kJ·mol⁻¹\n7th: 17868 kJ·mol⁻¹\n8th: 92038.1 kJ·mol⁻¹\n9th: 106434.3 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -1286,6 +1285,7 @@
         "meltingPoint": "53.48 K / −219.67 °C / −363.41 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "At 21.1 °C, Cp: 31 J·mol⁻¹·K⁻¹\nAt 21.1 °C, Cv: 23 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1681.0 kJ·mol⁻¹\n2nd: 3374.2 kJ·mol⁻¹\n3rd: 6050.4 kJ·mol⁻¹\n4th: 8407.7 kJ·mol⁻¹\n5th: 11022.7 kJ·mol⁻¹\n6th: 15164.1 kJ·mol⁻¹\n7th: 17868 kJ·mol⁻¹\n8th: 92038.1 kJ·mol⁻¹\n9th: 106434.3 kJ·mol⁻¹",
         "name": "Fluorine",
         "number": "9",
         "oxidationStates": "−1",
@@ -1329,7 +1329,6 @@
         "group": "18",
         "heatOfFusion": "0.335 kJ·mol⁻¹",
         "heatOfVaporization": "1.71 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 2080.7 kJ·mol⁻¹\n2nd: 3952.3 kJ·mol⁻¹\n3rd: 6122 kJ·mol⁻¹\n4th: 9371 kJ·mol⁻¹\n5th: 12177 kJ·mol⁻¹\n6th: 15238 kJ·mol⁻¹\n7th: 19999.0 kJ·mol⁻¹\n8th: 23069.5 kJ·mol⁻¹\n9th: 115379.5 kJ·mol⁻¹\n10th: 131432 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -1471,6 +1470,7 @@
         "meltingPoint": "24.56 K / −248.59 °C / −415.46 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 2080.7 kJ·mol⁻¹\n2nd: 3952.3 kJ·mol⁻¹\n3rd: 6122 kJ·mol⁻¹\n4th: 9371 kJ·mol⁻¹\n5th: 12177 kJ·mol⁻¹\n6th: 15238 kJ·mol⁻¹\n7th: 19999.0 kJ·mol⁻¹\n8th: 23069.5 kJ·mol⁻¹\n9th: 115379.5 kJ·mol⁻¹\n10th: 131432 kJ·mol⁻¹",
         "name": "Neon",
         "number": "10",
         "oxidationStates": "1, 0",
@@ -1514,7 +1514,6 @@
         "group": "1",
         "heatOfFusion": "2.60 kJ·mol⁻¹",
         "heatOfVaporization": "97.42 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 495.8 kJ·mol⁻¹\n2nd: 4562 kJ·mol⁻¹\n3rd: 6910.3 kJ·mol⁻¹\n4th: 9543 kJ·mol⁻¹\n5th: 13354 kJ·mol⁻¹\n6th: 16613 kJ·mol⁻¹\n7th: 20117 kJ·mol⁻¹\n8th: 25496 kJ·mol⁻¹\n9th: 28932 kJ·mol⁻¹\n10th: 141362 kJ·mol⁻¹\n11th: 159076 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -1677,6 +1676,7 @@
         "meltingPoint": "370.944 K / 97.794 °C / 208.029 °F",
         "mohsHardness": "0.5",
         "molarHeatCapacity": "28.230 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 495.8 kJ·mol⁻¹\n2nd: 4562 kJ·mol⁻¹\n3rd: 6910.3 kJ·mol⁻¹\n4th: 9543 kJ·mol⁻¹\n5th: 13354 kJ·mol⁻¹\n6th: 16613 kJ·mol⁻¹\n7th: 20117 kJ·mol⁻¹\n8th: 25496 kJ·mol⁻¹\n9th: 28932 kJ·mol⁻¹\n10th: 141362 kJ·mol⁻¹\n11th: 159076 kJ·mol⁻¹",
         "name": "Sodium",
         "number": "11",
         "oxidationStates": "1, −1",
@@ -1720,7 +1720,6 @@
         "group": "2",
         "heatOfFusion": "8.48 kJ·mol⁻¹",
         "heatOfVaporization": "128 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 737.7 kJ·mol⁻¹\n2nd: 1450.7 kJ·mol⁻¹\n3rd: 7732.7 kJ·mol⁻¹\n4th: 10542.5 kJ·mol⁻¹\n5th: 13630 kJ·mol⁻¹\n6th: 18020 kJ·mol⁻¹\n7th: 21711 kJ·mol⁻¹\n8th: 25661 kJ·mol⁻¹\n9th: 31653 kJ·mol⁻¹\n10th: 35458 kJ·mol⁻¹\n11th: 169988 kJ·mol⁻¹\n12th: 189368 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -1883,6 +1882,7 @@
         "meltingPoint": "923 K / 650 °C / 1202 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "24.869 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 737.7 kJ·mol⁻¹\n2nd: 1450.7 kJ·mol⁻¹\n3rd: 7732.7 kJ·mol⁻¹\n4th: 10542.5 kJ·mol⁻¹\n5th: 13630 kJ·mol⁻¹\n6th: 18020 kJ·mol⁻¹\n7th: 21711 kJ·mol⁻¹\n8th: 25661 kJ·mol⁻¹\n9th: 31653 kJ·mol⁻¹\n10th: 35458 kJ·mol⁻¹\n11th: 169988 kJ·mol⁻¹\n12th: 189368 kJ·mol⁻¹",
         "name": "Magnesium",
         "number": "12",
         "oxidationStates": "2, 1",
@@ -1926,7 +1926,6 @@
         "group": "13",
         "heatOfFusion": "10.71 kJ·mol⁻¹",
         "heatOfVaporization": "284 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 577.5 kJ·mol⁻¹\n2nd: 1816.7 kJ·mol⁻¹\n3rd: 2744.8 kJ·mol⁻¹\n4th: 11577 kJ·mol⁻¹\n5th: 14842 kJ·mol⁻¹\n6th: 18379 kJ·mol⁻¹\n7th: 23326 kJ·mol⁻¹\n8th: 27465 kJ·mol⁻¹\n9th: 31853 kJ·mol⁻¹\n10th: 38473 kJ·mol⁻¹\n11th: 42647 kJ·mol⁻¹\n12th: 201266 kJ·mol⁻¹\n13th: 222316 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -2131,6 +2130,7 @@
         "meltingPoint": "933.47 K / 660.32 °C / 1220.58 °F",
         "mohsHardness": "2.75",
         "molarHeatCapacity": "24.20 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 577.5 kJ·mol⁻¹\n2nd: 1816.7 kJ·mol⁻¹\n3rd: 2744.8 kJ·mol⁻¹\n4th: 11577 kJ·mol⁻¹\n5th: 14842 kJ·mol⁻¹\n6th: 18379 kJ·mol⁻¹\n7th: 23326 kJ·mol⁻¹\n8th: 27465 kJ·mol⁻¹\n9th: 31853 kJ·mol⁻¹\n10th: 38473 kJ·mol⁻¹\n11th: 42647 kJ·mol⁻¹\n12th: 201266 kJ·mol⁻¹\n13th: 222316 kJ·mol⁻¹",
         "name": "Aluminium",
         "number": "13",
         "oxidationStates": "3, 2, 1",
@@ -2174,7 +2174,6 @@
         "group": "14",
         "heatOfFusion": "50.21 kJ·mol⁻¹",
         "heatOfVaporization": "383 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 786.5 kJ·mol⁻¹\n2nd: 1577.1 kJ·mol⁻¹\n3rd: 3231.6 kJ·mol⁻¹\n4th: 4355.5 kJ·mol⁻¹\n5th: 16091 kJ·mol⁻¹\n6th: 19805 kJ·mol⁻¹\n7th: 23780 kJ·mol⁻¹\n8th: 29287 kJ·mol⁻¹\n9th: 33878 kJ·mol⁻¹\n10th: 38726 kJ·mol⁻¹\n11th: 45962 kJ·mol⁻¹\n12th: 50502 kJ·mol⁻¹\n13th: 235196 kJ·mol⁻¹\n14th: 257923 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -2344,6 +2343,7 @@
         "meltingPoint": "1687 K / 1414 °C / 2577 °F",
         "mohsHardness": "7",
         "molarHeatCapacity": "19.789 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 786.5 kJ·mol⁻¹\n2nd: 1577.1 kJ·mol⁻¹\n3rd: 3231.6 kJ·mol⁻¹\n4th: 4355.5 kJ·mol⁻¹\n5th: 16091 kJ·mol⁻¹\n6th: 19805 kJ·mol⁻¹\n7th: 23780 kJ·mol⁻¹\n8th: 29287 kJ·mol⁻¹\n9th: 33878 kJ·mol⁻¹\n10th: 38726 kJ·mol⁻¹\n11th: 45962 kJ·mol⁻¹\n12th: 50502 kJ·mol⁻¹\n13th: 235196 kJ·mol⁻¹\n14th: 257923 kJ·mol⁻¹",
         "name": "Silicon",
         "number": "14",
         "oxidationStates": "4, 3, 2, 1 −1, −2, −3, −4",
@@ -2387,7 +2387,6 @@
         "group": "15",
         "heatOfFusion": "White: 0.66 kJ·mol⁻¹",
         "heatOfVaporization": "White: 51.9 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1011.8 kJ·mol⁻¹\n2nd: 1907 kJ·mol⁻¹\n3rd: 2914.1 kJ·mol⁻¹\n4th: 4963.6 kJ·mol⁻¹\n5th: 6273.9 kJ·mol⁻¹\n6th: 21267 kJ·mol⁻¹\n7th: 25431 kJ·mol⁻¹\n8th: 29872 kJ·mol⁻¹\n9th: 35905 kJ·mol⁻¹\n10th: 40950 kJ·mol⁻¹\n11th: 46261 kJ·mol⁻¹\n12th: 54110 kJ·mol⁻¹\n13th: 59024 kJ·mol⁻¹\n14th: 271791 kJ·mol⁻¹\n15th: 296195 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -2557,6 +2556,7 @@
         "meltingPoint": "White: 44.2 °C\nBlack: 610 °C",
         "mohsHardness": "",
         "molarHeatCapacity": "White: 23.824 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1011.8 kJ·mol⁻¹\n2nd: 1907 kJ·mol⁻¹\n3rd: 2914.1 kJ·mol⁻¹\n4th: 4963.6 kJ·mol⁻¹\n5th: 6273.9 kJ·mol⁻¹\n6th: 21267 kJ·mol⁻¹\n7th: 25431 kJ·mol⁻¹\n8th: 29872 kJ·mol⁻¹\n9th: 35905 kJ·mol⁻¹\n10th: 40950 kJ·mol⁻¹\n11th: 46261 kJ·mol⁻¹\n12th: 54110 kJ·mol⁻¹\n13th: 59024 kJ·mol⁻¹\n14th: 271791 kJ·mol⁻¹\n15th: 296195 kJ·mol⁻¹",
         "name": "Phosphorus",
         "number": "15",
         "oxidationStates": "5, 4, 3, 2, 1, −1, −2, −3",
@@ -2600,7 +2600,6 @@
         "group": "16",
         "heatOfFusion": "Mono: 1.727 kJ·mol⁻¹",
         "heatOfVaporization": "Mono: 45 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 999.6 kJ·mol⁻¹\n2nd: 2252 kJ·mol⁻¹\n3rd: 3357 kJ·mol⁻¹\n4th: 4556 kJ·mol⁻¹\n5th: 7004.3 kJ·mol⁻¹\n6th: 8495.8 kJ·mol⁻¹\n7th: 27107 kJ·mol⁻¹\n8th: 31719 kJ·mol⁻¹\n9th: 36621 kJ·mol⁻¹\n10th: 43177 kJ·mol⁻¹\n11th: 48710 kJ·mol⁻¹\n12th: 54460 kJ·mol⁻¹\n13th: 62930 kJ·mol⁻¹\n14th: 68216 kJ·mol⁻¹\n15th: 311048 kJ·mol⁻¹\n16th: 337138 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -2784,6 +2783,7 @@
         "meltingPoint": "388.36 K / 115.21 °C / 239.38 °F",
         "mohsHardness": "2.0",
         "molarHeatCapacity": "22.75 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 999.6 kJ·mol⁻¹\n2nd: 2252 kJ·mol⁻¹\n3rd: 3357 kJ·mol⁻¹\n4th: 4556 kJ·mol⁻¹\n5th: 7004.3 kJ·mol⁻¹\n6th: 8495.8 kJ·mol⁻¹\n7th: 27107 kJ·mol⁻¹\n8th: 31719 kJ·mol⁻¹\n9th: 36621 kJ·mol⁻¹\n10th: 43177 kJ·mol⁻¹\n11th: 48710 kJ·mol⁻¹\n12th: 54460 kJ·mol⁻¹\n13th: 62930 kJ·mol⁻¹\n14th: 68216 kJ·mol⁻¹\n15th: 311048 kJ·mol⁻¹\n16th: 337138 kJ·mol⁻¹",
         "name": "Sulfur",
         "number": "16",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1, −2",
@@ -2827,7 +2827,6 @@
         "group": "17",
         "heatOfFusion": "Cl₂: 6.406 kJ·mol⁻¹",
         "heatOfVaporization": "Cl₂: 20.41 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1251.2 kJ·mol⁻¹\n2nd: 2298 kJ·mol⁻¹\n3rd: 3822 kJ·mol⁻¹\n4th: 5158.6 kJ·mol⁻¹\n5th: 6542 kJ·mol⁻¹\n6th: 9362 kJ·mol⁻¹\n7th: 11018 kJ·mol⁻¹\n8th: 33604 kJ·mol⁻¹\n9th: 38600 kJ·mol⁻¹\n10th: 43961 kJ·mol⁻¹\n11th: 51068 kJ·mol⁻¹\n12th: 57119 kJ·mol⁻¹\n13th: 63363 kJ·mol⁻¹\n14th: 72341 kJ·mol⁻¹\n15th: 78095 kJ·mol⁻¹\n16th: 352994 kJ·mol⁻¹\n17th: 380760 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -3018,6 +3017,7 @@
         "meltingPoint": "171.6 K / −101.5 °C / −150.7 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "Cl₂: 33.949 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1251.2 kJ·mol⁻¹\n2nd: 2298 kJ·mol⁻¹\n3rd: 3822 kJ·mol⁻¹\n4th: 5158.6 kJ·mol⁻¹\n5th: 6542 kJ·mol⁻¹\n6th: 9362 kJ·mol⁻¹\n7th: 11018 kJ·mol⁻¹\n8th: 33604 kJ·mol⁻¹\n9th: 38600 kJ·mol⁻¹\n10th: 43961 kJ·mol⁻¹\n11th: 51068 kJ·mol⁻¹\n12th: 57119 kJ·mol⁻¹\n13th: 63363 kJ·mol⁻¹\n14th: 72341 kJ·mol⁻¹\n15th: 78095 kJ·mol⁻¹\n16th: 352994 kJ·mol⁻¹\n17th: 380760 kJ·mol⁻¹",
         "name": "Chlorine",
         "number": "17",
         "oxidationStates": "7, 6, 5, 4, 3, 2, 1, −1",
@@ -3061,7 +3061,6 @@
         "group": "18",
         "heatOfFusion": "1.18 kJ·mol⁻¹",
         "heatOfVaporization": "6.53 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1520.6 kJ·mol⁻¹\n2nd: 2665.8 kJ·mol⁻¹\n3rd: 3931 kJ·mol⁻¹\n4th: 5771 kJ·mol⁻¹\n5th: 7238 kJ·mol⁻¹\n6th: 8781 kJ·mol⁻¹\n7th: 11995 kJ·mol⁻¹\n8th: 13842 kJ·mol⁻¹\n9th: 40760 kJ·mol⁻¹\n10th: 46186 kJ·mol⁻¹\n11th: 52002 kJ·mol⁻¹\n12th: 59653 kJ·mol⁻¹\n13th: 66199 kJ·mol⁻¹\n14th: 72918 kJ·mol⁻¹\n15th: 82473 kJ·mol⁻¹\n16th: 88576 kJ·mol⁻¹\n17th: 397605 kJ·mol⁻¹\n18th: 427066 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -3245,6 +3244,7 @@
         "meltingPoint": "83.81 K / −189.34 °C / −308.81 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "Cp: 5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1520.6 kJ·mol⁻¹\n2nd: 2665.8 kJ·mol⁻¹\n3rd: 3931 kJ·mol⁻¹\n4th: 5771 kJ·mol⁻¹\n5th: 7238 kJ·mol⁻¹\n6th: 8781 kJ·mol⁻¹\n7th: 11995 kJ·mol⁻¹\n8th: 13842 kJ·mol⁻¹\n9th: 40760 kJ·mol⁻¹\n10th: 46186 kJ·mol⁻¹\n11th: 52002 kJ·mol⁻¹\n12th: 59653 kJ·mol⁻¹\n13th: 66199 kJ·mol⁻¹\n14th: 72918 kJ·mol⁻¹\n15th: 82473 kJ·mol⁻¹\n16th: 88576 kJ·mol⁻¹\n17th: 397605 kJ·mol⁻¹\n18th: 427066 kJ·mol⁻¹",
         "name": "Argon",
         "number": "18",
         "oxidationStates": "0",
@@ -3288,7 +3288,6 @@
         "group": "1",
         "heatOfFusion": "2.33 kJ·mol⁻¹",
         "heatOfVaporization": "76.9 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 418.8 kJ·mol⁻¹\n2nd: 3052 kJ·mol⁻¹\n3rd: 4420 kJ·mol⁻¹\n4th: 5877 kJ·mol⁻¹\n5th: 7975 kJ·mol⁻¹\n6th: 9590 kJ·mol⁻¹\n7th: 11343 kJ·mol⁻¹\n8th: 14944 kJ·mol⁻¹\n9th: 16963.7 kJ·mol⁻¹\n10th: 48610 kJ·mol⁻¹\n11th: 54490 kJ·mol⁻¹\n12th: 60730 kJ·mol⁻¹\n13th: 68950 kJ·mol⁻¹\n14th: 75900 kJ·mol⁻¹\n15th: 83080 kJ·mol⁻¹\n16th: 93400 kJ·mol⁻¹\n17th: 99710 kJ·mol⁻¹\n18th: 444880 kJ·mol⁻¹\n19th: 476063 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -3493,6 +3492,7 @@
         "meltingPoint": "336.7 K / 63.5 °C / 146.3 °F",
         "mohsHardness": "0.4",
         "molarHeatCapacity": "29.6 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 418.8 kJ·mol⁻¹\n2nd: 3052 kJ·mol⁻¹\n3rd: 4420 kJ·mol⁻¹\n4th: 5877 kJ·mol⁻¹\n5th: 7975 kJ·mol⁻¹\n6th: 9590 kJ·mol⁻¹\n7th: 11343 kJ·mol⁻¹\n8th: 14944 kJ·mol⁻¹\n9th: 16963.7 kJ·mol⁻¹\n10th: 48610 kJ·mol⁻¹\n11th: 54490 kJ·mol⁻¹\n12th: 60730 kJ·mol⁻¹\n13th: 68950 kJ·mol⁻¹\n14th: 75900 kJ·mol⁻¹\n15th: 83080 kJ·mol⁻¹\n16th: 93400 kJ·mol⁻¹\n17th: 99710 kJ·mol⁻¹\n18th: 444880 kJ·mol⁻¹\n19th: 476063 kJ·mol⁻¹",
         "name": "Potassium",
         "number": "19",
         "oxidationStates": "1, −1",
@@ -3536,7 +3536,6 @@
         "group": "2",
         "heatOfFusion": "8.54 kJ·mol⁻¹",
         "heatOfVaporization": "154.7 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 589.8 kJ·mol⁻¹\n2nd: 1145.4 kJ·mol⁻¹\n3rd: 4912.4 kJ·mol⁻¹\n4th: 6491 kJ·mol⁻¹\n5th: 8153 kJ·mol⁻¹\n6th: 10496 kJ·mol⁻¹\n7th: 12270 kJ·mol⁻¹\n8th: 14206 kJ·mol⁻¹\n9th: 18191 kJ·mol⁻¹\n10th: 20385 kJ·mol⁻¹\n11th: 57110 kJ·mol⁻¹\n12th: 63410 kJ·mol⁻¹\n13th: 70110 kJ·mol⁻¹\n14th: 78890 kJ·mol⁻¹\n15th: 86310 kJ·mol⁻¹\n16th: 94000 kJ·mol⁻¹\n17th: 104900 kJ·mol⁻¹\n18th: 111711 kJ·mol⁻¹\n19th: 494850 kJ·mol⁻¹\n20th: 527762 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -3713,6 +3712,7 @@
         "meltingPoint": "1115 K / 842 °C / 1548 °F",
         "mohsHardness": "1.75",
         "molarHeatCapacity": "25.929 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 589.8 kJ·mol⁻¹\n2nd: 1145.4 kJ·mol⁻¹\n3rd: 4912.4 kJ·mol⁻¹\n4th: 6491 kJ·mol⁻¹\n5th: 8153 kJ·mol⁻¹\n6th: 10496 kJ·mol⁻¹\n7th: 12270 kJ·mol⁻¹\n8th: 14206 kJ·mol⁻¹\n9th: 18191 kJ·mol⁻¹\n10th: 20385 kJ·mol⁻¹\n11th: 57110 kJ·mol⁻¹\n12th: 63410 kJ·mol⁻¹\n13th: 70110 kJ·mol⁻¹\n14th: 78890 kJ·mol⁻¹\n15th: 86310 kJ·mol⁻¹\n16th: 94000 kJ·mol⁻¹\n17th: 104900 kJ·mol⁻¹\n18th: 111711 kJ·mol⁻¹\n19th: 494850 kJ·mol⁻¹\n20th: 527762 kJ·mol⁻¹",
         "name": "Calcium",
         "number": "20",
         "oxidationStates": "2, 1",
@@ -3756,7 +3756,6 @@
         "group": "3",
         "heatOfFusion": "14.1 kJ·mol⁻¹",
         "heatOfVaporization": "332.7 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 633.1 kJ·mol⁻¹\n2nd: 1235.0 kJ·mol⁻¹\n3rd: 2388.6 kJ·mol⁻¹\n4th: 7090.6 kJ·mol⁻¹\n5th: 8843 kJ·mol⁻¹\n6th: 10679 kJ·mol⁻¹\n7th: 13310 kJ·mol⁻¹\n8th: 15250 kJ·mol⁻¹\n9th: 17370 kJ·mol⁻¹\n10th: 21726 kJ·mol⁻¹\n11th: 24102 kJ·mol⁻¹\n12th: 66320 kJ·mol⁻¹\n13th: 73010 kJ·mol⁻¹\n14th: 80160 kJ·mol⁻¹\n15th: 89490 kJ·mol⁻¹\n16th: 97400 kJ·mol⁻¹\n17th: 105600 kJ·mol⁻¹\n18th: 117000 kJ·mol⁻¹\n19th: 124270 kJ·mol⁻¹\n20th: 547530 kJ·mol⁻¹\n21st: 582163 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -4024,6 +4023,7 @@
         "meltingPoint": "1814 K / 1541 °C / 2806 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "25.52 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 633.1 kJ·mol⁻¹\n2nd: 1235.0 kJ·mol⁻¹\n3rd: 2388.6 kJ·mol⁻¹\n4th: 7090.6 kJ·mol⁻¹\n5th: 8843 kJ·mol⁻¹\n6th: 10679 kJ·mol⁻¹\n7th: 13310 kJ·mol⁻¹\n8th: 15250 kJ·mol⁻¹\n9th: 17370 kJ·mol⁻¹\n10th: 21726 kJ·mol⁻¹\n11th: 24102 kJ·mol⁻¹\n12th: 66320 kJ·mol⁻¹\n13th: 73010 kJ·mol⁻¹\n14th: 80160 kJ·mol⁻¹\n15th: 89490 kJ·mol⁻¹\n16th: 97400 kJ·mol⁻¹\n17th: 105600 kJ·mol⁻¹\n18th: 117000 kJ·mol⁻¹\n19th: 124270 kJ·mol⁻¹\n20th: 547530 kJ·mol⁻¹\n21st: 582163 kJ·mol⁻¹",
         "name": "Scandium",
         "number": "21",
         "oxidationStates": "3, 2, 1",
@@ -4067,7 +4067,6 @@
         "group": "4",
         "heatOfFusion": "14.15 kJ·mol⁻¹",
         "heatOfVaporization": "425 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 658.8 kJ·mol⁻¹\n2nd: 1309.8 kJ·mol⁻¹\n3rd: 2652.5 kJ·mol⁻¹\n4th: 4174.6 kJ·mol⁻¹\n5th: 9581 kJ·mol⁻¹\n6th: 11533 kJ·mol⁻¹\n7th: 13590 kJ·mol⁻¹\n8th: 16440 kJ·mol⁻¹\n9th: 18530 kJ·mol⁻¹\n10th: 20833 kJ·mol⁻¹\n11th: 25575 kJ·mol⁻¹\n12th: 28125 kJ·mol⁻¹\n13th: 76015 kJ·mol⁻¹\n14th: 83280 kJ·mol⁻¹\n15th: 90880 kJ·mol⁻¹\n16th: 100700 kJ·mol⁻¹\n17th: 109100 kJ·mol⁻¹\n18th: 117800 kJ·mol⁻¹\n19th: 129900 kJ·mol⁻¹\n20th: 137530 kJ·mol⁻¹\n21st: 602930 kJ·mol⁻¹\n22nd: 639294 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -4272,6 +4271,7 @@
         "meltingPoint": "1941 K / 1668 °C / 3034 °F",
         "mohsHardness": "6.0",
         "molarHeatCapacity": "25.060 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 658.8 kJ·mol⁻¹\n2nd: 1309.8 kJ·mol⁻¹\n3rd: 2652.5 kJ·mol⁻¹\n4th: 4174.6 kJ·mol⁻¹\n5th: 9581 kJ·mol⁻¹\n6th: 11533 kJ·mol⁻¹\n7th: 13590 kJ·mol⁻¹\n8th: 16440 kJ·mol⁻¹\n9th: 18530 kJ·mol⁻¹\n10th: 20833 kJ·mol⁻¹\n11th: 25575 kJ·mol⁻¹\n12th: 28125 kJ·mol⁻¹\n13th: 76015 kJ·mol⁻¹\n14th: 83280 kJ·mol⁻¹\n15th: 90880 kJ·mol⁻¹\n16th: 100700 kJ·mol⁻¹\n17th: 109100 kJ·mol⁻¹\n18th: 117800 kJ·mol⁻¹\n19th: 129900 kJ·mol⁻¹\n20th: 137530 kJ·mol⁻¹\n21st: 602930 kJ·mol⁻¹\n22nd: 639294 kJ·mol⁻¹",
         "name": "Titanium",
         "number": "22",
         "oxidationStates": "4, 3, 2, 1",
@@ -4315,7 +4315,6 @@
         "group": "5",
         "heatOfFusion": "21.5 kJ·mol⁻¹",
         "heatOfVaporization": "444 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 650.9 kJ·mol⁻¹\n2nd: 1414 kJ·mol⁻¹\n3rd: 2830 kJ·mol⁻¹\n4th: 4507 kJ·mol⁻¹\n5th: 6298.7 kJ·mol⁻¹\n6th: 12363 kJ·mol⁻¹\n7th: 14530 kJ·mol⁻¹\n8th: 16730 kJ·mol⁻¹\n9th: 19860 kJ·mol⁻¹\n10th: 22240 kJ·mol⁻¹\n11th: 24670 kJ·mol⁻¹\n12th: 29730 kJ·mol⁻¹\n13th: 32446 kJ·mol⁻¹\n14th: 86450 kJ·mol⁻¹\n15th: 94170 kJ·mol⁻¹\n16th: 102300 kJ·mol⁻¹\n17th: 112700 kJ·mol⁻¹\n18th: 121600 kJ·mol⁻¹\n19th: 130700 kJ·mol⁻¹\n20th: 143400 kJ·mol⁻¹\n21st: 151440 kJ·mol⁻¹\n22nd: 661050 kJ·mol⁻¹\n23rd: 699144 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -4541,6 +4540,7 @@
         "meltingPoint": "2183 K / 1910 °C / 3470 °F",
         "mohsHardness": "6.7",
         "molarHeatCapacity": "24.89 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 650.9 kJ·mol⁻¹\n2nd: 1414 kJ·mol⁻¹\n3rd: 2830 kJ·mol⁻¹\n4th: 4507 kJ·mol⁻¹\n5th: 6298.7 kJ·mol⁻¹\n6th: 12363 kJ·mol⁻¹\n7th: 14530 kJ·mol⁻¹\n8th: 16730 kJ·mol⁻¹\n9th: 19860 kJ·mol⁻¹\n10th: 22240 kJ·mol⁻¹\n11th: 24670 kJ·mol⁻¹\n12th: 29730 kJ·mol⁻¹\n13th: 32446 kJ·mol⁻¹\n14th: 86450 kJ·mol⁻¹\n15th: 94170 kJ·mol⁻¹\n16th: 102300 kJ·mol⁻¹\n17th: 112700 kJ·mol⁻¹\n18th: 121600 kJ·mol⁻¹\n19th: 130700 kJ·mol⁻¹\n20th: 143400 kJ·mol⁻¹\n21st: 151440 kJ·mol⁻¹\n22nd: 661050 kJ·mol⁻¹\n23rd: 699144 kJ·mol⁻¹",
         "name": "Vanadium",
         "number": "23",
         "oxidationStates": "5, 4, 3, 2, 1, −1",
@@ -4584,7 +4584,6 @@
         "group": "6",
         "heatOfFusion": "21.0 kJ·mol⁻¹",
         "heatOfVaporization": "347 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 652.9 kJ·mol⁻¹\n2nd: 1590.6 kJ·mol⁻¹\n3rd: 2987 kJ·mol⁻¹\n4th: 4743 kJ·mol⁻¹\n5th: 6702 kJ·mol⁻¹\n6th: 8744.9 kJ·mol⁻¹\n7th: 15455 kJ·mol⁻¹\n8th: 17820 kJ·mol⁻¹\n9th: 20190 kJ·mol⁻¹\n10th: 23580 kJ·mol⁻¹\n11th: 26130 kJ·mol⁻¹\n12th: 28750 kJ·mol⁻¹\n13th: 34230 kJ·mol⁻¹\n14th: 37066 kJ·mol⁻¹\n15th: 97510 kJ·mol⁻¹\n16th: 105800 kJ·mol⁻¹\n17th: 114300 kJ·mol⁻¹\n18th: 125300 kJ·mol⁻¹\n19th: 134700 kJ·mol⁻¹\n20th: 144300 kJ·mol⁻¹\n21st: 157700 kJ·mol⁻¹\n22nd: 166090 kJ·mol⁻¹\n23rd: 721870 kJ·mol⁻¹\n24th: 761733 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -4789,6 +4788,7 @@
         "meltingPoint": "2180 K / 1907 °C / 3465 °F",
         "mohsHardness": "8.5",
         "molarHeatCapacity": "23.35 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 652.9 kJ·mol⁻¹\n2nd: 1590.6 kJ·mol⁻¹\n3rd: 2987 kJ·mol⁻¹\n4th: 4743 kJ·mol⁻¹\n5th: 6702 kJ·mol⁻¹\n6th: 8744.9 kJ·mol⁻¹\n7th: 15455 kJ·mol⁻¹\n8th: 17820 kJ·mol⁻¹\n9th: 20190 kJ·mol⁻¹\n10th: 23580 kJ·mol⁻¹\n11th: 26130 kJ·mol⁻¹\n12th: 28750 kJ·mol⁻¹\n13th: 34230 kJ·mol⁻¹\n14th: 37066 kJ·mol⁻¹\n15th: 97510 kJ·mol⁻¹\n16th: 105800 kJ·mol⁻¹\n17th: 114300 kJ·mol⁻¹\n18th: 125300 kJ·mol⁻¹\n19th: 134700 kJ·mol⁻¹\n20th: 144300 kJ·mol⁻¹\n21st: 157700 kJ·mol⁻¹\n22nd: 166090 kJ·mol⁻¹\n23rd: 721870 kJ·mol⁻¹\n24th: 761733 kJ·mol⁻¹",
         "name": "Chromium",
         "number": "24",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1, −2",
@@ -4832,7 +4832,6 @@
         "group": "7",
         "heatOfFusion": "12.91 kJ·mol⁻¹",
         "heatOfVaporization": "221 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 717.3 kJ·mol⁻¹\n2nd: 1509.0 kJ·mol⁻¹\n3rd: 3248 kJ·mol⁻¹\n4th: 4940 kJ·mol⁻¹\n5th: 6990 kJ·mol⁻¹\n6th: 9220 kJ·mol⁻¹\n7th: 11500 kJ·mol⁻¹\n8th: 18770 kJ·mol⁻¹\n9th: 21400 kJ·mol⁻¹\n10th: 23960 kJ·mol⁻¹\n11th: 27590 kJ·mol⁻¹\n12th: 30330 kJ·mol⁻¹\n13th: 33150 kJ·mol⁻¹\n14th: 38880 kJ·mol⁻¹\n15th: 41987 kJ·mol⁻¹\n16th: 109480 kJ·mol⁻¹\n17th: 118100 kJ·mol⁻¹\n18th: 127100 kJ·mol⁻¹\n19th: 138600 kJ·mol⁻¹\n20th: 148500 kJ·mol⁻¹\n21st: 158600 kJ·mol⁻¹\n22nd: 172500 kJ·mol⁻¹\n23rd: 181380 kJ·mol⁻¹\n24th: 785450 kJ·mol⁻¹\n25th: 827067 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -5072,6 +5071,7 @@
         "meltingPoint": "1519 K / 1246 °C / 2275 °F",
         "mohsHardness": "6.0",
         "molarHeatCapacity": "26.32 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 717.3 kJ·mol⁻¹\n2nd: 1509.0 kJ·mol⁻¹\n3rd: 3248 kJ·mol⁻¹\n4th: 4940 kJ·mol⁻¹\n5th: 6990 kJ·mol⁻¹\n6th: 9220 kJ·mol⁻¹\n7th: 11500 kJ·mol⁻¹\n8th: 18770 kJ·mol⁻¹\n9th: 21400 kJ·mol⁻¹\n10th: 23960 kJ·mol⁻¹\n11th: 27590 kJ·mol⁻¹\n12th: 30330 kJ·mol⁻¹\n13th: 33150 kJ·mol⁻¹\n14th: 38880 kJ·mol⁻¹\n15th: 41987 kJ·mol⁻¹\n16th: 109480 kJ·mol⁻¹\n17th: 118100 kJ·mol⁻¹\n18th: 127100 kJ·mol⁻¹\n19th: 138600 kJ·mol⁻¹\n20th: 148500 kJ·mol⁻¹\n21st: 158600 kJ·mol⁻¹\n22nd: 172500 kJ·mol⁻¹\n23rd: 181380 kJ·mol⁻¹\n24th: 785450 kJ·mol⁻¹\n25th: 827067 kJ·mol⁻¹",
         "name": "Manganese",
         "number": "25",
         "oxidationStates": "7, 6, 5, 4, 3, 2, 1, −1, −2, −3",
@@ -5115,7 +5115,6 @@
         "group": "8",
         "heatOfFusion": "13.81 kJ·mol⁻¹",
         "heatOfVaporization": "340 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 762.5 kJ·mol⁻¹\n2nd: 1561.9 kJ·mol⁻¹\n3rd: 2957 kJ·mol⁻¹\n4th: 5290 kJ·mol⁻¹\n5th: 7240 kJ·mol⁻¹\n6th: 9560 kJ·mol⁻¹\n7th: 12060 kJ·mol⁻¹\n8th: 14580 kJ·mol⁻¹\n9th: 22540 kJ·mol⁻¹\n10th: 25290 kJ·mol⁻¹\n11th: 28000 kJ·mol⁻¹\n12th: 31920 kJ·mol⁻¹\n13th: 34830 kJ·mol⁻¹\n14th: 37840 kJ·mol⁻¹\n15th: 44100 kJ·mol⁻¹\n16th: 47206 kJ·mol⁻¹\n17th: 122200 kJ·mol⁻¹\n18th: 131000 kJ·mol⁻¹\n19th: 140500 kJ·mol⁻¹\n20th: 152600 kJ·mol⁻¹\n21st: 163000 kJ·mol⁻¹\n22nd: 173600 kJ·mol⁻¹\n23rd: 188100 kJ·mol⁻¹\n24th: 195200 kJ·mol⁻¹\n25th: 851800 kJ·mol⁻¹\n26th: 895161 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -5362,6 +5361,7 @@
         "meltingPoint": "1811 K / 1538 °C / 2800 °F",
         "mohsHardness": "4",
         "molarHeatCapacity": "25.10 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 762.5 kJ·mol⁻¹\n2nd: 1561.9 kJ·mol⁻¹\n3rd: 2957 kJ·mol⁻¹\n4th: 5290 kJ·mol⁻¹\n5th: 7240 kJ·mol⁻¹\n6th: 9560 kJ·mol⁻¹\n7th: 12060 kJ·mol⁻¹\n8th: 14580 kJ·mol⁻¹\n9th: 22540 kJ·mol⁻¹\n10th: 25290 kJ·mol⁻¹\n11th: 28000 kJ·mol⁻¹\n12th: 31920 kJ·mol⁻¹\n13th: 34830 kJ·mol⁻¹\n14th: 37840 kJ·mol⁻¹\n15th: 44100 kJ·mol⁻¹\n16th: 47206 kJ·mol⁻¹\n17th: 122200 kJ·mol⁻¹\n18th: 131000 kJ·mol⁻¹\n19th: 140500 kJ·mol⁻¹\n20th: 152600 kJ·mol⁻¹\n21st: 163000 kJ·mol⁻¹\n22nd: 173600 kJ·mol⁻¹\n23rd: 188100 kJ·mol⁻¹\n24th: 195200 kJ·mol⁻¹\n25th: 851800 kJ·mol⁻¹\n26th: 895161 kJ·mol⁻¹",
         "name": "Iron",
         "number": "26",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1, −2",
@@ -5405,7 +5405,6 @@
         "group": "9",
         "heatOfFusion": "16.06 kJ·mol⁻¹",
         "heatOfVaporization": "377 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 760.4 kJ·mol⁻¹\n2nd: 1648 kJ·mol⁻¹\n3rd: 3232 kJ·mol⁻¹\n4th: 4950 kJ·mol⁻¹\n5th: 7670 kJ·mol⁻¹\n6th: 9840 kJ·mol⁻¹\n7th: 12440 kJ·mol⁻¹\n8th: 15230 kJ·mol⁻¹\n9th: 17959 kJ·mol⁻¹\n10th: 26570 kJ·mol⁻¹\n11th: 29400 kJ·mol⁻¹\n12th: 32400 kJ·mol⁻¹\n13th: 36600 kJ·mol⁻¹\n14th: 39700 kJ·mol⁻¹\n15th: 42800 kJ·mol⁻¹\n16th: 49396 kJ·mol⁻¹\n17th: 52737 kJ·mol⁻¹\n18th: 134810 kJ·mol⁻¹\n19th: 145170 kJ·mol⁻¹\n20th: 154700 kJ·mol⁻¹\n21st: 167400 kJ·mol⁻¹\n22nd: 178100 kJ·mol⁻¹\n23rd: 189300 kJ·mol⁻¹\n24th: 204500 kJ·mol⁻¹\n25th: 214100 kJ·mol⁻¹\n26th: 920870 kJ·mol⁻¹\n27th: 966023 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -5694,6 +5693,7 @@
         "meltingPoint": "1768 K / 1495 °C / 2723 °F",
         "mohsHardness": "5.0",
         "molarHeatCapacity": "24.81 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 760.4 kJ·mol⁻¹\n2nd: 1648 kJ·mol⁻¹\n3rd: 3232 kJ·mol⁻¹\n4th: 4950 kJ·mol⁻¹\n5th: 7670 kJ·mol⁻¹\n6th: 9840 kJ·mol⁻¹\n7th: 12440 kJ·mol⁻¹\n8th: 15230 kJ·mol⁻¹\n9th: 17959 kJ·mol⁻¹\n10th: 26570 kJ·mol⁻¹\n11th: 29400 kJ·mol⁻¹\n12th: 32400 kJ·mol⁻¹\n13th: 36600 kJ·mol⁻¹\n14th: 39700 kJ·mol⁻¹\n15th: 42800 kJ·mol⁻¹\n16th: 49396 kJ·mol⁻¹\n17th: 52737 kJ·mol⁻¹\n18th: 134810 kJ·mol⁻¹\n19th: 145170 kJ·mol⁻¹\n20th: 154700 kJ·mol⁻¹\n21st: 167400 kJ·mol⁻¹\n22nd: 178100 kJ·mol⁻¹\n23rd: 189300 kJ·mol⁻¹\n24th: 204500 kJ·mol⁻¹\n25th: 214100 kJ·mol⁻¹\n26th: 920870 kJ·mol⁻¹\n27th: 966023 kJ·mol⁻¹",
         "name": "Cobalt",
         "number": "27",
         "oxidationStates": "5, 4, 3, 2, 1, −1",
@@ -5737,7 +5737,6 @@
         "group": "10",
         "heatOfFusion": "17.48 kJ·mol⁻¹",
         "heatOfVaporization": "379 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 737.1 kJ·mol⁻¹\n2nd: 1753.0 kJ·mol⁻¹\n3rd: 3395 kJ·mol⁻¹\n4th: 5300 kJ·mol⁻¹\n5th: 7339 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹\n7th: 12800 kJ·mol⁻¹\n8th: 15600 kJ·mol⁻¹\n9th: 18600 kJ·mol⁻¹\n10th: 21670 kJ·mol⁻¹\n11th: 30970 kJ·mol⁻¹\n12th: 34000 kJ·mol⁻¹\n13th: 37100 kJ·mol⁻¹\n14th: 41500 kJ·mol⁻¹\n15th: 44800 kJ·mol⁻¹\n16th: 48100 kJ·mol⁻¹\n17th: 55101 kJ·mol⁻¹\n18th: 58570 kJ·mol⁻¹\n19th: 148700 kJ·mol⁻¹\n20th: 159000 kJ·mol⁻¹\n21st: 169400 kJ·mol⁻¹\n22nd: 182700 kJ·mol⁻¹\n23rd: 194000 kJ·mol⁻¹\n24th: 205600 kJ·mol⁻¹\n25th: 221400 kJ·mol⁻¹\n26th: 231490 kJ·mol⁻¹\n27th: 992718 kJ·mol⁻¹\n28th: 1039668 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -6019,6 +6018,7 @@
         "meltingPoint": "1728 K / 1455 °C / 2651 °F",
         "mohsHardness": "4.0",
         "molarHeatCapacity": "26.07 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 737.1 kJ·mol⁻¹\n2nd: 1753.0 kJ·mol⁻¹\n3rd: 3395 kJ·mol⁻¹\n4th: 5300 kJ·mol⁻¹\n5th: 7339 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹\n7th: 12800 kJ·mol⁻¹\n8th: 15600 kJ·mol⁻¹\n9th: 18600 kJ·mol⁻¹\n10th: 21670 kJ·mol⁻¹\n11th: 30970 kJ·mol⁻¹\n12th: 34000 kJ·mol⁻¹\n13th: 37100 kJ·mol⁻¹\n14th: 41500 kJ·mol⁻¹\n15th: 44800 kJ·mol⁻¹\n16th: 48100 kJ·mol⁻¹\n17th: 55101 kJ·mol⁻¹\n18th: 58570 kJ·mol⁻¹\n19th: 148700 kJ·mol⁻¹\n20th: 159000 kJ·mol⁻¹\n21st: 169400 kJ·mol⁻¹\n22nd: 182700 kJ·mol⁻¹\n23rd: 194000 kJ·mol⁻¹\n24th: 205600 kJ·mol⁻¹\n25th: 221400 kJ·mol⁻¹\n26th: 231490 kJ·mol⁻¹\n27th: 992718 kJ·mol⁻¹\n28th: 1039668 kJ·mol⁻¹",
         "name": "Nickel",
         "number": "28",
         "oxidationStates": "4, 3, 2, 1, −1",
@@ -6062,7 +6062,6 @@
         "group": "11",
         "heatOfFusion": "13.26 kJ·mol⁻¹",
         "heatOfVaporization": "300.4 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 745.5 kJ·mol⁻¹\n2nd: 1957.9 kJ·mol⁻¹\n3rd: 3555 kJ·mol⁻¹\n4th: 5536 kJ·mol⁻¹\n5th: 7700 kJ·mol⁻¹\n6th: 9900 kJ·mol⁻¹\n7th: 13400 kJ·mol⁻¹\n8th: 16000 kJ·mol⁻¹\n9th: 19200 kJ·mol⁻¹\n10th: 22400 kJ·mol⁻¹\n11th: 25600 kJ·mol⁻¹\n12th: 35600 kJ·mol⁻¹\n13th: 38700 kJ·mol⁻¹\n14th: 42000 kJ·mol⁻¹\n15th: 46700 kJ·mol⁻¹\n16th: 50200 kJ·mol⁻¹\n17th: 53700 kJ·mol⁻¹\n18th: 61100 kJ·mol⁻¹\n19th: 64702 kJ·mol⁻¹\n20th: 163700 kJ·mol⁻¹\n21st: 174100 kJ·mol⁻¹\n22nd: 184900 kJ·mol⁻¹\n23rd: 198800 kJ·mol⁻¹\n24th: 210500 kJ·mol⁻¹\n25th: 222700 kJ·mol⁻¹\n26th: 239100 kJ·mol⁻¹\n27th: 249660 kJ·mol⁻¹\n28th: 1067358 kJ·mol⁻¹\n29th: 1116105 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -6323,6 +6322,7 @@
         "meltingPoint": "1357.77 K / 1084.62 °C / 1984.32 °F",
         "mohsHardness": "3.0",
         "molarHeatCapacity": "24.440 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 745.5 kJ·mol⁻¹\n2nd: 1957.9 kJ·mol⁻¹\n3rd: 3555 kJ·mol⁻¹\n4th: 5536 kJ·mol⁻¹\n5th: 7700 kJ·mol⁻¹\n6th: 9900 kJ·mol⁻¹\n7th: 13400 kJ·mol⁻¹\n8th: 16000 kJ·mol⁻¹\n9th: 19200 kJ·mol⁻¹\n10th: 22400 kJ·mol⁻¹\n11th: 25600 kJ·mol⁻¹\n12th: 35600 kJ·mol⁻¹\n13th: 38700 kJ·mol⁻¹\n14th: 42000 kJ·mol⁻¹\n15th: 46700 kJ·mol⁻¹\n16th: 50200 kJ·mol⁻¹\n17th: 53700 kJ·mol⁻¹\n18th: 61100 kJ·mol⁻¹\n19th: 64702 kJ·mol⁻¹\n20th: 163700 kJ·mol⁻¹\n21st: 174100 kJ·mol⁻¹\n22nd: 184900 kJ·mol⁻¹\n23rd: 198800 kJ·mol⁻¹\n24th: 210500 kJ·mol⁻¹\n25th: 222700 kJ·mol⁻¹\n26th: 239100 kJ·mol⁻¹\n27th: 249660 kJ·mol⁻¹\n28th: 1067358 kJ·mol⁻¹\n29th: 1116105 kJ·mol⁻¹",
         "name": "Copper",
         "number": "29",
         "oxidationStates": "1, 2, 3, 4",
@@ -6366,7 +6366,6 @@
         "group": "12",
         "heatOfFusion": "7.32 kJ·mol⁻¹",
         "heatOfVaporization": "115 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 906.4 kJ·mol⁻¹\n2nd: 1733.3 kJ·mol⁻¹\n3rd: 3833 kJ·mol⁻¹\n4th: 5731 kJ·mol⁻¹\n5th: 7970 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹\n7th: 12900 kJ·mol⁻¹\n8th: 16800 kJ·mol⁻¹\n9th: 19600 kJ·mol⁻¹\n10th: 23000 kJ·mol⁻¹\n11th: 26400 kJ·mol⁻¹\n12th: 29990 kJ·mol⁻¹\n13th: 40490 kJ·mol⁻¹\n14th: 43800 kJ·mol⁻¹\n15th: 47300 kJ·mol⁻¹\n16th: 52300 kJ·mol⁻¹\n17th: 55900 kJ·mol⁻¹\n18th: 59700 kJ·mol⁻¹\n19th: 67300 kJ·mol⁻¹\n20th: 171200 kJ·mol⁻¹\n21st: 179100 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -6655,6 +6654,7 @@
         "meltingPoint": "692.68 K / 419.53 °C / 787.15 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "25.470 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 906.4 kJ·mol⁻¹\n2nd: 1733.3 kJ·mol⁻¹\n3rd: 3833 kJ·mol⁻¹\n4th: 5731 kJ·mol⁻¹\n5th: 7970 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹\n7th: 12900 kJ·mol⁻¹\n8th: 16800 kJ·mol⁻¹\n9th: 19600 kJ·mol⁻¹\n10th: 23000 kJ·mol⁻¹\n11th: 26400 kJ·mol⁻¹\n12th: 29990 kJ·mol⁻¹\n13th: 40490 kJ·mol⁻¹\n14th: 43800 kJ·mol⁻¹\n15th: 47300 kJ·mol⁻¹\n16th: 52300 kJ·mol⁻¹\n17th: 55900 kJ·mol⁻¹\n18th: 59700 kJ·mol⁻¹\n19th: 67300 kJ·mol⁻¹\n20th: 171200 kJ·mol⁻¹\n21st: 179100 kJ·mol⁻¹",
         "name": "Zinc",
         "number": "30",
         "oxidationStates": "2, 1, 0",
@@ -6698,7 +6698,6 @@
         "group": "13",
         "heatOfFusion": "5.59 kJ·mol⁻¹",
         "heatOfVaporization": "254 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 578.8 kJ·mol⁻¹\n2nd: 1979.3 kJ·mol⁻¹\n3rd: 2963 kJ·mol⁻¹\n4th: 6180 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -6945,6 +6944,7 @@
         "meltingPoint": "302.9146 K / 29.7646 °C / 85.5763 °F",
         "mohsHardness": "1.5",
         "molarHeatCapacity": "25.86 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 578.8 kJ·mol⁻¹\n2nd: 1979.3 kJ·mol⁻¹\n3rd: 2963 kJ·mol⁻¹\n4th: 6180 kJ·mol⁻¹",
         "name": "Gallium",
         "number": "31",
         "oxidationStates": "3, 2, 1",
@@ -6988,7 +6988,6 @@
         "group": "14",
         "heatOfFusion": "36.94 kJ·mol⁻¹",
         "heatOfVaporization": "334 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 762 kJ·mol⁻¹\n2nd: 1537.5 kJ·mol⁻¹\n3rd: 3302.1 kJ·mol⁻¹\n4th: 4411 kJ·mol⁻¹\n5th: 9020 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -7312,6 +7311,7 @@
         "meltingPoint": "1211.40 K / 938.25 °C / 1720.85 °F",
         "mohsHardness": "6.0",
         "molarHeatCapacity": "23.222 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 762 kJ·mol⁻¹\n2nd: 1537.5 kJ·mol⁻¹\n3rd: 3302.1 kJ·mol⁻¹\n4th: 4411 kJ·mol⁻¹\n5th: 9020 kJ·mol⁻¹",
         "name": "Germanium",
         "number": "32",
         "oxidationStates": "4, 3, 2, 1, 0, −1, −2, −3, −4",
@@ -7355,7 +7355,6 @@
         "group": "15",
         "heatOfFusion": "Grey: 24.44 kJ·mol⁻¹",
         "heatOfVaporization": "34.76 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 947.0 kJ·mol⁻¹\n2nd: 1798 kJ·mol⁻¹\n3rd: 2735 kJ·mol⁻¹\n4th: 4837 kJ·mol⁻¹\n5th: 6043 kJ·mol⁻¹\n6th: 12310 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -7665,6 +7664,7 @@
         "meltingPoint": "",
         "mohsHardness": "3.5",
         "molarHeatCapacity": "24.64 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 947.0 kJ·mol⁻¹\n2nd: 1798 kJ·mol⁻¹\n3rd: 2735 kJ·mol⁻¹\n4th: 4837 kJ·mol⁻¹\n5th: 6043 kJ·mol⁻¹\n6th: 12310 kJ·mol⁻¹",
         "name": "Arsenic",
         "number": "33",
         "oxidationStates": "5, 3, 2, 1, −3",
@@ -7708,7 +7708,6 @@
         "group": "16",
         "heatOfFusion": "Gray: 6.69 kJ·mol⁻¹",
         "heatOfVaporization": "95.48 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 941.0 kJ·mol⁻¹\n2nd: 2045 kJ·mol⁻¹\n3rd: 2973.7 kJ·mol⁻¹\n4th: 4144 kJ·mol⁻¹\n5th: 6590 kJ·mol⁻¹\n6th: 7880 kJ·mol⁻¹\n7th: 14990 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -7990,6 +7989,7 @@
         "meltingPoint": "494 K / 221 °C / 430 °F",
         "mohsHardness": "2.0",
         "molarHeatCapacity": "25.363 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 941.0 kJ·mol⁻¹\n2nd: 2045 kJ·mol⁻¹\n3rd: 2973.7 kJ·mol⁻¹\n4th: 4144 kJ·mol⁻¹\n5th: 6590 kJ·mol⁻¹\n6th: 7880 kJ·mol⁻¹\n7th: 14990 kJ·mol⁻¹",
         "name": "Selenium",
         "number": "34",
         "oxidationStates": "6, 4, 2, 1, −2",
@@ -8033,7 +8033,6 @@
         "group": "17",
         "heatOfFusion": "Br₂: 10.571 kJ·mol⁻¹",
         "heatOfVaporization": "Br₂: 29.96 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1139.9 kJ·mol⁻¹\n2nd: 2103 kJ·mol⁻¹\n3rd: 3470 kJ·mol⁻¹\n4th: 4560 kJ·mol⁻¹\n5th: 5760 kJ·mol⁻¹\n6th: 8550 kJ·mol⁻¹\n7th: 9940 kJ·mol⁻¹\n8th: 18600 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -8364,6 +8363,7 @@
         "meltingPoint": "265.8 K / −7.2 °C / 19 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "Br₂: 75.69 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1139.9 kJ·mol⁻¹\n2nd: 2103 kJ·mol⁻¹\n3rd: 3470 kJ·mol⁻¹\n4th: 4560 kJ·mol⁻¹\n5th: 5760 kJ·mol⁻¹\n6th: 8550 kJ·mol⁻¹\n7th: 9940 kJ·mol⁻¹\n8th: 18600 kJ·mol⁻¹",
         "name": "Bromine",
         "number": "35",
         "oxidationStates": "7, 5, 4, 3, 1, −1",
@@ -8407,7 +8407,6 @@
         "group": "18",
         "heatOfFusion": "1.64 kJ·mol⁻¹",
         "heatOfVaporization": "9.08 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1350.8 kJ·mol⁻¹\n2nd: 2350.4 kJ·mol⁻¹\n3rd: 3565 kJ·mol⁻¹\n4th: 5070 kJ·mol⁻¹\n5th: 6240 kJ·mol⁻¹\n6th: 7570 kJ·mol⁻¹\n7th: 10710 kJ·mol⁻¹\n8th: 12138 kJ·mol⁻¹\n9th: 22274 kJ·mol⁻¹\n10th: 25880 kJ·mol⁻¹\n11th: 29700 kJ·mol⁻¹\n12th: 33800 kJ·mol⁻¹\n13th: 37700 kJ·mol⁻¹\n14th: 43100 kJ·mol⁻¹\n15th: 47500 kJ·mol⁻¹\n16th: 52200 kJ·mol⁻¹\n17th: 57100 kJ·mol⁻¹\n18th: 61800 kJ·mol⁻¹\n19th: 75800 kJ·mol⁻¹\n20th: 80400 kJ·mol⁻¹\n21st: 85300 kJ·mol⁻¹\n22nd: 90400 kJ·mol⁻¹\n23rd: 96300 kJ·mol⁻¹\n24th: 101400 kJ·mol⁻¹\n25th: 111100 kJ·mol⁻¹\n26th: 116290 kJ·mol⁻¹\n27th: 282500 kJ·mol⁻¹\n28th: 296200 kJ·mol⁻¹\n29th: 311400 kJ·mol⁻¹\n30th: 326200 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -8703,6 +8702,7 @@
         "meltingPoint": "115.78 K / −157.37 °C / −251.27 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1350.8 kJ·mol⁻¹\n2nd: 2350.4 kJ·mol⁻¹\n3rd: 3565 kJ·mol⁻¹\n4th: 5070 kJ·mol⁻¹\n5th: 6240 kJ·mol⁻¹\n6th: 7570 kJ·mol⁻¹\n7th: 10710 kJ·mol⁻¹\n8th: 12138 kJ·mol⁻¹\n9th: 22274 kJ·mol⁻¹\n10th: 25880 kJ·mol⁻¹\n11th: 29700 kJ·mol⁻¹\n12th: 33800 kJ·mol⁻¹\n13th: 37700 kJ·mol⁻¹\n14th: 43100 kJ·mol⁻¹\n15th: 47500 kJ·mol⁻¹\n16th: 52200 kJ·mol⁻¹\n17th: 57100 kJ·mol⁻¹\n18th: 61800 kJ·mol⁻¹\n19th: 75800 kJ·mol⁻¹\n20th: 80400 kJ·mol⁻¹\n21st: 85300 kJ·mol⁻¹\n22nd: 90400 kJ·mol⁻¹\n23rd: 96300 kJ·mol⁻¹\n24th: 101400 kJ·mol⁻¹\n25th: 111100 kJ·mol⁻¹\n26th: 116290 kJ·mol⁻¹\n27th: 282500 kJ·mol⁻¹\n28th: 296200 kJ·mol⁻¹\n29th: 311400 kJ·mol⁻¹\n30th: 326200 kJ·mol⁻¹",
         "name": "Krypton",
         "number": "36",
         "oxidationStates": "2, 1, 0",
@@ -8746,7 +8746,6 @@
         "group": "1",
         "heatOfFusion": "2.19 kJ·mol⁻¹",
         "heatOfVaporization": "69 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 403.0 kJ·mol⁻¹\n2nd: 2633 kJ·mol⁻¹\n3rd: 3860 kJ·mol⁻¹\n4th: 5080 kJ·mol⁻¹\n5th: 6850 kJ·mol⁻¹\n6th: 8140 kJ·mol⁻¹\n7th: 9570 kJ·mol⁻¹\n8th: 13120 kJ·mol⁻¹\n9th: 14500 kJ·mol⁻¹\n10th: 26740 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -9070,6 +9069,7 @@
         "meltingPoint": "312.45 K / 39.30 °C / 102.74 °F",
         "mohsHardness": "0.3",
         "molarHeatCapacity": "31.060 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 403.0 kJ·mol⁻¹\n2nd: 2633 kJ·mol⁻¹\n3rd: 3860 kJ·mol⁻¹\n4th: 5080 kJ·mol⁻¹\n5th: 6850 kJ·mol⁻¹\n6th: 8140 kJ·mol⁻¹\n7th: 9570 kJ·mol⁻¹\n8th: 13120 kJ·mol⁻¹\n9th: 14500 kJ·mol⁻¹\n10th: 26740 kJ·mol⁻¹",
         "name": "Rubidium",
         "number": "37",
         "oxidationStates": "1, −1",
@@ -9113,7 +9113,6 @@
         "group": "2",
         "heatOfFusion": "7.43 kJ·mol⁻¹",
         "heatOfVaporization": "141 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 549.5 kJ·mol⁻¹\n2nd: 1064.2 kJ·mol⁻¹\n3rd: 4138 kJ·mol⁻¹\n4th: 5500 kJ·mol⁻¹\n5th: 6910 kJ·mol⁻¹\n6th: 8760 kJ·mol⁻¹\n7th: 10230 kJ·mol⁻¹\n8th: 11800 kJ·mol⁻¹\n9th: 15600 kJ·mol⁻¹\n10th: 17100 kJ·mol⁻¹\n11th: 31270 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -9395,6 +9394,7 @@
         "meltingPoint": "1050 K / 777 °C / 1431 °F",
         "mohsHardness": "1.5",
         "molarHeatCapacity": "26.4 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 549.5 kJ·mol⁻¹\n2nd: 1064.2 kJ·mol⁻¹\n3rd: 4138 kJ·mol⁻¹\n4th: 5500 kJ·mol⁻¹\n5th: 6910 kJ·mol⁻¹\n6th: 8760 kJ·mol⁻¹\n7th: 10230 kJ·mol⁻¹\n8th: 11800 kJ·mol⁻¹\n9th: 15600 kJ·mol⁻¹\n10th: 17100 kJ·mol⁻¹\n11th: 31270 kJ·mol⁻¹",
         "name": "Strontium",
         "number": "38",
         "oxidationStates": "2, 1",
@@ -9438,7 +9438,6 @@
         "group": "3",
         "heatOfFusion": "11.42 kJ·mol⁻¹",
         "heatOfVaporization": "363 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 600 kJ·mol⁻¹\n2nd: 1180 kJ·mol⁻¹\n3rd: 1980 kJ·mol⁻¹\n4th: 5847 kJ·mol⁻¹\n5th: 7430 kJ·mol⁻¹\n6th: 8970 kJ·mol⁻¹\n7th: 11190 kJ·mol⁻¹\n8th: 12450 kJ·mol⁻¹\n9th: 14110 kJ·mol⁻¹\n10th: 18400 kJ·mol⁻¹\n11th: 19900 kJ·mol⁻¹\n12th: 36090 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -9874,6 +9873,7 @@
         "meltingPoint": "1799 K / 1526 °C / 2779 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "26.53 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 600 kJ·mol⁻¹\n2nd: 1180 kJ·mol⁻¹\n3rd: 1980 kJ·mol⁻¹\n4th: 5847 kJ·mol⁻¹\n5th: 7430 kJ·mol⁻¹\n6th: 8970 kJ·mol⁻¹\n7th: 11190 kJ·mol⁻¹\n8th: 12450 kJ·mol⁻¹\n9th: 14110 kJ·mol⁻¹\n10th: 18400 kJ·mol⁻¹\n11th: 19900 kJ·mol⁻¹\n12th: 36090 kJ·mol⁻¹",
         "name": "Yttrium",
         "number": "39",
         "oxidationStates": "3, 2, 1",
@@ -9917,7 +9917,6 @@
         "group": "4",
         "heatOfFusion": "14 kJ·mol⁻¹",
         "heatOfVaporization": "591 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 640.1 kJ·mol⁻¹\n2nd: 1270 kJ·mol⁻¹\n3rd: 2218 kJ·mol⁻¹\n4th: 3313 kJ·mol⁻¹\n5th: 7752 kJ·mol⁻¹\n6th: 9500 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -10199,6 +10198,7 @@
         "meltingPoint": "2128 K / 1855 °C / 3371 °F",
         "mohsHardness": "5.0",
         "molarHeatCapacity": "25.36 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 640.1 kJ·mol⁻¹\n2nd: 1270 kJ·mol⁻¹\n3rd: 2218 kJ·mol⁻¹\n4th: 3313 kJ·mol⁻¹\n5th: 7752 kJ·mol⁻¹\n6th: 9500 kJ·mol⁻¹",
         "name": "Zirconium",
         "number": "40",
         "oxidationStates": "4, 3, 2, 1",
@@ -10242,7 +10242,6 @@
         "group": "5",
         "heatOfFusion": "30 kJ·mol⁻¹",
         "heatOfVaporization": "689.9 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 652.1 kJ·mol⁻¹\n2nd: 1380 kJ·mol⁻¹\n3rd: 2416 kJ·mol⁻¹\n4th: 3700 kJ·mol⁻¹\n5th: 4877 kJ·mol⁻¹\n6th: 9847 kJ·mol⁻¹\n7th: 12100 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -10657,6 +10656,7 @@
         "meltingPoint": "2750 K / 2477 °C / 4491 °F",
         "mohsHardness": "6.0",
         "molarHeatCapacity": "24.60 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 652.1 kJ·mol⁻¹\n2nd: 1380 kJ·mol⁻¹\n3rd: 2416 kJ·mol⁻¹\n4th: 3700 kJ·mol⁻¹\n5th: 4877 kJ·mol⁻¹\n6th: 9847 kJ·mol⁻¹\n7th: 12100 kJ·mol⁻¹",
         "name": "Niobium",
         "number": "41",
         "oxidationStates": "5, 4, 3, 2, −1",
@@ -10700,7 +10700,6 @@
         "group": "6",
         "heatOfFusion": "37.48 kJ·mol⁻¹",
         "heatOfVaporization": "598 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 684.3 kJ·mol⁻¹\n2nd: 1560 kJ·mol⁻¹\n3rd: 2618 kJ·mol⁻¹\n4th: 4480 kJ·mol⁻¹\n5th: 5257 kJ·mol⁻¹\n6th: 6640.8 kJ·mol⁻¹\n7th: 12125 kJ·mol⁻¹\n8th: 13860 kJ·mol⁻¹\n9th: 15835 kJ·mol⁻¹\n10th: 17980 kJ·mol⁻¹\n11th: 20190 kJ·mol⁻¹\n12th: 22219 kJ·mol⁻¹\n13th: 26930 kJ·mol⁻¹\n14th: 29196 kJ·mol⁻¹\n15th: 52490 kJ·mol⁻¹\n16th: 55000 kJ·mol⁻¹\n17th: 61400 kJ·mol⁻¹\n18th: 67700 kJ·mol⁻¹\n19th: 74000 kJ·mol⁻¹\n20th: 80400 kJ·mol⁻¹\n21st: 87000 kJ·mol⁻¹\n22nd: 93400 kJ·mol⁻¹\n23rd: 98420 kJ·mol⁻¹\n24th: 104400 kJ·mol⁻¹\n25th: 121900 kJ·mol⁻¹\n26th: 127700 kJ·mol⁻¹\n27th: 133800 kJ·mol⁻¹\n28th: 139800 kJ·mol⁻¹\n29th: 148100 kJ·mol⁻¹\n30th: 154500 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -10996,6 +10995,7 @@
         "meltingPoint": "2896 K / 2623 °C / 4753 °F",
         "mohsHardness": "5.5",
         "molarHeatCapacity": "24.06 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 684.3 kJ·mol⁻¹\n2nd: 1560 kJ·mol⁻¹\n3rd: 2618 kJ·mol⁻¹\n4th: 4480 kJ·mol⁻¹\n5th: 5257 kJ·mol⁻¹\n6th: 6640.8 kJ·mol⁻¹\n7th: 12125 kJ·mol⁻¹\n8th: 13860 kJ·mol⁻¹\n9th: 15835 kJ·mol⁻¹\n10th: 17980 kJ·mol⁻¹\n11th: 20190 kJ·mol⁻¹\n12th: 22219 kJ·mol⁻¹\n13th: 26930 kJ·mol⁻¹\n14th: 29196 kJ·mol⁻¹\n15th: 52490 kJ·mol⁻¹\n16th: 55000 kJ·mol⁻¹\n17th: 61400 kJ·mol⁻¹\n18th: 67700 kJ·mol⁻¹\n19th: 74000 kJ·mol⁻¹\n20th: 80400 kJ·mol⁻¹\n21st: 87000 kJ·mol⁻¹\n22nd: 93400 kJ·mol⁻¹\n23rd: 98420 kJ·mol⁻¹\n24th: 104400 kJ·mol⁻¹\n25th: 121900 kJ·mol⁻¹\n26th: 127700 kJ·mol⁻¹\n27th: 133800 kJ·mol⁻¹\n28th: 139800 kJ·mol⁻¹\n29th: 148100 kJ·mol⁻¹\n30th: 154500 kJ·mol⁻¹",
         "name": "Molybdenum",
         "number": "42",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1, −2",
@@ -11039,7 +11039,6 @@
         "group": "7",
         "heatOfFusion": "33.29 kJ·mol⁻¹",
         "heatOfVaporization": "585.2 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 702 kJ·mol⁻¹\n2nd: 1470 kJ·mol⁻¹\n3rd: 2850 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -11440,6 +11439,7 @@
         "meltingPoint": "2430 K / 2157 °C / 3915 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "24.27 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 702 kJ·mol⁻¹\n2nd: 1470 kJ·mol⁻¹\n3rd: 2850 kJ·mol⁻¹",
         "name": "Technetium",
         "number": "43",
         "oxidationStates": "7, 6, 5, 4, 3, 2, 1, −1, −3",
@@ -11483,7 +11483,6 @@
         "group": "8",
         "heatOfFusion": "38.59 kJ·mol⁻¹",
         "heatOfVaporization": "619 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 710.2 kJ·mol⁻¹\n2nd: 1620 kJ·mol⁻¹\n3rd: 2747 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -11779,6 +11778,7 @@
         "meltingPoint": "2607 K / 2334 °C / 4233 °F",
         "mohsHardness": "6.5",
         "molarHeatCapacity": "24.06 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 710.2 kJ·mol⁻¹\n2nd: 1620 kJ·mol⁻¹\n3rd: 2747 kJ·mol⁻¹",
         "name": "Ruthenium",
         "number": "44",
         "oxidationStates": "8, 7, 6, 4, 3, 2, 1, −2",
@@ -11822,7 +11822,6 @@
         "group": "9",
         "heatOfFusion": "26.59 kJ·mol⁻¹",
         "heatOfVaporization": "493 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 719.7 kJ·mol⁻¹\n2nd: 1740 kJ·mol⁻¹\n3rd: 2997 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -12237,6 +12236,7 @@
         "meltingPoint": "2237 K / 1964 °C / 3567 °F",
         "mohsHardness": "6.0",
         "molarHeatCapacity": "24.98 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 719.7 kJ·mol⁻¹\n2nd: 1740 kJ·mol⁻¹\n3rd: 2997 kJ·mol⁻¹",
         "name": "Rhodium",
         "number": "45",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1",
@@ -12280,7 +12280,6 @@
         "group": "10",
         "heatOfFusion": "16.74 kJ·mol⁻¹",
         "heatOfVaporization": "358 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 804.4 kJ·mol⁻¹\n2nd: 1870 kJ·mol⁻¹\n3rd: 3177 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -12614,16 +12613,37 @@
             {
                 "abundance": "",
                 "decayModes": "",
-                "halfLife": "0.44 µs / 0.33 µs (2 isomers)",
-                "spin": "",
+                "halfLife": "",
+                "spin": "0+",
                 "symbol": "¹²⁶Pd"
             },
             {
                 "abundance": "",
+                "decayModes": "IT → ¹²⁶Pd",
+                "halfLife": "330 ns",
+                "spin": "5-",
+                "symbol": "¹²⁶ᵐ¹Pd"
+            },
+            {
+                "abundance": "",
+                "decayModes": "IT → ¹²⁶ᵐ¹Pd",
+                "halfLife": "440 ns",
+                "spin": "7-",
+                "symbol": "¹²⁶ᵐ²Pd"
+            },
+            {
+                "abundance": "",
                 "decayModes": "",
-                "halfLife": "5.8 µs",
-                "spin": "",
+                "halfLife": "",
+                "spin": "0+",
                 "symbol": "¹²⁸Pd"
+            },
+            {
+                "abundance": "",
+                "decayModes": "IT → ¹²⁸Pd",
+                "halfLife": "5.8 µs",
+                "spin": "8+",
+                "symbol": "¹²⁸ᵐPd"
             }
         ],
         "liquidDensityAtBoilingPoint": "",
@@ -12632,6 +12652,7 @@
         "meltingPoint": "1828.05 K / 1554.9 °C / 2830.82 °F",
         "mohsHardness": "4.75",
         "molarHeatCapacity": "25.98 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 804.4 kJ·mol⁻¹\n2nd: 1870 kJ·mol⁻¹\n3rd: 3177 kJ·mol⁻¹",
         "name": "Palladium",
         "number": "46",
         "oxidationStates": "0, 1, 2, 4",
@@ -12675,7 +12696,6 @@
         "group": "11",
         "heatOfFusion": "11.28 kJ·mol⁻¹",
         "heatOfVaporization": "254 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 731.0 kJ·mol⁻¹\n2nd: 2070 kJ·mol⁻¹\n3rd: 3361 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -13202,6 +13222,7 @@
         "meltingPoint": "1234.93 K / 961.78 °C / 1763.2 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "25.350 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 731.0 kJ·mol⁻¹\n2nd: 2070 kJ·mol⁻¹\n3rd: 3361 kJ·mol⁻¹",
         "name": "Silver",
         "number": "47",
         "oxidationStates": "1, 2, 3",
@@ -13245,7 +13266,6 @@
         "group": "12",
         "heatOfFusion": "6.21 kJ·mol⁻¹",
         "heatOfVaporization": "99.87 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 867.8 kJ·mol⁻¹\n2nd: 1631.4 kJ·mol⁻¹\n3rd: 3616 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -13604,6 +13624,7 @@
         "meltingPoint": "594.22 K / 321.07 °C / 609.93 °F",
         "mohsHardness": "2.0",
         "molarHeatCapacity": "26.020 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 867.8 kJ·mol⁻¹\n2nd: 1631.4 kJ·mol⁻¹\n3rd: 3616 kJ·mol⁻¹",
         "name": "Cadmium",
         "number": "48",
         "oxidationStates": "2, 1",
@@ -13647,7 +13668,6 @@
         "group": "13",
         "heatOfFusion": "3.281 kJ·mol⁻¹",
         "heatOfVaporization": "231.8 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 558.3 kJ·mol⁻¹\n2nd: 1820.7 kJ·mol⁻¹\n3rd: 2704 kJ·mol⁻¹\n4th: 5210 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -14258,6 +14278,7 @@
         "meltingPoint": "429.7485 K / 156.5985 °C / 313.8773 °F",
         "mohsHardness": "1.2",
         "molarHeatCapacity": "26.74 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 558.3 kJ·mol⁻¹\n2nd: 1820.7 kJ·mol⁻¹\n3rd: 2704 kJ·mol⁻¹\n4th: 5210 kJ·mol⁻¹",
         "name": "Indium",
         "number": "49",
         "oxidationStates": "3, 2, 1",
@@ -14301,7 +14322,6 @@
         "group": "14",
         "heatOfFusion": "White, β: 7.03 kJ·mol⁻¹",
         "heatOfVaporization": "White, β: 296.1 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 708.6 kJ·mol⁻¹\n2nd: 1411.8 kJ·mol⁻¹\n3rd: 2943.0 kJ·mol⁻¹\n4th: 3930.3 kJ·mol⁻¹\n5th: 7456 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -14807,6 +14827,7 @@
         "meltingPoint": "505.08 K / 231.93 °C / 449.47 °F",
         "mohsHardness": "1.5",
         "molarHeatCapacity": "White, β: 27.112 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 708.6 kJ·mol⁻¹\n2nd: 1411.8 kJ·mol⁻¹\n3rd: 2943.0 kJ·mol⁻¹\n4th: 3930.3 kJ·mol⁻¹\n5th: 7456 kJ·mol⁻¹",
         "name": "Tin",
         "number": "50",
         "oxidationStates": "4, 3, 2, 1, −4",
@@ -14850,7 +14871,6 @@
         "group": "15",
         "heatOfFusion": "19.79 kJ·mol⁻¹",
         "heatOfVaporization": "193.43 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 834 kJ·mol⁻¹\n2nd: 1594.9 kJ·mol⁻¹\n3rd: 2440 kJ·mol⁻¹\n4th: 4260 kJ·mol⁻¹\n5th: 5400 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -15321,6 +15341,7 @@
         "meltingPoint": "903.78 K / 630.63 °C / 1167.13 °F",
         "mohsHardness": "3.0",
         "molarHeatCapacity": "25.23 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 834 kJ·mol⁻¹\n2nd: 1594.9 kJ·mol⁻¹\n3rd: 2440 kJ·mol⁻¹\n4th: 4260 kJ·mol⁻¹\n5th: 5400 kJ·mol⁻¹\n6th: 10400 kJ·mol⁻¹",
         "name": "Antimony",
         "number": "51",
         "oxidationStates": "5, 3, −3",
@@ -15364,7 +15385,6 @@
         "group": "16",
         "heatOfFusion": "17.49 kJ·mol⁻¹",
         "heatOfVaporization": "114.1 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 869.3 kJ·mol⁻¹\n2nd: 1790 kJ·mol⁻¹\n3rd: 2698 kJ·mol⁻¹\n4th: 3610 kJ·mol⁻¹\n5th: 5668 kJ·mol⁻¹\n6th: 6820 kJ·mol⁻¹\n7th: 13200 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -15758,6 +15778,7 @@
         "meltingPoint": "722.66 K / 449.51 °C / 841.12 °F",
         "mohsHardness": "2.25",
         "molarHeatCapacity": "25.73 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 869.3 kJ·mol⁻¹\n2nd: 1790 kJ·mol⁻¹\n3rd: 2698 kJ·mol⁻¹\n4th: 3610 kJ·mol⁻¹\n5th: 5668 kJ·mol⁻¹\n6th: 6820 kJ·mol⁻¹\n7th: 13200 kJ·mol⁻¹",
         "name": "Tellurium",
         "number": "52",
         "oxidationStates": "6, 5, 4, 2, −2",
@@ -15801,7 +15822,6 @@
         "group": "17",
         "heatOfFusion": "I₂: 15.52 kJ·mol⁻¹",
         "heatOfVaporization": "I₂: 41.57 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1008.4 kJ·mol⁻¹\n2nd: 1845.9 kJ·mol⁻¹\n3rd: 3180 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -16188,6 +16208,7 @@
         "meltingPoint": "386.85 K / 113.7 °C / 236.66 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "I₂: 54.44 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1008.4 kJ·mol⁻¹\n2nd: 1845.9 kJ·mol⁻¹\n3rd: 3180 kJ·mol⁻¹",
         "name": "Iodine",
         "number": "53",
         "oxidationStates": "7, 5, 3, 1, −1",
@@ -16231,7 +16252,6 @@
         "group": "18",
         "heatOfFusion": "2.27 kJ·mol⁻¹",
         "heatOfVaporization": "12.64 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1170.4 kJ·mol⁻¹\n2nd: 2046.4 kJ·mol⁻¹\n3rd: 3099.4 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -16590,6 +16610,7 @@
         "meltingPoint": "161.40 K / −111.75 °C / −169.15 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1170.4 kJ·mol⁻¹\n2nd: 2046.4 kJ·mol⁻¹\n3rd: 3099.4 kJ·mol⁻¹",
         "name": "Xenon",
         "number": "54",
         "oxidationStates": "0, 1, 2, 4, 6, 8",
@@ -16633,7 +16654,6 @@
         "group": "1",
         "heatOfFusion": "2.09 kJ·mol⁻¹",
         "heatOfVaporization": "63.9 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 375.7 kJ·mol⁻¹\n2nd: 2234.3 kJ·mol⁻¹\n3rd: 3400 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -17076,6 +17096,7 @@
         "meltingPoint": "301.7 K / 28.5 °C / 83.3 °F",
         "mohsHardness": "0.2",
         "molarHeatCapacity": "32.210 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 375.7 kJ·mol⁻¹\n2nd: 2234.3 kJ·mol⁻¹\n3rd: 3400 kJ·mol⁻¹",
         "name": "Caesium",
         "number": "55",
         "oxidationStates": "1",
@@ -17119,7 +17140,6 @@
         "group": "2",
         "heatOfFusion": "7.12 kJ·mol⁻¹",
         "heatOfVaporization": "142 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 502.9 kJ·mol⁻¹\n2nd: 965.2 kJ·mol⁻¹\n3rd: 3600 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -17478,6 +17498,7 @@
         "meltingPoint": "1000 K / 727 °C / 1341 °F",
         "mohsHardness": "1.25",
         "molarHeatCapacity": "28.07 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 502.9 kJ·mol⁻¹\n2nd: 965.2 kJ·mol⁻¹\n3rd: 3600 kJ·mol⁻¹",
         "name": "Barium",
         "number": "56",
         "oxidationStates": "2",
@@ -17521,7 +17542,6 @@
         "group": "4",
         "heatOfFusion": "27.2 kJ·mol⁻¹",
         "heatOfVaporization": "648 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 658.5 kJ·mol⁻¹\n2nd: 1440 kJ·mol⁻¹\n3rd: 2250 kJ·mol⁻¹\n4th: 3216 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -17903,7 +17923,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁻ → ¹⁸²W",
+                "decayModes": "β⁻ → ¹⁸²Ta",
                 "halfLife": "8.90×10⁶ y",
                 "spin": "0+",
                 "symbol": "¹⁸²Hf"
@@ -17971,6 +17991,7 @@
         "meltingPoint": "2506 K / 2233 °C / 4051 °F",
         "mohsHardness": "5.5",
         "molarHeatCapacity": "25.73 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 658.5 kJ·mol⁻¹\n2nd: 1440 kJ·mol⁻¹\n3rd: 2250 kJ·mol⁻¹\n4th: 3216 kJ·mol⁻¹",
         "name": "Hafnium",
         "number": "72",
         "oxidationStates": "4, 3, 2",
@@ -18014,7 +18035,6 @@
         "group": "5",
         "heatOfFusion": "36.57 kJ·mol⁻¹",
         "heatOfVaporization": "753 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 761 kJ·mol⁻¹\n2nd: 1500 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -18534,6 +18554,7 @@
         "meltingPoint": "3290 K / 3017 °C / 5463 °F",
         "mohsHardness": "6.5",
         "molarHeatCapacity": "25.36 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 761 kJ·mol⁻¹\n2nd: 1500 kJ·mol⁻¹",
         "name": "Tantalum",
         "number": "73",
         "oxidationStates": "5, 4, 3, 2, −1",
@@ -18577,7 +18598,6 @@
         "group": "6",
         "heatOfFusion": "35.3 kJ·mol⁻¹",
         "heatOfVaporization": "774 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 770 kJ·mol⁻¹\n2nd: 1700 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -18908,6 +18928,7 @@
         "meltingPoint": "3695 K / 3422 °C / 6192 °F",
         "mohsHardness": "7.5",
         "molarHeatCapacity": "24.27 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 770 kJ·mol⁻¹\n2nd: 1700 kJ·mol⁻¹",
         "name": "Tungsten",
         "number": "74",
         "oxidationStates": "6, 5, 4, 3, 2, 1, 0, −1, −2",
@@ -18951,7 +18972,6 @@
         "group": "7",
         "heatOfFusion": "60.43 kJ·mol⁻¹",
         "heatOfVaporization": "704 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 760 kJ·mol⁻¹\n2nd: 1260 kJ·mol⁻¹\n3rd: 2510 kJ·mol⁻¹\n4th: 3640 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -19352,6 +19372,7 @@
         "meltingPoint": "3459 K / 3186 °C / 5767 °F",
         "mohsHardness": "7.0",
         "molarHeatCapacity": "25.48 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 760 kJ·mol⁻¹\n2nd: 1260 kJ·mol⁻¹\n3rd: 2510 kJ·mol⁻¹\n4th: 3640 kJ·mol⁻¹",
         "name": "Rhenium",
         "number": "75",
         "oxidationStates": "7, 6, 5, 4, 3, 2, 1, 0, −1",
@@ -19395,7 +19416,6 @@
         "group": "8",
         "heatOfFusion": "57.85 kJ·mol⁻¹",
         "heatOfVaporization": "378 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 840 kJ·mol⁻¹\n2nd: 1600 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -19719,6 +19739,7 @@
         "meltingPoint": "3306 K / 3033 °C / 5491 °F",
         "mohsHardness": "7.0",
         "molarHeatCapacity": "24.7 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 840 kJ·mol⁻¹\n2nd: 1600 kJ·mol⁻¹",
         "name": "Osmium",
         "number": "76",
         "oxidationStates": "8, 7, 6, 5, 4, 3, 2, 1, 0, −1, −2",
@@ -19762,7 +19783,6 @@
         "group": "9",
         "heatOfFusion": "41.12 kJ·mol⁻¹",
         "heatOfVaporization": "564 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 880 kJ·mol⁻¹\n2nd: 1600 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -20247,6 +20267,7 @@
         "meltingPoint": "2719 K / 2446 °C / 4435 °F",
         "mohsHardness": "6.5",
         "molarHeatCapacity": "25.10 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 880 kJ·mol⁻¹\n2nd: 1600 kJ·mol⁻¹",
         "name": "Iridium",
         "number": "77",
         "oxidationStates": "−3,−1, 0, 1, 2, 3, 4, 5, 6, 8",
@@ -20290,7 +20311,6 @@
         "group": "10",
         "heatOfFusion": "22.17 kJ·mol⁻¹",
         "heatOfVaporization": "510 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 870 kJ·mol⁻¹\n2nd: 1791 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -20649,6 +20669,7 @@
         "meltingPoint": "2041.4 K / 1768.3 °C / 3214.9 °F",
         "mohsHardness": "4–4.5",
         "molarHeatCapacity": "25.86 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 870 kJ·mol⁻¹\n2nd: 1791 kJ·mol⁻¹",
         "name": "Platinum",
         "number": "78",
         "oxidationStates": "6, 5, 4, 3, 2, 1, −1, −2",
@@ -20692,7 +20713,6 @@
         "group": "11",
         "heatOfFusion": "12.55 kJ·mol⁻¹",
         "heatOfVaporization": "342 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 890.1 kJ·mol⁻¹\n2nd: 1980 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -21198,6 +21218,7 @@
         "meltingPoint": "1337.33 K / 1064.18 °C / 1947.52 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "25.418 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 890.1 kJ·mol⁻¹\n2nd: 1980 kJ·mol⁻¹",
         "name": "Gold",
         "number": "79",
         "oxidationStates": "5, 4, 3, 2, 1, −1",
@@ -21241,7 +21262,6 @@
         "group": "12",
         "heatOfFusion": "2.29 kJ·mol⁻¹",
         "heatOfVaporization": "59.11 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1007.1 kJ·mol⁻¹\n2nd: 1810 kJ·mol⁻¹\n3rd: 3300 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -21642,6 +21662,7 @@
         "meltingPoint": "234.3210 K / −38.8290 °C / −37.8922 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.983 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1007.1 kJ·mol⁻¹\n2nd: 1810 kJ·mol⁻¹\n3rd: 3300 kJ·mol⁻¹",
         "name": "Mercury",
         "number": "80",
         "oxidationStates": "4, 2, 1",
@@ -21685,7 +21706,6 @@
         "group": "13",
         "heatOfFusion": "4.14 kJ·mol⁻¹",
         "heatOfVaporization": "165 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 589.4 kJ·mol⁻¹\n2nd: 1971 kJ·mol⁻¹\n3rd: 2878 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -22254,6 +22274,7 @@
         "meltingPoint": "577 K / 304 °C / 579 °F",
         "mohsHardness": "1.2",
         "molarHeatCapacity": "26.32 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 589.4 kJ·mol⁻¹\n2nd: 1971 kJ·mol⁻¹\n3rd: 2878 kJ·mol⁻¹",
         "name": "Thallium",
         "number": "81",
         "oxidationStates": "3, 2, 1",
@@ -22297,7 +22318,6 @@
         "group": "14",
         "heatOfFusion": "4.77 kJ·mol⁻¹",
         "heatOfVaporization": "179.5 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 715.6 kJ·mol⁻¹\n2nd: 1450.5 kJ·mol⁻¹\n3rd: 3081.5 kJ·mol⁻¹\n4th: 4083 kJ·mol⁻¹\n5th: 6640 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -22908,6 +22928,7 @@
         "meltingPoint": "600.61 K / 327.46 °C / 621.43 °F",
         "mohsHardness": "1.5",
         "molarHeatCapacity": "26.650 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 715.6 kJ·mol⁻¹\n2nd: 1450.5 kJ·mol⁻¹\n3rd: 3081.5 kJ·mol⁻¹\n4th: 4083 kJ·mol⁻¹\n5th: 6640 kJ·mol⁻¹",
         "name": "Lead",
         "number": "82",
         "oxidationStates": "4, 3, 2, 1",
@@ -22951,7 +22972,6 @@
         "group": "15",
         "heatOfFusion": "11.30 kJ·mol⁻¹",
         "heatOfVaporization": "179 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 703 kJ·mol⁻¹\n2nd: 1610 kJ·mol⁻¹\n3rd: 2466 kJ·mol⁻¹\n4th: 4370 kJ·mol⁻¹\n5th: 5400 kJ·mol⁻¹\n6th: 8520 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -23555,6 +23575,7 @@
         "meltingPoint": "544.7 K / 271.5 °C / 520.7 °F",
         "mohsHardness": "2.25",
         "molarHeatCapacity": "25.52 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 703 kJ·mol⁻¹\n2nd: 1610 kJ·mol⁻¹\n3rd: 2466 kJ·mol⁻¹\n4th: 4370 kJ·mol⁻¹\n5th: 5400 kJ·mol⁻¹\n6th: 8520 kJ·mol⁻¹",
         "name": "Bismuth",
         "number": "83",
         "oxidationStates": "5, 4, 3, 2, 1",
@@ -23598,7 +23619,6 @@
         "group": "16",
         "heatOfFusion": "13 kJ·mol⁻¹",
         "heatOfVaporization": "102.91 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 812.1 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -23911,7 +23931,7 @@
             {
                 "abundance": "",
                 "decayModes": "α (99.52%) → ²⁰⁵Pb\nβ⁺ (0.48%) → ²⁰⁹Bi",
-                "halfLife": "102 a",
+                "halfLife": "125.2 a",
                 "spin": "1/2-",
                 "symbol": "²⁰⁹Po"
             },
@@ -24034,6 +24054,7 @@
         "meltingPoint": "527 K / 254 °C / 489 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "26.4 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 812.1 kJ·mol⁻¹",
         "name": "Polonium",
         "number": "84",
         "oxidationStates": "6, 5, 4, 2, −2",
@@ -24077,7 +24098,6 @@
         "group": "17",
         "heatOfFusion": "",
         "heatOfVaporization": "At₂: 54.39 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 899.003 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -24471,6 +24491,7 @@
         "meltingPoint": "575 K / 302 °C / 576 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 899.003 kJ·mol⁻¹",
         "name": "Astatine",
         "number": "85",
         "oxidationStates": "−1, 1, 3, 5, 7",
@@ -24514,7 +24535,6 @@
         "group": "18",
         "heatOfFusion": "3.247 kJ·mol⁻¹",
         "heatOfVaporization": "18.10 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 1037 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -24852,6 +24872,7 @@
         "meltingPoint": "202 K / −71 °C / −96 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "5R/2 = 20.786 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 1037 kJ·mol⁻¹",
         "name": "Radon",
         "number": "86",
         "oxidationStates": "6, 2, 0",
@@ -24895,7 +24916,6 @@
         "group": "1",
         "heatOfFusion": "2 kJ·mol⁻¹",
         "heatOfVaporization": "65 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 380 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -25219,6 +25239,7 @@
         "meltingPoint": "300 K / 27 °C / 80 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 380 kJ·mol⁻¹",
         "name": "Francium",
         "number": "87",
         "oxidationStates": "1",
@@ -25245,7 +25266,7 @@
         "atomicRadius": "",
         "bandGap": "",
         "block": "s",
-        "boilingPoint": "2010 K / 1737 °C / 3158.6 °F",
+        "boilingPoint": "2010 K / 1737 °C / 3159 °F",
         "brinellHardness": "",
         "bulkModulus": "",
         "casNumber": "7440-14-4",
@@ -25262,7 +25283,6 @@
         "group": "2",
         "heatOfFusion": "8.5 kJ·mol⁻¹",
         "heatOfVaporization": "113 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 509.3 kJ·mol⁻¹\n2nd: 979.0 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -25583,9 +25603,10 @@
         "liquidDensityAtBoilingPoint": "",
         "liquidDensityAtMeltingPoint": "",
         "magneticOrdering": "Nonmagnetic",
-        "meltingPoint": "973 K / 700 °C / 1292 °F",
+        "meltingPoint": "1233 K / 960 °C / 1760 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 509.3 kJ·mol⁻¹\n2nd: 979.0 kJ·mol⁻¹",
         "name": "Radium",
         "number": "88",
         "oxidationStates": "2",
@@ -25629,7 +25650,6 @@
         "group": "4",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 579.9 kJ·mol⁻¹\n2nd: 1389.4 kJ·mol⁻¹\n3rd: 2296.4 kJ·mol⁻¹\n4th: 3077.9 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -25778,6 +25798,7 @@
         "meltingPoint": "2400 K / 2100 °C / 3800 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 579.9 kJ·mol⁻¹\n2nd: 1389.4 kJ·mol⁻¹\n3rd: 2296.4 kJ·mol⁻¹\n4th: 3077.9 kJ·mol⁻¹",
         "name": "Rutherfordium",
         "number": "104",
         "oxidationStates": "4, 3, 2",
@@ -25821,7 +25842,6 @@
         "group": "5",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 664.8 kJ·mol⁻¹\n2nd: 1546.7 kJ·mol⁻¹\n3rd: 2378.4 kJ·mol⁻¹\n4th: 3298.8 kJ·mol⁻¹\n5th: 4305.2 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -25942,6 +25962,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 664.8 kJ·mol⁻¹\n2nd: 1546.7 kJ·mol⁻¹\n3rd: 2378.4 kJ·mol⁻¹\n4th: 3298.8 kJ·mol⁻¹\n5th: 4305.2 kJ·mol⁻¹",
         "name": "Dubnium",
         "number": "105",
         "oxidationStates": "5, 4, 3",
@@ -25985,7 +26006,6 @@
         "group": "6",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 757.4 kJ·mol⁻¹\n2nd: 1732.9 kJ·mol⁻¹\n3rd: 2483.5 kJ·mol⁻¹\n4th: 3415.6 kJ·mol⁻¹\n5th: 4561.8 kJ·mol⁻¹\n6th: 5715.8 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26099,6 +26119,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 757.4 kJ·mol⁻¹\n2nd: 1732.9 kJ·mol⁻¹\n3rd: 2483.5 kJ·mol⁻¹\n4th: 3415.6 kJ·mol⁻¹\n5th: 4561.8 kJ·mol⁻¹\n6th: 5715.8 kJ·mol⁻¹",
         "name": "Seaborgium",
         "number": "106",
         "oxidationStates": "6, 5, 4, 3",
@@ -26142,7 +26163,6 @@
         "group": "7",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 742.9 kJ·mol⁻¹\n2nd: 1688.5 kJ·mol⁻¹\n3rd: 2566.5 kJ·mol⁻¹\n4th: 3598.9 kJ·mol⁻¹\n5th: 4727.8 kJ·mol⁻¹\n6th: 5991.7 kJ·mol⁻¹\n7th: 7226.8 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26235,6 +26255,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 742.9 kJ·mol⁻¹\n2nd: 1688.5 kJ·mol⁻¹\n3rd: 2566.5 kJ·mol⁻¹\n4th: 3598.9 kJ·mol⁻¹\n5th: 4727.8 kJ·mol⁻¹\n6th: 5991.7 kJ·mol⁻¹\n7th: 7226.8 kJ·mol⁻¹",
         "name": "Bohrium",
         "number": "107",
         "oxidationStates": "7, 5, 4, 3",
@@ -26278,7 +26299,6 @@
         "group": "8",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 733.3 kJ·mol⁻¹\n2nd: 1756.0 kJ·mol⁻¹\n3rd: 2827.0 kJ·mol⁻¹\n4th: 3637.5 kJ·mol⁻¹\n5th: 4940.0 kJ·mol⁻¹\n6th: 6175.1 kJ·mol⁻¹\n7th: 7535.5 kJ·mol⁻¹\n8th: 8857.4 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26399,6 +26419,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 733.3 kJ·mol⁻¹\n2nd: 1756.0 kJ·mol⁻¹\n3rd: 2827.0 kJ·mol⁻¹\n4th: 3637.5 kJ·mol⁻¹\n5th: 4940.0 kJ·mol⁻¹\n6th: 6175.1 kJ·mol⁻¹\n7th: 7535.5 kJ·mol⁻¹\n8th: 8857.4 kJ·mol⁻¹",
         "name": "Hassium",
         "number": "108",
         "oxidationStates": "8, 6, 5, 4, 3, 2",
@@ -26442,7 +26463,6 @@
         "group": "9",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 800.8 kJ·mol⁻¹\n2nd: 1823.6 kJ·mol⁻¹\n3rd: 2904.2 kJ·mol⁻¹\n4th: 3859.4 kJ·mol⁻¹\n5th: 4920.8 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26521,6 +26541,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 800.8 kJ·mol⁻¹\n2nd: 1823.6 kJ·mol⁻¹\n3rd: 2904.2 kJ·mol⁻¹\n4th: 3859.4 kJ·mol⁻¹\n5th: 4920.8 kJ·mol⁻¹",
         "name": "Meitnerium",
         "number": "109",
         "oxidationStates": "9, 8, 6, 4, 3, 1",
@@ -26564,7 +26585,6 @@
         "group": "10",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 955.2 kJ·mol⁻¹\n2nd: 1891.1 kJ·mol⁻¹\n3rd: 3029.6 kJ·mol⁻¹\n4th: 3955.9 kJ·mol⁻¹\n5th: 5113.7 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26638,8 +26658,8 @@
             },
             {
                 "abundance": "",
-                "decayModes": "α → ²⁷⁷Hs",
-                "halfLife": "",
+                "decayModes": "α → ²⁷⁷ᵐHs",
+                "halfLife": "3.7 min",
                 "spin": "",
                 "symbol": "²⁸¹ᵐDs"
             }
@@ -26650,6 +26670,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 955.2 kJ·mol⁻¹\n2nd: 1891.1 kJ·mol⁻¹\n3rd: 3029.6 kJ·mol⁻¹\n4th: 3955.9 kJ·mol⁻¹\n5th: 5113.7 kJ·mol⁻¹",
         "name": "Darmstadtium",
         "number": "110",
         "oxidationStates": "8, 6, 4, 2, 0",
@@ -26693,7 +26714,6 @@
         "group": "11",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 1022.7 kJ·mol⁻¹\n2nd: 2074.4 kJ·mol⁻¹\n3rd: 3077.9 kJ·mol⁻¹\n4th: 4052.4 kJ·mol⁻¹\n5th: 5306.7 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26751,6 +26771,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 1022.7 kJ·mol⁻¹\n2nd: 2074.4 kJ·mol⁻¹\n3rd: 3077.9 kJ·mol⁻¹\n4th: 4052.4 kJ·mol⁻¹\n5th: 5306.7 kJ·mol⁻¹",
         "name": "Roentgenium",
         "number": "111",
         "oxidationStates": "5, 3, 1, −1",
@@ -26794,7 +26815,6 @@
         "group": "12",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 1154.9 kJ·mol⁻¹\n2nd: 2170.0 kJ·mol⁻¹\n3rd: 3164.7 kJ·mol⁻¹\n4th: 4245.4 kJ·mol⁻¹\n5th: 5499.7 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26847,7 +26867,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "α → ²⁸¹Ds",
+                "decayModes": "α → ²⁸¹ᵐDs",
                 "halfLife": "8.9 min",
                 "spin": "",
                 "symbol": "²⁸⁵ᵐCn"
@@ -26859,6 +26879,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 1154.9 kJ·mol⁻¹\n2nd: 2170.0 kJ·mol⁻¹\n3rd: 3164.7 kJ·mol⁻¹\n4th: 4245.4 kJ·mol⁻¹\n5th: 5499.7 kJ·mol⁻¹",
         "name": "Copernicium",
         "number": "112",
         "oxidationStates": "4, 2, 1, 0",
@@ -26902,7 +26923,6 @@
         "group": "13",
         "heatOfFusion": "7.61 kJ·mol⁻¹",
         "heatOfVaporization": "130 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 704.9 kJ·mol⁻¹\n2nd: 2238.5 kJ·mol⁻¹\n3rd: 3023.3 kJ·mol⁻¹\n4th: 4351.5 kJ·mol⁻¹\n5th: 5692.6 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -26953,6 +26973,7 @@
         "meltingPoint": "700 K / 430 °C / 810 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 704.9 kJ·mol⁻¹\n2nd: 2238.5 kJ·mol⁻¹\n3rd: 3023.3 kJ·mol⁻¹\n4th: 4351.5 kJ·mol⁻¹\n5th: 5692.6 kJ·mol⁻¹",
         "name": "Ununtrium",
         "number": "113",
         "oxidationStates": "−1, 1, 2, 3, 5",
@@ -26983,7 +27004,7 @@
         "brinellHardness": "",
         "bulkModulus": "",
         "casNumber": "54085-16-4",
-        "category": "",
+        "category": "Post-transition metal",
         "covalentRadius": "171–177 pm",
         "criticalPoint": "",
         "crystalStructure": "",
@@ -26996,8 +27017,14 @@
         "group": "14",
         "heatOfFusion": "",
         "heatOfVaporization": "38 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 823.9 kJ·mol⁻¹\n2nd: 1601.6 kJ·mol⁻¹\n3rd: 3367.3 kJ·mol⁻¹\n4th: 4399.7 kJ·mol⁻¹\n5th: 5847.0 kJ·mol⁻¹",
         "isotopes": [
+            {
+                "abundance": "",
+                "decayModes": "SF → Variable",
+                "halfLife": "0.365 ms",
+                "spin": "0+",
+                "symbol": "²⁸⁴Fl"
+            },
             {
                 "abundance": "",
                 "decayModes": "α → ²⁸¹Cn",
@@ -27054,9 +27081,10 @@
         "meltingPoint": "340 K / 67 °C / 160 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 823.9 kJ·mol⁻¹\n2nd: 1601.6 kJ·mol⁻¹\n3rd: 3367.3 kJ·mol⁻¹\n4th: 4399.7 kJ·mol⁻¹\n5th: 5847.0 kJ·mol⁻¹",
         "name": "Flerovium",
         "number": "114",
-        "oxidationStates": "0, 2, 4, 6",
+        "oxidationStates": "0, 1, 2, 4, 6",
         "period": "7",
         "phase": "Solid",
         "poissonRatio": "",
@@ -27097,7 +27125,6 @@
         "group": "15",
         "heatOfFusion": "5.90–5.98 kJ·mol⁻¹",
         "heatOfVaporization": "138 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 538.4 kJ·mol⁻¹\n2nd: 1756.0 kJ·mol⁻¹\n3rd: 2653.3 kJ·mol⁻¹\n4th: 4679.5 kJ·mol⁻¹\n5th: 5721.6 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -27134,6 +27161,7 @@
         "meltingPoint": "670 K / 400 °C / 750 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 538.4 kJ·mol⁻¹\n2nd: 1756.0 kJ·mol⁻¹\n3rd: 2653.3 kJ·mol⁻¹\n4th: 4679.5 kJ·mol⁻¹\n5th: 5721.6 kJ·mol⁻¹",
         "name": "Ununpentium",
         "number": "115",
         "oxidationStates": "1, 3",
@@ -27177,7 +27205,6 @@
         "group": "16",
         "heatOfFusion": "7.61 kJ·mol⁻¹",
         "heatOfVaporization": "42 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 723.6 kJ·mol⁻¹\n2nd: 1331.5 kJ·mol⁻¹\n3rd: 2846.3 kJ·mol⁻¹\n4th: 3811.2 kJ·mol⁻¹\n5th: 6078.6 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -27214,6 +27241,7 @@
         "meltingPoint": "637–780 K / 364–507 °C / 687–944 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 723.6 kJ·mol⁻¹\n2nd: 1331.5 kJ·mol⁻¹\n3rd: 2846.3 kJ·mol⁻¹\n4th: 3811.2 kJ·mol⁻¹\n5th: 6078.6 kJ·mol⁻¹",
         "name": "Livermorium",
         "number": "116",
         "oxidationStates": "−2, 2, 4",
@@ -27257,7 +27285,6 @@
         "group": "17",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 742.9 kJ·mol⁻¹\n2nd: 1852.55 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -27280,6 +27307,7 @@
         "meltingPoint": "573–773 K / 300–500 °C / 572–932 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 742.9 kJ·mol⁻¹\n2nd: 1852.55 kJ·mol⁻¹",
         "name": "Ununseptium",
         "number": "117",
         "oxidationStates": "−1, 1, 3, 5",
@@ -27323,7 +27351,6 @@
         "group": "18",
         "heatOfFusion": "23.5 kJ·mol⁻¹",
         "heatOfVaporization": "19.4 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 839.4 kJ·mol⁻¹\n2nd: 1563.1 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -27339,6 +27366,7 @@
         "meltingPoint": "",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 839.4 kJ·mol⁻¹\n2nd: 1563.1 kJ·mol⁻¹",
         "name": "Ununoctium",
         "number": "118",
         "oxidationStates": "−1, 0, 1, 2, 4, 6",
@@ -27382,7 +27410,6 @@
         "group": "3",
         "heatOfFusion": "6.20 kJ·mol⁻¹",
         "heatOfVaporization": "400 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 538.1 kJ·mol⁻¹\n2nd: 1067 kJ·mol⁻¹\n3rd: 1850.3 kJ·mol⁻¹\n4th: 4819 kJ·mol⁻¹\n5th: 5940 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -27748,6 +27775,7 @@
         "meltingPoint": "1193 K / 920 °C / 1688 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "27.11 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 538.1 kJ·mol⁻¹\n2nd: 1067 kJ·mol⁻¹\n3rd: 1850.3 kJ·mol⁻¹\n4th: 4819 kJ·mol⁻¹\n5th: 5940 kJ·mol⁻¹",
         "name": "Lanthanum",
         "number": "57",
         "oxidationStates": "3, 2",
@@ -27791,7 +27819,6 @@
         "group": "3",
         "heatOfFusion": "5.46 kJ·mol⁻¹",
         "heatOfVaporization": "398 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 534.4 kJ·mol⁻¹\n2nd: 1050 kJ·mol⁻¹\n3rd: 1949 kJ·mol⁻¹\n4th: 3547 kJ·mol⁻¹\n5th: 6325 kJ·mol⁻¹\n6th: 7490 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -28143,6 +28170,7 @@
         "meltingPoint": "1068 K / 795 °C / 1463 °F",
         "mohsHardness": "2.5",
         "molarHeatCapacity": "26.94 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 534.4 kJ·mol⁻¹\n2nd: 1050 kJ·mol⁻¹\n3rd: 1949 kJ·mol⁻¹\n4th: 3547 kJ·mol⁻¹\n5th: 6325 kJ·mol⁻¹\n6th: 7490 kJ·mol⁻¹",
         "name": "Cerium",
         "number": "58",
         "oxidationStates": "4, 3, 2, 1",
@@ -28186,7 +28214,6 @@
         "group": "3",
         "heatOfFusion": "6.89 kJ·mol⁻¹",
         "heatOfVaporization": "331 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 527 kJ·mol⁻¹\n2nd: 1020 kJ·mol⁻¹\n3rd: 2086 kJ·mol⁻¹\n4th: 3761 kJ·mol⁻¹\n5th: 5551 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -28573,6 +28600,7 @@
         "meltingPoint": "1208 K / 935 °C / 1715 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.20 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 527 kJ·mol⁻¹\n2nd: 1020 kJ·mol⁻¹\n3rd: 2086 kJ·mol⁻¹\n4th: 3761 kJ·mol⁻¹\n5th: 5551 kJ·mol⁻¹",
         "name": "Praseodymium",
         "number": "59",
         "oxidationStates": "4, 3, 2",
@@ -28616,7 +28644,6 @@
         "group": "3",
         "heatOfFusion": "7.14 kJ·mol⁻¹",
         "heatOfVaporization": "289 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 533.1 kJ·mol⁻¹\n2nd: 1040 kJ·mol⁻¹\n3rd: 2130 kJ·mol⁻¹\n4th: 3900 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -28782,7 +28809,7 @@
             {
                 "abundance": "",
                 "decayModes": "",
-                "halfLife": ">=141 ns",
+                "halfLife": "≥141 ns",
                 "spin": "",
                 "symbol": "¹³⁹ᵐ²Nd"
             },
@@ -28982,6 +29009,7 @@
         "meltingPoint": "1297 K / 1024 °C / 1875 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.45 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 533.1 kJ·mol⁻¹\n2nd: 1040 kJ·mol⁻¹\n3rd: 2130 kJ·mol⁻¹\n4th: 3900 kJ·mol⁻¹",
         "name": "Neodymium",
         "number": "60",
         "oxidationStates": "3, 2, 1",
@@ -29025,7 +29053,6 @@
         "group": "3",
         "heatOfFusion": "7.13 kJ·mol⁻¹",
         "heatOfVaporization": "289 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 540 kJ·mol⁻¹\n2nd: 1050 kJ·mol⁻¹\n3rd: 2150 kJ·mol⁻¹\n4th: 3970 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -29426,6 +29453,7 @@
         "meltingPoint": "1315 K / 1042 °C / 1908 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 540 kJ·mol⁻¹\n2nd: 1050 kJ·mol⁻¹\n3rd: 2150 kJ·mol⁻¹\n4th: 3970 kJ·mol⁻¹",
         "name": "Promethium",
         "number": "61",
         "oxidationStates": "3",
@@ -29469,7 +29497,6 @@
         "group": "3",
         "heatOfFusion": "8.62 kJ·mol⁻¹",
         "heatOfVaporization": "192 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 544.5 kJ·mol⁻¹\n2nd: 1070 kJ·mol⁻¹\n3rd: 2260 kJ·mol⁻¹\n4th: 3990 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -29828,6 +29855,7 @@
         "meltingPoint": "1345 K / 1072 °C / 1962 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "29.54 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 544.5 kJ·mol⁻¹\n2nd: 1070 kJ·mol⁻¹\n3rd: 2260 kJ·mol⁻¹\n4th: 3990 kJ·mol⁻¹",
         "name": "Samarium",
         "number": "62",
         "oxidationStates": "4, 3, 2, 1",
@@ -29871,7 +29899,6 @@
         "group": "3",
         "heatOfFusion": "9.21 kJ·mol⁻¹",
         "heatOfVaporization": "176 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 547.1 kJ·mol⁻¹\n2nd: 1085 kJ·mol⁻¹\n3rd: 2404 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -30265,6 +30292,7 @@
         "meltingPoint": "1099 K / 826 °C / 1519 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.66 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 547.1 kJ·mol⁻¹\n2nd: 1085 kJ·mol⁻¹\n3rd: 2404 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "name": "Europium",
         "number": "63",
         "oxidationStates": "3, 2, 1",
@@ -30308,7 +30336,6 @@
         "group": "3",
         "heatOfFusion": "10.05 kJ·mol⁻¹",
         "heatOfVaporization": "301.3 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 593.4 kJ·mol⁻¹\n2nd: 1170 kJ·mol⁻¹\n3rd: 1990 kJ·mol⁻¹\n4th: 4250 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -30639,6 +30666,7 @@
         "meltingPoint": "1585 K / 1312 °C / 2394 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "37.03 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 593.4 kJ·mol⁻¹\n2nd: 1170 kJ·mol⁻¹\n3rd: 1990 kJ·mol⁻¹\n4th: 4250 kJ·mol⁻¹",
         "name": "Gadolinium",
         "number": "64",
         "oxidationStates": "1, 2, 3",
@@ -30682,7 +30710,6 @@
         "group": "3",
         "heatOfFusion": "10.15 kJ·mol⁻¹",
         "heatOfVaporization": "391 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 565.8 kJ·mol⁻¹\n2nd: 1110 kJ·mol⁻¹\n3rd: 2114 kJ·mol⁻¹\n4th: 3839 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -31139,6 +31166,7 @@
         "meltingPoint": "1629 K / 1356 °C / 2473 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "28.91 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 565.8 kJ·mol⁻¹\n2nd: 1110 kJ·mol⁻¹\n3rd: 2114 kJ·mol⁻¹\n4th: 3839 kJ·mol⁻¹",
         "name": "Terbium",
         "number": "65",
         "oxidationStates": "4, 3, 2, 1",
@@ -31182,7 +31210,6 @@
         "group": "3",
         "heatOfFusion": "11.06 kJ·mol⁻¹",
         "heatOfVaporization": "280 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 573.0 kJ·mol⁻¹\n2nd: 1130 kJ·mol⁻¹\n3rd: 2200 kJ·mol⁻¹\n4th: 3990 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -31527,6 +31554,7 @@
         "meltingPoint": "1680 K / 1407 °C / 2565 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.7 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 573.0 kJ·mol⁻¹\n2nd: 1130 kJ·mol⁻¹\n3rd: 2200 kJ·mol⁻¹\n4th: 3990 kJ·mol⁻¹",
         "name": "Dysprosium",
         "number": "66",
         "oxidationStates": "3, 2, 1",
@@ -31570,7 +31598,6 @@
         "group": "3",
         "heatOfFusion": "17.0 kJ·mol⁻¹",
         "heatOfVaporization": "251 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 581.0 kJ·mol⁻¹\n2nd: 1140 kJ·mol⁻¹\n3rd: 2204 kJ·mol⁻¹\n4th: 4100 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -32062,6 +32089,7 @@
         "meltingPoint": "1734 K / 1461 °C / 2662 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.15 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 581.0 kJ·mol⁻¹\n2nd: 1140 kJ·mol⁻¹\n3rd: 2204 kJ·mol⁻¹\n4th: 4100 kJ·mol⁻¹",
         "name": "Holmium",
         "number": "67",
         "oxidationStates": "3, 2, 1",
@@ -32105,7 +32133,6 @@
         "group": "3",
         "heatOfFusion": "19.90 kJ·mol⁻¹",
         "heatOfVaporization": "280 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 589.3 kJ·mol⁻¹\n2nd: 1150 kJ·mol⁻¹\n3rd: 2194 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -32457,6 +32484,7 @@
         "meltingPoint": "1802 K / 1529 °C / 2784 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "28.12 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 589.3 kJ·mol⁻¹\n2nd: 1150 kJ·mol⁻¹\n3rd: 2194 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "name": "Erbium",
         "number": "68",
         "oxidationStates": "3, 2, 1",
@@ -32500,7 +32528,6 @@
         "group": "3",
         "heatOfFusion": "16.84 kJ·mol⁻¹",
         "heatOfVaporization": "191 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 596.7 kJ·mol⁻¹\n2nd: 1160 kJ·mol⁻¹\n3rd: 2285 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -32936,6 +32963,7 @@
         "meltingPoint": "1818 K / 1545 °C / 2813 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.03 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 596.7 kJ·mol⁻¹\n2nd: 1160 kJ·mol⁻¹\n3rd: 2285 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "name": "Thulium",
         "number": "69",
         "oxidationStates": "2, 3, 4",
@@ -32979,7 +33007,6 @@
         "group": "3",
         "heatOfFusion": "7.66 kJ·mol⁻¹",
         "heatOfVaporization": "129 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 603.4 kJ·mol⁻¹\n2nd: 1174.8 kJ·mol⁻¹\n3rd: 2417 kJ·mol⁻¹\n4th: 4203 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -33302,6 +33329,13 @@
                 "halfLife": "1 min",
                 "spin": "3/2-",
                 "symbol": "¹⁸¹Yb"
+            },
+            {
+                "abundance": "",
+                "decayModes": "",
+                "halfLife": "",
+                "spin": "",
+                "symbol": "¹⁸²Yb"
             }
         ],
         "liquidDensityAtBoilingPoint": "",
@@ -33310,6 +33344,7 @@
         "meltingPoint": "1097 K / 824 °C / 1515 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "26.74 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 603.4 kJ·mol⁻¹\n2nd: 1174.8 kJ·mol⁻¹\n3rd: 2417 kJ·mol⁻¹\n4th: 4203 kJ·mol⁻¹",
         "name": "Ytterbium",
         "number": "70",
         "oxidationStates": "3, 2, 1",
@@ -33353,7 +33388,6 @@
         "group": "3",
         "heatOfFusion": "22 kJ·mol⁻¹",
         "heatOfVaporization": "414 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 523.5 kJ·mol⁻¹\n2nd: 1340 kJ·mol⁻¹\n3rd: 2022.3 kJ·mol⁻¹\n4th: 4370 kJ·mol⁻¹\n5th: 6445 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -33364,21 +33398,21 @@
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "p → ¹⁴⁹Yb",
                 "halfLife": "80 µs",
                 "spin": "1,2",
                 "symbol": "¹⁵⁰ᵐLu"
             },
             {
                 "abundance": "",
-                "decayModes": "β⁺ → ¹⁵¹Yb",
+                "decayModes": "p (63.4%) → ¹⁵⁰Yb\nβ⁺ (36.6%) → ¹⁵¹Yb",
                 "halfLife": "80.6 ms",
                 "spin": "11/2-",
                 "symbol": "¹⁵¹Lu"
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "p → ¹⁵⁰Yb",
                 "halfLife": "16 µs",
                 "spin": "3/2+",
                 "symbol": "¹⁵¹ᵐLu"
@@ -33392,28 +33426,28 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁺ → ¹⁵³Yb\nα → ¹⁴⁹Tm",
+                "decayModes": "α (70%) → ¹⁴⁹Tm\nβ⁺ (30%) → ¹⁵³Yb",
                 "halfLife": "0.9 s",
                 "spin": "11/2-",
                 "symbol": "¹⁵³Lu"
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "IT → ¹⁵³Yb",
                 "halfLife": "1 s",
                 "spin": "1/2+",
                 "symbol": "¹⁵³ᵐ¹Lu"
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "IT → ¹⁵³Yb",
                 "halfLife": ">0.1 µs",
                 "spin": "23/2-",
                 "symbol": "¹⁵³ᵐ²Lu"
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "IT → ¹⁵³ᵐ²Yb",
                 "halfLife": "15 µs",
                 "spin": "27/2-",
                 "symbol": "¹⁵³ᵐ³Lu"
@@ -33901,6 +33935,7 @@
         "meltingPoint": "1925 K / 1652 °C / 3006 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "26.86 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 523.5 kJ·mol⁻¹\n2nd: 1340 kJ·mol⁻¹\n3rd: 2022.3 kJ·mol⁻¹\n4th: 4370 kJ·mol⁻¹\n5th: 6445 kJ·mol⁻¹",
         "name": "Lutetium",
         "number": "71",
         "oxidationStates": "3, 2, 1",
@@ -33944,7 +33979,6 @@
         "group": "3",
         "heatOfFusion": "14 kJ·mol⁻¹",
         "heatOfVaporization": "400 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 499 kJ·mol⁻¹\n2nd: 1170 kJ·mol⁻¹\n3rd: 1900 kJ·mol⁻¹\n4th: 4700 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -34226,6 +34260,7 @@
         "meltingPoint": "1500 K / 1227 °C / 2240 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.2 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 499 kJ·mol⁻¹\n2nd: 1170 kJ·mol⁻¹\n3rd: 1900 kJ·mol⁻¹\n4th: 4700 kJ·mol⁻¹",
         "name": "Actinium",
         "number": "89",
         "oxidationStates": "3",
@@ -34269,7 +34304,6 @@
         "group": "3",
         "heatOfFusion": "13.81 kJ·mol⁻¹",
         "heatOfVaporization": "514 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 587 kJ·mol⁻¹\n2nd: 1110 kJ·mol⁻¹\n3rd: 1978 kJ·mol⁻¹\n4th: 2780 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -34509,6 +34543,7 @@
         "meltingPoint": "2023 K / 1750 °C / 3182 °F",
         "mohsHardness": "3.0",
         "molarHeatCapacity": "26.230 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 587 kJ·mol⁻¹\n2nd: 1110 kJ·mol⁻¹\n3rd: 1978 kJ·mol⁻¹\n4th: 2780 kJ·mol⁻¹",
         "name": "Thorium",
         "number": "90",
         "oxidationStates": "4, 3, 2, 1",
@@ -34552,7 +34587,6 @@
         "group": "3",
         "heatOfFusion": "12.34 kJ·mol⁻¹",
         "heatOfVaporization": "481 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 568 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 1814 kJ·mol⁻¹\n4th: 2991 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -34785,6 +34819,7 @@
         "meltingPoint": "1841 K / 1568 °C / 2854 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 568 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 1814 kJ·mol⁻¹\n4th: 2991 kJ·mol⁻¹",
         "name": "Protactinium",
         "number": "91",
         "oxidationStates": "2, 3, 4, 5",
@@ -34828,7 +34863,6 @@
         "group": "3",
         "heatOfFusion": "9.14 kJ·mol⁻¹",
         "heatOfVaporization": "417.1 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 597.6 kJ·mol⁻¹\n2nd: 1420 kJ·mol⁻¹\n3rd: 1900 kJ·mol⁻¹\n4th: 3145 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -35068,6 +35102,7 @@
         "meltingPoint": "1405.3 K / 1132.2 °C / 2070 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "27.665 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 597.6 kJ·mol⁻¹\n2nd: 1420 kJ·mol⁻¹\n3rd: 1900 kJ·mol⁻¹\n4th: 3145 kJ·mol⁻¹",
         "name": "Uranium",
         "number": "92",
         "oxidationStates": "6, 5, 4, 3, 2, 1",
@@ -35111,7 +35146,6 @@
         "group": "3",
         "heatOfFusion": "5.19 kJ·mol⁻¹",
         "heatOfVaporization": "336 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 604.5 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 1997 kJ·mol⁻¹\n4th: 3242 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -35288,6 +35322,7 @@
         "meltingPoint": "912±3 K / 639±3 °C / 1182±5 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "29.46 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 604.5 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 1997 kJ·mol⁻¹\n4th: 3242 kJ·mol⁻¹",
         "name": "Neptunium",
         "number": "93",
         "oxidationStates": "7, 6, 5, 4, 3",
@@ -35331,7 +35366,6 @@
         "group": "3",
         "heatOfFusion": "2.82 kJ·mol⁻¹",
         "heatOfVaporization": "333.5 kJ·mol⁻¹",
-        "molarIonizationEnergies": "1st: 584.7 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 2084 kJ·mol⁻¹\n4th: 3338 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -35529,6 +35563,7 @@
         "meltingPoint": "912.5 K / 639.4 °C / 1182.9 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "35.5 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 584.7 kJ·mol⁻¹\n2nd: 1128 kJ·mol⁻¹\n3rd: 2084 kJ·mol⁻¹\n4th: 3338 kJ·mol⁻¹",
         "name": "Plutonium",
         "number": "94",
         "oxidationStates": "8, 7, 6, 5, 4, 3, 2, 1",
@@ -35572,7 +35607,6 @@
         "group": "3",
         "heatOfFusion": "14.39 kJ·mol⁻¹",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 578 kJ·mol⁻¹\n2nd: 1158 kJ·mol⁻¹\n3rd: 2132 kJ·mol⁻¹\n4th: 3493 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -35770,6 +35804,7 @@
         "meltingPoint": "1449 K / 1176 °C / 2149 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "62.7 J·mol⁻¹·K⁻¹",
+        "molarIonizationEnergies": "1st: 578 kJ·mol⁻¹\n2nd: 1158 kJ·mol⁻¹\n3rd: 2132 kJ·mol⁻¹\n4th: 3493 kJ·mol⁻¹",
         "name": "Americium",
         "number": "95",
         "oxidationStates": "7, 6, 5, 4, 3, 2",
@@ -35813,7 +35848,6 @@
         "group": "3",
         "heatOfFusion": "15 kJ·mol⁻¹",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 581 kJ·mol⁻¹\n2nd: 1196 kJ·mol⁻¹\n3rd: 2026 kJ·mol⁻¹\n4th: 3550 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -35997,6 +36031,7 @@
         "meltingPoint": "1613 K / 1340 °C / 2444 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 581 kJ·mol⁻¹\n2nd: 1196 kJ·mol⁻¹\n3rd: 2026 kJ·mol⁻¹\n4th: 3550 kJ·mol⁻¹",
         "name": "Curium",
         "number": "96",
         "oxidationStates": "8, 6, 4, 3, 2",
@@ -36040,7 +36075,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 601 kJ·mol⁻¹\n2nd: 1186 kJ·mol⁻¹\n3rd: 2152 kJ·mol⁻¹\n4th: 3434 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -36231,6 +36265,7 @@
         "meltingPoint": "Beta: 1259 K / 986 °C / 1807 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 601 kJ·mol⁻¹\n2nd: 1186 kJ·mol⁻¹\n3rd: 2152 kJ·mol⁻¹\n4th: 3434 kJ·mol⁻¹",
         "name": "Berkelium",
         "number": "97",
         "oxidationStates": "3, 4",
@@ -36274,7 +36309,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 608 kJ·mol⁻¹\n2nd: 1206 kJ·mol⁻¹\n3rd: 2267 kJ·mol⁻¹\n4th: 3599 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -36430,6 +36464,7 @@
         "meltingPoint": "1173 K / 900 °C / 1652 °F",
         "mohsHardness": "3–4",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 608 kJ·mol⁻¹\n2nd: 1206 kJ·mol⁻¹\n3rd: 2267 kJ·mol⁻¹\n4th: 3599 kJ·mol⁻¹",
         "name": "Californium",
         "number": "98",
         "oxidationStates": "2, 3, 4",
@@ -36473,7 +36508,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 619 kJ·mol⁻¹\n2nd: 1216 kJ·mol⁻¹\n3rd: 2334 kJ·mol⁻¹\n4th: 3734 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -36636,6 +36670,7 @@
         "meltingPoint": "1133 K / 860 °C / 1580 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 619 kJ·mol⁻¹\n2nd: 1216 kJ·mol⁻¹\n3rd: 2334 kJ·mol⁻¹\n4th: 3734 kJ·mol⁻¹",
         "name": "Einsteinium",
         "number": "99",
         "oxidationStates": "2, 3, 4",
@@ -36679,7 +36714,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 627 kJ·mol⁻¹\n2nd: 1225 kJ·mol⁻¹\n3rd: 2363 kJ·mol⁻¹\n4th: 3792 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -36842,6 +36876,7 @@
         "meltingPoint": "1125 K / 852 °C / 1565 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 627 kJ·mol⁻¹\n2nd: 1225 kJ·mol⁻¹\n3rd: 2363 kJ·mol⁻¹\n4th: 3792 kJ·mol⁻¹",
         "name": "Fermium",
         "number": "100",
         "oxidationStates": "2, 3",
@@ -36885,7 +36920,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 635 kJ·mol⁻¹\n2nd: 1235 kJ·mol⁻¹\n3rd: 2470 kJ·mol⁻¹\n4th: 3840 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -37041,6 +37075,7 @@
         "meltingPoint": "1100 K / 827 °C / 1521 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 635 kJ·mol⁻¹\n2nd: 1235 kJ·mol⁻¹\n3rd: 2470 kJ·mol⁻¹\n4th: 3840 kJ·mol⁻¹",
         "name": "Mendelevium",
         "number": "101",
         "oxidationStates": "2, 3",
@@ -37084,7 +37119,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 642 kJ·mol⁻¹\n2nd: 1254 kJ·mol⁻¹\n3rd: 2643 kJ·mol⁻¹\n4th: 3956 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -37198,6 +37232,7 @@
         "meltingPoint": "1100 K / 827 °C / 1521 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 642 kJ·mol⁻¹\n2nd: 1254 kJ·mol⁻¹\n3rd: 2643 kJ·mol⁻¹\n4th: 3956 kJ·mol⁻¹",
         "name": "Nobelium",
         "number": "102",
         "oxidationStates": "2, 3",
@@ -37241,7 +37276,6 @@
         "group": "3",
         "heatOfFusion": "",
         "heatOfVaporization": "",
-        "molarIonizationEnergies": "1st: 470 kJ·mol⁻¹\n2nd: 1428 kJ·mol⁻¹\n3rd: 2228 kJ·mol⁻¹\n4th: 4910 kJ·mol⁻¹",
         "isotopes": [
             {
                 "abundance": "",
@@ -37341,6 +37375,7 @@
         "meltingPoint": "1900 K / 1627 °C / 2961 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "",
+        "molarIonizationEnergies": "1st: 470 kJ·mol⁻¹\n2nd: 1428 kJ·mol⁻¹\n3rd: 2228 kJ·mol⁻¹\n4th: 4910 kJ·mol⁻¹",
         "name": "Lawrencium",
         "number": "103",
         "oxidationStates": "3",
