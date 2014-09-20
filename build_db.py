@@ -435,9 +435,10 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames):
     for row in article.getTable('table'):
         isotopeSymbol = re.sub(r'[ ]*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
 
-        halfLife = re.sub(r'observationally stable|stable', '-',
-            re.sub(r'\s*\[[^\]]+\]?|\([^)][\d\.]*\)|\([\d\.]+ \(\w+\)\, [\d\.]+ \(\w+\)\)|\s*[\?#]', '',
-            re.sub(r'yr[s]?|years', 'y', row['half life']).replace(' × ', '×')), flags=re.IGNORECASE)
+        halfLife = re.sub(r'\s*\([^()]*\)', '', re.sub(r'observationally stable|stable', '-',
+            re.sub(r'\s*\[[^\]]+\]?|\s*\([^()]*\)|\s*[\?#]', '', re.sub(r'yr[s]?|years', 'y',
+                re.sub(r'millisecond', 'ms', row['half life'], flags=re.I), flags=re.I) \
+            .replace(' × ', '×')), flags=re.I))
 
         decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
 
