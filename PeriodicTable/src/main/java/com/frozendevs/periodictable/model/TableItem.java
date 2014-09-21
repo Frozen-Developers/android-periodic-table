@@ -2,8 +2,8 @@ package com.frozendevs.periodictable.model;
 
 public class TableItem extends ElementListItem {
 
-    private String weight, category;
-    private int group, period;
+    private String weight;
+    private int group, period, category;
 
     public int getGroup() {
         return group;
@@ -17,7 +17,7 @@ public class TableItem extends ElementListItem {
         return weight;
     }
 
-    public String getCategory() {
+    public int getCategory() {
         return category;
     }
 }
