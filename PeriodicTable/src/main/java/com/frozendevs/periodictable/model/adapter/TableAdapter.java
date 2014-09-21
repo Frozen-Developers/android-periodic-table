@@ -17,6 +17,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     private static final int VIEW_TYPE_ITEM = 0;
     private static final int VIEW_TYPE_TEXT = 1;
 
+    private static final int GROUPS_COUNT = 18;
+
     private Context mContext;
     private Typeface mTypeface;
 
@@ -29,23 +31,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         mContext = context;
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
-    }
-
-    @Override
-    public TableItem getItem(int position) {
-        for (TableItem item : getAllItems()) {
-            if (((item.getPeriod() - 1) * 18) + item.getGroup() - 1 == position)
-                return item;
-            else if (position >= 128 && position <= 142) {
-                if (item.getNumber() + 71 == position)
-                    return item;
-            } else if (position >= 146 && position <= 160) {
-                if (item.getNumber() + 57 == position)
-                    return item;
-            }
-        }
-
-        return null;
     }
 
     @Override
@@ -173,25 +158,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         return null;
     }
 
-    @Override
-    public int getItemPosition(TableItem item) {
-        for (TableItem tableItem : getAllItems()) {
-            if(tableItem.equals(item)) {
-                if (item.getNumber() + 71 >= 128 && item.getNumber() + 71 <= 142) {
-                    return item.getNumber() + 71;
-                }
-                else if (item.getNumber() + 57 >= 146 && item.getNumber() + 57 <= 160) {
-                    return item.getNumber() + 57;
-                }
-                else {
-                    return ((item.getPeriod() - 1) * 18) + item.getGroup() - 1;
-                }
-            }
-        }
-
-        return -1;
-    }
-
     private int getBackgroundColor(int position) {
         int color = R.color.category_unknown_bg;
 
@@ -291,8 +257,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
 
     @Override
     public int getItemViewType(int position) {
-        if(position == 92 || position == 110 || (position >= 4 && position <= 9) ||
-                (position >= 22 && position <= 26)) {
+        if(getItem(position) == null && (position == 92 || position == 110 ||
+                (position >= 4 && position <= 9) || (position >= 22 && position <= 26))) {
             return VIEW_TYPE_TEXT;
         }
 
@@ -302,5 +268,30 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     @Override
     public int getViewTypeCount() {
         return 2;
+    }
+
+    @Override
+    public void setItems(TableItem... items) {
+        int periods = 0;
+
+        for(TableItem item : items) {
+            periods = Math.max(item.getPeriod(), periods);
+        }
+
+        TableItem[] sortedItems = new TableItem[GROUPS_COUNT * (periods + 2)];
+
+        for(TableItem item : items) {
+            if (item.getNumber() >= 57 && item.getNumber() <= 71) {
+                sortedItems[(GROUPS_COUNT * periods) + 2 + item.getNumber() - 57] = item;
+            }
+            else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
+                sortedItems[(GROUPS_COUNT * periods) + 20 + item.getNumber() - 89] = item;
+            }
+            else {
+                sortedItems[((item.getPeriod() - 1) * GROUPS_COUNT) + item.getGroup() - 1] = item;
+            }
+        }
+
+        super.setItems(sortedItems);
     }
 }
