@@ -26129,7 +26129,7 @@
         "molarIonizationEnergies": "1st: 757.4 kJ·mol⁻¹\n2nd: 1732.9 kJ·mol⁻¹\n3rd: 2483.5 kJ·mol⁻¹\n4th: 3415.6 kJ·mol⁻¹\n5th: 4561.8 kJ·mol⁻¹\n6th: 5715.8 kJ·mol⁻¹",
         "name": "Seaborgium",
         "number": "106",
-        "oxidationStates": "6, 5, 4, 3",
+        "oxidationStates": "6, 5, 4, 3, 0",
         "period": "7",
         "phase": "Solid",
         "poissonRatio": "",

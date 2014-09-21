@@ -23,8 +23,9 @@ def replace_chars(string, charset1, charset2):
 
 class TableCell:
 
-    def __init__(self, value):
+    def __init__(self, value, cellType = 'cell'):
         self.properties = {}
+        self.cellType = cellType
         segments = value.split('|')
         if len(segments) > 1:
             for segment in segments[0::-2]:
@@ -48,6 +49,9 @@ class TableCell:
                 pass
         return 1
 
+    def getCellType(self):
+        return self.cellType
+
 class Article:
 
     units = {}
@@ -65,7 +69,8 @@ class Article:
             r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
             r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
             r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}', r'{{citation needed\|[^}]*}}',
-            r'{{dubious\|[^}]*}}' ]
+            r'{{dubious\|[^}]*}}', r'{{{note\|[^}]*}}}', r'{{periodic table legend\|[^}]*}}',
+            r'{{anchor\|[^}]*}}' ]
         content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
 
         replace = [
@@ -95,6 +100,12 @@ class Article:
             [ r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2' ],
             [ r'{{e\|([\d\.\-–−]*)}}', r'×10<sup>\1</sup>' ],
             [ r'{{su\|p=([\d\.\-–−+]*)\|b=([\d\.\-–−+]*)}}', r'(\1\2)' ],
+            [ r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)}}',
+                r'\1;\2;\3;\4;\5;\6;\7' ],
+            [ r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|link=([^\|}]*)}}',
+                r'\1;\2;\3;\4;\5;\6;\7;\8' ],
+            [ r'{{element cell-asterisk\|(\d+)\|?[^}]*}}',
+                lambda x: '| ' + ''.join([ '*' for i in range(int(x.group(1))) ]) ],
             [ r'\|\|', '\n|' ],
             [ r'!!', '\n!' ]
         ]
@@ -114,20 +125,27 @@ class Article:
         # Parse tables
 
         self.tables = OrderedDict()
-        for match in re.finditer(r'=([^\n]*)=\s+{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
+        for match in re.finditer(r'=?([^\n]*)?=?\s*{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
             content, flags=re.S):
-            name = match.group(1).strip(' =').lower()
+            name = match.group(1).strip(' =').lower() if match.group(1) != '' else 'table ' + \
+                str(len(self.tables.keys()) + 1)
             rows = list(filter(len, [ row.strip(' \n\t!\'') for row in re.split(r'\n\|\-[^\n]*',
                 match.group(3), flags=re.S) ]))
             headers = []
             for row_i, row in enumerate(rows):
                 delimiter = '\n!' if '\n!' in row else '\n|'
-                rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\'')) \
-                    for value in row.split(delimiter) ]
+                rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\''),
+                    'cell' if '\n|' in row else 'header') for value in row.split(delimiter) ]
             if len(rows) > 0:
-                rowHeight = 1
-                for cell in rows[0]:
-                    rowHeight = max(cell.getIntProperty('rowspan'), rowHeight)
+                rowHeight = 0
+                for row in rows:
+                    for cell in row:
+                        if cell.getCellType() != 'header':
+                            break
+                    else:
+                        rowHeight += 1
+                        continue
+                    break
                 cellOffset = 0
                 for cell in rows[0]:
                     rowSpan = cell.getIntProperty('rowspan')
@@ -562,10 +580,16 @@ if __name__ == '__main__':
 
     # Parse articles
 
-    for element in html.parse(URL_PREFIX + '/wiki/Periodic_table').xpath('//table/tr/td/div[@title]/div/a'):
-        jsonData.append(parse(Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + \
-            re.sub(r'\s?\([^)]\w*\)', '', element.attrib['title'].lower())),
-            URL_PREFIX + element.attrib['href'], molarIonizationEnergiesDict, elementNames))
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Periodic_table')
+    for row in article.getTable('table 1'):
+        for key, value in row.items():
+            segments = [ segment.strip() for segment in value.split(';') ]
+            if len(segments) >= 7:
+                jsonData.append(parse(
+                    Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + segments[1]),
+                    URL_PREFIX + '/wiki/' + (replace_chars(segments[7], ' ', '_') \
+                        if len(segments) > 7 else segments[1].capitalize()),
+                    molarIonizationEnergiesDict, elementNames))
 
     # Save
 
