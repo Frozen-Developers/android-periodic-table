@@ -311,7 +311,7 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames):
+def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, category):
     # Properties
 
     number = article.getProperty('number')
@@ -325,8 +325,6 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames):
         weight = format(float(weight), '.3f').rstrip('.0')
     except ValueError:
         pass
-
-    category = article.getProperty('series', comments=False).capitalize()
 
     group = article.getProperty('group', '3')
 
@@ -581,15 +579,19 @@ if __name__ == '__main__':
     # Parse articles
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Periodic_table')
+    categories = []
     for row in article.getTable('table 1'):
         for key, value in row.items():
             segments = [ segment.strip() for segment in value.split(';') ]
             if len(segments) >= 7:
+                if segments[5].lower() not in categories:
+                    categories.append(segments[5].lower())
                 jsonData.append(parse(
                     Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + segments[1]),
                     URL_PREFIX + '/wiki/' + (replace_chars(segments[7], ' ', '_') \
                         if len(segments) > 7 else segments[1].capitalize()),
-                    molarIonizationEnergiesDict, elementNames))
+                    molarIonizationEnergiesDict, elementNames,
+                    categories.index(segments[5].lower())))
 
     # Save
 
