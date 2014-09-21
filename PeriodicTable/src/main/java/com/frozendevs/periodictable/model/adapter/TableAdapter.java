@@ -12,7 +12,7 @@ import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.model.TableItem;
 
-public class TableAdapter extends DynamicItemsAdapter<TableItem> {
+public class TableAdapter extends DynamicAdapter<TableItem> {
 
     private static final int VIEW_TYPE_ITEM = 0;
     private static final int VIEW_TYPE_TEXT = 1;
@@ -173,6 +173,7 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
         return null;
     }
 
+    @Override
     public int getItemPosition(TableItem item) {
         for (TableItem tableItem : getAllItems()) {
             if(tableItem.equals(item)) {

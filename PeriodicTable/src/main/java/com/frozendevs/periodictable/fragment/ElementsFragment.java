@@ -13,11 +13,9 @@ import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 
-import java.util.List;
-
 public class ElementsFragment extends Fragment {
 
-    private class LoadData extends AsyncTask<Void, Void, List<ElementListItem>> {
+    private class LoadData extends AsyncTask<Void, Void, ElementListItem[]> {
 
         private ListView mListView;
 
@@ -26,12 +24,12 @@ public class ElementsFragment extends Fragment {
         }
 
         @Override
-        protected List<ElementListItem> doInBackground(Void... params) {
+        protected ElementListItem[] doInBackground(Void... params) {
             return Database.getInstance(getActivity()).getElementListItems();
         }
 
         @Override
-        protected void onPostExecute(List<ElementListItem> result) {
+        protected void onPostExecute(ElementListItem[] result) {
             ((ElementsAdapter)mListView.getAdapter()).setItems(result);
 
             mListView.setEmptyView(getActivity().findViewById(R.id.empty_elements_list));

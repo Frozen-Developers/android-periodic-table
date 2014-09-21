@@ -13,12 +13,9 @@ import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
-import java.util.Arrays;
-import java.util.List;
-
 public class TableFragment extends Fragment {
 
-    private class LoadData extends AsyncTask<Void, Void, List<TableItem>> {
+    private class LoadData extends AsyncTask<Void, Void, TableItem[]> {
 
         private TableAdapter mAdapter;
 
@@ -27,12 +24,12 @@ public class TableFragment extends Fragment {
         }
 
         @Override
-        protected List<TableItem> doInBackground(Void... params) {
-            return Arrays.asList(Database.getInstance(getActivity()).getTableItems());
+        protected TableItem[] doInBackground(Void... params) {
+            return Database.getInstance(getActivity()).getTableItems();
         }
 
         @Override
-        protected void onPostExecute(List<TableItem> result) {
+        protected void onPostExecute(TableItem[] result) {
             mAdapter.setItems(result);
         }
     }

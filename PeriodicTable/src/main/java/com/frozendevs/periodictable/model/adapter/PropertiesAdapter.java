@@ -19,8 +19,6 @@ import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.TableItem;
 
-import java.util.Arrays;
-
 public class PropertiesAdapter extends BaseExpandableListAdapter implements
         ExpandableListView.OnGroupClickListener {
 
@@ -114,7 +112,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         typedArray.recycle();
 
         mTableAdapter = new TableAdapter(context);
-        mTableAdapter.setItems(Arrays.asList((TableItem)properties));
+        mTableAdapter.setItems((TableItem)properties);
 
         int category = R.string.category_unknown;
         switch (properties.getCategory()) {
@@ -289,7 +287,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
                     View tileView = convertView.findViewById(R.id.tile_view);
                     mTableAdapter.getView(mTableAdapter.getItemPosition(
-                            mTableAdapter.getAllItems().get(0)), tileView, (ViewGroup)convertView);
+                            mTableAdapter.getAllItems()[0]), tileView, (ViewGroup)convertView);
                     tileView.setClickable(false);
                     tileView.setDuplicateParentStateEnabled(true);
 
@@ -395,7 +393,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
                     View tileView = view.findViewById(R.id.tile_view);
                     mTableAdapter.getView(mTableAdapter.getItemPosition(
-                            mTableAdapter.getAllItems().get(0)), tileView, (ViewGroup)view);
+                            mTableAdapter.getAllItems()[0]), tileView, (ViewGroup)view);
                     tileView.setClickable(false);
 
                     ((TextView) tileView.findViewById(R.id.element_symbol)).setText(

@@ -15,10 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
+public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
 
-    private List<ElementListItem> mAllItems = new ArrayList<ElementListItem>();
-
+    private ElementListItem[] mAllItems;
     private Context mContext;
 
     private class ViewHolder {
@@ -88,16 +87,16 @@ public class ElementsAdapter extends DynamicItemsAdapter<ElementListItem> {
             }
         }
 
-        super.setItems(filteredItems);
+        super.setItems(filteredItems.toArray(new ElementListItem[filteredItems.size()]));
     }
 
     public void clearFilter() {
-        super.setItems(new ArrayList<ElementListItem>(mAllItems));
+        super.setItems(mAllItems);
     }
 
     @Override
-    public void setItems(List<ElementListItem> items) {
-        mAllItems = new ArrayList<ElementListItem>(items);
+    public void setItems(ElementListItem[] items) {
+        mAllItems = items.clone();
 
         super.setItems(items);
     }

@@ -60,7 +60,7 @@ public class Database {
         return mInstance;
     }
 
-    public List<ElementListItem> getElementListItems() {
+    public ElementListItem[] getElementListItems() {
         List<ElementListItem> itemsList = new ArrayList<ElementListItem>(Arrays.asList(
                 mGson.fromJson(mInput, ElementListItem[].class)));
 
@@ -71,7 +71,7 @@ public class Database {
             }
         });
 
-        return itemsList;
+        return itemsList.toArray(new ElementListItem[itemsList.size()]);
     }
 
     public TableItem[] getTableItems() {
@@ -82,8 +82,9 @@ public class Database {
         for(JsonElement jsonElement : mJsonArray) {
             JsonObject object = jsonElement.getAsJsonObject();
 
-            if(object.get("number").getAsInt() == element)
+            if(object.get("number").getAsInt() == element) {
                 return mGson.fromJson(object, ElementProperties.class);
+            }
         }
 
         return null;
