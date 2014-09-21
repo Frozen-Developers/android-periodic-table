@@ -102,14 +102,18 @@ public class PeriodicTableView extends ZoomableScrollView {
             float startY = (getHeight() - getScaledHeight()) / 2f;
             float startX = (getWidth() - getScaledWidth()) / 2f;
 
-            View view = mAdapter.getView(((int)((rawY - startY) / tileSize) * COLUMNS_COUNT) +
-                    (int)((rawX - startX) / tileSize), mConvertView, this);
+            int position = ((int)((rawY - startY) / tileSize) * COLUMNS_COUNT) +
+                    (int)((rawX - startX) / tileSize);
 
-            if(view != null) {
-                if(view.isClickable()) {
-                    playSoundEffect(SoundEffectConstants.CLICK);
+            if(position < mAdapter.getCount()) {
+                View view = mAdapter.getView(position, mConvertView, this);
 
-                    view.performClick();
+                if (view != null) {
+                    if (view.isClickable()) {
+                        playSoundEffect(SoundEffectConstants.CLICK);
+
+                        view.performClick();
+                    }
                 }
             }
         }
