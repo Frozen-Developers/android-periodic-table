@@ -61,43 +61,43 @@ public class TableAdapter extends DynamicItemsAdapter<TableItem> {
 
                 switch (position) {
                     case 4:
-                        ((TextView)convertView).setText(R.string.category_actinide);
+                        ((TextView)convertView).setText(R.string.category_actinides);
                         break;
 
                     case 5:
-                        ((TextView)convertView).setText(R.string.category_alkali_metal);
+                        ((TextView)convertView).setText(R.string.category_alkali_metals);
                         break;
 
                     case 6:
-                        ((TextView)convertView).setText(R.string.category_alkaline_earth_metal);
+                        ((TextView)convertView).setText(R.string.category_alkaline_earth_metals);
                         break;
 
                     case 7:
-                        ((TextView)convertView).setText(R.string.category_diatomic_nonmetal);
+                        ((TextView)convertView).setText(R.string.category_diatomic_nonmetals);
                         break;
 
                     case 8:
-                        ((TextView)convertView).setText(R.string.category_lanthanide);
+                        ((TextView)convertView).setText(R.string.category_lanthanides);
                         break;
 
                     case 9:
-                        ((TextView)convertView).setText(R.string.category_metalloid);
+                        ((TextView)convertView).setText(R.string.category_metalloids);
                         break;
 
                     case 22:
-                        ((TextView)convertView).setText(R.string.category_noble_gas);
+                        ((TextView)convertView).setText(R.string.category_noble_gases);
                         break;
 
                     case 23:
-                        ((TextView)convertView).setText(R.string.category_polyatomic_nonmetal);
+                        ((TextView)convertView).setText(R.string.category_polyatomic_nonmetals);
                         break;
 
                     case 24:
-                        ((TextView)convertView).setText(R.string.category_other_metal);
+                        ((TextView)convertView).setText(R.string.category_other_metals);
                         break;
 
                     case 25:
-                        ((TextView)convertView).setText(R.string.category_transition_metal);
+                        ((TextView)convertView).setText(R.string.category_transition_metals);
                         break;
 
                     case 26:

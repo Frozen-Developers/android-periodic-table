@@ -119,43 +119,43 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         int category = R.string.category_unknown;
         switch (properties.getCategory()) {
             case 0:
-                category = R.string.category_diatomic_nonmetal;
+                category = R.string.category_diatomic_nonmetals;
                 break;
 
             case 1:
-                category = R.string.category_noble_gas;
+                category = R.string.category_noble_gases;
                 break;
 
             case 2:
-                category = R.string.category_alkali_metal;
+                category = R.string.category_alkali_metals;
                 break;
 
             case 3:
-                category = R.string.category_alkaline_earth_metal;
+                category = R.string.category_alkaline_earth_metals;
                 break;
 
             case 4:
-                category = R.string.category_metalloid;
+                category = R.string.category_metalloids;
                 break;
 
             case 5:
-                category = R.string.category_polyatomic_nonmetal;
+                category = R.string.category_polyatomic_nonmetals;
                 break;
 
             case 6:
-                category = R.string.category_other_metal;
+                category = R.string.category_other_metals;
                 break;
 
             case 7:
-                category = R.string.category_transition_metal;
+                category = R.string.category_transition_metals;
                 break;
 
             case 9:
-                category = R.string.category_lanthanide;
+                category = R.string.category_lanthanides;
                 break;
 
             case 10:
-                category = R.string.category_actinide;
+                category = R.string.category_actinides;
                 break;
         }
 

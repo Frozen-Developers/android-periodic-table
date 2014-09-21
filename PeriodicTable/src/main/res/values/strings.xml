@@ -117,16 +117,16 @@
     <string name="preference_samuels_graphics_desc">Icon design</string>
 
     <!-- Element categories -->
-    <string name="category_actinide">Actinide</string>
-    <string name="category_alkali_metal">Alkali metal</string>
-    <string name="category_alkaline_earth_metal">Alkaline earth metal</string>
-    <string name="category_diatomic_nonmetal">Diatomic nonmetal</string>
-    <string name="category_lanthanide">Lanthanide</string>
-    <string name="category_metalloid">Metalloid</string>
-    <string name="category_noble_gas">Noble gas</string>
-    <string name="category_polyatomic_nonmetal">Polyatomic nonmetal</string>
-    <string name="category_other_metal">Post-transition metal</string>
-    <string name="category_transition_metal">Transition metal</string>
+    <string name="category_actinides">Actinides</string>
+    <string name="category_alkali_metals">Alkali metals</string>
+    <string name="category_alkaline_earth_metals">Alkaline earth metals</string>
+    <string name="category_diatomic_nonmetals">Diatomic nonmetals</string>
+    <string name="category_lanthanides">Lanthanides</string>
+    <string name="category_metalloids">Metalloids</string>
+    <string name="category_noble_gases">Noble gases</string>
+    <string name="category_polyatomic_nonmetals">Polyatomic nonmetals</string>
+    <string name="category_other_metals">Post-transition metals</string>
+    <string name="category_transition_metals">Transition metals</string>
     <string name="category_unknown">Unknown chemical properties</string>
 
 </resources>
