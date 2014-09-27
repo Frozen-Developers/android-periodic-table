@@ -533,7 +533,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁺, fission → 2 ⁴He",
+                "decayModes": "β⁺, α → 2 ⁴He",
                 "halfLife": "770 ms",
                 "spin": "2+",
                 "symbol": "⁸B"
@@ -25667,7 +25667,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "SF → Various",
                 "halfLife": "52 µs",
                 "spin": "1/2-",
                 "symbol": "²⁵³ᵐRf"
@@ -25787,7 +25787,7 @@
             {
                 "abundance": "",
                 "decayModes": "SF → Various",
-                "halfLife": "5 h",
+                "halfLife": "1.3 h",
                 "spin": "",
                 "symbol": "²⁶⁷Rf"
             },
