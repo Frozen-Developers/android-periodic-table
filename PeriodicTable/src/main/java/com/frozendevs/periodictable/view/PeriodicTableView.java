@@ -97,20 +97,25 @@ public class PeriodicTableView extends ZoomableScrollView {
             float rawX = e.getX() + getScrollX();
             float rawY = e.getY() + getScrollY();
             float tileSize = getScaledTileSize() + DEFAULT_SPACING;
-            float startY = (getHeight() - getScaledHeight()) / 2f;
-            float startX = (getWidth() - getScaledWidth()) / 2f;
+            int scaledWidth = getScaledWidth();
+            int scaledHeight = getScaledHeight();
+            float startY = (getHeight() - scaledHeight) / 2f;
+            float startX = (getWidth() - scaledWidth) / 2f;
 
-            int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
-                    (int) ((rawX - startX) / tileSize);
+            if(rawX >= startX && rawX <= startX + scaledWidth &&
+                    rawY >= startY && rawY <= startY + scaledHeight) {
+                int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
+                        (int) ((rawX - startX) / tileSize);
 
-            if (position < mAdapter.getCount()) {
-                View view = mAdapter.getView(position, mConvertView, this);
+                if (position >= 0 && position < mAdapter.getCount()) {
+                    View view = mAdapter.getView(position, mConvertView, this);
 
-                if (view != null) {
-                    if (view.isClickable()) {
-                        playSoundEffect(SoundEffectConstants.CLICK);
+                    if (view != null) {
+                        if (view.isClickable()) {
+                            playSoundEffect(SoundEffectConstants.CLICK);
 
-                        view.performClick();
+                            view.performClick();
+                        }
                     }
                 }
             }
