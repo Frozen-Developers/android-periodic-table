@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -46,8 +47,9 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     private void updateEmptyStatus(boolean empty) {
-        if (mEmptyView != null)
+        if (mEmptyView != null) {
             mEmptyView.setVisibility(empty ? VISIBLE : GONE);
+        }
     }
 
     @Override
@@ -102,7 +104,7 @@ public class PeriodicTableView extends ZoomableScrollView {
             float startY = (getHeight() - scaledHeight) / 2f;
             float startX = (getWidth() - scaledWidth) / 2f;
 
-            if(rawX >= startX && rawX <= startX + scaledWidth &&
+            if (rawX >= startX && rawX <= startX + scaledWidth &&
                     rawY >= startY && rawY <= startY + scaledHeight) {
                 int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
                         (int) ((rawX - startX) / tileSize);
@@ -143,42 +145,61 @@ public class PeriodicTableView extends ZoomableScrollView {
             mAdapter.registerDataSetObserver(new DataSetObserver() {
                 @Override
                 public void onChanged() {
-                    mPeriodsCount = mAdapter.getCount() / GROUPS_COUNT;
+                    new AsyncTask<Void, Void, Void>() {
 
-                    if (!mAdapter.isEmpty()) {
-                        mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
-
-                        for (int row = 0; row < mPeriodsCount; row++) {
-                            for (int column = 0; column < GROUPS_COUNT; column++) {
-                                int position = (row * GROUPS_COUNT) + column;
-
-                                View view = mAdapter.getView(position, mConvertView,
-                                        PeriodicTableView.this);
-
-                                if (view != null) {
-                                    view.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
-                                                    MeasureSpec.EXACTLY),
-                                            MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
-                                                    MeasureSpec.EXACTLY));
-                                    view.layout(0, 0, view.getMeasuredWidth(),
-                                            view.getMeasuredHeight());
-
-                                    view.buildDrawingCache();
-
-                                    if (view.getDrawingCache() != null) {
-                                        mBitmaps[position] = Bitmap.createBitmap(
-                                                view.getDrawingCache());
-                                    }
-
-                                    view.destroyDrawingCache();
-                                }
-                            }
+                        @Override
+                        protected void onPreExecute() {
+                            updateEmptyStatus(true);
                         }
 
-                        invalidate();
+                        @Override
+                        protected Void doInBackground(Void... params) {
+                            mPeriodsCount = mAdapter.getCount() / GROUPS_COUNT;
 
-                        updateEmptyStatus(false);
-                    }
+                            if (!mAdapter.isEmpty()) {
+                                mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
+
+                                for (int row = 0; row < mPeriodsCount; row++) {
+                                    for (int column = 0; column < GROUPS_COUNT; column++) {
+                                        int position = (row * GROUPS_COUNT) + column;
+
+                                        View view = mAdapter.getView(position, mConvertView,
+                                                PeriodicTableView.this);
+
+                                        if (view != null) {
+                                            view.measure(
+                                                    MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
+                                                            MeasureSpec.EXACTLY),
+                                                    MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
+                                                            MeasureSpec.EXACTLY));
+                                            view.layout(0, 0, view.getMeasuredWidth(),
+                                                    view.getMeasuredHeight());
+
+                                            view.buildDrawingCache();
+
+                                            if (view.getDrawingCache() != null) {
+                                                mBitmaps[position] = Bitmap.createBitmap(
+                                                        view.getDrawingCache());
+                                            }
+
+                                            view.destroyDrawingCache();
+                                        }
+                                    }
+                                }
+                            }
+
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void result) {
+                            if (!mAdapter.isEmpty()) {
+                                invalidate();
+
+                                updateEmptyStatus(false);
+                            }
+                        }
+                    }.execute();
                 }
             });
         }
