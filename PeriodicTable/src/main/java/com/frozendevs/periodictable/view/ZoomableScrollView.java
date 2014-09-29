@@ -92,24 +92,30 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        boolean needsInvalidate = false;
+
         mIsScrolling = true;
 
         scrollTo(getScrollX() + (int) distanceX, getScrollY() + (int) distanceY);
 
         if(getScaledWidth() > getWidth()) {
             if (getScrollX() == getMinimalScrollX()) {
-                mEdgeEffectLeft.onPull(Math.abs(distanceX) / getWidth());
+                needsInvalidate |= mEdgeEffectLeft.onPull(Math.abs(distanceX) / getWidth());
             } else if (getScrollX() == getMaximalScrollX()) {
-                mEdgeEffectRight.onPull(Math.abs(distanceX) / getWidth());
+                needsInvalidate |= mEdgeEffectRight.onPull(Math.abs(distanceX) / getWidth());
             }
         }
 
         if(getScaledHeight() > getHeight()) {
             if (getScrollY() == getMinimalScrollY()) {
-                mEdgeEffectTop.onPull(Math.abs(distanceY) / getHeight());
+                needsInvalidate |= mEdgeEffectTop.onPull(Math.abs(distanceY) / getHeight());
             } else if (getScrollY() == getMaximalScrollY()) {
-                mEdgeEffectBottom.onPull(Math.abs(distanceY) / getHeight());
+                needsInvalidate |= mEdgeEffectBottom.onPull(Math.abs(distanceY) / getHeight());
             }
+        }
+
+        if (needsInvalidate) {
+            ViewCompat.postInvalidateOnAnimation(this);
         }
 
         return true;
