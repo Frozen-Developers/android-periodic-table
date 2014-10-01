@@ -153,7 +153,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁻ (99.99%) → ⁶Li\nβ⁻, fission (2.8×10⁻⁴%) → ⁴He, ²H",
+                "decayModes": "β⁻ (99.99%) → ⁶Li\nβ⁻, α (2.8×10⁻⁴%) → ⁴He, ²H",
                 "halfLife": "806.7 ms",
                 "spin": "0+",
                 "symbol": "⁶He"
@@ -240,7 +240,7 @@
         "isotopes": [
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "p → ²He",
                 "halfLife": "",
                 "spin": "",
                 "symbol": "³Li"
@@ -310,7 +310,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁻, n (84.9%) → ¹⁰Be\nβ⁻ (8.07%) → ¹¹Be\nβ⁻, 2n (4.1%) → ⁹Be\nβ⁻, 3n (1.9%) → ⁸Be\nβ⁻, fission (1.0%) → ⁷He, ⁴He\nβ⁻, fission (0.014%) → ⁸Li, ³H\nβ⁻, fission (0.013%) → ⁹Li, ²H",
+                "decayModes": "β⁻, n (84.9%) → ¹⁰Be\nβ⁻ (8.07%) → ¹¹Be\nβ⁻, 2n (4.1%) → ⁹Be\nβ⁻, 3n (1.9%) → ⁸Be\nβ⁻, α (1.0%) → ⁷He, ⁴He\nβ⁻, fission (0.014%) → ⁸Li, ³H\nβ⁻, fission (0.013%) → ⁹Li, ²H",
                 "halfLife": "8.75 ms",
                 "spin": "3/2−",
                 "symbol": "¹¹Li"
@@ -4786,7 +4786,7 @@
         "liquidDensityAtMeltingPoint": "6.3 g·cm⁻³",
         "magneticOrdering": "Antiferromagnetic",
         "meltingPoint": "2180 K / 1907 °C / 3465 °F",
-        "mohsHardness": "8.5",
+        "mohsHardness": "",
         "molarHeatCapacity": "23.35 J·mol⁻¹·K⁻¹",
         "molarIonizationEnergies": "1st: 652.9 kJ·mol⁻¹\n2nd: 1590.6 kJ·mol⁻¹\n3rd: 2987 kJ·mol⁻¹\n4th: 4743 kJ·mol⁻¹\n5th: 6702 kJ·mol⁻¹\n6th: 8744.9 kJ·mol⁻¹\n7th: 15455 kJ·mol⁻¹\n8th: 17820 kJ·mol⁻¹\n9th: 20190 kJ·mol⁻¹\n10th: 23580 kJ·mol⁻¹\n11th: 26130 kJ·mol⁻¹\n12th: 28750 kJ·mol⁻¹\n13th: 34230 kJ·mol⁻¹\n14th: 37066 kJ·mol⁻¹\n15th: 97510 kJ·mol⁻¹\n16th: 105800 kJ·mol⁻¹\n17th: 114300 kJ·mol⁻¹\n18th: 125300 kJ·mol⁻¹\n19th: 134700 kJ·mol⁻¹\n20th: 144300 kJ·mol⁻¹\n21st: 157700 kJ·mol⁻¹\n22nd: 166090 kJ·mol⁻¹\n23rd: 721870 kJ·mol⁻¹\n24th: 761733 kJ·mol⁻¹",
         "name": "Chromium",
