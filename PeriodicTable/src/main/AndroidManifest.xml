@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.frozendevs.periodictable.activity.PropertiesActivity"
+        <activity
+            android:name="com.frozendevs.periodictable.activity.PropertiesActivity"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
             android:launchMode="singleTop">
 
@@ -41,9 +42,11 @@
 
         </activity>
 
-        <activity android:name="com.frozendevs.periodictable.activity.AboutActivity"
+        <activity
+            android:name="com.frozendevs.periodictable.activity.AboutActivity"
             android:parentActivityName="com.frozendevs.periodictable.activity.AboutActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:exported="false">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
