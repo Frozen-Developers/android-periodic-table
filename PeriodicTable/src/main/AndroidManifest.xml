@@ -44,7 +44,7 @@
 
         <activity
             android:name="com.frozendevs.periodictable.activity.AboutActivity"
-            android:parentActivityName="com.frozendevs.periodictable.activity.AboutActivity"
+            android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
             android:launchMode="singleTop"
             android:exported="false">
 
