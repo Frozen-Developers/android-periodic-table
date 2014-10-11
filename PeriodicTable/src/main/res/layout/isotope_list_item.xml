@@ -25,8 +25,7 @@
         android:paddingEnd="12dip"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_vertical|start"
-        android:textAlignment="viewStart"
-        android:textDirection="locale"/>
+        android:textAlignment="viewStart"/>
 
     <LinearLayout
         android:orientation="vertical"

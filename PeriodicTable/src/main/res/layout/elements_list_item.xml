@@ -26,7 +26,6 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:singleLine="true"
             android:textAlignment="viewStart"
-            android:textDirection="locale"
             android:layout_gravity="start"/>
 
         <TextView
@@ -36,7 +35,6 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:singleLine="true"
             android:textAlignment="viewStart"
-            android:textDirection="locale"
             android:layout_gravity="start"/>
 
     </LinearLayout>
@@ -48,7 +46,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_gravity="center_vertical|start"
         android:singleLine="true"
-        android:textAlignment="viewStart"
-        android:textDirection="locale"/>
+        android:textAlignment="viewStart"/>
 
 </LinearLayout>

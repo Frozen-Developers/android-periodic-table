@@ -43,7 +43,6 @@
             android:ellipsize="marquee"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textAlignment="viewStart"
-            android:textDirection="locale"
             android:layout_gravity="start"/>
 
         <TextView android:id="@+id/property_value"
@@ -51,7 +50,6 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textAlignment="viewStart"
-            android:textDirection="ltr"
             android:layout_gravity="start"/>
 
     </LinearLayout>
