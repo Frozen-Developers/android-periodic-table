@@ -197,11 +197,11 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
                     color = R.color.category_transition_metals_bg;
                     break;
 
-                case 9:
+                case 8:
                     color = R.color.category_lanthanides_bg;
                     break;
 
-                case 10:
+                case 9:
                     color = R.color.category_actinides_bg;
                     break;
             }

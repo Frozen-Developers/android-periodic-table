@@ -145,11 +145,11 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 category = R.string.category_transition_metals;
                 break;
 
-            case 9:
+            case 8:
                 category = R.string.category_lanthanides;
                 break;
 
-            case 10:
+            case 9:
                 category = R.string.category_actinides;
                 break;
         }
