@@ -7,4 +7,5 @@
     android:padding="5dp"
     android:textSize="12sp"
     android:textColor="@android:color/black"
-    android:clickable="false"/>
+    android:clickable="false"
+    android:layoutDirection="ltr"/>

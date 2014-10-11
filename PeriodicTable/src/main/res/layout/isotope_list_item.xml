@@ -19,10 +19,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="0.5"
+        android:paddingLeft="0dip"
+        android:paddingStart="0dip"
         android:paddingRight="12dip"
         android:paddingEnd="12dip"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_gravity="center_vertical"/>
+        android:layout_gravity="center_vertical|start"
+        android:textAlignment="viewStart"
+        android:textDirection="locale"/>
 
     <LinearLayout
         android:orientation="vertical"

@@ -86,8 +86,6 @@
 
     <!-- Properties symbols -->
     <string name="property_atom_symbol">X</string>
-    <string name="property_half_life_symbol">t½</string>
-    <string name="property_natural_abundance_symbol">NA</string>
     <string name="property_relative_atomic_mass_symbol">Aᵣ</string>
     <string name="property_atomic_number_symbol">Z</string>
 
@@ -96,6 +94,8 @@
     <string name="property_decay_modes">Decay modes</string>
     <string name="property_spin">Spin</string>
     <string name="property_abundance">Natural abundance</string>
+    <string name="property_half_life_short">t½: %1$s</string>
+    <string name="property_natural_abundance_short">NA: %1$s</string>
 
     <!-- Translatable values -->
     <string name="property_value_unknown">Unknown</string>

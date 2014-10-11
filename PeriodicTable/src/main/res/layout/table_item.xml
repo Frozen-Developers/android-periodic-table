@@ -6,7 +6,8 @@
     android:layout_width="@dimen/table_item_size"
     android:layout_height="@dimen/table_item_size"
     android:gravity="center_vertical"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:layoutDirection="ltr">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -26,7 +27,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="right"
+            android:gravity="end"
             android:textSize="14sp"
             android:textColor="@android:color/black"/>
 
@@ -48,7 +49,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:gravity="right"
+        android:gravity="end"
         android:textColor="@android:color/black"/>
 
 </LinearLayout>

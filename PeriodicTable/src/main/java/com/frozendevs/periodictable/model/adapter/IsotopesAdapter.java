@@ -187,13 +187,13 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         IsotopeProperties properties = getGroup(groupPosition);
 
-        GroupHolder groupHolder = (GroupHolder)convertView.getTag();
+        GroupHolder groupHolder = (GroupHolder) convertView.getTag();
 
         groupHolder.symbol.setText(properties.getSymbol().getValue());
-        groupHolder.halfLife.setText(mContext.getString(R.string.property_half_life_symbol) + ": " +
-                properties.getHalfLife().getValue());
-        groupHolder.abundance.setText(mContext.getString(R.string.property_natural_abundance_symbol)
-                + ": " + properties.getAbundance().getValue());
+        groupHolder.halfLife.setText(mContext.getString(R.string.property_half_life_short,
+                properties.getHalfLife().getValue()));
+        groupHolder.abundance.setText(mContext.getString(R.string.property_natural_abundance_short,
+                properties.getAbundance().getValue()));
 
         return convertView;
     }
@@ -216,7 +216,7 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
 
         Property property = getChild(groupPosition, childPosition);
 
-        ChildHolder childHolder = (ChildHolder)convertView.getTag();
+        ChildHolder childHolder = (ChildHolder) convertView.getTag();
 
         childHolder.name.setText(property.getName());
         childHolder.value.setText(property.getValue());
