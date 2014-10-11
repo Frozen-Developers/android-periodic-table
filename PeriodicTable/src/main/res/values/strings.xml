@@ -111,6 +111,7 @@
     <string name="preference_about_app">About Periodic Table</string>
     <string name="preference_author">Author</string>
     <string name="preference_version_number">Version number</string>
+    <string name="preference_version_number_unknown">Unknown</string>
     <string name="preference_open_source_licences">Open source licences</string>
 
     <string name="preference_samuels_graphics" translatable="false">Samuel\'s Graphics</string>
