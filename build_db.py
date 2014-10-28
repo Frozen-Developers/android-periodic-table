@@ -86,6 +86,7 @@ class Article:
             [ r'(at room temperature)', '' ],
             [ r'at melting point', '' ],
             [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
+            [ r'{{smallsup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
             [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
             [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
