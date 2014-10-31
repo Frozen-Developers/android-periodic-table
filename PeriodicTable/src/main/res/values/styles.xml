@@ -1,10 +1,15 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat">
+        <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
     </style>
 
     <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Small">
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="ZoomableScrollView">
+        <item name="android:scrollbars">horizontal|vertical</item>
     </style>
 
 </resources>

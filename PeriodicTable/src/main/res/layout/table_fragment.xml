@@ -13,7 +13,6 @@
     <com.frozendevs.periodictable.view.PeriodicTableView
         android:id="@+id/elements_table"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scrollbars="horizontal|vertical"/>
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

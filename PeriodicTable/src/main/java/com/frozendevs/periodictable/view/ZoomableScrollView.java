@@ -14,6 +14,7 @@ import android.view.ScaleGestureDetector;
 import android.widget.FrameLayout;
 import android.widget.OverScroller;
 
+import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.widget.Zoomer;
 
 public class ZoomableScrollView extends FrameLayout implements GestureDetector.OnGestureListener,
@@ -38,16 +39,19 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     public ZoomableScrollView(Context context) {
         super(context);
+
         initPeriodicTableView(context);
     }
 
     public ZoomableScrollView(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        super(context, attrs, R.attr.zoomableScrollViewStyle);
+
         initPeriodicTableView(context);
     }
 
     public ZoomableScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
         initPeriodicTableView(context);
     }
 
