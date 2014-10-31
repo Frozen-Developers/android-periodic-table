@@ -1085,13 +1085,6 @@
                 "halfLife": "65 ms",
                 "spin": "0+",
                 "symbol": "²⁴O"
-            },
-            {
-                "abundance": "",
-                "decayModes": "β⁻ → ²⁶F\nn → ²⁵O",
-                "halfLife": "40 ns",
-                "spin": "",
-                "symbol": "²⁶O"
             }
         ],
         "liquidDensityAtBoilingPoint": "1.141 g·cm⁻³",
@@ -16253,7 +16246,7 @@
         "curiePoint": "",
         "density": "At 0 °C, 101.325 kPa: 5.894×10⁻³ g·cm⁻³",
         "electricalResistivity": "",
-        "electronConfiguration": "[Kr] 5s² 4d¹⁰ 5p⁶",
+        "electronConfiguration": "[Kr] 4d¹⁰ 5s² 5p⁶",
         "electronegativity": "2.6 (Pauling scale)",
         "electronsPerShell": "2, 8, 18, 18, 8",
         "group": "18",
@@ -25127,7 +25120,7 @@
         "curiePoint": "",
         "density": "At 0 °C, 101.325 kPa: 9.73×10⁻³ g·cm⁻³",
         "electricalResistivity": "",
-        "electronConfiguration": "[Xe] 6s² 4f¹⁴ 5d¹⁰ 6p⁶",
+        "electronConfiguration": "[Xe] 4f¹⁴ 5d¹⁰ 6s² 6p⁶",
         "electronegativity": "2.2 (Pauling scale)",
         "electronsPerShell": "2, 8, 18, 32, 18, 8",
         "group": "18",
