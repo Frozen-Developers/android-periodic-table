@@ -67,27 +67,29 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
     }
 
     public void filter(String filter) {
-        List<ElementListItem> filteredItems = new ArrayList<ElementListItem>();
+        if (mAllItems != null) {
+            List<ElementListItem> filteredItems = new ArrayList<ElementListItem>();
 
-        for(ElementListItem element : mAllItems) {
-            if(element.getSymbol().equalsIgnoreCase(filter) ||
-                    String.valueOf(element.getNumber()).equals(filter)) {
-                filteredItems.add(element);
-                break;
-            }
-        }
-
-        Locale locale = mContext.getResources().getConfiguration().locale;
-
-        if(filteredItems.isEmpty()) {
-            for(ElementListItem element : mAllItems) {
-                if(element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale))) {
+            for (ElementListItem element : mAllItems) {
+                if (element.getSymbol().equalsIgnoreCase(filter) ||
+                        String.valueOf(element.getNumber()).equals(filter)) {
                     filteredItems.add(element);
+                    break;
                 }
             }
-        }
 
-        super.setItems(filteredItems.toArray(new ElementListItem[filteredItems.size()]));
+            Locale locale = mContext.getResources().getConfiguration().locale;
+
+            if (filteredItems.isEmpty()) {
+                for (ElementListItem element : mAllItems) {
+                    if (element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale))) {
+                        filteredItems.add(element);
+                    }
+                }
+            }
+
+            super.setItems(filteredItems.toArray(new ElementListItem[filteredItems.size()]));
+        }
     }
 
     public void clearFilter() {
