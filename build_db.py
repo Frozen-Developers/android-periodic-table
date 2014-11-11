@@ -383,7 +383,7 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
     oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
         article.getProperty('oxidation states', comments=False))
 
-    electronegativity = article.getProperty('electronegativity', comments=False)
+    electronegativity = article.getProperty('electronegativity')
 
     molarIonizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
         for key, value in molarIonizationEnergiesDict[str(number)].items() if value != ''])
