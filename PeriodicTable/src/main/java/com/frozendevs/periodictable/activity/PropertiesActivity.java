@@ -5,6 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -99,8 +100,13 @@ public class PropertiesActivity extends ActionBarActivity {
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
 
-        PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
-        pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);
+        TypedArray typedArray = getTheme().obtainStyledAttributes(R.style.Theme_Application,
+                new int[]{R.attr.colorAccent});
+
+        ((PagerTabStrip) findViewById(R.id.pager_title_strip)).setTabIndicatorColorResource(
+                typedArray.getResourceId(0, R.color.accent_material_dark));
+
+        typedArray.recycle();
     }
 
     @Override
@@ -141,39 +147,36 @@ public class PropertiesActivity extends ActionBarActivity {
 
         ContextMenu.ContextMenuInfo info = item.getMenuInfo();
 
-        View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
+        View view = ((ExpandableListView.ExpandableListContextMenuInfo) info).targetView;
 
-        TextView symbol = (TextView)view.findViewById(R.id.property_symbol);
-        TextView configuration = (TextView)view.findViewById(R.id.element_electron_configuration);
+        TextView symbol = (TextView) view.findViewById(R.id.property_symbol);
+        TextView configuration = (TextView) view.findViewById(R.id.element_electron_configuration);
 
-        if(configuration != null) {
+        if (configuration != null) {
             propertyName = getString(R.string.properties_header_summary);
-            propertyValue = (String)((TextView)view.findViewById(R.id.element_symbol)).getText() +
-                    '\n' + ((TextView)view.findViewById(R.id.element_number)).getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_name)).getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_weight)).getText() + '\n' +
+            propertyValue = (String) ((TextView) view.findViewById(R.id.element_symbol)).getText() +
+                    '\n' + ((TextView) view.findViewById(R.id.element_number)).getText() + '\n' +
+                    ((TextView) view.findViewById(R.id.element_name)).getText() + '\n' +
+                    ((TextView) view.findViewById(R.id.element_weight)).getText() + '\n' +
                     configuration.getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_electrons_per_shell)).getText() + '\n'
-                    + ((TextView)view.findViewById(R.id.element_electronegativity)).getText() + '\n'
-                    + ((TextView)view.findViewById(R.id.element_oxidation_states)).getText();
-        }
-        else if(symbol != null) {
+                    ((TextView) view.findViewById(R.id.element_electrons_per_shell)).getText() + '\n'
+                    + ((TextView) view.findViewById(R.id.element_electronegativity)).getText() + '\n'
+                    + ((TextView) view.findViewById(R.id.element_oxidation_states)).getText();
+        } else if (symbol != null) {
             propertyName = getString(R.string.property_symbol);
-            propertyValue = (String)symbol.getText();
-        }
-        else {
-            propertyName = (String)((TextView)view.findViewById(R.id.property_name)).getText();
-            propertyValue = (String)((TextView)view.findViewById(R.id.property_value)).getText();
+            propertyValue = (String) symbol.getText();
+        } else {
+            propertyName = (String) ((TextView) view.findViewById(R.id.property_name)).getText();
+            propertyValue = (String) ((TextView) view.findViewById(R.id.property_value)).getText();
         }
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
                     ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
                             setText(propertyValue);
-                }
-                else {
-                    ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).
+                } else {
+                    ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
                             setPrimaryClip(ClipData.newPlainText(propertyName, propertyValue));
                 }
                 return true;
