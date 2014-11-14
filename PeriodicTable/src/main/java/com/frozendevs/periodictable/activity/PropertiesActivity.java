@@ -93,6 +93,7 @@ public class PropertiesActivity extends ActionBarActivity {
         mElementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(mElementProperties.getName());
 
         ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
