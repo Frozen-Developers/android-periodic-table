@@ -50,7 +50,7 @@ public class PropertiesActivity extends ActionBarActivity {
         bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
 
         PagesAdapter pagesAdapter = new PagesAdapter(this);
-        pagesAdapter.addPage(R.string.fragment_title_details, PropertiesFragment.class, bundle);
+        pagesAdapter.addPage(R.string.fragment_title_properties, PropertiesFragment.class, bundle);
         pagesAdapter.addPage(R.string.fragment_title_isotopes, IsotopesFragment.class, bundle);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
