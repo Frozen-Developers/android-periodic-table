@@ -20,7 +20,7 @@ import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 
 public class ElementsFragment extends Fragment {
 
-    private ElementsAdapter mElementsAdapter;
+    private ElementsAdapter mAdapter;
     private ListView mListView;
     private View mEmptyView;
 
@@ -33,7 +33,7 @@ public class ElementsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ElementListItem[] result) {
-            mElementsAdapter.setItems(result);
+            mAdapter.setItems(result);
 
             mListView.setEmptyView(mEmptyView);
         }
@@ -44,8 +44,9 @@ public class ElementsFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(true);
+        setRetainInstance(true);
 
-        mElementsAdapter = new ElementsAdapter(getActivity());
+        mAdapter = new ElementsAdapter(getActivity());
     }
 
     @Override
@@ -55,10 +56,15 @@ public class ElementsFragment extends Fragment {
         mEmptyView = rootView.findViewById(R.id.empty_elements_list);
 
         mListView = (ListView) rootView.findViewById(R.id.elements_list);
-        mListView.setEmptyView(rootView.findViewById(R.id.progress_bar));
-        mListView.setAdapter(mElementsAdapter);
+        mListView.setAdapter(mAdapter);
 
-        new LoadData().execute();
+        if (mAdapter.isEmpty()) {
+            mListView.setEmptyView(rootView.findViewById(R.id.progress_bar));
+
+            new LoadData().execute();
+        } else {
+            mListView.setEmptyView(mEmptyView);
+        }
 
         return rootView;
     }
@@ -81,7 +87,7 @@ public class ElementsFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mElementsAdapter.filter(newText.toLowerCase(
+                mAdapter.filter(newText.toLowerCase(
                         getResources().getConfiguration().locale));
 
                 return true;
@@ -97,7 +103,7 @@ public class ElementsFragment extends Fragment {
 
                     @Override
                     public boolean onMenuItemActionCollapse(MenuItem item) {
-                        mElementsAdapter.clearFilter();
+                        mAdapter.clearFilter();
 
                         return true;
                     }

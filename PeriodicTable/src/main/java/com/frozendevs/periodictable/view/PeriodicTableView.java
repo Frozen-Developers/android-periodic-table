@@ -28,6 +28,67 @@ public class PeriodicTableView extends ZoomableScrollView {
     private View mConvertView;
     private int mPeriodsCount = 0;
 
+    private DataSetObserver mDataSetObserver = new DataSetObserver() {
+        @Override
+        public void onChanged() {
+            new AsyncTask<Void, Void, Void>() {
+
+                @Override
+                protected void onPreExecute() {
+                    updateEmptyStatus(true);
+                }
+
+                @Override
+                protected Void doInBackground(Void... params) {
+                    mPeriodsCount = mAdapter.getCount() / GROUPS_COUNT;
+
+                    if (!mAdapter.isEmpty()) {
+                        mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
+
+                        for (int row = 0; row < mPeriodsCount; row++) {
+                            for (int column = 0; column < GROUPS_COUNT; column++) {
+                                int position = (row * GROUPS_COUNT) + column;
+
+                                View view = mAdapter.getView(position, mConvertView,
+                                        PeriodicTableView.this);
+
+                                if (view != null) {
+                                    view.measure(
+                                            MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
+                                                    MeasureSpec.EXACTLY),
+                                            MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
+                                                    MeasureSpec.EXACTLY));
+                                    view.layout(0, 0, view.getMeasuredWidth(),
+                                            view.getMeasuredHeight());
+
+                                    view.buildDrawingCache();
+
+                                    if (view.getDrawingCache() != null) {
+                                        mBitmaps[position] = Bitmap.createBitmap(
+                                                view.getDrawingCache());
+                                    }
+
+                                    view.destroyDrawingCache();
+                                }
+                            }
+                        }
+                    }
+
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(Void result) {
+                    if (!mAdapter.isEmpty()) {
+                        invalidate();
+
+                        updateEmptyStatus(false);
+                    }
+                }
+            }.execute();
+        }
+    };
+
     public PeriodicTableView(Context context) {
         super(context);
     }
@@ -139,69 +200,14 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     public void setAdapter(Adapter adapter) {
-        if (adapter != null) {
-            mAdapter = adapter;
+        if (mAdapter != null) {
+            mAdapter.unregisterDataSetObserver(mDataSetObserver);
+        }
 
-            mAdapter.registerDataSetObserver(new DataSetObserver() {
-                @Override
-                public void onChanged() {
-                    new AsyncTask<Void, Void, Void>() {
+        mAdapter = adapter;
 
-                        @Override
-                        protected void onPreExecute() {
-                            updateEmptyStatus(true);
-                        }
-
-                        @Override
-                        protected Void doInBackground(Void... params) {
-                            mPeriodsCount = mAdapter.getCount() / GROUPS_COUNT;
-
-                            if (!mAdapter.isEmpty()) {
-                                mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
-
-                                for (int row = 0; row < mPeriodsCount; row++) {
-                                    for (int column = 0; column < GROUPS_COUNT; column++) {
-                                        int position = (row * GROUPS_COUNT) + column;
-
-                                        View view = mAdapter.getView(position, mConvertView,
-                                                PeriodicTableView.this);
-
-                                        if (view != null) {
-                                            view.measure(
-                                                    MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
-                                                            MeasureSpec.EXACTLY),
-                                                    MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
-                                                            MeasureSpec.EXACTLY));
-                                            view.layout(0, 0, view.getMeasuredWidth(),
-                                                    view.getMeasuredHeight());
-
-                                            view.buildDrawingCache();
-
-                                            if (view.getDrawingCache() != null) {
-                                                mBitmaps[position] = Bitmap.createBitmap(
-                                                        view.getDrawingCache());
-                                            }
-
-                                            view.destroyDrawingCache();
-                                        }
-                                    }
-                                }
-                            }
-
-                            return null;
-                        }
-
-                        @Override
-                        protected void onPostExecute(Void result) {
-                            if (!mAdapter.isEmpty()) {
-                                invalidate();
-
-                                updateEmptyStatus(false);
-                            }
-                        }
-                    }.execute();
-                }
-            });
+        if (mAdapter != null) {
+            mAdapter.registerDataSetObserver(mDataSetObserver);
         }
     }
 
