@@ -3,7 +3,12 @@ package com.frozendevs.periodictable.fragment;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -15,13 +20,11 @@ import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 
 public class ElementsFragment extends Fragment {
 
+    private ElementsAdapter mElementsAdapter;
+    private ListView mListView;
+    private View mEmptyView;
+
     private class LoadData extends AsyncTask<Void, Void, ElementListItem[]> {
-
-        private ListView mListView;
-
-        private LoadData(ListView listView) {
-            mListView = listView;
-        }
 
         @Override
         protected ElementListItem[] doInBackground(Void... params) {
@@ -30,22 +33,76 @@ public class ElementsFragment extends Fragment {
 
         @Override
         protected void onPostExecute(ElementListItem[] result) {
-            ((ElementsAdapter)mListView.getAdapter()).setItems(result);
+            mElementsAdapter.setItems(result);
 
-            mListView.setEmptyView(getActivity().findViewById(R.id.empty_elements_list));
+            mListView.setEmptyView(mEmptyView);
         }
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
+
+        mElementsAdapter = new ElementsAdapter(getActivity());
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.elements_list_fragment, container, false);
 
-        ListView listView = (ListView)rootView.findViewById(R.id.elements_list);
-        listView.setEmptyView(rootView.findViewById(R.id.progress_bar));
-        listView.setAdapter(new ElementsAdapter(getActivity()));
+        mEmptyView = rootView.findViewById(R.id.empty_elements_list);
 
-        new LoadData(listView).execute();
+        mListView = (ListView) rootView.findViewById(R.id.elements_list);
+        mListView.setEmptyView(rootView.findViewById(R.id.progress_bar));
+        mListView.setAdapter(mElementsAdapter);
+
+        new LoadData().execute();
 
         return rootView;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.elements_menu, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+
+        final SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setQueryHint(getString(R.string.search_query_hint));
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                searchView.clearFocus();
+
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                mElementsAdapter.filter(newText.toLowerCase(
+                        getResources().getConfiguration().locale));
+
+                return true;
+            }
+        });
+
+        MenuItemCompat.setOnActionExpandListener(searchItem,
+                new MenuItemCompat.OnActionExpandListener() {
+                    @Override
+                    public boolean onMenuItemActionExpand(MenuItem item) {
+                        return true;
+                    }
+
+                    @Override
+                    public boolean onMenuItemActionCollapse(MenuItem item) {
+                        mElementsAdapter.clearFilter();
+
+                        return true;
+                    }
+                });
+
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }
