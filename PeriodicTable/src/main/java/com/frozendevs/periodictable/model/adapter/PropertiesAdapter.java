@@ -392,6 +392,10 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                     View view = LayoutInflater.from(mContext).inflate(
                             R.layout.properties_summary_item, parent, false);
 
+                    int padding = mContext.getResources().getDimensionPixelOffset(
+                            R.dimen.listPreferredItemPaddingTop);
+                    view.setPadding(padding, padding, padding, padding);
+
                     View tileView = view.findViewById(R.id.tile_view);
                     for (TableItem item : mTableAdapter.getAllItems()) {
                         if (item != null) {

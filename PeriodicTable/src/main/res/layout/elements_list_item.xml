@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:minHeight="?attr/listPreferredItemHeight"
     android:background="?attr/selectableItemBackground"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:paddingTop="8dip"
-    android:paddingBottom="8dip">
+    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
+    android:paddingStart="?attr/listPreferredItemPaddingLeft"
+    android:paddingRight="?attr/listPreferredItemPaddingRight"
+    android:paddingEnd="?attr/listPreferredItemPaddingRight"
+    android:paddingTop="@dimen/listPreferredItemPaddingTop"
+    android:paddingBottom="@dimen/listPreferredItemPaddingBottom">
 
     <LinearLayout
         android:layout_width="26sp"

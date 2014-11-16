@@ -1,72 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingLeft="6dip"
-    android:paddingRight="6dip"
-    android:paddingTop="8dip"
-    android:paddingBottom="8dip"
-    android:baselineAligned="false">
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
+    android:paddingEnd="?attr/listPreferredItemPaddingRight"
+    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
+    android:paddingRight="?attr/listPreferredItemPaddingRight"
+    android:paddingStart="?attr/listPreferredItemPaddingLeft"
+    android:paddingTop="@dimen/listPreferredItemPaddingTop">
 
     <include
         android:id="@+id/tile_view"
-        layout="@layout/table_item"/>
+        layout="@layout/table_item" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingEnd="0dip"
         android:paddingLeft="8dip"
-        android:paddingStart="8dip"
         android:paddingRight="0dip"
-        android:paddingEnd="0dip">
+        android:paddingStart="8dip">
 
         <TextView
             android:id="@+id/element_electron_configuration"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="1"
+            android:layout_gravity="start"
             android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAlignment="viewStart"
-            android:layout_gravity="start">
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/element_electrons_per_shell"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="1"
+            android:layout_gravity="start"
             android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAlignment="viewStart"
-            android:layout_gravity="start">
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/element_electronegativity"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="1"
+            android:layout_gravity="start"
             android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAlignment="viewStart"
-            android:layout_gravity="start">
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <TextView
             android:id="@+id/element_oxidation_states"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:maxLines="1"
+            android:layout_gravity="start"
             android:ellipsize="marquee"
+            android:maxLines="1"
             android:textAlignment="viewStart"
-            android:layout_gravity="start">
-        </TextView>
+            android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </LinearLayout>
 
