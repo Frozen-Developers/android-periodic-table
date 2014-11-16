@@ -9,9 +9,6 @@ import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -27,6 +24,7 @@ import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
+import com.frozendevs.periodictable.model.adapter.PagesAdapter;
 
 public class PropertiesActivity extends ActionBarActivity {
 
@@ -34,56 +32,7 @@ public class PropertiesActivity extends ActionBarActivity {
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
-    private ElementProperties mElementProperties;
-
-    private class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int i) {
-            Fragment fragment;
-
-            switch (i) {
-                case 0:
-                    fragment = new PropertiesFragment();
-                    break;
-
-                case 1:
-                    fragment = new IsotopesFragment();
-                    break;
-
-                default:
-                    return null;
-            }
-
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(ARGUMENT_PROPERTIES, mElementProperties);
-            fragment.setArguments(bundle);
-
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return 2;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return getString(R.string.fragment_title_details);
-
-                case 1:
-                    return getString(R.string.fragment_title_isotopes);
-            }
-
-            return null;
-        }
-    }
+    private String mWikipediaUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,22 +40,32 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        mElementProperties = Database.getInstance(this).getElementProperties(
+        ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(mElementProperties.getName());
+        getSupportActionBar().setTitle(elementProperties.getName());
 
-        ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
+
+        PagesAdapter pagesAdapter = new PagesAdapter(this);
+        pagesAdapter.addPage(R.string.fragment_title_details, PropertiesFragment.class, bundle);
+        pagesAdapter.addPage(R.string.fragment_title_isotopes, IsotopesFragment.class, bundle);
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(pagesAdapter);
 
         TypedArray typedArray = getTheme().obtainStyledAttributes(R.style.Theme_Application,
                 new int[]{R.attr.colorAccent});
 
-        ((PagerTabStrip) findViewById(R.id.pager_title_strip)).setTabIndicatorColorResource(
-                typedArray.getResourceId(0, R.color.accent_material_dark));
+        PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
+        pagerTabStrip.setTabIndicatorColorResource(typedArray.getResourceId(0,
+                R.color.accent_material_dark));
 
         typedArray.recycle();
+
+        mWikipediaUrl = elementProperties.getWikipediaLink();
     }
 
     @Override
@@ -120,8 +79,7 @@ public class PropertiesActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_wiki:
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(mElementProperties.getWikipediaLink())));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(mWikipediaUrl)));
                 return true;
 
             case android.R.id.home:
@@ -133,11 +91,12 @@ public class PropertiesActivity extends ActionBarActivity {
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-
+    public void onCreateContextMenu(ContextMenu menu, View view,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
         getMenuInflater().inflate(R.menu.properties_context_menu, menu);
         menu.setHeaderTitle(R.string.context_title_options);
+
+        super.onCreateContextMenu(menu, view, menuInfo);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
