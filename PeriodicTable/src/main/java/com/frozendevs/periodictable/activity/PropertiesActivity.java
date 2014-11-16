@@ -28,7 +28,7 @@ import com.frozendevs.periodictable.model.adapter.PagesAdapter;
 
 public class PropertiesActivity extends ActionBarActivity {
 
-    public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
+    public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.AtomicNumber";
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
