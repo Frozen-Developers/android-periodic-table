@@ -36,6 +36,10 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     private float mMaxZoom = 1f;
     private Point mZoomFocalPoint = new Point();
     private float mStartZoom;
+    private boolean mEdgeEffectTopActive;
+    private boolean mEdgeEffectBottomActive;
+    private boolean mEdgeEffectLeftActive;
+    private boolean mEdgeEffectRightActive;
 
     public ZoomableScrollView(Context context) {
         super(context);
@@ -74,6 +78,17 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     @Override
     public boolean onDown(MotionEvent e) {
+        mEdgeEffectLeftActive
+                = mEdgeEffectTopActive
+                = mEdgeEffectRightActive
+                = mEdgeEffectBottomActive
+                = false;
+
+        mEdgeEffectLeft.onRelease();
+        mEdgeEffectTop.onRelease();
+        mEdgeEffectRight.onRelease();
+        mEdgeEffectBottom.onRelease();
+
         mOverScroller.forceFinished(true);
 
         return false;
@@ -96,19 +111,27 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
         scrollTo(getScrollX() + (int) distanceX, getScrollY() + (int) distanceY);
 
-        if(getScaledWidth() > getWidth()) {
+        if (getScaledWidth() > getWidth()) {
             if (getScrollX() == getMinimalScrollX()) {
                 needsInvalidate |= mEdgeEffectLeft.onPull(Math.abs(distanceX) / getWidth());
+
+                mEdgeEffectLeftActive = true;
             } else if (getScrollX() == getMaximalScrollX()) {
                 needsInvalidate |= mEdgeEffectRight.onPull(Math.abs(distanceX) / getWidth());
+
+                mEdgeEffectRightActive = true;
             }
         }
 
-        if(getScaledHeight() > getHeight()) {
+        if (getScaledHeight() > getHeight()) {
             if (getScrollY() == getMinimalScrollY()) {
                 needsInvalidate |= mEdgeEffectTop.onPull(Math.abs(distanceY) / getHeight());
+
+                mEdgeEffectTopActive = true;
             } else if (getScrollY() == getMaximalScrollY()) {
                 needsInvalidate |= mEdgeEffectBottom.onPull(Math.abs(distanceY) / getHeight());
+
+                mEdgeEffectBottomActive = true;
             }
         }
 
@@ -125,6 +148,11 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        mEdgeEffectLeft.onRelease();
+        mEdgeEffectTop.onRelease();
+        mEdgeEffectRight.onRelease();
+        mEdgeEffectBottom.onRelease();
+
         mOverScroller.forceFinished(true);
 
         mOverScroller.fling(getScrollX(), getScrollY(), (int) -velocityX, (int) -velocityY,
@@ -150,7 +178,7 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     }
 
     public void zoomTo(int x, int y, float zoom) {
-        if(mZoom != zoom) {
+        if (mZoom != zoom) {
             float zoomRatio = zoom / mZoom;
             int oldX = getScrollX() - getMinimalScrollX() + x;
             int oldY = getScrollY() - getMinimalScrollY() + y;
@@ -176,25 +204,25 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
         mMinZoom = getMinimalZoom();
 
-        if(mMinZoom > DEFAULT_MAX_ZOOM)
+        if (mMinZoom > DEFAULT_MAX_ZOOM)
             mMaxZoom = mMinZoom;
         else
             mMaxZoom = DEFAULT_MAX_ZOOM;
 
-        if(!isMinZoom)
+        if (!isMinZoom)
             mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
         else
             mZoom = mMinZoom;
 
-        if(mZoom > 0f) {
-            if(getScrollX() < getMinimalScrollX())
+        if (mZoom > 0f) {
+            if (getScrollX() < getMinimalScrollX())
                 scrollTo(getMinimalScrollX(), getScrollY());
-            else if(getScrollX() > getMaximalScrollX())
+            else if (getScrollX() > getMaximalScrollX())
                 scrollTo(getMaximalScrollX(), getScrollY());
 
-            if(getScrollY() < getMinimalScrollY())
+            if (getScrollY() < getMinimalScrollY())
                 scrollTo(getScrollX(), getMinimalScrollY());
-            else if(getScrollY() > getMaximalScrollY())
+            else if (getScrollY() > getMaximalScrollY())
                 scrollTo(getScrollX(), getMaximalScrollY());
         }
 
@@ -328,35 +356,45 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     public void computeScroll() {
         boolean needsInvalidate = false;
 
-        if(mOverScroller.computeScrollOffset()) {
+        if (mOverScroller.computeScrollOffset()) {
             scrollTo(mOverScroller.getCurrX(), mOverScroller.getCurrY());
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-                if(getScaledWidth() > getWidth()) {
-                    if (getScrollX() == getMinimalScrollX() && mEdgeEffectLeft.isFinished()) {
-                        mEdgeEffectLeft.onAbsorb((int)mOverScroller.getCurrVelocity());
-                        needsInvalidate = true;
+                if (getScaledWidth() > getWidth()) {
+                    if (getScrollX() == getMinimalScrollX() && mEdgeEffectLeft.isFinished() &&
+                            !mEdgeEffectLeftActive) {
+                        needsInvalidate |= mEdgeEffectLeft.onAbsorb(
+                                (int) mOverScroller.getCurrVelocity());
+
+                        mEdgeEffectLeftActive = true;
                     } else if (getScrollX() == getMaximalScrollX() &&
-                            mEdgeEffectRight.isFinished()) {
-                        mEdgeEffectRight.onAbsorb((int)mOverScroller.getCurrVelocity());
-                        needsInvalidate = true;
+                            mEdgeEffectRight.isFinished() && !mEdgeEffectRightActive) {
+                        needsInvalidate |= mEdgeEffectRight.onAbsorb(
+                                (int) mOverScroller.getCurrVelocity());
+
+                        mEdgeEffectRightActive = true;
                     }
                 }
 
-                if(getScaledHeight() > getHeight()) {
-                    if(getScrollY() == getMinimalScrollY() && mEdgeEffectTop.isFinished()) {
-                        mEdgeEffectTop.onAbsorb((int)mOverScroller.getCurrVelocity());
-                        needsInvalidate = true;
-                    }
-                    else if(getScrollY() == getMaximalScrollY() && mEdgeEffectBottom.isFinished()) {
-                        mEdgeEffectBottom.onAbsorb((int)mOverScroller.getCurrVelocity());
-                        needsInvalidate = true;
+                if (getScaledHeight() > getHeight()) {
+                    if (getScrollY() == getMinimalScrollY() && mEdgeEffectTop.isFinished() &&
+                            !mEdgeEffectTopActive) {
+                        needsInvalidate |= mEdgeEffectTop.onAbsorb(
+                                (int) mOverScroller.getCurrVelocity());
+
+                        mEdgeEffectTopActive = true;
+                    } else if (getScrollY() == getMaximalScrollY() &&
+                            mEdgeEffectBottom.isFinished() && !mEdgeEffectBottomActive) {
+                        needsInvalidate |= mEdgeEffectBottom.onAbsorb(
+                                (int) mOverScroller.getCurrVelocity());
+
+                        mEdgeEffectBottomActive = true;
                     }
                 }
             }
         }
 
-        if(mZoomer.computeZoom()) {
+        if (mZoomer.computeZoom()) {
             zoomTo(mZoomFocalPoint.x, mZoomFocalPoint.y, mStartZoom + mZoomer.getCurrZoom());
             needsInvalidate = true;
         }
@@ -380,7 +418,7 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
+        if (mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
             if (!mGestureDetector.onTouchEvent(event) && !mIsScrolling) {
                 super.onTouchEvent(event);
             }
@@ -390,10 +428,6 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 mIsScrolling = false;
-                if(mEdgeEffectLeft.onRelease() || mEdgeEffectRight.onRelease() ||
-                        mEdgeEffectTop.onRelease() || mEdgeEffectBottom.onRelease()) {
-                    ViewCompat.postInvalidateOnAnimation(this);
-                }
                 break;
         }
 
@@ -401,9 +435,9 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     }
 
     private float clamp(float min, float val, float max) {
-        if(Float.isNaN(min)) min = 0f;
-        if(Float.isNaN(val)) val = 0f;
-        if(Float.isNaN(max)) max = 0f;
+        if (Float.isNaN(min)) min = 0f;
+        if (Float.isNaN(val)) val = 0f;
+        if (Float.isNaN(max)) max = 0f;
 
         return Math.max(min, Math.min(val, max));
     }
@@ -421,8 +455,8 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     public boolean onDoubleTap(MotionEvent e) {
         mZoomer.forceFinished(true);
 
-        mZoomFocalPoint.x = (int)e.getX();
-        mZoomFocalPoint.y = (int)e.getY();
+        mZoomFocalPoint.x = (int) e.getX();
+        mZoomFocalPoint.y = (int) e.getY();
 
         mStartZoom = mZoom;
 
