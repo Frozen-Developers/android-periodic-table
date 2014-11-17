@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="category_actinides_bg">#ff99cc</color>
     <color name="category_alkali_metals_bg">#ff6666</color>
     <color name="category_alkaline_earth_metals_bg">#ffdead</color>
@@ -12,6 +13,4 @@
     <color name="category_transition_metals_bg">#ffc0c0</color>
     <color name="category_unknown_bg">#e8e8e8</color>
 
-    <color name="holo_gray_light">#33999999</color>
-    <color name="holo_blue_light">#ff33b5e5</color>
 </resources>

@@ -15,13 +15,9 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 
 public class TableFragment extends Fragment {
 
+    private TableAdapter mAdapter;
+
     private class LoadData extends AsyncTask<Void, Void, TableItem[]> {
-
-        private TableAdapter mAdapter;
-
-        private LoadData(TableAdapter adapter) {
-            mAdapter = adapter;
-        }
 
         @Override
         protected TableItem[] doInBackground(Void... params) {
@@ -35,16 +31,27 @@ public class TableFragment extends Fragment {
     }
 
     @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setRetainInstance(true);
+
+        mAdapter = new TableAdapter(getActivity());
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
 
-        PeriodicTableView tableView = (PeriodicTableView)rootView.findViewById(R.id.elements_table);
+        PeriodicTableView tableView = (PeriodicTableView) rootView.findViewById(R.id.elements_table);
         tableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
+        tableView.setAdapter(mAdapter);
 
-        TableAdapter adapter = new TableAdapter(getActivity());
-        tableView.setAdapter(adapter);
-
-        new LoadData(adapter).execute();
+        if (mAdapter.isEmpty()) {
+            new LoadData().execute();
+        } else {
+            mAdapter.notifyDataSetChanged();
+        }
 
         return rootView;
     }

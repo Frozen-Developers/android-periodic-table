@@ -27,7 +27,7 @@ public abstract class DynamicAdapter<T> extends BaseAdapter {
     public abstract View getView(int position, View convertView, ViewGroup parent);
 
     public void setItems(T... items) {
-        mItems = items.clone();
+        mItems = (T[]) items.clone();
 
         notifyDataSetChanged();
     }

@@ -98,7 +98,7 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
 
     @Override
     public void setItems(ElementListItem[] items) {
-        mAllItems = items.clone();
+        mAllItems = (ElementListItem[]) items.clone();
 
         super.setItems(items);
     }

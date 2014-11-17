@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.graphics.drawable.StateListDrawable;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,10 +103,18 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
         Resources.Theme theme = mContext.getTheme();
         TypedValue typedValue = new TypedValue();
+
         theme.resolveAttribute(android.R.attr.expandableListViewStyle, typedValue, true);
+
         TypedArray typedArray = theme.obtainStyledAttributes(typedValue.resourceId,
-                new int[]{android.R.attr.groupIndicator});
+                new int[]{android.R.attr.groupIndicator, R.attr.colorControlHighlight});
+
         mGroupIndicator = (StateListDrawable) typedArray.getDrawable(0);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mGroupIndicator.setTint(typedArray.getColor(1,
+                    R.color.abc_secondary_text_material_dark));
+        }
+
         typedArray.recycle();
 
         mTableAdapter = new TableAdapter(context);
@@ -391,6 +400,10 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
                     View view = LayoutInflater.from(mContext).inflate(
                             R.layout.properties_summary_item, parent, false);
+
+                    int padding = mContext.getResources().getDimensionPixelOffset(
+                            R.dimen.listPreferredItemPaddingTop);
+                    view.setPadding(padding, padding, padding, padding);
 
                     View tileView = view.findViewById(R.id.tile_view);
                     for (TableItem item : mTableAdapter.getAllItems()) {

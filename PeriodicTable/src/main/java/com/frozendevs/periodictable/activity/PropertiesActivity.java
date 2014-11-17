@@ -5,12 +5,10 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
@@ -26,63 +24,15 @@ import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
+import com.frozendevs.periodictable.model.adapter.PagesAdapter;
 
 public class PropertiesActivity extends ActionBarActivity {
 
-    public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.activity.AtomicNumber";
+    public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.AtomicNumber";
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
-    private ElementProperties mElementProperties;
-
-    private class SectionsPagerAdapter extends FragmentPagerAdapter {
-
-        public SectionsPagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int i) {
-            Fragment fragment;
-
-            switch (i) {
-                case 0:
-                    fragment = new PropertiesFragment();
-                    break;
-
-                case 1:
-                    fragment = new IsotopesFragment();
-                    break;
-
-                default:
-                    return null;
-            }
-
-            Bundle bundle = new Bundle();
-            bundle.putSerializable(ARGUMENT_PROPERTIES, mElementProperties);
-            fragment.setArguments(bundle);
-
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return 2;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            switch (position) {
-                case 0:
-                    return getString(R.string.fragment_title_details);
-
-                case 1:
-                    return getString(R.string.fragment_title_isotopes);
-            }
-
-            return null;
-        }
-    }
+    private String mWikipediaUrl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,16 +40,32 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        mElementProperties = Database.getInstance(this).getElementProperties(
+        ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
 
-        getSupportActionBar().setTitle(mElementProperties.getName());
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle(elementProperties.getName());
 
-        ViewPager mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(new SectionsPagerAdapter(getSupportFragmentManager()));
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
+
+        PagesAdapter pagesAdapter = new PagesAdapter(this);
+        pagesAdapter.addPage(R.string.fragment_title_properties, PropertiesFragment.class, bundle);
+        pagesAdapter.addPage(R.string.fragment_title_isotopes, IsotopesFragment.class, bundle);
+
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(pagesAdapter);
+
+        TypedArray typedArray = getTheme().obtainStyledAttributes(R.style.Theme_Application,
+                new int[]{R.attr.colorAccent});
 
         PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
-        pagerTabStrip.setTabIndicatorColorResource(R.color.holo_blue_light);
+        pagerTabStrip.setTabIndicatorColorResource(typedArray.getResourceId(0,
+                R.color.accent_material_dark));
+
+        typedArray.recycle();
+
+        mWikipediaUrl = elementProperties.getWikipediaLink();
     }
 
     @Override
@@ -113,8 +79,7 @@ public class PropertiesActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_wiki:
-                startActivity(new Intent(Intent.ACTION_VIEW,
-                        Uri.parse(mElementProperties.getWikipediaLink())));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(mWikipediaUrl)));
                 return true;
 
             case android.R.id.home:
@@ -126,11 +91,12 @@ public class PropertiesActivity extends ActionBarActivity {
     }
 
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        super.onCreateContextMenu(menu, v, menuInfo);
-
+    public void onCreateContextMenu(ContextMenu menu, View view,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
         getMenuInflater().inflate(R.menu.properties_context_menu, menu);
         menu.setHeaderTitle(R.string.context_title_options);
+
+        super.onCreateContextMenu(menu, view, menuInfo);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -140,39 +106,36 @@ public class PropertiesActivity extends ActionBarActivity {
 
         ContextMenu.ContextMenuInfo info = item.getMenuInfo();
 
-        View view = ((ExpandableListView.ExpandableListContextMenuInfo)info).targetView;
+        View view = ((ExpandableListView.ExpandableListContextMenuInfo) info).targetView;
 
-        TextView symbol = (TextView)view.findViewById(R.id.property_symbol);
-        TextView configuration = (TextView)view.findViewById(R.id.element_electron_configuration);
+        TextView symbol = (TextView) view.findViewById(R.id.property_symbol);
+        TextView configuration = (TextView) view.findViewById(R.id.element_electron_configuration);
 
-        if(configuration != null) {
+        if (configuration != null) {
             propertyName = getString(R.string.properties_header_summary);
-            propertyValue = (String)((TextView)view.findViewById(R.id.element_symbol)).getText() +
-                    '\n' + ((TextView)view.findViewById(R.id.element_number)).getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_name)).getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_weight)).getText() + '\n' +
+            propertyValue = (String) ((TextView) view.findViewById(R.id.element_symbol)).getText() +
+                    '\n' + ((TextView) view.findViewById(R.id.element_number)).getText() + '\n' +
+                    ((TextView) view.findViewById(R.id.element_name)).getText() + '\n' +
+                    ((TextView) view.findViewById(R.id.element_weight)).getText() + '\n' +
                     configuration.getText() + '\n' +
-                    ((TextView)view.findViewById(R.id.element_electrons_per_shell)).getText() + '\n'
-                    + ((TextView)view.findViewById(R.id.element_electronegativity)).getText() + '\n'
-                    + ((TextView)view.findViewById(R.id.element_oxidation_states)).getText();
-        }
-        else if(symbol != null) {
+                    ((TextView) view.findViewById(R.id.element_electrons_per_shell)).getText() + '\n'
+                    + ((TextView) view.findViewById(R.id.element_electronegativity)).getText() + '\n'
+                    + ((TextView) view.findViewById(R.id.element_oxidation_states)).getText();
+        } else if (symbol != null) {
             propertyName = getString(R.string.property_symbol);
-            propertyValue = (String)symbol.getText();
-        }
-        else {
-            propertyName = (String)((TextView)view.findViewById(R.id.property_name)).getText();
-            propertyValue = (String)((TextView)view.findViewById(R.id.property_value)).getText();
+            propertyValue = (String) symbol.getText();
+        } else {
+            propertyName = (String) ((TextView) view.findViewById(R.id.property_name)).getText();
+            propertyValue = (String) ((TextView) view.findViewById(R.id.property_value)).getText();
         }
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                if(Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
                     ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
                             setText(propertyValue);
-                }
-                else {
-                    ((ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE)).
+                } else {
+                    ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
                             setPrimaryClip(ClipData.newPlainText(propertyName, propertyValue));
                 }
                 return true;
