@@ -34,7 +34,6 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     private TableAdapter mTableAdapter;
     private Property[] mProperties = new Property[0];
     private StateListDrawable mGroupIndicator;
-    private AlertDialog mLegendDialog;
 
     private class Property<T> {
         String mName = "";
@@ -394,62 +393,58 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
         switch (getGroup(groupPosition).getType()) {
             case SUMMARY:
-                if (mLegendDialog == null) {
-                    mLegendDialog = new AlertDialog.Builder(mContext).create();
-                    mLegendDialog.setTitle(R.string.context_title_legend);
+                AlertDialog legendDialog = new AlertDialog.Builder(mContext).create();
+                legendDialog.setTitle(R.string.context_title_legend);
 
-                    View view = LayoutInflater.from(mContext).inflate(
-                            R.layout.properties_summary_item, parent, false);
+                View view = LayoutInflater.from(mContext).inflate(
+                        R.layout.properties_summary_item, parent, false);
 
-                    int padding = mContext.getResources().getDimensionPixelOffset(
-                            R.dimen.listPreferredItemPaddingTop);
-                    view.setPadding(padding, padding, padding, padding);
+                int padding = mContext.getResources().getDimensionPixelOffset(
+                        R.dimen.listPreferredItemPaddingTop);
+                view.setPadding(padding, padding, padding, padding);
 
-                    View tileView = view.findViewById(R.id.tile_view);
-                    for (TableItem item : mTableAdapter.getAllItems()) {
-                        if (item != null) {
-                            mTableAdapter.getView(mTableAdapter.getItemPosition(item), tileView,
-                                    (ViewGroup) view);
-                            break;
-                        }
+                View tileView = view.findViewById(R.id.tile_view);
+                for (TableItem item : mTableAdapter.getAllItems()) {
+                    if (item != null) {
+                        mTableAdapter.getView(mTableAdapter.getItemPosition(item), tileView,
+                                (ViewGroup) view);
+                        break;
                     }
-                    tileView.setClickable(false);
-
-                    ((TextView) tileView.findViewById(R.id.element_symbol)).setText(
-                            R.string.property_atom_symbol);
-                    ((TextView) tileView.findViewById(R.id.element_number)).setText(
-                            R.string.property_atomic_number_symbol);
-                    ((TextView) tileView.findViewById(R.id.element_name)).setText(
-                            R.string.property_name);
-                    ((TextView) tileView.findViewById(R.id.element_weight)).setText(
-                            R.string.property_relative_atomic_mass_symbol);
-
-                    TextView configuration =
-                            (TextView) view.findViewById(R.id.element_electron_configuration);
-                    configuration.setText(R.string.property_electron_configuration);
-                    configuration.setTypeface(mTypeface);
-
-                    TextView shells = (TextView) view.findViewById(R.id.element_electrons_per_shell);
-                    shells.setText(R.string.property_electrons_per_shell);
-                    shells.setTypeface(mTypeface);
-
-                    TextView electronegativity =
-                            (TextView) view.findViewById(R.id.element_electronegativity);
-                    electronegativity.setText(
-                            mContext.getString(R.string.property_electronegativity));
-                    electronegativity.setTypeface(mTypeface);
-
-                    TextView oxidationStates =
-                            (TextView) view.findViewById(R.id.element_oxidation_states);
-                    oxidationStates.setText(R.string.property_oxidation_states);
-                    oxidationStates.setTypeface(mTypeface);
-
-                    mLegendDialog.setView(view);
                 }
+                tileView.setClickable(false);
 
-                if (!mLegendDialog.isShowing()) {
-                    mLegendDialog.show();
-                }
+                ((TextView) tileView.findViewById(R.id.element_symbol)).setText(
+                        R.string.property_atom_symbol);
+                ((TextView) tileView.findViewById(R.id.element_number)).setText(
+                        R.string.property_atomic_number_symbol);
+                ((TextView) tileView.findViewById(R.id.element_name)).setText(
+                        R.string.property_name);
+                ((TextView) tileView.findViewById(R.id.element_weight)).setText(
+                        R.string.property_relative_atomic_mass_symbol);
+
+                TextView configuration =
+                        (TextView) view.findViewById(R.id.element_electron_configuration);
+                configuration.setText(R.string.property_electron_configuration);
+                configuration.setTypeface(mTypeface);
+
+                TextView shells = (TextView) view.findViewById(R.id.element_electrons_per_shell);
+                shells.setText(R.string.property_electrons_per_shell);
+                shells.setTypeface(mTypeface);
+
+                TextView electronegativity =
+                        (TextView) view.findViewById(R.id.element_electronegativity);
+                electronegativity.setText(
+                        mContext.getString(R.string.property_electronegativity));
+                electronegativity.setTypeface(mTypeface);
+
+                TextView oxidationStates =
+                        (TextView) view.findViewById(R.id.element_oxidation_states);
+                oxidationStates.setText(R.string.property_oxidation_states);
+                oxidationStates.setTypeface(mTypeface);
+
+                legendDialog.setView(view);
+
+                legendDialog.show();
                 break;
         }
 
