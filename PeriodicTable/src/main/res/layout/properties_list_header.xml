@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dip"
     android:ellipsize="marquee"
+    android:gravity="start"
     android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
     android:paddingEnd="?attr/listPreferredItemPaddingRight"
     android:paddingLeft="?attr/listPreferredItemPaddingLeft"
