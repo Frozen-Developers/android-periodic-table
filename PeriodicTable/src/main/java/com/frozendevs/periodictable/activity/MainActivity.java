@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
         TabsAdapter tabsAdapter = new TabsAdapter(this, viewPager);
         tabsAdapter.addTab(actionBar.newTab().setText(R.string.fragment_title_elements),
                 ElementsFragment.class, null);
-        tabsAdapter.addTab(actionBar.newTab().setText(R.string.fragment_title_isotopes),
+        tabsAdapter.addTab(actionBar.newTab().setText(R.string.fragment_title_table),
                 TableFragment.class, null);
     }
 
