@@ -1,5 +1,6 @@
 package com.frozendevs.periodictable.model.adapter;
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.res.Resources;
@@ -95,6 +96,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         TextView name, value;
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public PropertiesAdapter(Context context, ElementProperties properties) {
         mContext = context;
 
