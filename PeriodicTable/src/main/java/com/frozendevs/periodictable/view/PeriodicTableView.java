@@ -216,4 +216,15 @@ public class PeriodicTableView extends ZoomableScrollView {
         return Math.min((getWidth() - ((GROUPS_COUNT - 1) * DEFAULT_SPACING)) / GROUPS_COUNT,
                 (getHeight() - ((mPeriodsCount - 1) * DEFAULT_SPACING)) / mPeriodsCount) / getDefaultTileSize();
     }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+
+        for (Bitmap bitmap : mBitmaps) {
+            if (bitmap != null) {
+                bitmap.recycle();
+            }
+        }
+    }
 }
