@@ -333,7 +333,7 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
 
     block = article.getProperty('block', units=False)
 
-    configuration = article.getProperty('electron configuration', comments=False)
+    configuration = re.sub(r'or\n', 'or', article.getProperty('electron configuration', comments=False))
 
     shells = article.getProperty('electrons per shell', comments=False)
 
