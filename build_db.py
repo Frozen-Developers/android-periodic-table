@@ -70,7 +70,7 @@ class Article:
             r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
             r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}', r'{{citation needed\|[^}]*}}',
             r'{{dubious\|[^}]*}}', r'{{{note\|[^}]*}}}', r'{{periodic table legend\|[^}]*}}',
-            r'{{anchor\|[^}]*}}' ]
+            r'{{anchor\|[^}]*}}', r'{{cn\|[^}]*}}' ]
         content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
 
         replace = [
