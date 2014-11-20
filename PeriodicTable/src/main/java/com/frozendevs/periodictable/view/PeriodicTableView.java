@@ -27,11 +27,12 @@ public class PeriodicTableView extends ZoomableScrollView {
     private Matrix mMatrix = new Matrix();
     private View mConvertView;
     private int mPeriodsCount = 0;
+    private AsyncTask<Void, Void, Void> mOnChangedTask;
 
     private DataSetObserver mDataSetObserver = new DataSetObserver() {
         @Override
         public void onChanged() {
-            new AsyncTask<Void, Void, Void>() {
+            mOnChangedTask = new AsyncTask<Void, Void, Void>() {
 
                 @Override
                 protected void onPreExecute() {
@@ -221,9 +222,19 @@ public class PeriodicTableView extends ZoomableScrollView {
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
 
-        for (Bitmap bitmap : mBitmaps) {
-            if (bitmap != null) {
-                bitmap.recycle();
+        if (mAdapter != null) {
+            mAdapter.unregisterDataSetObserver(mDataSetObserver);
+        }
+
+        if (mOnChangedTask != null) {
+            mOnChangedTask.cancel(true);
+        }
+
+        if (mBitmaps != null) {
+            for (Bitmap bitmap : mBitmaps) {
+                if (bitmap != null) {
+                    bitmap.recycle();
+                }
             }
         }
     }
