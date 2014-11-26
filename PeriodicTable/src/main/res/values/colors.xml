@@ -13,4 +13,7 @@
     <color name="category_transition_metals_bg">#ffc0c0</color>
     <color name="category_unknown_bg">#e8e8e8</color>
 
+    <color name="tab_selected_underline_color">@color/ripple_material_dark</color>
+    <color name="actionbar_background_color">@color/primary_material_dark</color>
+
 </resources>

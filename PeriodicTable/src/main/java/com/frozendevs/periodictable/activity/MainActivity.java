@@ -3,7 +3,6 @@ package com.frozendevs.periodictable.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +10,8 @@ import android.view.MenuItem;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.ElementsFragment;
 import com.frozendevs.periodictable.fragment.TableFragment;
-import com.frozendevs.periodictable.model.adapter.TabsAdapter;
+import com.frozendevs.periodictable.model.adapter.PagesAdapter;
+import com.frozendevs.periodictable.view.ViewPagerTabs;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -21,16 +21,17 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.main_activity);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        getSupportActionBar().setElevation(0f);
+
+        PagesAdapter pagesAdapter = new PagesAdapter(this);
+        pagesAdapter.addPage(R.string.fragment_title_elements, ElementsFragment.class, null);
+        pagesAdapter.addPage(R.string.fragment_title_table, TableFragment.class, null);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setAdapter(pagesAdapter);
 
-        TabsAdapter tabsAdapter = new TabsAdapter(this, viewPager);
-        tabsAdapter.addTab(actionBar.newTab().setText(R.string.fragment_title_elements),
-                ElementsFragment.class, null);
-        tabsAdapter.addTab(actionBar.newTab().setText(R.string.fragment_title_table),
-                TableFragment.class, null);
+        ViewPagerTabs viewPagerTabs = (ViewPagerTabs) findViewById(R.id.pager_header);
+        viewPagerTabs.setViewPager(viewPager);
     }
 
     @Override
