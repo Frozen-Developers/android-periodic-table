@@ -116,9 +116,9 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
 
         Resources.Theme theme = getContext().getTheme();
         TypedValue typedValue = new TypedValue();
-        theme.resolveAttribute(android.R.attr.listViewStyle, typedValue, true);
+        theme.resolveAttribute(R.attr.theme, typedValue, true);
         TypedArray typedArray = theme.obtainStyledAttributes(typedValue.resourceId,
-                new int[]{android.R.attr.listSelector});
+                new int[]{R.attr.listChoiceBackgroundIndicator});
         mTextBackground = typedArray.getResourceId(0, 0);
         typedArray.recycle();
 
