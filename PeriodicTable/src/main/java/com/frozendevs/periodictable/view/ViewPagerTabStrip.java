@@ -16,6 +16,7 @@
 
 package com.frozendevs.periodictable.view;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -96,11 +97,9 @@ public class ViewPagerTabStrip extends LinearLayout {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private boolean isRtl() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            return getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
-        }
-
-        return false;
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 &&
+                getLayoutDirection() == View.LAYOUT_DIRECTION_RTL;
     }
 }

@@ -102,6 +102,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
         this(context, attrs, 0);
     }
 
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ViewPagerTabs(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         setFillViewport(true);
@@ -223,6 +224,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     public void onPageScrollStateChanged(int state) {
     }
 
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     private int getRtlPosition(int position) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
             if (getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
