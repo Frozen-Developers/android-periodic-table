@@ -14,7 +14,7 @@ import com.frozendevs.periodictable.R;
 
 public class AboutActivity extends PreferenceActivity {
 
-    private Toolbar mActionBar;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class AboutActivity extends PreferenceActivity {
                     }
                 });
 
-        mActionBar.setTitle(getTitle());
+        mToolbar.setTitle(getTitle());
     }
 
     @Override
@@ -54,8 +54,8 @@ public class AboutActivity extends PreferenceActivity {
         ViewGroup contentView = (ViewGroup) LayoutInflater.from(this).inflate(
                 R.layout.about_activity, (ViewGroup) getWindow().getDecorView().getParent(), false);
 
-        mActionBar = (Toolbar) contentView.findViewById(R.id.action_bar);
-        mActionBar.setNavigationOnClickListener(new View.OnClickListener() {
+        mToolbar = (Toolbar) contentView.findViewById(R.id.toolbar);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

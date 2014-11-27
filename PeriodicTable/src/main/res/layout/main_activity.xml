@@ -6,10 +6,7 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+    <include layout="@layout/toolbar" />
 
     <com.frozendevs.periodictable.view.ViewPagerTabs
         android:id="@+id/pager_header"

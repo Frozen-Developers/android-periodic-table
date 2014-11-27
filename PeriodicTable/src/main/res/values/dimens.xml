@@ -17,4 +17,6 @@
 
     <dimen name="view_pager_tabs_landscape_width">186dp</dimen>
 
+    <dimen name="action_bar_elevation">8dp</dimen>
+
 </resources>
