@@ -135,8 +135,6 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
                     outline.setRect(0, 0, view.getWidth(), view.getHeight());
                 }
             });
-
-            setElevation(getResources().getDimension(R.dimen.tab_elevation));
         }
     }
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -21,7 +22,11 @@ public class MainActivity extends ActionBarActivity {
 
         setContentView(R.layout.main_activity);
 
-        getSupportActionBar().setElevation(0f);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         PagesAdapter pagesAdapter = new PagesAdapter(this);
         pagesAdapter.addPage(R.string.fragment_title_elements, ElementsFragment.class, null);
@@ -31,6 +36,12 @@ public class MainActivity extends ActionBarActivity {
         viewPager.setAdapter(pagesAdapter);
 
         ViewPagerTabs viewPagerTabs = (ViewPagerTabs) findViewById(R.id.pager_header);
+        if (viewPagerTabs == null) {
+            viewPagerTabs = (ViewPagerTabs) getLayoutInflater().inflate(
+                    R.layout.view_pager_tabs_land, toolbar, false);
+
+            toolbar.addView(viewPagerTabs);
+        }
         viewPagerTabs.setViewPager(viewPager);
     }
 

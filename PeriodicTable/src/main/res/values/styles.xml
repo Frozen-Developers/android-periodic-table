@@ -3,12 +3,13 @@
 
     <style name="Theme.Application" parent="Theme.AppCompat">
         <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
-    </style>
-
-    <style name="Theme.About" parent="@style/Theme.Application">
-        <item name="android:windowNoTitle">true</item>
 
         <item name="toolbarStyle">@style/Widget.Toolbar</item>
+    </style>
+
+    <style name="Theme.NoActionBar" parent="@style/Theme.Application">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Small">
@@ -22,7 +23,7 @@
     <style name="Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
         <item name="navigationIcon">?attr/homeAsUpIndicator</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
     </style>
 

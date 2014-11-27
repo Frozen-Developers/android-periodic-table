@@ -11,13 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
-    <com.frozendevs.periodictable.view.ViewPagerTabs
-        android:id="@+id/pager_header"
-        style="@style/ActionBarTabTextStyle"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:orientation="horizontal" />
-
     <com.frozendevs.periodictable.view.NonSwipeableViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"

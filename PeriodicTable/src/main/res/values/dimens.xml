@@ -12,6 +12,9 @@
     <dimen name="tab_selected_underline_height">2dp</dimen>
     <dimen name="tab_elevation">2dp</dimen>
     <dimen name="tab_text_size">14sp</dimen>
+    <dimen name="tab_text_size_landscape">8sp</dimen>
     <dimen name="tab_side_padding">12dp</dimen>
+
+    <dimen name="view_pager_tabs_landscape_width">186dp</dimen>
 
 </resources>
