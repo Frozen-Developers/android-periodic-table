@@ -52,31 +52,38 @@ public class PeriodicTableView extends ZoomableScrollView {
                         mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
 
                         View convertView = null;
+                        int previousViewType = 0;
 
                         for (int row = 0; row < mPeriodsCount; row++) {
                             for (int column = 0; column < GROUPS_COUNT; column++) {
                                 int position = (row * GROUPS_COUNT) + column;
 
-                                View view = mAdapter.getView(position, convertView,
+                                int viewType = mAdapter.getItemViewType(position);
+                                if (viewType != previousViewType) {
+                                    convertView = null;
+                                }
+                                previousViewType = viewType;
+
+                                convertView = mAdapter.getView(position, convertView,
                                         PeriodicTableView.this);
 
-                                if (view != null) {
-                                    view.measure(
+                                if (convertView != null) {
+                                    convertView.measure(
                                             MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                                                     MeasureSpec.EXACTLY),
                                             MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                                                     MeasureSpec.EXACTLY));
-                                    view.layout(0, 0, view.getMeasuredWidth(),
-                                            view.getMeasuredHeight());
+                                    convertView.layout(0, 0, convertView.getMeasuredWidth(),
+                                            convertView.getMeasuredHeight());
 
-                                    view.buildDrawingCache();
+                                    convertView.buildDrawingCache();
 
-                                    if (view.getDrawingCache() != null) {
+                                    if (convertView.getDrawingCache() != null) {
                                         mBitmaps[position] = Bitmap.createBitmap(
-                                                view.getDrawingCache());
+                                                convertView.getDrawingCache());
                                     }
 
-                                    view.destroyDrawingCache();
+                                    convertView.destroyDrawingCache();
                                 }
                             }
                         }
