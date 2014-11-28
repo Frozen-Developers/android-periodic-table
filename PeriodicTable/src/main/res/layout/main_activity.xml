@@ -6,7 +6,9 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <include layout="@layout/toolbar" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <include layout="@layout/view_pager_tabs" />
 

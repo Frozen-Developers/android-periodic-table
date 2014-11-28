@@ -6,7 +6,9 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <include layout="@layout/toolbar" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
 
     <com.frozendevs.periodictable.view.NonSwipeableViewPager
         android:id="@+id/pager"
