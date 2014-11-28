@@ -11,8 +11,10 @@ import android.widget.TextView;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.view.PeriodicTableView;
 
-public class TableAdapter extends DynamicAdapter<TableItem> {
+public class TableAdapter extends DynamicAdapter<TableItem> implements
+        PeriodicTableView.OnItemClickListener {
 
     private static final int VIEW_TYPE_ITEM = 0;
     private static final int VIEW_TYPE_TEXT = 1;
@@ -24,7 +26,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
 
     private class ViewHolder {
         TextView symbol, number, name, weight;
-        int integerNumber;
     }
 
     public TableAdapter(Context context) {
@@ -124,20 +125,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
                         viewHolder.weight.setTypeface(mTypeface);
 
                         convertView.setTag(viewHolder);
-
-                        convertView.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                ViewHolder viewHolder = (ViewHolder) v.getTag();
-
-                                if (viewHolder.integerNumber > 0) {
-                                    Intent intent = new Intent(mContext, PropertiesActivity.class);
-                                    intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
-                                            viewHolder.integerNumber);
-                                    mContext.startActivity(intent);
-                                }
-                            }
-                        });
                     }
 
                     convertView.setBackgroundColor(getBackgroundColor(position));
@@ -147,9 +134,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
                     viewHolder.name.setTextSize(12f);
                     viewHolder.name.setText(item.getName());
                     viewHolder.weight.setText(item.getStandardAtomicWeight());
-                    viewHolder.integerNumber = item.getNumber();
-
-                    convertView.setClickable(true);
 
                     return convertView;
                 }
@@ -293,5 +277,17 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         }
 
         super.setItems(sortedItems);
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        TableItem item = getItem(position);
+
+        if (item != null) {
+            Intent intent = new Intent(mContext, PropertiesActivity.class);
+            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
+
+            mContext.startActivity(intent);
+        }
     }
 }

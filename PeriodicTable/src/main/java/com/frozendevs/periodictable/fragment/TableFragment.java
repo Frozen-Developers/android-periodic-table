@@ -46,6 +46,7 @@ public class TableFragment extends Fragment {
         PeriodicTableView tableView = (PeriodicTableView) rootView.findViewById(R.id.elements_table);
         tableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
         tableView.setAdapter(mAdapter);
+        tableView.setOnItemClickListener(mAdapter);
 
         if (mAdapter.isEmpty()) {
             new LoadData().execute();

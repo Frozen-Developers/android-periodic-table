@@ -25,9 +25,14 @@ public class PeriodicTableView extends ZoomableScrollView {
     private Adapter mAdapter;
     private Bitmap[] mBitmaps;
     private Matrix mMatrix = new Matrix();
-    private View mConvertView;
     private int mPeriodsCount = 0;
     private AsyncTask<Void, Void, Void> mOnChangedTask;
+    private OnItemClickListener mOnItemClickListener;
+
+    public interface OnItemClickListener {
+
+        public void onItemClick(int position);
+    }
 
     private DataSetObserver mDataSetObserver = new DataSetObserver() {
         @Override
@@ -46,11 +51,13 @@ public class PeriodicTableView extends ZoomableScrollView {
                     if (!mAdapter.isEmpty()) {
                         mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
 
+                        View convertView = null;
+
                         for (int row = 0; row < mPeriodsCount; row++) {
                             for (int column = 0; column < GROUPS_COUNT; column++) {
                                 int position = (row * GROUPS_COUNT) + column;
 
-                                View view = mAdapter.getView(position, mConvertView,
+                                View view = mAdapter.getView(position, convertView,
                                         PeriodicTableView.this);
 
                                 if (view != null) {
@@ -157,7 +164,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        if (mAdapter != null && !mAdapter.isEmpty()) {
+        if (mOnItemClickListener != null && mAdapter != null && !mAdapter.isEmpty()) {
             float rawX = e.getX() + getScrollX();
             float rawY = e.getY() + getScrollY();
             float tileSize = getScaledTileSize() + DEFAULT_SPACING;
@@ -171,16 +178,11 @@ public class PeriodicTableView extends ZoomableScrollView {
                 int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
                         (int) ((rawX - startX) / tileSize);
 
-                if (position >= 0 && position < mAdapter.getCount()) {
-                    View view = mAdapter.getView(position, mConvertView, this);
+                if (position >= 0 && position < mAdapter.getCount() &&
+                        mAdapter.getItem(position) != null) {
+                    playSoundEffect(SoundEffectConstants.CLICK);
 
-                    if (view != null) {
-                        if (view.isClickable()) {
-                            playSoundEffect(SoundEffectConstants.CLICK);
-
-                            view.performClick();
-                        }
-                    }
+                    mOnItemClickListener.onItemClick(position);
                 }
             }
         }
@@ -237,5 +239,9 @@ public class PeriodicTableView extends ZoomableScrollView {
                 }
             }
         }
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        mOnItemClickListener = listener;
     }
 }
