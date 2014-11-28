@@ -57,6 +57,7 @@ public class ElementsFragment extends Fragment {
 
         mListView = (ListView) rootView.findViewById(R.id.elements_list);
         mListView.setAdapter(mAdapter);
+        mListView.setOnItemClickListener(mAdapter);
 
         if (mAdapter.isEmpty()) {
             mListView.setEmptyView(rootView.findViewById(R.id.progress_bar));

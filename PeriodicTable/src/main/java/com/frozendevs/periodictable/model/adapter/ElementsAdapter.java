@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -15,14 +17,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
+public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
+        ListView.OnItemClickListener {
 
     private ElementListItem[] mAllItems;
     private Context mContext;
 
     private class ViewHolder {
         TextView symbol, atomicNumber, name;
-        int number;
     }
 
     public ElementsAdapter(Context context) {
@@ -44,16 +46,6 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
             viewHolder.name = (TextView)convertView.findViewById(R.id.element_name);
 
             convertView.setTag(viewHolder);
-
-            convertView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(mContext, PropertiesActivity.class);
-                    intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
-                            ((ViewHolder)v.getTag()).number);
-                    mContext.startActivity(intent);
-                }
-            });
         }
 
         ViewHolder viewHolder = (ViewHolder)convertView.getTag();
@@ -61,7 +53,6 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
         viewHolder.symbol.setText(element.getSymbol());
         viewHolder.atomicNumber.setText(String.valueOf(element.getNumber()));
         viewHolder.name.setText(element.getName());
-        viewHolder.number = element.getNumber();
 
         return convertView;
     }
@@ -101,5 +92,13 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> {
         mAllItems = (ElementListItem[]) items.clone();
 
         super.setItems(items);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(mContext, PropertiesActivity.class);
+        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, getItem(position).getNumber());
+
+        mContext.startActivity(intent);
     }
 }
