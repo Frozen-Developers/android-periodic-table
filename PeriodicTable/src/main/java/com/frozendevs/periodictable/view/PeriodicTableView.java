@@ -162,11 +162,11 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     private int getDefaultTileSize() {
-        return Math.round(getResources().getDimension(R.dimen.table_item_size));
+        return getResources().getDimensionPixelSize(R.dimen.table_item_size);
     }
 
     private float getScaledTileSize() {
-        return getZoom() * getResources().getDimension(R.dimen.table_item_size);
+        return getZoom() * getDefaultTileSize();
     }
 
     @Override
