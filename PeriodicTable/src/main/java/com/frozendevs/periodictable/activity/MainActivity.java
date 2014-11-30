@@ -36,12 +36,6 @@ public class MainActivity extends ActionBarActivity {
         viewPager.setAdapter(pagesAdapter);
 
         ViewPagerTabs viewPagerTabs = (ViewPagerTabs) findViewById(R.id.pager_header);
-        if (viewPagerTabs == null) {
-            viewPagerTabs = (ViewPagerTabs) getLayoutInflater().inflate(
-                    R.layout.view_pager_tabs, toolbar, false);
-
-            toolbar.addView(viewPagerTabs);
-        }
         viewPagerTabs.setViewPager(viewPager);
     }
 

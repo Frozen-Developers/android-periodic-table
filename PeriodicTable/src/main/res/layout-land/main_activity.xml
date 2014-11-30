@@ -6,9 +6,22 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-    <include
+    <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
-        layout="@layout/toolbar" />
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="@dimen/action_bar_elevation"
+        android:outlineProvider="bounds">
+
+        <com.frozendevs.periodictable.view.ViewPagerTabs
+            android:id="@+id/pager_header"
+            style="@style/ActionBarTabTextStyle"
+            android:layout_width="@dimen/view_pager_tabs_landscape_width"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:textSize="@dimen/tab_text_size_landscape" />
+
+    </android.support.v7.widget.Toolbar>
 
     <com.frozendevs.periodictable.view.NonSwipeableViewPager
         android:id="@+id/pager"
