@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -106,7 +107,13 @@ public class PropertiesActivity extends ActionBarActivity {
 
         ContextMenu.ContextMenuInfo info = item.getMenuInfo();
 
-        View view = ((ExpandableListView.ExpandableListContextMenuInfo) info).targetView;
+        View view;
+
+        if (info instanceof ExpandableListView.ExpandableListContextMenuInfo) {
+            view = ((ExpandableListView.ExpandableListContextMenuInfo) info).targetView;
+        } else {
+            view = ((ListView.AdapterContextMenuInfo) info).targetView;
+        }
 
         TextView symbol = (TextView) view.findViewById(R.id.property_symbol);
         TextView configuration = (TextView) view.findViewById(R.id.element_electron_configuration);

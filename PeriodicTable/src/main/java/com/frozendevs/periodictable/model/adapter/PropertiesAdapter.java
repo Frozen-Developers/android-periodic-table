@@ -12,17 +12,18 @@ import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
-import android.widget.ExpandableListView;
+import android.widget.AdapterView;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.TableItem;
 
-public class PropertiesAdapter extends BaseExpandableListAdapter implements
-        ExpandableListView.OnGroupClickListener {
+public class PropertiesAdapter extends BaseAdapter implements
+        ListView.OnItemClickListener {
 
     private static enum ViewType {
         HEADER,
@@ -40,6 +41,7 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
         String mName = "";
         T mValue;
         ViewType mType = ViewType.ITEM;
+        boolean mExpanded = false;
 
         Property(int name, T value) {
             mName = mContext.getString(name);
@@ -78,6 +80,10 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
             return value;
         }
 
+        boolean isExpanded() {
+            return mExpanded;
+        }
+
         String getName() {
             return mName;
         }
@@ -88,6 +94,10 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
         ViewType getType() {
             return mType;
+        }
+
+        void setExpanded(boolean expanded) {
+            mExpanded = expanded;
         }
     }
 
@@ -247,33 +257,28 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     }
 
     @Override
-    public int getGroupCount() {
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return getItem(position).getType() != ViewType.HEADER;
+    }
+
+    @Override
+    public int getCount() {
         return mProperties.length;
     }
 
     @Override
-    public int getChildrenCount(int groupPosition) {
-        return 0;
+    public Property getItem(int position) {
+        return mProperties[position];
     }
 
     @Override
-    public Property getGroup(int groupPosition) {
-        return mProperties[groupPosition];
-    }
-
-    @Override
-    public Property getChild(int groupPosition, int childPosition) {
-        return null;
-    }
-
-    @Override
-    public long getGroupId(int groupPosition) {
-        return groupPosition;
-    }
-
-    @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return 0;
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
@@ -282,9 +287,8 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     }
 
     @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
-                             final ViewGroup parent) {
-        Property property = getGroup(groupPosition);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        Property property = getItem(position);
 
         switch (property.getType()) {
             case SUMMARY:
@@ -305,23 +309,23 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
                     String[] properties = (String[]) property.getValue();
 
-                    TextView configuration =
-                            (TextView) convertView.findViewById(R.id.element_electron_configuration);
+                    TextView configuration = (TextView) convertView.findViewById(
+                            R.id.element_electron_configuration);
                     configuration.setText(properties[0]);
                     configuration.setTypeface(mTypeface);
 
-                    TextView shells =
-                            (TextView) convertView.findViewById(R.id.element_electrons_per_shell);
+                    TextView shells = (TextView) convertView.findViewById(
+                            R.id.element_electrons_per_shell);
                     shells.setText(properties[1]);
                     shells.setTypeface(mTypeface);
 
-                    TextView electronegativity =
-                            (TextView) convertView.findViewById(R.id.element_electronegativity);
+                    TextView electronegativity = (TextView) convertView.findViewById(
+                            R.id.element_electronegativity);
                     electronegativity.setText(properties[2]);
                     electronegativity.setTypeface(mTypeface);
 
-                    TextView oxidationStates =
-                            (TextView) convertView.findViewById(R.id.element_oxidation_states);
+                    TextView oxidationStates = (TextView) convertView.findViewById(
+                            R.id.element_oxidation_states);
                     oxidationStates.setText(properties[3]);
                     oxidationStates.setTypeface(mTypeface);
                 }
@@ -350,14 +354,17 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
 
                 String[] lines = ((String) property.getValue()).split("\\n");
                 if (lines.length > 3) {
-                    mGroupIndicator.setState(isExpanded ?
+                    mGroupIndicator.setState(property.isExpanded() ?
                             new int[]{android.R.attr.state_expanded} : null);
                     viewHolder.indicator.setImageDrawable(mGroupIndicator.getCurrent());
                     viewHolder.indicator.setVisibility(View.VISIBLE);
 
                     viewHolder.value.setText((String) property.getValue());
-                    if (isExpanded) viewHolder.value.setMaxLines(Integer.MAX_VALUE);
-                    else viewHolder.value.setMaxLines(1);
+                    if (property.isExpanded()) {
+                        viewHolder.value.setMaxLines(Integer.MAX_VALUE);
+                    } else {
+                        viewHolder.value.setMaxLines(1);
+                    }
                 } else {
                     viewHolder.indicator.setVisibility(View.GONE);
 
@@ -372,8 +379,6 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 }
 
                 ((TextView) convertView).setText(property.getName());
-
-                convertView.setOnClickListener(null);
                 break;
         }
 
@@ -381,35 +386,36 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
     }
 
     @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
-                             View convertView, ViewGroup parent) {
-        return null;
+    public int getItemViewType(int position) {
+        return getItem(position).getType().ordinal();
     }
 
     @Override
-    public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return false;
+    public int getViewTypeCount() {
+        return ViewType.values().length;
     }
 
     @Override
-    public boolean onGroupClick(ExpandableListView parent, View v, int groupPosition, long id) {
-        switch (getGroup(groupPosition).getType()) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Property property = getItem(position);
+
+        switch (property.getType()) {
             case SUMMARY:
                 AlertDialog legendDialog = new AlertDialog.Builder(mContext).create();
                 legendDialog.setTitle(R.string.context_title_legend);
 
-                View view = LayoutInflater.from(mContext).inflate(
+                View summaryView = LayoutInflater.from(mContext).inflate(
                         R.layout.properties_summary_item, parent, false);
 
                 int padding = mContext.getResources().getDimensionPixelOffset(
                         R.dimen.listPreferredItemPaddingTop);
-                view.setPadding(padding, padding, padding, padding);
+                summaryView.setPadding(padding, padding, padding, padding);
 
-                View tileView = view.findViewById(R.id.tile_view);
+                View tileView = summaryView.findViewById(R.id.tile_view);
                 for (TableItem item : mTableAdapter.getAllItems()) {
                     if (item != null) {
                         mTableAdapter.getView(mTableAdapter.getItemPosition(item), tileView,
-                                (ViewGroup) view);
+                                (ViewGroup) summaryView);
                         break;
                     }
                 }
@@ -424,47 +430,36 @@ public class PropertiesAdapter extends BaseExpandableListAdapter implements
                 ((TextView) tileView.findViewById(R.id.element_weight)).setText(
                         R.string.property_relative_atomic_mass_symbol);
 
-                TextView configuration =
-                        (TextView) view.findViewById(R.id.element_electron_configuration);
+                TextView configuration = (TextView) summaryView.findViewById(
+                        R.id.element_electron_configuration);
                 configuration.setText(R.string.property_electron_configuration);
                 configuration.setTypeface(mTypeface);
 
-                TextView shells = (TextView) view.findViewById(R.id.element_electrons_per_shell);
+                TextView shells = (TextView) summaryView.findViewById(
+                        R.id.element_electrons_per_shell);
                 shells.setText(R.string.property_electrons_per_shell);
                 shells.setTypeface(mTypeface);
 
-                TextView electronegativity =
-                        (TextView) view.findViewById(R.id.element_electronegativity);
-                electronegativity.setText(
-                        mContext.getString(R.string.property_electronegativity));
+                TextView electronegativity = (TextView) summaryView.findViewById(
+                        R.id.element_electronegativity);
+                electronegativity.setText(R.string.property_electronegativity);
                 electronegativity.setTypeface(mTypeface);
 
-                TextView oxidationStates =
-                        (TextView) view.findViewById(R.id.element_oxidation_states);
+                TextView oxidationStates = (TextView) summaryView.findViewById(
+                        R.id.element_oxidation_states);
                 oxidationStates.setText(R.string.property_oxidation_states);
                 oxidationStates.setTypeface(mTypeface);
 
-                legendDialog.setView(view);
+                legendDialog.setView(summaryView);
 
                 legendDialog.show();
                 break;
+
+            case ITEM:
+                property.setExpanded(!property.isExpanded());
+
+                notifyDataSetChanged();
+                break;
         }
-
-        return false;
-    }
-
-    @Override
-    public boolean areAllItemsEnabled() {
-        return false;
-    }
-
-    @Override
-    public int getGroupType(int groupPosition) {
-        return getGroup(groupPosition).getType().ordinal();
-    }
-
-    @Override
-    public int getGroupTypeCount() {
-        return ViewType.values().length;
     }
 }

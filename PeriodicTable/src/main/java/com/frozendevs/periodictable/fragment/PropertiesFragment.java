@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListView;
+import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
@@ -18,12 +18,12 @@ public class PropertiesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.properties_fragment, container, false);
 
-        ExpandableListView listView = (ExpandableListView)layout.findViewById(R.id.properties_list);
+        ListView listView = (ListView) layout.findViewById(R.id.properties_list);
 
         PropertiesAdapter adapter = new PropertiesAdapter(getActivity(),
-                (ElementProperties)getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES));
+                (ElementProperties) getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES));
         listView.setAdapter(adapter);
-        listView.setOnGroupClickListener(adapter);
+        listView.setOnItemClickListener(adapter);
 
         getActivity().registerForContextMenu(listView);
 
