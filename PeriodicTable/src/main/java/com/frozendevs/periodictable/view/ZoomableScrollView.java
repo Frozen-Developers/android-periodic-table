@@ -44,22 +44,22 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     public ZoomableScrollView(Context context) {
         super(context);
 
-        initPeriodicTableView(context);
+        initZoomableScrollView(context);
     }
 
     public ZoomableScrollView(Context context, AttributeSet attrs) {
         super(context, attrs, R.attr.zoomableScrollViewStyle);
 
-        initPeriodicTableView(context);
+        initZoomableScrollView(context);
     }
 
     public ZoomableScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
 
-        initPeriodicTableView(context);
+        initZoomableScrollView(context);
     }
 
-    private void initPeriodicTableView(Context context) {
+    private void initZoomableScrollView(Context context) {
         setWillNotDraw(false);
 
         setHorizontalScrollBarEnabled(true);
