@@ -31,7 +31,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     public interface OnItemClickListener {
 
-        public void onItemClick(int position);
+        public boolean onItemClick(int position);
     }
 
     private DataSetObserver mDataSetObserver = new DataSetObserver() {
@@ -185,11 +185,10 @@ public class PeriodicTableView extends ZoomableScrollView {
                 int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
                         (int) ((rawX - startX) / tileSize);
 
-                if (position >= 0 && position < mAdapter.getCount() &&
-                        mAdapter.getItem(position) != null) {
-                    playSoundEffect(SoundEffectConstants.CLICK);
-
-                    mOnItemClickListener.onItemClick(position);
+                if (position >= 0 && position < mAdapter.getCount()) {
+                    if (mOnItemClickListener.onItemClick(position)) {
+                        playSoundEffect(SoundEffectConstants.CLICK);
+                    }
                 }
             }
         }

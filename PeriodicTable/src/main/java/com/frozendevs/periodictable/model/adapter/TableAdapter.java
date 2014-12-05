@@ -47,55 +47,55 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
                 switch (position) {
                     case 4:
-                        ((TextView)convertView).setText(R.string.category_actinides);
+                        ((TextView) convertView).setText(R.string.category_actinides);
                         break;
 
                     case 5:
-                        ((TextView)convertView).setText(R.string.category_alkali_metals);
+                        ((TextView) convertView).setText(R.string.category_alkali_metals);
                         break;
 
                     case 6:
-                        ((TextView)convertView).setText(R.string.category_alkaline_earth_metals);
+                        ((TextView) convertView).setText(R.string.category_alkaline_earth_metals);
                         break;
 
                     case 7:
-                        ((TextView)convertView).setText(R.string.category_diatomic_nonmetals);
+                        ((TextView) convertView).setText(R.string.category_diatomic_nonmetals);
                         break;
 
                     case 8:
-                        ((TextView)convertView).setText(R.string.category_lanthanides);
+                        ((TextView) convertView).setText(R.string.category_lanthanides);
                         break;
 
                     case 9:
-                        ((TextView)convertView).setText(R.string.category_metalloids);
+                        ((TextView) convertView).setText(R.string.category_metalloids);
                         break;
 
                     case 22:
-                        ((TextView)convertView).setText(R.string.category_noble_gases);
+                        ((TextView) convertView).setText(R.string.category_noble_gases);
                         break;
 
                     case 23:
-                        ((TextView)convertView).setText(R.string.category_polyatomic_nonmetals);
+                        ((TextView) convertView).setText(R.string.category_polyatomic_nonmetals);
                         break;
 
                     case 24:
-                        ((TextView)convertView).setText(R.string.category_other_metals);
+                        ((TextView) convertView).setText(R.string.category_other_metals);
                         break;
 
                     case 25:
-                        ((TextView)convertView).setText(R.string.category_transition_metals);
+                        ((TextView) convertView).setText(R.string.category_transition_metals);
                         break;
 
                     case 26:
-                        ((TextView)convertView).setText(R.string.category_unknown);
+                        ((TextView) convertView).setText(R.string.category_unknown);
                         break;
 
                     case 92:
-                        ((TextView)convertView).setText("57 - 71");
+                        ((TextView) convertView).setText("57 - 71");
                         break;
 
                     case 110:
-                        ((TextView)convertView).setText("89 - 103");
+                        ((TextView) convertView).setText("89 - 103");
                         break;
                 }
 
@@ -104,7 +104,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
             case VIEW_TYPE_ITEM:
                 TableItem item = getItem(position);
 
-                if(item != null) {
+                if (item != null) {
                     if (convertView == null) {
                         convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
                                 parent, false);
@@ -147,7 +147,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
         TableItem item = getItem(position);
 
-        if(item != null) {
+        if (item != null) {
             switch (item.getCategory()) {
                 case 0:
                     color = R.color.category_diatomic_nonmetals_bg;
@@ -189,8 +189,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                     color = R.color.category_actinides_bg;
                     break;
             }
-        }
-        else {
+        } else {
             switch (position) {
                 case 4:
                 case 110:
@@ -241,7 +240,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
     @Override
     public int getItemViewType(int position) {
-        if(getItem(position) == null && (position == 92 || position == 110 ||
+        if (getItem(position) == null && (position == 92 || position == 110 ||
                 (position >= 4 && position <= 9) || (position >= 22 && position <= 26))) {
             return VIEW_TYPE_TEXT;
         }
@@ -258,20 +257,18 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
     public void setItems(TableItem... items) {
         int periods = 0;
 
-        for(TableItem item : items) {
+        for (TableItem item : items) {
             periods = Math.max(item.getPeriod(), periods);
         }
 
         TableItem[] sortedItems = new TableItem[GROUPS_COUNT * (periods + 2)];
 
-        for(TableItem item : items) {
+        for (TableItem item : items) {
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
                 sortedItems[(GROUPS_COUNT * periods) + 2 + item.getNumber() - 57] = item;
-            }
-            else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
+            } else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
                 sortedItems[(GROUPS_COUNT * periods) + 20 + item.getNumber() - 89] = item;
-            }
-            else {
+            } else {
                 sortedItems[((item.getPeriod() - 1) * GROUPS_COUNT) + item.getGroup() - 1] = item;
             }
         }
@@ -280,7 +277,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
     }
 
     @Override
-    public void onItemClick(int position) {
+    public boolean onItemClick(int position) {
         TableItem item = getItem(position);
 
         if (item != null) {
@@ -288,6 +285,10 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
             intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
 
             mContext.startActivity(intent);
+
+            return true;
         }
+
+        return false;
     }
 }
