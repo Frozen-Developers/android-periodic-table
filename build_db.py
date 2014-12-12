@@ -338,7 +338,7 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
     shells = article.getProperty('electrons per shell', comments=False)
 
     appearance = re.sub(r'\s*\([^)]*\)', '', capitalize(article.getProperty('appearance')) \
-        .replace(';', ','))
+        .replace(';', ',')).strip('.')
 
     phase = article.getProperty('phase', comments=False).capitalize()
 
