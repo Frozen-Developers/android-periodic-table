@@ -25105,7 +25105,7 @@
         "youngsModulus": ""
     },
     {
-        "appearance": "Colorless gas",
+        "appearance": "Colorless gas, occasionally glows green or red in discharge tubes",
         "atomicRadius": "",
         "bandGap": "",
         "block": "p",
@@ -30459,7 +30459,7 @@
             {
                 "abundance": "",
                 "decayModes": "β⁻ → ¹⁵¹Eu",
-                "halfLife": "96.6 a",
+                "halfLife": "88.8 a",
                 "spin": "5/2-",
                 "symbol": "¹⁵¹Sm"
             },
