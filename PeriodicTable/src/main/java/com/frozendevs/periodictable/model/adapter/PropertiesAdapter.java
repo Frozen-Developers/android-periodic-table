@@ -161,8 +161,7 @@ public class PropertiesAdapter extends BaseAdapter implements
                                 R.string.category_lanthanides,
                                 R.string.category_actinides,
                                 R.string.category_unknown
-                        }[properties.getCategory()])
-                ),
+                        }[properties.getCategory()])),
                 new Property<String>(R.string.property_electron_configuration,
                         properties.getElectronConfiguration()),
                 new Property<String>(R.string.property_electrons_per_shell,
@@ -379,37 +378,8 @@ public class PropertiesAdapter extends BaseAdapter implements
                 summaryView.setPadding(padding, padding, padding, padding);
 
                 View tileView = summaryView.findViewById(R.id.tile_view);
-                mTableAdapter.getView(mTableItem, tileView, (ViewGroup) summaryView);
+                tileView.setBackgroundColor(mTableAdapter.getBackgroundColor(mTableItem));
                 tileView.setClickable(false);
-
-                ((TextView) tileView.findViewById(R.id.element_symbol)).setText(
-                        R.string.property_atom_symbol);
-                ((TextView) tileView.findViewById(R.id.element_number)).setText(
-                        R.string.property_atomic_number_symbol);
-                ((TextView) tileView.findViewById(R.id.element_name)).setText(
-                        R.string.property_name);
-                ((TextView) tileView.findViewById(R.id.element_weight)).setText(
-                        R.string.property_relative_atomic_mass_symbol);
-
-                TextView configuration = (TextView) summaryView.findViewById(
-                        R.id.element_electron_configuration);
-                configuration.setText(R.string.property_electron_configuration);
-                configuration.setTypeface(mTypeface);
-
-                TextView shells = (TextView) summaryView.findViewById(
-                        R.id.element_electrons_per_shell);
-                shells.setText(R.string.property_electrons_per_shell);
-                shells.setTypeface(mTypeface);
-
-                TextView electronegativity = (TextView) summaryView.findViewById(
-                        R.id.element_electronegativity);
-                electronegativity.setText(R.string.property_electronegativity);
-                electronegativity.setTypeface(mTypeface);
-
-                TextView oxidationStates = (TextView) summaryView.findViewById(
-                        R.id.element_oxidation_states);
-                oxidationStates.setText(R.string.property_oxidation_states);
-                oxidationStates.setTypeface(mTypeface);
 
                 legendDialog.setView(summaryView);
 

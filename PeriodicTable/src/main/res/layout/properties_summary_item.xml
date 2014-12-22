@@ -32,6 +32,7 @@
             android:layout_gravity="start"
             android:ellipsize="marquee"
             android:maxLines="1"
+            android:text="@string/property_electron_configuration"
             android:textAlignment="viewStart"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -42,6 +43,7 @@
             android:layout_gravity="start"
             android:ellipsize="marquee"
             android:maxLines="1"
+            android:text="@string/property_electrons_per_shell"
             android:textAlignment="viewStart"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -52,6 +54,7 @@
             android:layout_gravity="start"
             android:ellipsize="marquee"
             android:maxLines="1"
+            android:text="@string/property_electronegativity"
             android:textAlignment="viewStart"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -62,6 +65,7 @@
             android:layout_gravity="start"
             android:ellipsize="marquee"
             android:maxLines="1"
+            android:text="@string/property_oxidation_states"
             android:textAlignment="viewStart"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 

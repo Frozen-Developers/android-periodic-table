@@ -149,7 +149,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
         return convertView;
     }
 
-    private int getBackgroundColor(TableItem item) {
+    public int getBackgroundColor(TableItem item) {
         return mContext.getResources().getColor(new int[]{
                 R.color.category_diatomic_nonmetals_bg,
                 R.color.category_noble_gases_bg,
@@ -165,7 +165,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
         }[item.getCategory()]);
     }
 
-    private int getBackgroundColor(int position) {
+    public int getBackgroundColor(int position) {
         TableItem item = getItem(position);
 
         if (item == null) {
