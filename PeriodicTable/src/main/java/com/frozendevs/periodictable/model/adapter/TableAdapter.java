@@ -17,10 +17,12 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 public class TableAdapter extends DynamicAdapter<TableItem> implements
         PeriodicTableView.OnItemClickListener {
 
-    private static final int VIEW_TYPE_ITEM = 0;
-    private static final int VIEW_TYPE_TEXT = 1;
-
     private static final int GROUPS_COUNT = 18;
+
+    private static enum ViewType {
+        ITEM,
+        TEXT
+    }
 
     private Context mContext;
     private Typeface mTypeface;
@@ -39,8 +41,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        switch (getItemViewType(position)) {
-            case VIEW_TYPE_TEXT:
+        switch (ViewType.values()[getItemViewType(position)]) {
+            case TEXT:
                 if (convertView == null) {
                     convertView = LayoutInflater.from(mContext).inflate(R.layout.table_text,
                             parent, false);
@@ -104,7 +106,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
                 return convertView;
 
-            case VIEW_TYPE_ITEM:
+            case ITEM:
                 TableItem item = getItem(position);
 
                 if (item != null) {
@@ -225,15 +227,15 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
     public int getItemViewType(int position) {
         if (getItem(position) == null && (position == 92 || position == 110 ||
                 (position >= 4 && position <= 9) || (position >= 22 && position <= 26))) {
-            return VIEW_TYPE_TEXT;
+            return ViewType.TEXT.ordinal();
         }
 
-        return VIEW_TYPE_ITEM;
+        return ViewType.ITEM.ordinal();
     }
 
     @Override
     public int getViewTypeCount() {
-        return 2;
+        return ViewType.values().length;
     }
 
     @Override
