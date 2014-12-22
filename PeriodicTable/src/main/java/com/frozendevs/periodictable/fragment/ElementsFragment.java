@@ -23,6 +23,7 @@ public class ElementsFragment extends Fragment {
     private ElementsAdapter mAdapter;
     private ListView mListView;
     private View mEmptyView;
+    private LoadData mLoadData;
 
     private class LoadData extends AsyncTask<Void, Void, ElementListItem[]> {
 
@@ -65,12 +66,20 @@ public class ElementsFragment extends Fragment {
         if (mAdapter.isEmpty()) {
             mListView.setEmptyView(rootView.findViewById(R.id.progress_bar));
 
-            new LoadData().execute();
+            mLoadData = new LoadData();
+            mLoadData.execute();
         } else {
             mListView.setEmptyView(mEmptyView);
         }
 
         return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        mLoadData.cancel(true);
     }
 
     @Override
