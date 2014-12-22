@@ -80,16 +80,20 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
             }
 
             super.setItems(filteredItems.toArray(new ElementListItem[filteredItems.size()]));
+
+            notifyDataSetChanged();
         }
     }
 
     public void clearFilter() {
         super.setItems(mAllItems);
+
+        notifyDataSetChanged();
     }
 
     @Override
     public void setItems(ElementListItem[] items) {
-        mAllItems = (ElementListItem[]) items.clone();
+        mAllItems = items.clone();
 
         super.setItems(items);
     }
