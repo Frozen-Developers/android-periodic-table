@@ -2,6 +2,7 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +24,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
     private Context mContext;
     private Typeface mTypeface;
+    private Bitmap[] mBitmaps;
+    private int mPeriodsCount;
 
     private class ViewHolder {
         TextView symbol, number, name, weight;
@@ -261,7 +264,9 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
             periods = Math.max(item.getPeriod(), periods);
         }
 
-        TableItem[] sortedItems = new TableItem[GROUPS_COUNT * (periods + 2)];
+        mPeriodsCount = periods + 2;
+
+        TableItem[] sortedItems = new TableItem[GROUPS_COUNT * mPeriodsCount];
 
         for (TableItem item : items) {
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
@@ -274,6 +279,64 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
         }
 
         super.setItems(sortedItems);
+    }
+
+    public int getPeriodsCount() {
+        return mPeriodsCount;
+    }
+
+    public void buildDrawingCache(ViewGroup parent) {
+        mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
+
+        View convertView = null;
+        int previousViewType = 0;
+
+        for (int row = 0; row < mPeriodsCount; row++) {
+            for (int column = 0; column < GROUPS_COUNT; column++) {
+                int position = (row * GROUPS_COUNT) + column;
+
+                int viewType = getItemViewType(position);
+                if (viewType != previousViewType) {
+                    convertView = null;
+                }
+                previousViewType = viewType;
+
+                convertView = getView(position, convertView, parent);
+
+                if (convertView != null) {
+                    int size = mContext.getResources().getDimensionPixelSize(
+                            R.dimen.table_item_size);
+
+                    convertView.measure(View.MeasureSpec.makeMeasureSpec(size,
+                                    View.MeasureSpec.EXACTLY),
+                            View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY));
+                    convertView.layout(0, 0, convertView.getMeasuredWidth(),
+                            convertView.getMeasuredHeight());
+
+                    convertView.buildDrawingCache();
+
+                    if (convertView.getDrawingCache() != null) {
+                        mBitmaps[position] = Bitmap.createBitmap(convertView.getDrawingCache());
+                    }
+
+                    convertView.destroyDrawingCache();
+                }
+            }
+        }
+    }
+
+    public Bitmap getDrawingCache(int position) {
+        return mBitmaps[position];
+    }
+
+    public void destroyDrawingCache() {
+        if (mBitmaps != null) {
+            for (Bitmap bitmap : mBitmaps) {
+                if (bitmap != null) {
+                    bitmap.recycle();
+                }
+            }
+        }
     }
 
     @Override

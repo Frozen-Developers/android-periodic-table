@@ -35,6 +35,8 @@ public class ElementsFragment extends Fragment {
         protected void onPostExecute(ElementListItem[] result) {
             mAdapter.setItems(result);
 
+            mAdapter.notifyDataSetChanged();
+
             mListView.setEmptyView(mEmptyView);
         }
     }
@@ -50,7 +52,8 @@ public class ElementsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.elements_list_fragment, container, false);
 
         mEmptyView = rootView.findViewById(R.id.empty_elements_list);
