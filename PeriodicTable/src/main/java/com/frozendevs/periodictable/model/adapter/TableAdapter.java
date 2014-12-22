@@ -17,8 +17,6 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 public class TableAdapter extends DynamicAdapter<TableItem> implements
         PeriodicTableView.OnItemClickListener {
 
-    private static final int GROUPS_COUNT = 18;
-
     private static enum ViewType {
         ITEM,
         TEXT
@@ -27,6 +25,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
     private Context mContext;
     private Typeface mTypeface;
     private Bitmap[] mBitmaps;
+    private int mGroupsCount;
     private int mPeriodsCount;
 
     private class ViewHolder {
@@ -240,23 +239,25 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
 
     @Override
     public void setItems(TableItem... items) {
-        int periods = 0;
+        int groups = 0, periods = 0;
 
         for (TableItem item : items) {
+            groups = Math.max(item.getGroup(), groups);
             periods = Math.max(item.getPeriod(), periods);
         }
 
+        mGroupsCount = groups;
         mPeriodsCount = periods + 2;
 
-        TableItem[] sortedItems = new TableItem[GROUPS_COUNT * mPeriodsCount];
+        TableItem[] sortedItems = new TableItem[mGroupsCount * mPeriodsCount];
 
         for (TableItem item : items) {
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
-                sortedItems[(GROUPS_COUNT * periods) + 2 + item.getNumber() - 57] = item;
+                sortedItems[(mGroupsCount * periods) + 2 + item.getNumber() - 57] = item;
             } else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
-                sortedItems[(GROUPS_COUNT * periods) + 20 + item.getNumber() - 89] = item;
+                sortedItems[(mGroupsCount * periods) + 20 + item.getNumber() - 89] = item;
             } else {
-                sortedItems[((item.getPeriod() - 1) * GROUPS_COUNT) + item.getGroup() - 1] = item;
+                sortedItems[((item.getPeriod() - 1) * mGroupsCount) + item.getGroup() - 1] = item;
             }
         }
 
@@ -268,19 +269,23 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
         return super.isEmpty() || mBitmaps == null;
     }
 
+    public int getGroupsCount() {
+        return mGroupsCount;
+    }
+
     public int getPeriodsCount() {
         return mPeriodsCount;
     }
 
     public void buildDrawingCache(ViewGroup parent) {
-        Bitmap[] bitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
+        Bitmap[] bitmaps = new Bitmap[mGroupsCount * mPeriodsCount];
 
         View convertView = null;
         int previousViewType = 0;
 
         for (int row = 0; row < mPeriodsCount; row++) {
-            for (int column = 0; column < GROUPS_COUNT; column++) {
-                int position = (row * GROUPS_COUNT) + column;
+            for (int column = 0; column < mGroupsCount; column++) {
+                int position = (row * mGroupsCount) + column;
 
                 int viewType = getItemViewType(position);
                 if (viewType != previousViewType) {

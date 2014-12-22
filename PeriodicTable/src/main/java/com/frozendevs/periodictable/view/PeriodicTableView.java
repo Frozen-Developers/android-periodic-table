@@ -16,7 +16,6 @@ import com.frozendevs.periodictable.model.adapter.TableAdapter;
 
 public class PeriodicTableView extends ZoomableScrollView {
 
-    private static final int GROUPS_COUNT = 18;
     private final float DEFAULT_SPACING = 1f;
 
     private View mEmptyView = null;
@@ -75,10 +74,11 @@ public class PeriodicTableView extends ZoomableScrollView {
             for (int row = 0; row < mAdapter.getPeriodsCount(); row++) {
                 float x = (getWidth() - getScaledWidth()) / 2f;
 
-                for (int column = 0; column < GROUPS_COUNT; column++) {
+                for (int column = 0; column < mAdapter.getGroupsCount(); column++) {
                     if (x + tileSize > getScrollX() && x < getScrollX() + getWidth() &&
                             y + tileSize > getScrollY() && y < getScrollY() + getHeight()) {
-                        Bitmap bitmap = mAdapter.getDrawingCache((row * GROUPS_COUNT) + column);
+                        Bitmap bitmap = mAdapter.getDrawingCache(
+                                (row * mAdapter.getGroupsCount()) + column);
 
                         if (bitmap != null && !bitmap.isRecycled()) {
                             mMatrix.reset();
@@ -121,7 +121,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
             if (rawX >= startX && rawX <= startX + scaledWidth &&
                     rawY >= startY && rawY <= startY + scaledHeight) {
-                int position = ((int) ((rawY - startY) / tileSize) * GROUPS_COUNT) +
+                int position = ((int) ((rawY - startY) / tileSize) * mAdapter.getGroupsCount()) +
                         (int) ((rawX - startX) / tileSize);
 
                 if (position >= 0 && position < mAdapter.getCount()) {
@@ -137,8 +137,9 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     protected int getScaledWidth() {
-        return Math.round((getScaledTileSize() * GROUPS_COUNT) +
-                ((GROUPS_COUNT - 1) * DEFAULT_SPACING));
+        int groups = mAdapter != null ? mAdapter.getGroupsCount() : 0;
+
+        return Math.round((getScaledTileSize() * groups) + ((groups - 1) * DEFAULT_SPACING));
     }
 
     @Override
@@ -163,9 +164,10 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     public float getMinimalZoom() {
+        int groups = mAdapter != null ? mAdapter.getGroupsCount() : 0;
         int periods = mAdapter != null ? mAdapter.getPeriodsCount() : 0;
 
-        return Math.min((getWidth() - ((GROUPS_COUNT - 1) * DEFAULT_SPACING)) / GROUPS_COUNT,
+        return Math.min((getWidth() - ((groups - 1) * DEFAULT_SPACING)) / groups,
                 (getHeight() - ((periods - 1) * DEFAULT_SPACING)) / periods) / getDefaultTileSize();
     }
 
