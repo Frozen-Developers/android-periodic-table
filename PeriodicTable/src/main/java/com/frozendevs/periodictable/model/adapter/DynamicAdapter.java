@@ -29,18 +29,4 @@ public abstract class DynamicAdapter<T> extends BaseAdapter {
     public void setItems(T... items) {
         mItems = items.clone();
     }
-
-    public T[] getAllItems() {
-        return mItems;
-    }
-
-    public int getItemPosition(T item) {
-        for (int i = 0; i < mItems.length; i++) {
-            if (mItems[i] != null && mItems[i].equals(item)) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
 }

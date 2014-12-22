@@ -36,6 +36,7 @@ public class PropertiesAdapter extends BaseAdapter implements
     private TableAdapter mTableAdapter;
     private Property[] mProperties = new Property[0];
     private StateListDrawable mGroupIndicator;
+    private TableItem mTableItem;
 
     private class Property<T> {
         String mName = "";
@@ -110,6 +111,8 @@ public class PropertiesAdapter extends BaseAdapter implements
     public PropertiesAdapter(Context context, ElementProperties properties) {
         mContext = context;
 
+        mTableItem = properties;
+
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         Resources.Theme theme = mContext.getTheme();
@@ -129,50 +132,6 @@ public class PropertiesAdapter extends BaseAdapter implements
         typedArray.recycle();
 
         mTableAdapter = new TableAdapter(context);
-        mTableAdapter.setItems((TableItem) properties);
-
-        int category = R.string.category_unknown;
-        switch (properties.getCategory()) {
-            case 0:
-                category = R.string.category_diatomic_nonmetals;
-                break;
-
-            case 1:
-                category = R.string.category_noble_gases;
-                break;
-
-            case 2:
-                category = R.string.category_alkali_metals;
-                break;
-
-            case 3:
-                category = R.string.category_alkaline_earth_metals;
-                break;
-
-            case 4:
-                category = R.string.category_metalloids;
-                break;
-
-            case 5:
-                category = R.string.category_polyatomic_nonmetals;
-                break;
-
-            case 6:
-                category = R.string.category_other_metals;
-                break;
-
-            case 7:
-                category = R.string.category_transition_metals;
-                break;
-
-            case 8:
-                category = R.string.category_lanthanides;
-                break;
-
-            case 9:
-                category = R.string.category_actinides;
-                break;
-        }
 
         mProperties = new Property[]{
                 new Property<String>(R.string.properties_header_summary, null),
@@ -189,7 +148,21 @@ public class PropertiesAdapter extends BaseAdapter implements
                 new Property<String>(R.string.property_period,
                         String.valueOf(properties.getPeriod())),
                 new Property<String>(R.string.property_block, properties.getBlock()),
-                new Property<String>(R.string.property_category, mContext.getString(category)),
+                new Property<String>(R.string.property_category, mContext.getString(
+                        new int[]{
+                                R.string.category_diatomic_nonmetals,
+                                R.string.category_noble_gases,
+                                R.string.category_alkali_metals,
+                                R.string.category_alkaline_earth_metals,
+                                R.string.category_metalloids,
+                                R.string.category_polyatomic_nonmetals,
+                                R.string.category_other_metals,
+                                R.string.category_transition_metals,
+                                R.string.category_lanthanides,
+                                R.string.category_actinides,
+                                R.string.category_unknown
+                        }[properties.getCategory()])
+                ),
                 new Property<String>(R.string.property_electron_configuration,
                         properties.getElectronConfiguration()),
                 new Property<String>(R.string.property_electrons_per_shell,
@@ -297,13 +270,7 @@ public class PropertiesAdapter extends BaseAdapter implements
                             R.layout.properties_summary_item, parent, false);
 
                     View tileView = convertView.findViewById(R.id.tile_view);
-                    for (TableItem item : mTableAdapter.getAllItems()) {
-                        if (item != null) {
-                            mTableAdapter.getView(mTableAdapter.getItemPosition(item), tileView,
-                                    (ViewGroup) convertView);
-                            break;
-                        }
-                    }
+                    mTableAdapter.getView(mTableItem, tileView, (ViewGroup) convertView);
                     tileView.setClickable(false);
                     tileView.setDuplicateParentStateEnabled(true);
 
@@ -412,13 +379,7 @@ public class PropertiesAdapter extends BaseAdapter implements
                 summaryView.setPadding(padding, padding, padding, padding);
 
                 View tileView = summaryView.findViewById(R.id.tile_view);
-                for (TableItem item : mTableAdapter.getAllItems()) {
-                    if (item != null) {
-                        mTableAdapter.getView(mTableAdapter.getItemPosition(item), tileView,
-                                (ViewGroup) summaryView);
-                        break;
-                    }
-                }
+                mTableAdapter.getView(mTableItem, tileView, (ViewGroup) summaryView);
                 tileView.setClickable(false);
 
                 ((TextView) tileView.findViewById(R.id.element_symbol)).setText(

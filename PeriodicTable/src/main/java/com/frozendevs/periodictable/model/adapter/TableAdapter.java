@@ -108,91 +108,69 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                 TableItem item = getItem(position);
 
                 if (item != null) {
-                    if (convertView == null) {
-                        convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
-                                parent, false);
-                    }
-
-                    ViewHolder viewHolder = (ViewHolder) convertView.getTag();
-
-                    if (viewHolder == null) {
-                        viewHolder = new ViewHolder();
-
-                        viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
-                        viewHolder.symbol.setTypeface(mTypeface);
-                        viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
-                        viewHolder.number.setTypeface(mTypeface);
-                        viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
-                        viewHolder.name.setTypeface(mTypeface);
-                        viewHolder.weight = (TextView) convertView.findViewById(R.id.element_weight);
-                        viewHolder.weight.setTypeface(mTypeface);
-
-                        convertView.setTag(viewHolder);
-                    }
-
-                    convertView.setBackgroundColor(getBackgroundColor(position));
-
-                    viewHolder.symbol.setText(item.getSymbol());
-                    viewHolder.number.setText(String.valueOf(item.getNumber()));
-                    viewHolder.name.setTextSize(12f);
-                    viewHolder.name.setText(item.getName());
-                    viewHolder.weight.setText(item.getStandardAtomicWeight());
-
-                    return convertView;
+                    return getView(item, convertView, parent);
                 }
         }
 
         return null;
     }
 
-    private int getBackgroundColor(int position) {
-        int color = R.color.category_unknown_bg;
+    public View getView(TableItem item, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
+                    parent, false);
+        }
 
+        ViewHolder viewHolder = (ViewHolder) convertView.getTag();
+
+        if (viewHolder == null) {
+            viewHolder = new ViewHolder();
+
+            viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
+            viewHolder.symbol.setTypeface(mTypeface);
+            viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
+            viewHolder.number.setTypeface(mTypeface);
+            viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
+            viewHolder.name.setTypeface(mTypeface);
+            viewHolder.weight = (TextView) convertView.findViewById(R.id.element_weight);
+            viewHolder.weight.setTypeface(mTypeface);
+
+            convertView.setTag(viewHolder);
+        }
+
+        convertView.setBackgroundColor(getBackgroundColor(item));
+
+        viewHolder.symbol.setText(item.getSymbol());
+        viewHolder.number.setText(String.valueOf(item.getNumber()));
+        viewHolder.name.setTextSize(12f);
+        viewHolder.name.setText(item.getName());
+        viewHolder.weight.setText(item.getStandardAtomicWeight());
+
+        return convertView;
+    }
+
+    private int getBackgroundColor(TableItem item) {
+        return mContext.getResources().getColor(new int[]{
+                R.color.category_diatomic_nonmetals_bg,
+                R.color.category_noble_gases_bg,
+                R.color.category_alkali_metals_bg,
+                R.color.category_alkaline_earth_metals_bg,
+                R.color.category_metalloids_bg,
+                R.color.category_polyatomic_nonmetals_bg,
+                R.color.category_other_metals_bg,
+                R.color.category_transition_metals_bg,
+                R.color.category_lanthanides_bg,
+                R.color.category_actinides_bg,
+                R.color.category_unknown_bg
+        }[item.getCategory()]);
+    }
+
+    private int getBackgroundColor(int position) {
         TableItem item = getItem(position);
 
-        if (item != null) {
-            switch (item.getCategory()) {
-                case 0:
-                    color = R.color.category_diatomic_nonmetals_bg;
-                    break;
+        if (item == null) {
+            int color = R.color.category_unknown_bg;
 
-                case 1:
-                    color = R.color.category_noble_gases_bg;
-                    break;
-
-                case 2:
-                    color = R.color.category_alkali_metals_bg;
-                    break;
-
-                case 3:
-                    color = R.color.category_alkaline_earth_metals_bg;
-                    break;
-
-                case 4:
-                    color = R.color.category_metalloids_bg;
-                    break;
-
-                case 5:
-                    color = R.color.category_polyatomic_nonmetals_bg;
-                    break;
-
-                case 6:
-                    color = R.color.category_other_metals_bg;
-                    break;
-
-                case 7:
-                    color = R.color.category_transition_metals_bg;
-                    break;
-
-                case 8:
-                    color = R.color.category_lanthanides_bg;
-                    break;
-
-                case 9:
-                    color = R.color.category_actinides_bg;
-                    break;
-            }
-        } else {
             switch (position) {
                 case 4:
                 case 110:
@@ -236,9 +214,11 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                     color = R.color.category_transition_metals_bg;
                     break;
             }
+
+            return mContext.getResources().getColor(color);
         }
 
-        return mContext.getResources().getColor(color);
+        return getBackgroundColor(item);
     }
 
     @Override
