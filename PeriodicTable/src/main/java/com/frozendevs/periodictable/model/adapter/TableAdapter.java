@@ -281,12 +281,17 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
         super.setItems(sortedItems);
     }
 
+    @Override
+    public boolean isEmpty() {
+        return super.isEmpty() || mBitmaps == null;
+    }
+
     public int getPeriodsCount() {
         return mPeriodsCount;
     }
 
     public void buildDrawingCache(ViewGroup parent) {
-        mBitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
+        Bitmap[] bitmaps = new Bitmap[GROUPS_COUNT * mPeriodsCount];
 
         View convertView = null;
         int previousViewType = 0;
@@ -316,13 +321,15 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                     convertView.buildDrawingCache();
 
                     if (convertView.getDrawingCache() != null) {
-                        mBitmaps[position] = Bitmap.createBitmap(convertView.getDrawingCache());
+                        bitmaps[position] = Bitmap.createBitmap(convertView.getDrawingCache());
                     }
 
                     convertView.destroyDrawingCache();
                 }
             }
         }
+
+        mBitmaps = bitmaps;
     }
 
     public Bitmap getDrawingCache(int position) {
@@ -337,6 +344,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                 }
             }
         }
+
+        mBitmaps = null;
     }
 
     @Override

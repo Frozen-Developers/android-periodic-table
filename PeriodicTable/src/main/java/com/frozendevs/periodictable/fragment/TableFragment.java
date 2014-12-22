@@ -15,6 +15,7 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 public class TableFragment extends Fragment {
 
     private TableAdapter mAdapter;
+    private LoadData mLoadData;
 
     private class LoadData extends AsyncTask<Void, Void, Void> {
 
@@ -26,6 +27,8 @@ public class TableFragment extends Fragment {
 
         @Override
         protected Void doInBackground(Void... params) {
+            mAdapter.destroyDrawingCache();
+
             mAdapter.setItems(Database.getInstance(getActivity()).getTableItems());
 
             mAdapter.buildDrawingCache(mParent);
@@ -55,15 +58,24 @@ public class TableFragment extends Fragment {
 
         PeriodicTableView tableView = (PeriodicTableView) rootView.findViewById(
                 R.id.elements_table);
-        tableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
         tableView.setAdapter(mAdapter);
         tableView.setOnItemClickListener(mAdapter);
 
         if (mAdapter.isEmpty()) {
-            new LoadData(tableView).execute();
+            tableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
+
+            mLoadData = new LoadData(tableView);
+            mLoadData.execute();
         }
 
         return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+
+        mLoadData.cancel(true);
     }
 
     @Override

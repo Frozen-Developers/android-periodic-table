@@ -37,8 +37,6 @@ public class PeriodicTableView extends ZoomableScrollView {
 
             if (!mAdapter.isEmpty()) {
                 invalidate();
-
-                updateEmptyStatus(false);
             }
         }
     };
@@ -82,7 +80,7 @@ public class PeriodicTableView extends ZoomableScrollView {
                             y + tileSize > getScrollY() && y < getScrollY() + getHeight()) {
                         Bitmap bitmap = mAdapter.getDrawingCache((row * GROUPS_COUNT) + column);
 
-                        if (bitmap != null) {
+                        if (bitmap != null && !bitmap.isRecycled()) {
                             mMatrix.reset();
                             mMatrix.postScale(getZoom(), getZoom());
                             mMatrix.postTranslate(x, y);
@@ -97,6 +95,8 @@ public class PeriodicTableView extends ZoomableScrollView {
             }
 
             super.onDraw(canvas);
+
+            updateEmptyStatus(false);
         }
     }
 
@@ -158,8 +158,6 @@ public class PeriodicTableView extends ZoomableScrollView {
 
         if (mAdapter != null) {
             mAdapter.registerDataSetObserver(mDataSetObserver);
-
-            updateEmptyStatus(mAdapter.isEmpty());
         }
     }
 
