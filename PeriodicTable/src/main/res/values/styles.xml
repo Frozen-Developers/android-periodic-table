@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Application" parent="Theme.AppCompat">
+    <style name="Theme.Application.Base" parent="Theme.AppCompat">
         <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
 
         <item name="toolbarStyle">@style/Widget.Toolbar</item>
     </style>
 
-    <style name="Theme.NoActionBar" parent="@style/Theme.Application">
+    <style name="Theme.Application" parent="Theme.Application.Base" />
+
+    <style name="Theme.NoActionBar.Base" parent="@style/Theme.Application">
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+
+    <style name="Theme.NoActionBar" parent="Theme.NoActionBar.Base" />
 
     <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Small">
         <item name="android:textStyle">bold</item>

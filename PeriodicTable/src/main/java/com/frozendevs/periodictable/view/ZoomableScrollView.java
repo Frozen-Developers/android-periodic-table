@@ -11,13 +11,13 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.widget.Zoomer;
 
-public class ZoomableScrollView extends FrameLayout implements GestureDetector.OnGestureListener,
+public class ZoomableScrollView extends ViewGroup implements GestureDetector.OnGestureListener,
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnDoubleTapListener {
 
     private static final float DEFAULT_MAX_ZOOM = 1f;
@@ -204,33 +204,29 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
 
         mMinZoom = getMinimalZoom();
 
-        if (mMinZoom > DEFAULT_MAX_ZOOM)
-            mMaxZoom = mMinZoom;
-        else
-            mMaxZoom = DEFAULT_MAX_ZOOM;
+        mMaxZoom = mMinZoom > DEFAULT_MAX_ZOOM ? mMinZoom : DEFAULT_MAX_ZOOM;
 
-        if (!isMinZoom)
-            mZoom = clamp(mMinZoom, mZoom, mMaxZoom);
-        else
-            mZoom = mMinZoom;
+        mZoom = isMinZoom ? mMinZoom : clamp(mMinZoom, mZoom, mMaxZoom);
 
         if (mZoom > 0f) {
-            if (getScrollX() < getMinimalScrollX())
+            if (getScrollX() < getMinimalScrollX()) {
                 scrollTo(getMinimalScrollX(), getScrollY());
-            else if (getScrollX() > getMaximalScrollX())
+            } else if (getScrollX() > getMaximalScrollX()) {
                 scrollTo(getMaximalScrollX(), getScrollY());
+            }
 
-            if (getScrollY() < getMinimalScrollY())
+            if (getScrollY() < getMinimalScrollY()) {
                 scrollTo(getScrollX(), getMinimalScrollY());
-            else if (getScrollY() > getMaximalScrollY())
+            } else if (getScrollY() > getMaximalScrollY()) {
                 scrollTo(getScrollX(), getMaximalScrollY());
+            }
         }
-
-        invalidate();
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+
         final int overScrollMode = ViewCompat.getOverScrollMode(this);
         if (overScrollMode == ViewCompat.OVER_SCROLL_ALWAYS ||
                 overScrollMode == ViewCompat.OVER_SCROLL_IF_CONTENT_SCROLLS) {

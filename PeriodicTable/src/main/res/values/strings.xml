@@ -130,4 +130,7 @@
     <string name="category_transition_metals">Transition metals</string>
     <string name="category_unknown">Unknown chemical properties</string>
 
+    <!-- Transitions -->
+    <string name="transition_table_item" translatable="false">table_item</string>
+
 </resources>

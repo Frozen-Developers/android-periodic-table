@@ -1,29 +1,36 @@
 package com.frozendevs.periodictable.fragment;
 
+import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.SharedElementCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
-public class TableFragment extends Fragment {
+import java.util.List;
+
+public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
 
     private TableAdapter mAdapter;
     private LoadData mLoadData;
+    private PeriodicTableView mPeriodicTableView;
+    private static TableFragment mInstance;
+    public SharedElementCallback mSharedElementCallback;
 
     private class LoadData extends AsyncTask<Void, Void, Void> {
-
-        ViewGroup mParent;
-
-        private LoadData(ViewGroup parent) {
-            mParent = parent;
-        }
 
         @Override
         protected Void doInBackground(Void... params) {
@@ -31,7 +38,7 @@ public class TableFragment extends Fragment {
 
             mAdapter.setItems(Database.getInstance(getActivity()).getTableItems());
 
-            mAdapter.buildDrawingCache(mParent);
+            mAdapter.buildDrawingCache(mPeriodicTableView);
 
             return null;
         }
@@ -42,13 +49,56 @@ public class TableFragment extends Fragment {
         }
     }
 
+    public static synchronized TableFragment getInstance() {
+        return mInstance;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        mInstance = this;
+
         super.onCreate(savedInstanceState);
 
         setRetainInstance(true);
 
         mAdapter = new TableAdapter(getActivity());
+
+        mSharedElementCallback = new SharedElementCallback() {
+
+            int tileSize = getResources().getDimensionPixelSize(R.dimen.table_item_size);
+
+            @Override
+            public void onSharedElementStart(List<String> sharedElementNames,
+                                             List<View> sharedElements,
+                                             List<View> sharedElementSnapshots) {
+                super.onSharedElementStart(sharedElementNames, sharedElements,
+                        sharedElementSnapshots);
+
+                adjustView(sharedElements.get(0), mPeriodicTableView.getZoom());
+            }
+
+            @Override
+            public void onSharedElementEnd(List<String> sharedElementNames,
+                                           List<View> sharedElements,
+                                           List<View> sharedElementSnapshots) {
+                super.onSharedElementEnd(sharedElementNames, sharedElements,
+                        sharedElementSnapshots);
+
+                adjustView(sharedElements.get(0), 1f);
+            }
+
+            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+            private void adjustView(View view, float zoom) {
+                view.measure(View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY),
+                        View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY));
+                view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
+                        view.getTop() + view.getMeasuredHeight());
+                view.setPivotX(0f);
+                view.setPivotY(0f);
+                view.setScaleX(zoom);
+                view.setScaleY(zoom);
+            }
+        };
     }
 
     @Override
@@ -56,15 +106,14 @@ public class TableFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
 
-        PeriodicTableView tableView = (PeriodicTableView) rootView.findViewById(
-                R.id.elements_table);
-        tableView.setAdapter(mAdapter);
-        tableView.setOnItemClickListener(mAdapter);
+        mPeriodicTableView = (PeriodicTableView) rootView.findViewById(R.id.elements_table);
+        mPeriodicTableView.setAdapter(mAdapter);
+        mPeriodicTableView.setOnItemClickListener(this);
 
         if (mAdapter.isEmpty()) {
-            tableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
+            mPeriodicTableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
 
-            mLoadData = new LoadData(tableView);
+            mLoadData = new LoadData();
             mLoadData.execute();
         }
 
@@ -83,5 +132,28 @@ public class TableFragment extends Fragment {
         super.onDestroy();
 
         mAdapter.destroyDrawingCache();
+    }
+
+    @Override
+    public void onItemClick(PeriodicTableView parent, View view, int position) {
+        TableItem item = mAdapter.getItem(position);
+
+        if (item != null) {
+            parent.setEnabled(false);
+
+            Intent intent = new Intent(getActivity(), PropertiesActivity.class);
+            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
+
+            ActivityCompat.startActivity(getActivity(), intent,
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view,
+                            getString(R.string.transition_table_item)).toBundle());
+        }
+    }
+
+    @Override
+    public void onResume() {
+        mPeriodicTableView.setEnabled(true);
+
+        super.onResume();
     }
 }

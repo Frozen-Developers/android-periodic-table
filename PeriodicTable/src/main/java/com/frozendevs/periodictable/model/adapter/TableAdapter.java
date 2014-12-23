@@ -1,7 +1,6 @@
 package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -10,12 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.model.TableItem;
-import com.frozendevs.periodictable.view.PeriodicTableView;
 
-public class TableAdapter extends DynamicAdapter<TableItem> implements
-        PeriodicTableView.OnItemClickListener {
+public class TableAdapter extends DynamicAdapter<TableItem> {
 
     private static enum ViewType {
         ITEM,
@@ -111,6 +107,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
                 if (item != null) {
                     return getView(item, convertView, parent);
                 }
+                break;
         }
 
         return null;
@@ -336,18 +333,12 @@ public class TableAdapter extends DynamicAdapter<TableItem> implements
     }
 
     @Override
-    public boolean onItemClick(int position) {
-        TableItem item = getItem(position);
-
-        if (item != null) {
-            Intent intent = new Intent(mContext, PropertiesActivity.class);
-            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
-
-            mContext.startActivity(intent);
-
-            return true;
-        }
-
+    public boolean areAllItemsEnabled() {
         return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return getItem(position) != null;
     }
 }

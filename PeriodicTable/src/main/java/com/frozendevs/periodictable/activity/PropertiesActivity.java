@@ -23,6 +23,7 @@ import android.widget.TextView;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
+import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.PagesAdapter;
@@ -40,6 +41,9 @@ public class PropertiesActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.properties_activity);
+
+        supportPostponeEnterTransition();
+        setEnterSharedElementCallback(TableFragment.getInstance().mSharedElementCallback);
 
         ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
@@ -84,7 +88,7 @@ public class PropertiesActivity extends ActionBarActivity {
                 return true;
 
             case android.R.id.home:
-                finish();
+                supportFinishAfterTransition();
                 return true;
         }
 

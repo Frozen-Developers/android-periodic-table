@@ -15,15 +15,30 @@ import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
 public class PropertiesFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.properties_fragment, container, false);
 
-        ListView listView = (ListView) layout.findViewById(R.id.properties_list);
+        final ListView listView = (ListView) layout.findViewById(R.id.properties_list);
 
         PropertiesAdapter adapter = new PropertiesAdapter(getActivity(),
                 (ElementProperties) getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES));
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(adapter);
+        listView.setOnHierarchyChangeListener(new ViewGroup.OnHierarchyChangeListener() {
+            @Override
+            public void onChildViewAdded(View parent, View child) {
+                if (child.findViewById(R.id.tile_view) != null) {
+                    getActivity().supportStartPostponedEnterTransition();
+
+                    listView.setOnHierarchyChangeListener(null);
+                }
+            }
+
+            @Override
+            public void onChildViewRemoved(View parent, View child) {
+            }
+        });
 
         getActivity().registerForContextMenu(listView);
 
