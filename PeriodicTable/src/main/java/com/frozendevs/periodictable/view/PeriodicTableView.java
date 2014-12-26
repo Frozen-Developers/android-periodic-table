@@ -256,6 +256,8 @@ public class PeriodicTableView extends ZoomableScrollView {
         mActiveView = mAdapter.getView(position, mActiveView, this);
 
         if (mActiveView != null) {
+            super.removeAllViews();
+
             mActiveView.setTag(R.id.active_view_position, position);
             mActiveView.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                     MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
@@ -266,8 +268,6 @@ public class PeriodicTableView extends ZoomableScrollView {
             mActiveView.setPivotY(0f);
 
             adjustActiveView();
-
-            removeAllViews();
 
             addView(mActiveView);
         }
@@ -300,5 +300,12 @@ public class PeriodicTableView extends ZoomableScrollView {
         super.onLayout(changed, l, t, r, b);
 
         adjustActiveView();
+    }
+
+    @Override
+    public void removeAllViews() {
+        mActiveView = null;
+
+        super.removeAllViews();
     }
 }

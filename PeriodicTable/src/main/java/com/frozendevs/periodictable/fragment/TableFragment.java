@@ -28,7 +28,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     private LoadData mLoadData;
     private PeriodicTableView mPeriodicTableView;
     private static TableFragment mInstance;
-    public SharedElementCallback mSharedElementCallback;
 
     private class LoadData extends AsyncTask<Void, Void, Void> {
 
@@ -49,6 +48,39 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
+    public SharedElementCallback mSharedElementCallback = new SharedElementCallback() {
+
+        @Override
+        public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
+                                         List<View> sharedElementSnapshots) {
+            super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            adjustView(sharedElements.get(0), mPeriodicTableView.getZoom());
+        }
+
+        @Override
+        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
+                                       List<View> sharedElementSnapshots) {
+            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            adjustView(sharedElements.get(0), 1f);
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        private void adjustView(View view, float zoom) {
+            int tileSize = getResources().getDimensionPixelSize(R.dimen.table_item_size);
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY),
+                    View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY));
+            view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
+                    view.getTop() + view.getMeasuredHeight());
+            view.setPivotX(0f);
+            view.setPivotY(0f);
+            view.setScaleX(zoom);
+            view.setScaleY(zoom);
+        }
+    };
+
     public static synchronized TableFragment getInstance() {
         return mInstance;
     }
@@ -62,43 +94,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         setRetainInstance(true);
 
         mAdapter = new TableAdapter(getActivity());
-
-        mSharedElementCallback = new SharedElementCallback() {
-
-            int tileSize = getResources().getDimensionPixelSize(R.dimen.table_item_size);
-
-            @Override
-            public void onSharedElementStart(List<String> sharedElementNames,
-                                             List<View> sharedElements,
-                                             List<View> sharedElementSnapshots) {
-                super.onSharedElementStart(sharedElementNames, sharedElements,
-                        sharedElementSnapshots);
-
-                adjustView(sharedElements.get(0), mPeriodicTableView.getZoom());
-            }
-
-            @Override
-            public void onSharedElementEnd(List<String> sharedElementNames,
-                                           List<View> sharedElements,
-                                           List<View> sharedElementSnapshots) {
-                super.onSharedElementEnd(sharedElementNames, sharedElements,
-                        sharedElementSnapshots);
-
-                adjustView(sharedElements.get(0), 1f);
-            }
-
-            @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-            private void adjustView(View view, float zoom) {
-                view.measure(View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY),
-                        View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY));
-                view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
-                        view.getTop() + view.getMeasuredHeight());
-                view.setPivotX(0f);
-                view.setPivotY(0f);
-                view.setScaleX(zoom);
-                view.setScaleY(zoom);
-            }
-        };
     }
 
     @Override
@@ -150,10 +145,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
-    @Override
-    public void onResume() {
+    public void onChildActivityDestroy() {
+        mPeriodicTableView.removeAllViews();
         mPeriodicTableView.setEnabled(true);
-
-        super.onResume();
     }
 }

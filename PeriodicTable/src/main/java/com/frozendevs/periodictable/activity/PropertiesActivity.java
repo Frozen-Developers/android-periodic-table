@@ -154,4 +154,11 @@ public class PropertiesActivity extends ActionBarActivity {
 
         return super.onContextItemSelected(item);
     }
+
+    @Override
+    protected void onDestroy() {
+        TableFragment.getInstance().onChildActivityDestroy();
+
+        super.onDestroy();
+    }
 }
