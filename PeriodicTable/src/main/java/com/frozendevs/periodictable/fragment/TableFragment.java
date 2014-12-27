@@ -25,7 +25,6 @@ import java.util.List;
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
 
     private TableAdapter mAdapter;
-    private LoadData mLoadData;
     private PeriodicTableView mPeriodicTableView;
     private static TableFragment mInstance;
 
@@ -94,6 +93,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         setRetainInstance(true);
 
         mAdapter = new TableAdapter(getActivity());
+
+        new LoadData().execute();
     }
 
     @Override
@@ -104,22 +105,9 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         mPeriodicTableView = (PeriodicTableView) rootView.findViewById(R.id.elements_table);
         mPeriodicTableView.setAdapter(mAdapter);
         mPeriodicTableView.setOnItemClickListener(this);
-
-        if (mAdapter.isEmpty()) {
-            mPeriodicTableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
-
-            mLoadData = new LoadData();
-            mLoadData.execute();
-        }
+        mPeriodicTableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
 
         return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-        mLoadData.cancel(true);
     }
 
     @Override
