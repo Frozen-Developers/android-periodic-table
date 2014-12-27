@@ -119,7 +119,7 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
         TypedValue typedValue = new TypedValue();
         theme.resolveAttribute(R.attr.theme, typedValue, true);
         TypedArray typedArray = theme.obtainStyledAttributes(typedValue.resourceId,
-                new int[]{R.attr.listChoiceBackgroundIndicator});
+                new int[]{R.attr.selectableItemBackground});
         mTextBackground = typedArray.getResourceId(0, 0);
         typedArray.recycle();
 
