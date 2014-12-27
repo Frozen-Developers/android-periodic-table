@@ -50,34 +50,34 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
     public SharedElementCallback mSharedElementCallback = new SharedElementCallback() {
 
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
                                          List<View> sharedElementSnapshots) {
             super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
 
-            adjustView(sharedElements.get(0), mPeriodicTableView.getZoom());
-        }
-
-        @Override
-        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
-                                       List<View> sharedElementSnapshots) {
-            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
-
-            adjustView(sharedElements.get(0), 1f);
-        }
-
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        private void adjustView(View view, float zoom) {
             int tileSize = getResources().getDimensionPixelSize(R.dimen.table_item_size);
 
+            View view = sharedElements.get(0);
             view.measure(View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY),
                     View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY));
             view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
                     view.getTop() + view.getMeasuredHeight());
             view.setPivotX(0f);
             view.setPivotY(0f);
-            view.setScaleX(zoom);
-            view.setScaleY(zoom);
+            view.setScaleX(mPeriodicTableView.getZoom());
+            view.setScaleY(mPeriodicTableView.getZoom());
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
+                                       List<View> sharedElementSnapshots) {
+            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            View view = sharedElements.get(0);
+            view.setScaleX(1f);
+            view.setScaleY(1f);
         }
     };
 
