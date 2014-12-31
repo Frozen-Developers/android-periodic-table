@@ -15993,7 +15993,7 @@
             },
             {
                 "abundance": "",
-                "decayModes": "β⁺ (56.3%) → ¹²⁶Te\nβ⁻ (44.7%) → ¹²⁶Xe",
+                "decayModes": "β⁺ (56.3%) → ¹²⁶Te\nβ⁻ (43.7%) → ¹²⁶Xe",
                 "halfLife": "12.93 d",
                 "spin": "2-",
                 "symbol": "¹²⁶I"
@@ -21258,7 +21258,7 @@
         "liquidDensityAtMeltingPoint": "19.77 g·cm⁻³",
         "magneticOrdering": "Paramagnetic",
         "meltingPoint": "2041.4 K / 1768.3 °C / 3214.9 °F",
-        "mohsHardness": "4–4.5",
+        "mohsHardness": "3.5",
         "molarHeatCapacity": "25.86 J·mol⁻¹·K⁻¹",
         "molarIonizationEnergies": "1st: 870 kJ·mol⁻¹\n2nd: 1791 kJ·mol⁻¹",
         "name": "Platinum",
@@ -26842,7 +26842,7 @@
             {
                 "abundance": "",
                 "decayModes": "α (67%) → ²⁶⁷Rf\nSF (33%) → Various",
-                "halfLife": "1.9 min",
+                "halfLife": "2.4 min",
                 "spin": "",
                 "symbol": "²⁷¹Sg"
             }
