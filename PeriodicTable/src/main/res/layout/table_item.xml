@@ -51,8 +51,8 @@
         android:layout_below="@id/element_number"
         android:layout_centerInParent="true"
         android:ellipsize="marquee"
-        android:gravity="center"
-        android:maxLines="1"
+        android:gravity="center_vertical"
+        android:singleLine="true"
         android:text="@string/property_name"
         android:textColor="@android:color/black"
         android:textSize="12sp" />

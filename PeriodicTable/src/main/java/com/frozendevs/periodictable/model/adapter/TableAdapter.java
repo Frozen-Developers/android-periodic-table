@@ -280,6 +280,8 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         View convertView = null;
         int previousViewType = 0;
 
+        int size = mContext.getResources().getDimensionPixelSize(R.dimen.table_item_size);
+
         for (int row = 0; row < mPeriodsCount; row++) {
             for (int column = 0; column < mGroupsCount; column++) {
                 int position = (row * mGroupsCount) + column;
@@ -293,9 +295,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
                 convertView = getView(position, convertView, parent);
 
                 if (convertView != null) {
-                    int size = mContext.getResources().getDimensionPixelSize(
-                            R.dimen.table_item_size);
-
                     convertView.measure(View.MeasureSpec.makeMeasureSpec(size,
                                     View.MeasureSpec.EXACTLY),
                             View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY));
