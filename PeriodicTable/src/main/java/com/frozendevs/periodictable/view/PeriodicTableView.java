@@ -286,13 +286,17 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     public void onRestoreInstanceState(Parcelable state) {
-        SavedState savedState = (SavedState) state;
+        if (state instanceof SavedState) {
+            SavedState savedState = (SavedState) state;
 
-        if (savedState.activeViewPosition > -1) {
-            addActiveView(savedState.activeViewPosition);
+            if (savedState.activeViewPosition > -1) {
+                addActiveView(savedState.activeViewPosition);
+            }
+
+            super.onRestoreInstanceState(savedState.getSuperState());
+        } else {
+            super.onRestoreInstanceState(state);
         }
-
-        super.onRestoreInstanceState(savedState.getSuperState());
     }
 
     @Override
