@@ -42,8 +42,13 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        supportPostponeEnterTransition();
-        setEnterSharedElementCallback(TableFragment.getInstance().mSharedElementCallback);
+        TableFragment tableFragment = TableFragment.getInstance();
+
+        if (tableFragment != null) {
+            supportPostponeEnterTransition();
+
+            setEnterSharedElementCallback(tableFragment.mSharedElementCallback);
+        }
 
         ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
@@ -157,8 +162,12 @@ public class PropertiesActivity extends ActionBarActivity {
 
     @Override
     protected void onDestroy() {
-        TableFragment.getInstance().onChildActivityDestroy();
-
         super.onDestroy();
+
+        TableFragment tableFragment = TableFragment.getInstance();
+
+        if (tableFragment != null) {
+            tableFragment.onChildActivityDestroy();
+        }
     }
 }
