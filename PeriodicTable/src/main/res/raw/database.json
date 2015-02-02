@@ -791,7 +791,7 @@
         "sublimationPoint": "3915 K / 3642 °C / 6588 °F",
         "symbol": "C",
         "tensileStrength": "",
-        "thermalConductivity": "Diamond: 900-2300 W·m⁻¹·K⁻¹\nGraphite: 119-165 W·m⁻¹·K⁻¹",
+        "thermalConductivity": "Diamond: 900–2300 W·m⁻¹·K⁻¹\nGraphite: 119–165 W·m⁻¹·K⁻¹",
         "thermalDiffusivity": "",
         "thermalExpansion": "At 25 °C, diamond: 0.8 µm·m⁻¹·K⁻¹",
         "triplePoint": "4600 K, 10800 kPa",
