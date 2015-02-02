@@ -11,7 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
@@ -37,9 +36,6 @@ public class ElementsFragment extends Fragment {
             mAdapter.setItems(result);
 
             mAdapter.notifyDataSetChanged();
-
-            mListView.getEmptyView().startAnimation(AnimationUtils.loadAnimation(getActivity(),
-                    android.R.anim.fade_out));
 
             mListView.setEmptyView(mEmptyView);
         }
