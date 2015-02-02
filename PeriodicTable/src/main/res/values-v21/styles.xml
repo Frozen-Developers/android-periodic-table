@@ -7,4 +7,8 @@
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
     </style>
 
+    <style name="Theme.About" parent="Theme.About.Base">
+        <item name="android:windowContentTransitions">false</item>
+    </style>
+
 </resources>

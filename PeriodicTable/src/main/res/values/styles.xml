@@ -16,6 +16,10 @@
 
     <style name="Theme.NoActionBar" parent="Theme.NoActionBar.Base" />
 
+    <style name="Theme.About.Base" parent="Theme.NoActionBar" />
+
+    <style name="Theme.About" parent="Theme.About.Base" />
+
     <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Small">
         <item name="android:textStyle">bold</item>
     </style>

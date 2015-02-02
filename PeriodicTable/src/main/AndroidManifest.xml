@@ -50,7 +50,7 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
-            android:theme="@style/Theme.NoActionBar">
+            android:theme="@style/Theme.About">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
