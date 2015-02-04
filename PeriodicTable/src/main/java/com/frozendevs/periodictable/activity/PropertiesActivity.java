@@ -42,12 +42,28 @@ public class PropertiesActivity extends ActionBarActivity {
 
         setContentView(R.layout.properties_activity);
 
-        TableFragment tableFragment = TableFragment.getInstance();
+        final TableFragment tableFragment = TableFragment.getInstance();
 
         if (tableFragment != null) {
             supportPostponeEnterTransition();
 
             setEnterSharedElementCallback(tableFragment.mSharedElementCallback);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().getDecorView().addOnAttachStateChangeListener(
+                        new View.OnAttachStateChangeListener() {
+                            @Override
+                            public void onViewAttachedToWindow(View v) {
+                            }
+
+                            @Override
+                            public void onViewDetachedFromWindow(View v) {
+                                if (PropertiesActivity.this.isFinishing()) {
+                                    tableFragment.onExitTransitionFinished();
+                                }
+                            }
+                        });
+            }
         }
 
         ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
@@ -158,16 +174,5 @@ public class PropertiesActivity extends ActionBarActivity {
         }
 
         return super.onContextItemSelected(item);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-        TableFragment tableFragment = TableFragment.getInstance();
-
-        if (tableFragment != null) {
-            tableFragment.onChildActivityDestroy();
-        }
     }
 }

@@ -256,7 +256,7 @@ public class PeriodicTableView extends ZoomableScrollView {
         mActiveView = mAdapter.getView(position, mActiveView, this);
 
         if (mActiveView != null) {
-            super.removeAllViews();
+            removeView(mActiveView);
 
             mActiveView.setTag(R.id.active_view_position, position);
             mActiveView.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
@@ -306,10 +306,9 @@ public class PeriodicTableView extends ZoomableScrollView {
         adjustActiveView();
     }
 
-    @Override
-    public void removeAllViews() {
-        mActiveView = null;
+    public void removeActiveView() {
+        removeView(mActiveView);
 
-        super.removeAllViews();
+        mActiveView = null;
     }
 }

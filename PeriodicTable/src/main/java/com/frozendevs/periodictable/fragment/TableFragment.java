@@ -122,7 +122,9 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         TableItem item = mAdapter.getItem(position);
 
         if (item != null) {
-            parent.setEnabled(false);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                parent.setEnabled(false);
+            }
 
             Intent intent = new Intent(getActivity(), PropertiesActivity.class);
             intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
@@ -133,8 +135,9 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
-    public void onChildActivityDestroy() {
-        mPeriodicTableView.removeAllViews();
+    public void onExitTransitionFinished() {
+        mPeriodicTableView.removeActiveView();
+
         mPeriodicTableView.setEnabled(true);
     }
 }
