@@ -414,9 +414,11 @@ public class ZoomableScrollView extends ViewGroup implements GestureDetector.OnG
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
-            if (!mGestureDetector.onTouchEvent(event) && !mIsScrolling) {
-                super.onTouchEvent(event);
+        if (isEnabled()) {
+            if (mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
+                if (!mGestureDetector.onTouchEvent(event) && !mIsScrolling) {
+                    super.onTouchEvent(event);
+                }
             }
         }
 

@@ -96,8 +96,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     public boolean onSingleTapConfirmed(MotionEvent e) {
-        if (mOnItemClickListener != null && mAdapter != null &&
-                !mAdapter.isEmpty() && isEnabled()) {
+        if (mOnItemClickListener != null && mAdapter != null && !mAdapter.isEmpty()) {
             float rawX = e.getX() + getScrollX();
             float rawY = e.getY() + getScrollY();
             float tileSize = getScaledTileSize();
@@ -114,6 +113,8 @@ public class PeriodicTableView extends ZoomableScrollView {
 
                 if (position >= 0 && position < mAdapter.getCount() &&
                         mAdapter.isEnabled(position)) {
+                    setEnabled(false);
+
                     playSoundEffect(SoundEffectConstants.CLICK);
 
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -139,11 +140,15 @@ public class PeriodicTableView extends ZoomableScrollView {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
+                                setEnabled(true);
+
                                 mOnItemClickListener.onItemClick(PeriodicTableView.this,
                                         mActiveView, position);
                             }
                         }, 500);
                     } else {
+                        setEnabled(true);
+
                         mOnItemClickListener.onItemClick(this, mActiveView, position);
                     }
                 }
