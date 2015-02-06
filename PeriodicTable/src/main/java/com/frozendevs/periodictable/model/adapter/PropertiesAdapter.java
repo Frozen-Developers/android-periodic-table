@@ -271,6 +271,9 @@ public class PropertiesAdapter extends BaseAdapter implements
                     View tileView = convertView.findViewById(R.id.tile_view);
                     mTableAdapter.getView(mTableItem, tileView, (ViewGroup) convertView);
                     tileView.setClickable(false);
+                    for (int i = 0; i < ((ViewGroup) tileView).getChildCount(); i++) {
+                        ((ViewGroup) tileView).getChildAt(i).setClickable(false);
+                    }
                     tileView.setDuplicateParentStateEnabled(true);
 
                     String[] properties = (String[]) property.getValue();
@@ -380,6 +383,9 @@ public class PropertiesAdapter extends BaseAdapter implements
                 View tileView = summaryView.findViewById(R.id.tile_view);
                 tileView.setBackgroundColor(mTableAdapter.getBackgroundColor(mTableItem));
                 tileView.setClickable(false);
+                for (int i = 0; i < ((ViewGroup) tileView).getChildCount(); i++) {
+                    ((ViewGroup) tileView).getChildAt(i).setClickable(false);
+                }
 
                 legendDialog.setView(summaryView);
 

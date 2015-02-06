@@ -8,8 +8,10 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.Build;
+import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -106,19 +108,44 @@ public class PeriodicTableView extends ZoomableScrollView {
 
             if (rawX >= startX && rawX <= startX + scaledWidth &&
                     rawY >= startY && rawY <= startY + scaledHeight) {
-                int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
+                final int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
                         mAdapter.getGroupsCount()) +
                         (int) ((rawX - startX) / (tileSize + DEFAULT_SPACING));
 
                 if (position >= 0 && position < mAdapter.getCount() &&
                         mAdapter.isEnabled(position)) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        addActiveView(position);
-                    }
-
                     playSoundEffect(SoundEffectConstants.CLICK);
 
-                    mOnItemClickListener.onItemClick(this, mActiveView, position);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        addActiveView(position);
+
+                        long delay = 100;
+                        long downTime = SystemClock.uptimeMillis();
+                        long eventTime = SystemClock.uptimeMillis() + delay;
+
+                        float hotSpotX = Math.abs((rawX - startX) % (tileSize + DEFAULT_SPACING));
+                        float hotSpotY = Math.abs((rawY - startY) % (tileSize + DEFAULT_SPACING));
+
+                        MotionEvent event = MotionEvent.obtain(downTime, eventTime,
+                                MotionEvent.ACTION_DOWN, hotSpotX, hotSpotY, 0);
+                        mActiveView.dispatchTouchEvent(event);
+                        event.recycle();
+
+                        event = MotionEvent.obtain(downTime + delay, eventTime + delay,
+                                MotionEvent.ACTION_UP, hotSpotX, hotSpotY, 0);
+                        mActiveView.dispatchTouchEvent(event);
+                        event.recycle();
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                mOnItemClickListener.onItemClick(PeriodicTableView.this,
+                                        mActiveView, position);
+                            }
+                        }, 500);
+                    } else {
+                        mOnItemClickListener.onItemClick(this, mActiveView, position);
+                    }
                 }
             }
         }

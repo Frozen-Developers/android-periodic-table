@@ -3,8 +3,7 @@
     android:layout_width="@dimen/table_item_size"
     android:layout_height="@dimen/table_item_size"
     android:layoutDirection="ltr"
-    android:padding="5dp"
-    android:transitionName="@string/transition_table_item">
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/element_symbol"
