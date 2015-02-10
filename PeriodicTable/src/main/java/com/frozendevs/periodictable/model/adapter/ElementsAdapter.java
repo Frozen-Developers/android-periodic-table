@@ -35,20 +35,20 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
     public View getView(int position, View convertView, ViewGroup parent) {
         ElementListItem element = getItem(position);
 
-        if(convertView == null) {
+        if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.elements_list_item,
                     parent, false);
 
             ViewHolder viewHolder = new ViewHolder();
 
-            viewHolder.symbol = (TextView)convertView.findViewById(R.id.element_symbol);
-            viewHolder.atomicNumber = (TextView)convertView.findViewById(R.id.element_number);
-            viewHolder.name = (TextView)convertView.findViewById(R.id.element_name);
+            viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
+            viewHolder.atomicNumber = (TextView) convertView.findViewById(R.id.element_number);
+            viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
 
             convertView.setTag(viewHolder);
         }
 
-        ViewHolder viewHolder = (ViewHolder)convertView.getTag();
+        ViewHolder viewHolder = (ViewHolder) convertView.getTag();
 
         viewHolder.symbol.setText(element.getSymbol());
         viewHolder.atomicNumber.setText(String.valueOf(element.getNumber()));
@@ -59,23 +59,24 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
 
     public void filter(String filter) {
         if (mAllItems != null) {
-            List<ElementListItem> filteredItems = new ArrayList<ElementListItem>();
-
-            for (ElementListItem element : mAllItems) {
-                if (element.getSymbol().equalsIgnoreCase(filter) ||
-                        String.valueOf(element.getNumber()).equals(filter)) {
-                    filteredItems.add(element);
-                    break;
-                }
-            }
+            List<ElementListItem> filteredItems = new ArrayList<>();
 
             Locale locale = mContext.getResources().getConfiguration().locale;
 
-            if (filteredItems.isEmpty()) {
-                for (ElementListItem element : mAllItems) {
-                    if (element.getName().toLowerCase(locale).contains(filter.toLowerCase(locale))) {
-                        filteredItems.add(element);
-                    }
+            int nextPos = 0;
+            for (ElementListItem element : mAllItems) {
+                if (element.getSymbol().toLowerCase(locale).equalsIgnoreCase(filter)) {
+                    filteredItems.add(0, element);
+
+                    nextPos += 1;
+                } else if (element.getSymbol().toLowerCase(locale).startsWith(filter.toLowerCase(
+                        locale)) || String.valueOf(element.getNumber()).startsWith(filter)) {
+                    filteredItems.add(nextPos, element);
+
+                    nextPos += 1;
+                } else if (element.getName().toLowerCase(locale).startsWith(
+                        filter.toLowerCase(locale))) {
+                    filteredItems.add(element);
                 }
             }
 

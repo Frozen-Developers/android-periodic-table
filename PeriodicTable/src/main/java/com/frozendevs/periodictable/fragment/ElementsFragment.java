@@ -87,8 +87,7 @@ public class ElementsFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                mAdapter.filter(newText.toLowerCase(
-                        getResources().getConfiguration().locale));
+                mAdapter.filter(newText);
 
                 return true;
             }
