@@ -2,8 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/table_item_size"
     android:layout_height="@dimen/table_item_size"
+    android:background="@drawable/table_item_background"
+    android:clickable="true"
     android:layoutDirection="ltr"
-    android:padding="5dp">
+    android:padding="5dp"
+    android:transitionName="@string/transition_table_item">
 
     <TextView
         android:id="@+id/element_symbol"

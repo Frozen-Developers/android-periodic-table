@@ -271,9 +271,6 @@ public class PropertiesAdapter extends BaseAdapter implements
                     View tileView = convertView.findViewById(R.id.tile_view);
                     mTableAdapter.getView(mTableItem, tileView, (ViewGroup) convertView);
                     tileView.setClickable(false);
-                    for (int i = 0; i < ((ViewGroup) tileView).getChildCount(); i++) {
-                        ((ViewGroup) tileView).getChildAt(i).setClickable(false);
-                    }
                     tileView.setDuplicateParentStateEnabled(true);
 
                     String[] properties = (String[]) property.getValue();
@@ -373,19 +370,13 @@ public class PropertiesAdapter extends BaseAdapter implements
                 AlertDialog legendDialog = new AlertDialog.Builder(mContext).create();
                 legendDialog.setTitle(R.string.context_title_legend);
 
-                View summaryView = LayoutInflater.from(mContext).inflate(
-                        R.layout.properties_summary_item, parent, false);
-
                 int padding = mContext.getResources().getDimensionPixelOffset(
                         R.dimen.listPreferredItemPaddingTop);
-                summaryView.setPadding(padding, padding, padding, padding);
 
-                View tileView = summaryView.findViewById(R.id.tile_view);
-                tileView.setBackgroundColor(mTableAdapter.getBackgroundColor(mTableItem));
-                tileView.setClickable(false);
-                for (int i = 0; i < ((ViewGroup) tileView).getChildCount(); i++) {
-                    ((ViewGroup) tileView).getChildAt(i).setClickable(false);
-                }
+                View summaryView = LayoutInflater.from(mContext).inflate(
+                        R.layout.properties_summary_item, parent, false);
+                summaryView.setPadding(padding, padding, padding, padding);
+                summaryView.findViewById(R.id.tile_view).setClickable(false);
 
                 legendDialog.setView(summaryView);
 
