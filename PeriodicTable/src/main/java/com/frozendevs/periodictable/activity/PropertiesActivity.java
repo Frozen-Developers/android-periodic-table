@@ -50,6 +50,9 @@ public class PropertiesActivity extends ActionBarActivity {
 
             setEnterSharedElementCallback(tableFragment.mSharedElementCallback);
 
+            /*
+             * Work around shared view alpha state not being restored on exit transition finished.
+             */
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 getWindow().getDecorView().addOnAttachStateChangeListener(
                         new View.OnAttachStateChangeListener() {

@@ -127,6 +127,8 @@ public class PeriodicTableView extends ZoomableScrollView {
                         float hotSpotX = Math.abs((rawX - startX) % (tileSize + DEFAULT_SPACING));
                         float hotSpotY = Math.abs((rawY - startY) % (tileSize + DEFAULT_SPACING));
 
+                        mActiveView.setClickable(true);
+
                         MotionEvent event = MotionEvent.obtain(downTime, eventTime,
                                 MotionEvent.ACTION_DOWN, hotSpotX, hotSpotY, 0);
                         mActiveView.dispatchTouchEvent(event);
@@ -137,19 +139,21 @@ public class PeriodicTableView extends ZoomableScrollView {
                         mActiveView.dispatchTouchEvent(event);
                         event.recycle();
 
+                        mActiveView.setClickable(false);
+
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                setEnabled(true);
-
                                 mOnItemClickListener.onItemClick(PeriodicTableView.this,
                                         mActiveView, position);
+
+                                setEnabled(true);
                             }
                         }, 500);
                     } else {
-                        setEnabled(true);
-
                         mOnItemClickListener.onItemClick(this, mActiveView, position);
+
+                        setEnabled(true);
                     }
                 }
             }
@@ -229,8 +233,8 @@ public class PeriodicTableView extends ZoomableScrollView {
                             y + tileSize > getScrollY() && y < getScrollY() + getHeight()) {
                         int position = (row * mAdapter.getGroupsCount()) + column;
 
-                        if (mActiveView != null &&
-                                (int) mActiveView.getTag(R.id.active_view_position) == position) {
+                        if (mActiveView != null && indexOfChild(mActiveView) >= 0 &&
+                                position == (int) mActiveView.getTag(R.id.active_view_position)) {
                             adjustActiveView();
                         } else {
                             Bitmap bitmap = mAdapter.getDrawingCache(position);
@@ -264,32 +268,31 @@ public class PeriodicTableView extends ZoomableScrollView {
 
             float tileSize = getScaledTileSize();
 
-            float left = ((getWidth() - getScaledWidth()) / 2f) +
-                    ((position % mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING));
-            float top = ((getHeight() - getScaledHeight()) / 2f) +
-                    ((position / mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING));
-
             mActiveView.setScaleX(getZoom());
             mActiveView.setScaleY(getZoom());
-            mActiveView.setTranslationX(left);
-            mActiveView.setTranslationY(top);
+            mActiveView.setTranslationX(((getWidth() - getScaledWidth()) / 2f) +
+                    ((position % mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING)));
+            mActiveView.setTranslationY(((getHeight() - getScaledHeight()) / 2f) +
+                    ((position / mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING)));
         }
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void addActiveView(int position) {
-        if (mActiveView != null &&
-                (int) mActiveView.getTag(R.id.active_view_position) == position) {
-            adjustActiveView();
+        if (mActiveView != null) {
+            if (position == (int) mActiveView.getTag(R.id.active_view_position)) {
+                adjustActiveView();
 
-            return;
+                return;
+            }
+
+            removeView(mActiveView);
         }
 
         mActiveView = mAdapter.getView(position, mActiveView, this);
 
         if (mActiveView != null) {
-            removeView(mActiveView);
-
+            mActiveView.setClickable(false);
             mActiveView.setTag(R.id.active_view_position, position);
             mActiveView.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
                     MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
@@ -338,9 +341,7 @@ public class PeriodicTableView extends ZoomableScrollView {
         adjustActiveView();
     }
 
-    public void removeActiveView() {
-        removeView(mActiveView);
-
-        mActiveView = null;
+    public View getActiveView() {
+        return mActiveView;
     }
 }
