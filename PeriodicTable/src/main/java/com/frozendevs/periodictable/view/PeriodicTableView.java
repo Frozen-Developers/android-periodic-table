@@ -117,7 +117,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
                     playSoundEffect(SoundEffectConstants.CLICK);
 
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                         addActiveView(position);
 
                         long delay = 100;
@@ -140,7 +140,9 @@ public class PeriodicTableView extends ZoomableScrollView {
                         event.recycle();
 
                         mActiveView.setClickable(false);
+                    }
 
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
