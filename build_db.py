@@ -425,12 +425,13 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
 
     brinellHardness = capitalize(article.getProperty('brinell hardness').replace('HB=: ', ''))
 
-    prefix = article.getProperty('electrical resistivity unit prefix', units=False) + \
-        article.getUnit('electrical resistivity unit prefix')
+    prefix = article.getProperty('electrical resistivity unit prefix', comments=False,
+        units=False) + article.getUnit('electrical resistivity unit prefix')
     electricalResistivity = capitalize(replace_chars(article.getProperty('electrical resistivity',
         article.getProperty('electrical resistivity at 0', article.getProperty(
-            'electrical resistivity at 20', unitPrefix=prefix), unitPrefix=prefix),
-        unitPrefix=prefix), ')', ':').replace('(', '').replace(':\n', ': '))
+            'electrical resistivity at 20', unitPrefix=prefix), prepend=article.getComment(
+            'electrical resistivity unit prefix'), unitPrefix=prefix), unitPrefix=prefix), ')',
+            ':').replace('(', '').replace(':\n', ': '))
 
     bandGap = capitalize(article.getProperty('band gap'))
 
