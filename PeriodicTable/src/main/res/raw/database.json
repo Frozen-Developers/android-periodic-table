@@ -33700,7 +33700,7 @@
         "molarIonizationEnergies": "1st: 596.7 kJ·mol⁻¹\n2nd: 1160 kJ·mol⁻¹\n3rd: 2285 kJ·mol⁻¹\n4th: 4120 kJ·mol⁻¹",
         "name": "Thulium",
         "number": "69",
-        "oxidationStates": "2, 3, 4",
+        "oxidationStates": "2, 3",
         "period": "6",
         "phase": "Solid",
         "poissonRatio": "0.213",
