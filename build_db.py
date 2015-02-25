@@ -412,7 +412,7 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
 
     speedOfSound = capitalize(replace_chars(article.getProperty('speed of sound',
         article.getProperty('speed of sound rod at 20',
-        article.getProperty('speed of sound rod at r.t.'))), ')', ':') \
+        article.getProperty('speed of sound rod at r.t.'), comments=False)), ')', ':') \
         .replace('(', '').replace(':\n', ': '))
 
     youngsModulus = capitalize(article.getProperty('young\'s modulus'))
