@@ -296,11 +296,6 @@ public class PeriodicTableView extends ZoomableScrollView {
         if (mActiveView != null) {
             mActiveView.setClickable(false);
             mActiveView.setTag(R.id.active_view_position, position);
-            mActiveView.measure(MeasureSpec.makeMeasureSpec(getDefaultTileSize(),
-                    MeasureSpec.EXACTLY), MeasureSpec.makeMeasureSpec(
-                    getDefaultTileSize(), MeasureSpec.EXACTLY));
-            mActiveView.layout(0, 0, mActiveView.getMeasuredWidth(),
-                    mActiveView.getMeasuredHeight());
             mActiveView.setPivotX(0f);
             mActiveView.setPivotY(0f);
 

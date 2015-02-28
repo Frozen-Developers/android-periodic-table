@@ -11,13 +11,13 @@ import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.OverScroller;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.widget.Zoomer;
 
-public class ZoomableScrollView extends ViewGroup implements GestureDetector.OnGestureListener,
+public class ZoomableScrollView extends FrameLayout implements GestureDetector.OnGestureListener,
         ScaleGestureDetector.OnScaleGestureListener, GestureDetector.OnDoubleTapListener {
 
     private static final float DEFAULT_MAX_ZOOM = 1f;
@@ -221,6 +221,8 @@ public class ZoomableScrollView extends ViewGroup implements GestureDetector.OnG
                 scrollTo(getScrollX(), getMaximalScrollY());
             }
         }
+
+        super.onLayout(changed, l, t, r, b);
     }
 
     @Override
