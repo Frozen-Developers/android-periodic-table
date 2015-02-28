@@ -321,7 +321,8 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
 
     name = article.getProperty('name').capitalize()
 
-    weight = replace_chars(article.getProperty('atomic mass').splitlines()[0], '()', '[]')
+    weight = replace_chars(re.sub(r'([^\s]+)\s*\([^\)]*\)', r'\1', article.getProperty(
+        'atomic mass', comments=False)).splitlines()[0], '()', '[]')
     try:
         weight = format(float(weight), '.3f').rstrip('.0')
     except ValueError:
