@@ -55,11 +55,13 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
                                          List<View> sharedElementSnapshots) {
             super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
 
-            int tileSize = getResources().getDimensionPixelSize(R.dimen.table_item_size);
-
             View view = sharedElements.get(0);
-            view.measure(View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY),
-                    View.MeasureSpec.makeMeasureSpec(tileSize, View.MeasureSpec.EXACTLY));
+
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
+                    View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
+                    layoutParams.height, View.MeasureSpec.EXACTLY));
             view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
                     view.getTop() + view.getMeasuredHeight());
             view.setPivotX(0f);
