@@ -25,6 +25,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     private Bitmap[] mBitmaps;
     private int mGroupsCount;
     private int mPeriodsCount;
+    private int mTileSize;
 
     private class ViewHolder {
         GradientDrawable background;
@@ -284,8 +285,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         View convertView = null;
         int previousViewType = 0;
 
-        int size = mContext.getResources().getDimensionPixelSize(R.dimen.table_item_size);
-
         for (int row = 0; row < mPeriodsCount; row++) {
             for (int column = 0; column < mGroupsCount; column++) {
                 int position = (row * mGroupsCount) + column;
@@ -299,9 +298,14 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
                 convertView = getView(position, convertView, parent);
 
                 if (convertView != null) {
-                    convertView.measure(View.MeasureSpec.makeMeasureSpec(size,
-                                    View.MeasureSpec.EXACTLY),
-                            View.MeasureSpec.makeMeasureSpec(size, View.MeasureSpec.EXACTLY));
+                    ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
+
+                    mTileSize = Math.max(mTileSize, Math.max(layoutParams.width,
+                            layoutParams.height));
+
+                    convertView.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
+                            View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
+                            layoutParams.height, View.MeasureSpec.EXACTLY));
                     convertView.layout(0, 0, convertView.getMeasuredWidth(),
                             convertView.getMeasuredHeight());
 
@@ -343,5 +347,9 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     @Override
     public boolean isEnabled(int position) {
         return getItem(position) != null;
+    }
+
+    public int getTileSize() {
+        return mTileSize;
     }
 }

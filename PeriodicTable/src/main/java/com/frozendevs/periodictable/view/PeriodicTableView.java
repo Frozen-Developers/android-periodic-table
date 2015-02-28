@@ -86,12 +86,8 @@ public class PeriodicTableView extends ZoomableScrollView {
         }
     }
 
-    private int getDefaultTileSize() {
-        return getResources().getDimensionPixelSize(R.dimen.table_item_size);
-    }
-
     private float getScaledTileSize() {
-        return getZoom() * getDefaultTileSize();
+        return getZoom() * mAdapter.getTileSize();
     }
 
     @Override
@@ -193,11 +189,12 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     public float getMinimalZoom() {
-        int groups = mAdapter != null ? mAdapter.getGroupsCount() : 0;
-        int periods = mAdapter != null ? mAdapter.getPeriodsCount() : 0;
+        final int groups = mAdapter.getGroupsCount();
+        final int periods = mAdapter.getPeriodsCount();
+        final int tileSize = mAdapter.getTileSize();
 
         return Math.min((getWidth() - ((groups - 1) * DEFAULT_SPACING)) / groups,
-                (getHeight() - ((periods - 1) * DEFAULT_SPACING)) / periods) / getDefaultTileSize();
+                (getHeight() - ((periods - 1) * DEFAULT_SPACING)) / periods) / tileSize;
     }
 
     @Override
