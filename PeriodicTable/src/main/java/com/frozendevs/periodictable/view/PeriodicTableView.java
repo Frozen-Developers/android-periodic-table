@@ -8,14 +8,13 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.os.Build;
-import android.os.Handler;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
+import android.view.accessibility.AccessibilityEvent;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
@@ -36,12 +35,27 @@ public class PeriodicTableView extends ZoomableScrollView {
         public void onItemClick(PeriodicTableView parent, View view, int position);
     }
 
+    private abstract class OnClickConfirmedListener {
+
+        abstract void onClickConfirmed(int position);
+    }
+
     private DataSetObserver mDataSetObserver = new DataSetObserver() {
         @Override
         public void onChanged() {
             updateEmptyStatus(true);
 
             if (!mAdapter.isEmpty()) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && mActiveView == null) {
+                    for (int i = 0; i < mAdapter.getCount(); i++) {
+                        if (mAdapter.getItem(i) != null && mAdapter.isEnabled(i)) {
+                            addActiveView(i);
+
+                            break;
+                        }
+                    }
+                }
+
                 invalidate();
             }
         }
@@ -62,16 +76,48 @@ public class PeriodicTableView extends ZoomableScrollView {
         }
     }
 
+    private OnClickConfirmedListener mOnSingleTapConfirmed = new OnClickConfirmedListener() {
+        @Override
+        void onClickConfirmed(int position) {
+            playSoundEffect(SoundEffectConstants.CLICK);
+
+            mOnItemClickListener.onItemClick(PeriodicTableView.this, mActiveView, position);
+
+            if (mActiveView != null) {
+                mActiveView.sendAccessibilityEvent(AccessibilityEvent.TYPE_VIEW_CLICKED);
+            }
+        }
+    };
+
+    private OnClickConfirmedListener mOnDownConfirmed;
+
     public PeriodicTableView(Context context) {
         super(context);
+
+        initPeriodicTableView();
     }
 
     public PeriodicTableView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        initPeriodicTableView();
     }
 
     public PeriodicTableView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
+        initPeriodicTableView();
+    }
+
+    private void initPeriodicTableView() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            mOnDownConfirmed = new OnClickConfirmedListener() {
+                @Override
+                void onClickConfirmed(int position) {
+                    addActiveView(position);
+                }
+            };
+        }
     }
 
     public void setEmptyView(View view) {
@@ -91,73 +137,9 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     @Override
-    public boolean onSingleTapConfirmed(MotionEvent e) {
-        if (mOnItemClickListener != null && mAdapter != null && !mAdapter.isEmpty()) {
-            float rawX = e.getX() + getScrollX();
-            float rawY = e.getY() + getScrollY();
-            float tileSize = getScaledTileSize();
-            int scaledWidth = getScaledWidth();
-            int scaledHeight = getScaledHeight();
-            float startY = (getHeight() - scaledHeight) / 2f;
-            float startX = (getWidth() - scaledWidth) / 2f;
+    public boolean onSingleTapConfirmed(MotionEvent event) {
+        return mOnItemClickListener != null && processClick(event, mOnSingleTapConfirmed);
 
-            if (rawX >= startX && rawX <= startX + scaledWidth &&
-                    rawY >= startY && rawY <= startY + scaledHeight) {
-                final int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
-                        mAdapter.getGroupsCount()) +
-                        (int) ((rawX - startX) / (tileSize + DEFAULT_SPACING));
-
-                if (position >= 0 && position < mAdapter.getCount() &&
-                        mAdapter.isEnabled(position)) {
-                    setEnabled(false);
-
-                    playSoundEffect(SoundEffectConstants.CLICK);
-
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-                        addActiveView(position);
-
-                        long delay = 100;
-                        long downTime = SystemClock.uptimeMillis();
-                        long eventTime = SystemClock.uptimeMillis() + delay;
-
-                        float hotSpotX = Math.abs((rawX - startX) % (tileSize + DEFAULT_SPACING));
-                        float hotSpotY = Math.abs((rawY - startY) % (tileSize + DEFAULT_SPACING));
-
-                        mActiveView.setClickable(true);
-
-                        MotionEvent event = MotionEvent.obtain(downTime, eventTime,
-                                MotionEvent.ACTION_DOWN, hotSpotX, hotSpotY, 0);
-                        mActiveView.dispatchTouchEvent(event);
-                        event.recycle();
-
-                        event = MotionEvent.obtain(downTime + delay, eventTime + delay,
-                                MotionEvent.ACTION_UP, hotSpotX, hotSpotY, 0);
-                        mActiveView.dispatchTouchEvent(event);
-                        event.recycle();
-
-                        mActiveView.setClickable(false);
-                    }
-
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                mOnItemClickListener.onItemClick(PeriodicTableView.this,
-                                        mActiveView, position);
-
-                                setEnabled(true);
-                            }
-                        }, 500);
-                    } else {
-                        mOnItemClickListener.onItemClick(this, mActiveView, position);
-
-                        setEnabled(true);
-                    }
-                }
-            }
-        }
-
-        return true;
     }
 
     @Override
@@ -291,7 +273,6 @@ public class PeriodicTableView extends ZoomableScrollView {
         mActiveView = mAdapter.getView(position, mActiveView, this);
 
         if (mActiveView != null) {
-            mActiveView.setClickable(false);
             mActiveView.setTag(R.id.active_view_position, position);
             mActiveView.setPivotX(0f);
             mActiveView.setPivotY(0f);
@@ -337,5 +318,39 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     public View getActiveView() {
         return mActiveView;
+    }
+
+    @Override
+    public boolean onDown(MotionEvent event) {
+        super.onDown(event);
+
+        return processClick(event, mOnDownConfirmed);
+    }
+
+    private boolean processClick(MotionEvent event, OnClickConfirmedListener listener) {
+        if (listener != null && mAdapter != null && !mAdapter.isEmpty()) {
+            final float rawX = event.getX() + getScrollX();
+            final float rawY = event.getY() + getScrollY();
+            final float tileSize = getScaledTileSize();
+            final int scaledWidth = getScaledWidth();
+            final int scaledHeight = getScaledHeight();
+            final float startY = (getHeight() - scaledHeight) / 2f;
+            final float startX = (getWidth() - scaledWidth) / 2f;
+
+            if (rawX >= startX && rawX <= startX + scaledWidth &&
+                    rawY >= startY && rawY <= startY + scaledHeight) {
+                final int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
+                        mAdapter.getGroupsCount()) + (int) ((rawX - startX) / (tileSize + DEFAULT_SPACING));
+
+                if (position >= 0 && position < mAdapter.getCount() &&
+                        mAdapter.isEnabled(position)) {
+                    listener.onClickConfirmed(position);
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

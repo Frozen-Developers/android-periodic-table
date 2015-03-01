@@ -415,13 +415,9 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     }
 
     @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        if (isEnabled()) {
-            if (mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
-                if (!mGestureDetector.onTouchEvent(event) && !mIsScrolling) {
-                    super.onTouchEvent(event);
-                }
-            }
+    public boolean dispatchTouchEvent(MotionEvent event) {
+        if (isEnabled() && mScaleDetector.onTouchEvent(event) && !mScaleDetector.isInProgress()) {
+            mGestureDetector.onTouchEvent(event);
         }
 
         switch (event.getActionMasked()) {
@@ -431,7 +427,12 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
                 break;
         }
 
-        return true;
+        return isEnabled() && super.dispatchTouchEvent(event);
+    }
+
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent event) {
+        return isEnabled() && (mScaleDetector.isInProgress() || mIsScrolling);
     }
 
     private float clamp(float min, float val, float max) {
@@ -470,5 +471,9 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
     @Override
     public boolean onDoubleTapEvent(MotionEvent e) {
         return false;
+    }
+
+    public boolean isScrolling() {
+        return mIsScrolling;
     }
 }

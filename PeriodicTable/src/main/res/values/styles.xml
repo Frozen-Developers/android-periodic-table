@@ -26,6 +26,7 @@
 
     <style name="ZoomableScrollView">
         <item name="android:scrollbars">horizontal|vertical</item>
+        <item name="android:clickable">true</item>
     </style>
 
     <style name="Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
