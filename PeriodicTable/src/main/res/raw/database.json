@@ -19542,7 +19542,7 @@
         "youngsModulus": "411 GPa"
     },
     {
-        "appearance": "Silvery-white",
+        "appearance": "Silvery-grayish",
         "atomicRadius": "137 pm",
         "bandGap": "",
         "block": "d",
@@ -20881,7 +20881,7 @@
         "youngsModulus": "528 GPa"
     },
     {
-        "appearance": "Grayish white",
+        "appearance": "Silvery white",
         "atomicRadius": "139 pm",
         "bandGap": "",
         "block": "d",
