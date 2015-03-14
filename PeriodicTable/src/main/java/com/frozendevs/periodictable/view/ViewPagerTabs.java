@@ -57,15 +57,9 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     final ColorStateList mTextColor;
     final int mTextSize;
     final int mTextBackground;
+    final boolean mStretchTabs;
     int mPrevSelected = -1;
     int mSidePadding;
-
-    // TODO: This should use <declare-styleable> in the future
-    private static final int[] ATTRS = new int[]{
-            android.R.attr.textSize,
-            android.R.attr.textStyle,
-            android.R.attr.textColor
-    };
 
     /**
      * Simulates actionbar tab behavior by showing a toast with the tab title when long clicked.
@@ -99,20 +93,23 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
     }
 
     public ViewPagerTabs(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        this(context, attrs, R.attr.viewPagerTabsStyle);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public ViewPagerTabs(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+
         setFillViewport(true);
 
         mSidePadding = getResources().getDimensionPixelOffset(R.dimen.tab_side_padding);
 
-        final TypedArray a = context.obtainStyledAttributes(attrs, ATTRS);
-        mTextSize = a.getDimensionPixelSize(0, 0);
-        mTextStyle = a.getInt(1, 0);
-        mTextColor = a.getColorStateList(2);
+        final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.ViewPagerTabs,
+                defStyle, 0);
+        mTextSize = a.getDimensionPixelSize(R.styleable.ViewPagerTabs_android_textSize, 0);
+        mTextStyle = a.getInt(R.styleable.ViewPagerTabs_android_textStyle, 0);
+        mTextColor = a.getColorStateList(R.styleable.ViewPagerTabs_android_textColor);
+        mStretchTabs = a.getBoolean(R.styleable.ViewPagerTabs_stretchTabs, false);
         a.recycle();
 
         Resources.Theme theme = getContext().getTheme();
@@ -186,7 +183,8 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
         textView.setText(textView.getText().toString().toUpperCase(
                 getContext().getResources().getConfiguration().locale));
         textView.setPadding(mSidePadding, 0, mSidePadding, 0);
-        mTabStrip.addView(textView, new LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1));
+        mTabStrip.addView(textView, new LinearLayout.LayoutParams(mStretchTabs ?
+                0 : LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, mStretchTabs ? 1 : 0));
         // Default to the first child being selected
         if (position == 0) {
             mPrevSelected = 0;
