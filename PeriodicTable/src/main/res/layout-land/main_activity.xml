@@ -15,6 +15,7 @@
 
         <com.frozendevs.periodictable.view.ViewPagerTabs
             android:id="@+id/pager_header"
+            style="@style/ViewPagerTabs.Stretched"
             android:layout_width="@dimen/view_pager_tabs_landscape_width"
             android:layout_height="match_parent"
             android:textSize="@dimen/tab_text_size_landscape" />

@@ -5,13 +5,12 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.TypedArray;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +26,7 @@ import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.PagesAdapter;
+import com.frozendevs.periodictable.view.ViewPagerTabs;
 
 public class PropertiesActivity extends ActionBarActivity {
 
@@ -72,6 +72,9 @@ public class PropertiesActivity extends ActionBarActivity {
 
         ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
                 getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
+        mWikipediaUrl = elementProperties.getWikipediaLink();
+
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(elementProperties.getName());
@@ -86,16 +89,8 @@ public class PropertiesActivity extends ActionBarActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(pagesAdapter);
 
-        TypedArray typedArray = getTheme().obtainStyledAttributes(R.style.Theme_Application,
-                new int[]{R.attr.colorAccent});
-
-        PagerTabStrip pagerTabStrip = (PagerTabStrip) findViewById(R.id.pager_title_strip);
-        pagerTabStrip.setTabIndicatorColorResource(typedArray.getResourceId(0,
-                R.color.accent_material_dark));
-
-        typedArray.recycle();
-
-        mWikipediaUrl = elementProperties.getWikipediaLink();
+        ViewPagerTabs viewPagerTabs = (ViewPagerTabs) findViewById(R.id.pager_header);
+        viewPagerTabs.setViewPager(viewPager);
     }
 
     @Override

@@ -13,7 +13,6 @@
         <activity
             android:name="com.frozendevs.periodictable.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.NoActionBar"
             android:windowSoftInputMode="adjustPan">
 
             <intent-filter>

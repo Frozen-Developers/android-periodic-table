@@ -121,6 +121,12 @@ public class ViewPagerTabs extends HorizontalScrollView implements ViewPager.OnP
         typedArray.recycle();
 
         mTabStrip = new ViewPagerTabStrip(context);
+        if (!mStretchTabs) {
+            int padding = getResources().getDimensionPixelOffset(
+                    R.dimen.view_pager_tabs_side_padding);
+
+            mTabStrip.setPadding(padding, 0, padding, 0);
+        }
         addView(mTabStrip, new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.MATCH_PARENT));
 

@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v4.view.ViewPager
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.PropertiesActivity" >
+    android:orientation="vertical"
+    tools:context=".activity.PropertiesActivity">
 
-    <android.support.v4.view.PagerTabStrip
-        android:id="@+id/pager_title_strip"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        android:textAppearance="@style/TextAppearance.PagerTabs" />
+        android:elevation="@dimen/action_bar_elevation"
+        android:orientation="vertical"
+        android:outlineProvider="bounds">
 
-</android.support.v4.view.ViewPager>
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+        <com.frozendevs.periodictable.view.ViewPagerTabs
+            android:id="@+id/pager_header"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

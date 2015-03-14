@@ -20,6 +20,7 @@
 
         <com.frozendevs.periodictable.view.ViewPagerTabs
             android:id="@+id/pager_header"
+            style="@style/ViewPagerTabs.Stretched"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize" />
 

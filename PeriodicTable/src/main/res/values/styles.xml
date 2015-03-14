@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Application.Base" parent="Theme.AppCompat">
-        <item name="toolbarStyle">@style/Widget.Toolbar</item>
+    <style name="Theme.Application.Base" parent="Theme.AppCompat.NoActionBar">
+    <item name="toolbarStyle">@style/Widget.Toolbar</item>
         <item name="viewPagerTabsStyle">@style/ViewPagerTabs</item>
         <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
     </style>
 
     <style name="Theme.Application" parent="Theme.Application.Base" />
 
-    <style name="Theme.NoActionBar.Base" parent="@style/Theme.Application">
-        <item name="windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
-    </style>
-
-    <style name="Theme.NoActionBar" parent="Theme.NoActionBar.Base" />
-
-    <style name="Theme.About.Base" parent="Theme.NoActionBar" />
+    <style name="Theme.About.Base" parent="Theme.Application" />
 
     <style name="Theme.About" parent="Theme.About.Base" />
-
-    <style name="TextAppearance.PagerTabs" parent="@android:style/TextAppearance.Small">
-        <item name="android:textStyle">bold</item>
-    </style>
 
     <style name="Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>
@@ -34,8 +23,10 @@
     <style name="ViewPagerTabs" parent="@style/Widget.AppCompat.ActionBar.TabText">
         <item name="android:textColor">@color/tab_text_color</item>
         <item name="android:textSize">@dimen/tab_text_size</item>
-        <item name="android:textStyle">bold</item>
-        <item name="stretchTabs">true</item>
+    </style>
+
+    <style name="ViewPagerTabs.Stretched" parent="@style/ViewPagerTabs">
+    <item name="stretchTabs">true</item>
     </style>
 
     <style name="ZoomableScrollView">
