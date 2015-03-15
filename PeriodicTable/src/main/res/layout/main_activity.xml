@@ -22,7 +22,7 @@
             android:id="@+id/pager_header"
             style="@style/ViewPagerTabs.Stretched"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
+            android:layout_height="@dimen/tab_height" />
 
     </LinearLayout>
 
