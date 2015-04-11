@@ -15,12 +15,13 @@ import com.frozendevs.periodictable.model.adapter.IsotopesAdapter;
 public class IsotopesFragment extends Fragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.isotopes_fragment, container, false);
 
-        ExpandableListView listView = (ExpandableListView)layout.findViewById(R.id.isotopes_list);
-        listView.setAdapter(new IsotopesAdapter(getActivity(),
-                ((ElementProperties)getArguments().get(PropertiesActivity.ARGUMENT_PROPERTIES)).getIsotopes()));
+        ExpandableListView listView = (ExpandableListView) layout.findViewById(R.id.isotopes_list);
+        listView.setAdapter(new IsotopesAdapter(getActivity(), ((ElementProperties) getArguments().
+                get(PropertiesActivity.ARGUMENT_PROPERTIES)).getIsotopes()));
 
         getActivity().registerForContextMenu(listView);
 
