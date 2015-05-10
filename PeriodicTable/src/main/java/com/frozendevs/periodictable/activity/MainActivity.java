@@ -3,7 +3,7 @@ package com.frozendevs.periodictable.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +14,7 @@ import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.model.adapter.PagesAdapter;
 import com.frozendevs.periodictable.view.ViewPagerTabs;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

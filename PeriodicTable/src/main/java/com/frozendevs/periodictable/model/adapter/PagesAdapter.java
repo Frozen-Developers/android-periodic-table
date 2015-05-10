@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class PagesAdapter extends FragmentPagerAdapter {
         }
     }
 
-    public PagesAdapter(ActionBarActivity activity) {
+    public PagesAdapter(AppCompatActivity activity) {
         super(activity.getSupportFragmentManager());
 
         mContext = activity;
