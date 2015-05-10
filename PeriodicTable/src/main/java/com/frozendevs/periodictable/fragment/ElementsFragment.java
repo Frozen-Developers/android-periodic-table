@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,6 +24,8 @@ public class ElementsFragment extends Fragment {
     private ElementsAdapter mAdapter;
     private ListView mListView;
     private View mEmptyView;
+
+    private String mSearchQuery;
 
     private class LoadData extends AsyncTask<Void, Void, ElementListItem[]> {
 
@@ -80,6 +83,8 @@ public class ElementsFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
+                mSearchQuery = query;
+
                 searchView.clearFocus();
 
                 return true;
@@ -87,6 +92,10 @@ public class ElementsFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
+                if (ViewCompat.isLaidOut(searchView)) {
+                    mSearchQuery = newText;
+                }
+
                 mAdapter.filter(newText);
 
                 return true;
@@ -97,16 +106,28 @@ public class ElementsFragment extends Fragment {
                 new MenuItemCompat.OnActionExpandListener() {
                     @Override
                     public boolean onMenuItemActionExpand(MenuItem item) {
+                        if (mSearchQuery == null) {
+                            mSearchQuery = "";
+                        }
+
                         return true;
                     }
 
                     @Override
                     public boolean onMenuItemActionCollapse(MenuItem item) {
+                        mSearchQuery = null;
+
                         mAdapter.clearFilter();
 
                         return true;
                     }
                 });
+
+        if (mSearchQuery != null) {
+            MenuItemCompat.expandActionView(searchItem);
+
+            searchView.setQuery(mSearchQuery, false);
+        }
 
         super.onCreateOptionsMenu(menu, inflater);
     }
