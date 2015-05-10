@@ -61,9 +61,6 @@ public class ElementsFragment extends Fragment {
         mEmptyView = rootView.findViewById(R.id.empty_elements_list);
 
         mListView = (ListView) rootView.findViewById(R.id.elements_list);
-        if (mAdapter.getItems() != null) {
-            mAdapter.clearFilter();
-        }
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(mAdapter);
         mListView.setEmptyView(!mAdapter.isEmpty() ? mEmptyView :
@@ -105,9 +102,7 @@ public class ElementsFragment extends Fragment {
 
                     @Override
                     public boolean onMenuItemActionCollapse(MenuItem item) {
-                        if (mAdapter.getItems() != null) {
-                            mAdapter.clearFilter();
-                        }
+                        mAdapter.clearFilter();
 
                         return true;
                     }

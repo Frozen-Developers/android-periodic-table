@@ -26,10 +26,6 @@ public abstract class DynamicAdapter<T> extends BaseAdapter {
     @Override
     public abstract View getView(int position, View convertView, ViewGroup parent);
 
-    public T[] getItems() {
-        return mItems;
-    }
-
     public void setItems(T[] items) {
         mItems = items.clone();
     }
