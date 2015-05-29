@@ -2,7 +2,6 @@
 <resources>
 
     <style name="Theme.Application.Base" parent="Theme.AppCompat.NoActionBar">
-        <item name="viewPagerTabsStyle">@style/ViewPagerTabs</item>
         <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
     </style>
 
@@ -21,15 +20,6 @@
         <item name="navigationIcon">?attr/homeAsUpIndicator</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-    </style>
-
-    <style name="ViewPagerTabs" parent="@style/Widget.AppCompat.ActionBar.TabText">
-        <item name="android:textColor">@color/tab_text_color</item>
-        <item name="android:textSize">@dimen/tab_text_size</item>
-    </style>
-
-    <style name="ViewPagerTabs.Stretched" parent="@style/ViewPagerTabs">
-        <item name="stretchTabs">true</item>
     </style>
 
     <style name="ZoomableScrollView">

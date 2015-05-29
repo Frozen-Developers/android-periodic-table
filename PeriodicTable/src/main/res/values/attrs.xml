@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="ViewPagerTabs">
-        <attr name="stretchTabs" format="boolean" />
-        <attr name="android:textColor" />
-        <attr name="android:textSize" />
-        <attr name="android:textStyle" />
-    </declare-styleable>
-
-    <attr name="viewPagerTabsStyle" type="reference" />
     <attr name="zoomableScrollViewStyle" type="reference" />
 
 </resources>

@@ -9,15 +9,7 @@
     <dimen name="listPreferredItemPaddingTop">8dp</dimen>
     <dimen name="listPreferredItemPaddingBottom">8dp</dimen>
 
-    <dimen name="tab_selected_underline_height">2dp</dimen>
-    <dimen name="tab_text_size">14sp</dimen>
-    <dimen name="tab_text_size_landscape">12sp</dimen>
-    <dimen name="tab_side_padding">12dp</dimen>
-    <dimen name="tab_height">48dp</dimen>
-
     <dimen name="view_pager_tabs_landscape_width">186dp</dimen>
     <dimen name="view_pager_tabs_side_padding">8dp</dimen>
-
-    <dimen name="action_bar_elevation">8dp</dimen>
 
 </resources>
