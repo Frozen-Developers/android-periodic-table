@@ -5,66 +5,96 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.model.ElementListItem;
+import com.frozendevs.periodictable.view.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
-        ListView.OnItemClickListener {
+public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHolder> {
 
-    private ElementListItem[] mAllItems;
-    private Context mContext;
+    private ElementListItem[] mItems;
+    private List<ElementListItem> mFilteredItems = new ArrayList<>();
 
-    private class ViewHolder {
-        TextView symbol, atomicNumber, name;
+    public class ViewHolder extends RecyclerView.ViewHolder implements
+            View.OnClickListener {
+        TextView mSymbolView, mNumberView, mNameView;
+        int mNumber;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            mSymbolView = (TextView) itemView.findViewById(R.id.element_symbol);
+            mNumberView = (TextView) itemView.findViewById(R.id.element_number);
+            mNameView = (TextView) itemView.findViewById(R.id.element_name);
+
+            itemView.setOnClickListener(this);
+        }
+
+        public void setName(String name) {
+            mNameView.setText(name);
+        }
+
+        public void setNumber(int number) {
+            mNumberView.setText(Integer.toString(mNumber = number));
+        }
+
+        public void setSymbol(String symbol) {
+            mSymbolView.setText(symbol);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), PropertiesActivity.class);
+            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, mNumber);
+
+            view.getContext().startActivity(intent);
+        }
     }
 
-    public ElementsAdapter(Context context) {
-        mContext = context;
+    public ElementsAdapter() {
+        setHasStableIds(true);
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        ElementListItem element = getItem(position);
-
-        if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.elements_list_item,
-                    parent, false);
-
-            ViewHolder viewHolder = new ViewHolder();
-
-            viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
-            viewHolder.atomicNumber = (TextView) convertView.findViewById(R.id.element_number);
-            viewHolder.name = (TextView) convertView.findViewById(R.id.element_name);
-
-            convertView.setTag(viewHolder);
-        }
-
-        ViewHolder viewHolder = (ViewHolder) convertView.getTag();
-
-        viewHolder.symbol.setText(element.getSymbol());
-        viewHolder.atomicNumber.setText(String.valueOf(element.getNumber()));
-        viewHolder.name.setText(element.getName());
-
-        return convertView;
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new ViewHolder(LayoutInflater.from(parent.getContext()).inflate(
+                R.layout.elements_list_item, parent, false));
     }
 
-    public void filter(String filter) {
-        if (mAllItems != null) {
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        ElementListItem item = mFilteredItems.get(position);
+
+        holder.setName(item.getName());
+        holder.setNumber(item.getNumber());
+        holder.setSymbol(item.getSymbol());
+    }
+
+    @Override
+    public int getItemCount() {
+        return mFilteredItems.size();
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return mFilteredItems.get(i).hashCode();
+    }
+
+    public void filter(Context context, String filter) {
+        if (mItems != null) {
             List<ElementListItem> filteredItems = new ArrayList<>();
 
-            Locale locale = mContext.getResources().getConfiguration().locale;
+            Locale locale = context.getResources().getConfiguration().locale;
 
             int nextPos = 0;
-            for (ElementListItem element : mAllItems) {
+            for (ElementListItem element : mItems) {
                 if (element.getSymbol().toLowerCase(locale).equalsIgnoreCase(filter)) {
                     filteredItems.add(0, element);
 
@@ -80,30 +110,23 @@ public class ElementsAdapter extends DynamicAdapter<ElementListItem> implements
                 }
             }
 
-            super.setItems(filteredItems.toArray(new ElementListItem[filteredItems.size()]));
+            mFilteredItems = new ArrayList<>(filteredItems);
 
             notifyDataSetChanged();
         }
     }
 
     public void clearFilter() {
-        super.setItems(mAllItems);
+        mFilteredItems = new ArrayList<>(Arrays.asList(mItems));
 
         notifyDataSetChanged();
     }
 
-    @Override
     public void setItems(ElementListItem[] items) {
-        mAllItems = items.clone();
+        mItems = items.clone();
 
-        super.setItems(items);
-    }
+        mFilteredItems = new ArrayList<>(Arrays.asList(mItems));
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(mContext, PropertiesActivity.class);
-        intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, getItem(position).getNumber());
-
-        mContext.startActivity(intent);
+        notifyDataSetChanged();
     }
 }

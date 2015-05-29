@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,17 +13,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
+import com.frozendevs.periodictable.view.RecyclerView;
+import com.frozendevs.periodictable.widget.DividerDecoration;
 
 public class ElementsFragment extends Fragment {
 
     private ElementsAdapter mAdapter;
-    private ListView mListView;
+    private RecyclerView mRecyclerView;
     private View mEmptyView;
 
     private String mSearchQuery;
@@ -40,7 +42,7 @@ public class ElementsFragment extends Fragment {
 
             mAdapter.notifyDataSetChanged();
 
-            mListView.setEmptyView(mEmptyView);
+            mRecyclerView.setEmptyView(mEmptyView);
         }
     }
 
@@ -51,7 +53,7 @@ public class ElementsFragment extends Fragment {
         setHasOptionsMenu(true);
         setRetainInstance(true);
 
-        mAdapter = new ElementsAdapter(getActivity());
+        mAdapter = new ElementsAdapter();
 
         new LoadData().execute();
     }
@@ -63,11 +65,12 @@ public class ElementsFragment extends Fragment {
 
         mEmptyView = rootView.findViewById(R.id.empty_elements_list);
 
-        mListView = (ListView) rootView.findViewById(R.id.elements_list);
-        mListView.setAdapter(mAdapter);
-        mListView.setOnItemClickListener(mAdapter);
-        mListView.setEmptyView(!mAdapter.isEmpty() ? mEmptyView :
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.elements_list);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.setEmptyView(mAdapter.getItemCount() > 0 ? mEmptyView :
                 rootView.findViewById(R.id.progress_bar));
+        mRecyclerView.addItemDecoration(new DividerDecoration(getActivity()));
 
         return rootView;
     }
@@ -96,7 +99,7 @@ public class ElementsFragment extends Fragment {
                     mSearchQuery = newText;
                 }
 
-                mAdapter.filter(newText);
+                mAdapter.filter(getActivity(), newText);
 
                 return true;
             }
