@@ -22187,7 +22187,7 @@
                 "abundance": "",
                 "decayModes": "",
                 "halfLife": "24 µs",
-                "spin": "",
+                "spin": "13/2+",
                 "symbol": "²⁰³ᵐHg"
             },
             {
@@ -26500,7 +26500,7 @@
             {
                 "abundance": "",
                 "decayModes": "SF → Various",
-                "halfLife": "1.8 min",
+                "halfLife": "1.0 min",
                 "spin": "",
                 "symbol": "²⁶⁵Rf"
             },
@@ -26835,7 +26835,7 @@
             {
                 "abundance": "",
                 "decayModes": "α → ²⁶⁵Rf",
-                "halfLife": "2 min",
+                "halfLife": "3.1 min",
                 "spin": "",
                 "symbol": "²⁶⁹Sg"
             },
@@ -27121,7 +27121,7 @@
             {
                 "abundance": "",
                 "decayModes": "α → ²⁶⁹Sg",
-                "halfLife": "240 ms",
+                "halfLife": "760 ms",
                 "spin": "3/2+",
                 "symbol": "²⁷³Hs"
             },
@@ -27372,7 +27372,7 @@
             {
                 "abundance": "",
                 "decayModes": "α → ²⁷³Hs",
-                "halfLife": "5.5 ms",
+                "halfLife": "4.1 ms",
                 "spin": "11/2+",
                 "symbol": "²⁷⁷Ds"
             },
@@ -27560,7 +27560,7 @@
             {
                 "abundance": "",
                 "decayModes": "α → ²⁷⁷Ds",
-                "halfLife": "0.1 s",
+                "halfLife": "130 ms",
                 "spin": "3/2+",
                 "symbol": "²⁸¹Cn"
             },
@@ -27755,14 +27755,14 @@
             {
                 "abundance": "",
                 "decayModes": "SF → Variable",
-                "halfLife": "0.365 ms",
+                "halfLife": "2.5 ms",
                 "spin": "0+",
                 "symbol": "²⁸⁴Fl"
             },
             {
                 "abundance": "",
                 "decayModes": "α → ²⁸¹Cn",
-                "halfLife": "125 ms",
+                "halfLife": "150 ms",
                 "spin": "3/2+",
                 "symbol": "²⁸⁵Fl"
             },
