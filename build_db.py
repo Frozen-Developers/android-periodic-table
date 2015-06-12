@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from lxml import etree
-from lxml import html
 import re
 import signal
 import sys
 import json
 from html.parser import HTMLParser
-from bs4 import BeautifulSoup, Tag
+from bs4 import BeautifulSoup
 from collections import OrderedDict
+from xml.etree import ElementTree
+from urllib.request import urlopen
 
 OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
-URL_PREFIX = 'http://en.wikipedia.org'
+URL_PREFIX = 'https://en.wikipedia.org'
 
 def capitalize(string):
     return re.sub(r'^[a-z]', lambda x: x.group().upper(), string, flags=re.M)
@@ -60,149 +60,156 @@ class Article:
     def __init__(self, url):
         print('Parsing properties from ' + url)
 
-        content = HTMLParser().unescape(etree.parse(url).xpath("//*[local-name()='text']/text()")[0])
-        content = replace_chars(content, '\u00a0\u2002', '  ')
+        with urlopen(url) as _file:
+            namespaces = {'export': 'http://www.mediawiki.org/xml/export-0.10/'}
+            content = ElementTree.parse(_file).find('.//export:text', namespaces).text
+            content = replace_chars(HTMLParser().unescape(content), '\u00a0\u2002', '  ')
 
-        # Strip unwanted data
+            # Strip unwanted data
 
-        strip = [ r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
-            r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)', r'\s*\(extrapolated\)',
-            r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
-            r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}', r'{{citation needed\|[^}]*}}',
-            r'{{dubious\|[^}]*}}', r'{{{note\|[^}]*}}}', r'{{periodic table legend\|[^}]*}}',
-            r'{{anchor\|[^}]*}}', r'{{cn\|[^}]*}}' ]
-        content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.IGNORECASE)
+            strip = [r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
+                     r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)',
+                     r'\s*\(extrapolated\)',
+                     r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
+                     r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}',
+                     r'{{citation needed\|[^}]*}}',
+                     r'{{dubious\|[^}]*}}', r'{{{note\|[^}]*}}}',
+                     r'{{periodic table legend\|[^}]*}}',
+                     r'{{anchor\|[^}]*}}', r'{{cn\|[^}]*}}']
+            content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.I)
 
-        replace = [
-            [ r'<br[ /]*>', '\n' ],
-            [ r'\[\[room temperature\|r\.t\.\]\]', 'room temperature' ],
-            [ r'\[\[([^\[\]\|]*)\|([^\[\]]*)\]\]', r'\2' ],
-            [ r'\[\[([^\[\]]*)\]\]', r'\1' ],
-            [ r'{{su\|p=([\d\.\-–−+]*)\|b=([\d\.\-–−+]*)}}', r' (\1\2)' ],
-            [ r'{{nowrap\|([^{}]*)}}', r'\1' ],
-            [ r'no data', '-' ],
-            [ r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1' ],
-            [ r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2' ],
-            [ r'\[[^ \]\(\)<>]* ([^\]]*)\]', r'\1' ],
-            [ r'(at room temperature)', '' ],
-            [ r'at melting point', '' ],
-            [ r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
-            [ r'{{smallsup\|([-–−\dabm]*)}}', r'<sup>\1</sup>' ],
-            [ r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>' ],
-            [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
-            [ r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
-            [ r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
-            [ r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
-            [ r'{{val\|fmt=commas\|([\d\.]*)\|([^}]*)}}', r'\1' ],
-            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
-            [ r'{{val\|([\d\.\-]*)[^\|]*\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}', r'\1×10<sup>\2</sup> \3' ],
-            [ r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2' ],
-            [ r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2' ],
-            [ r'{{val\|([\d\.]*)\|([^}]*)}}', r'\1' ],
-            [ r'{{val\|([\d\.]*)}}', r'\1' ],
-            [ r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2' ],
-            [ r'{{e\|([\d\.\-–−]*)}}', r'×10<sup>\1</sup>' ],
-            [ r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)}}',
-                r'\1;\2;\3;\4;\5;\6;\7' ],
-            [ r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|link=([^\|}]*)}}',
-                r'\1;\2;\3;\4;\5;\6;\7;\8' ],
-            [ r'{{element cell-asterisk\|(\d+)\|?[^}]*}}',
-                lambda x: '| ' + ''.join([ '*' for i in range(int(x.group(1))) ]) ],
-            [ r'\|\|', '\n|' ],
-            [ r'!!', '\n!' ]
-        ]
-        for item in replace:
-            content = re.sub(item[0], item[1], content, flags=re.IGNORECASE)
+            for item in [
+                [r'<br[ /]*>', '\n'],
+                [r'\[\[room temperature\|r\.t\.\]\]', 'room temperature'],
+                [r'\[\[([^\[\]\|]*)\|([^\[\]]*)\]\]', r'\2'],
+                [r'\[\[([^\[\]]*)\]\]', r'\1'],
+                [r'{{su\|p=([\d\.\-–−+]*)\|b=([\d\.\-–−+]*)}}', r' (\1\2)'],
+                [r'{{nowrap\|([^{}]*)}}', r'\1'],
+                [r'no data', '-'],
+                [r'{{sort\|([^{}]*)\|([^{}]*)}}', r'\1'],
+                [r'{{abbr\|([^{}]*)\|([^{}]*)}}', r'\2'],
+                [r'\[[^ \]\(\)<>]* ([^\]]*)\]', r'\1'],
+                [r'(at room temperature)', ''],
+                [r'at melting point', ''],
+                [r'{{sup\|([-–−\dabm]*)}}', r'<sup>\1</sup>'],
+                [r'{{smallsup\|([-–−\dabm]*)}}', r'<sup>\1</sup>'],
+                [r'{{sub\|([-–−\d]*)}}', r'<sub>\1</sub>'],
+                [r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}',
+                 r'<sup>\2\3</sup>\1'],
+                [r'{{simplenuclide\d*\|link=yes\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
+                [r'{{simplenuclide\d*\|([^\|}]*)\|([^\|}]*)\|([^}]*)}}', r'<sup>\2\3</sup>\1'],
+                [r'{{simplenuclide\d*\|([^\|}]*)\|([^}]*)}}', r'<sup>\2</sup>\1'],
+                [r'{{val\|fmt=commas\|([\d\.]*)\|([^}]*)}}', r'\1'],
+                [r'{{val\|([\d\.\-]*)\|\(\d*\)\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}',
+                 r'\1×10<sup>\2</sup> \3'],
+                [r'{{val\|([\d\.\-]*)[^\|]*\|e=([\d\.\-–−]*)\|u[l]?=([^}]*)}}',
+                 r'\1×10<sup>\2</sup> \3'],
+                [r'{{val\|([\d\.\-]*)\|\(\d*\)\|u[l]?=([^}]*)}}', r'\1 \2'],
+                [r'{{val\|([\d\.\-]*)\|u[l]?=([^}]*)}}', r'\1 \2'],
+                [r'{{val\|([\d\.]*)\|([^}]*)}}', r'\1'],
+                [r'{{val\|([\d\.]*)}}', r'\1'],
+                [r'{{frac\|(\d+)\|(\d+)}}', r'\1/\2'],
+                [r'{{e\|([\d\.\-–−]*)}}', r'×10<sup>\1</sup>'],
+                [r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|'
+                 r'([^\|}]*)\|([^\|}]*)}}', r'\1;\2;\3;\4;\5;\6;\7'],
+                [r'{{element cell-named\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|([^\|}]*)\|'
+                 r'([^\|}]*)\|([^\|}]*)\|link=([^\|}]*)}}', r'\1;\2;\3;\4;\5;\6;\7;\8'],
+                [r'{{element cell-asterisk\|(\d+)\|?[^}]*}}',
+                 lambda x: '| ' + ''.join(['*' for i in range(int(x.group(1)))])],
+                [r'\|\|', '\n|'],
+                [r'!!', '\n!']
+            ]:
+                content = re.sub(item[0], item[1], content, flags=re.I)
 
-        # Parse properties
+            # Parse properties
 
-        self.properties = OrderedDict()
-        properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content,
-            flags=re.S).split('\n|')
-        for prop in properties:
-            nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
-            if len(nameValue) > 1:
-                self.properties[nameValue[0].lower()] = self.parseProperty(nameValue[1])
+            self.properties = OrderedDict()
+            properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content,
+                flags=re.S).split('\n|')
+            for prop in properties:
+                nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
+                if len(nameValue) > 1:
+                    self.properties[nameValue[0].lower()] = self.parseProperty(nameValue[1])
 
-        # Parse tables
+            # Parse tables
 
-        self.tables = OrderedDict()
-        for match in re.finditer(r'=?([^\n]*)?=?\s*{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
-            content, flags=re.S):
-            name = match.group(1).strip(' =').lower() if match.group(1) != '' else 'table ' + \
-                str(len(self.tables.keys()) + 1)
-            rows = list(filter(len, [ row.strip(' \n\t!\'') for row in re.split(r'\n\|\-[^\n]*',
-                match.group(3), flags=re.S) ]))
-            headers = []
-            for row_i, row in enumerate(rows):
-                delimiter = '\n!' if '\n!' in row else '\n|'
-                rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\''),
-                    'cell' if '\n|' in row else 'header') for value in row.split(delimiter) ]
-            if len(rows) > 0:
-                rowHeight = 0
-                for row in rows:
-                    for cell in row:
-                        if cell.getCellType() != 'header':
-                            break
-                    else:
-                        rowHeight += 1
-                        continue
-                    break
-                cellOffset = 0
-                for cell in rows[0]:
-                    rowSpan = cell.getIntProperty('rowspan')
-                    colspan = cell.getIntProperty('colspan')
-                    if rowHeight > rowSpan and colspan > 1:
-                        for cellNo in range(colspan):
-                            if cellOffset < len(rows[rowSpan]):
-                                headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
-                                    rows[rowSpan][cellOffset].getProperty('value').lower())))
-                                cellOffset += 1
-                            else:
+            self.tables = OrderedDict()
+            for match in re.finditer(r'=?([^\n]*)?=?\s*{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
+                content, flags=re.S):
+                name = match.group(1).strip(' =').lower() if match.group(1) != '' else 'table ' + \
+                    str(len(self.tables.keys()) + 1)
+                rows = list(filter(len, [ row.strip(' \n\t!\'') for row in re.split(r'\n\|\-[^\n]*',
+                    match.group(3), flags=re.S) ]))
+                headers = []
+                for row_i, row in enumerate(rows):
+                    delimiter = '\n!' if '\n!' in row else '\n|'
+                    rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\''),
+                        'cell' if '\n|' in row else 'header') for value in row.split(delimiter) ]
+                if len(rows) > 0:
+                    rowHeight = 0
+                    for row in rows:
+                        for cell in row:
+                            if cell.getCellType() != 'header':
                                 break
-                    else:
-                        headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
-                            cell.getProperty('value').lower())))
-                rows = list(filter(len, rows[rowHeight:]))
-            self.tables[name] = []
-            nextRows = []
-            for rowNo in range(len(rows)):
-                if len(rows[rowNo]) > 0:
-                    rowHeight = rows[rowNo][0].getIntProperty('rowspan')
-                    if len(nextRows) == 0:
-                        cleanRow = OrderedDict.fromkeys(headers, None)
-                    else:
-                        cleanRow = nextRows.pop(0)
+                        else:
+                            rowHeight += 1
+                            continue
+                        break
                     cellOffset = 0
-                    for headerNo, header in enumerate(cleanRow.keys()):
-                        if cleanRow[header] is None:
-                            if cellOffset < len(rows[rowNo]):
-                                cell = rows[rowNo][cellOffset]
-                                cleanRow[header] = self.parseProperty(cell.getProperty('value'))
-                                colspan = cell.getIntProperty('colspan')
-                                for i in range(1, colspan):
-                                   cleanRow[headers[headerNo + i]] = ''
-                                cellOffset += 1
-                                rowSpan = cell.getIntProperty('rowspan')
-                                rowOffset = 0
-                                while rowSpan < rowHeight:
-                                    rowOffset += 1
-                                    cell = rows[rowNo + rowOffset].pop(0)
-                                    cleanRow[header] += '\n' + \
-                                        self.parseProperty(cell.getProperty('value'))
-                                    rowSpan += cell.getIntProperty('rowspan')
-                                rowOffset = 1
-                                while rowSpan > rowHeight:
-                                    if len(nextRows) < rowOffset:
-                                        nextRow = OrderedDict.fromkeys(headers, None)
-                                        nextRows.append(nextRow)
-                                    nextRows[rowOffset - 1][header] = self.parseProperty(
-                                        cell.getProperty('value'))
-                                    rowSpan -= cell.getIntProperty('rowspan')
-                                    rowOffset += 1
-                            else:
-                                cleanRow[header] = ''
-                    self.tables[name].append(cleanRow)
+                    for cell in rows[0]:
+                        rowSpan = cell.getIntProperty('rowspan')
+                        colspan = cell.getIntProperty('colspan')
+                        if rowHeight > rowSpan and colspan > 1:
+                            for cellNo in range(colspan):
+                                if cellOffset < len(rows[rowSpan]):
+                                    headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
+                                        rows[rowSpan][cellOffset].getProperty('value').lower())))
+                                    cellOffset += 1
+                                else:
+                                    break
+                        else:
+                            headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
+                                cell.getProperty('value').lower())))
+                    rows = list(filter(len, rows[rowHeight:]))
+                self.tables[name] = []
+                nextRows = []
+                for rowNo in range(len(rows)):
+                    if len(rows[rowNo]) > 0:
+                        rowHeight = rows[rowNo][0].getIntProperty('rowspan')
+                        if len(nextRows) == 0:
+                            cleanRow = OrderedDict.fromkeys(headers, None)
+                        else:
+                            cleanRow = nextRows.pop(0)
+                        cellOffset = 0
+                        for headerNo, header in enumerate(cleanRow.keys()):
+                            if cleanRow[header] is None:
+                                if cellOffset < len(rows[rowNo]):
+                                    cell = rows[rowNo][cellOffset]
+                                    cleanRow[header] = self.parseProperty(cell.getProperty('value'))
+                                    colspan = cell.getIntProperty('colspan')
+                                    for i in range(1, colspan):
+                                       cleanRow[headers[headerNo + i]] = ''
+                                    cellOffset += 1
+                                    rowSpan = cell.getIntProperty('rowspan')
+                                    rowOffset = 0
+                                    while rowSpan < rowHeight:
+                                        rowOffset += 1
+                                        cell = rows[rowNo + rowOffset].pop(0)
+                                        cleanRow[header] += '\n' + \
+                                            self.parseProperty(cell.getProperty('value'))
+                                        rowSpan += cell.getIntProperty('rowspan')
+                                    rowOffset = 1
+                                    while rowSpan > rowHeight:
+                                        if len(nextRows) < rowOffset:
+                                            nextRow = OrderedDict.fromkeys(headers, None)
+                                            nextRows.append(nextRow)
+                                        nextRows[rowOffset - 1][header] = self.parseProperty(
+                                            cell.getProperty('value'))
+                                        rowSpan -= cell.getIntProperty('rowspan')
+                                        rowOffset += 1
+                                else:
+                                    cleanRow[header] = ''
+                        self.tables[name].append(cleanRow)
 
         # Parse units
 
