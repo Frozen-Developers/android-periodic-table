@@ -6,7 +6,6 @@ import signal
 import sys
 import json
 from html.parser import HTMLParser
-from bs4 import BeautifulSoup
 from collections import OrderedDict
 from xml.etree import ElementTree
 from urllib.request import urlopen
@@ -244,15 +243,6 @@ class Article:
                 if self.comments[key] == '':
                     self.comments[key] = self.parseProperty(match.group(2).strip())
 
-    def removeHtmlTags(self, string, tags=[]):
-        if len(tags) > 0:
-            soup = BeautifulSoup(string)
-            for tag in tags:
-                for occurence in soup.find_all(tag):
-                    occurence.replaceWith('')
-            return soup.get_text()
-        return re.sub(r'<[^<]+?>', '', string, flags=re.S)
-
     def replaceWithSuperscript(self, string):
         return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
 
@@ -265,7 +255,7 @@ class Article:
                 value = value.replace(match, self.replaceWithSuperscript(match))
             for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
                 value = value.replace(match, self.replaceWithSubscript(match))
-            return self.removeHtmlTags(value)
+            return re.sub(r'<[^<]+?>', '', value, flags=re.S)
         return ''
 
     def getComment(self, name):
