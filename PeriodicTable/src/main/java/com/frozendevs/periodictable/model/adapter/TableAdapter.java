@@ -13,6 +13,9 @@ import android.widget.TextView;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.TableItem;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class TableAdapter extends DynamicAdapter<TableItem> {
 
     private static enum ViewType {
@@ -142,12 +145,20 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
             convertView.setTag(viewHolder);
         }
 
+        String atomicWeight = item.getStandardAtomicWeight();
+
+        try {
+            BigDecimal bigDecimal = new BigDecimal(atomicWeight);
+            atomicWeight = bigDecimal.setScale(3, RoundingMode.HALF_UP).toString();
+        } catch (NumberFormatException ignored) {
+        }
+
         viewHolder.background.setColor(getBackgroundColor(item));
         viewHolder.symbol.setText(item.getSymbol());
         viewHolder.number.setText(String.valueOf(item.getNumber()));
         viewHolder.name.setTextSize(12f);
         viewHolder.name.setText(item.getName());
-        viewHolder.weight.setText(item.getStandardAtomicWeight());
+        viewHolder.weight.setText(atomicWeight);
 
         return convertView;
     }
