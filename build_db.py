@@ -306,6 +306,11 @@ class Article:
             return self.units[name]
         return ''
 
+    def join_properties(self, properties, delimiter=' / '):
+        return capitalize(delimiter.join(filter(len, [
+            self.getProperty(property) for property in properties
+            ])))
+
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
@@ -355,20 +360,25 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
         ')', ':').replace('(', '').replace(article.getUnit('density gpcm3bp') + ': ',
         article.getUnit('density gpcm3bp') + '\n')).splitlines()))
 
-    meltingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('melting point k'),
-        article.getProperty('melting point c'), article.getProperty('melting point f') ])))
+    meltingPoint = article.join_properties([
+        'melting point k', 'melting point c', 'melting point f'
+    ])
 
-    sublimationPoint = capitalize(' / '.join(filter(len, [ article.getProperty('sublimation point k'),
-        article.getProperty('sublimation point c'), article.getProperty('sublimation point f') ])))
+    sublimationPoint = article.join_properties([
+        'sublimation point k', 'sublimation point c', 'sublimation point f'
+    ])
 
-    boilingPoint = capitalize(' / '.join(filter(len, [ article.getProperty('boiling point k'),
-        article.getProperty('boiling point c'), article.getProperty('boiling point f') ])))
+    boilingPoint = article.join_properties([
+        'boiling point k', 'boiling point c', 'boiling point f'
+    ])
 
-    triplePoint = capitalize(', '.join(filter(len, [ article.getProperty('triple point k'),
-        article.getProperty('triple point kpa') ])))
+    triplePoint = article.join_properties([
+        'triple point k', 'triple point kpa'
+    ], ', ')
 
-    criticalPoint = capitalize(', '.join(filter(len, [ article.getProperty('critical point k'),
-        article.getProperty('critical point mpa') ])))
+    criticalPoint = article.join_properties([
+        'critical point k', 'critical point mpa'
+    ], ', ')
 
     heatOfFusion = capitalize(replace_chars(article.getProperty('heat fusion'), ')', ':') \
         .replace('(', ''))
