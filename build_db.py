@@ -279,7 +279,8 @@ class Article:
         return ''
 
     def getProperty(self, name, default='', prepend='', comments=True, delimiter='\n',
-                    unitPrefix='', append='', units=True, comment_as_title=False, capitalize=False):
+                    unitPrefix='', append='', units=True, comment_as_title=False, capitalize=False,
+                    sanitize=None):
         result = []
         for key, value in self.properties.items():
             fullName = re.match(r'^' + name + r'\s?\d*$', key)
@@ -300,6 +301,8 @@ class Article:
             result = re.sub(r'([⁰¹²³⁴⁵⁶⁷⁸⁹]+): ', r'\1\n', result)
         if capitalize:
             result = capitalize_multiline(result)
+        if sanitize:
+            result = sanitize(result)
         return result
 
     def get_property_by_priority(self, properties):
@@ -339,165 +342,121 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, category):
-    # Properties
+def parse(article, article_url, ionization_energies, element_names, category):
+    properties = {'wikipediaLink': article_url, 'category': category,
+                  'molarIonizationEnergies': '\n'.join(
+                      [key + ': ' + value + ' ' + article.getUnit('ionization energy 1') for
+                       key, value in ionization_energies[article.getProperty('number')].items() if
+                       value != ''])
+                  }
 
-    number = article.getProperty('number')
+    e_r_prefix = article.getProperty(
+        'electrical resistivity unit prefix', comments=False, units=False) + article.getUnit(
+        'electrical resistivity unit prefix')
 
-    symbol = article.getProperty('symbol')
-
-    name = article.getProperty('name').capitalize()
-
-    weight = replace_chars(re.sub(r'([^\s]+)\s*\([^\)]*\)', r'\1', article.getProperty(
-        'atomic mass', comments=False)).splitlines()[0], '()', '[]')
-    try:
-        weight = format(float(weight), '.3f').rstrip('.0')
-    except ValueError:
-        pass
-
-    group = article.getProperty('group', '3')
-
-    period = article.getProperty('period')
-
-    block = article.getProperty('block', units=False)
-
-    configuration = re.sub(r'or\n', 'or', article.getProperty('electron configuration', comments=False))
-
-    shells = article.getProperty('electrons per shell', comments=False)
-
-    appearance = re.sub(r'\s*\([^)]*\)', '', article.getProperty('appearance', capitalize=True).
-                        replace(';', ',')).strip('.')
-
-    phase = article.getProperty('phase', comments=False).capitalize()
-
-    density = article.get_property_by_priority([
-        'density gpcm3nrt',
-        {
-            'name': 'density gplstp',
-            'units': False,
-            'append': '×10⁻³ ' + article.getUnit('density gpcm3nrt'),
-        }])
-
-    densityMP = article.get_property_by_priority(['density gpcm3mp'])
-
-    densityBP = article.get_property_by_priority(['density gpcm3bp'])
-
-    meltingPoint = article.join_properties([
-        'melting point k', 'melting point c', 'melting point f'
-    ])
-
-    sublimationPoint = article.join_properties([
-        'sublimation point k', 'sublimation point c', 'sublimation point f'
-    ])
-
-    boilingPoint = article.join_properties([
-        'boiling point k', 'boiling point c', 'boiling point f'
-    ])
-
-    triplePoint = article.join_properties([
-        'triple point k', 'triple point kpa'
-    ], ', ')
-
-    criticalPoint = article.join_properties([
-        'critical point k', 'critical point mpa'
-    ], ', ')
-
-    heatOfFusion = article.getProperty('heat fusion', comment_as_title=True, capitalize=True)
-
-    heatOfVaporization = article.getProperty('heat vaporization', comment_as_title=True,
-                                             capitalize=True)
-
-    molarHeatCapacity = article.getProperty('heat capacity', comment_as_title=True,
-                                            capitalize=True)
-
-    oxidationStates = re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '',
-        article.getProperty('oxidation states', comments=False))
-
-    electronegativity = article.getProperty('electronegativity')
-
-    molarIonizationEnergies = '\n'.join([key + ': ' + value + ' ' + article.getUnit('ionization energy 1')
-        for key, value in molarIonizationEnergiesDict[str(number)].items() if value != ''])
-
-    atomicRadius = article.getProperty('atomic radius', comments=False)
-
-    covalentRadius = article.getProperty('covalent radius')
-
-    vanDerWaalsRadius = article.getProperty('van der waals radius')
-
-    crystalStructure = article.getProperty('crystal structure', capitalize=True).replace('A=', 'a=')
-
-    magneticOrdering = re.sub(r'\s*\([^)]*\)', '', article.getProperty('magnetic ordering',
-                                                                       comments=False,
-                                                                       capitalize=True))
-
-    thermalConductivity = article.getProperty('thermal conductivity', comment_as_title=True,
-                                              capitalize=True)
-
-    thermalExpansion = article.get_property_by_priority([
-        'thermal expansion at 25', 'thermal expansion'])
-
-    thermalDiffusivity = article.getProperty('thermal diffusivity', comment_as_title=True,
-                                             capitalize=True)
-
-    speedOfSound = article.get_property_by_priority(['speed of sound', {
-        'name': 'speed of sound rod at 20',
-        'comments': False
-    }, 'speed of sound rod at r.t.'])
-
-    youngsModulus = article.getProperty('young\'s modulus', capitalize=True)
-
-    shearModulus = article.getProperty('shear modulus', capitalize=True)
-
-    bulkModulus = article.getProperty('bulk modulus', capitalize=True)
-
-    mohsHardness = article.getProperty('mohs hardness', capitalize=True)
-
-    brinellHardness = article.getProperty('brinell hardness', capitalize=True).replace('HB=: ', '')
-
-    prefix = article.getProperty('electrical resistivity unit prefix', comments=False,
-        units=False) + article.getUnit('electrical resistivity unit prefix')
-    electricalResistivity = article.get_property_by_priority([
-        {'name': 'electrical resistivity', 'unitPrefix': prefix},
-        {'name': 'electrical resistivity at 0', 'prepend': article.getComment(
-            'electrical resistivity unit prefix'), 'unitPrefix': prefix},
-        {'name': 'electrical resistivity at 20', 'unitPrefix': prefix}
-    ])
-
-    bandGap = article.getProperty('band gap', capitalize=True)
-
-    curiePoint = article.getProperty('curie point k', capitalize=True)
-
-    tensileStrength = article.getProperty('tensile strength')
-
-    poissonRatio = article.getProperty('poisson ratio', capitalize=True)
-
-    vickersHardness = article.getProperty('vickers hardness', capitalize=True)
-
-    casNumber = article.getProperty('cas number', capitalize=True)
+    for property in [
+        ['number', {'name': 'number'}],
+        ['symbol', {'name': 'symbol'}],
+        ['name', {'name': 'name', 'capitalize': True}],
+        ['group', {'name': 'group', 'default': '3'}],
+        ['period', {'name': 'period'}],
+        ['block', {'name': 'block', 'units': False}],
+        ['electronsPerShell', {'name': 'electrons per shell', 'comments': False}],
+        ['phase', {'name': 'phase', 'comments': False, 'capitalize': True}],
+        ['density', [{'name': 'density gpcm3nrt'},
+                     {'name': 'density gplstp', 'units': False,
+                      'append': '×10⁻³ ' + article.getUnit('density gpcm3nrt')}]],
+        ['liquidDensityAtMeltingPoint', ['density gpcm3mp']],
+        ['liquidDensityAtBoilingPoint', ['density gpcm3bp']],
+        ['meltingPoint', {'properties': ['melting point k', 'melting point c', 'melting point f']}],
+        ['sublimationPoint', {'properties': ['sublimation point k', 'sublimation point c',
+                                             'sublimation point f']}],
+        ['boilingPoint', {'properties': ['boiling point k', 'boiling point c', 'boiling point f']}],
+        ['triplePoint', {'properties': ['triple point k', 'triple point kpa'], 'delimiter': ', '}],
+        ['criticalPoint', {'properties': ['critical point k', 'critical point mpa'],
+                           'delimiter': ', '}],
+        ['heatOfFusion', {'name': 'heat fusion', 'comment_as_title': True, 'capitalize': True}],
+        ['heatOfVaporization', {'name': 'heat vaporization', 'comment_as_title': True,
+                                'capitalize': True}],
+        ['molarHeatCapacity', {'name': 'heat capacity', 'comment_as_title': True,
+                               'capitalize': True}],
+        ['electronegativity', {'name': 'electronegativity'}],
+        ['atomicRadius', {'name': 'atomic radius', 'comments': False}],
+        ['covalentRadius', {'name': 'covalent radius'}],
+        ['vanDerWaalsRadius', {'name': 'van der waals radius'}],
+        ['thermalConductivity', {'name': 'thermal conductivity', 'comment_as_title': True,
+                                 'capitalize': True}],
+        ['thermalExpansion', ['thermal expansion at 25', 'thermal expansion']],
+        ['thermalDiffusivity', {'name': 'thermal diffusivity', 'comment_as_title': True,
+                                'capitalize': True}],
+        ['speedOfSound', ['speed of sound', {'name': 'speed of sound rod at 20', 'comments': False},
+                          'speed of sound rod at r.t.']],
+        ['youngsModulus', {'name': 'young\'s modulus', 'capitalize': True}],
+        ['shearModulus', {'name': 'shear modulus', 'capitalize': True}],
+        ['bulkModulus', {'name': 'bulk modulus', 'capitalize': True}],
+        ['mohsHardness', {'name': 'mohs hardness', 'capitalize': True}],
+        ['bandGap', {'name': 'band gap', 'capitalize': True}],
+        ['curiePoint', {'name': 'curie point k', 'capitalize': True}],
+        ['tensileStrength', {'name': 'tensile strength'}],
+        ['poissonRatio', {'name': 'poisson ratio', 'capitalize': True}],
+        ['vickersHardness', {'name': 'vickers hardness', 'capitalize': True}],
+        ['casNumber', {'name': 'cas number', 'capitalize': True}],
+        ['electronConfiguration', {'name': 'electron configuration', 'comments': False,
+                                   'sanitize': lambda x: re.sub(r'or\n', 'or', x)}],
+        ['appearance', {'name': 'appearance', 'capitalize': True,
+                        'sanitize': lambda x: re.sub(r'\s*\([^)]*\)', '', x.replace(';', ',')).
+                                strip('.')}],
+        ['oxidationStates', {'name': 'oxidation states', 'comments': False,
+                             'sanitize': lambda x: re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', x)}],
+        ['crystalStructure', {'name': 'crystal structure', 'capitalize': True,
+                              'sanitize': lambda x: x.replace('A=', 'a=')}],
+        ['magneticOrdering', {'name': 'magnetic ordering', 'capitalize': True, 'comments': False,
+                              'sanitize': lambda x: re.sub(r'\s*\([^)]*\)', '', x)}],
+        ['brinellHardness', {'name': 'brinell hardness', 'capitalize': True,
+                             'sanitize': lambda x: x.replace('HB=: ', '')}],
+        ['weight', {'name': 'atomic mass', 'comments': False, 'sanitize': lambda x: replace_chars(
+            re.sub(r'([^\s]+)\s*\([^\)]*\)', r'\1', x).splitlines()[0], '()', '[]').rstrip('.0')}],
+        ['electricalResistivity', [
+            {'name': 'electrical resistivity', 'unitPrefix': e_r_prefix},
+            {'name': 'electrical resistivity at 0', 'prepend': article.getComment(
+                'electrical resistivity unit prefix'), 'unitPrefix': e_r_prefix},
+            {'name': 'electrical resistivity at 20', 'unitPrefix': e_r_prefix}]]
+    ]:
+        if isinstance(property[1], dict):
+            if 'name' in property[1]:
+                properties[property[0]] = article.getProperty(**property[1])
+            elif 'properties' in property[1]:
+                properties[property[0]] = article.join_properties(**property[1])
+        elif isinstance(property[1], list):
+            properties[property[0]] = article.get_property_by_priority(property[1])
 
     # Isotopes
 
-    article = Article(URL_PREFIX + '/wiki/Special:Export/Isotopes_of_' + name.lower())
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Isotopes_of_' + properties['name'].lower())
 
-    isotopes = []
+    properties['isotopes'] = []
     for row in article.getTable('table'):
-        isotopeSymbol = re.sub(r'[ ]*' + name, symbol, row['nuclide symbol'], flags=re.IGNORECASE)
+        isotope_symbol = re.sub(r'[ ]*' + properties['name'], properties['symbol'],
+                                row['nuclide symbol'], flags=re.IGNORECASE)
 
-        halfLife = re.sub(r'\s*\([^()]*\)', '', re.sub(r'observationally stable|stable', '-',
-            re.sub(r'\s*\[[^\]]+\]?|\s*\([^()]*\)|\s*[\?#]', '', re.sub(r'yr[s]?|years', 'y',
-                re.sub(r'millisecond', 'ms', row['half life'], flags=re.I), flags=re.I) \
-            .replace(' × ', '×')), flags=re.I))
+        half_life = re.sub(r'\s*\([^()]*\)', '',
+                           re.sub(r'observationally stable|stable', '-',
+                                  re.sub(r'\s*\[[^\]]+\]?|\s*\([^()]*\)|\s*[\?#]', '',
+                                         re.sub(r'yr[s]?|years', 'y',
+                                                re.sub(r'millisecond', 'ms', row['half life'],
+                                                       flags=re.I), flags=re.I).replace(
+                                             ' × ', '×')), flags=re.I))
 
-        decayModes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
+        decay_modes = re.sub(r'([(<>])(\.)', r'\g<1>0\2', row['decay mode']).splitlines()
 
-        daughterIsotopes = re.sub(r'[()]', '', row['daughter isotope'])
-        for pair in elementNames:
-            daughterIsotopes = re.sub(r'[ ]*' + pair[0] + r'| ' + pair[1], pair[1],
-                daughterIsotopes, flags=re.IGNORECASE)
-        daughterIsotopes = capitalize_multiline(daughterIsotopes).splitlines()
+        daughter_isotopes = re.sub(r'[()]', '', row['daughter isotope'])
+        for pair in element_names:
+            daughter_isotopes = re.sub(r'[ ]*' + pair[0] + r'| ' + pair[1], pair[1],
+                                       daughter_isotopes, flags=re.IGNORECASE)
+        daughter_isotopes = capitalize_multiline(daughter_isotopes).splitlines()
 
-        decayModesAndProducts = '\n'.join([ mode + ' → ' + product for mode, product in \
-            zip(decayModes, daughterIsotopes) ])
+        decay_modes_and_products = '\n'.join([mode + ' → ' + product for mode, product in
+                                              zip(decay_modes, daughter_isotopes)])
 
         spin = ''
         if 'nuclear spin' in row.keys():
@@ -508,77 +467,28 @@ def parse(article, articleUrl, molarIonizationEnergiesDict, elementNames, catego
 
         abundance = ''
         if 'representative isotopic composition' in row.keys():
-            abundance = re.sub(r'^trace$', '-', re.sub(r'\(\d*\)', '',
-                row['representative isotopic composition']), flags=re.IGNORECASE).strip('[]')
-            complexNumber = abundance.split('×')
+            abundance = re.sub(r'^trace$', '-',
+                               re.sub(r'\(\d*\)', '', row['representative isotopic composition']),
+                               flags=re.IGNORECASE).strip('[]')
+            complex_number = abundance.split('×')
             try:
-                value = float(complexNumber[0])
-                if value <= 1.0 or len(complexNumber) > 1:
+                value = float(complex_number[0])
+                if value <= 1.0 or len(complex_number) > 1:
                     value *= 100
-                    complexNumber[0] = format(value, '.6f').rstrip('0').rstrip('.')
-                abundance = '×'.join(complexNumber) + '%'
+                    complex_number[0] = format(value, '.6f').rstrip('0').rstrip('.')
+                abundance = '×'.join(complex_number) + '%'
             except ValueError:
                 pass
 
-        isotopes.append({
-            'symbol': isotopeSymbol,
-            'halfLife': halfLife,
-            'decayModes': decayModesAndProducts,
+        properties['isotopes'].append({
+            'symbol': isotope_symbol,
+            'halfLife': half_life,
+            'decayModes': decay_modes_and_products,
             'spin': spin,
             'abundance': abundance
         })
 
-    return {
-        'number': number,
-        'symbol': symbol,
-        'name': name,
-        'weight': weight,
-        'category': category,
-        'group': group,
-        'period': period,
-        'block': block,
-        'electronConfiguration': configuration,
-        'electronsPerShell': shells,
-        'wikipediaLink': articleUrl,
-        'appearance': appearance,
-        'phase': phase,
-        'density': density,
-        'liquidDensityAtMeltingPoint': densityMP,
-        'liquidDensityAtBoilingPoint': densityBP,
-        'meltingPoint': meltingPoint,
-        'sublimationPoint': sublimationPoint,
-        'boilingPoint': boilingPoint,
-        'triplePoint': triplePoint,
-        'criticalPoint': criticalPoint,
-        'heatOfFusion': heatOfFusion,
-        'heatOfVaporization': heatOfVaporization,
-        'molarHeatCapacity': molarHeatCapacity,
-        'oxidationStates': oxidationStates,
-        'electronegativity': electronegativity,
-        'molarIonizationEnergies': molarIonizationEnergies,
-        'atomicRadius': atomicRadius,
-        'covalentRadius': covalentRadius,
-        'vanDerWaalsRadius': vanDerWaalsRadius,
-        'crystalStructure': crystalStructure,
-        'magneticOrdering': magneticOrdering,
-        'thermalConductivity': thermalConductivity,
-        'thermalExpansion': thermalExpansion,
-        'thermalDiffusivity': thermalDiffusivity,
-        'speedOfSound': speedOfSound,
-        'youngsModulus': youngsModulus,
-        'shearModulus': shearModulus,
-        'bulkModulus': bulkModulus,
-        'mohsHardness': mohsHardness,
-        'brinellHardness': brinellHardness,
-        'electricalResistivity': electricalResistivity,
-        'bandGap': bandGap,
-        'curiePoint': curiePoint,
-        'tensileStrength': tensileStrength,
-        'poissonRatio': poissonRatio,
-        'vickersHardness': vickersHardness,
-        'casNumber': casNumber,
-        'isotopes': isotopes
-    }
+    return properties
 
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
