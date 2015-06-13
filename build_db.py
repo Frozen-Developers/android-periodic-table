@@ -342,8 +342,10 @@ def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
 
-def parse(article, article_url, ionization_energies, element_names, category):
-    properties = {'wikipediaLink': article_url, 'category': category,
+def parse(element_name, article_url, ionization_energies, element_names, category):
+    article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + element_name)
+
+    properties = {'wikipediaLink': URL_PREFIX + '/wiki/' + article_url, 'category': category,
                   'molarIonizationEnergies': '\n'.join(
                       [key + ': ' + value + ' ' + article.getUnit('ionization energy 1') for
                        key, value in ionization_energies[article.getProperty('number')].items() if
@@ -490,6 +492,7 @@ def parse(article, article_url, ionization_energies, element_names, category):
 
     return properties
 
+
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
@@ -502,21 +505,21 @@ if __name__ == '__main__':
     # Parse all ionization energies
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
-    molarIonizationEnergiesDict = {}
-    elementNames = []
+    ionization_energies = {}
+    element_names = []
     for tableName, table in article.getAllTables().items():
         if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
             for row in table:
                 index = row['number']
-                if index in molarIonizationEnergiesDict.keys():
-                    molarIonizationEnergiesDict[index] = OrderedDict(list(
-                        molarIonizationEnergiesDict[index].items()) + list(row.items()))
+                if index in ionization_energies.keys():
+                    ionization_energies[index] = OrderedDict(list(
+                        ionization_energies[index].items()) + list(row.items()))
                 else:
-                    molarIonizationEnergiesDict[index] = row
-                molarIonizationEnergiesDict[index].pop('number', None)
-                name = molarIonizationEnergiesDict[index].pop('name', None)
-                symbol = molarIonizationEnergiesDict[index].pop('symbol', None)
-                elementNames.append([ name, symbol ])
+                    ionization_energies[index] = row
+                ionization_energies[index].pop('number', None)
+                name = ionization_energies[index].pop('name', None)
+                symbol = ionization_energies[index].pop('symbol', None)
+                element_names.append([name, symbol])
 
     # Parse articles
 
@@ -524,18 +527,16 @@ if __name__ == '__main__':
     categories = []
     for row in article.getTable('table 1'):
         for key, value in row.items():
-            segments = [ segment.strip() for segment in value.split(';') ]
+            segments = [segment.strip() for segment in value.split(';')]
             if len(segments) >= 7:
                 if segments[5].lower() not in categories:
                     categories.append(segments[5].lower())
-                jsonData.append(parse(
-                    Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + segments[1]),
-                    URL_PREFIX + '/wiki/' + (replace_chars(segments[7], ' ', '_') \
-                        if len(segments) > 7 else segments[1].capitalize()),
-                    molarIonizationEnergiesDict, elementNames,
-                    categories.index(segments[5].lower())))
+                jsonData.append(parse(segments[1],
+                                      segments[7].replace(' ', '_') if len(segments) > 7 else
+                                      segments[1].capitalize(), ionization_energies, element_names,
+                                      categories.index(segments[5].lower())))
 
     # Save
 
     with open(OUTPUT_JSON, 'w+') as outfile:
-        json.dump(jsonData, outfile, sort_keys = True, indent = 4, ensure_ascii = False)
+        json.dump(jsonData, outfile, sort_keys=True, indent=4, ensure_ascii=False)
