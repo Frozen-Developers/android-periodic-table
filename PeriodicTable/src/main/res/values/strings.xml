@@ -94,8 +94,6 @@
     <string name="property_decay_modes">Decay modes</string>
     <string name="property_spin">Spin</string>
     <string name="property_abundance">Natural abundance</string>
-    <string name="property_half_life_short">t½: %1$s</string>
-    <string name="property_natural_abundance_short">NA: %1$s</string>
 
     <!-- Translatable values -->
     <string name="property_value_unknown">Unknown</string>

@@ -24,10 +24,11 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
     private RecyclerViewExpandableItemManager mItemManager;
 
     private class Property {
-        String mName = "", mValue = "";
+        String mName = "", mValue = "", mValueRaw = "";
 
         Property(String value) {
             if (value != null) {
+                mValueRaw = value;
                 if (!value.equals("")) mValue = value;
                 else mValue = mContext.getString(R.string.property_value_unknown);
             }
@@ -61,6 +62,10 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
 
         String getValue() {
             return mValue;
+        }
+
+        String getValueRaw() {
+            return mValueRaw;
         }
     }
 
@@ -275,10 +280,15 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
 
         groupViewHolder.setPosition(groupPosition);
         groupViewHolder.setSymbol(properties.getSymbol().getValue());
-        groupViewHolder.setHalfLife(mContext.getString(R.string.property_half_life_short,
-                properties.getHalfLife().getValue()));
-        groupViewHolder.setAbundance(mContext.getString(R.string.property_natural_abundance_short,
-                properties.getAbundance().getValue()));
+        groupViewHolder.setHalfLife("");
+        groupViewHolder.setAbundance("");
+        if (!properties.getHalfLife().getValueRaw().equals("")) {
+            groupViewHolder.setHalfLife(properties.getHalfLife().getValue());
+
+            if (!properties.getAbundance().getValueRaw().equals("")) {
+                groupViewHolder.setAbundance(properties.getAbundance().getValue());
+            }
+        }
 
         final int expandState = groupViewHolder.getExpandStateFlags();
 
