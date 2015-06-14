@@ -2,14 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="?attr/listChoiceBackgroundIndicator"
     android:minHeight="?attr/listPreferredItemHeight"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
     android:paddingEnd="?attr/listPreferredItemPaddingRight"
-    android:paddingLeft="?android:attr/expandableListPreferredItemPaddingLeft"
+    android:paddingLeft="8dp"
     android:paddingRight="?attr/listPreferredItemPaddingRight"
-    android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+    android:paddingStart="8dp"
     android:paddingTop="@dimen/listPreferredItemPaddingTop">
+
+    <com.frozendevs.periodictable.view.ExpandableIndicatorView
+        android:id="@+id/group_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="?android:attr/expandableListPreferredItemIndicatorLeft"
+        android:layout_marginRight="?android:attr/expandableListPreferredItemIndicatorLeft" />
 
     <TextView
         android:id="@+id/property_symbol"

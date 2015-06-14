@@ -2,20 +2,26 @@ package com.frozendevs.periodictable.model.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.Isotope;
+import com.frozendevs.periodictable.view.ExpandableIndicatorView;
+import com.h6ah4i.android.widget.advrecyclerview.expandable.RecyclerViewExpandableItemManager;
+import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractExpandableItemAdapter;
+import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractExpandableItemViewHolder;
 
-public class IsotopesAdapter extends BaseExpandableListAdapter {
+public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapter.GroupViewHolder,
+        IsotopesAdapter.ChildViewHolder> {
 
     private Context mContext;
     private Typeface mTypeface;
     private IsotopeProperties[] mProperties = new IsotopeProperties[0];
+    private RecyclerViewExpandableItemManager mItemManager;
 
     private class Property {
         String mName = "", mValue = "";
@@ -96,16 +102,108 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
         }
     }
 
-    private class GroupHolder {
-        TextView symbol, halfLife, abundance;
+    public class GroupViewHolder extends AbstractExpandableItemViewHolder implements
+            View.OnClickListener, View.OnCreateContextMenuListener {
+        private TextView mSymbol, mHalfLife, mAbundance;
+        private ExpandableIndicatorView mIndicator;
+        private int mPosition = 0;
+
+        public GroupViewHolder(View view) {
+            super(view);
+
+            mIndicator = (ExpandableIndicatorView) view.findViewById(R.id.group_indicator);
+            mSymbol = (TextView) view.findViewById(R.id.property_symbol);
+            mHalfLife = (TextView) view.findViewById(R.id.property_half_life);
+            mAbundance = (TextView) view.findViewById(R.id.property_abundance);
+
+            view.setOnClickListener(this);
+            view.setOnCreateContextMenuListener(this);
+        }
+
+        public void setIndicatorState(boolean expanded) {
+            mIndicator.setStateExpanded(expanded);
+        }
+
+        public void setSymbol(String symbol) {
+            mSymbol.setText(symbol);
+        }
+
+        public void setHalfLife(String halfLife) {
+            mHalfLife.setText(halfLife);
+        }
+
+        public void setAbundance(String abundance) {
+            mAbundance.setText(abundance);
+        }
+
+        public void setTypeface(Typeface typeface) {
+            mSymbol.setTypeface(typeface);
+            mHalfLife.setTypeface(typeface);
+            mAbundance.setTypeface(typeface);
+        }
+
+        public void setPosition(int position) {
+            mPosition = position;
+        }
+
+        @Override
+        public void onClick(View view) {
+            if ((getExpandStateFlags() & RecyclerViewExpandableItemManager.
+                    STATE_FLAG_IS_EXPANDED) == 0) {
+                IsotopesAdapter.this.mItemManager.expandGroup(mPosition);
+            } else {
+                IsotopesAdapter.this.mItemManager.collapseGroup(mPosition);
+            }
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View view,
+                                        ContextMenu.ContextMenuInfo menuInfo) {
+        }
     }
 
-    private class ChildHolder {
-        TextView name, value;
+    public class ChildViewHolder extends AbstractExpandableItemViewHolder implements
+            View.OnClickListener, View.OnCreateContextMenuListener {
+        private TextView mName, mValue;
+
+        public ChildViewHolder(View view) {
+            super(view);
+
+            mName = (TextView) view.findViewById(R.id.property_name);
+            mValue = (TextView) view.findViewById(R.id.property_value);
+
+            view.setOnClickListener(this);
+            view.setOnCreateContextMenuListener(this);
+        }
+
+        public void setName(String name) {
+            mName.setText(name);
+        }
+
+        public void setValue(String value) {
+            mValue.setText(value);
+        }
+
+        public void setTypeface(Typeface typeface) {
+            mName.setTypeface(typeface);
+            mValue.setTypeface(typeface);
+        }
+
+        @Override
+        public void onClick(View view) {
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View view,
+                                        ContextMenu.ContextMenuInfo menuInfo) {
+        }
     }
 
-    public IsotopesAdapter(Context context, Isotope[] isotopes) {
+    public IsotopesAdapter(Context context, RecyclerViewExpandableItemManager manager,
+                           Isotope[] isotopes) {
         mContext = context;
+
+        mItemManager = manager;
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
@@ -116,6 +214,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                 mProperties[i] = new IsotopeProperties(isotopes[i]);
             }
         }
+
+        setHasStableIds(true);
     }
 
     @Override
@@ -124,18 +224,88 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
     }
 
     @Override
-    public int getChildrenCount(int groupPosition) {
+    public int getChildCount(int groupPosition) {
         return 4;
     }
 
     @Override
-    public IsotopeProperties getGroup(int groupPosition) {
-        return mProperties[groupPosition];
+    public long getGroupId(int groupPosition) {
+        return mProperties[groupPosition].hashCode();
     }
 
     @Override
-    public Property getChild(int groupPosition, int childPosition) {
-        IsotopeProperties properties = getGroup(groupPosition);
+    public long getChildId(int groupPosition, int childPosition) {
+        return getChild(groupPosition, childPosition).hashCode();
+    }
+
+    @Override
+    public int getGroupItemViewType(int groupPosition) {
+        return 0;
+    }
+
+    @Override
+    public int getChildItemViewType(int groupPosition, int childPosition) {
+        return 0;
+    }
+
+    @Override
+    public GroupViewHolder onCreateGroupViewHolder(ViewGroup viewGroup, int viewType) {
+        GroupViewHolder viewHolder = new GroupViewHolder(LayoutInflater.from(viewGroup.
+                getContext()).inflate(R.layout.isotope_list_item, viewGroup, false));
+
+        viewHolder.setTypeface(mTypeface);
+
+        return viewHolder;
+    }
+
+    @Override
+    public ChildViewHolder onCreateChildViewHolder(ViewGroup viewGroup, int viewType) {
+        ChildViewHolder viewHolder = new ChildViewHolder(LayoutInflater.from(viewGroup.
+                getContext()).inflate(R.layout.properties_list_item, viewGroup, false));
+
+        viewHolder.setTypeface(mTypeface);
+
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindGroupViewHolder(GroupViewHolder groupViewHolder, int groupPosition,
+                                      int viewType) {
+        IsotopeProperties properties = mProperties[groupPosition];
+
+        groupViewHolder.setPosition(groupPosition);
+        groupViewHolder.setSymbol(properties.getSymbol().getValue());
+        groupViewHolder.setHalfLife(mContext.getString(R.string.property_half_life_short,
+                properties.getHalfLife().getValue()));
+        groupViewHolder.setAbundance(mContext.getString(R.string.property_natural_abundance_short,
+                properties.getAbundance().getValue()));
+
+        final int expandState = groupViewHolder.getExpandStateFlags();
+
+        if ((expandState & RecyclerViewExpandableItemManager.STATE_FLAG_IS_UPDATED) != 0) {
+            groupViewHolder.setIndicatorState((expandState & RecyclerViewExpandableItemManager.
+                    STATE_FLAG_IS_EXPANDED) != 0);
+        }
+    }
+
+    @Override
+    public void onBindChildViewHolder(ChildViewHolder childViewHolder, int groupPosition,
+                                      int childPosition, int viewType) {
+        Property property = getChild(groupPosition, childPosition);
+
+        childViewHolder.setName(property.getName());
+        childViewHolder.setValue(property.getValue());
+    }
+
+    @Override
+    public boolean onCheckCanExpandOrCollapseGroup(GroupViewHolder groupViewHolder,
+                                                   int groupPosition, int x, int y,
+                                                   boolean expand) {
+        return false;
+    }
+
+    private Property getChild(int groupPosition, int childPosition) {
+        IsotopeProperties properties = mProperties[groupPosition];
 
         switch (childPosition) {
             case 0:
@@ -144,88 +314,8 @@ public class IsotopesAdapter extends BaseExpandableListAdapter {
                 return properties.getDecayModes();
             case 2:
                 return properties.getSpin();
-            case 3:
+            default:
                 return properties.getAbundance();
         }
-
-        return null;
-    }
-
-    @Override
-    public long getGroupId(int groupPosition) {
-        return groupPosition;
-    }
-
-    @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return (getGroupId(groupPosition) * getChildrenCount(groupPosition)) + childPosition;
-    }
-
-    @Override
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView,
-                             ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.isotope_list_item,
-                    parent, false);
-
-            GroupHolder groupHolder = new GroupHolder();
-
-            groupHolder.symbol = (TextView) convertView.findViewById(R.id.property_symbol);
-            groupHolder.symbol.setTypeface(mTypeface);
-            groupHolder.halfLife = (TextView) convertView.findViewById(R.id.property_half_life);
-            groupHolder.halfLife.setTypeface(mTypeface);
-            groupHolder.abundance = (TextView) convertView.findViewById(R.id.property_abundance);
-            groupHolder.abundance.setTypeface(mTypeface);
-
-            convertView.setTag(groupHolder);
-        }
-
-        IsotopeProperties properties = getGroup(groupPosition);
-
-        GroupHolder groupHolder = (GroupHolder) convertView.getTag();
-
-        groupHolder.symbol.setText(properties.getSymbol().getValue());
-        groupHolder.halfLife.setText(mContext.getString(R.string.property_half_life_short,
-                properties.getHalfLife().getValue()));
-        groupHolder.abundance.setText(mContext.getString(R.string.property_natural_abundance_short,
-                properties.getAbundance().getValue()));
-
-        return convertView;
-    }
-
-    @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild,
-                             View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.properties_list_item,
-                    parent, false);
-
-            ChildHolder childHolder = new ChildHolder();
-
-            childHolder.name = (TextView) convertView.findViewById(R.id.property_name);
-            childHolder.value = (TextView) convertView.findViewById(R.id.property_value);
-            childHolder.value.setTypeface(mTypeface);
-
-            convertView.setTag(childHolder);
-        }
-
-        Property property = getChild(groupPosition, childPosition);
-
-        ChildHolder childHolder = (ChildHolder) convertView.getTag();
-
-        childHolder.name.setText(property.getName());
-        childHolder.value.setText(property.getValue());
-
-        return convertView;
-    }
-
-    @Override
-    public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return true;
     }
 }
