@@ -18,7 +18,6 @@
     <string name="action_about">About</string>
     <string name="action_wikipedia_article">Wikipedia article</string>
 
-    <string name="context_title_legend">Legend</string>
     <string name="context_title_options">Options</string>
     <string name="context_copy">Copy</string>
 
@@ -29,7 +28,6 @@
     <string name="empty_view_no_such_element">No such element.</string>
 
     <!-- Properties headers -->
-    <string name="properties_header_summary">Summary</string>
     <string name="properties_header_general">General properties</string>
     <string name="properties_header_physical">Physical properties</string>
     <string name="properties_header_atomic">Atomic properties</string>

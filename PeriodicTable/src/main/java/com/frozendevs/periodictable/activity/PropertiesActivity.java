@@ -4,9 +4,11 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.SharedElementCallback;
 import android.support.v4.view.ViewPager;
@@ -16,6 +18,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.PeriodicTableApplication;
@@ -25,6 +28,8 @@ import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
+import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
+import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.RecyclerView;
 
 public class PropertiesActivity extends AppCompatActivity {
@@ -45,8 +50,6 @@ public class PropertiesActivity extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final PeriodicTableApplication application = (PeriodicTableApplication) getApplication();
-
-            supportPostponeEnterTransition();
 
             final SharedElementCallback callback = application.getSharedElementCallback();
 
@@ -71,10 +74,15 @@ public class PropertiesActivity extends AppCompatActivity {
                     getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
         }
 
-        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(mElementProperties.getName());
+
+        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(
+                R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle(mElementProperties.getName());
 
         Bundle bundle = new Bundle();
         bundle.putParcelable(ARGUMENT_PROPERTIES, mElementProperties);
@@ -88,6 +96,34 @@ public class PropertiesActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/NotoSans-Regular.ttf");
+
+        TableAdapter tableAdapter = new TableAdapter(this);
+
+        View tileView = findViewById(R.id.tile_view);
+        tableAdapter.getView(mElementProperties, tileView, (ViewGroup) tileView.getParent());
+        tileView.setClickable(false);
+
+        TextView configuration = (TextView) findViewById(R.id.element_electron_configuration);
+        configuration.setText(PropertiesAdapter.formatProperty(this,
+                mElementProperties.getElectronConfiguration()));
+        configuration.setTypeface(typeface);
+
+        TextView shells = (TextView) findViewById(R.id.element_electrons_per_shell);
+        shells.setText(PropertiesAdapter.formatProperty(this,
+                mElementProperties.getElectronsPerShell()));
+        shells.setTypeface(typeface);
+
+        TextView electronegativity = (TextView) findViewById(R.id.element_electronegativity);
+        electronegativity.setText(PropertiesAdapter.formatProperty(this,
+                mElementProperties.getElectronegativity()));
+        electronegativity.setTypeface(typeface);
+
+        TextView oxidationStates = (TextView) findViewById(R.id.element_oxidation_states);
+        oxidationStates.setText(PropertiesAdapter.formatProperty(this,
+                mElementProperties.getOxidationStates()));
+        oxidationStates.setTypeface(typeface);
     }
 
     @Override

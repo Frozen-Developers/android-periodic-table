@@ -36,7 +36,8 @@
         <activity
             android:name="com.frozendevs.periodictable.activity.PropertiesActivity"
             android:launchMode="singleTop"
-            android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity">
+            android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
+            android:theme="@style/Theme.Properties">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
