@@ -26,26 +26,25 @@ def replace_chars(string, charset1, charset2):
 
 
 class TableCell:
-
-    def __init__(self, value, cellType = 'cell'):
+    def __init__(self, value, cell_type='cell'):
         self.properties = {}
-        self.cellType = cellType
+        self.cell_type = cell_type
         segments = value.split('|')
         if len(segments) > 1:
             for segment in segments[0::-2]:
                 for subsegment in segment.split(' '):
-                    nameValue = subsegment.split('=', 1)
-                    if len(nameValue) > 1:
-                        self.properties[nameValue[0].lower().strip(' \n\t\'"')] = \
-                            nameValue[1].strip(' \n\t\'"')
+                    name_value = subsegment.split('=', 1)
+                    if len(name_value) > 1:
+                        self.properties[name_value[0].lower().strip(' \n\t\'"')] = \
+                            name_value[1].strip(' \n\t\'"')
         self.properties['value'] = segments[-1].strip(' \n\t\'"')
 
-    def getProperty(self, key):
+    def get_property(self, key):
         if key in self.properties.keys():
             return self.properties[key]
         return ''
 
-    def getIntProperty(self, key):
+    def get_int_property(self, key):
         if key in self.properties.keys():
             try:
                 return int(self.properties[key])
@@ -53,11 +52,11 @@ class TableCell:
                 pass
         return 1
 
-    def getCellType(self):
-        return self.cellType
+    def get_cell_type(self):
+        return self.cell_type
+
 
 class Article:
-
     units = {}
     comments = {}
 
@@ -129,91 +128,98 @@ class Article:
 
             self.properties = OrderedDict()
             properties = re.sub(r'{{[Ii]nfobox element\n+\|(.*)\n}}<noinclude>.*', r'\1', content,
-                flags=re.S).split('\n|')
+                                flags=re.S).split('\n|')
             for prop in properties:
-                nameValue = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
-                if len(nameValue) > 1:
-                    self.properties[nameValue[0].lower()] = self.parseProperty(nameValue[1])
+                name_value = list(item.strip(' \n\t\'') for item in prop.split('=', 1))
+                if len(name_value) > 1:
+                    self.properties[name_value[0].lower()] = self.parse_property(name_value[1])
 
             # Parse tables
 
             self.tables = OrderedDict()
-            for match in re.finditer(r'=?([^\n]*)?=?\s*{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|}',
-                content, flags=re.S):
-                name = match.group(1).strip(' =').lower() if match.group(1) != '' else 'table ' + \
-                    str(len(self.tables.keys()) + 1)
-                rows = list(filter(len, [ row.strip(' \n\t!\'') for row in re.split(r'\n\|\-[^\n]*',
-                    match.group(3), flags=re.S) ]))
+            for match in re.finditer(
+                    r'=?([^\n]*)?=?\s*\{\|[^\n]*\n?(\|[\+\-][^\n]*\n)?\|?\-?(.*?)\|\}',
+                    content, flags=re.S):
+                name = match.group(1).strip(' =').lower() if match.group(1) != '' else \
+                    'table ' + str(len(self.tables.keys()) + 1)
+                rows = list(filter(len, [row.strip(' \n\t!\'') for row in
+                                         re.split(r'\n\|\-[^\n]*', match.group(3), flags=re.S)]))
                 headers = []
                 for row_i, row in enumerate(rows):
                     delimiter = '\n!' if '\n!' in row else '\n|'
-                    rows[row_i] = [ TableCell(value.lstrip('|').strip(' \n\t!\''),
-                        'cell' if '\n|' in row else 'header') for value in row.split(delimiter) ]
+                    rows[row_i] = [TableCell(value.lstrip('|').strip(' \n\t!\''),
+                                             'cell' if '\n|' in row else 'header') for
+                                   value in row.split(delimiter)]
                 if len(rows) > 0:
-                    rowHeight = 0
+                    row_height = 0
                     for row in rows:
                         for cell in row:
-                            if cell.getCellType() != 'header':
+                            if cell.get_cell_type() != 'header':
                                 break
                         else:
-                            rowHeight += 1
+                            row_height += 1
                             continue
                         break
-                    cellOffset = 0
+                    cell_offset = 0
                     for cell in rows[0]:
-                        rowSpan = cell.getIntProperty('rowspan')
-                        colspan = cell.getIntProperty('colspan')
-                        if rowHeight > rowSpan and colspan > 1:
-                            for cellNo in range(colspan):
-                                if cellOffset < len(rows[rowSpan]):
-                                    headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
-                                        rows[rowSpan][cellOffset].getProperty('value').lower())))
-                                    cellOffset += 1
+                        rowspan = cell.get_int_property('rowspan')
+                        colspan = cell.get_int_property('colspan')
+                        if row_height > rowspan and colspan > 1:
+                            for cell_number in range(colspan):
+                                if cell_offset < len(rows[rowspan]):
+                                    headers.append(
+                                        re.sub(r'\s*\([^)]*\)', '',
+                                               re.sub(r'[\s\-]', ' ',
+                                                      rows[rowspan][cell_offset].get_property(
+                                                          'value').lower())))
+                                    cell_offset += 1
                                 else:
                                     break
                         else:
-                            headers.append(re.sub(r'\s*\([^)]*\)', '', re.sub(r'[\s\-]', ' ',
-                                cell.getProperty('value').lower())))
-                    rows = list(filter(len, rows[rowHeight:]))
+                            headers.append(re.sub(r'\s*\([^)]*\)', '',
+                                                  re.sub(r'[\s\-]', ' ',
+                                                         cell.get_property('value').lower())))
+                    rows = list(filter(len, rows[row_height:]))
                 self.tables[name] = []
-                nextRows = []
-                for rowNo in range(len(rows)):
-                    if len(rows[rowNo]) > 0:
-                        rowHeight = rows[rowNo][0].getIntProperty('rowspan')
-                        if len(nextRows) == 0:
-                            cleanRow = OrderedDict.fromkeys(headers, None)
+                next_rows = []
+                for row_number in range(len(rows)):
+                    if len(rows[row_number]) > 0:
+                        row_height = rows[row_number][0].get_int_property('rowspan')
+                        if len(next_rows) == 0:
+                            clean_row = OrderedDict.fromkeys(headers, None)
                         else:
-                            cleanRow = nextRows.pop(0)
-                        cellOffset = 0
-                        for headerNo, header in enumerate(cleanRow.keys()):
-                            if cleanRow[header] is None:
-                                if cellOffset < len(rows[rowNo]):
-                                    cell = rows[rowNo][cellOffset]
-                                    cleanRow[header] = self.parseProperty(cell.getProperty('value'))
-                                    colspan = cell.getIntProperty('colspan')
+                            clean_row = next_rows.pop(0)
+                        cell_offset = 0
+                        for header_number, header in enumerate(clean_row.keys()):
+                            if clean_row[header] is None:
+                                if cell_offset < len(rows[row_number]):
+                                    cell = rows[row_number][cell_offset]
+                                    clean_row[header] = self.parse_property(
+                                        cell.get_property('value'))
+                                    colspan = cell.get_int_property('colspan')
                                     for i in range(1, colspan):
-                                       cleanRow[headers[headerNo + i]] = ''
-                                    cellOffset += 1
-                                    rowSpan = cell.getIntProperty('rowspan')
-                                    rowOffset = 0
-                                    while rowSpan < rowHeight:
-                                        rowOffset += 1
-                                        cell = rows[rowNo + rowOffset].pop(0)
-                                        cleanRow[header] += '\n' + \
-                                            self.parseProperty(cell.getProperty('value'))
-                                        rowSpan += cell.getIntProperty('rowspan')
-                                    rowOffset = 1
-                                    while rowSpan > rowHeight:
-                                        if len(nextRows) < rowOffset:
-                                            nextRow = OrderedDict.fromkeys(headers, None)
-                                            nextRows.append(nextRow)
-                                        nextRows[rowOffset - 1][header] = self.parseProperty(
-                                            cell.getProperty('value'))
-                                        rowSpan -= cell.getIntProperty('rowspan')
-                                        rowOffset += 1
+                                        clean_row[headers[header_number + i]] = ''
+                                    cell_offset += 1
+                                    rowspan = cell.get_int_property('rowspan')
+                                    row_offset = 0
+                                    while rowspan < row_height:
+                                        row_offset += 1
+                                        cell = rows[row_number + row_offset].pop(0)
+                                        clean_row[header] += '\n' + self.parse_property(
+                                            cell.get_property('value'))
+                                        rowspan += cell.get_int_property('rowspan')
+                                    row_offset = 1
+                                    while rowspan > row_height:
+                                        if len(next_rows) < row_offset:
+                                            next_row = OrderedDict.fromkeys(headers, None)
+                                            next_rows.append(next_row)
+                                        next_rows[row_offset - 1][header] = self.parse_property(
+                                            cell.get_property('value'))
+                                        rowspan -= cell.get_int_property('rowspan')
+                                        row_offset += 1
                                 else:
-                                    cleanRow[header] = ''
-                        self.tables[name].append(cleanRow)
+                                    clean_row[header] = ''
+                        self.tables[name].append(clean_row)
 
         # Parse units
 
@@ -224,8 +230,8 @@ class Article:
                     self.units[key] = ''
                 if self.units[key] == '':
                     self.units[key] = re.sub(r'([^\(]+) (\([^\)]+\))', r'\1',
-                        self.parseProperty(match.group(2).strip()))
-                    if self.units[key].startswith('(') == False:
+                                             self.parse_property(match.group(2).strip()))
+                    if not self.units[key].startswith('('):
                         self.units[key] = self.units[key].rstrip('()')
             for match in re.finditer(r'{{{([^\|\}]*)}}} {{#if:{{{([^\|\}]*)\|?}}}', content):
                 self.units[match.group(1).lower()] = self.units[match.group(2).lower()]
@@ -235,35 +241,39 @@ class Article:
         if self.comments == {}:
             for match in re.finditer(r'{{{([^\|\}]*) comment\|?}}}}}([^\|\}]*)}}', content):
                 self.comments[match.group(1).lower() + ' comment'] = match.group(2).strip()
-            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}[^\{\},\|\u200b\(]*(\([^\)]+\))', content):
+            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}[^\{\},\|\u200b\(]*(\([^\)]+\))',
+                                     content):
                 key = match.group(1).lower() + ' comment'
                 if key not in self.comments.keys():
                     self.comments[key] = ''
                 if self.comments[key] == '':
-                    self.comments[key] = self.parseProperty(match.group(2).strip())
-            for match in re.finditer(r'{{#if:{{{([^\|\}]*)\|?}}}\n? \|([^\|\{\},\|\u200b\(<>]*)', content):
+                    self.comments[key] = self.parse_property(match.group(2).strip())
+            for match in re.finditer(r'{{#if:{{{([^\|\}]*)\|?}}}\n? \|([^\|\{\},\|\u200b\(<>]*)',
+                                     content):
                 key = match.group(1).lower() + ' comment'
                 if key not in self.comments.keys():
                     self.comments[key] = ''
                 if self.comments[key] == '':
-                    self.comments[key] = self.parseProperty(match.group(2).strip())
+                    self.comments[key] = self.parse_property(match.group(2).strip())
 
-    def replaceWithSuperscript(self, string):
+    @staticmethod
+    def replace_with_superscript(string):
         return replace_chars(string, '–−-+0123456789abm', '⁻⁻⁻⁺⁰¹²³⁴⁵⁶⁷⁸⁹ᵃᵇᵐ')
 
-    def replaceWithSubscript(self, string):
+    @staticmethod
+    def replace_with_subscript(string):
         return replace_chars(string, '–−-0123456789', '₋₋₋₀₁₂₃₄₅₆₇₈₉')
 
-    def parseProperty(self, value):
+    def parse_property(self, value):
         if not value.lower().startswith('unknown') and value.lower() != 'n/a' and value != '':
             for match in re.findall(r'<sup>[-–−+\dabm]*</sup>', value):
-                value = value.replace(match, self.replaceWithSuperscript(match))
+                value = value.replace(match, self.replace_with_superscript(match))
             for match in re.findall(r'<sub>[-–−\d]*</sub>', value):
-                value = value.replace(match, self.replaceWithSubscript(match))
+                value = value.replace(match, self.replace_with_subscript(match))
             return re.sub(r'<[^<]+?>', '', value, flags=re.S)
         return ''
 
-    def getComment(self, name):
+    def get_comment(self, name):
         comment = ''
         if name + ' comment' in self.comments.keys():
             comment = self.comments[name + ' comment'].strip('():; \n').replace(' (', ', ')
@@ -274,27 +284,28 @@ class Article:
             comment += prop
         return comment
 
-    def getPrefix(self, name):
+    def get_prefix(self, name):
         if name + ' prefix' in self.properties.keys():
             if self.properties[name + ' prefix'] != '':
                 return self.properties[name + ' prefix'].strip('():; \n').replace(' (', ', ')
         return ''
 
-    def getProperty(self, name, default='', prepend='', comments=True, delimiter='\n',
-                    unitPrefix='', append='', units=True, comment_as_title=False, capitalize=False,
-                    sanitize=None):
+    def get_property(self, name, default='', prepend='', comments=True, delimiter='\n',
+                     unit_prefix='', append='', units=True, comment_as_title=False,
+                     capitalize=False, sanitize=None):
         result = []
         for key, value in self.properties.items():
-            fullName = re.match(r'^' + name + r'\s?\d*$', key)
-            if fullName != None and value != '':
+            full_name = re.match(r'^%s\s?\d*$' % name, key)
+            if full_name and value != '':
                 if value != '-':
-                    fullName = fullName.group(0)
-                    prefix = ', '.join([ prepend, self.getPrefix(fullName),
-                        (self.getComment(fullName) if comments else '') ]).strip(', ')
-                    unit = ' ' + unitPrefix + self.getUnit(fullName)
+                    full_name = full_name.group(0)
+                    prefix = ', '.join([
+                        prepend, self.get_prefix(full_name),
+                        (self.get_comment(full_name) if comments else '')]).strip(', ')
+                    unit = ' ' + unit_prefix + self.get_unit(full_name)
                     result.append(((prefix + (', ' if ': ' in value else ': ')
-                        if prefix != '' else '') + value + append + \
-                        (unit if units and len(unit) > 1 else '')).strip())
+                                    if prefix != '' else '') + value + append +
+                                   (unit if units and len(unit) > 1 else '')).strip())
                 else:
                     result.append(value.strip())
         result = delimiter.join(result) if len(result) > 0 else default
@@ -312,50 +323,52 @@ class Article:
         for property in properties:
             value = ''
             if isinstance(property, str):
-                value = self.getProperty(property, comment_as_title=True, capitalize=True)
+                value = self.get_property(property, comment_as_title=True, capitalize=True)
             elif isinstance(property, dict):
                 property['comment_as_title'] = True
                 property['capitalize'] = True
-                value = self.getProperty(**property)
+                value = self.get_property(**property)
             if len(value) > 0:
                 result = value
                 break
         return '\n'.join(sorted(result.splitlines()))
 
-    def getTable(self, name):
+    def get_table(self, name):
         if name in self.tables.keys():
             return self.tables[name]
         return []
 
-    def getAllTables(self):
+    def get_all_tables(self):
         return self.tables
 
-    def getUnit(self, name):
+    def get_unit(self, name):
         if name in self.units.keys():
             return self.units[name]
         return ''
 
     def join_properties(self, properties, delimiter=' / '):
         return capitalize_multiline(delimiter.join(filter(len, [
-            self.getProperty(property) for property in properties
+            self.get_property(property) for property in properties
             ])))
+
 
 def signal_handler(signal, frame):
     print('\nFetching cancelled by user.')
     sys.exit(0)
+
 
 def parse(element_name, article_url, ionization_energies, element_names, category):
     article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_' + element_name)
 
     properties = {'wikipediaLink': URL_PREFIX + '/wiki/' + article_url, 'category': category,
                   'molarIonizationEnergies': '\n'.join(
-                      [key + ': ' + value + ' ' + article.getUnit('ionization energy 1') for
-                       key, value in ionization_energies[article.getProperty('number')].items() if
+                      [key + ': ' + value + ' ' + article.get_unit('ionization energy 1') for
+                       key, value in ionization_energies[article.get_property('number')].items() if
                        value != ''])
                   }
 
-    e_r_prefix = article.getProperty(
-        'electrical resistivity unit prefix', comments=False, units=False) + article.getUnit(
+    e_r_prefix = article.get_property(
+        'electrical resistivity unit prefix', comments=False, units=False) + article.get_unit(
         'electrical resistivity unit prefix')
 
     for property in [
@@ -369,7 +382,7 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         ['phase', {'name': 'phase', 'comments': False, 'capitalize': True}],
         ['density', [{'name': 'density gpcm3nrt'},
                      {'name': 'density gplstp', 'units': False,
-                      'append': '×10⁻³ ' + article.getUnit('density gpcm3nrt')}]],
+                      'append': '×10⁻³ ' + article.get_unit('density gpcm3nrt')}]],
         ['liquidDensityAtMeltingPoint', ['density gpcm3mp']],
         ['liquidDensityAtBoilingPoint', ['density gpcm3bp']],
         ['meltingPoint', {'properties': ['melting point k', 'melting point c', 'melting point f']}],
@@ -421,14 +434,14 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         ['weight', {'name': 'atomic mass', 'comments': False, 'sanitize': lambda x: replace_chars(
             re.sub(r'([^\s]+)\s*\([^\)]*\)', r'\1', x).splitlines()[0], '()', '[]').rstrip('.0')}],
         ['electricalResistivity', [
-            {'name': 'electrical resistivity', 'unitPrefix': e_r_prefix},
-            {'name': 'electrical resistivity at 0', 'prepend': article.getComment(
-                'electrical resistivity unit prefix'), 'unitPrefix': e_r_prefix},
-            {'name': 'electrical resistivity at 20', 'unitPrefix': e_r_prefix}]]
+            {'name': 'electrical resistivity', 'unit_prefix': e_r_prefix},
+            {'name': 'electrical resistivity at 0', 'prepend': article.get_comment(
+                'electrical resistivity unit prefix'), 'unit_prefix': e_r_prefix},
+            {'name': 'electrical resistivity at 20', 'unit_prefix': e_r_prefix}]]
     ]:
         if isinstance(property[1], dict):
             if 'name' in property[1]:
-                properties[property[0]] = article.getProperty(**property[1])
+                properties[property[0]] = article.get_property(**property[1])
             elif 'properties' in property[1]:
                 properties[property[0]] = article.join_properties(**property[1])
         elif isinstance(property[1], list):
@@ -439,7 +452,7 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
     article = Article(URL_PREFIX + '/wiki/Special:Export/Isotopes_of_' + properties['name'].lower())
 
     properties['isotopes'] = []
-    for row in article.getTable('table'):
+    for row in article.get_table('table'):
         isotope_symbol = re.sub(r'[ ]*' + properties['name'], properties['symbol'],
                                 row['nuclide symbol'], flags=re.IGNORECASE)
 
@@ -455,7 +468,7 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
 
         daughter_isotopes = re.sub(r'[()]', '', row['daughter isotope'])
         for pair in element_names:
-            daughter_isotopes = re.sub(r'[ ]*' + pair[0] + r'| ' + pair[1], pair[1],
+            daughter_isotopes = re.sub(r'[ ]*%s| %s' % (pair[0], pair[1]), pair[1],
                                        daughter_isotopes, flags=re.IGNORECASE)
         daughter_isotopes = capitalize_multiline(daughter_isotopes).splitlines()
 
@@ -507,8 +520,8 @@ if __name__ == '__main__':
     article = Article(URL_PREFIX + '/wiki/Special:Export/Molar_ionization_energies_of_the_elements')
     ionization_energies = {}
     element_names = []
-    for tableName, table in article.getAllTables().items():
-        if tableName == '1st–10th' or tableName == '11th–20th' or tableName == '21st–30th':
+    for table_name, table in article.get_all_tables().items():
+        if table_name == '1st–10th' or table_name == '11th–20th' or table_name == '21st–30th':
             for row in table:
                 index = row['number']
                 if index in ionization_energies.keys():
@@ -526,7 +539,7 @@ if __name__ == '__main__':
     article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Periodic_table')
     categories = []
     params = []
-    for row in article.getTable('table 1'):
+    for row in article.get_table('table 1'):
         for key, value in row.items():
             segments = [segment.strip() for segment in value.split(';')]
             if len(segments) >= 7:
@@ -538,11 +551,11 @@ if __name__ == '__main__':
 
     pool = Pool(processes=multiprocessing.cpu_count() * 2)
 
-    jsonData = pool.starmap(parse, params)
+    json_data = pool.starmap(parse, params)
     pool.close()
     pool.join()
 
     # Save
 
     with open(OUTPUT_JSON, 'w+') as outfile:
-        json.dump(jsonData, outfile, sort_keys=True, indent=4, ensure_ascii=False)
+        json.dump(json_data, outfile, sort_keys=True, indent=4, ensure_ascii=False)
