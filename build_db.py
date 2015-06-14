@@ -536,7 +536,7 @@ if __name__ == '__main__':
                                segments[1].capitalize(), ionization_energies, element_names,
                                categories.index(segments[5].lower())))
 
-    pool = Pool(processes=multiprocessing.cpu_count())
+    pool = Pool(processes=multiprocessing.cpu_count() * 2)
 
     jsonData = pool.starmap(parse, params)
     pool.close()
