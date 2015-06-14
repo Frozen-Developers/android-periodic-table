@@ -2,10 +2,24 @@ package com.frozendevs.periodictable.view;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.ContextMenu;
 import android.view.View;
 
 public class RecyclerView extends android.support.v7.widget.RecyclerView {
     private View mEmptyView;
+    private RecyclerContextMenuInfo mContextMenuInfo;
+
+    public class RecyclerContextMenuInfo implements ContextMenu.ContextMenuInfo {
+        public View targetView;
+        public int position;
+        public long id;
+
+        public RecyclerContextMenuInfo(View targetView, int position, long id) {
+            this.targetView = targetView;
+            this.position = position;
+            this.id = id;
+        }
+    }
 
     private final android.support.v7.widget.RecyclerView.AdapterDataObserver observer =
             new android.support.v7.widget.RecyclerView.AdapterDataObserver() {
@@ -68,5 +82,24 @@ public class RecyclerView extends android.support.v7.widget.RecyclerView {
         mEmptyView = emptyView;
 
         checkIfEmpty();
+    }
+
+    @Override
+    protected ContextMenu.ContextMenuInfo getContextMenuInfo() {
+        return mContextMenuInfo;
+    }
+
+    @Override
+    public boolean showContextMenuForChild(View originalView) {
+        final int position = getChildAdapterPosition(originalView);
+
+        if (position > NO_POSITION) {
+            mContextMenuInfo = new RecyclerContextMenuInfo(originalView, position,
+                    getAdapter().getItemId(position));
+
+            return super.showContextMenuForChild(originalView);
+        }
+
+        return false;
     }
 }

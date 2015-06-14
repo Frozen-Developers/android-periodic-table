@@ -16,8 +16,6 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ExpandableListView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -27,6 +25,7 @@ import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
+import com.frozendevs.periodictable.view.RecyclerView;
 
 public class PropertiesActivity extends AppCompatActivity {
 
@@ -129,15 +128,7 @@ public class PropertiesActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         String propertyName, propertyValue;
 
-        ContextMenu.ContextMenuInfo info = item.getMenuInfo();
-
-        View view;
-
-        if (info instanceof ExpandableListView.ExpandableListContextMenuInfo) {
-            view = ((ExpandableListView.ExpandableListContextMenuInfo) info).targetView;
-        } else {
-            view = ((ListView.AdapterContextMenuInfo) info).targetView;
-        }
+        View view = ((RecyclerView.RecyclerContextMenuInfo) item.getMenuInfo()).targetView;
 
         TextView symbol = (TextView) view.findViewById(R.id.property_symbol);
 
