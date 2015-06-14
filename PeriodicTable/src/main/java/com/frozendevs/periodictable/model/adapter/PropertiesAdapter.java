@@ -1,55 +1,38 @@
 package com.frozendevs.periodictable.model.adapter;
 
-import android.annotation.TargetApi;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.graphics.drawable.StateListDrawable;
-import android.os.Build;
-import android.util.TypedValue;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.view.RecyclerView;
 
-public class PropertiesAdapter extends BaseAdapter implements
-        ListView.OnItemClickListener {
+public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private static enum ViewType {
-        HEADER,
-        ITEM,
-        SUMMARY
-    }
+    public static final int VIEW_TYPE_HEADER = 0;
+    public static final int VIEW_TYPE_ITEM = 1;
+    public static final int VIEW_TYPE_SUMMARY = 2;
 
     private Context mContext;
     private Typeface mTypeface;
-    private TableAdapter mTableAdapter;
     private Property[] mProperties = new Property[0];
-    private StateListDrawable mGroupIndicator;
     private TableItem mTableItem;
+    private TableAdapter mTableAdapter;
 
     private class Property<T> {
         String mName = "";
         T mValue;
-        ViewType mType = ViewType.ITEM;
-        boolean mExpanded = false;
 
         Property(int name, T value) {
             mName = mContext.getString(name);
 
-            if (value == null) {
-                mType = ViewType.HEADER;
-            } else if (value instanceof String) {
+            if (value instanceof String) {
                 mValue = (T) parseString((String) value);
             } else if (value instanceof String[]) {
                 String[] values = (String[]) value;
@@ -65,12 +48,6 @@ public class PropertiesAdapter extends BaseAdapter implements
             }
         }
 
-        Property(int name, T value, ViewType type) {
-            this(name, value);
-
-            mType = type;
-        }
-
         String parseString(String value) {
             if (value.equals("")) {
                 return mContext.getString(R.string.property_value_unknown);
@@ -81,10 +58,6 @@ public class PropertiesAdapter extends BaseAdapter implements
             return value;
         }
 
-        boolean isExpanded() {
-            return mExpanded;
-        }
-
         String getName() {
             return mName;
         }
@@ -92,53 +65,97 @@ public class PropertiesAdapter extends BaseAdapter implements
         T getValue() {
             return mValue;
         }
+    }
 
-        ViewType getType() {
-            return mType;
+    public class ViewHolder extends RecyclerView.ViewHolder implements
+            View.OnClickListener, View.OnCreateContextMenuListener {
+        TextView mName, mValue;
+
+        public ViewHolder(View itemView) {
+            super(itemView);
+
+            mName = (TextView) itemView.findViewById(R.id.property_name);
+            mValue = (TextView) itemView.findViewById(R.id.property_value);
+
+            if (mValue != null) {
+                mValue.setTypeface(mTypeface);
+
+                itemView.setOnClickListener(this);
+                itemView.setOnCreateContextMenuListener(this);
+            }
         }
 
-        void setExpanded(boolean expanded) {
-            mExpanded = expanded;
+        public void setName(String name) {
+            mName.setText(name);
+        }
+
+        public void setValue(String value) {
+            mValue.setText(value);
+        }
+
+        @Override
+        public void onClick(View view) {
+        }
+
+        @Override
+        public void onCreateContextMenu(ContextMenu menu, View view,
+                                        ContextMenu.ContextMenuInfo menuInfo) {
         }
     }
 
-    private class ViewHolder {
-        ImageView indicator;
-        TextView name, value;
+    public class SummaryViewHolder extends RecyclerView.ViewHolder {
+        private TextView mConfiguration, mShells, mElectronegativity, mOxidationStates;
+
+        public SummaryViewHolder(View itemView) {
+            super(itemView);
+
+            View tileView = itemView.findViewById(R.id.tile_view);
+            mTableAdapter.getView(mTableItem, tileView, (ViewGroup) itemView);
+            tileView.setClickable(false);
+            tileView.setDuplicateParentStateEnabled(true);
+
+            mConfiguration = (TextView) itemView.findViewById(R.id.element_electron_configuration);
+            mConfiguration.setTypeface(mTypeface);
+            mShells = (TextView) itemView.findViewById(R.id.element_electrons_per_shell);
+            mShells.setTypeface(mTypeface);
+            mElectronegativity = (TextView) itemView.findViewById(R.id.element_electronegativity);
+            mElectronegativity.setTypeface(mTypeface);
+            mOxidationStates = (TextView) itemView.findViewById(R.id.element_oxidation_states);
+            mOxidationStates.setTypeface(mTypeface);
+        }
+
+        public void setElectronConfiguration(String configuration) {
+            mConfiguration.setText(configuration);
+        }
+
+        public void setElectronsPerShell(String electronsPerShell) {
+            mShells.setText(electronsPerShell);
+        }
+
+        public void setElectronegativity(String electronegativity) {
+            mElectronegativity.setText(electronegativity);
+        }
+
+        public void setOxidationStates(String oxidationStates) {
+            mOxidationStates.setText(oxidationStates);
+        }
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public PropertiesAdapter(Context context, ElementProperties properties) {
         mContext = context;
 
         mTableItem = properties;
 
-        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
-
-        Resources.Theme theme = mContext.getTheme();
-        TypedValue typedValue = new TypedValue();
-
-        theme.resolveAttribute(android.R.attr.expandableListViewStyle, typedValue, true);
-
-        TypedArray typedArray = theme.obtainStyledAttributes(typedValue.resourceId,
-                new int[]{android.R.attr.groupIndicator, R.attr.colorControlHighlight});
-
-        mGroupIndicator = (StateListDrawable) typedArray.getDrawable(0);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mGroupIndicator.setTint(typedArray.getColor(1,
-                    R.color.abc_secondary_text_material_dark));
-        }
-
-        typedArray.recycle();
-
         mTableAdapter = new TableAdapter(context);
+
+        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         mProperties = new Property[]{
                 new Property<String>(R.string.properties_header_summary, null),
                 new Property<String[]>(R.string.properties_header_summary, new String[]{
                         properties.getElectronConfiguration(), properties.getElectronsPerShell(),
                         properties.getElectronegativity(), properties.getOxidationStates()
-                }, ViewType.SUMMARY),
+                }),
                 new Property<String>(R.string.properties_header_general, null),
                 new Property<String>(R.string.property_symbol, properties.getSymbol()),
                 new Property<String>(R.string.property_atomic_number,
@@ -229,166 +246,49 @@ public class PropertiesAdapter extends BaseAdapter implements
     }
 
     @Override
-    public boolean areAllItemsEnabled() {
-        return false;
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        if (viewType == VIEW_TYPE_SUMMARY) {
+            return new SummaryViewHolder(LayoutInflater.from(mContext).inflate(
+                    R.layout.properties_summary_item, parent, false));
+        }
+
+        return new ViewHolder(LayoutInflater.from(mContext).inflate(viewType == VIEW_TYPE_HEADER
+                ? R.layout.properties_list_header : R.layout.properties_list_item, parent, false));
     }
 
     @Override
-    public boolean isEnabled(int position) {
-        return getItem(position).getType() != ViewType.HEADER;
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+        Property property = mProperties[position];
+
+        switch (getItemViewType(position)) {
+            case VIEW_TYPE_HEADER:
+            case VIEW_TYPE_ITEM:
+                ((ViewHolder) holder).setName(property.getName());
+
+                if (getItemViewType(position) == VIEW_TYPE_ITEM) {
+                    ((ViewHolder) holder).setValue((String) property.getValue());
+                }
+                break;
+
+            case VIEW_TYPE_SUMMARY:
+                String[] properties = (String[]) property.getValue();
+
+                ((SummaryViewHolder) holder).setElectronConfiguration(properties[0]);
+                ((SummaryViewHolder) holder).setElectronsPerShell(properties[1]);
+                ((SummaryViewHolder) holder).setElectronegativity(properties[2]);
+                ((SummaryViewHolder) holder).setOxidationStates(properties[3]);
+                break;
+        }
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return mProperties.length;
     }
 
     @Override
-    public Property getItem(int position) {
-        return mProperties[position];
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
-    }
-
-    @Override
-    public boolean hasStableIds() {
-        return true;
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        Property property = getItem(position);
-
-        switch (property.getType()) {
-            case SUMMARY:
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(mContext).inflate(
-                            R.layout.properties_summary_item, parent, false);
-
-                    View tileView = convertView.findViewById(R.id.tile_view);
-                    mTableAdapter.getView(mTableItem, tileView, (ViewGroup) convertView);
-                    tileView.setClickable(false);
-                    tileView.setDuplicateParentStateEnabled(true);
-
-                    String[] properties = (String[]) property.getValue();
-
-                    TextView configuration = (TextView) convertView.findViewById(
-                            R.id.element_electron_configuration);
-                    configuration.setText(properties[0]);
-                    configuration.setTypeface(mTypeface);
-
-                    TextView shells = (TextView) convertView.findViewById(
-                            R.id.element_electrons_per_shell);
-                    shells.setText(properties[1]);
-                    shells.setTypeface(mTypeface);
-
-                    TextView electronegativity = (TextView) convertView.findViewById(
-                            R.id.element_electronegativity);
-                    electronegativity.setText(properties[2]);
-                    electronegativity.setTypeface(mTypeface);
-
-                    TextView oxidationStates = (TextView) convertView.findViewById(
-                            R.id.element_oxidation_states);
-                    oxidationStates.setText(properties[3]);
-                    oxidationStates.setTypeface(mTypeface);
-                }
-                break;
-
-            case ITEM:
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(mContext).inflate(
-                            R.layout.properties_list_item, parent, false);
-                }
-
-                ViewHolder viewHolder = (ViewHolder) convertView.getTag();
-
-                if (viewHolder == null) {
-                    viewHolder = new ViewHolder();
-
-                    viewHolder.indicator = (ImageView) convertView.findViewById(R.id.group_indicator);
-                    viewHolder.name = (TextView) convertView.findViewById(R.id.property_name);
-                    viewHolder.value = (TextView) convertView.findViewById(R.id.property_value);
-                    viewHolder.value.setTypeface(mTypeface);
-
-                    convertView.setTag(viewHolder);
-                }
-
-                viewHolder.name.setText(property.getName());
-
-                String[] lines = ((String) property.getValue()).split("\\n");
-                if (lines.length > 3) {
-                    mGroupIndicator.setState(property.isExpanded() ?
-                            new int[]{android.R.attr.state_expanded} : null);
-                    viewHolder.indicator.setImageDrawable(mGroupIndicator.getCurrent());
-                    viewHolder.indicator.setVisibility(View.VISIBLE);
-
-                    viewHolder.value.setText((String) property.getValue());
-                    if (property.isExpanded()) {
-                        viewHolder.value.setMaxLines(Integer.MAX_VALUE);
-                    } else {
-                        viewHolder.value.setMaxLines(1);
-                    }
-                } else {
-                    viewHolder.indicator.setVisibility(View.GONE);
-
-                    viewHolder.value.setText((String) property.getValue());
-                }
-                break;
-
-            case HEADER:
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(mContext).inflate(
-                            R.layout.properties_list_header, parent, false);
-                }
-
-                ((TextView) convertView).setText(property.getName());
-                break;
-        }
-
-        return convertView;
-    }
-
-    @Override
     public int getItemViewType(int position) {
-        return getItem(position).getType().ordinal();
-    }
-
-    @Override
-    public int getViewTypeCount() {
-        return ViewType.values().length;
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Property property = getItem(position);
-
-        switch (property.getType()) {
-            case SUMMARY:
-                AlertDialog legendDialog = new AlertDialog.Builder(mContext).create();
-                legendDialog.setTitle(R.string.context_title_legend);
-
-                int padding = mContext.getResources().getDimensionPixelOffset(
-                        R.dimen.listPreferredItemPaddingTop);
-
-                View summaryView = LayoutInflater.from(mContext).inflate(
-                        R.layout.properties_summary_item, parent, false);
-                summaryView.setPadding(padding, padding, padding, padding);
-                summaryView.findViewById(R.id.tile_view).setBackgroundColor(
-                        mTableAdapter.getBackgroundColor(mTableItem));
-
-                legendDialog.setView(summaryView);
-
-                legendDialog.show();
-                break;
-
-            case ITEM:
-                property.setExpanded(!property.isExpanded());
-
-                notifyDataSetChanged();
-                break;
-        }
+        if (position == 1) return VIEW_TYPE_SUMMARY;
+        return mProperties[position].getValue() == null ? VIEW_TYPE_HEADER : VIEW_TYPE_ITEM;
     }
 }

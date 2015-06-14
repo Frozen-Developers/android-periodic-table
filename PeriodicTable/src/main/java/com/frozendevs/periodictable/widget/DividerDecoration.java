@@ -8,6 +8,8 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
+
 public class DividerDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = {android.R.attr.listDivider};
@@ -28,13 +30,28 @@ public class DividerDecoration extends RecyclerView.ItemDecoration {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
-            final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
-                    .getLayoutParams();
-            final int top = child.getBottom() + params.bottomMargin +
-                    (int) ViewCompat.getTranslationY(child);
-            final int bottom = top + mDivider.getIntrinsicHeight();
-            mDivider.setBounds(left, top, right, bottom);
-            mDivider.draw(canvas);
+
+            if (isDecorated(child, parent)) {
+                View nextChild = null;
+                if (i < childCount - 1) nextChild = parent.getChildAt(i + 1);
+                if (nextChild != null && !isDecorated(nextChild, parent)) {
+                    continue;
+                }
+                final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
+                        .getLayoutParams();
+                final int top = child.getBottom() + params.bottomMargin +
+                        (int) ViewCompat.getTranslationY(child);
+                final int bottom = top + mDivider.getIntrinsicHeight();
+                mDivider.setBounds(left, top, right, bottom);
+                mDivider.draw(canvas);
+            }
         }
+    }
+
+    private boolean isDecorated(View view, RecyclerView parent) {
+        RecyclerView.ViewHolder holder = parent.getChildViewHolder(view);
+
+        return !(holder instanceof PropertiesAdapter.ViewHolder &&
+                holder.getItemViewType() == PropertiesAdapter.VIEW_TYPE_HEADER);
     }
 }

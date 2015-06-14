@@ -1,56 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="?attr/listPreferredItemHeight">
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
+    android:background="?attr/listChoiceBackgroundIndicator"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
+    android:paddingEnd="?attr/listPreferredItemPaddingRight"
+    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
+    android:paddingRight="?attr/listPreferredItemPaddingRight"
+    android:paddingStart="?attr/listPreferredItemPaddingLeft"
+    android:paddingTop="@dimen/listPreferredItemPaddingTop">
 
-    <ImageView
-        android:id="@+id/group_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="?attr/listPreferredItemHeight"
-        android:layout_gravity="end|top"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:paddingLeft="0dp"
-        android:paddingStart="0dp"
-        android:paddingRight="?android:attr/expandableListPreferredItemIndicatorLeft"
-        android:paddingEnd="?android:attr/expandableListPreferredItemIndicatorLeft"
-        android:visibility="gone"
-        android:contentDescription="@null"/>
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/property_name"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toLeftOf="@id/group_indicator"
-        android:layout_toStartOf="@id/group_indicator"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingLeft="?attr/listPreferredItemPaddingLeft"
-        android:paddingStart="?attr/listPreferredItemPaddingLeft"
-        android:paddingRight="?attr/listPreferredItemPaddingRight"
-        android:paddingEnd="?attr/listPreferredItemPaddingRight"
-        android:paddingTop="@dimen/listPreferredItemPaddingTop"
-        android:paddingBottom="@dimen/listPreferredItemPaddingBottom">
+        android:layout_gravity="start"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textAlignment="viewStart"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white" />
 
-        <TextView android:id="@+id/property_name"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:singleLine="true"
-            android:ellipsize="marquee"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textAlignment="viewStart"
-            android:layout_gravity="start"/>
+    <TextView
+        android:id="@+id/property_value"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:textAlignment="viewStart"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-        <TextView android:id="@+id/property_value"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textAlignment="viewStart"
-            android:layout_gravity="start"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

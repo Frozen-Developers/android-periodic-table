@@ -140,19 +140,8 @@ public class PropertiesActivity extends AppCompatActivity {
         }
 
         TextView symbol = (TextView) view.findViewById(R.id.property_symbol);
-        TextView configuration = (TextView) view.findViewById(R.id.element_electron_configuration);
 
-        if (configuration != null) {
-            propertyName = getString(R.string.properties_header_summary);
-            propertyValue = (String) ((TextView) view.findViewById(R.id.element_symbol)).getText() +
-                    '\n' + ((TextView) view.findViewById(R.id.element_number)).getText() + '\n' +
-                    ((TextView) view.findViewById(R.id.element_name)).getText() + '\n' +
-                    ((TextView) view.findViewById(R.id.element_weight)).getText() + '\n' +
-                    configuration.getText() + '\n' +
-                    ((TextView) view.findViewById(R.id.element_electrons_per_shell)).getText() + '\n'
-                    + ((TextView) view.findViewById(R.id.element_electronegativity)).getText() + '\n'
-                    + ((TextView) view.findViewById(R.id.element_oxidation_states)).getText();
-        } else if (symbol != null) {
+        if (symbol != null) {
             propertyName = getString(R.string.property_symbol);
             propertyValue = (String) symbol.getText();
         } else {
