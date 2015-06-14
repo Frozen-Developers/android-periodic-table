@@ -9,6 +9,8 @@ from html.parser import HTMLParser
 from collections import OrderedDict
 from xml.etree import ElementTree
 from urllib.request import urlopen
+import multiprocessing
+from multiprocessing.pool import Pool
 
 OUTPUT_JSON = 'PeriodicTable/src/main/res/raw/database.json'
 
@@ -496,8 +498,6 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
 if __name__ == '__main__':
     signal.signal(signal.SIGINT, signal_handler)
 
-    jsonData = []
-
     # Parse all units
 
     Article(URL_PREFIX + '/wiki/Special:Export/Template:Infobox_element')
@@ -525,16 +525,22 @@ if __name__ == '__main__':
 
     article = Article(URL_PREFIX + '/wiki/Special:Export/Template:Periodic_table')
     categories = []
+    params = []
     for row in article.getTable('table 1'):
         for key, value in row.items():
             segments = [segment.strip() for segment in value.split(';')]
             if len(segments) >= 7:
                 if segments[5].lower() not in categories:
                     categories.append(segments[5].lower())
-                jsonData.append(parse(segments[1],
-                                      segments[7].replace(' ', '_') if len(segments) > 7 else
-                                      segments[1].capitalize(), ionization_energies, element_names,
-                                      categories.index(segments[5].lower())))
+                params.append((segments[1], segments[7].replace(' ', '_') if len(segments) > 7 else
+                               segments[1].capitalize(), ionization_energies, element_names,
+                               categories.index(segments[5].lower())))
+
+    pool = Pool(processes=multiprocessing.cpu_count())
+
+    jsonData = pool.starmap(parse, params)
+    pool.close()
+    pool.join()
 
     # Save
 
