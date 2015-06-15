@@ -21,6 +21,7 @@
         "group": 1,
         "heatOfFusion": "H₂: 0.117 kJ·mol⁻¹",
         "heatOfVaporization": "H₂: 0.904 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Hydrogen_discharge_tube.jpg/1024px-Hydrogen_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "99.9885%",
@@ -122,6 +123,7 @@
         "group": 18,
         "heatOfFusion": "0.0138 kJ·mol⁻¹",
         "heatOfVaporization": "0.0829 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Helium_discharge_tube.jpg/1024px-Helium_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -237,6 +239,7 @@
         "group": 1,
         "heatOfFusion": "3.00 kJ·mol⁻¹",
         "heatOfVaporization": "136 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Lithium_paraffin.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -366,6 +369,7 @@
         "group": 2,
         "heatOfFusion": "12.2 kJ·mol⁻¹",
         "heatOfVaporization": "292 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Be-140g.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -509,6 +513,7 @@
         "group": 13,
         "heatOfFusion": "50.2 kJ·mol⁻¹",
         "heatOfVaporization": "508 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Boron_R105.jpg/1024px-Boron_R105.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -659,6 +664,7 @@
         "group": 14,
         "heatOfFusion": "Graphite: 117 kJ·mol⁻¹",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Graphite-and-diamond-with-scale.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -816,6 +822,7 @@
         "group": 15,
         "heatOfFusion": "N₂: 0.72 kJ·mol⁻¹",
         "heatOfVaporization": "N₂: 5.56 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Liquidnitrogen.jpg/1024px-Liquidnitrogen.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -987,6 +994,7 @@
         "group": 16,
         "heatOfFusion": "O₂: 0.444 kJ·mol⁻¹",
         "heatOfVaporization": "O₂: 6.82 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Liquid_Oxygen.png",
         "isotopes": [
             {
                 "abundance": "",
@@ -1130,6 +1138,7 @@
         "group": 17,
         "heatOfFusion": "",
         "heatOfVaporization": "6.51 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/91/Liquid_fluorine_tighter_crop.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -1315,6 +1324,7 @@
         "group": 18,
         "heatOfFusion": "0.335 kJ·mol⁻¹",
         "heatOfVaporization": "1.71 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Neon_discharge_tube.jpg/1024px-Neon_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -1500,6 +1510,7 @@
         "group": 1,
         "heatOfFusion": "2.60 kJ·mol⁻¹",
         "heatOfVaporization": "97.42 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Na_%28Sodium%29.jpg/1024px-Na_%28Sodium%29.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -1706,6 +1717,7 @@
         "group": 2,
         "heatOfFusion": "8.48 kJ·mol⁻¹",
         "heatOfVaporization": "128 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg/1024px-CSIRO_ScienceImage_2893_Crystalised_magnesium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -1912,6 +1924,7 @@
         "group": 13,
         "heatOfFusion": "10.71 kJ·mol⁻¹",
         "heatOfVaporization": "284 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Aluminium-4.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -2160,6 +2173,7 @@
         "group": 14,
         "heatOfFusion": "50.21 kJ·mol⁻¹",
         "heatOfVaporization": "383 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/SiliconCroda.jpg/1024px-SiliconCroda.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -2373,6 +2387,7 @@
         "group": 15,
         "heatOfFusion": "White: 0.66 kJ·mol⁻¹",
         "heatOfVaporization": "White: 51.9 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/PhosphComby.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -2586,6 +2601,7 @@
         "group": 16,
         "heatOfFusion": "Mono: 1.727 kJ·mol⁻¹",
         "heatOfVaporization": "Mono: 45 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Sulfur-sample.jpg/1024px-Sulfur-sample.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -2813,6 +2829,7 @@
         "group": 17,
         "heatOfFusion": "Cl₂: 6.406 kJ·mol⁻¹",
         "heatOfVaporization": "Cl₂: 20.41 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Chlorine_ampoule.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -3047,6 +3064,7 @@
         "group": 18,
         "heatOfFusion": "1.18 kJ·mol⁻¹",
         "heatOfVaporization": "6.53 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Argon_discharge_tube.jpg/1024px-Argon_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -3274,6 +3292,7 @@
         "group": 1,
         "heatOfFusion": "2.33 kJ·mol⁻¹",
         "heatOfVaporization": "76.9 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Potassium-2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -3522,6 +3541,7 @@
         "group": 2,
         "heatOfFusion": "8.54 kJ·mol⁻¹",
         "heatOfVaporization": "154.7 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg/1024px-Calcium_unter_Argon_Schutzgasatmosph%C3%A4re.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -3742,6 +3762,7 @@
         "group": 3,
         "heatOfFusion": "14.1 kJ·mol⁻¹",
         "heatOfVaporization": "332.7 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Scandium_sublimed_dendritic_and_1cm3_cube.jpg/1024px-Scandium_sublimed_dendritic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -4053,6 +4074,7 @@
         "group": 4,
         "heatOfFusion": "14.15 kJ·mol⁻¹",
         "heatOfVaporization": "425 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Titan-crystal_bar.JPG/1024px-Titan-crystal_bar.JPG",
         "isotopes": [
             {
                 "abundance": "",
@@ -4301,6 +4323,7 @@
         "group": 5,
         "heatOfFusion": "21.5 kJ·mol⁻¹",
         "heatOfVaporization": "444 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Vanadium_etched.jpg/1024px-Vanadium_etched.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -4570,6 +4593,7 @@
         "group": 6,
         "heatOfFusion": "21.0 kJ·mol⁻¹",
         "heatOfVaporization": "347 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Chromium_crystals_and_1cm3_cube.jpg/1024px-Chromium_crystals_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -4818,6 +4842,7 @@
         "group": 7,
         "heatOfFusion": "12.91 kJ·mol⁻¹",
         "heatOfVaporization": "221 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/86/Mangan_1-crop.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -5101,6 +5126,7 @@
         "group": 8,
         "heatOfFusion": "13.81 kJ·mol⁻¹",
         "heatOfVaporization": "340 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Iron_electrolytic_and_1cm3_cube.jpg/1024px-Iron_electrolytic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -5391,6 +5417,7 @@
         "group": 9,
         "heatOfFusion": "16.06 kJ·mol⁻¹",
         "heatOfVaporization": "377 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Kobalt_electrolytic_and_1cm3_cube.jpg/1024px-Kobalt_electrolytic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -5723,6 +5750,7 @@
         "group": 10,
         "heatOfFusion": "17.48 kJ·mol⁻¹",
         "heatOfVaporization": "379 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/57/Nickel_chunk.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -6048,6 +6076,7 @@
         "group": 11,
         "heatOfFusion": "13.26 kJ·mol⁻¹",
         "heatOfVaporization": "300.4 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/NatCopper.jpg/1024px-NatCopper.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -6352,6 +6381,7 @@
         "group": 12,
         "heatOfFusion": "7.32 kJ·mol⁻¹",
         "heatOfVaporization": "115 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Zinc_fragment_sublimed_and_1cm3_cube.jpg/1024px-Zinc_fragment_sublimed_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -6684,6 +6714,7 @@
         "group": 13,
         "heatOfFusion": "5.59 kJ·mol⁻¹",
         "heatOfVaporization": "256 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/92/Gallium_crystals.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -6974,6 +7005,7 @@
         "group": 14,
         "heatOfFusion": "36.94 kJ·mol⁻¹",
         "heatOfVaporization": "334 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Polycrystalline-germanium.jpg/1024px-Polycrystalline-germanium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -7341,6 +7373,7 @@
         "group": 15,
         "heatOfFusion": "Grey: 24.44 kJ·mol⁻¹",
         "heatOfVaporization": "34.76 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Arsen_1a.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -7694,6 +7727,7 @@
         "group": 16,
         "heatOfFusion": "Gray: 6.69 kJ·mol⁻¹",
         "heatOfVaporization": "95.48 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/47/SeBlackRed.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -8019,6 +8053,7 @@
         "group": 17,
         "heatOfFusion": "Br₂: 10.571 kJ·mol⁻¹",
         "heatOfVaporization": "Br₂: 29.96 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Bromine_25ml_%28transparent%29.png",
         "isotopes": [
             {
                 "abundance": "",
@@ -8393,6 +8428,7 @@
         "group": 18,
         "heatOfFusion": "1.64 kJ·mol⁻¹",
         "heatOfVaporization": "9.08 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Krypton_discharge_tube.jpg/1024px-Krypton_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -8732,6 +8768,7 @@
         "group": 1,
         "heatOfFusion": "2.19 kJ·mol⁻¹",
         "heatOfVaporization": "69 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Rb5.JPG/1024px-Rb5.JPG",
         "isotopes": [
             {
                 "abundance": "",
@@ -9099,6 +9136,7 @@
         "group": 2,
         "heatOfFusion": "7.43 kJ·mol⁻¹",
         "heatOfVaporization": "141 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Strontium_destilled_crystals.jpg/1024px-Strontium_destilled_crystals.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -9424,6 +9462,7 @@
         "group": 3,
         "heatOfFusion": "11.42 kJ·mol⁻¹",
         "heatOfVaporization": "363 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Yttrium_sublimed_dendritic_and_1cm3_cube.jpg/1024px-Yttrium_sublimed_dendritic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -9903,6 +9942,7 @@
         "group": 4,
         "heatOfFusion": "14 kJ·mol⁻¹",
         "heatOfVaporization": "591 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Zirconium_crystal_bar_and_1cm3_cube.jpg/1024px-Zirconium_crystal_bar_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -10228,6 +10268,7 @@
         "group": 5,
         "heatOfFusion": "30 kJ·mol⁻¹",
         "heatOfVaporization": "689.9 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Niobium_crystals_and_1cm3_cube.jpg/1024px-Niobium_crystals_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -10686,6 +10727,7 @@
         "group": 6,
         "heatOfFusion": "37.48 kJ·mol⁻¹",
         "heatOfVaporization": "598 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Molybdenum_crystaline_fragment_and_1cm3_cube.jpg/1024px-Molybdenum_crystaline_fragment_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -11025,6 +11067,7 @@
         "group": 7,
         "heatOfFusion": "33.29 kJ·mol⁻¹",
         "heatOfVaporization": "585.2 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/89/Technetium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -11469,6 +11512,7 @@
         "group": 8,
         "heatOfFusion": "38.59 kJ·mol⁻¹",
         "heatOfVaporization": "619 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Ruthenium_a_half_bar.jpg/1024px-Ruthenium_a_half_bar.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -11808,6 +11852,7 @@
         "group": 9,
         "heatOfFusion": "26.59 kJ·mol⁻¹",
         "heatOfVaporization": "493 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Rhodium_powder_pressed_melted.jpg/1024px-Rhodium_powder_pressed_melted.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -12266,6 +12311,7 @@
         "group": 10,
         "heatOfFusion": "16.74 kJ·mol⁻¹",
         "heatOfVaporization": "358 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Palladium_%2846_Pd%29.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -12689,6 +12735,7 @@
         "group": 11,
         "heatOfFusion": "11.28 kJ·mol⁻¹",
         "heatOfVaporization": "254 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Silver_crystal.jpg/1024px-Silver_crystal.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -13259,6 +13306,7 @@
         "group": 12,
         "heatOfFusion": "6.21 kJ·mol⁻¹",
         "heatOfVaporization": "99.87 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cadmium-crystal_bar.jpg/1024px-Cadmium-crystal_bar.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -13661,6 +13709,7 @@
         "group": 13,
         "heatOfFusion": "3.281 kJ·mol⁻¹",
         "heatOfVaporization": "231.8 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Indium.jpg/1024px-Indium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -14315,6 +14364,7 @@
         "group": 14,
         "heatOfFusion": "White, β: 7.03 kJ·mol⁻¹",
         "heatOfVaporization": "White, β: 296.1 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sn-Alpha-Beta.jpg/1024px-Sn-Alpha-Beta.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -14864,6 +14914,7 @@
         "group": 15,
         "heatOfFusion": "19.79 kJ·mol⁻¹",
         "heatOfVaporization": "193.43 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Antimony-4.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -15378,6 +15429,7 @@
         "group": 16,
         "heatOfFusion": "17.49 kJ·mol⁻¹",
         "heatOfVaporization": "114.1 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Tellurium2.jpg/1024px-Tellurium2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -15815,6 +15867,7 @@
         "group": 17,
         "heatOfFusion": "I₂: 15.52 kJ·mol⁻¹",
         "heatOfVaporization": "I₂: 41.57 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Sample_of_iodine.jpg/1024px-Sample_of_iodine.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -16245,6 +16298,7 @@
         "group": 18,
         "heatOfFusion": "2.27 kJ·mol⁻¹",
         "heatOfVaporization": "12.64 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Xenon_discharge_tube.jpg/1024px-Xenon_discharge_tube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -16647,6 +16701,7 @@
         "group": 1,
         "heatOfFusion": "2.09 kJ·mol⁻¹",
         "heatOfVaporization": "63.9 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Cesium.jpg/1024px-Cesium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -17133,6 +17188,7 @@
         "group": 2,
         "heatOfFusion": "7.12 kJ·mol⁻¹",
         "heatOfVaporization": "142 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/16/Barium_unter_Argon_Schutzgas_Atmosph%C3%A4re.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -17535,6 +17591,7 @@
         "group": 3,
         "heatOfFusion": "6.20 kJ·mol⁻¹",
         "heatOfVaporization": "400 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Lanthanum-2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -17944,6 +18001,7 @@
         "group": 3,
         "heatOfFusion": "5.46 kJ·mol⁻¹",
         "heatOfVaporization": "398 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Cerium2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -18339,6 +18397,7 @@
         "group": 3,
         "heatOfFusion": "6.89 kJ·mol⁻¹",
         "heatOfVaporization": "331 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Praseodymium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -18769,6 +18828,7 @@
         "group": 3,
         "heatOfFusion": "7.14 kJ·mol⁻¹",
         "heatOfVaporization": "289 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Neodymium2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -19178,6 +19238,7 @@
         "group": 3,
         "heatOfFusion": "7.13 kJ·mol⁻¹",
         "heatOfVaporization": "289 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -19622,6 +19683,7 @@
         "group": 3,
         "heatOfFusion": "8.62 kJ·mol⁻¹",
         "heatOfVaporization": "192 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/88/Samarium-2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -20024,6 +20086,7 @@
         "group": 3,
         "heatOfFusion": "9.21 kJ·mol⁻¹",
         "heatOfVaporization": "176 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Europium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -20461,6 +20524,7 @@
         "group": 3,
         "heatOfFusion": "10.05 kJ·mol⁻¹",
         "heatOfVaporization": "301.3 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Gadolinium-4.jpg/1024px-Gadolinium-4.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -20835,6 +20899,7 @@
         "group": 3,
         "heatOfFusion": "10.15 kJ·mol⁻¹",
         "heatOfVaporization": "391 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Terbium-2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -21335,6 +21400,7 @@
         "group": 3,
         "heatOfFusion": "11.06 kJ·mol⁻¹",
         "heatOfVaporization": "280 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Dy_chips.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -21723,6 +21789,7 @@
         "group": 3,
         "heatOfFusion": "17.0 kJ·mol⁻¹",
         "heatOfVaporization": "251 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Holmium2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -22258,6 +22325,7 @@
         "group": 3,
         "heatOfFusion": "19.90 kJ·mol⁻¹",
         "heatOfVaporization": "280 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/Erbium-crop.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -22653,6 +22721,7 @@
         "group": 3,
         "heatOfFusion": "16.84 kJ·mol⁻¹",
         "heatOfVaporization": "191 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Thulium_sublimed_dendritic_and_1cm3_cube.jpg/1024px-Thulium_sublimed_dendritic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -23132,6 +23201,7 @@
         "group": 3,
         "heatOfFusion": "7.66 kJ·mol⁻¹",
         "heatOfVaporization": "129 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Ytterbium-3.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -23513,6 +23583,7 @@
         "group": 3,
         "heatOfFusion": "22 kJ·mol⁻¹",
         "heatOfVaporization": "414 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Lutetium_sublimed_dendritic_and_1cm3_cube.jpg/1024px-Lutetium_sublimed_dendritic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -24104,6 +24175,7 @@
         "group": 4,
         "heatOfFusion": "27.2 kJ·mol⁻¹",
         "heatOfVaporization": "648 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Hf-crystal_bar.jpg/1024px-Hf-crystal_bar.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -24597,6 +24669,7 @@
         "group": 5,
         "heatOfFusion": "36.57 kJ·mol⁻¹",
         "heatOfVaporization": "753 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Tantalum_single_crystal_and_1cm3_cube.jpg/1024px-Tantalum_single_crystal_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -25160,6 +25233,7 @@
         "group": 6,
         "heatOfFusion": "35.3 kJ·mol⁻¹",
         "heatOfVaporization": "774 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Wolfram_evaporated_crystals_and_1cm3_cube.jpg/1024px-Wolfram_evaporated_crystals_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -25534,6 +25608,7 @@
         "group": 7,
         "heatOfFusion": "60.43 kJ·mol⁻¹",
         "heatOfVaporization": "704 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Rhenium_single_crystal_bar_and_1cm3_cube.jpg/1024px-Rhenium_single_crystal_bar_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -25978,6 +26053,7 @@
         "group": 8,
         "heatOfFusion": "57.85 kJ·mol⁻¹",
         "heatOfVaporization": "378 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Osmium_crystals.jpg/1024px-Osmium_crystals.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -26352,6 +26428,7 @@
         "group": 9,
         "heatOfFusion": "41.12 kJ·mol⁻¹",
         "heatOfVaporization": "564 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Iridium-2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -26880,6 +26957,7 @@
         "group": 10,
         "heatOfFusion": "22.17 kJ·mol⁻¹",
         "heatOfVaporization": "510 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Platinum_crystals.jpg/1024px-Platinum_crystals.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -27282,6 +27360,7 @@
         "group": 11,
         "heatOfFusion": "12.55 kJ·mol⁻¹",
         "heatOfVaporization": "342 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gold-crystals.jpg/1024px-Gold-crystals.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -27831,6 +27910,7 @@
         "group": 12,
         "heatOfFusion": "2.29 kJ·mol⁻¹",
         "heatOfVaporization": "59.11 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Pouring_liquid_mercury_bionerd.jpg/1024px-Pouring_liquid_mercury_bionerd.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -28275,6 +28355,7 @@
         "group": 13,
         "heatOfFusion": "4.14 kJ·mol⁻¹",
         "heatOfVaporization": "165 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Thallium_pieces_in_ampoule.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -28887,6 +28968,7 @@
         "group": 14,
         "heatOfFusion": "4.77 kJ·mol⁻¹",
         "heatOfVaporization": "179.5 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Lead_electrolytic_and_1cm3_cube.jpg/1024px-Lead_electrolytic_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -29541,6 +29623,7 @@
         "group": 15,
         "heatOfFusion": "11.30 kJ·mol⁻¹",
         "heatOfVaporization": "179 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bismuth_crystals_and_1cm3_cube.jpg/1024px-Bismuth_crystals_and_1cm3_cube.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -30188,6 +30271,7 @@
         "group": 16,
         "heatOfFusion": "13 kJ·mol⁻¹",
         "heatOfVaporization": "102.91 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/66/Polonium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -30667,6 +30751,7 @@
         "group": 17,
         "heatOfFusion": "6 kJ·mol⁻¹",
         "heatOfVaporization": "At₂: 54.39 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -31104,6 +31189,7 @@
         "group": 18,
         "heatOfFusion": "3.247 kJ·mol⁻¹",
         "heatOfVaporization": "18.10 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -31485,6 +31571,7 @@
         "group": 1,
         "heatOfFusion": "2 kJ·mol⁻¹",
         "heatOfVaporization": "65 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -31852,6 +31939,7 @@
         "group": 2,
         "heatOfFusion": "8.5 kJ·mol⁻¹",
         "heatOfVaporization": "113 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Radium226.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -32219,6 +32307,7 @@
         "group": 3,
         "heatOfFusion": "14 kJ·mol⁻¹",
         "heatOfVaporization": "400 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/f/f3/Actinium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -32544,6 +32633,7 @@
         "group": 3,
         "heatOfFusion": "13.81 kJ·mol⁻¹",
         "heatOfVaporization": "514 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Thorium_sample_0.1g.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -32827,6 +32917,7 @@
         "group": 3,
         "heatOfFusion": "12.34 kJ·mol⁻¹",
         "heatOfVaporization": "481 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/0/05/Protactinium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -33103,6 +33194,7 @@
         "group": 3,
         "heatOfFusion": "9.14 kJ·mol⁻¹",
         "heatOfVaporization": "417.1 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/HEUraniumC.jpg/1024px-HEUraniumC.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -33400,6 +33492,7 @@
         "group": 3,
         "heatOfFusion": "5.19 kJ·mol⁻¹",
         "heatOfVaporization": "336 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Neptunium2.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -33620,6 +33713,7 @@
         "group": 3,
         "heatOfFusion": "2.82 kJ·mol⁻¹",
         "heatOfVaporization": "333.5 kJ·mol⁻¹",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/98/Plutonium3.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -33861,6 +33955,7 @@
         "group": 3,
         "heatOfFusion": "14.39 kJ·mol⁻¹",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ee/Americium_microscope.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -34109,6 +34204,7 @@
         "group": 3,
         "heatOfFusion": "13.85 kJ·mol⁻¹",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/69/Curium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -34336,6 +34432,7 @@
         "group": 3,
         "heatOfFusion": "7.92 kJ·mol⁻¹",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Berkelium_metal.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -34577,6 +34674,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Californium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -34776,6 +34874,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Einsteinium.jpg",
         "isotopes": [
             {
                 "abundance": "",
@@ -34982,6 +35081,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -35188,6 +35288,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -35387,6 +35488,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -35544,6 +35646,7 @@
         "group": 3,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -35687,6 +35790,7 @@
         "group": 4,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -35879,6 +35983,7 @@
         "group": 5,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36043,6 +36148,7 @@
         "group": 6,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36200,6 +36306,7 @@
         "group": 7,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36336,6 +36443,7 @@
         "group": 8,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36500,6 +36608,7 @@
         "group": 9,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36622,6 +36731,7 @@
         "group": 10,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36751,6 +36861,7 @@
         "group": 11,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36852,6 +36963,7 @@
         "group": 12,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -36960,6 +37072,7 @@
         "group": 13,
         "heatOfFusion": "7.61 kJ·mol⁻¹",
         "heatOfVaporization": "130 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -37054,6 +37167,7 @@
         "group": 14,
         "heatOfFusion": "",
         "heatOfVaporization": "38 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -37162,6 +37276,7 @@
         "group": 15,
         "heatOfFusion": "5.90–5.98 kJ·mol⁻¹",
         "heatOfVaporization": "138 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -37242,6 +37357,7 @@
         "group": 16,
         "heatOfFusion": "7.61 kJ·mol⁻¹",
         "heatOfVaporization": "42 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -37322,6 +37438,7 @@
         "group": 17,
         "heatOfFusion": "",
         "heatOfVaporization": "",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -37388,6 +37505,7 @@
         "group": 18,
         "heatOfFusion": "23.5 kJ·mol⁻¹",
         "heatOfVaporization": "19.4 kJ·mol⁻¹",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",

@@ -8,6 +8,7 @@ import json
 from html.parser import HTMLParser
 from collections import OrderedDict
 from xml.etree import ElementTree
+from urllib.parse import urlencode
 from urllib.request import urlopen
 import multiprocessing
 from multiprocessing.pool import Pool
@@ -119,6 +120,7 @@ class Article:
                  r'([^\|}]*)\|([^\|}]*)\|link=([^\|}]*)}}', r'\1;\2;\3;\4;\5;\6;\7;\8'],
                 [r'{{element cell-asterisk\|(\d+)\|?[^}]*}}',
                  lambda x: '| ' + ''.join(['*' for i in range(int(x.group(1)))])],
+                [r'{{main[ _]+other\|([^\|}]*)\|([^\|}]*)}}', r'\1'],
                 [r'\|\|', '\n|'],
                 [r'!!', '\n!']
             ]:
@@ -292,23 +294,30 @@ class Article:
 
     def get_property(self, name, default='', prepend='', comments=True, delimiter='\n',
                      unit_prefix='', append='', units=True, comment_as_title=False,
-                     capitalize=False, sanitize=None, type=str):
-        result = []
-        for key, value in self.properties.items():
-            full_name = re.match(r'^%s\s?\d*$' % name, key)
-            if full_name and value != '':
-                if value != '-':
-                    full_name = full_name.group(0)
-                    prefix = ', '.join([
-                        prepend, self.get_prefix(full_name),
-                        (self.get_comment(full_name) if comments else '')]).strip(', ')
-                    unit = ' ' + unit_prefix + self.get_unit(full_name)
-                    result.append(((prefix + (', ' if ': ' in value else ': ')
-                                    if prefix != '' else '') + value + append +
-                                   (unit if units and len(unit) > 1 else '')).strip())
-                else:
-                    result.append(value.strip())
-        result = delimiter.join(result) if len(result) > 0 else default
+                     capitalize=False, sanitize=None, type=str, exact_name=False):
+        def format_value(full_name, value):
+            prefix = ', '.join([prepend, self.get_prefix(full_name),
+                                (self.get_comment(full_name) if comments else '')]).strip(', ')
+            unit = ' ' + unit_prefix + self.get_unit(full_name)
+            return ((prefix + (', ' if ': ' in value else ': ') if prefix != '' else '') + value +
+                    append + (unit if units and len(unit) > 1 else '')).strip()
+
+        result = ''
+        if exact_name:
+            if name in self.properties.keys():
+                result = format_value(name, self.properties[name])
+        else:
+            result = []
+            for key, value in self.properties.items():
+                full_name = re.match(r'^%s\s?\d*$' % name, key)
+                if full_name and value != '':
+                    if value != '-':
+                        result.append(format_value(full_name.group(0), value))
+                    else:
+                        result.append(value.strip())
+            result = delimiter.join(result)
+        if len(result) == 0:
+            return default
         if comment_as_title:
             result = result.replace(')', ':').replace('(', '').replace(':\n', ': ')
             result = re.sub(r'([⁰¹²³⁴⁵⁶⁷⁸⁹]+): ', r'\1\n', result)
@@ -363,7 +372,8 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
     properties = {'wikipediaLink': URL_PREFIX + '/wiki/' + article_url, 'category': category,
                   'molarIonizationEnergies': '\n'.join(
                       [key + ': ' + value + ' kJ·mol⁻¹' for key, value in ionization_energies[
-                          article.get_property('number')].items() if value != ''])
+                          article.get_property('number')].items() if value != '']),
+                  'imageUrl': ''
                   }
 
     e_r_prefix = article.get_property(
@@ -453,6 +463,19 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
                 properties[property[0]] = article.join_properties(**property[1])
         elif isinstance(property[1], list):
             properties[property[0]] = article.get_property_by_priority(property[1])
+
+    image_name = article.get_property('image name', comments=False, exact_name=True)
+    if len(image_name) > 0:
+        data = json.loads(urlopen(URL_PREFIX + '/w/api.php?' + urlencode(
+            {'action': 'query',
+             'titles': 'File:' + image_name,
+             'prop': 'imageinfo',
+             'iiprop': 'url',
+             'iiurlwidth': 1024,
+             'format': 'json'
+             })).read().decode('utf-8'))
+        page_id = next(iter(data['query']['pages']))
+        properties['imageUrl'] = data['query']['pages'][page_id]['imageinfo'][0]['thumburl']
 
     # Isotopes
 
