@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.ElementsFragment;
 import com.frozendevs.periodictable.fragment.TableFragment;
-import com.frozendevs.periodictable.model.adapter.PagesAdapter;
+import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
-        PagesAdapter pagesAdapter = new PagesAdapter(this);
-        pagesAdapter.addPage(R.string.fragment_title_elements, ElementsFragment.class, null);
-        pagesAdapter.addPage(R.string.fragment_title_table, TableFragment.class, null);
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(this);
+        pagerAdapter.addPage(R.string.fragment_title_elements, ElementsFragment.class, null);
+        pagerAdapter.addPage(R.string.fragment_title_table, TableFragment.class, null);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(pagesAdapter);
+        viewPager.setAdapter(pagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);

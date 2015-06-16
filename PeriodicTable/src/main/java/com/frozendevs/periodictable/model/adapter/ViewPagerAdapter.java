@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class PagesAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private Context mContext;
     private ArrayList<PageInfo> mPages = new ArrayList<PageInfo>();
@@ -25,7 +25,7 @@ public class PagesAdapter extends FragmentPagerAdapter {
         }
     }
 
-    public PagesAdapter(AppCompatActivity activity) {
+    public ViewPagerAdapter(AppCompatActivity activity) {
         super(activity.getSupportFragmentManager());
 
         mContext = activity;

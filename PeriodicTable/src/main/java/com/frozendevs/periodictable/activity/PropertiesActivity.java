@@ -26,7 +26,7 @@ import com.frozendevs.periodictable.fragment.PropertiesFragment;
 import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
-import com.frozendevs.periodictable.model.adapter.PagesAdapter;
+import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
 
 public class PropertiesActivity extends AppCompatActivity {
 
@@ -82,12 +82,12 @@ public class PropertiesActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
 
-        PagesAdapter pagesAdapter = new PagesAdapter(this);
-        pagesAdapter.addPage(R.string.fragment_title_properties, PropertiesFragment.class, bundle);
-        pagesAdapter.addPage(R.string.fragment_title_isotopes, IsotopesFragment.class, bundle);
+        ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(this);
+        pagerAdapter.addPage(R.string.fragment_title_properties, PropertiesFragment.class, bundle);
+        pagerAdapter.addPage(R.string.fragment_title_isotopes, IsotopesFragment.class, bundle);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setAdapter(pagesAdapter);
+        viewPager.setAdapter(pagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
