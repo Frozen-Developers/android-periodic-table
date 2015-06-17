@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/preferences_settings">
+
+    <PreferenceCategory android:title="@string/preferences_main_preferences">
+
+        <CheckBoxPreference
+            android:key="@string/preferences_download_wifi_only_key"
+            android:summary="@string/preferences_download_wifi_only_summary"
+            android:title="@string/preferences_download_wifi_only" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/preferences_category_about">
+
+        <Preference android:title="@string/preference_about_app">
+
+            <intent
+                android:action="com.frozendevs.periodictable.SETTINGS_ABOUT"
+                android:targetClass="com.frozendevs.periodictable.activity.SettingsActivity"
+                android:targetPackage="com.frozendevs.periodictable" />
+
+        </Preference>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

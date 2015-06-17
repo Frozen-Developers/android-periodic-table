@@ -18,7 +18,8 @@ import android.webkit.WebView;
 
 import com.frozendevs.periodictable.R;
 
-public class AboutActivity extends PreferenceActivity {
+public class SettingsActivity extends PreferenceActivity {
+    private final static String ACTION_SETTINGS_ABOUT = "com.frozendevs.periodictable.SETTINGS_ABOUT";
 
     private AppCompatDelegate mDelegate;
 
@@ -29,31 +30,38 @@ public class AboutActivity extends PreferenceActivity {
 
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.about_screen);
+        String action = getIntent().getAction();
 
-        String versionName;
-        try {
-            versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-        } catch (Exception e) {
-            versionName = getString(R.string.preference_version_number_unknown);
+        if (action != null && action.equals(ACTION_SETTINGS_ABOUT)) {
+            addPreferencesFromResource(R.xml.settings_about);
+
+            String versionName;
+            try {
+                versionName = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
+            } catch (Exception e) {
+                versionName = getString(R.string.preference_version_number_unknown);
+            }
+            findPreference("version").setSummary(versionName);
+
+            findPreference("licences").setOnPreferenceClickListener(
+                    new Preference.OnPreferenceClickListener() {
+                        @Override
+                        public boolean onPreferenceClick(Preference preference) {
+                            WebView webView = new WebView(getApplicationContext());
+                            webView.loadUrl("file:///android_asset/html/licenses.html");
+
+                            AlertDialog dialog = new AlertDialog.Builder(SettingsActivity.this).
+                                    create();
+                            dialog.setTitle(R.string.preference_open_source_licences);
+                            dialog.setView(webView);
+                            dialog.show();
+
+                            return true;
+                        }
+                    });
+        } else {
+            addPreferencesFromResource(R.xml.settings);
         }
-        findPreference("version").setSummary(versionName);
-
-        findPreference("licences").setOnPreferenceClickListener(
-                new Preference.OnPreferenceClickListener() {
-                    @Override
-                    public boolean onPreferenceClick(Preference preference) {
-                        WebView webView = new WebView(getApplicationContext());
-                        webView.loadUrl("file:///android_asset/html/licenses.html");
-
-                        AlertDialog dialog = new AlertDialog.Builder(AboutActivity.this).create();
-                        dialog.setTitle(R.string.preference_open_source_licences);
-                        dialog.setView(webView);
-                        dialog.show();
-
-                        return true;
-                    }
-                });
     }
 
     @Override

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_about:
-                startActivity(new Intent(this, AboutActivity.class));
+                startActivity(new Intent(this, SettingsActivity.class));
                 return true;
         }
 

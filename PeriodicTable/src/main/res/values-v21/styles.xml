@@ -12,7 +12,7 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="Theme.About" parent="Theme.About.Base">
+    <style name="Theme.Settings" parent="Theme.Settings.Base">
         <item name="android:windowContentTransitions">false</item>
     </style>
 

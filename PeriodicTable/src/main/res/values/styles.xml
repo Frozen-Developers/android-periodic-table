@@ -9,12 +9,12 @@
 
     <style name="Theme.Properties" parent="Theme.Properties.Base" />
 
-    <style name="Theme.About.Base" parent="Theme.Application">
+    <style name="Theme.Settings.Base" parent="Theme.Application">
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
     </style>
 
-    <style name="Theme.About" parent="Theme.About.Base" />
+    <style name="Theme.Settings" parent="Theme.Settings.Base" />
 
     <style name="Widget.Toolbar" parent="@style/Widget.AppCompat.Toolbar">
         <item name="android:background">?attr/colorPrimary</item>

@@ -12,6 +12,7 @@
         android:xlargeScreens="true" />
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name="com.frozendevs.periodictable.PeriodicTableApplication"
@@ -52,11 +53,11 @@
         </activity>
 
         <activity
-            android:name="com.frozendevs.periodictable.activity.AboutActivity"
+            android:name="com.frozendevs.periodictable.activity.SettingsActivity"
             android:exported="false"
-            android:launchMode="singleTop"
+            android:label="@string/preferences_settings"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
-            android:theme="@style/Theme.About">
+            android:theme="@style/Theme.Settings">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

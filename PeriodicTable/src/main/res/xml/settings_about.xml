@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/preference_about_app"
+    android:key="about"
     android:persistent="false"
-    android:key="about">
+    android:title="@string/preference_about_app">
 
-    <PreferenceCategory
-        android:title="@string/preferences_category_about">
+    <PreferenceCategory android:title="@string/preferences_category_about">
 
         <Preference
-            android:title="@string/preference_author"
+            android:key="author"
             android:summary="@string/author_name"
-            android:key="author">
+            android:title="@string/preference_author">
 
             <intent
                 android:action="android.intent.action.VIEW"
@@ -20,22 +18,21 @@
         </Preference>
 
         <Preference
-            android:title="@string/preference_version_number"
-            android:key="version"/>
+            android:key="version"
+            android:title="@string/preference_version_number" />
 
         <Preference
-            android:title="@string/preference_open_source_licences"
-            android:key="licences"/>
+            android:key="licences"
+            android:title="@string/preference_open_source_licences" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/preferences_category_special_thanks">
+    <PreferenceCategory android:title="@string/preferences_category_special_thanks">
 
         <Preference
-            android:title="@string/preference_samuels_graphics"
+            android:key="author"
             android:summary="@string/preference_samuels_graphics_desc"
-            android:key="author">
+            android:title="@string/preference_samuels_graphics">
 
             <intent
                 android:action="android.intent.action.VIEW"
