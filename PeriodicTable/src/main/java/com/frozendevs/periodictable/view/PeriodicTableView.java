@@ -270,7 +270,7 @@ public class PeriodicTableView extends ZoomableScrollView {
             removeView(mActiveView);
         }
 
-        mActiveView = mAdapter.getView(position, mActiveView, this);
+        mActiveView = mAdapter.getActiveView(mAdapter.getDrawingCache(position), mActiveView, this);
 
         if (mActiveView != null) {
             mActiveView.setTag(R.id.active_view_position, position);

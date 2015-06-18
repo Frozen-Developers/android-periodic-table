@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/table_item_size"
+    android:layout_height="@dimen/table_item_size"
+    android:clickable="true"
+    android:foreground="@drawable/table_item_background"
+    android:transitionName="@string/transition_table_item">
+
+    <ImageView
+        android:id="@+id/bitmap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null" />
+
+</FrameLayout>

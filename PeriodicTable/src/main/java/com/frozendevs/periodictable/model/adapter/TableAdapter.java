@@ -3,11 +3,10 @@ package com.frozendevs.periodictable.model.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.LayerDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -31,7 +30,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     private int mTileSize;
 
     private class ViewHolder {
-        GradientDrawable background;
         TextView symbol, number, name, weight;
     }
 
@@ -131,8 +129,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         if (viewHolder == null) {
             viewHolder = new ViewHolder();
 
-            viewHolder.background = (GradientDrawable) ((LayerDrawable) convertView.getBackground()).
-                    findDrawableByLayerId(R.id.background);
             viewHolder.symbol = (TextView) convertView.findViewById(R.id.element_symbol);
             viewHolder.symbol.setTypeface(mTypeface);
             viewHolder.number = (TextView) convertView.findViewById(R.id.element_number);
@@ -153,12 +149,25 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         } catch (NumberFormatException ignored) {
         }
 
-        viewHolder.background.setColor(getBackgroundColor(item));
+        convertView.setBackgroundColor(getBackgroundColor(item));
+
         viewHolder.symbol.setText(item.getSymbol());
         viewHolder.number.setText(String.valueOf(item.getNumber()));
         viewHolder.name.setTextSize(12f);
         viewHolder.name.setText(item.getName());
         viewHolder.weight.setText(atomicWeight);
+
+        return convertView;
+    }
+
+    public View getActiveView(Bitmap bitmap, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(mContext).inflate(R.layout.table_active_item,
+                    parent, false);
+        }
+
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.bitmap);
+        imageView.setImageBitmap(bitmap);
 
         return convertView;
     }

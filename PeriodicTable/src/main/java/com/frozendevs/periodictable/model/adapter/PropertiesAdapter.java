@@ -376,7 +376,8 @@ public class PropertiesAdapter extends BaseAdapter implements
                 View summaryView = LayoutInflater.from(mContext).inflate(
                         R.layout.properties_summary_item, parent, false);
                 summaryView.setPadding(padding, padding, padding, padding);
-                summaryView.findViewById(R.id.tile_view).setClickable(false);
+                summaryView.findViewById(R.id.tile_view).setBackgroundColor(
+                        mTableAdapter.getBackgroundColor(mTableItem));
 
                 legendDialog.setView(summaryView);
 
