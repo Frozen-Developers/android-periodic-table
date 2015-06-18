@@ -136,10 +136,34 @@ public class PeriodicTableView extends ZoomableScrollView {
         return getZoom() * mAdapter.getTileSize();
     }
 
+    private float getStartX() {
+        return getMinimalScrollX();
+    }
+
+    private float getStartY() {
+        return getMinimalScrollY() + Math.max((getHeight() - getScaledHeight()) / 2f, 0);
+    }
+
+    private float getTileX(int position) {
+        return ((position % mAdapter.getGroupsCount()) * (getScaledTileSize() + DEFAULT_SPACING)) +
+                getStartX();
+    }
+
+    private float getTileY(int position) {
+        return ((position / mAdapter.getGroupsCount()) * (getScaledTileSize() + DEFAULT_SPACING)) +
+                getStartY();
+    }
+
+    private int getPosition(float x, float y) {
+        final float tileSize = getScaledTileSize() + DEFAULT_SPACING;
+
+        return ((int) ((y - getStartY()) / tileSize) * mAdapter.getGroupsCount()) +
+                (int) ((x - getStartX()) / tileSize);
+    }
+
     @Override
     public boolean onSingleTapConfirmed(MotionEvent event) {
         return mOnItemClickListener != null && processClick(event, mOnSingleTapConfirmed);
-
     }
 
     @Override
@@ -204,10 +228,10 @@ public class PeriodicTableView extends ZoomableScrollView {
         if (mAdapter != null && !mAdapter.isEmpty()) {
             float tileSize = getScaledTileSize();
 
-            float y = (getHeight() - getScaledHeight()) / 2f;
+            float y = getStartY();
 
             for (int row = 0; row < mAdapter.getPeriodsCount(); row++) {
-                float x = (getWidth() - getScaledWidth()) / 2f;
+                float x = getStartX();
 
                 for (int column = 0; column < mAdapter.getGroupsCount(); column++) {
                     if (x + tileSize > getScrollX() && x < getScrollX() + getWidth() &&
@@ -247,14 +271,10 @@ public class PeriodicTableView extends ZoomableScrollView {
         if (mActiveView != null) {
             int position = (int) mActiveView.getTag(R.id.active_view_position);
 
-            float tileSize = getScaledTileSize();
-
             mActiveView.setScaleX(getZoom());
             mActiveView.setScaleY(getZoom());
-            mActiveView.setTranslationX(((getWidth() - getScaledWidth()) / 2f) +
-                    ((position % mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING)));
-            mActiveView.setTranslationY(((getHeight() - getScaledHeight()) / 2f) +
-                    ((position / mAdapter.getGroupsCount()) * (tileSize + DEFAULT_SPACING)));
+            mActiveView.setTranslationX(getTileX(position));
+            mActiveView.setTranslationY(getTileY(position));
         }
     }
 
@@ -331,16 +351,12 @@ public class PeriodicTableView extends ZoomableScrollView {
         if (listener != null && mAdapter != null && !mAdapter.isEmpty()) {
             final float rawX = event.getX() + getScrollX();
             final float rawY = event.getY() + getScrollY();
-            final float tileSize = getScaledTileSize();
-            final int scaledWidth = getScaledWidth();
-            final int scaledHeight = getScaledHeight();
-            final float startY = (getHeight() - scaledHeight) / 2f;
-            final float startX = (getWidth() - scaledWidth) / 2f;
+            final float startX = getStartX();
+            final float startY = getStartY();
 
-            if (rawX >= startX && rawX <= startX + scaledWidth &&
-                    rawY >= startY && rawY <= startY + scaledHeight) {
-                final int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
-                        mAdapter.getGroupsCount()) + (int) ((rawX - startX) / (tileSize + DEFAULT_SPACING));
+            if (rawX >= startX && rawX <= startX + getScaledWidth() &&
+                    rawY >= startY && rawY <= startY + getScaledHeight()) {
+                final int position = getPosition(rawX, rawY);
 
                 if (position >= 0 && position < mAdapter.getCount() &&
                         mAdapter.isEnabled(position)) {

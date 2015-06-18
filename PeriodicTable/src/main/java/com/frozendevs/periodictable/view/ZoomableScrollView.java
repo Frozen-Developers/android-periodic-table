@@ -289,19 +289,19 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
         }
     }
 
-    private int getMinimalScrollX() {
-        return Math.min((getWidth() - getScaledWidth()) / 2, 0);
+    protected int getMinimalScrollX() {
+        return 0;
     }
 
-    private int getMinimalScrollY() {
-        return Math.min((getHeight() - getScaledHeight()) / 2, 0);
+    protected int getMinimalScrollY() {
+        return 0;
     }
 
-    private int getMaximalScrollX() {
+    protected int getMaximalScrollX() {
         return getMinimalScrollX() + getScaledWidth() - getWidth();
     }
 
-    private int getMaximalScrollY() {
+    protected int getMaximalScrollY() {
         return getMinimalScrollY() + getScaledHeight() - getHeight();
     }
 
