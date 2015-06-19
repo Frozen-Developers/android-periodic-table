@@ -124,6 +124,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         TableItem item = mAdapter.getItem(position);
 
         if (item != null) {
+            parent.setEnabled(false);
+
             Intent intent = new Intent(getActivity(), PropertiesActivity.class);
             intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
 
@@ -140,5 +142,14 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         if (view != null) {
             view.setAlpha(1f);
         }
+    }
+
+    @Override
+    public void onResume() {
+        if (mPeriodicTableView != null) {
+            mPeriodicTableView.setEnabled(true);
+        }
+
+        super.onResume();
     }
 }
