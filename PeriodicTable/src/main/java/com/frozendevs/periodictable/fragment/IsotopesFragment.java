@@ -14,6 +14,8 @@ import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.IsotopesAdapter;
 import com.frozendevs.periodictable.view.RecyclerView;
 import com.frozendevs.periodictable.widget.DividerDecoration;
+import com.h6ah4i.android.widget.advrecyclerview.animator.GeneralItemAnimator;
+import com.h6ah4i.android.widget.advrecyclerview.animator.RefactoredDefaultItemAnimator;
 import com.h6ah4i.android.widget.advrecyclerview.expandable.RecyclerViewExpandableItemManager;
 import com.h6ah4i.android.widget.advrecyclerview.utils.WrapperAdapterUtils;
 
@@ -42,9 +44,13 @@ public class IsotopesFragment extends Fragment {
 
         mWrappedAdapter = mRecyclerViewExpandableItemManager.createWrappedAdapter(adapter);
 
+        GeneralItemAnimator animator = new RefactoredDefaultItemAnimator();
+        animator.setSupportsChangeAnimations(false);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(mWrappedAdapter);
         recyclerView.addItemDecoration(new DividerDecoration(getActivity()));
+        recyclerView.setItemAnimator(animator);
 
         mRecyclerViewExpandableItemManager.attachRecyclerView(recyclerView);
 
