@@ -3,6 +3,14 @@
     package="com.frozendevs.periodictable"
     android:installLocation="preferExternal">
 
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher_periodic_table"
