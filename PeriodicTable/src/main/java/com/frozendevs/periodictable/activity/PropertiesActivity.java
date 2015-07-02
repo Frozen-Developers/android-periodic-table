@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.PeriodicTableApplication;
@@ -31,6 +32,8 @@ import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
 import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.RecyclerView;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 
 public class PropertiesActivity extends AppCompatActivity {
 
@@ -124,6 +127,28 @@ public class PropertiesActivity extends AppCompatActivity {
         oxidationStates.setText(PropertiesAdapter.formatProperty(this,
                 mElementProperties.getOxidationStates()));
         oxidationStates.setTypeface(typeface);
+
+        String imageUrl = mElementProperties.getImageUrl();
+
+        if (!imageUrl.equals("")) {
+            final ImageView backdrop = (ImageView) findViewById(R.id.backdrop);
+
+            final View backdropProgressBar = findViewById(R.id.backdrop_progressbar);
+            backdropProgressBar.setVisibility(View.VISIBLE);
+
+            Picasso.with(this).load(imageUrl).placeholder(R.drawable.backdrop).into(backdrop,
+                    new Callback() {
+                        @Override
+                        public void onSuccess() {
+                            backdropProgressBar.setVisibility(View.GONE);
+                        }
+
+                        @Override
+                        public void onError() {
+                           onSuccess();
+                        }
+                    });
+        }
     }
 
     @Override

@@ -27,15 +27,32 @@
             app:expandedTitleTextAppearance="@style/TextAppearance.CollapsingToolbarExpanded"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
 
-            <ImageView
-                android:id="@+id/backdrop"
+            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/backdrop_height"
-                android:contentDescription="@null"
                 android:fitsSystemWindows="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/backdrop"
-                app:layout_collapseMode="parallax" />
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/backdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/backdrop" />
+
+                <ProgressBar
+                    android:id="@+id/backdrop_progressbar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:indeterminate="true"
+                    android:visibility="gone" />
+
+            </FrameLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"

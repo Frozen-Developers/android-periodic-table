@@ -13,7 +13,7 @@ public class ElementProperties extends TableElementItem {
             crystalStructure, magneticOrdering, thermalConductivity, thermalExpansion,
             speedOfSound, youngsModulus, shearModulus, bulkModulus, mohsHardness, brinellHardness,
             electronsPerShell, thermalDiffusivity, electricalResistivity, bandGap, curiePoint,
-            tensileStrength, poissonRatio, vickersHardness, casNumber;
+            tensileStrength, poissonRatio, vickersHardness, casNumber, imageUrl;
     private Isotope[] isotopes;
 
     public static final Parcelable.Creator<ElementProperties> CREATOR
@@ -71,6 +71,7 @@ public class ElementProperties extends TableElementItem {
         poissonRatio = in.readString();
         vickersHardness = in.readString();
         casNumber = in.readString();
+        imageUrl = in.readString();
         isotopes = (Isotope[]) in.readParcelableArray(Isotope.class.getClassLoader());
     }
 
@@ -119,6 +120,7 @@ public class ElementProperties extends TableElementItem {
         dest.writeString(poissonRatio);
         dest.writeString(vickersHardness);
         dest.writeString(casNumber);
+        dest.writeString(imageUrl);
         dest.writeParcelableArray(isotopes, 0);
     }
 
@@ -288,5 +290,9 @@ public class ElementProperties extends TableElementItem {
 
     public String getCasNumber() {
         return casNumber;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }
