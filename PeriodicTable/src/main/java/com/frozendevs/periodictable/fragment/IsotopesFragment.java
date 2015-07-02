@@ -35,9 +35,10 @@ public class IsotopesFragment extends Fragment {
                 savedInstanceState.getParcelable(SAVED_STATE_EXPANDABLE_ITEM_MANAGER) : null;
         mRecyclerViewExpandableItemManager = new RecyclerViewExpandableItemManager(savedState);
 
-        IsotopesAdapter adapter = new IsotopesAdapter(getActivity(),
-                mRecyclerViewExpandableItemManager, ((ElementProperties) getArguments().get(
-                PropertiesActivity.ARGUMENT_PROPERTIES)).getIsotopes());
+        ElementProperties properties = (ElementProperties) getArguments().get(
+                PropertiesActivity.ARGUMENT_PROPERTIES);
+
+        IsotopesAdapter adapter = new IsotopesAdapter(getActivity(), properties.getIsotopes());
 
         mWrappedAdapter = mRecyclerViewExpandableItemManager.createWrappedAdapter(adapter);
 

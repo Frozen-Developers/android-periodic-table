@@ -18,41 +18,39 @@ import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractExpandableItemVie
 public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapter.GroupViewHolder,
         IsotopesAdapter.ChildViewHolder> {
 
-    private Context mContext;
     private Typeface mTypeface;
     private IsotopeProperties[] mProperties = new IsotopeProperties[0];
-    private RecyclerViewExpandableItemManager mItemManager;
 
     private class Property {
         String mName = "", mValue = "", mValueRaw = "";
 
-        Property(String value) {
+        Property(Context context, String value) {
             if (value != null) {
                 mValueRaw = value;
                 if (!value.equals("")) mValue = value;
-                else mValue = mContext.getString(R.string.property_value_unknown);
+                else mValue = context.getString(R.string.property_value_unknown);
             }
         }
 
-        Property(int name, String value) {
-            this(value);
+        Property(Context context, int name, String value) {
+            this(context, value);
 
-            mName = mContext.getString(name);
+            mName = context.getString(name);
         }
 
-        Property(int name, String value, int noneValue) {
-            this(name, value);
+        Property(Context context, int name, String value, int noneValue) {
+            this(context, name, value);
 
             if (value != null && value.equals("")) {
-                mValue = mContext.getString(noneValue);
+                mValue = context.getString(noneValue);
             }
         }
 
-        Property(int name, String value, int noneValue, int specialValue) {
-            this(name, value, noneValue);
+        Property(Context context, int name, String value, int noneValue, int specialValue) {
+            this(context, name, value, noneValue);
 
             if (value != null && value.equals("-")) {
-                mValue = mContext.getString(specialValue);
+                mValue = context.getString(specialValue);
             }
         }
 
@@ -73,17 +71,17 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
 
         Property symbol, halfLife, spin, abundance, decayModes;
 
-        public IsotopeProperties(Isotope isotope) {
-            symbol = new Property(isotope.getSymbol());
-            halfLife = new Property(R.string.property_half_life, isotope.getHalfLife(),
+        public IsotopeProperties(Context context, Isotope isotope) {
+            symbol = new Property(context, isotope.getSymbol());
+            halfLife = new Property(context, R.string.property_half_life, isotope.getHalfLife(),
                     R.string.property_value_unknown, R.string.property_value_stable);
-            spin = new Property(R.string.property_spin, isotope.getSpin(),
+            spin = new Property(context, R.string.property_spin, isotope.getSpin(),
                     R.string.property_value_unknown);
-            abundance = new Property(R.string.property_abundance, isotope.getAbundance(),
+            abundance = new Property(context, R.string.property_abundance, isotope.getAbundance(),
                     R.string.property_value_none, R.string.property_value_trace);
-            decayModes = new Property(
+            decayModes = new Property(context,
                     R.string.property_decay_modes, isotope.getHalfLife().equals("-") ?
-                    mContext.getString(R.string.property_value_none) : isotope.getDecayModes());
+                    context.getString(R.string.property_value_none) : isotope.getDecayModes());
         }
 
         public Property getSymbol() {
@@ -111,7 +109,6 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
             View.OnClickListener, View.OnCreateContextMenuListener {
         private TextView mSymbol, mHalfLife, mAbundance;
         private ExpandableIndicatorView mIndicator;
-        private int mPosition = 0;
 
         public GroupViewHolder(View view) {
             super(view);
@@ -147,18 +144,8 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
             mAbundance.setTypeface(typeface);
         }
 
-        public void setPosition(int position) {
-            mPosition = position;
-        }
-
         @Override
         public void onClick(View view) {
-            if ((getExpandStateFlags() & RecyclerViewExpandableItemManager.
-                    STATE_FLAG_IS_EXPANDED) == 0) {
-                IsotopesAdapter.this.mItemManager.expandGroup(mPosition);
-            } else {
-                IsotopesAdapter.this.mItemManager.collapseGroup(mPosition);
-            }
         }
 
         @Override
@@ -204,19 +191,14 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
         }
     }
 
-    public IsotopesAdapter(Context context, RecyclerViewExpandableItemManager manager,
-                           Isotope[] isotopes) {
-        mContext = context;
-
-        mItemManager = manager;
-
+    public IsotopesAdapter(Context context, Isotope[] isotopes) {
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
 
         if (isotopes != null) {
             mProperties = new IsotopeProperties[isotopes.length];
 
             for (int i = 0; i < isotopes.length; i++) {
-                mProperties[i] = new IsotopeProperties(isotopes[i]);
+                mProperties[i] = new IsotopeProperties(context, isotopes[i]);
             }
         }
 
@@ -278,7 +260,6 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
                                       int viewType) {
         IsotopeProperties properties = mProperties[groupPosition];
 
-        groupViewHolder.setPosition(groupPosition);
         groupViewHolder.setSymbol(properties.getSymbol().getValue());
         groupViewHolder.setHalfLife("");
         groupViewHolder.setAbundance("");
@@ -311,7 +292,7 @@ public class IsotopesAdapter extends AbstractExpandableItemAdapter<IsotopesAdapt
     public boolean onCheckCanExpandOrCollapseGroup(GroupViewHolder groupViewHolder,
                                                    int groupPosition, int x, int y,
                                                    boolean expand) {
-        return false;
+        return true;
     }
 
     private Property getChild(int groupPosition, int childPosition) {
