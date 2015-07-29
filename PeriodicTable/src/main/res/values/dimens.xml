@@ -9,7 +9,6 @@
     <dimen name="listPreferredItemPaddingTop">8dp</dimen>
     <dimen name="listPreferredItemPaddingBottom">8dp</dimen>
 
-    <dimen name="view_pager_tabs_landscape_width">186dp</dimen>
     <dimen name="view_pager_tabs_side_padding">8dp</dimen>
 
 </resources>
