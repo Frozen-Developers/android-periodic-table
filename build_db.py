@@ -242,7 +242,7 @@ class Article:
         if self.comments == {}:
             for match in re.finditer(r'{{{([^\|\}]*) comment\|?}}}}}([^\|\}]*)}}', content):
                 self.comments[match.group(1).lower() + ' comment'] = match.group(2).strip()
-            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}[^\{\},\|\u200b\(]*(\([^\)]+\))',
+            for match in re.finditer(r'{{{([^\|\}]*)\|?}}}[^\{\},\|\u200b]* (\([^\)]+\))',
                                      content):
                 key = match.group(1).lower() + ' comment'
                 if key not in self.comments.keys():
