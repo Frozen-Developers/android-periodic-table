@@ -356,7 +356,7 @@
         "atomicRadius": "112 pm",
         "bandGap": "",
         "block": "s",
-        "boilingPoint": "3243 K / 2970 °C / 5338 °F",
+        "boilingPoint": "3243 K / 2970 °C / 5378 °F",
         "brinellHardness": "590–1320 MPa",
         "bulkModulus": "130 GPa",
         "casNumber": "7440-41-7",
@@ -35970,7 +35970,7 @@
         "youngsModulus": ""
     },
     {
-        "appearance": "Silvery",
+        "appearance": "Silvery metallic, glows purple in the dark",
         "atomicRadius": "174 pm",
         "bandGap": "",
         "block": "f",
