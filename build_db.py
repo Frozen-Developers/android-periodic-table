@@ -26,6 +26,7 @@ def replace_chars(string, charset1, charset2):
 
 
 class TableCell:
+
     def __init__(self, value, cell_type='cell'):
         self.properties = {}
         self.cell_type = cell_type
@@ -349,7 +350,7 @@ class Article:
     def join_properties(self, properties, delimiter=' / '):
         return capitalize_multiline(delimiter.join(filter(len, [
             self.get_property(property) for property in properties
-            ])))
+        ])))
 
 
 def signal_handler(signal, frame):
@@ -362,9 +363,8 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
 
     properties = {'wikipediaLink': URL_PREFIX + '/wiki/' + article_url, 'category': category,
                   'molarIonizationEnergies': '\n'.join(
-                      [key + ': ' + value + ' ' + article.get_unit('ionization energy 1') for
-                       key, value in ionization_energies[article.get_property('number')].items() if
-                       value != ''])
+                      [key + ': ' + value + ' kJ·mol⁻¹' for key, value in ionization_energies[
+                          article.get_property('number')].items() if value != ''])
                   }
 
     e_r_prefix = article.get_property(
@@ -380,11 +380,12 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         ['block', {'name': 'block', 'units': False}],
         ['electronsPerShell', {'name': 'electrons per shell', 'comments': False}],
         ['phase', {'name': 'phase', 'comments': False, 'capitalize': True}],
-        ['density', [{'name': 'density gpcm3nrt'},
-                     {'name': 'density gplstp', 'units': False,
-                      'append': '×10⁻³ ' + article.get_unit('density gpcm3nrt')}]],
-        ['liquidDensityAtMeltingPoint', ['density gpcm3mp']],
-        ['liquidDensityAtBoilingPoint', ['density gpcm3bp']],
+        ['density', [{'name': 'density gpcm3nrt', 'units': False, 'append': ' g·cm⁻³'},
+                     {'name': 'density gplstp', 'units': False, 'append': '×10⁻³ g·cm⁻³'}]],
+        ['liquidDensityAtMeltingPoint', [{'name': 'density gpcm3mp', 'units': False,
+                                          'append': ' g·cm⁻³'}]],
+        ['liquidDensityAtBoilingPoint', [{'name': 'density gpcm3bp', 'units': False,
+                                          'append': ' g·cm⁻³'}]],
         ['meltingPoint', {'properties': ['melting point k', 'melting point c', 'melting point f']}],
         ['sublimationPoint', {'properties': ['sublimation point k', 'sublimation point c',
                                              'sublimation point f']}],
@@ -392,22 +393,29 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         ['triplePoint', {'properties': ['triple point k', 'triple point kpa'], 'delimiter': ', '}],
         ['criticalPoint', {'properties': ['critical point k', 'critical point mpa'],
                            'delimiter': ', '}],
-        ['heatOfFusion', {'name': 'heat fusion', 'comment_as_title': True, 'capitalize': True}],
+        ['heatOfFusion', {'name': 'heat fusion', 'comment_as_title': True, 'capitalize': True,
+                          'units': False, 'append': ' kJ·mol⁻¹'}],
         ['heatOfVaporization', {'name': 'heat vaporization', 'comment_as_title': True,
-                                'capitalize': True}],
+                                'capitalize': True, 'units': False, 'append': ' kJ·mol⁻¹'}],
         ['molarHeatCapacity', {'name': 'heat capacity', 'comment_as_title': True,
-                               'capitalize': True}],
+                               'capitalize': True, 'units': False, 'append': ' J·mol⁻¹·K⁻¹'}],
         ['electronegativity', {'name': 'electronegativity'}],
         ['atomicRadius', {'name': 'atomic radius', 'comments': False}],
         ['covalentRadius', {'name': 'covalent radius'}],
         ['vanDerWaalsRadius', {'name': 'van der waals radius'}],
         ['thermalConductivity', {'name': 'thermal conductivity', 'comment_as_title': True,
-                                 'capitalize': True}],
-        ['thermalExpansion', ['thermal expansion at 25', 'thermal expansion']],
+                                 'capitalize': True, 'units': False, 'append': ' W·m⁻¹·K⁻¹'}],
+        ['thermalExpansion', [{'name': 'thermal expansion at 25', 'units': False,
+                               'append': ' µm·m⁻¹·K⁻¹'},
+                              {'name': 'thermal expansion', 'units': False,
+                               'append': ' µm·m⁻¹·K⁻¹'}]],
         ['thermalDiffusivity', {'name': 'thermal diffusivity', 'comment_as_title': True,
-                                'capitalize': True}],
-        ['speedOfSound', ['speed of sound', {'name': 'speed of sound rod at 20', 'comments': False},
-                          'speed of sound rod at r.t.']],
+                                'capitalize': True, 'units': False, 'append': ' mm²·s⁻¹'}],
+        ['speedOfSound', [{'name': 'speed of sound', 'units': False, 'append': ' m·s⁻¹'},
+                          {'name': 'speed of sound rod at 20', 'comments': False, 'units': False,
+                           'append': ' m·s⁻¹'},
+                          {'name': 'speed of sound rod at r.t.', 'units': False, 'append': ' m·s⁻¹'}
+                          ]],
         ['youngsModulus', {'name': 'young\'s modulus', 'capitalize': True}],
         ['shearModulus', {'name': 'shear modulus', 'capitalize': True}],
         ['bulkModulus', {'name': 'bulk modulus', 'capitalize': True}],
