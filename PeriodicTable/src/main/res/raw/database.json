@@ -4561,7 +4561,7 @@
         "bandGap": "",
         "block": "d",
         "boilingPoint": "2944 K / 2671 °C / 4840 °F",
-        "brinellHardness": "687-6500 MPa",
+        "brinellHardness": "687–6500 MPa",
         "bulkModulus": "160 GPa",
         "casNumber": "7440-47-3",
         "category": 7,
@@ -26121,7 +26121,7 @@
                 "symbol": "²²⁵Ra"
             },
             {
-                "abundance": "-",
+                "abundance": "",
                 "decayModes": "α → ²²²Rn\nβ⁻β⁻ (rare) → ²²⁶Th\nCD (2.6×10⁻⁹%) → ²¹²Pb",
                 "halfLife": "1600 y",
                 "spin": "0+",
