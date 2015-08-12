@@ -39,3 +39,8 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     compile 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.7.4@aar'
 }
+
+if (project.hasProperty("PeriodicTable.signing") &&
+        file(project.property("PeriodicTable.signing") + ".gradle").exists()) {
+    apply from: project.property("PeriodicTable.signing") + ".gradle";
+}
