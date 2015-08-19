@@ -13,6 +13,7 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@drawable/ic_launcher_periodic_table"
         android:label="@string/app_name"
         android:supportsRtl="true"
