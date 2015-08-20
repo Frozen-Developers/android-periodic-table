@@ -8,31 +8,24 @@ import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.TableItem;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 
 public class Database {
-
-    private String mInput;
-    private JsonArray mJsonArray;
-    private Gson mGson;
+    private final JsonArray mJsonArray;
+    private final Gson mGson = new Gson();
 
     private static Database mInstance;
 
     private Database(Context context) {
+        String input = "";
+
         try {
-            InputStream inputStream = context.getResources().openRawResource(R.raw.database);
-            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            
+            final InputStream inputStream = context.getResources().openRawResource(R.raw.database);
+            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
             byte[] buffer = new byte[8192];
             int length;
 
@@ -40,7 +33,7 @@ public class Database {
                 outputStream.write(buffer, 0, length);
             }
 
-            mInput = new String(outputStream.toByteArray());
+            input = new String(outputStream.toByteArray());
 
             outputStream.close();
             inputStream.close();
@@ -48,8 +41,7 @@ public class Database {
             e.printStackTrace();
         }
 
-        mJsonArray = new JsonParser().parse(mInput).getAsJsonArray();
-        mGson = new Gson();
+        mJsonArray = new JsonParser().parse(input).getAsJsonArray();
     }
 
     public static synchronized Database getInstance(Context context) {
@@ -61,32 +53,27 @@ public class Database {
     }
 
     public ElementListItem[] getElementListItems() {
-        List<ElementListItem> itemsList = new ArrayList<ElementListItem>(Arrays.asList(
-                mGson.fromJson(mInput, ElementListItem[].class)));
+        final ElementListItem[] items = new ElementListItem[mJsonArray.size()];
 
-        Collections.sort(itemsList, new Comparator<ElementListItem>() {
-            @Override
-            public int compare(ElementListItem lhs, ElementListItem rhs) {
-                return lhs.getNumber() - rhs.getNumber();
-            }
-        });
+        for (int i = 0; i < items.length; i++) {
+            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), ElementListItem.class);
+        }
 
-        return itemsList.toArray(new ElementListItem[itemsList.size()]);
+        return items;
     }
 
     public TableItem[] getTableItems() {
-        return mGson.fromJson(mInput, TableItem[].class);
+        final TableItem[] items = new TableItem[mJsonArray.size()];
+
+        for (int i = 0; i < items.length; i++) {
+            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), TableItem.class);
+        }
+
+        return items;
     }
 
     public ElementProperties getElementProperties(int element) {
-        for(JsonElement jsonElement : mJsonArray) {
-            JsonObject object = jsonElement.getAsJsonObject();
-
-            if(object.get("number").getAsInt() == element) {
-                return mGson.fromJson(object, ElementProperties.class);
-            }
-        }
-
-        return null;
+        return mGson.fromJson(mJsonArray.get(element - 1).getAsJsonObject(),
+                ElementProperties.class);
     }
 }
