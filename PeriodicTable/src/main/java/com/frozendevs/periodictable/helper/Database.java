@@ -10,8 +10,10 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 
-import java.io.ByteArrayOutputStream;
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 
 public class Database {
     private final JsonArray mJsonArray;
@@ -20,32 +22,43 @@ public class Database {
     private static Database mInstance;
 
     private Database(Context context) {
-        String input = "";
+        final StringBuilder json = new StringBuilder();
+
+        InputStream inputStream = null;
+        InputStreamReader inputStreamReader = null;
+        BufferedReader bufferedReader = null;
 
         try {
-            final InputStream inputStream = context.getResources().openRawResource(R.raw.database);
-            final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+            inputStream = context.getResources().openRawResource(R.raw.database);
+            inputStreamReader = new InputStreamReader(inputStream);
+            bufferedReader = new BufferedReader(inputStreamReader);
 
-            byte[] buffer = new byte[8192];
-            int length;
-
-            while ((length = inputStream.read(buffer)) != -1) {
-                outputStream.write(buffer, 0, length);
+            for (String line; (line = bufferedReader.readLine()) != null; ) {
+                json.append(line);
             }
-
-            input = new String(outputStream.toByteArray());
-
-            outputStream.close();
-            inputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (inputStreamReader != null) {
+                    inputStreamReader.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        mJsonArray = new JsonParser().parse(input).getAsJsonArray();
+        mJsonArray = new JsonParser().parse(json.toString()).getAsJsonArray();
     }
 
     public static synchronized Database getInstance(Context context) {
-        if(mInstance == null) {
+        if (mInstance == null) {
             mInstance = new Database(context);
         }
 
