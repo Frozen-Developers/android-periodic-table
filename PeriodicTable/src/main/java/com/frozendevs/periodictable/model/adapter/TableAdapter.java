@@ -344,7 +344,11 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     }
 
     public Bitmap getDrawingCache(int position) {
-        return mBitmaps[position];
+        if (mBitmaps != null) {
+            return mBitmaps[position];
+        }
+
+        return null;
     }
 
     public void destroyDrawingCache() {
