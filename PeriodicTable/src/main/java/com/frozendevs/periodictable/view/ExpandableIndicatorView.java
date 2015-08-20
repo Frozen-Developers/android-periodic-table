@@ -53,7 +53,11 @@ public class ExpandableIndicatorView extends ImageView {
 
         mGroupIndicator = (StateListDrawable) typedArray.getDrawable(0);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mGroupIndicator.setTint(typedArray.getColor(1, R.color.abc_secondary_text_material_dark));
+            final int tintColor = typedArray.getColor(1, 0);
+
+            if (tintColor != 0) {
+                mGroupIndicator.setTint(tintColor);
+            }
         }
 
         typedArray.recycle();
