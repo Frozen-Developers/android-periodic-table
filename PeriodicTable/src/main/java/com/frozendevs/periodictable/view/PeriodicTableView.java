@@ -61,7 +61,7 @@ public class PeriodicTableView extends ZoomableScrollView {
         }
     };
 
-    private class SavedState extends BaseSavedState {
+    private static class SavedState extends BaseSavedState {
 
         int activeViewPosition = -1;
 
@@ -74,6 +74,24 @@ public class PeriodicTableView extends ZoomableScrollView {
         public SavedState(Parcelable superState) {
             super(superState);
         }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+
+            out.writeInt(activeViewPosition);
+        }
+
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
+
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
     }
 
     private OnClickConfirmedListener mOnSingleTapConfirmed = new OnClickConfirmedListener() {
