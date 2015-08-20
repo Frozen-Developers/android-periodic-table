@@ -565,5 +565,7 @@ if __name__ == '__main__':
 
     # Save
 
+    json_data.sort(key=lambda k: int(k['number']))
+
     with open(OUTPUT_JSON, 'w+') as outfile:
         json.dump(json_data, outfile, sort_keys=True, indent=4, ensure_ascii=False)
