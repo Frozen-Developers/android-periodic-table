@@ -1,14 +1,11 @@
 package com.frozendevs.periodictable.fragment;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.SharedElementCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,13 +17,10 @@ import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
-import java.util.List;
-
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
 
     private TableAdapter mAdapter;
-    private PeriodicTableView mPeriodicTableView;
-    private static TableFragment mInstance;
+    public static PeriodicTableView mPeriodicTableView;
 
     private class LoadData extends AsyncTask<Void, Void, Void> {
 
@@ -47,49 +41,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
-    public SharedElementCallback mSharedElementCallback = new SharedElementCallback() {
-
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        @Override
-        public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
-                                         List<View> sharedElementSnapshots) {
-            super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
-
-            View view = sharedElements.get(0);
-
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-
-            view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
-                    View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
-                    layoutParams.height, View.MeasureSpec.EXACTLY));
-            view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
-                    view.getTop() + view.getMeasuredHeight());
-            view.setPivotX(0f);
-            view.setPivotY(0f);
-            view.setScaleX(mPeriodicTableView.getZoom());
-            view.setScaleY(mPeriodicTableView.getZoom());
-        }
-
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-        @Override
-        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
-                                       List<View> sharedElementSnapshots) {
-            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
-
-            View view = sharedElements.get(0);
-            view.setScaleX(1f);
-            view.setScaleY(1f);
-        }
-    };
-
-    public static synchronized TableFragment getInstance() {
-        return mInstance;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        mInstance = this;
-
         super.onCreate(savedInstanceState);
 
         setRetainInstance(true);
@@ -135,15 +88,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public void onExitTransitionFinished() {
-        View view = mPeriodicTableView.getActiveView();
-
-        if (view != null) {
-            view.setAlpha(1f);
-        }
-    }
-
     @Override
     public void onResume() {
         if (mPeriodicTableView != null) {
@@ -151,5 +95,9 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
 
         super.onResume();
+    }
+
+    public static PeriodicTableView getPeriodicTableView() {
+        return mPeriodicTableView;
     }
 }

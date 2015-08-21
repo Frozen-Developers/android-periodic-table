@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.SharedElementCallback;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -16,6 +17,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
@@ -25,15 +27,61 @@ import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
+import com.frozendevs.periodictable.view.PeriodicTableView;
 import com.frozendevs.periodictable.view.RecyclerView;
 
-public class PropertiesActivity extends AppCompatActivity {
+import java.util.List;
 
+@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
+public class PropertiesActivity extends AppCompatActivity implements
+        View.OnAttachStateChangeListener {
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.AtomicNumber";
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
     private String mWikipediaUrl;
+
+    private SharedElementCallback mSharedElementCallback = new SharedElementCallback() {
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
+                                         List<View> sharedElementSnapshots) {
+            super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            final PeriodicTableView periodicTableView = TableFragment.getPeriodicTableView();
+
+            if (periodicTableView == null) {
+                return;
+            }
+
+            final float zoom = periodicTableView.getZoom();
+
+            View view = sharedElements.get(0);
+
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
+                    View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
+                    layoutParams.height, View.MeasureSpec.EXACTLY));
+            view.layout(view.getLeft(), view.getTop(), view.getLeft() + view.getMeasuredWidth(),
+                    view.getTop() + view.getMeasuredHeight());
+            view.setPivotX(0f);
+            view.setPivotY(0f);
+            view.setScaleX(zoom);
+            view.setScaleY(zoom);
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
+                                       List<View> sharedElementSnapshots) {
+            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            View view = sharedElements.get(0);
+            view.setScaleX(1f);
+            view.setScaleY(1f);
+        }
+    };
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     @Override
@@ -42,31 +90,15 @@ public class PropertiesActivity extends AppCompatActivity {
 
         setContentView(R.layout.properties_activity);
 
-        final TableFragment tableFragment = TableFragment.getInstance();
-
-        if (tableFragment != null) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             supportPostponeEnterTransition();
 
-            setEnterSharedElementCallback(tableFragment.mSharedElementCallback);
+            setEnterSharedElementCallback(mSharedElementCallback);
 
             /*
              * Work around shared view alpha state not being restored on exit transition finished.
              */
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().getDecorView().addOnAttachStateChangeListener(
-                        new View.OnAttachStateChangeListener() {
-                            @Override
-                            public void onViewAttachedToWindow(View v) {
-                            }
-
-                            @Override
-                            public void onViewDetachedFromWindow(View v) {
-                                if (PropertiesActivity.this.isFinishing()) {
-                                    tableFragment.onExitTransitionFinished();
-                                }
-                            }
-                        });
-            }
+            getWindow().getDecorView().addOnAttachStateChangeListener(this);
         }
 
         ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
@@ -153,5 +185,27 @@ public class PropertiesActivity extends AppCompatActivity {
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onViewAttachedToWindow(View view) {
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public void onViewDetachedFromWindow(View view) {
+        if (isFinishing()) {
+            return;
+        }
+
+        final PeriodicTableView periodicTableView = TableFragment.getPeriodicTableView();
+
+        if (periodicTableView != null) {
+            final View activeView = periodicTableView.getActiveView();
+
+            if (activeView != null) {
+                activeView.setAlpha(1f);
+            }
+        }
     }
 }
