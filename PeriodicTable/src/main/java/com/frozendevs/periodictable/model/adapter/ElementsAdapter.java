@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHolder> {
 
-    private ElementListItem[] mItems;
+    private ElementListItem[] mItems = new ElementListItem[0];
     private List<ElementListItem> mFilteredItems = new ArrayList<>();
 
     public class ViewHolder extends RecyclerView.ViewHolder implements
@@ -88,7 +88,7 @@ public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHo
     }
 
     public void filter(Context context, String filter) {
-        if (mItems != null) {
+        if (mItems.length > 0) {
             List<ElementListItem> filteredItems = new ArrayList<>();
 
             Locale locale = context.getResources().getConfiguration().locale;
@@ -123,7 +123,7 @@ public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHo
     }
 
     public void setItems(ElementListItem[] items) {
-        mItems = items.clone();
+        mItems = items != null ? items.clone() : new ElementListItem[0];
 
         mFilteredItems = new ArrayList<>(Arrays.asList(mItems));
 
