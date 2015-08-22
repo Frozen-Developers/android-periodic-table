@@ -32,9 +32,7 @@ import com.frozendevs.periodictable.view.RecyclerView;
 
 import java.util.List;
 
-@TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
-public class PropertiesActivity extends AppCompatActivity implements
-        View.OnAttachStateChangeListener {
+public class PropertiesActivity extends AppCompatActivity {
     public static final String EXTRA_ATOMIC_NUMBER = "com.frozendevs.periodictable.AtomicNumber";
 
     public static final String ARGUMENT_PROPERTIES = "properties";
@@ -85,7 +83,6 @@ public class PropertiesActivity extends AppCompatActivity implements
         }
     };
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +97,31 @@ public class PropertiesActivity extends AppCompatActivity implements
             /*
              * Work around shared view alpha state not being restored on exit transition finished.
              */
-            getWindow().getDecorView().addOnAttachStateChangeListener(this);
+            getWindow().getDecorView().addOnAttachStateChangeListener(
+                    new View.OnAttachStateChangeListener() {
+                        @Override
+                        public void onViewAttachedToWindow(View v) {
+                        }
+
+                        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+                        @Override
+                        public void onViewDetachedFromWindow(View v) {
+                            if (isFinishing()) {
+                                return;
+                            }
+
+                            final PeriodicTableView periodicTableView =
+                                    TableFragment.getPeriodicTableView();
+
+                            if (periodicTableView != null) {
+                                final View activeView = periodicTableView.getActiveView();
+
+                                if (activeView != null) {
+                                    activeView.setAlpha(1f);
+                                }
+                            }
+                        }
+                    });
         }
 
         if (savedInstanceState == null || (mElementProperties = savedInstanceState.getParcelable(
@@ -197,27 +218,5 @@ public class PropertiesActivity extends AppCompatActivity implements
         super.onSaveInstanceState(outState);
 
         outState.putParcelable(STATE_ELEMENT_PROPERTIES, mElementProperties);
-    }
-
-    @Override
-    public void onViewAttachedToWindow(View view) {
-    }
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    @Override
-    public void onViewDetachedFromWindow(View view) {
-        if (isFinishing()) {
-            return;
-        }
-
-        final PeriodicTableView periodicTableView = TableFragment.getPeriodicTableView();
-
-        if (periodicTableView != null) {
-            final View activeView = periodicTableView.getActiveView();
-
-            if (activeView != null) {
-                activeView.setAlpha(1f);
-            }
-        }
     }
 }
