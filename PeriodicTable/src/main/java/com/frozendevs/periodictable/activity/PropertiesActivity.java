@@ -39,7 +39,9 @@ public class PropertiesActivity extends AppCompatActivity implements
 
     public static final String ARGUMENT_PROPERTIES = "properties";
 
-    private String mWikipediaUrl;
+    private static final String STATE_ELEMENT_PROPERTIES = "elementProperties";
+
+    private ElementProperties mElementProperties;
 
     private SharedElementCallback mSharedElementCallback = new SharedElementCallback() {
         @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -101,17 +103,19 @@ public class PropertiesActivity extends AppCompatActivity implements
             getWindow().getDecorView().addOnAttachStateChangeListener(this);
         }
 
-        ElementProperties elementProperties = Database.getInstance(this).getElementProperties(
-                getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
-        mWikipediaUrl = elementProperties.getWikipediaLink();
+        if (savedInstanceState == null || (mElementProperties = savedInstanceState.getParcelable(
+                STATE_ELEMENT_PROPERTIES)) == null) {
+            mElementProperties = Database.getInstance(this).getElementProperties(
+                    getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
+        }
 
         setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle(elementProperties.getName());
+        getSupportActionBar().setTitle(mElementProperties.getName());
 
         Bundle bundle = new Bundle();
-        bundle.putSerializable(ARGUMENT_PROPERTIES, elementProperties);
+        bundle.putParcelable(ARGUMENT_PROPERTIES, mElementProperties);
 
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(this);
         pagerAdapter.addPage(R.string.fragment_title_properties, PropertiesFragment.class, bundle);
@@ -135,7 +139,8 @@ public class PropertiesActivity extends AppCompatActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_wiki:
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(mWikipediaUrl)));
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(
+                        mElementProperties.getWikipediaLink())));
                 return true;
 
             case android.R.id.home:
@@ -185,6 +190,13 @@ public class PropertiesActivity extends AppCompatActivity implements
         }
 
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable(STATE_ELEMENT_PROPERTIES, mElementProperties);
     }
 
     @Override
