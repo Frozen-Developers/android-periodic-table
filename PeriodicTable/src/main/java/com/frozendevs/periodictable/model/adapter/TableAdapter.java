@@ -15,6 +15,8 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TableAdapter extends PeriodicTableView.Adapter {
 
@@ -29,7 +31,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     private int mGroupsCount;
     private int mPeriodsCount;
     private int mTileSize;
-    private TableItem[] mItems;
+    private Map<Integer, TableItem> mItems = new HashMap<>();
 
     private class ViewHolder {
         TextView symbol, number, name, weight;
@@ -43,12 +45,12 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     @Override
     public int getCount() {
-        return mItems != null ? mItems.length : 0;
+        return mItems.size();
     }
 
     @Override
     public TableItem getItem(int position) {
-        return mItems[position];
+        return mItems.get(position);
     }
 
     @Override
@@ -278,6 +280,12 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     }
 
     public void setItems(TableItem... items) {
+        mItems.clear();
+
+        if (items == null) {
+            return;
+        }
+
         int groups = 0, periods = 0;
 
         for (TableItem item : items) {
@@ -288,16 +296,18 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         mGroupsCount = groups;
         mPeriodsCount = periods + 2;
 
-        mItems = new TableItem[mGroupsCount * mPeriodsCount];
-
         for (TableItem item : items) {
+            final int position;
+
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
-                mItems[(mGroupsCount * periods) + 2 + item.getNumber() - 57] = item;
+                position = (mGroupsCount * periods) + 2 + item.getNumber() - 57;
             } else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
-                mItems[(mGroupsCount * periods) + 20 + item.getNumber() - 89] = item;
+                position = (mGroupsCount * periods) + 20 + item.getNumber() - 89;
             } else {
-                mItems[((item.getPeriod() - 1) * mGroupsCount) + item.getGroup() - 1] = item;
+                position = ((item.getPeriod() - 1) * mGroupsCount) + item.getGroup() - 1;
             }
+
+            mItems.put(position, item);
         }
     }
 

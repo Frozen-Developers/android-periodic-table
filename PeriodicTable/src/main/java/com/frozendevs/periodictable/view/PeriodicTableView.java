@@ -59,7 +59,9 @@ public class PeriodicTableView extends ZoomableScrollView {
 
             if (!mAdapter.isEmpty()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && mActiveView == null) {
-                    for (int i = 0; i < mAdapter.getCount(); i++) {
+                    final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
+
+                    for (int i = 0; i < size; i++) {
                         if (mAdapter.getItem(i) != null && mAdapter.isEnabled(i)) {
                             addActiveView(i);
 
@@ -372,8 +374,9 @@ public class PeriodicTableView extends ZoomableScrollView {
                 final int position = ((int) ((rawY - startY) / (tileSize + DEFAULT_SPACING)) *
                         mAdapter.getGroupsCount()) + (int) ((rawX - startX) / (tileSize + DEFAULT_SPACING));
 
-                if (position >= 0 && position < mAdapter.getCount() &&
-                        mAdapter.isEnabled(position)) {
+                final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
+
+                if (position >= 0 && position < size && mAdapter.isEnabled(position)) {
                     listener.onClickConfirmed(position);
 
                     return true;
