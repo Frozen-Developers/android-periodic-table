@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,9 +16,9 @@ import com.frozendevs.periodictable.model.TableItem;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class TableAdapter extends DynamicAdapter<TableItem> {
+public class TableAdapter extends BaseAdapter {
 
-    private static enum ViewType {
+    private enum ViewType {
         ITEM,
         TEXT
     }
@@ -28,6 +29,7 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
     private int mGroupsCount;
     private int mPeriodsCount;
     private int mTileSize;
+    private TableItem[] mItems;
 
     private class ViewHolder {
         TextView symbol, number, name, weight;
@@ -37,6 +39,21 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         mContext = context;
 
         mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
+    }
+
+    @Override
+    public int getCount() {
+        return mItems != null ? mItems.length : 0;
+    }
+
+    @Override
+    public TableItem getItem(int position) {
+        return mItems[position];
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
@@ -259,7 +276,6 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         return ViewType.values().length;
     }
 
-    @Override
     public void setItems(TableItem... items) {
         int groups = 0, periods = 0;
 
@@ -271,19 +287,17 @@ public class TableAdapter extends DynamicAdapter<TableItem> {
         mGroupsCount = groups;
         mPeriodsCount = periods + 2;
 
-        TableItem[] sortedItems = new TableItem[mGroupsCount * mPeriodsCount];
+        mItems = new TableItem[mGroupsCount * mPeriodsCount];
 
         for (TableItem item : items) {
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
-                sortedItems[(mGroupsCount * periods) + 2 + item.getNumber() - 57] = item;
+                mItems[(mGroupsCount * periods) + 2 + item.getNumber() - 57] = item;
             } else if (item.getNumber() >= 89 && item.getNumber() <= 103) {
-                sortedItems[(mGroupsCount * periods) + 20 + item.getNumber() - 89] = item;
+                mItems[(mGroupsCount * periods) + 20 + item.getNumber() - 89] = item;
             } else {
-                sortedItems[((item.getPeriod() - 1) * mGroupsCount) + item.getGroup() - 1] = item;
+                mItems[((item.getPeriod() - 1) * mGroupsCount) + item.getGroup() - 1] = item;
             }
         }
-
-        super.setItems(sortedItems);
     }
 
     @Override
