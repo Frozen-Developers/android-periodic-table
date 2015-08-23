@@ -14,10 +14,11 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.accessibility.AccessibilityEvent;
+import android.widget.BaseAdapter;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.adapter.TableAdapter;
 
 public class PeriodicTableView extends ZoomableScrollView {
 
@@ -25,14 +26,25 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     private View mEmptyView = null;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
-    private TableAdapter mAdapter;
+    private Adapter mAdapter;
     private Matrix mMatrix = new Matrix();
     private OnItemClickListener mOnItemClickListener;
     private View mActiveView;
 
     public interface OnItemClickListener {
+        void onItemClick(PeriodicTableView parent, View view, int position);
+    }
 
-        public void onItemClick(PeriodicTableView parent, View view, int position);
+    public static abstract class Adapter extends BaseAdapter {
+        public abstract View getActiveView(Bitmap bitmap, View convertView, ViewGroup parent);
+
+        public abstract int getGroupsCount();
+
+        public abstract int getPeriodsCount();
+
+        public abstract Bitmap getDrawingCache(int position);
+
+        public abstract int getTileSize();
     }
 
     private abstract class OnClickConfirmedListener {
@@ -175,7 +187,7 @@ public class PeriodicTableView extends ZoomableScrollView {
                 ((periods - 1) * DEFAULT_SPACING));
     }
 
-    public void setAdapter(TableAdapter adapter) {
+    public void setAdapter(Adapter adapter) {
         if (mAdapter != null) {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
         }

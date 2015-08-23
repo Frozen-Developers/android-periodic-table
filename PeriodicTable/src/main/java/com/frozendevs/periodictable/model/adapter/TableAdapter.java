@@ -6,17 +6,17 @@ import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.view.PeriodicTableView;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class TableAdapter extends BaseAdapter {
+public class TableAdapter extends PeriodicTableView.Adapter {
 
     private enum ViewType {
         ITEM,
@@ -177,6 +177,7 @@ public class TableAdapter extends BaseAdapter {
         return convertView;
     }
 
+    @Override
     public View getActiveView(Bitmap bitmap, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.table_active_item,
@@ -305,10 +306,12 @@ public class TableAdapter extends BaseAdapter {
         return super.isEmpty() || mBitmaps == null;
     }
 
+    @Override
     public int getGroupsCount() {
         return mGroupsCount;
     }
 
+    @Override
     public int getPeriodsCount() {
         return mPeriodsCount;
     }
@@ -357,6 +360,7 @@ public class TableAdapter extends BaseAdapter {
         mBitmaps = bitmaps;
     }
 
+    @Override
     public Bitmap getDrawingCache(int position) {
         if (mBitmaps != null) {
             return mBitmaps[position];
@@ -387,6 +391,7 @@ public class TableAdapter extends BaseAdapter {
         return getItem(position) != null;
     }
 
+    @Override
     public int getTileSize() {
         return mTileSize;
     }
