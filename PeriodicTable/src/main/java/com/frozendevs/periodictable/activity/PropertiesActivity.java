@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.SharedElementCallback;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,10 +19,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.frozendevs.periodictable.PeriodicTableApplication;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
-import com.frozendevs.periodictable.fragment.TableFragment;
 import com.frozendevs.periodictable.helper.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.ViewPagerAdapter;
@@ -37,37 +38,31 @@ public class PropertiesActivity extends AppCompatActivity {
 
     private ElementProperties mElementProperties;
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.properties_activity);
 
-        final TableFragment tableFragment = TableFragment.getInstance();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            final PeriodicTableApplication application = (PeriodicTableApplication) getApplication();
 
-        if (tableFragment != null) {
             supportPostponeEnterTransition();
 
-            setEnterSharedElementCallback(tableFragment.mSharedElementCallback);
+            final SharedElementCallback callback = application.getSharedElementCallback();
+
+            if (callback != null) {
+                setEnterSharedElementCallback(callback);
+            }
 
             /*
              * Work around shared view alpha state not being restored on exit transition finished.
              */
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                getWindow().getDecorView().addOnAttachStateChangeListener(
-                        new View.OnAttachStateChangeListener() {
-                            @Override
-                            public void onViewAttachedToWindow(View v) {
-                            }
+            final View.OnAttachStateChangeListener listener =
+                    application.getOnAttachStateChangeListener();
 
-                            @Override
-                            public void onViewDetachedFromWindow(View v) {
-                                if (PropertiesActivity.this.isFinishing()) {
-                                    tableFragment.onExitTransitionFinished();
-                                }
-                            }
-                        });
+            if (listener != null) {
+                getWindow().getDecorView().addOnAttachStateChangeListener(listener);
             }
         }
 

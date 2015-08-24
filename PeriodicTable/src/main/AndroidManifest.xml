@@ -12,6 +12,7 @@
         android:xlargeScreens="true" />
 
     <application
+        android:name="com.frozendevs.periodictable.PeriodicTableApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@drawable/ic_launcher_periodic_table"
