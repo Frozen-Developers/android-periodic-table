@@ -71,6 +71,8 @@ public class PeriodicTableView extends ZoomableScrollView {
                 }
 
                 invalidate();
+
+                updateEmptyStatus(false);
             }
         }
     };
@@ -267,8 +269,6 @@ public class PeriodicTableView extends ZoomableScrollView {
 
                 y += tileSize + DEFAULT_SPACING;
             }
-
-            updateEmptyStatus(false);
         }
 
         super.dispatchDraw(canvas);
