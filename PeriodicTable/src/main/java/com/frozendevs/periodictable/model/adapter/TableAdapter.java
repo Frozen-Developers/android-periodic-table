@@ -35,6 +35,20 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     private int mTileSize;
     private Map<Integer, TableItem> mItems = new HashMap<>();
 
+    private static final int[] COLORS = {
+            R.color.category_diatomic_nonmetals_bg,
+            R.color.category_noble_gases_bg,
+            R.color.category_alkali_metals_bg,
+            R.color.category_alkaline_earth_metals_bg,
+            R.color.category_metalloids_bg,
+            R.color.category_polyatomic_nonmetals_bg,
+            R.color.category_other_metals_bg,
+            R.color.category_transition_metals_bg,
+            R.color.category_lanthanides_bg,
+            R.color.category_actinides_bg,
+            R.color.category_unknown_bg
+    };
+
     private static final Object[][] TEXT_ITEMS = {
             {4, R.string.category_actinides, 9},
             {5, R.string.category_alkali_metals, 2},
@@ -153,20 +167,8 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         return convertView;
     }
 
-    public int getBackgroundColor(TableItem item) {
-        return mContext.getResources().getColor(new int[]{
-                R.color.category_diatomic_nonmetals_bg,
-                R.color.category_noble_gases_bg,
-                R.color.category_alkali_metals_bg,
-                R.color.category_alkaline_earth_metals_bg,
-                R.color.category_metalloids_bg,
-                R.color.category_polyatomic_nonmetals_bg,
-                R.color.category_other_metals_bg,
-                R.color.category_transition_metals_bg,
-                R.color.category_lanthanides_bg,
-                R.color.category_actinides_bg,
-                R.color.category_unknown_bg
-        }[item.getCategory()]);
+    private int getBackgroundColor(TableItem item) {
+        return mContext.getResources().getColor(COLORS[item.getCategory()]);
     }
 
     @Override
