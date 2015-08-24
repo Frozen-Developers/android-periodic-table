@@ -331,7 +331,7 @@ public class PeriodicTableView extends ZoomableScrollView {
         if (state instanceof SavedState) {
             SavedState savedState = (SavedState) state;
 
-            if (savedState.activeViewPosition > -1) {
+            if (!mAdapter.isEmpty() && savedState.activeViewPosition > -1) {
                 addActiveView(savedState.activeViewPosition);
             }
 
