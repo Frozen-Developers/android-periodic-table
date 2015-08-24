@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementProperties;
-import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.model.TableElementItem;
 import com.frozendevs.periodictable.view.RecyclerView;
 
 public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -22,7 +22,7 @@ public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     private Context mContext;
     private Typeface mTypeface;
     private Property[] mProperties = new Property[0];
-    private TableItem mTableItem;
+    private TableElementItem mTableElementItem;
     private TableAdapter mTableAdapter;
 
     private class Property<T> {
@@ -110,7 +110,7 @@ public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             super(itemView);
 
             View tileView = itemView.findViewById(R.id.tile_view);
-            mTableAdapter.getView(mTableItem, tileView, (ViewGroup) itemView);
+            mTableAdapter.getView(mTableElementItem, tileView, (ViewGroup) itemView);
             tileView.setClickable(false);
             tileView.setDuplicateParentStateEnabled(true);
 
@@ -144,7 +144,7 @@ public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public PropertiesAdapter(Context context, ElementProperties properties) {
         mContext = context;
 
-        mTableItem = properties;
+        mTableElementItem = properties;
 
         mTableAdapter = new TableAdapter(context);
 

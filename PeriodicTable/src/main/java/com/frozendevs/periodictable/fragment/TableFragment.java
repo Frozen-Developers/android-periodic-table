@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
 import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.model.TableElementItem;
 import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
@@ -76,11 +77,12 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     public void onItemClick(PeriodicTableView parent, View view, int position) {
         TableItem item = mAdapter.getItem(position);
 
-        if (item != null) {
+        if (item instanceof TableElementItem) {
             parent.setEnabled(false);
 
             Intent intent = new Intent(getActivity(), PropertiesActivity.class);
-            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER, item.getNumber());
+            intent.putExtra(PropertiesActivity.EXTRA_ATOMIC_NUMBER,
+                    ((TableElementItem) item).getNumber());
 
             ActivityCompat.startActivity(getActivity(), intent,
                     ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), view,

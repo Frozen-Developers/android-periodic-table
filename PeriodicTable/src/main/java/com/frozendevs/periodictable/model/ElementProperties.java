@@ -3,7 +3,7 @@ package com.frozendevs.periodictable.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ElementProperties extends TableItem {
+public class ElementProperties extends TableElementItem {
 
     private String block, electronConfiguration, wikipediaLink, appearance, phase, density,
             liquidDensityAtMeltingPoint, liquidDensityAtBoilingPoint, meltingPoint,

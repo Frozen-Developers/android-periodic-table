@@ -5,7 +5,7 @@ import android.content.Context;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.ElementProperties;
-import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.model.TableElementItem;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
@@ -75,11 +75,11 @@ public class Database {
         return items;
     }
 
-    public TableItem[] getTableItems() {
-        final TableItem[] items = new TableItem[mJsonArray.size()];
+    public TableElementItem[] getTableItems() {
+        final TableElementItem[] items = new TableElementItem[mJsonArray.size()];
 
         for (int i = 0; i < items.length; i++) {
-            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), TableItem.class);
+            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), TableElementItem.class);
         }
 
         return items;

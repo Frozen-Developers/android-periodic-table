@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.frozendevs.periodictable.R;
+import com.frozendevs.periodictable.model.TableElementItem;
 import com.frozendevs.periodictable.model.TableItem;
+import com.frozendevs.periodictable.model.TableTextItem;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
 import java.math.BigDecimal;
@@ -32,6 +34,22 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     private int mPeriodsCount;
     private int mTileSize;
     private Map<Integer, TableItem> mItems = new HashMap<>();
+
+    private static final Object[][] TEXT_ITEMS = {
+            {4, R.string.category_actinides, 9},
+            {5, R.string.category_alkali_metals, 2},
+            {6, R.string.category_alkaline_earth_metals, 3},
+            {7, R.string.category_diatomic_nonmetals, 0},
+            {8, R.string.category_lanthanides, 8},
+            {9, R.string.category_metalloids, 4},
+            {22, R.string.category_noble_gases, 1},
+            {23, R.string.category_polyatomic_nonmetals, 5},
+            {24, R.string.category_other_metals, 6},
+            {25, R.string.category_transition_metals, 7},
+            {26, R.string.category_unknown, 10},
+            {92, "57 - 71", 8},
+            {110, "89 - 103", 9}
+    };
 
     private class ViewHolder {
         TextView symbol, number, name, weight;
@@ -60,84 +78,27 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        switch (ViewType.values()[getItemViewType(position)]) {
-            case TEXT:
-                if (convertView == null) {
-                    convertView = LayoutInflater.from(mContext).inflate(R.layout.table_text,
-                            parent, false);
-                }
+        final TableItem item = getItem(position);
 
-                convertView.setBackgroundColor(getBackgroundColor(position));
+        if (item instanceof TableTextItem) {
+            if (convertView == null) {
+                convertView = LayoutInflater.from(mContext).inflate(R.layout.table_text,
+                        parent, false);
+            }
 
-                switch (position) {
-                    case 4:
-                        ((TextView) convertView).setText(R.string.category_actinides);
-                        break;
+            convertView.setBackgroundColor(getBackgroundColor(item));
 
-                    case 5:
-                        ((TextView) convertView).setText(R.string.category_alkali_metals);
-                        break;
+            ((TextView) convertView).setText(((TableTextItem) item).getText());
 
-                    case 6:
-                        ((TextView) convertView).setText(R.string.category_alkaline_earth_metals);
-                        break;
-
-                    case 7:
-                        ((TextView) convertView).setText(R.string.category_diatomic_nonmetals);
-                        break;
-
-                    case 8:
-                        ((TextView) convertView).setText(R.string.category_lanthanides);
-                        break;
-
-                    case 9:
-                        ((TextView) convertView).setText(R.string.category_metalloids);
-                        break;
-
-                    case 22:
-                        ((TextView) convertView).setText(R.string.category_noble_gases);
-                        break;
-
-                    case 23:
-                        ((TextView) convertView).setText(R.string.category_polyatomic_nonmetals);
-                        break;
-
-                    case 24:
-                        ((TextView) convertView).setText(R.string.category_other_metals);
-                        break;
-
-                    case 25:
-                        ((TextView) convertView).setText(R.string.category_transition_metals);
-                        break;
-
-                    case 26:
-                        ((TextView) convertView).setText(R.string.category_unknown);
-                        break;
-
-                    case 92:
-                        ((TextView) convertView).setText("57 - 71");
-                        break;
-
-                    case 110:
-                        ((TextView) convertView).setText("89 - 103");
-                        break;
-                }
-
-                return convertView;
-
-            case ITEM:
-                TableItem item = getItem(position);
-
-                if (item != null) {
-                    return getView(item, convertView, parent);
-                }
-                break;
+            return convertView;
+        } else if (item instanceof TableElementItem) {
+            return getView((TableElementItem) item, convertView, parent);
         }
 
         return null;
     }
 
-    public View getView(TableItem item, View convertView, ViewGroup parent) {
+    public View getView(TableElementItem item, View convertView, ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
                     parent, false);
@@ -208,66 +169,9 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         }[item.getCategory()]);
     }
 
-    public int getBackgroundColor(int position) {
-        TableItem item = getItem(position);
-
-        if (item == null) {
-            int color = R.color.category_unknown_bg;
-
-            switch (position) {
-                case 4:
-                case 110:
-                    color = R.color.category_actinides_bg;
-                    break;
-
-                case 5:
-                    color = R.color.category_alkali_metals_bg;
-                    break;
-
-                case 6:
-                    color = R.color.category_alkaline_earth_metals_bg;
-                    break;
-
-                case 7:
-                    color = R.color.category_diatomic_nonmetals_bg;
-                    break;
-
-                case 8:
-                case 92:
-                    color = R.color.category_lanthanides_bg;
-                    break;
-
-                case 9:
-                    color = R.color.category_metalloids_bg;
-                    break;
-
-                case 22:
-                    color = R.color.category_noble_gases_bg;
-                    break;
-
-                case 23:
-                    color = R.color.category_polyatomic_nonmetals_bg;
-                    break;
-
-                case 24:
-                    color = R.color.category_other_metals_bg;
-                    break;
-
-                case 25:
-                    color = R.color.category_transition_metals_bg;
-                    break;
-            }
-
-            return mContext.getResources().getColor(color);
-        }
-
-        return getBackgroundColor(item);
-    }
-
     @Override
     public int getItemViewType(int position) {
-        if (getItem(position) == null && (position == 92 || position == 110 ||
-                (position >= 4 && position <= 9) || (position >= 22 && position <= 26))) {
+        if (getItem(position) instanceof TableTextItem) {
             return ViewType.TEXT.ordinal();
         }
 
@@ -279,7 +183,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         return ViewType.values().length;
     }
 
-    public void setItems(TableItem... items) {
+    public void setItems(TableElementItem... items) {
         mItems.clear();
 
         if (items == null) {
@@ -288,7 +192,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
         int groups = 0, periods = 0;
 
-        for (TableItem item : items) {
+        for (TableElementItem item : items) {
             groups = Math.max(item.getGroup(), groups);
             periods = Math.max(item.getPeriod(), periods);
         }
@@ -296,7 +200,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         mGroupsCount = groups;
         mPeriodsCount = periods + 2;
 
-        for (TableItem item : items) {
+        for (TableElementItem item : items) {
             final int position;
 
             if (item.getNumber() >= 57 && item.getNumber() <= 71) {
@@ -308,6 +212,18 @@ public class TableAdapter extends PeriodicTableView.Adapter {
             }
 
             mItems.put(position, item);
+        }
+
+        for (Object[] item : TEXT_ITEMS) {
+            final String text;
+
+            if (item[1] instanceof Integer) {
+                text = mContext.getString((int) item[1]);
+            } else {
+                text = (String) item[1];
+            }
+
+            mItems.put((int) item[0], new TableTextItem(text, (int) item[2]));
         }
     }
 
@@ -398,7 +314,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     @Override
     public boolean isEnabled(int position) {
-        return getItem(position) != null;
+        return getItem(position) instanceof TableElementItem;
     }
 
     @Override
