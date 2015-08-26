@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.Application.Base" parent="Theme.AppCompat.NoActionBar">
-        <item name="zoomableScrollViewStyle">@style/ZoomableScrollView</item>
-    </style>
+    <style name="Theme.Application.Base" parent="Theme.AppCompat.NoActionBar" />
 
     <style name="Theme.Application" parent="Theme.Application.Base" />
 
@@ -20,10 +18,6 @@
         <item name="navigationIcon">?attr/homeAsUpIndicator</item>
         <item name="popupTheme">@style/ThemeOverlay.AppCompat</item>
         <item name="theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
-    </style>
-
-    <style name="ZoomableScrollView">
-        <item name="android:scrollbars">horizontal|vertical</item>
     </style>
 
 </resources>
