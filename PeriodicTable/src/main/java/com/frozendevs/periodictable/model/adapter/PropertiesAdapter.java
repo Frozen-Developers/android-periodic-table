@@ -19,6 +19,20 @@ public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     public static final int VIEW_TYPE_ITEM = 1;
     public static final int VIEW_TYPE_SUMMARY = 2;
 
+    private static final int[] CATEGORIES = {
+            R.string.category_diatomic_nonmetals,
+            R.string.category_noble_gases,
+            R.string.category_alkali_metals,
+            R.string.category_alkaline_earth_metals,
+            R.string.category_metalloids,
+            R.string.category_polyatomic_nonmetals,
+            R.string.category_other_metals,
+            R.string.category_transition_metals,
+            R.string.category_lanthanides,
+            R.string.category_actinides,
+            R.string.category_unknown
+    };
+
     private Context mContext;
     private Typeface mTypeface;
     private Property[] mProperties = new Property[0];
@@ -169,19 +183,7 @@ public class PropertiesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
                         String.valueOf(properties.getPeriod())),
                 new Property(R.string.property_block, properties.getBlock()),
                 new Property(R.string.property_category, mContext.getString(
-                        new int[]{
-                                R.string.category_diatomic_nonmetals,
-                                R.string.category_noble_gases,
-                                R.string.category_alkali_metals,
-                                R.string.category_alkaline_earth_metals,
-                                R.string.category_metalloids,
-                                R.string.category_polyatomic_nonmetals,
-                                R.string.category_other_metals,
-                                R.string.category_transition_metals,
-                                R.string.category_lanthanides,
-                                R.string.category_actinides,
-                                R.string.category_unknown
-                        }[properties.getCategory()])),
+                        CATEGORIES[properties.getCategory()])),
                 new Property(R.string.property_electron_configuration,
                         properties.getElectronConfiguration()),
                 new Property(R.string.property_electrons_per_shell,
