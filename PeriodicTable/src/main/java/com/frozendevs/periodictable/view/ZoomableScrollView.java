@@ -65,6 +65,8 @@ public class ZoomableScrollView extends FrameLayout implements GestureDetector.O
         setHorizontalScrollBarEnabled(true);
         setVerticalScrollBarEnabled(true);
 
+        setClickable(true);
+
         mOverScroller = new OverScroller(context);
         mZoomer = new Zoomer(context);
         mScaleDetector = new ScaleGestureDetector(context, this);
