@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import com.frozendevs.periodictable.PeriodicTableApplication;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
-import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.content.Database;
 import com.frozendevs.periodictable.model.TableElementItem;
 import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;

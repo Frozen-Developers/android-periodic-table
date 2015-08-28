@@ -30,7 +30,7 @@ import com.frozendevs.periodictable.PeriodicTableApplication;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.fragment.IsotopesFragment;
 import com.frozendevs.periodictable.fragment.PropertiesFragment;
-import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.content.Database;
 import com.frozendevs.periodictable.model.ElementProperties;
 import com.frozendevs.periodictable.model.adapter.PropertiesAdapter;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;

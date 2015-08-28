@@ -1,8 +1,9 @@
 package com.frozendevs.periodictable.fragment;
 
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,36 +16,21 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.helper.Database;
+import com.frozendevs.periodictable.content.AsyncTaskLoader;
+import com.frozendevs.periodictable.content.Database;
 import com.frozendevs.periodictable.model.ElementListItem;
 import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 import com.frozendevs.periodictable.view.RecyclerView;
 import com.frozendevs.periodictable.widget.DividerDecoration;
 
-public class ElementsFragment extends Fragment {
+public class ElementsFragment extends Fragment implements
+        LoaderManager.LoaderCallbacks<ElementListItem[]> {
 
     private ElementsAdapter mAdapter;
     private RecyclerView mRecyclerView;
     private View mEmptyView;
 
     private String mSearchQuery;
-
-    private class LoadData extends AsyncTask<Void, Void, ElementListItem[]> {
-
-        @Override
-        protected ElementListItem[] doInBackground(Void... params) {
-            return Database.getAllElements(getContext(), ElementListItem.class);
-        }
-
-        @Override
-        protected void onPostExecute(ElementListItem[] result) {
-            mAdapter.setItems(result);
-
-            mAdapter.notifyDataSetChanged();
-
-            mRecyclerView.setEmptyView(mEmptyView);
-        }
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,8 +40,6 @@ public class ElementsFragment extends Fragment {
         setRetainInstance(true);
 
         mAdapter = new ElementsAdapter();
-
-        new LoadData().execute();
     }
 
     @Override
@@ -73,6 +57,15 @@ public class ElementsFragment extends Fragment {
         mRecyclerView.addItemDecoration(new DividerDecoration(getActivity()));
 
         return rootView;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        if (mAdapter.getItemCount() == 0) {
+            getLoaderManager().initLoader(R.id.elements_list_loader, null, this);
+        }
     }
 
     @Override
@@ -133,5 +126,30 @@ public class ElementsFragment extends Fragment {
         }
 
         super.onCreateOptionsMenu(menu, inflater);
+    }
+
+
+
+    @Override
+    public Loader<ElementListItem[]> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoader<ElementListItem[]>(getActivity()) {
+            @Override
+            public ElementListItem[] loadInBackground() {
+                return Database.getAllElements(getContext(), ElementListItem.class);
+            }
+        };
+    }
+
+    @Override
+    public void onLoadFinished(Loader<ElementListItem[]> loader, ElementListItem[] data) {
+        mAdapter.setItems(data);
+
+        mAdapter.notifyDataSetChanged();
+
+        mRecyclerView.setEmptyView(mEmptyView);
+    }
+
+    @Override
+    public void onLoaderReset(Loader<ElementListItem[]> loader) {
     }
 }

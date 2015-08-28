@@ -1,4 +1,4 @@
-package com.frozendevs.periodictable.helper;
+package com.frozendevs.periodictable.content;
 
 import android.content.Context;
 
