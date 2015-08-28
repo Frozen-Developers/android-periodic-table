@@ -25,6 +25,8 @@ import com.frozendevs.periodictable.widget.DividerDecoration;
 
 public class ElementsFragment extends Fragment implements
         LoaderManager.LoaderCallbacks<ElementListItem[]> {
+    private static final String STATE_LIST_ITEMS = "listItems";
+    private static final String STATE_SEARCH_QUERY = "searchQuery";
 
     private ElementsAdapter mAdapter;
     private RecyclerView mRecyclerView;
@@ -37,9 +39,15 @@ public class ElementsFragment extends Fragment implements
         super.onCreate(savedInstanceState);
 
         setHasOptionsMenu(true);
-        setRetainInstance(true);
 
         mAdapter = new ElementsAdapter();
+
+        if (savedInstanceState != null) {
+            mAdapter.setItems((ElementListItem[]) savedInstanceState.getParcelableArray(
+                    STATE_LIST_ITEMS));
+
+            mSearchQuery = savedInstanceState.getString(STATE_SEARCH_QUERY);
+        }
     }
 
     @Override
@@ -151,5 +159,13 @@ public class ElementsFragment extends Fragment implements
 
     @Override
     public void onLoaderReset(Loader<ElementListItem[]> loader) {
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelableArray(STATE_LIST_ITEMS, mAdapter.getItems());
+        outState.putString(STATE_SEARCH_QUERY, mSearchQuery);
     }
 }

@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.Locale;
 
 public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHolder> {
-
     private ElementListItem[] mItems = new ElementListItem[0];
     private List<ElementListItem> mFilteredItems = new ArrayList<>();
 
@@ -120,6 +119,10 @@ public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHo
         mFilteredItems = new ArrayList<>(Arrays.asList(mItems));
 
         notifyDataSetChanged();
+    }
+
+    public ElementListItem[] getItems() {
+        return mItems;
     }
 
     public void setItems(ElementListItem[] items) {
