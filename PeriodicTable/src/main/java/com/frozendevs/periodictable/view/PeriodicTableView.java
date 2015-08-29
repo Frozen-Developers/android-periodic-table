@@ -20,6 +20,10 @@ import android.widget.BaseAdapter;
 
 import com.frozendevs.periodictable.R;
 
+import java.lang.ref.SoftReference;
+import java.util.HashMap;
+import java.util.Map;
+
 public class PeriodicTableView extends ZoomableScrollView {
 
     private final float DEFAULT_SPACING = 1f;
@@ -77,8 +81,7 @@ public class PeriodicTableView extends ZoomableScrollView {
         protected Void doInBackground(Void... params) {
             final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
 
-            View convertView = null;
-            int previousViewType = 0;
+            final Map<Integer, SoftReference<View>> convertViews = new HashMap<>();
 
             for (int position = 0; position < size; position++) {
                 if (isCancelled()) {
@@ -89,11 +92,15 @@ public class PeriodicTableView extends ZoomableScrollView {
                     continue;
                 }
 
-                int viewType = mAdapter.getItemViewType(position);
-                if (viewType != previousViewType) {
-                    convertView = null;
+                final int viewType = mAdapter.getItemViewType(position);
+
+                View convertView = null;
+
+                final SoftReference<View> softReference = convertViews.get(viewType);
+
+                if (softReference != null) {
+                    convertView = softReference.get();
                 }
-                previousViewType = viewType;
 
                 convertView = mAdapter.getView(position, convertView, PeriodicTableView.this);
 
@@ -103,6 +110,10 @@ public class PeriodicTableView extends ZoomableScrollView {
                     if (bitmap != null) {
                         mBitmapCache.put(position, bitmap);
                     }
+                }
+
+                if (softReference == null || softReference.get() == null) {
+                    convertViews.put(viewType, new SoftReference<>(convertView));
                 }
             }
 
@@ -241,7 +252,6 @@ public class PeriodicTableView extends ZoomableScrollView {
     @Override
     public boolean onSingleTapConfirmed(MotionEvent event) {
         return mOnItemClickListener != null && processClick(event, mOnSingleTapConfirmed);
-
     }
 
     @Override
