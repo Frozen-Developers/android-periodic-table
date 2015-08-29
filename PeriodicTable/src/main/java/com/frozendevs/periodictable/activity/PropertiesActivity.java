@@ -108,7 +108,7 @@ public class PropertiesActivity extends AppCompatActivity {
 
         Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/NotoSans-Regular.ttf");
 
-        TableAdapter tableAdapter = new TableAdapter(this);
+        TableAdapter tableAdapter = new TableAdapter();
 
         View tileView = findViewById(R.id.tile_view);
         tableAdapter.getView(mElementProperties, tileView, (ViewGroup) tileView.getParent());

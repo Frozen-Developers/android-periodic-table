@@ -3,6 +3,8 @@ package com.frozendevs.periodictable.model.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,14 +22,13 @@ import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TableAdapter extends PeriodicTableView.Adapter {
+public class TableAdapter extends PeriodicTableView.Adapter implements Parcelable {
 
     private enum ViewType {
         ITEM,
         TEXT
     }
 
-    private Context mContext;
     private Typeface mTypeface;
     private int mGroupsCount;
     private int mPeriodsCount;
@@ -67,10 +68,32 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         TextView symbol, number, name, weight;
     }
 
-    public TableAdapter(Context context) {
-        mContext = context;
+    public static final Creator<TableAdapter> CREATOR = new Creator<TableAdapter>() {
+        @Override
+        public TableAdapter createFromParcel(Parcel in) {
+            return new TableAdapter(in);
+        }
 
-        mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
+        @Override
+        public TableAdapter[] newArray(int size) {
+            return new TableAdapter[size];
+        }
+    };
+
+    public TableAdapter() {
+    }
+
+    protected TableAdapter(Parcel in) {
+        mGroupsCount = in.readInt();
+        mPeriodsCount = in.readInt();
+
+        final int size = in.readInt();
+        for (int i = 0; i < size; i++) {
+            final int key = in.readInt();
+            final TableItem value = in.readParcelable(TableItem.class.getClassLoader());
+
+            mItems.put(key, value);
+        }
     }
 
     @Override
@@ -90,15 +113,19 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        final Context context = parent.getContext();
+
+        initialize(context);
+
         final TableItem item = getItem(position);
 
         if (item instanceof TableTextItem) {
             if (convertView == null) {
-                convertView = LayoutInflater.from(mContext).inflate(R.layout.table_text,
+                convertView = LayoutInflater.from(context).inflate(R.layout.table_text,
                         parent, false);
             }
 
-            convertView.setBackgroundColor(getBackgroundColor(item));
+            convertView.setBackgroundColor(getBackgroundColor(context, item));
 
             ((TextView) convertView).setText(((TableTextItem) item).getText());
 
@@ -111,8 +138,12 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     }
 
     public View getView(TableElementItem item, View convertView, ViewGroup parent) {
+        final Context context = parent.getContext();
+
+        initialize(context);
+
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.table_item,
+            convertView = LayoutInflater.from(context).inflate(R.layout.table_item,
                     parent, false);
         }
 
@@ -141,7 +172,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         } catch (NumberFormatException ignored) {
         }
 
-        convertView.setBackgroundColor(getBackgroundColor(item));
+        convertView.setBackgroundColor(getBackgroundColor(context, item));
 
         viewHolder.symbol.setText(item.getSymbol());
         viewHolder.number.setText(String.valueOf(item.getNumber()));
@@ -154,9 +185,11 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     @Override
     public View getActiveView(Bitmap bitmap, View convertView, ViewGroup parent) {
+        initialize(parent.getContext());
+
         if (convertView == null) {
-            convertView = LayoutInflater.from(mContext).inflate(R.layout.table_active_item,
-                    parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(
+                    R.layout.table_active_item, parent, false);
         }
 
         ImageView imageView = (ImageView) convertView.findViewById(R.id.bitmap);
@@ -165,8 +198,8 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         return convertView;
     }
 
-    private int getBackgroundColor(TableItem item) {
-        return mContext.getResources().getColor(COLORS[item.getCategory()]);
+    private int getBackgroundColor(Context context, TableItem item) {
+        return context.getResources().getColor(COLORS[item.getCategory()]);
     }
 
     @Override
@@ -183,7 +216,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
         return ViewType.values().length;
     }
 
-    public void setItems(TableElementItem... items) {
+    public void setItems(Context context, TableElementItem... items) {
         mItems.clear();
 
         if (items == null) {
@@ -218,7 +251,7 @@ public class TableAdapter extends PeriodicTableView.Adapter {
             final String text;
 
             if (item[1] instanceof Integer) {
-                text = mContext.getString((int) item[1]);
+                text = context.getString((int) item[1]);
             } else {
                 text = (String) item[1];
             }
@@ -245,5 +278,28 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     @Override
     public boolean isEnabled(int position) {
         return getItem(position) instanceof TableElementItem;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(mGroupsCount);
+        dest.writeInt(mPeriodsCount);
+
+        dest.writeInt(mItems.size());
+        for (Map.Entry<Integer, TableItem> item : mItems.entrySet()) {
+            dest.writeInt(item.getKey());
+            dest.writeParcelable((Parcelable) item.getValue(), 0);
+        }
+    }
+
+    private void initialize(Context context) {
+        if (mTypeface == null) {
+            mTypeface = Typeface.createFromAsset(context.getAssets(), "fonts/NotoSans-Regular.ttf");
+        }
     }
 }

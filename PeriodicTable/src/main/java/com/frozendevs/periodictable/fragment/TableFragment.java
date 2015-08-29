@@ -29,6 +29,7 @@ import java.util.List;
 
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener,
         LoaderManager.LoaderCallbacks<TableElementItem[]> {
+    private static final String STATE_TABLE_ADAPTER = "tableAdapter";
 
     private TableAdapter mAdapter;
     private PeriodicTableView mPeriodicTableView;
@@ -88,7 +89,11 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
         setRetainInstance(true);
 
-        mAdapter = new TableAdapter(getActivity());
+        if (savedInstanceState != null) {
+            mAdapter = savedInstanceState.getParcelable(STATE_TABLE_ADAPTER);
+        } else {
+            mAdapter = new TableAdapter();
+        }
     }
 
     @Override
@@ -161,7 +166,7 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
     @Override
     public void onLoadFinished(Loader<TableElementItem[]> loader, TableElementItem[] data) {
-        mAdapter.setItems(data);
+        mAdapter.setItems(getActivity(), data);
 
         mBitmapCache.resize(mAdapter.getCount());
 
@@ -170,5 +175,12 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
     @Override
     public void onLoaderReset(Loader<TableElementItem[]> loader) {
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putParcelable(STATE_TABLE_ADAPTER, mAdapter);
     }
 }
