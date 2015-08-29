@@ -29,10 +29,8 @@ public class TableAdapter extends PeriodicTableView.Adapter {
 
     private Context mContext;
     private Typeface mTypeface;
-    private Bitmap[] mBitmaps;
     private int mGroupsCount;
     private int mPeriodsCount;
-    private int mTileSize;
     private Map<Integer, TableItem> mItems = new HashMap<>();
 
     private static final int[] COLORS = {
@@ -230,11 +228,6 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     }
 
     @Override
-    public boolean isEmpty() {
-        return super.isEmpty() || mBitmaps == null;
-    }
-
-    @Override
     public int getGroupsCount() {
         return mGroupsCount;
     }
@@ -242,71 +235,6 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     @Override
     public int getPeriodsCount() {
         return mPeriodsCount;
-    }
-
-    public void buildDrawingCache(ViewGroup parent) {
-        Bitmap[] bitmaps = new Bitmap[mGroupsCount * mPeriodsCount];
-
-        View convertView = null;
-        int previousViewType = 0;
-
-        for (int row = 0; row < mPeriodsCount; row++) {
-            for (int column = 0; column < mGroupsCount; column++) {
-                int position = (row * mGroupsCount) + column;
-
-                int viewType = getItemViewType(position);
-                if (viewType != previousViewType) {
-                    convertView = null;
-                }
-                previousViewType = viewType;
-
-                convertView = getView(position, convertView, parent);
-
-                if (convertView != null) {
-                    ViewGroup.LayoutParams layoutParams = convertView.getLayoutParams();
-
-                    mTileSize = Math.max(mTileSize, Math.max(layoutParams.width,
-                            layoutParams.height));
-
-                    convertView.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
-                            View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
-                            layoutParams.height, View.MeasureSpec.EXACTLY));
-                    convertView.layout(0, 0, convertView.getMeasuredWidth(),
-                            convertView.getMeasuredHeight());
-
-                    convertView.buildDrawingCache();
-
-                    if (convertView.getDrawingCache() != null) {
-                        bitmaps[position] = Bitmap.createBitmap(convertView.getDrawingCache());
-                    }
-
-                    convertView.destroyDrawingCache();
-                }
-            }
-        }
-
-        mBitmaps = bitmaps;
-    }
-
-    @Override
-    public Bitmap getDrawingCache(int position) {
-        if (mBitmaps != null) {
-            return mBitmaps[position];
-        }
-
-        return null;
-    }
-
-    public void destroyDrawingCache() {
-        if (mBitmaps != null) {
-            for (Bitmap bitmap : mBitmaps) {
-                if (bitmap != null) {
-                    bitmap.recycle();
-                }
-            }
-        }
-
-        mBitmaps = null;
     }
 
     @Override
@@ -317,10 +245,5 @@ public class TableAdapter extends PeriodicTableView.Adapter {
     @Override
     public boolean isEnabled(int position) {
         return getItem(position) instanceof TableElementItem;
-    }
-
-    @Override
-    public int getTileSize() {
-        return mTileSize;
     }
 }

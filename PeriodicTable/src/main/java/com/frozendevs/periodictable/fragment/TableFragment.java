@@ -1,6 +1,7 @@
 package com.frozendevs.periodictable.fragment;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,22 +30,21 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     private TableAdapter mAdapter;
     private PeriodicTableView mPeriodicTableView;
     private LoadData mLoadDataTask;
+    private LruCache<Integer, Bitmap> mBitmapCache = new LruCache<>(1);
 
-    private class LoadData extends AsyncTask<Void, Void, Void> {
+    private class LoadData extends AsyncTask<Void, Void, TableElementItem[]> {
 
         @Override
-        protected Void doInBackground(Void... params) {
-            mAdapter.destroyDrawingCache();
-
-            mAdapter.setItems(Database.getAllElements(getContext(), TableElementItem.class));
-
-            mAdapter.buildDrawingCache(mPeriodicTableView);
-
-            return null;
+        protected TableElementItem[] doInBackground(Void... params) {
+            return Database.getAllElements(getContext(), TableElementItem.class);
         }
 
         @Override
-        protected void onPostExecute(Void result) {
+        protected void onPostExecute(TableElementItem[] result) {
+            mAdapter.setItems(result);
+
+            mBitmapCache.resize(mAdapter.getCount());
+
             mAdapter.notifyDataSetChanged();
         }
     }
@@ -130,20 +131,12 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         View rootView = inflater.inflate(R.layout.table_fragment, container, false);
 
         mPeriodicTableView = (PeriodicTableView) rootView.findViewById(R.id.elements_table);
+        mPeriodicTableView.setBitmapCache(mBitmapCache);
         mPeriodicTableView.setAdapter(mAdapter);
         mPeriodicTableView.setOnItemClickListener(this);
         mPeriodicTableView.setEmptyView(rootView.findViewById(R.id.progress_bar));
 
         return rootView;
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-        mAdapter.destroyDrawingCache();
-
-        mLoadDataTask = null;
     }
 
     @Override

@@ -6,8 +6,10 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.os.AsyncTask;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.v4.util.LruCache;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SoundEffectConstants;
@@ -28,6 +30,9 @@ public class PeriodicTableView extends ZoomableScrollView {
     private Matrix mMatrix = new Matrix();
     private OnItemClickListener mOnItemClickListener;
     private View mActiveView;
+    private LruCache<Integer, Bitmap> mBitmapCache;
+    private int mTileSize;
+    private GenerateBitmapsTask mGenerateBitmapsTask;
 
     public interface OnItemClickListener {
         void onItemClick(PeriodicTableView parent, View view, int position);
@@ -39,14 +44,9 @@ public class PeriodicTableView extends ZoomableScrollView {
         public abstract int getGroupsCount();
 
         public abstract int getPeriodsCount();
-
-        public abstract Bitmap getDrawingCache(int position);
-
-        public abstract int getTileSize();
     }
 
     private abstract class OnClickConfirmedListener {
-
         abstract void onClickConfirmed(int position);
     }
 
@@ -55,34 +55,104 @@ public class PeriodicTableView extends ZoomableScrollView {
         public void onChanged() {
             updateEmptyStatus(true);
 
-            if (!mAdapter.isEmpty()) {
-                if (mActiveView == null) {
-                    final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
+            if (mAdapter.isEmpty()) {
+                return;
+            }
 
-                    for (int i = 0; i < size; i++) {
-                        if (mAdapter.getItem(i) != null && mAdapter.isEnabled(i)) {
-                            addActiveView(i);
-
-                            break;
-                        }
-                    }
+            if (mBitmapCache.size() < mAdapter.getCount()) {
+                if (mGenerateBitmapsTask != null) {
+                    mGenerateBitmapsTask.cancel(true);
                 }
 
-                invalidate();
-
-                updateEmptyStatus(false);
+                mGenerateBitmapsTask = new GenerateBitmapsTask();
+                mGenerateBitmapsTask.execute();
+            } else {
+                onGenerateComplete();
             }
         }
     };
 
+    private class GenerateBitmapsTask extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
+
+            View convertView = null;
+            int previousViewType = 0;
+
+            for (int position = 0; position < size; position++) {
+                if (isCancelled()) {
+                    return null;
+                }
+
+                if (mBitmapCache.get(position) != null) {
+                    continue;
+                }
+
+                int viewType = mAdapter.getItemViewType(position);
+                if (viewType != previousViewType) {
+                    convertView = null;
+                }
+                previousViewType = viewType;
+
+                convertView = mAdapter.getView(position, convertView, PeriodicTableView.this);
+
+                if (convertView != null) {
+                    final Bitmap bitmap = generateBitmap(convertView);
+
+                    if (bitmap != null) {
+                        mBitmapCache.put(position, bitmap);
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            if (!isCancelled()) {
+                onGenerateComplete();
+            }
+        }
+
+        private Bitmap generateBitmap(View view) {
+            Bitmap bitmap = null;
+
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+
+            mTileSize = Math.max(mTileSize, Math.max(layoutParams.width,
+                    layoutParams.height));
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
+                    View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
+                    layoutParams.height, View.MeasureSpec.EXACTLY));
+            view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+
+            view.buildDrawingCache();
+
+            final Bitmap drawingCache = view.getDrawingCache();
+
+            if (drawingCache != null) {
+                bitmap = Bitmap.createBitmap(drawingCache);
+            }
+
+            view.destroyDrawingCache();
+
+            return bitmap;
+        }
+    }
+
     private static class SavedState extends BaseSavedState {
 
         int activeViewPosition = -1;
+        int tileSize;
 
         public SavedState(Parcel source) {
             super(source);
 
             activeViewPosition = source.readInt();
+            tileSize = source.readInt();
         }
 
         public SavedState(Parcelable superState) {
@@ -94,6 +164,7 @@ public class PeriodicTableView extends ZoomableScrollView {
             super.writeToParcel(out, flags);
 
             out.writeInt(activeViewPosition);
+            out.writeInt(tileSize);
         }
 
         public static final Parcelable.Creator<SavedState> CREATOR =
@@ -153,7 +224,8 @@ public class PeriodicTableView extends ZoomableScrollView {
     public void setEmptyView(View view) {
         mEmptyView = view;
 
-        updateEmptyStatus(mAdapter == null || mAdapter.isEmpty());
+        updateEmptyStatus(mAdapter == null || mAdapter.isEmpty() || mBitmapCache == null ||
+                mBitmapCache.size() < mAdapter.getCount());
     }
 
     private void updateEmptyStatus(boolean empty) {
@@ -163,7 +235,7 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     private float getScaledTileSize() {
-        return getZoom() * mAdapter.getTileSize();
+        return getZoom() * mTileSize;
     }
 
     @Override
@@ -188,6 +260,10 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     public void setAdapter(Adapter adapter) {
+        if (adapter != null && mBitmapCache == null) {
+            throw new IllegalStateException("Initialize bitmap cache using setBitmapCache() first");
+        }
+
         if (mAdapter != null) {
             mAdapter.unregisterDataSetObserver(mDataSetObserver);
         }
@@ -203,7 +279,7 @@ public class PeriodicTableView extends ZoomableScrollView {
     public float getMinimalZoom() {
         final int groups = mAdapter.getGroupsCount();
         final int periods = mAdapter.getPeriodsCount();
-        final int tileSize = mAdapter.getTileSize();
+        final int tileSize = mTileSize;
 
         return Math.min((getWidth() - ((groups - 1) * DEFAULT_SPACING)) / groups,
                 (getHeight() - ((periods - 1) * DEFAULT_SPACING)) / periods) / tileSize;
@@ -231,7 +307,7 @@ public class PeriodicTableView extends ZoomableScrollView {
 
     @Override
     protected void dispatchDraw(Canvas canvas) {
-        if (mAdapter != null && !mAdapter.isEmpty()) {
+        if (mBitmapCache != null && mAdapter != null && !mAdapter.isEmpty()) {
             float tileSize = getScaledTileSize();
 
             float y = (getHeight() - getScaledHeight()) / 2f;
@@ -248,7 +324,7 @@ public class PeriodicTableView extends ZoomableScrollView {
                                 position == (int) mActiveView.getTag(R.id.active_view_position)) {
                             adjustActiveView();
                         } else {
-                            Bitmap bitmap = mAdapter.getDrawingCache(position);
+                            Bitmap bitmap = mBitmapCache.get(position);
 
                             if (bitmap != null && !bitmap.isRecycled()) {
                                 mMatrix.reset();
@@ -296,7 +372,7 @@ public class PeriodicTableView extends ZoomableScrollView {
             removeView(mActiveView);
         }
 
-        mActiveView = mAdapter.getActiveView(mAdapter.getDrawingCache(position), mActiveView, this);
+        mActiveView = mAdapter.getActiveView(mBitmapCache.get(position), mActiveView, this);
 
         if (mActiveView != null) {
             mActiveView.setTag(R.id.active_view_position, position);
@@ -313,6 +389,8 @@ public class PeriodicTableView extends ZoomableScrollView {
     public Parcelable onSaveInstanceState() {
         SavedState savedState = new SavedState(super.onSaveInstanceState());
 
+        savedState.tileSize = mTileSize;
+
         if (mActiveView != null) {
             savedState.activeViewPosition = (int) mActiveView.getTag(R.id.active_view_position);
         }
@@ -324,6 +402,8 @@ public class PeriodicTableView extends ZoomableScrollView {
     public void onRestoreInstanceState(Parcelable state) {
         if (state instanceof SavedState) {
             SavedState savedState = (SavedState) state;
+
+            mTileSize = savedState.tileSize;
 
             if (!mAdapter.isEmpty() && savedState.activeViewPosition > -1) {
                 addActiveView(savedState.activeViewPosition);
@@ -379,5 +459,27 @@ public class PeriodicTableView extends ZoomableScrollView {
         }
 
         return false;
+    }
+
+    public void setBitmapCache(LruCache<Integer, Bitmap> bitmapCache) {
+        mBitmapCache = bitmapCache;
+    }
+
+    private void onGenerateComplete() {
+        if (mActiveView == null) {
+            final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
+
+            for (int i = 0; i < size; i++) {
+                if (mAdapter.getItem(i) != null && mAdapter.isEnabled(i)) {
+                    addActiveView(i);
+
+                    break;
+                }
+            }
+        }
+
+        invalidate();
+
+        updateEmptyStatus(false);
     }
 }
