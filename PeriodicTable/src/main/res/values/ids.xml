@@ -4,5 +4,6 @@
     <item type="id" name="active_view_position" />
 
     <item type="id" name="elements_list_loader" />
+    <item type="id" name="table_loader" />
 
 </resources>

@@ -2,13 +2,14 @@ package com.frozendevs.periodictable.fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.LoaderManager;
+import android.support.v4.content.Loader;
 import android.support.v4.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.view.ViewGroup;
 import com.frozendevs.periodictable.PeriodicTableApplication;
 import com.frozendevs.periodictable.R;
 import com.frozendevs.periodictable.activity.PropertiesActivity;
+import com.frozendevs.periodictable.content.AsyncTaskLoader;
 import com.frozendevs.periodictable.content.Database;
 import com.frozendevs.periodictable.model.TableElementItem;
 import com.frozendevs.periodictable.model.TableItem;
@@ -25,29 +27,12 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 
 import java.util.List;
 
-public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
+public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener,
+        LoaderManager.LoaderCallbacks<TableElementItem[]> {
 
     private TableAdapter mAdapter;
     private PeriodicTableView mPeriodicTableView;
-    private LoadData mLoadDataTask;
     private LruCache<Integer, Bitmap> mBitmapCache = new LruCache<>(1);
-
-    private class LoadData extends AsyncTask<Void, Void, TableElementItem[]> {
-
-        @Override
-        protected TableElementItem[] doInBackground(Void... params) {
-            return Database.getAllElements(getContext(), TableElementItem.class);
-        }
-
-        @Override
-        protected void onPostExecute(TableElementItem[] result) {
-            mAdapter.setItems(result);
-
-            mBitmapCache.resize(mAdapter.getCount());
-
-            mAdapter.notifyDataSetChanged();
-        }
-    }
 
     private class SharedElementCallback extends android.support.v4.app.SharedElementCallback {
         @Override
@@ -119,9 +104,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
             application.setOnAttachStateChangeListener(new OnAttachStateChangeListener());
         }
 
-        if (mLoadDataTask == null) {
-            mLoadDataTask = new LoadData();
-            mLoadDataTask.execute();
+        if (mAdapter.isEmpty()) {
+            getLoaderManager().initLoader(R.id.table_loader, null, this);
         }
     }
 
@@ -163,5 +147,28 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
 
         super.onResume();
+    }
+
+    @Override
+    public Loader<TableElementItem[]> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoader<TableElementItem[]>(getActivity()) {
+            @Override
+            public TableElementItem[] loadInBackground() {
+                return Database.getAllElements(getContext(), TableElementItem.class);
+            }
+        };
+    }
+
+    @Override
+    public void onLoadFinished(Loader<TableElementItem[]> loader, TableElementItem[] data) {
+        mAdapter.setItems(data);
+
+        mBitmapCache.resize(mAdapter.getCount());
+
+        mAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onLoaderReset(Loader<TableElementItem[]> loader) {
     }
 }
