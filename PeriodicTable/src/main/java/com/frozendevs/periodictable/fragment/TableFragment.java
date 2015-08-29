@@ -9,7 +9,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.SharedElementCallback;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +22,7 @@ import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
+import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
@@ -49,6 +49,72 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
+    private class SharedElementCallback extends android.support.v4.app.SharedElementCallback {
+        private WeakReference<PeriodicTableView> mViewWeakReference;
+
+        public SharedElementCallback(PeriodicTableView view) {
+            mViewWeakReference = new WeakReference<>(view);
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
+                                         List<View> sharedElementSnapshots) {
+            super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            final PeriodicTableView periodicTableView = mViewWeakReference.get();
+
+            View view = sharedElements.get(0);
+
+            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+
+            view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
+                    View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
+                    layoutParams.height, View.MeasureSpec.EXACTLY));
+            view.layout(view.getLeft(), view.getTop(),
+                    view.getLeft() + view.getMeasuredWidth(),
+                    view.getTop() + view.getMeasuredHeight());
+            view.setPivotX(0f);
+            view.setPivotY(0f);
+            view.setScaleX(periodicTableView.getZoom());
+            view.setScaleY(periodicTableView.getZoom());
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
+                                       List<View> sharedElementSnapshots) {
+            super.onSharedElementEnd(sharedElementNames, sharedElements, sharedElementSnapshots);
+
+            View view = sharedElements.get(0);
+            view.setScaleX(1f);
+            view.setScaleY(1f);
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
+    private class OnAttachStateChangeListener implements View.OnAttachStateChangeListener {
+        private WeakReference<View> mViewWeakReference;
+
+        public OnAttachStateChangeListener(View view) {
+            mViewWeakReference = new WeakReference<>(view);
+        }
+
+        @Override
+        public void onViewAttachedToWindow(View v) {
+        }
+
+        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+        @Override
+        public void onViewDetachedFromWindow(View v) {
+            final View activeView = mViewWeakReference.get();
+
+            if (activeView != null) {
+                activeView.setAlpha(1f);
+            }
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,61 +134,10 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
             final PeriodicTableApplication application = (PeriodicTableApplication)
                     getActivity().getApplication();
 
-            application.setSharedElementCallback(new SharedElementCallback() {
+            application.setSharedElementCallback(new SharedElementCallback(mPeriodicTableView));
 
-                @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-                @Override
-                public void onSharedElementStart(List<String> sharedElementNames,
-                                                 List<View> sharedElements,
-                                                 List<View> sharedElementSnapshots) {
-                    super.onSharedElementStart(sharedElementNames, sharedElements,
-                            sharedElementSnapshots);
-
-                    View view = sharedElements.get(0);
-
-                    ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-
-                    view.measure(View.MeasureSpec.makeMeasureSpec(layoutParams.width,
-                            View.MeasureSpec.EXACTLY), View.MeasureSpec.makeMeasureSpec(
-                            layoutParams.height, View.MeasureSpec.EXACTLY));
-                    view.layout(view.getLeft(), view.getTop(),
-                            view.getLeft() + view.getMeasuredWidth(),
-                            view.getTop() + view.getMeasuredHeight());
-                    view.setPivotX(0f);
-                    view.setPivotY(0f);
-                    view.setScaleX(mPeriodicTableView.getZoom());
-                    view.setScaleY(mPeriodicTableView.getZoom());
-                }
-
-                @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-                @Override
-                public void onSharedElementEnd(List<String> sharedElementNames,
-                                               List<View> sharedElements,
-                                               List<View> sharedElementSnapshots) {
-                    super.onSharedElementEnd(sharedElementNames, sharedElements,
-                            sharedElementSnapshots);
-
-                    View view = sharedElements.get(0);
-                    view.setScaleX(1f);
-                    view.setScaleY(1f);
-                }
-            });
-
-            application.setOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
-                @Override
-                public void onViewAttachedToWindow(View v) {
-                }
-
-                @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-                @Override
-                public void onViewDetachedFromWindow(View v) {
-                    View view = mPeriodicTableView.getActiveView();
-
-                    if (view != null) {
-                        view.setAlpha(1f);
-                    }
-                }
-            });
+            application.setOnAttachStateChangeListener(new OnAttachStateChangeListener(
+                    mPeriodicTableView.getActiveView()));
         }
     }
 
