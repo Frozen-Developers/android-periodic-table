@@ -13,4 +13,6 @@
     <color name="category_transition_metals_bg">#ffc0c0</color>
     <color name="category_unknown_bg">#e8e8e8</color>
 
+    <color name="properties_status_bar">#40000000</color>
+
 </resources>
