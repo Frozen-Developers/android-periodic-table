@@ -293,7 +293,7 @@ class Article:
 
     def get_property(self, name, default='', prepend='', comments=True, delimiter='\n',
                      unit_prefix='', append='', units=True, comment_as_title=False,
-                     capitalize=False, sanitize=None):
+                     capitalize=False, sanitize=None, type=str):
         result = []
         for key, value in self.properties.items():
             full_name = re.match(r'^%s\s?\d*$' % name, key)
@@ -317,7 +317,7 @@ class Article:
             result = capitalize_multiline(result)
         if sanitize:
             result = sanitize(result)
-        return result
+        return type(result)
 
     def get_property_by_priority(self, properties):
         result = ''
@@ -372,11 +372,11 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         'electrical resistivity unit prefix')
 
     for property in [
-        ['number', {'name': 'number'}],
+        ['number', {'name': 'number', 'type': int}],
         ['symbol', {'name': 'symbol'}],
         ['name', {'name': 'name', 'capitalize': True}],
-        ['group', {'name': 'group', 'default': '3'}],
-        ['period', {'name': 'period'}],
+        ['group', {'name': 'group', 'default': 3, 'type': int}],
+        ['period', {'name': 'period', 'type': int}],
         ['block', {'name': 'block', 'units': False}],
         ['electronsPerShell', {'name': 'electrons per shell', 'comments': False}],
         ['phase', {'name': 'phase', 'comments': False, 'capitalize': True}],
