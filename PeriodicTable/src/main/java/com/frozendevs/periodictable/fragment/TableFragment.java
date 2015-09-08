@@ -29,6 +29,7 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
     private TableAdapter mAdapter;
     private PeriodicTableView mPeriodicTableView;
+    private LoadData mLoadDataTask;
 
     private class LoadData extends AsyncTask<Void, Void, Void> {
 
@@ -122,8 +123,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         setRetainInstance(true);
 
         mAdapter = new TableAdapter(getActivity());
-
-        new LoadData().execute();
     }
 
     @Override
@@ -138,6 +137,11 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
 
             application.setOnAttachStateChangeListener(new OnAttachStateChangeListener(
                     mPeriodicTableView.getActiveView()));
+        }
+
+        if (mLoadDataTask == null) {
+            mLoadDataTask = new LoadData();
+            mLoadDataTask.execute();
         }
     }
 
@@ -159,6 +163,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         super.onDestroy();
 
         mAdapter.destroyDrawingCache();
+
+        mLoadDataTask = null;
     }
 
     @Override
