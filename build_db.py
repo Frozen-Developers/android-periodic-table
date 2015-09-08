@@ -488,7 +488,7 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
             spin = row['nuclear spin']
         elif 'spin' in row.keys():
             spin = row['spin']
-        spin = replace_chars(re.sub(r'[()#]', '', spin), '⁻⁺', '-+')
+        spin = ', '.join(replace_chars(re.sub(r'[()#]', '', spin), '⁻⁺', '-+').split(','))
 
         abundance = ''
         if 'representative isotopic composition' in row.keys():
