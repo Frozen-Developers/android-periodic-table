@@ -7360,7 +7360,7 @@
                 "abundance": "",
                 "decayModes": "p → ⁶⁰Ge",
                 "halfLife": "",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁶¹As"
             },
             {
@@ -7374,7 +7374,7 @@
                 "abundance": "",
                 "decayModes": "p → ⁶²Ge",
                 "halfLife": "",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁶³As"
             },
             {
@@ -7388,7 +7388,7 @@
                 "abundance": "",
                 "decayModes": "β⁺ → ⁶⁵Ge",
                 "halfLife": "170 ms",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁶⁵As"
             },
             {
@@ -7416,7 +7416,7 @@
                 "abundance": "",
                 "decayModes": "β⁺ → ⁶⁷Ge",
                 "halfLife": "42.5 s",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁶⁷As"
             },
             {
@@ -7437,7 +7437,7 @@
                 "abundance": "",
                 "decayModes": "β⁺ → ⁶⁹Ge",
                 "halfLife": "15.2 min",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁶⁹As"
             },
             {
@@ -7458,35 +7458,35 @@
                 "abundance": "",
                 "decayModes": "β⁺ → ⁷¹Ge",
                 "halfLife": "65.28 h",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁷¹As"
             },
             {
                 "abundance": "",
                 "decayModes": "β⁺ → ⁷²Ge",
                 "halfLife": "26.0 h",
-                "spin": "2-",
+                "spin": "2−",
                 "symbol": "⁷²As"
             },
             {
                 "abundance": "",
                 "decayModes": "EC → ⁷³Ge",
                 "halfLife": "80.30 d",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁷³As"
             },
             {
                 "abundance": "",
                 "decayModes": "β⁺ (66%) → ⁷⁴Ge\nβ⁻ (34%) → ⁷⁴Se",
                 "halfLife": "17.77 d",
-                "spin": "2-",
+                "spin": "2−",
                 "symbol": "⁷⁴As"
             },
             {
                 "abundance": "100%",
                 "decayModes": "",
                 "halfLife": "-",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁷⁵As"
             },
             {
@@ -7500,7 +7500,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ (99.98%) → ⁷⁶Se\nEC (0.02%) → ⁷⁶Ge",
                 "halfLife": "1.0942 d",
-                "spin": "2-",
+                "spin": "2−",
                 "symbol": "⁷⁶As"
             },
             {
@@ -7514,7 +7514,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁷⁷ᵐSe",
                 "halfLife": "38.83 h",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁷⁷As"
             },
             {
@@ -7528,14 +7528,14 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁷⁸Se",
                 "halfLife": "90.7 min",
-                "spin": "2-",
+                "spin": "2−",
                 "symbol": "⁷⁸As"
             },
             {
                 "abundance": "",
                 "decayModes": "β⁻ → ⁷⁹ᵐSe",
                 "halfLife": "9.01 min",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁷⁹As"
             },
             {
@@ -7556,7 +7556,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁸¹ᵐSe",
                 "halfLife": "33.3 s",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁸¹As"
             },
             {
@@ -7577,7 +7577,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁸³ᵐSe",
                 "halfLife": "13.4 s",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁸³As"
             },
             {
@@ -7598,7 +7598,7 @@
                 "abundance": "",
                 "decayModes": "β⁻, n (59.4%) → ⁸⁴Se\nβ⁻ (40.6%) → ⁸⁵Se",
                 "halfLife": "2.021 s",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁸⁵As"
             },
             {
@@ -7612,7 +7612,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ (84.6%) → ⁸⁷Se\nβ⁻, n (15.4%) → ⁸⁶Se",
                 "halfLife": "0.56 s",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁸⁷As"
             },
             {
@@ -7626,7 +7626,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁸⁹Se",
                 "halfLife": "200 ms",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁸⁹As"
             },
             {
@@ -7640,7 +7640,7 @@
                 "abundance": "",
                 "decayModes": "",
                 "halfLife": "50 ms",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁹¹As"
             },
             {
@@ -7706,7 +7706,7 @@
                 "abundance": "",
                 "decayModes": "β⁺ (>99.9%) → ⁶⁵As\nβ⁺, p (<0.1%) → ⁶⁴Ge",
                 "halfLife": "<50 ms",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁶⁵Se"
             },
             {
@@ -7720,7 +7720,7 @@
                 "abundance": "",
                 "decayModes": "β⁺ (99.5%) → ⁶⁷As\nβ⁺, p (0.5%) → ⁶⁶Ge",
                 "halfLife": "133 ms",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁶⁷Se"
             },
             {
@@ -7734,14 +7734,14 @@
                 "abundance": "",
                 "decayModes": "β⁺ (99.955%) → ⁶⁹As\nβ⁺, p (0.045%) → ⁶⁸Ge",
                 "halfLife": "27.4 s",
-                "spin": "1/2-",
+                "spin": "1/2−",
                 "symbol": "⁶⁹Se"
             },
             {
                 "abundance": "",
                 "decayModes": "",
                 "halfLife": "2.0 µs",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁶⁹ᵐ¹Se"
             },
             {
@@ -7762,14 +7762,14 @@
                 "abundance": "",
                 "decayModes": "β⁺ → ⁷¹As",
                 "halfLife": "4.74 min",
-                "spin": "5/2-",
+                "spin": "5/2−",
                 "symbol": "⁷¹Se"
             },
             {
                 "abundance": "",
                 "decayModes": "",
                 "halfLife": "5.6 µs",
-                "spin": "1/2- to 9/2-",
+                "spin": "1/2− to 9/2−",
                 "symbol": "⁷¹ᵐ¹Se"
             },
             {
@@ -7797,7 +7797,7 @@
                 "abundance": "",
                 "decayModes": "IT → ⁷³Se\nβ⁺ → ⁷³As",
                 "halfLife": "39.8 min",
-                "spin": "3/2-",
+                "spin": "3/2−",
                 "symbol": "⁷³ᵐSe"
             },
             {
@@ -7825,7 +7825,7 @@
                 "abundance": "7.63%",
                 "decayModes": "",
                 "halfLife": "-",
-                "spin": "1/2-",
+                "spin": "1/2−",
                 "symbol": "⁷⁷Se"
             },
             {
@@ -7853,7 +7853,7 @@
                 "abundance": "",
                 "decayModes": "IT (99.944%) → ⁷⁹Se\nβ⁻ (0.056%) → ⁷⁹Br",
                 "halfLife": "3.92 min",
-                "spin": "1/2-",
+                "spin": "1/2−",
                 "symbol": "⁷⁹ᵐSe"
             },
             {
@@ -7867,7 +7867,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁸¹Br",
                 "halfLife": "18.45 min",
-                "spin": "1/2-",
+                "spin": "1/2−",
                 "symbol": "⁸¹Se"
             },
             {
@@ -7895,7 +7895,7 @@
                 "abundance": "",
                 "decayModes": "β⁻ → ⁸³Br",
                 "halfLife": "70.1 s",
-                "spin": "1/2-",
+                "spin": "1/2−",
                 "symbol": "⁸³ᵐSe"
             },
             {
