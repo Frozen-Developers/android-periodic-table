@@ -73,13 +73,12 @@ class Article:
 
             strip = [r'<.?includeonly[^>]*>', r'<ref[^>/]*>.*?</ref>', r'<ref[^>]*>', r'<!--.*?-->',
                      r'[\?]', r'\'+\'+', r'\s*\(predicted\)', r'\s*\(estimated\)',
-                     r'\s*\(extrapolated\)',
-                     r'ca[lc]*\.\s*', r'est\.\s*', r'\(\[\[room temperature\|r\.t\.\]\]\)\s*',
-                     r'\s*\(calculated\)', r'__notoc__\n?', r'{{ref\|[^}]*}}',
-                     r'{{citation needed\|[^}]*}}',
+                     r'\s*\(extrapolated\)', r'ca[lc]*\.\s*', r'est\.\s*',
+                     r'\(\[\[room temperature\|r\.t\.\]\]\)\s*', r'\s*\(calculated\)',
+                     r'__notoc__\n?', r'{{ref\|[^}]*}}', r'{{citation needed\|[^}]*}}',
                      r'{{dubious\|[^}]*}}', r'{{{note\|[^}]*}}}',
-                     r'{{periodic table legend\|[^}]*}}',
-                     r'{{anchor\|[^}]*}}', r'{{cn\|[^}]*}}']
+                     r'{{periodic table legend\|[^}]*}}', r'{{anchor\|[^}]*}}', r'{{cn\|[^}]*}}',
+                     r'{{sfn\|[^}]*}}']
             content = re.sub(r'|'.join(strip), '', content, flags=re.S | re.I)
 
             for item in [
