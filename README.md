@@ -1,4 +1,4 @@
-Periodic Table
+Periodic Table [![Build Status](https://travis-ci.org/Frozen-Developers/android-periodic-table.svg)](https://travis-ci.org/Frozen-Developers/android-periodic-table)
 ==============
 
 An ad-free, open source, holo styled interactive periodic table with list of element properties and list of isotopes based on Wikipedia's database.
