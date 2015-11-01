@@ -1,6 +1,5 @@
 package com.frozendevs.periodictable.activity;
 
-import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -123,7 +122,6 @@ public class PropertiesActivity extends AppCompatActivity {
         super.onCreateContextMenu(menu, view, menuInfo);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         String propertyName, propertyValue;
@@ -142,13 +140,8 @@ public class PropertiesActivity extends AppCompatActivity {
 
         switch (item.getItemId()) {
             case R.id.context_copy:
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.HONEYCOMB) {
-                    ((android.text.ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
-                            setText(propertyValue);
-                } else {
-                    ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
-                            setPrimaryClip(ClipData.newPlainText(propertyName, propertyValue));
-                }
+                ((ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE)).
+                        setPrimaryClip(ClipData.newPlainText(propertyName, propertyValue));
                 return true;
         }
 

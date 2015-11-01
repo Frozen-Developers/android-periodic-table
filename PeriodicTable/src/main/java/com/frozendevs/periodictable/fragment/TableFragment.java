@@ -1,6 +1,5 @@
 package com.frozendevs.periodictable.fragment;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -57,7 +56,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
             mViewWeakReference = new WeakReference<>(view);
         }
 
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
                                          List<View> sharedElementSnapshots) {
@@ -81,7 +79,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
             view.setScaleY(periodicTableView.getZoom());
         }
 
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         public void onSharedElementEnd(List<String> sharedElementNames, List<View> sharedElements,
                                        List<View> sharedElementSnapshots) {
@@ -93,7 +90,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     private class OnAttachStateChangeListener implements View.OnAttachStateChangeListener {
         private WeakReference<View> mViewWeakReference;
 
@@ -105,7 +101,6 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         public void onViewAttachedToWindow(View v) {
         }
 
-        @TargetApi(Build.VERSION_CODES.HONEYCOMB)
         @Override
         public void onViewDetachedFromWindow(View v) {
             final View activeView = mViewWeakReference.get();

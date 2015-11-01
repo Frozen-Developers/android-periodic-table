@@ -7,4 +7,6 @@
         </shape>
     </item>
 
+    <item android:drawable="@drawable/table_item_background_selector" />
+
 </layer-list>

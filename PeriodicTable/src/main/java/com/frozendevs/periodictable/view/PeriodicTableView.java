@@ -1,13 +1,11 @@
 package com.frozendevs.periodictable.view;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.database.DataSetObserver;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -58,7 +56,7 @@ public class PeriodicTableView extends ZoomableScrollView {
             updateEmptyStatus(true);
 
             if (!mAdapter.isEmpty()) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB && mActiveView == null) {
+                if (mActiveView == null) {
                     final int size = mAdapter.getGroupsCount() * mAdapter.getPeriodsCount();
 
                     for (int i = 0; i < size; i++) {
@@ -144,14 +142,12 @@ public class PeriodicTableView extends ZoomableScrollView {
     }
 
     private void initPeriodicTableView() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            mOnDownConfirmed = new OnClickConfirmedListener() {
-                @Override
-                void onClickConfirmed(int position) {
-                    addActiveView(position);
-                }
-            };
-        }
+        mOnDownConfirmed = new OnClickConfirmedListener() {
+            @Override
+            void onClickConfirmed(int position) {
+                addActiveView(position);
+            }
+        };
     }
 
     public void setEmptyView(View view) {
@@ -274,7 +270,6 @@ public class PeriodicTableView extends ZoomableScrollView {
         super.dispatchDraw(canvas);
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void adjustActiveView() {
         if (mActiveView != null) {
             int position = (int) mActiveView.getTag(R.id.active_view_position);
@@ -290,7 +285,6 @@ public class PeriodicTableView extends ZoomableScrollView {
         }
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     private void addActiveView(int position) {
         if (mActiveView != null) {
             if (position == (int) mActiveView.getTag(R.id.active_view_position)) {
