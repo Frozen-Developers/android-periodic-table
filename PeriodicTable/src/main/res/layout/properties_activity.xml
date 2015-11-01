@@ -27,8 +27,8 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="@dimen/view_pager_tabs_side_padding"
-            android:paddingRight="@dimen/view_pager_tabs_side_padding"
+            android:layout_marginLeft="@dimen/view_pager_tabs_side_padding"
+            android:layout_marginRight="@dimen/view_pager_tabs_side_padding"
             app:tabIndicatorColor="@color/ripple_material_dark"
             app:tabMode="scrollable" />
 
