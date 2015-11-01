@@ -7,11 +7,6 @@
         <item name="android:windowAllowReturnTransitionOverlap">false</item>
     </style>
 
-    <style name="Theme.Properties" parent="Theme.Properties.Base">
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@color/properties_status_bar</item>
-    </style>
-
     <style name="Theme.Settings" parent="Theme.Settings.Base">
         <item name="android:windowContentTransitions">false</item>
     </style>

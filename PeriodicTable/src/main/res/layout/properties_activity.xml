@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     tools:context=".activity.PropertiesActivity">
 
     <android.support.v4.view.ViewPager
@@ -15,14 +14,12 @@
 
     <com.frozendevs.periodictable.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
+        android:layout_height="wrap_content">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleTextAppearance="@style/TextAppearance.CollapsingToolbarExpanded"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
@@ -30,7 +27,6 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/backdrop_height"
-                android:fitsSystemWindows="true"
                 android:orientation="vertical"
                 app:layout_collapseMode="parallax">
 
@@ -47,7 +43,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="@null"
-                    android:fitsSystemWindows="true"
                     android:scaleType="centerCrop" />
 
             </FrameLayout>
