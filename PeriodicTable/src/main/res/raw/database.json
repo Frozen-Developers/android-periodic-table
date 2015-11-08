@@ -33106,7 +33106,21 @@
         "isotopes": [
             {
                 "abundance": "",
-                "decayModes": "",
+                "decayModes": "α → ²¹¹Th",
+                "halfLife": "2.24 ms",
+                "spin": "5/2−",
+                "symbol": "²¹⁵U"
+            },
+            {
+                "abundance": "",
+                "decayModes": "α → ²¹²Th",
+                "halfLife": "4.3 ms",
+                "spin": "0+",
+                "symbol": "²¹⁶U"
+            },
+            {
+                "abundance": "",
+                "decayModes": "α → ²¹³Th",
                 "halfLife": "26 ms",
                 "spin": "1/2−",
                 "symbol": "²¹⁷U"
@@ -33121,7 +33135,7 @@
             {
                 "abundance": "",
                 "decayModes": "α → ²¹⁵Th",
-                "halfLife": "55 ms",
+                "halfLife": "55 µs",
                 "spin": "9/2+",
                 "symbol": "²¹⁹U"
             },
@@ -33850,6 +33864,13 @@
         "isotopes": [
             {
                 "abundance": "",
+                "decayModes": "α → ²²⁵Np",
+                "halfLife": "3.7 s",
+                "spin": "",
+                "symbol": "²²⁹Am"
+            },
+            {
+                "abundance": "",
                 "decayModes": "β⁺ → ²³¹Pu\nα (rare) → ²²⁷Np",
                 "halfLife": "30 s",
                 "spin": "",
@@ -34316,6 +34337,13 @@
         "heatOfFusion": "7.92 kJ·mol⁻¹",
         "heatOfVaporization": "",
         "isotopes": [
+            {
+                "abundance": "",
+                "decayModes": "α → ²²⁹Am",
+                "halfLife": "21 s",
+                "spin": "",
+                "symbol": "²³³Bk"
+            },
             {
                 "abundance": "",
                 "decayModes": "α → ²³¹Am\nβ⁺ → ²³⁵Cm",
