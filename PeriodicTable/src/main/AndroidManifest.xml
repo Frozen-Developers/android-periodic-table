@@ -51,6 +51,7 @@
         <activity
             android:name="com.frozendevs.periodictable.activity.AboutActivity"
             android:exported="false"
+            android:label="@string/preference_about_app"
             android:launchMode="singleTop"
             android:parentActivityName="com.frozendevs.periodictable.activity.MainActivity"
             android:theme="@style/Theme.About">

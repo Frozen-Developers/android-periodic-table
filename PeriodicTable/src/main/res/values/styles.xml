@@ -6,6 +6,7 @@
     <style name="Theme.Application" parent="Theme.Application.Base" />
 
     <style name="Theme.About.Base" parent="Theme.Application">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>
         <item name="windowActionBar">true</item>
         <item name="windowNoTitle">false</item>
     </style>
