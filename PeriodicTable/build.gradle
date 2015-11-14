@@ -43,10 +43,10 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.1.0'
-    compile 'com.android.support:appcompat-v7:23.1.0@aar'
-    compile 'com.android.support:design:23.1.0@aar'
-    compile 'com.android.support:recyclerview-v7:23.1.0@aar'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1@aar'
+    compile 'com.android.support:design:23.1.1@aar'
+    compile 'com.android.support:recyclerview-v7:23.1.1@aar'
     compile 'com.google.code.gson:gson:2.4'
     compile 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.8.2@aar'
 }
