@@ -33,7 +33,7 @@ public class ElementsFragment extends Fragment {
 
         @Override
         protected ElementListItem[] doInBackground(Void... params) {
-            return Database.getInstance(getActivity()).getElementListItems();
+            return Database.getAllElements(getContext(), ElementListItem.class);
         }
 
         @Override

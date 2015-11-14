@@ -79,7 +79,7 @@ public class PropertiesActivity extends AppCompatActivity {
 
         if (savedInstanceState == null || (mElementProperties = savedInstanceState.getParcelable(
                 STATE_ELEMENT_PROPERTIES)) == null) {
-            mElementProperties = Database.getInstance(this).getElementProperties(
+            mElementProperties = Database.getElement(this, ElementProperties.class,
                     getIntent().getIntExtra(EXTRA_ATOMIC_NUMBER, 1));
         }
 

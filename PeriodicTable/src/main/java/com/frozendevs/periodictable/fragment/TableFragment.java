@@ -35,7 +35,7 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
         protected Void doInBackground(Void... params) {
             mAdapter.destroyDrawingCache();
 
-            mAdapter.setItems(Database.getInstance(getActivity()).getTableItems());
+            mAdapter.setItems(Database.getAllElements(getContext(), TableElementItem.class));
 
             mAdapter.buildDrawingCache(mPeriodicTableView);
 

@@ -3,90 +3,77 @@ package com.frozendevs.periodictable.helper;
 import android.content.Context;
 
 import com.frozendevs.periodictable.R;
-import com.frozendevs.periodictable.model.ElementListItem;
-import com.frozendevs.periodictable.model.ElementProperties;
-import com.frozendevs.periodictable.model.TableElementItem;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonParser;
+import com.google.gson.stream.JsonReader;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database {
-    private final JsonArray mJsonArray;
-    private final Gson mGson = new Gson();
+    private static InputStreamReader getInputStreamReader(Context context) {
+        return new InputStreamReader(context.getResources().openRawResource(R.raw.database));
+    }
 
-    private static Database mInstance;
+    public static <T> T[] getAllElements(Context context, Class<T> classOfT) {
+        final List<T> elements = new ArrayList<>();
 
-    private Database(Context context) {
-        final StringBuilder json = new StringBuilder();
-
-        InputStream inputStream = null;
-        InputStreamReader inputStreamReader = null;
-        BufferedReader bufferedReader = null;
+        final JsonReader reader = new JsonReader(getInputStreamReader(context));
 
         try {
-            inputStream = context.getResources().openRawResource(R.raw.database);
-            inputStreamReader = new InputStreamReader(inputStream);
-            bufferedReader = new BufferedReader(inputStreamReader);
+            reader.beginArray();
 
-            for (String line; (line = bufferedReader.readLine()) != null; ) {
-                json.append(line);
+            final Gson gson = new Gson();
+
+            while (reader.hasNext()) {
+                elements.add(classOfT.cast(gson.fromJson(reader, classOfT)));
             }
-        } catch (Exception e) {
+
+            reader.endArray();
+        } catch (IOException e) {
             e.printStackTrace();
         } finally {
             try {
-                if (bufferedReader != null) {
-                    bufferedReader.close();
-                }
-                if (inputStreamReader != null) {
-                    inputStreamReader.close();
-                }
-                if (inputStream != null) {
-                    inputStream.close();
-                }
+                reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
 
-        mJsonArray = new JsonParser().parse(json.toString()).getAsJsonArray();
+        return elements.toArray((T[]) Array.newInstance(classOfT, elements.size()));
     }
 
-    public static synchronized Database getInstance(Context context) {
-        if (mInstance == null) {
-            mInstance = new Database(context);
+    public static <T> T getElement(Context context, Class<T> classOfT, int number) {
+        T element = null;
+
+        final JsonReader reader = new JsonReader(getInputStreamReader(context));
+
+        try {
+            reader.beginArray();
+
+            final Gson gson = new Gson();
+
+            for (int i = 1; reader.hasNext(); i++) {
+                if (i == number) {
+                    element = classOfT.cast(gson.fromJson(reader, classOfT));
+
+                    break;
+                } else {
+                    reader.skipValue();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        return mInstance;
-    }
-
-    public ElementListItem[] getElementListItems() {
-        final ElementListItem[] items = new ElementListItem[mJsonArray.size()];
-
-        for (int i = 0; i < items.length; i++) {
-            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), ElementListItem.class);
-        }
-
-        return items;
-    }
-
-    public TableElementItem[] getTableItems() {
-        final TableElementItem[] items = new TableElementItem[mJsonArray.size()];
-
-        for (int i = 0; i < items.length; i++) {
-            items[i] = mGson.fromJson(mJsonArray.get(i).getAsJsonObject(), TableElementItem.class);
-        }
-
-        return items;
-    }
-
-    public ElementProperties getElementProperties(int element) {
-        return mGson.fromJson(mJsonArray.get(element - 1).getAsJsonObject(),
-                ElementProperties.class);
+        return element;
     }
 }
