@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/ripple_material_dark"
+            app:tabIndicatorColor="@color/ripple_dark"
             app:tabMaxWidth="0dp"
             app:tabMode="fixed" />
 

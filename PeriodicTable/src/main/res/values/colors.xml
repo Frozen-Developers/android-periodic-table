@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="primary">#ff212121</color>
+    <color name="primary_dark">@android:color/black</color>
+    <color name="accent">#ff80cbc4</color>
+
     <color name="category_actinides_bg">#ff99cc</color>
     <color name="category_alkali_metals_bg">#ff6666</color>
     <color name="category_alkaline_earth_metals_bg">#ffdead</color>
@@ -14,5 +18,8 @@
     <color name="category_unknown_bg">#e8e8e8</color>
 
     <color name="properties_status_bar">#40000000</color>
+
+    <color name="ripple_dark">#33ffffff</color>
+    <color name="ripple_light">#1f000000</color>
 
 </resources>

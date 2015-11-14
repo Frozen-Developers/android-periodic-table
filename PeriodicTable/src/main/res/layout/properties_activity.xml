@@ -20,7 +20,7 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="?attr/colorPrimary"
+            app:contentScrim="@color/primary"
             app:expandedTitleTextAppearance="@style/TextAppearance.CollapsingToolbarExpanded"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:toolbarId="@id/toolbar">
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/backdrop_height"
-                android:background="?attr/colorPrimary"
+                android:background="@color/primary"
                 android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:paddingBottom="16dp"
@@ -146,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/view_pager_tabs_side_padding"
             android:layout_marginRight="@dimen/view_pager_tabs_side_padding"
-            app:tabIndicatorColor="@color/ripple_material_dark"
+            app:tabIndicatorColor="@color/ripple_dark"
             app:tabMode="scrollable" />
 
     </com.frozendevs.periodictable.widget.AppBarLayout>

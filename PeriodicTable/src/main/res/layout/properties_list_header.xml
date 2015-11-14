@@ -12,4 +12,4 @@
     android:singleLine="true"
     android:textAlignment="viewStart"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-    android:textColor="?attr/colorAccent" />
+    android:textColor="@color/accent" />
