@@ -21,7 +21,6 @@ import com.frozendevs.periodictable.model.TableItem;
 import com.frozendevs.periodictable.model.adapter.TableAdapter;
 import com.frozendevs.periodictable.view.PeriodicTableView;
 
-import java.lang.ref.WeakReference;
 import java.util.List;
 
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener {
@@ -50,18 +49,10 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     }
 
     private class SharedElementCallback extends android.support.v4.app.SharedElementCallback {
-        private WeakReference<PeriodicTableView> mViewWeakReference;
-
-        public SharedElementCallback(PeriodicTableView view) {
-            mViewWeakReference = new WeakReference<>(view);
-        }
-
         @Override
         public void onSharedElementStart(List<String> sharedElementNames, List<View> sharedElements,
                                          List<View> sharedElementSnapshots) {
             super.onSharedElementStart(sharedElementNames, sharedElements, sharedElementSnapshots);
-
-            final PeriodicTableView periodicTableView = mViewWeakReference.get();
 
             View view = sharedElements.get(0);
 
@@ -75,8 +66,8 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
                     view.getTop() + view.getMeasuredHeight());
             view.setPivotX(0f);
             view.setPivotY(0f);
-            view.setScaleX(periodicTableView.getZoom());
-            view.setScaleY(periodicTableView.getZoom());
+            view.setScaleX(mPeriodicTableView.getZoom());
+            view.setScaleY(mPeriodicTableView.getZoom());
         }
 
         @Override
@@ -91,19 +82,13 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     }
 
     private class OnAttachStateChangeListener implements View.OnAttachStateChangeListener {
-        private WeakReference<View> mViewWeakReference;
-
-        public OnAttachStateChangeListener(View view) {
-            mViewWeakReference = new WeakReference<>(view);
-        }
-
         @Override
         public void onViewAttachedToWindow(View v) {
         }
 
         @Override
         public void onViewDetachedFromWindow(View v) {
-            final View activeView = mViewWeakReference.get();
+            final View activeView = mPeriodicTableView.getActiveView();
 
             if (activeView != null) {
                 activeView.setAlpha(1f);
@@ -128,10 +113,9 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
             final PeriodicTableApplication application = (PeriodicTableApplication)
                     getActivity().getApplication();
 
-            application.setSharedElementCallback(new SharedElementCallback(mPeriodicTableView));
+            application.setSharedElementCallback(new SharedElementCallback());
 
-            application.setOnAttachStateChangeListener(new OnAttachStateChangeListener(
-                    mPeriodicTableView.getActiveView()));
+            application.setOnAttachStateChangeListener(new OnAttachStateChangeListener());
         }
 
         if (mLoadDataTask == null) {
