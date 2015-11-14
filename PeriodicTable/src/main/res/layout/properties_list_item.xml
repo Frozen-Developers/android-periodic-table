@@ -5,13 +5,11 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true"
     android:background="?attr/listChoiceBackgroundIndicator"
-    android:minHeight="?attr/listPreferredItemHeight"
+    android:minHeight="@dimen/listPreferredItemHeight"
     android:orientation="vertical"
     android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
-    android:paddingEnd="?attr/listPreferredItemPaddingRight"
-    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
-    android:paddingRight="?attr/listPreferredItemPaddingRight"
-    android:paddingStart="?attr/listPreferredItemPaddingLeft"
+    android:paddingLeft="@dimen/listPreferredItemPaddingSide"
+    android:paddingRight="@dimen/listPreferredItemPaddingSide"
     android:paddingTop="@dimen/listPreferredItemPaddingTop">
 
     <TextView

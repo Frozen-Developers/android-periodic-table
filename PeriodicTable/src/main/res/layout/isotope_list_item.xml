@@ -3,12 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="?attr/listChoiceBackgroundIndicator"
-    android:minHeight="?attr/listPreferredItemHeight"
+    android:minHeight="@dimen/listPreferredItemHeight"
     android:orientation="horizontal"
     android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
-    android:paddingEnd="?attr/listPreferredItemPaddingRight"
+    android:paddingEnd="@dimen/listPreferredItemPaddingSide"
     android:paddingLeft="8dp"
-    android:paddingRight="?attr/listPreferredItemPaddingRight"
+    android:paddingRight="@dimen/listPreferredItemPaddingSide"
     android:paddingStart="8dp"
     android:paddingTop="@dimen/listPreferredItemPaddingTop">
 
