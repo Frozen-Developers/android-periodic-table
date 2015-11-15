@@ -20,6 +20,7 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TableAdapter extends PeriodicTableView.Adapter implements Parcelable {
@@ -216,7 +217,7 @@ public class TableAdapter extends PeriodicTableView.Adapter implements Parcelabl
         return ViewType.values().length;
     }
 
-    public void setItems(Context context, TableElementItem... items) {
+    public void setItems(Context context, List<TableElementItem> items) {
         mItems.clear();
 
         if (items == null) {

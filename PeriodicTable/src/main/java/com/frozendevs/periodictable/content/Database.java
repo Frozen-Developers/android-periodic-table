@@ -8,7 +8,6 @@ import com.google.gson.stream.JsonReader;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class Database {
         return new InputStreamReader(context.getResources().openRawResource(R.raw.database));
     }
 
-    public static <T> T[] getAllElements(Context context, Class<T> classOfT) {
+    public static <T> List<T> getAllElements(Context context, Class<T> classOfT) {
         final List<T> elements = new ArrayList<>();
 
         final JsonReader reader = new JsonReader(getInputStreamReader(context));
@@ -42,7 +41,7 @@ public class Database {
             }
         }
 
-        return elements.toArray((T[]) Array.newInstance(classOfT, elements.size()));
+        return elements;
     }
 
     public static <T> T getElement(Context context, Class<T> classOfT, int number) {

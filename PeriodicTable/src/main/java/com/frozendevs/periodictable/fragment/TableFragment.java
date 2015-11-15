@@ -28,7 +28,7 @@ import com.frozendevs.periodictable.view.PeriodicTableView;
 import java.util.List;
 
 public class TableFragment extends Fragment implements PeriodicTableView.OnItemClickListener,
-        LoaderManager.LoaderCallbacks<TableElementItem[]> {
+        LoaderManager.LoaderCallbacks<List<TableElementItem>> {
     private static final String STATE_TABLE_ADAPTER = "tableAdapter";
 
     private TableAdapter mAdapter;
@@ -155,17 +155,18 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     }
 
     @Override
-    public Loader<TableElementItem[]> onCreateLoader(int id, Bundle args) {
-        return new AsyncTaskLoader<TableElementItem[]>(getActivity()) {
+    public Loader<List<TableElementItem>> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoader<List<TableElementItem>>(getActivity()) {
             @Override
-            public TableElementItem[] loadInBackground() {
+            public List<TableElementItem> loadInBackground() {
                 return Database.getAllElements(getContext(), TableElementItem.class);
             }
         };
     }
 
     @Override
-    public void onLoadFinished(Loader<TableElementItem[]> loader, TableElementItem[] data) {
+    public void onLoadFinished(Loader<List<TableElementItem>> loader,
+                               List<TableElementItem> data) {
         mAdapter.setItems(getActivity(), data);
 
         mBitmapCache.resize(mAdapter.getCount());
@@ -174,7 +175,7 @@ public class TableFragment extends Fragment implements PeriodicTableView.OnItemC
     }
 
     @Override
-    public void onLoaderReset(Loader<TableElementItem[]> loader) {
+    public void onLoaderReset(Loader<List<TableElementItem>> loader) {
     }
 
     @Override

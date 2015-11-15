@@ -23,8 +23,10 @@ import com.frozendevs.periodictable.model.adapter.ElementsAdapter;
 import com.frozendevs.periodictable.view.RecyclerView;
 import com.frozendevs.periodictable.widget.DividerDecoration;
 
+import java.util.List;
+
 public class ElementsFragment extends Fragment implements
-        LoaderManager.LoaderCallbacks<ElementListItem[]> {
+        LoaderManager.LoaderCallbacks<List<ElementListItem>> {
     private static final String STATE_LIST_ITEMS = "listItems";
     private static final String STATE_SEARCH_QUERY = "searchQuery";
 
@@ -139,17 +141,17 @@ public class ElementsFragment extends Fragment implements
 
 
     @Override
-    public Loader<ElementListItem[]> onCreateLoader(int id, Bundle args) {
-        return new AsyncTaskLoader<ElementListItem[]>(getActivity()) {
+    public Loader<List<ElementListItem>> onCreateLoader(int id, Bundle args) {
+        return new AsyncTaskLoader<List<ElementListItem>>(getActivity()) {
             @Override
-            public ElementListItem[] loadInBackground() {
+            public List<ElementListItem> loadInBackground() {
                 return Database.getAllElements(getContext(), ElementListItem.class);
             }
         };
     }
 
     @Override
-    public void onLoadFinished(Loader<ElementListItem[]> loader, ElementListItem[] data) {
+    public void onLoadFinished(Loader<List<ElementListItem>> loader, List<ElementListItem> data) {
         mAdapter.setItems(data);
 
         mAdapter.notifyDataSetChanged();
@@ -158,7 +160,7 @@ public class ElementsFragment extends Fragment implements
     }
 
     @Override
-    public void onLoaderReset(Loader<ElementListItem[]> loader) {
+    public void onLoaderReset(Loader<List<ElementListItem>> loader) {
     }
 
     @Override

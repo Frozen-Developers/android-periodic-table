@@ -125,6 +125,10 @@ public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHo
         return mItems;
     }
 
+    public void setItems(List<ElementListItem> items) {
+        setItems(items.toArray(new ElementListItem[items.size()]));
+    }
+
     public void setItems(ElementListItem[] items) {
         mItems = items != null ? items.clone() : new ElementListItem[0];
 
