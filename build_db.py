@@ -438,7 +438,7 @@ def parse(element_name, article_url, ionization_energies, element_names, categor
         ['electronConfiguration', {'name': 'electron configuration', 'comments': False,
                                    'sanitize': lambda x: re.sub(r'or\n', 'or', x)}],
         ['appearance', {'name': 'appearance', 'capitalize': True,
-                        'sanitize': lambda x: re.sub(r'\s*\([^)]*\)', '', x.replace(';', ',')).
+                        'sanitize': lambda x: re.sub(r'\s*\([^)]*\),*', '', x.replace(';', ',')).
                                 strip('.')}],
         ['oxidationStates', {'name': 'oxidation states', 'comments': False,
                              'sanitize': lambda x: re.sub(r'\s*\([^)\d]*\)|[\(\)\+]', '', x)}],
