@@ -45,10 +45,11 @@ public class ElementsFragment extends Fragment implements
         mAdapter = new ElementsAdapter();
 
         if (savedInstanceState != null) {
+            mSearchQuery = savedInstanceState.getString(STATE_SEARCH_QUERY);
+
             mAdapter.setItems((ElementListItem[]) savedInstanceState.getParcelableArray(
                     STATE_LIST_ITEMS));
-
-            mSearchQuery = savedInstanceState.getString(STATE_SEARCH_QUERY);
+            mAdapter.filter(getContext(), mSearchQuery);
         }
     }
 
@@ -98,11 +99,15 @@ public class ElementsFragment extends Fragment implements
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (ViewCompat.isLaidOut(searchView)) {
-                    mSearchQuery = newText;
-                }
+                if (ViewCompat.isLaidOut(searchView) && mSearchQuery != null) {
+                    String oldText = mSearchQuery;
 
-                mAdapter.filter(getActivity(), newText);
+                    mSearchQuery = newText;
+
+                    if (!oldText.equals(newText)) {
+                        mAdapter.filter(getActivity(), newText);
+                    }
+                }
 
                 return true;
             }

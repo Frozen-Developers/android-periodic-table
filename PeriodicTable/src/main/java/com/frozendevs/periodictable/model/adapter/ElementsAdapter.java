@@ -87,7 +87,7 @@ public class ElementsAdapter extends RecyclerView.Adapter<ElementsAdapter.ViewHo
     }
 
     public void filter(Context context, String filter) {
-        if (mItems.length > 0) {
+        if (mItems.length > 0 && filter != null) {
             List<ElementListItem> filteredItems = new ArrayList<>();
 
             Locale locale = context.getResources().getConfiguration().locale;
