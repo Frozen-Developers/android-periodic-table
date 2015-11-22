@@ -49,7 +49,6 @@ public class ElementsFragment extends Fragment implements
 
             mAdapter.setItems((ElementListItem[]) savedInstanceState.getParcelableArray(
                     STATE_LIST_ITEMS));
-            mAdapter.filter(getContext(), mSearchQuery);
         }
     }
 
@@ -138,6 +137,8 @@ public class ElementsFragment extends Fragment implements
             MenuItemCompat.expandActionView(searchItem);
 
             searchView.setQuery(mSearchQuery, false);
+
+            mAdapter.filter(getActivity(), mSearchQuery);
         }
 
         super.onCreateOptionsMenu(menu, inflater);
