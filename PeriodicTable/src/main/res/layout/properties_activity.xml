@@ -56,8 +56,8 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:paddingBottom="16dp"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
+                android:paddingLeft="@dimen/properties_summary_side_padding"
+                android:paddingRight="@dimen/properties_summary_side_padding"
                 android:paddingTop="16dp"
                 app:layout_collapseMode="none">
 

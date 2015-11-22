@@ -13,4 +13,6 @@
 
     <dimen name="backdrop_height">176dp</dimen>
 
+    <dimen name="properties_summary_side_padding">20dp</dimen>
+
 </resources>
