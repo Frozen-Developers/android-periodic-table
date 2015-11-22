@@ -6,10 +6,10 @@
     android:ellipsize="marquee"
     android:gravity="start"
     android:paddingBottom="@dimen/listPreferredItemPaddingBottom"
-    android:paddingLeft="?attr/listPreferredItemPaddingLeft"
-    android:paddingRight="?attr/listPreferredItemPaddingRight"
+    android:paddingEnd="?attr/listPreferredItemPaddingRight"
+    android:paddingStart="?attr/listPreferredItemPaddingLeft"
     android:paddingTop="@dimen/listPreferredItemPaddingTop"
     android:singleLine="true"
     android:textAlignment="viewStart"
     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-    android:textColor="@color/accent" />
+    android:textColor="?attr/colorAccent" />

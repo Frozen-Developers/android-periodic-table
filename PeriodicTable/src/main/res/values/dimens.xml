@@ -6,8 +6,6 @@
 
     <dimen name="table_item_size">95dp</dimen>
 
-    <dimen name="listPreferredItemHeight">64dp</dimen>
-    <dimen name="listPreferredItemPaddingSide">16dp</dimen>
     <dimen name="listPreferredItemPaddingTop">8dp</dimen>
     <dimen name="listPreferredItemPaddingBottom">8dp</dimen>
 
