@@ -950,7 +950,7 @@
         "meltingPoint": "63.15 K / −210.00 °C / −346.00 °F",
         "mohsHardness": "",
         "molarHeatCapacity": "N₂: 29.124 J·mol⁻¹·K⁻¹",
-        "molarIonizationEnergies": "1st: 1402.3 kJ·mol⁻¹\n2nd: 3456 kJ·mol⁻¹\n3rd: 4578.1 kJ·mol⁻¹\n4th: 7475.0 kJ·mol⁻¹\n5th: 9444.9 kJ·mol⁻¹\n6th: 53,266.6 kJ·mol⁻¹\n7th: 64,360 kJ·mol⁻¹",
+        "molarIonizationEnergies": "1st: 1402.3 kJ·mol⁻¹\n2nd: 2856 kJ·mol⁻¹\n3rd: 4578.1 kJ·mol⁻¹\n4th: 7475.0 kJ·mol⁻¹\n5th: 9444.9 kJ·mol⁻¹\n6th: 53,266.6 kJ·mol⁻¹\n7th: 64,360 kJ·mol⁻¹",
         "name": "Nitrogen",
         "number": 7,
         "oxidationStates": "5, 4, 3, 2, 1, −1, −2, −3",
