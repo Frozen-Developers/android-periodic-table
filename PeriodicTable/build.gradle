@@ -46,7 +46,7 @@ android {
     }
 
     lintOptions {
-        disable 'UnusedAttribute'
+        ignore 'GoogleAppIndexingWarning', 'UnusedAttribute'
         textOutput 'stdout'
         textReport true
     }
