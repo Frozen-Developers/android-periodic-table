@@ -994,7 +994,7 @@
         "group": 16,
         "heatOfFusion": "O₂: 0.444 kJ·mol⁻¹",
         "heatOfVaporization": "O₂: 6.82 kJ·mol⁻¹",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Liquid_Oxygen.png",
+        "imageUrl": "",
         "isotopes": [
             {
                 "abundance": "",
@@ -6337,7 +6337,7 @@
         "meltingPoint": "1357.77 K / 1084.62 °C / 1984.32 °F",
         "mohsHardness": "3.0",
         "molarHeatCapacity": "24.440 J·mol⁻¹·K⁻¹",
-        "molarIonizationEnergies": "1st: 745.5 kJ·mol⁻¹\n2nd: 1957.9 kJ·mol⁻¹\n3rd: 3555 kJ·mol⁻¹\n4th: 5536 kJ·mol⁻¹\n5th: 7700 kJ·mol⁻¹\n6th: 9900 kJ·mol⁻¹\n7th: 13,400 kJ·mol⁻¹\n8th: 16,000 kJ·mol⁻¹\n9th: 19,200 kJ·mol⁻¹\n10th: 22,400 kJ·mol⁻¹\n11th: 25,600 kJ·mol⁻¹\n12th: 35,600 kJ·mol⁻¹\n13th: 38,700 kJ·mol⁻¹\n14th: 42,000 kJ·mol⁻¹\n15th: 46,700 kJ·mol⁻¹\n16th: 50,200 kJ·mol⁻¹\n17th: 53,700 kJ·mol⁻¹\n18th: 61,100 kJ·mol⁻¹\n19th: 64,702 kJ·mol⁻¹\n20th: 163,700 kJ·mol⁻¹\n21st: 174,100 kJ·mol⁻¹\n22nd: 184,900 kJ·mol⁻¹\n23rd: 1988,00 kJ·mol⁻¹\n24th: 210,500 kJ·mol⁻¹\n25th: 222,700 kJ·mol⁻¹\n26th: 239,100 kJ·mol⁻¹\n27th: 249,660 kJ·mol⁻¹\n28th: 1,067,358 kJ·mol⁻¹\n29th: 1,116,105 kJ·mol⁻¹",
+        "molarIonizationEnergies": "1st: 745.5 kJ·mol⁻¹\n2nd: 1957.9 kJ·mol⁻¹\n3rd: 3555 kJ·mol⁻¹\n4th: 5536 kJ·mol⁻¹\n5th: 7700 kJ·mol⁻¹\n6th: 9900 kJ·mol⁻¹\n7th: 13,400 kJ·mol⁻¹\n8th: 16,000 kJ·mol⁻¹\n9th: 19,200 kJ·mol⁻¹\n10th: 22,400 kJ·mol⁻¹\n11th: 25,600 kJ·mol⁻¹\n12th: 35,600 kJ·mol⁻¹\n13th: 38,700 kJ·mol⁻¹\n14th: 42,000 kJ·mol⁻¹\n15th: 46,700 kJ·mol⁻¹\n16th: 50,200 kJ·mol⁻¹\n17th: 53,700 kJ·mol⁻¹\n18th: 61,100 kJ·mol⁻¹\n19th: 64,702 kJ·mol⁻¹\n20th: 163,700 kJ·mol⁻¹\n21st: 174,100 kJ·mol⁻¹\n22nd: 184,900 kJ·mol⁻¹\n23rd: 198,800 kJ·mol⁻¹\n24th: 210,500 kJ·mol⁻¹\n25th: 222,700 kJ·mol⁻¹\n26th: 239,100 kJ·mol⁻¹\n27th: 249,660 kJ·mol⁻¹\n28th: 1,067,358 kJ·mol⁻¹\n29th: 1,116,105 kJ·mol⁻¹",
         "name": "Copper",
         "number": 29,
         "oxidationStates": "−2, 1, 2, 3, 4",
@@ -24376,16 +24376,9 @@
             {
                 "abundance": "",
                 "decayModes": "",
-                "halfLife": "2.39 µs",
-                "spin": "8−",
-                "symbol": "¹⁷⁴ᵐ³Hf"
-            },
-            {
-                "abundance": "",
-                "decayModes": "",
                 "halfLife": "3.7 µs",
                 "spin": "14+",
-                "symbol": "¹⁷⁴ᵐ⁴Hf"
+                "symbol": "¹⁷⁴ᵐ³Hf"
             },
             {
                 "abundance": "",
@@ -26051,7 +26044,7 @@
         "electronegativity": "Pauling scale: 2.2",
         "electronsPerShell": "2, 8, 18, 32, 14, 2",
         "group": 8,
-        "heatOfFusion": "57.85 kJ·mol⁻¹",
+        "heatOfFusion": "31 kJ·mol⁻¹",
         "heatOfVaporization": "378 kJ·mol⁻¹",
         "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Osmium_crystals.jpg/1024px-Osmium_crystals.jpg",
         "isotopes": [
@@ -36435,7 +36428,7 @@
         "criticalPoint": "",
         "crystalStructure": "Hexagonal close-packed",
         "curiePoint": "",
-        "density": "40.7 g·cm⁻³",
+        "density": "41 g·cm⁻³",
         "electricalResistivity": "",
         "electronConfiguration": "[Rn] 5f¹⁴ 6d⁶ 7s²",
         "electronegativity": "",
