@@ -31,6 +31,8 @@ android {
         targetSdkVersion 23
         versionCode = gitVersionCode
         versionName = gitVersionName
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     compileOptions {
@@ -58,6 +60,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0@aar'
     compile 'com.android.support:design:23.3.0@aar'
     compile 'com.android.support:recyclerview-v7:23.3.0@aar'
+    compile 'com.android.support:support-vector-drawable:23.3.0@aar'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.8.7@aar'
     compile 'com.squareup.picasso:picasso:2.5.2'
